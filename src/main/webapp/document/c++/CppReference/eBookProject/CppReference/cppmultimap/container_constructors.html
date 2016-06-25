@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0067)http://www.cppreference.com/cppmultimap/container_constructors.html -->
+<HTML><HEAD><TITLE>Container constructors & destructors</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="container_constructors.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppmultimap/index.html">C++ 
+      Multimaps</A> &gt; <A 
+      href="../cppmultimap/container_constructors.html">Container 
+      constructors &amp; destructors</A> </DIV>
+      <DIV class=name-format>Container constructors &amp; destructors </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;map&gt;
+  container();
+  container( const container&amp; c );
+  ~container();
+</PRE>
+      <P>Every multimap has a default constructor, copy constructor, and 
+      destructor.</P>
+      <P>The default constructor takes no arguments, creates a new instance of 
+      that multimap, and runs in <A 
+      href="../complexity.html">constant time</A>. The 
+      default copy constructor runs in <A 
+      href="../complexity.html">linear time</A> and can 
+      be used to create a new multimap that is a copy of the given multimap 
+      <EM>c</EM>.</P>
+      <P>The default destructor is called when the multimap should be 
+      destroyed.</P>
+      <P>For example, the following code creates a pointer to a vector of 
+      integers and then uses the default multimap constructor to allocate a 
+      memory for a new vector:</P><PRE class=example-code> vector&lt;int&gt;* v;
+ v = new vector&lt;int&gt;();           
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content>(C++ Strings) <A 
+      href="../cppstring/resize.html">resize</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

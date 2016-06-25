@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+               http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+	<context:property-placeholder location="classpath:candportal.properties" />
+	<!-- consumer application name -->
+	<dubbo:application name="consumer-of-candportal-app" />
+	<!-- registry address, used for consumer to discover services -->
+	<dubbo:registry address="${zookeeper.registry.address}"
+		group="${zookeeper.registry.group}"
+		file="${user.home}/.dubbo/dubbo-registry-consumer-CandPortal-${zookeeper.registry.group}" />
+	<dubbo:reference id="gradeService"
+		interface="com.ailk.sets.grade.intf.IGradeService" check="false" retries="0" />
+	<dubbo:reference id="configServ"
+		interface="com.ailk.sets.platform.intf.empl.service.IConfig" check="false"
+		retries="0" />
+	<dubbo:reference id="candidateInfoService"
+		interface="com.ailk.sets.platform.intf.cand.service.ICandidateInfoService"
+		check="false" retries="0" />
+	<dubbo:reference id="iInviteService"
+		interface="com.ailk.sets.platform.intf.empl.service.IInvite" check="false"
+		retries="0" />
+	<dubbo:reference id="examineService"
+		interface="com.ailk.sets.platform.intf.cand.service.IExamineService" check="false"
+		retries="0" />
+	<dubbo:reference id="candidateTestService"
+		interface="com.ailk.sets.platform.intf.cand.service.ICandidateTest" check="false"
+		retries="0" />
+	<dubbo:reference id="paperInstanceService"
+		interface="com.ailk.sets.platform.intf.cand.service.IPaperInstance" check="false"
+		retries="0" />
+	<dubbo:reference id="wxCandService"
+		interface="com.ailk.sets.platform.intf.cand.service.IWXCandService" check="false"
+		retries="0" />
+</beans>

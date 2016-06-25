@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/cppdeque/index.html -->
+<HTML><HEAD><TITLE>C++ Double-ended Queues</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="index.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppdeque/index.html">C++ Double-ended 
+      Queues</A> </DIV>
+      <DIV class=name-format>C++ Double-ended Queues </DIV>
+      <P>Double-ended queues are like vectors, except that they allow fast 
+      insertions and deletions at the beginning (as well as the end) of the 
+      container.</P>
+      <P><A href="../cppdeque/all.html">Display all 
+      entries</A> for C++ Double-ended Queues on one page, or view entries 
+      individually:</P>
+      <TABLE class=category-table>
+        <TBODY>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/container_constructors2.html">Container 
+            constructors</A></TD>
+          <TD class=category-table-td>create dequeues and initialize them with 
+            some data</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/container_operators.html">Container 
+            operators</A></TD>
+          <TD class=category-table-td>compare, assign, and access elements of 
+            a dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/assign.html">assign</A></TD>
+          <TD class=category-table-td>assign elements to a dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/at.html">at</A></TD>
+          <TD class=category-table-td>returns an element at a specific 
+          location</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/back.html">back</A></TD>
+          <TD class=category-table-td>returns a reference to last element of a 
+            dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/begin.html">begin</A></TD>
+          <TD class=category-table-td>returns an iterator to the beginning of 
+            the dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/clear.html">clear</A></TD>
+          <TD class=category-table-td>removes all elements from the 
+        dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/empty.html">empty</A></TD>
+          <TD class=category-table-td>true if the dequeue has no 
+elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/end.html">end</A></TD>
+          <TD class=category-table-td>returns an iterator just past the last 
+            element of a dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/erase.html">erase</A></TD>
+          <TD class=category-table-td>removes elements from a dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/front.html">front</A></TD>
+          <TD class=category-table-td>returns a reference to the first element 
+            of a dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/insert.html">insert</A></TD>
+          <TD class=category-table-td>inserts elements into the dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/max_size.html">max_size</A></TD>
+          <TD class=category-table-td>returns the maximum number of elements 
+            that the dequeue can hold</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/pop_back.html">pop_back</A></TD>
+          <TD class=category-table-td>removes the last element of a 
+        dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/pop_front.html">pop_front</A></TD>
+          <TD class=category-table-td>removes the first element of the 
+          dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/push_back.html">push_back</A></TD>
+          <TD class=category-table-td>add an element to the end of the 
+          dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/push_front.html">push_front</A></TD>
+          <TD class=category-table-td>add an element to the front of the 
+            dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/rbegin.html">rbegin</A></TD>
+          <TD class=category-table-td>returns a <A 
+            href="../iterators.html">reverse_iterator</A> 
+            to the end of the dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/rend.html">rend</A></TD>
+          <TD class=category-table-td>returns a <A 
+            href="../iterators.html">reverse_iterator</A> 
+            to the beginning of the dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/resize.html">resize</A></TD>
+          <TD class=category-table-td>change the size of the dequeue</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppdeque/size.html">size</A></TD>
+          <TD class=category-table-td>returns the number of items in the 
+            dequeue</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppdeque/swap.html">swap</A></TD>
+          <TD class=category-table-td>swap the contents of this dequeue with 
+            another</TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/keywords/throw.html -->
+<HTML><HEAD><TITLE>throw</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="throw.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../keywords/index.html">C/C++ Keywords</A> 
+      &gt; <A href="../keywords/throw.html">throw</A> 
+      </DIV>
+      <DIV class=name-format>throw </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  try {
+  statement list;
+  }
+  catch( typeA arg ) {
+  statement list;
+  }
+  catch( typeB arg ) {
+  statement list;
+  }
+  ...
+  catch( typeN arg ) {
+  statement list;
+  }
+</PRE>
+      <P>The throw statement is part of the C++ mechanism for exception 
+      handling. This statement, together with the <A 
+      href="../keywords/try.html">try</A> and <A 
+      href="../keywords/catch.html">catch</A> 
+      statements, the C++ exception handling system gives programmers an elegant 
+      mechanism for error recovery.</P>
+      <P>You will generally use a <A 
+      href="../keywords/try.html">try</A> block to 
+      execute potentially error-prone code. Somewhere in this code, a throw 
+      statement can be executed, which will cause execution to jump out of the 
+      <A href="../keywords/try.html">try</A> block and 
+      into one of the <A 
+      href="../keywords/catch.html">catch</A> blocks. 
+      For example:</P><PRE class=example-code>   try {
+     cout &lt;&lt; "Before throwing exception" &lt;&lt; endl;
+     throw 42;
+     cout &lt;&lt; "Shouldn't ever see this" &lt;&lt; endl;
+   }
+   catch( int error ) {
+     cout &lt;&lt; "Error: caught exception " &lt;&lt; error &lt;&lt; endl;
+   }            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../keywords/catch.html">catch</A><BR><A 
+      href="../keywords/try.html">try</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

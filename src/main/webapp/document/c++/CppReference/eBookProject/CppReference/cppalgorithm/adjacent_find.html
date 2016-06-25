@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.cppreference.com/cppalgorithm/adjacent_find.html -->
+<HTML><HEAD><TITLE>adjacent_find</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="adjacent_find.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/adjacent_find.html">adjacent_find</A> 
+      </DIV>
+      <DIV class=name-format>adjacent_find </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator adjacent_find( iterator start, iterator end );
+  iterator adjacent_find( iterator start, iterator end, BinPred pr );
+</PRE>
+      <P>The adjacent_find() function searches between <EM>start</EM> and 
+      <EM>end</EM> for two consecutive identical elements. If the binary 
+      predicate <EM>pr</EM> is specified, then it is used to test whether two 
+      elements are the same or not.</P>
+      <P>The return value is an iterator that points to the first of the two 
+      elements that are found. If no matching elements are found, the returned 
+      iterator points to <EM>end</EM>.</P>
+      <P>For example, the following code creates a vector containing the 
+      integers between 0 and 10 with 7 appearing twice in a row. adjacent_find() 
+      is then used to find the location of the pair of 7's:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back(i);
+   // add a duplicate 7 into v1
+   if( i == 7 ) {
+     v1.push_back(i);           
+
+   }
+ }              
+
+ vector&lt;int&gt;::iterator result;
+ result = adjacent_find( v1.begin(), v1.end() );                
+
+ if( result == v1.end() ) {
+   cout &lt;&lt; "Did not find adjacent elements in v1" &lt;&lt; endl;
+ }              
+
+ else {
+   cout &lt;&lt; "Found matching adjacent elements starting at " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/find.html">find</A><BR><A 
+      href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+      href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+      href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+      href="../cppalgorithm/unique.html">unique</A><BR><A 
+      href="../cppalgorithm/unique_copy.html">unique_copy</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

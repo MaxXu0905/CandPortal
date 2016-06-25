@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.cppreference.com/cppalgorithm/partial_sort_copy.html -->
+<HTML><HEAD><TITLE>partial_sort_copy</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="partial_sort_copy.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A> 
+      </DIV>
+      <DIV class=name-format>partial_sort_copy </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator partial_sort_copy( iterator start, iterator end, iterator result_start, iterator result_end );
+  iterator partial_sort_copy( iterator start, iterator end, iterator result_start, iterator result_end, StrictWeakOrdering cmp );
+</PRE>
+      <P>The partial_sort_copy() algorithm behaves like <A 
+      href="../cppalgorithm/partial_sort.html">partial_sort</A>(), 
+      except that instead of partially sorting the range in-place, a copy of the 
+      range is created and the sorting takes place in the copy. The initial 
+      range is defined by [<EM>start</EM>,<EM>end</EM>) and the location of the 
+      copy is defined by [<EM>result_start</EM>,<EM>result_end</EM>).</P>
+      <P>partial_sort_copy() returns an iterator to the end of the copied, 
+      partially-sorted range of elements.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+      href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+      href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+      href="../cppalgorithm/sort.html">sort</A><BR><A 
+      href="../cppalgorithm/stable_sort.html">stable_sort</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.cppreference.com/cppalgorithm/find_first_of.html -->
+<HTML><HEAD><TITLE>find_first_of</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="find_first_of.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/find_first_of.html">find_first_of</A> 
+      </DIV>
+      <DIV class=name-format>find_first_of </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator find_first_of( iterator start, iterator end, iterator find_start, iterator find_end );
+  iterator find_first_of( iterator start, iterator end, iterator find_start, iterator find_end, BinPred bp );
+</PRE>
+      <P>The find_first_of() function searches for the first occurence of any 
+      element between <EM>find_start</EM> and <EM>find_end</EM>. The data that 
+      are searched are those between <EM>start</EM> and <EM>end</EM>.</P>
+      <P>If any element between <EM>find_start</EM> and <EM>find_end</EM> is 
+      found, an iterator pointing to that element is returned. Otherwise, an 
+      iterator pointing to <EM>end</EM> is returned.</P>
+      <P>For example, the following code searches for a 9, 4, or 7 in an array 
+      of integers:</P><PRE class=example-code> int nums[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+ int* result;
+ int start = 0;
+ int end = 10;          
+
+ int targets[] = { 9, 4, 7 };
+ result = find_first_of( nums + start, nums + end, targets + 0, targets + 2 );
+ if( *result == nums[end] ) {
+   cout &lt;&lt; "Did not find any of { 9, 4, 7 }" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "Found a matching target: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+      href="../cppalgorithm/find.html">find</A><BR><A 
+      href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+      href="../cppalgorithm/find_if.html">find_if</A><BR>(Standard 
+      C String and Character) <A 
+      href="../stdstring/strpbrk.html">strpbrk</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

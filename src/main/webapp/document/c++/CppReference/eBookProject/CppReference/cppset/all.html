@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://www.cppreference.com/cppset/all.html -->
+<HTML><HEAD><TITLE>C++ Sets</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppset/index.html">C++ Sets</A> </DIV>
+      <DIV class=name-format>begin </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  iterator begin();
+  const_iterator begin() const;
+</PRE>
+      <P>The function begin() returns an iterator to the first element of the 
+      set. begin() should run in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <P>For example, the following code uses begin() to initialize an iterator 
+      that is used to traverse a list:</P><PRE class=example-code>   // Create a list of characters
+   list&lt;char&gt; charList;
+   for( int i=0; i &lt; 10; i++ ) {
+     charList.push_front( i + 65 );
+   }
+   // Display the list
+   list&lt;char&gt;::iterator theIterator;
+   for( theIterator = charList.begin(); theIterator != charList.end(); theIterator++ ) {
+     cout &lt;&lt; *theIterator;
+   }            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppset/end.html">end</A><BR><A 
+      href="../cppset/rbegin.html">rbegin</A><BR><A 
+      href="../cppset/rend.html">rend</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>clear </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  void clear();
+</PRE>
+<P>The function clear() deletes all of the elements in the set. clear() runs in 
+<A href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Lists) <A 
+href="../cpplist/erase.html">erase</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>Container constructors &amp; destructors </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  container();
+  container( const container&amp; c );
+  ~container();
+</PRE>
+<P>Every set has a default constructor, copy constructor, and destructor.</P>
+<P>The default constructor takes no arguments, creates a new instance of that 
+set, and runs in <A href="../complexity.html">constant 
+time</A>. The default copy constructor runs in <A 
+href="../complexity.html">linear time</A> and can be 
+used to create a new set that is a copy of the given set <EM>c</EM>.</P>
+<P>The default destructor is called when the set should be destroyed.</P>
+<P>For example, the following code creates a pointer to a vector of integers and 
+then uses the default set constructor to allocate a memory for a new vector:</P><PRE class=example-code> vector&lt;int&gt;* v;
+ v = new vector&lt;int&gt;();           
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Strings) <A 
+href="../cppstring/resize.html">resize</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>Container operators </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  container operator=(const container&amp; c2);
+  bool operator==(const container&amp; c1, const container&amp; c2);
+  bool operator!=(const container&amp; c1, const container&amp; c2);
+  bool operator&lt;(const container&amp; c1, const container&amp; c2);
+  bool operator&gt;(const container&amp; c1, const container&amp; c2);
+  bool operator&lt;=(const container&amp; c1, const container&amp; c2);
+  bool operator&gt;=(const container&amp; c1, const container&amp; c2);
+</PRE>
+<P>All of the C++ containers can be compared and assigned with the standard 
+comparison operators: ==, !=, &lt;=, &gt;=, &lt;, &gt;, and =. Performing a 
+comparison or assigning one set to another takes <A 
+href="../complexity.html">linear time</A>.</P>
+<P>Two sets are equal if:</P>
+<OL>
+  <LI>Their size is the same, and 
+  <LI>Each member in location i in one set is equal to the the member in 
+  location i in the other set. </LI></OL>
+<P>Comparisons among sets are done lexicographically.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Strings) <A 
+href="../cppstring/string_operators.html">String 
+operators</A><BR>(C++ Strings) <A 
+href="../cppstring/at.html">at</A><BR>(C++ Lists) <A 
+href="../cpplist/merge.html">merge</A><BR>(C++ Lists) 
+<A href="../cpplist/unique.html">unique</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>count </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  <STRONG>size_type</STRONG> count( const <A href="../containers.html">key_type</A>&amp; key );
+</PRE>
+<P>The function count() returns the number of occurrences of <EM>key</EM> in the 
+set.</P>
+<P>count() should run in <A 
+href="../complexity.html">logarithmic time</A>.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>empty </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  bool empty() const;
+</PRE>
+<P>The empty() function returns true if the set has no elements, false 
+otherwise.</P>
+<P>For example, the following code uses empty() as the stopping condition on a 
+(C/C++ Keywords) <A 
+href="../keywords/while.html">while</A> loop to clear a 
+set and display its contents in reverse order:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 5; i++ ) {
+   v.push_back(i);
+ }
+ while( !v.empty() ) {
+   cout &lt;&lt; v.back() &lt;&lt; endl;
+   v.pop_back();
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>end </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  iterator end();
+  const_iterator end() const;
+</PRE>
+<P>The end() function returns an iterator just past the end of the set.</P>
+<P>Note that before you can access the last element of the set using an iterator 
+that you get from a call to end(), you'll have to decrement the iterator 
+first.</P>
+<P>For example, the following code uses <A 
+href="../cppset/begin.html">begin</A>() and end() to 
+iterate through all of the members of a vector:</P><PRE class=example-code> vector&lt;int&gt; v1( 5, 789 );
+ vector&lt;int&gt;::iterator it;
+ for( it = v1.begin(); it != v1.end(); it++ ) {
+   cout &lt;&lt; *it &lt;&lt; endl;
+ }              
+</PRE>
+<P>The iterator is initialized with a call to <A 
+href="../cppset/begin.html">begin</A>(). After the body 
+of the loop has been executed, the iterator is incremented and tested to see if 
+it is equal to the result of calling end(). Since end() returns an iterator 
+pointing to an element just after the last element of the vector, the loop will 
+only stop once all of the elements of the vector have been displayed.</P>
+<P>end() runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/begin.html">begin</A><BR><A 
+href="../cppset/rbegin.html">rbegin</A><BR><A 
+href="../cppset/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>equal_range </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  pair&lt;iterator, iterator&gt; equal_range( const <A href="../containers.html">key_type</A>&amp; key );
+</PRE>
+<P>The function equal_range() returns two iterators - one to the first element 
+that contains <EM>key</EM>, another to a point just after the last element that 
+contains <EM>key</EM>.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>erase </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  void erase( iterator pos );
+  void erase( iterator start, iterator end );
+  <STRONG>size_type</STRONG> erase( const <A href="../containers.html">key_type</A>&amp; key );
+</PRE>
+<P>The erase function() either erases the element at <EM>pos</EM>, erases the 
+elements between <EM>start</EM> and <EM>end</EM>, or erases all elements that 
+have the value of <EM>key</EM>.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  iterator find( const <A href="../containers.html">key_type</A>&amp; key );
+</PRE>
+<P>The find() function returns an iterator to <EM>key</EM>, or an iterator to 
+the end of the set if <EM>key</EM> is not found.</P>
+<P>find() runs in <A 
+href="../complexity.html">logarithmic time</A>.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>insert </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  iterator insert( iterator i, const <A href="../containers.html">TYPE</A>&amp; val );
+  void insert( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+  pair&lt;iterator,bool&gt; insert( const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The function insert() either:</P>
+<UL>
+  <LI>inserts <EM>val</EM> after the element at <EM>pos</EM> (where <EM>pos</EM> 
+  is really just a suggestion as to where <EM>val</EM> should go, since sets and 
+  maps are ordered), and returns an iterator to that element. 
+  <LI>inserts a range of elements from <EM>start</EM> to <EM>end</EM>. 
+  <LI>inserts <EM>val</EM>, but only if <EM>val</EM> doesn't already exist. The 
+  return value is an iterator to the element inserted, and a boolean describing 
+  whether an insertion took place. </LI></UL>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Maps) <A 
+href="../cppmap/map_operators.html">Map operators</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>key_comp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  key_compare key_comp() const;
+</PRE>
+<P>The function key_comp() returns the function that compares keys.</P>
+<P>key_comp() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/value_comp.html">value_comp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>lower_bound </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  iterator lower_bound( const <A href="../containers.html">key_type</A>&amp; key );
+</PRE>
+<P>The lower_bound() function returns an iterator to the first element which has 
+a value greater than or equal to key.</P>
+<P>lower_bound() runs in <A 
+href="../complexity.html">logarithmic time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/upper_bound.html">upper_bound</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>max_size </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  <STRONG>size_type</STRONG> max_size() const;
+</PRE>
+<P>The max_size() function returns the maximum number of elements that the set 
+can hold. The max_size() function should not be confused with the <A 
+href="../cppset/size.html">size</A>() or (C++ Strings) 
+<A href="../cppstring/capacity.html">capacity</A>() 
+functions, which return the number of elements currently in the set and the the 
+number of elements that the set will be able to hold before more memory will 
+have to be allocated, respectively.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rbegin </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  <A href="../iterators.html">reverse_iterator</A> rbegin();
+  const_<A href="../iterators.html">reverse_iterator</A> rbegin() const;
+</PRE>
+<P>The rbegin() function returns a <A 
+href="../iterators.html">reverse_iterator</A> to the 
+end of the current set.</P>
+<P>rbegin() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/begin.html">begin</A><BR><A 
+href="../cppset/end.html">end</A><BR><A 
+href="../cppset/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rend </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  <A href="../iterators.html">reverse_iterator</A> rend();
+  const_<A href="../iterators.html">reverse_iterator</A> rend() const;
+</PRE>
+<P>The function rend() returns a <A 
+href="../iterators.html">reverse_iterator</A> to the 
+beginning of the current set.</P>
+<P>rend() runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/begin.html">begin</A><BR><A 
+href="../cppset/end.html">end</A><BR><A 
+href="../cppset/rbegin.html">rbegin</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>size </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  <STRONG>size_type</STRONG> size() const;
+</PRE>
+<P>The size() function returns the number of elements in the current set.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Strings) <A 
+href="../cppstring/capacity.html">capacity</A><BR><A 
+href="../cppset/empty.html">empty</A><BR>(C++ Strings) 
+<A href="../cppstring/length.html">length</A><BR><A 
+href="../cppset/max_size.html">max_size</A><BR>(C++ 
+Strings) <A href="../cppstring/resize.html">resize</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>swap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  void swap( const container&amp; from );
+</PRE>
+<P>The swap() function exchanges the elements of the current set with those of 
+<EM>from</EM>. This function operates in <A 
+href="../complexity.html">constant time</A>.</P>
+<P>For example, the following code uses the swap() function to exchange the 
+values of two strings:</P><PRE class=example-code>   string first( "This comes first" );
+   string second( "And this is second" );
+   first.swap( second );
+   cout &lt;&lt; first &lt;&lt; endl;
+   cout &lt;&lt; second &lt;&lt; endl;          
+</PRE>
+<P>The above code displays:</P><PRE class=example-code>   And this is second
+   This comes first             
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Lists) <A 
+href="../cpplist/splice.html">splice</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>upper_bound </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  iterator upper_bound( const <A href="../containers.html">key_type</A>&amp; key );
+</PRE>
+<P>The function upper_bound() returns an iterator to the first element in the 
+set with a key greater than <EM>key</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/lower_bound.html">lower_bound</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>value_comp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  value_compare value_comp() const;
+</PRE>
+<P>The value_comp() function returns the function that compares values.</P>
+<P>value_comp() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppset/key_comp.html">key_comp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

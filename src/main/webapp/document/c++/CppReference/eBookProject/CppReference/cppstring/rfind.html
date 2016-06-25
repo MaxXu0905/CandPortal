@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.cppreference.com/cppstring/rfind.html -->
+<HTML><HEAD><TITLE>rfind</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="rfind.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A href="../cppstring/rfind.html">rfind</A> 
+      </DIV>
+      <DIV class=name-format>rfind </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> rfind( const string&amp; str, <STRONG>size_type</STRONG> index );
+  <STRONG>size_type</STRONG> rfind( const char* str, <STRONG>size_type</STRONG> index );
+  <STRONG>size_type</STRONG> rfind( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num );
+  <STRONG>size_type</STRONG> rfind( char ch, <STRONG>size_type</STRONG> index );
+</PRE>
+      <P>The rfind() function either:</P>
+      <UL>
+        <LI>returns the location of the first occurrence of <EM>str</EM> in the 
+        current string, doing a reverse search from <EM>index</EM>, string::npos 
+        if nothing is found, 
+        <LI>returns the location of the first occurrence of <EM>str</EM> in the 
+        current string, doing a reverse search from <EM>index</EM>, searching at 
+        most <EM>num</EM> characters, string::npos if nothing is found, 
+        <LI>or returns the location of the first occurrence of <EM>ch</EM> in 
+        the current string, doing a reverse search from <EM>index</EM>, 
+        string::npos if nothing is found. </LI></UL>
+      <P>For example, in the following code, the first call to rfind() returns 
+      string::npos, because the target word is not within the first 8 characters 
+      of the string. However, the second call returns 9, because the target word 
+      is within 20 characters of the beginning of the string.</P><PRE class=example-code>   int loc;
+   string s = "My cat's breath smells like cat food.";
+   loc = s.rfind( "breath", 8 );
+   cout &lt;&lt; "The word breath is at index " &lt;&lt; loc &lt;&lt; endl;
+   loc = s.rfind( "breath", 20 );
+   cout &lt;&lt; "The word breath is at index " &lt;&lt; loc &lt;&lt; endl;           
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppstring/find.html">find</A><BR><A 
+      href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+      href="../cppstring/find_first_of.html">find_first_of</A><BR><A 
+      href="../cppstring/find_last_not_of.html">find_last_not_of</A><BR><A 
+      href="../cppstring/find_last_of.html">find_last_of</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

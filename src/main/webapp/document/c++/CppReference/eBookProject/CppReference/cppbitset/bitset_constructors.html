@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.cppreference.com/cppbitset/bitset_constructors.html -->
+<HTML><HEAD><TITLE>Bitset Constructors</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="bitset_constructors.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppbitset/index.html">C++ Bitsets</A> 
+      &gt; <A 
+      href="../cppbitset/bitset_constructors.html">Bitset 
+      Constructors</A> </DIV>
+      <DIV class=name-format>Bitset Constructors </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;bitset&gt;
+  bitset();
+  bitset( unsigned long val );
+</PRE>
+      <P>Bitsets can either be constructed with no arguments or with an unsigned 
+      long number val that will be converted into binary and inserted into the 
+      bitset. When creating bitsets, the number given in the place of the 
+      template determines how long the bitset is.</P>
+      <P>For example, the following code creates two bitsets and displays 
+      them:</P><PRE class=example-code> // create a bitset that is 8 bits long
+ bitset&lt;8&gt; bs;
+ // display that bitset
+ for( int i = (int) bs.size()-1; i &gt;= 0; i-- ) {
+   cout &lt;&lt; bs[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;
+ // create a bitset out of a number
+ bitset&lt;8&gt; bs2( (long) 131 );
+ // display that bitset, too
+ for( int i = (int) bs2.size()-1; i &gt;= 0; i-- ) {
+   cout &lt;&lt; bs2[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

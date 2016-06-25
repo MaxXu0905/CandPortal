@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.cppreference.com/cppalgorithm/adjacent_difference.html -->
+<HTML><HEAD><TITLE>adjacent_difference</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="adjacent_difference.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A> 
+      </DIV>
+      <DIV class=name-format>adjacent_difference </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  iterator adjacent_difference( iterator start, iterator end, iterator result );
+  iterator adjacent_difference( iterator start, iterator end, iterator result, BinaryFunction f );
+</PRE>
+      <P>The adjacent_difference() function calculates the differences between 
+      adjacent elements in the range [<EM>start</EM>,<EM>end</EM>) and stores 
+      the result starting at <EM>result</EM>.</P>
+      <P>If a binary function <EM>f</EM> is given, it is used instead of the - 
+      operator to compute the differences.</P>
+      <P>adjacent_difference() runs in <A 
+      href="../complexity.html">linear time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/accumulate.html">accumulate</A><BR><A 
+      href="../cppalgorithm/count.html">count</A><BR><A 
+      href="../cppalgorithm/inner_product.html">inner_product</A><BR><A 
+      href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

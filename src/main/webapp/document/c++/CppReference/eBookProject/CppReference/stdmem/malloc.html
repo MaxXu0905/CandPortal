@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/stdmem/malloc.html -->
+<HTML><HEAD><TITLE>malloc</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="malloc.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C Memory</A> 
+      &gt; <A href="malloc.html">malloc</A> 
+      </DIV>
+      <DIV class=name-format>malloc </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void *malloc( size_t size );
+</PRE>
+      <P>The function malloc() returns a pointer to a chunk of memory of size 
+      <EM>size</EM>, or <STRONG>NULL</STRONG> if there is an error. The memory 
+      pointed to will be on the heap, not the stack, so make sure to free it 
+      when you are done with it. An example:</P><PRE class=example-code>   typedef struct data_type {
+     int age;
+     char name[20];
+   } data;              
+
+   data *bob;
+   bob = (data*) malloc( sizeof(data) );
+   if( bob != <STRONG>NULL</STRONG> ) {
+     bob-&gt;age = 22;
+     strcpy( bob-&gt;name, "Robert" );
+     printf( "%s is %d years old\n", bob-&gt;name, bob-&gt;age );
+   }
+   free( bob );         
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="calloc.html">calloc</A><BR>(C/C++ 
+      Keywords) <A 
+      href="../keywords/delete.html">delete</A><BR><A 
+      href="free.html">free</A><BR>(C/C++ 
+      Keywords) <A 
+      href="../keywords/new.html">new</A><BR><A 
+      href="realloc.html">realloc</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

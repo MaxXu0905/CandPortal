@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.cppreference.com/cppstring/index.html -->
+<HTML><HEAD><TITLE>C++ Strings</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="index.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      </DIV>
+      <DIV class=name-format>C++ Strings </DIV>
+      <P><A href="../cppstring/all.html">Display all 
+      entries</A> for C++ Strings on one page, or view entries individually:</P>
+      <TABLE class=category-table>
+        <TBODY>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/string_constructors.html">String 
+            constructors</A></TD>
+          <TD class=category-table-td>create strings from arrays of characters 
+            and other strings</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/string_operators.html">String 
+            operators</A></TD>
+          <TD class=category-table-td>concatenate strings, assign strings, use 
+            strings for I/O, compare strings</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/append.html">append</A></TD>
+          <TD class=category-table-td>append characters and strings onto a 
+            string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/assign1.html">assign</A></TD>
+          <TD class=category-table-td>give a string values from strings of 
+            characters and other C++ strings</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/at.html">at</A></TD>
+          <TD class=category-table-td>returns an element at a specific 
+          location</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/begin.html">begin</A></TD>
+          <TD class=category-table-td>returns an iterator to the beginning of 
+            the string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/c_str.html">c_str</A></TD>
+          <TD class=category-table-td>returns a standard C character array 
+            version of the string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/capacity.html">capacity</A></TD>
+          <TD class=category-table-td>returns the number of elements that the 
+            string can hold</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/clear.html">clear</A></TD>
+          <TD class=category-table-td>removes all elements from the 
+        string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/compare.html">compare</A></TD>
+          <TD class=category-table-td>compares two strings</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/copy.html">copy</A></TD>
+          <TD class=category-table-td>copies characters from a string into an 
+            array</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/data.html">data</A></TD>
+          <TD class=category-table-td>returns a pointer to the first character 
+            of a string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/empty.html">empty</A></TD>
+          <TD class=category-table-td>true if the string has no elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/end.html">end</A></TD>
+          <TD class=category-table-td>returns an iterator just past the last 
+            element of a string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/erase.html">erase</A></TD>
+          <TD class=category-table-td>removes elements from a string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/find.html">find</A></TD>
+          <TD class=category-table-td>find characters in the string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/find_first_not_of.html">find_first_not_of</A></TD>
+          <TD class=category-table-td>find first absence of characters</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/find_first_of.html">find_first_of</A></TD>
+          <TD class=category-table-td>find first occurrence of 
+characters</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/find_last_not_of.html">find_last_not_of</A></TD>
+          <TD class=category-table-td>find last absence of characters</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/find_last_of.html">find_last_of</A></TD>
+          <TD class=category-table-td>find last occurrence of characters</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/getline.html">getline</A></TD>
+          <TD class=category-table-td>read data from an I/O stream into a 
+            string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/insert.html">insert</A></TD>
+          <TD class=category-table-td>insert characters into a string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/length.html">length</A></TD>
+          <TD class=category-table-td>returns the length of the string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/max_size.html">max_size</A></TD>
+          <TD class=category-table-td>returns the maximum number of elements 
+            that the string can hold</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/push_back.html">push_back</A></TD>
+          <TD class=category-table-td>add an element to the end of the 
+          string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/rbegin.html">rbegin</A></TD>
+          <TD class=category-table-td>returns a <A 
+            href="../iterators.html">reverse_iterator</A> 
+            to the end of the string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/rend.html">rend</A></TD>
+          <TD class=category-table-td>returns a <A 
+            href="../iterators.html">reverse_iterator</A> 
+            to the beginning of the string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/replace.html">replace</A></TD>
+          <TD class=category-table-td>replace characters in the string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/reserve.html">reserve</A></TD>
+          <TD class=category-table-td>sets the minimum capacity of the 
+          string</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/resize.html">resize</A></TD>
+          <TD class=category-table-td>change the size of the string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/rfind.html">rfind</A></TD>
+          <TD class=category-table-td>find the last occurrence of a 
+          substring</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/size.html">size</A></TD>
+          <TD class=category-table-td>returns the number of items in the 
+          string</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppstring/substr.html">substr</A></TD>
+          <TD class=category-table-td>returns a certain substring</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppstring/swap.html">swap</A></TD>
+          <TD class=category-table-td>swap the contents of this string with 
+            another</TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

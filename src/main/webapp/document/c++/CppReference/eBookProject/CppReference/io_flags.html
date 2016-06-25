@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0041)http://www.cppreference.com/io_flags.html -->
+<HTML><HEAD><TITLE>I/O Flags</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="io_flags.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="index.html">cppreference.com</A> &gt; 
+      I/O Flags </DIV>
+      <H1>C++ I/O Flags</H1><A name=format_flags>
+      <H2>Format flags</H2></A>
+      <P>C++ defines some format flags for standard input and output, which can 
+      be manipulated with the <A 
+      href="cppio/flags.html">flags()</A>, <A 
+      href="cppio/setf.html">setf()</A>, and <A 
+      href="cppio/unsetf.html">unsetf()</A> 
+      functions. For example,</P><PRE> cout.setf(ios::left); 
+</PRE>
+      <P>turns on left justification for all output directed to 
+      <STRONG>cout</STRONG>.</P>
+      <TABLE class=misc-table>
+        <TBODY>
+        <TR class=misc-table-tr-1>
+          <TH>Flag</TH>
+          <TH>Meaning</TH></TR>
+        <TR class=misc-table-tr-2>
+          <TD>boolalpha</TD>
+          <TD>Boolean values can be input/output using the words "true" and 
+            "false".</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>dec</TD>
+          <TD>Numeric values are displayed in decimal.</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>fixed</TD>
+          <TD>Display floating point values using normal notation (as opposed 
+            to scientific).</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>hex</TD>
+          <TD>Numeric values are displayed in hexidecimal.</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>internal</TD>
+          <TD>If a numeric value is padded to fill a field, spaces are 
+            inserted between the sign and base character.</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>left</TD>
+          <TD>Output is left justified.</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>oct</TD>
+          <TD>Numeric values are displayed in octal.</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>right</TD>
+          <TD>Output is right justified.</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>scientific</TD>
+          <TD>Display floating point values using scientific notation.</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>showbase</TD>
+          <TD>Display the base of all numeric values.</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>showpoint</TD>
+          <TD>Display a decimal and extra zeros, even when not needed.</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>showpos</TD>
+          <TD>Display a leading plus sign before positive numeric 
+values.</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>skipws</TD>
+          <TD>Discard whitespace characters (spaces, tabs, newlines) when 
+            reading from a stream.</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>unitbuf</TD>
+          <TD>Flush the buffer after each insertion.</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>uppercase</TD>
+          <TD>Display the "e" of scientific notation and the "x" of 
+            hexidecimal notation as capital letters.</TD></TR></TBODY></TABLE><A 
+      name=manipulators>
+      <H2>Manipulators</H2></A>
+      <P>You can also manipulate flags indirectly, using the following 
+      <I>manipulators</I>. Most programmers are familiar with the 
+      <STRONG>endl</STRONG> manipulator, which might give you an idea of how 
+      manipulators are used. For example, to set the <I>dec</I> flag, you might 
+      use the following command:</P><PRE>  cout &lt;&lt; dec;
+</PRE>
+      <TABLE class=misc-table>
+        <TBODY>
+        <TR class=misc-table-tr-1>
+          <TH colSpan=4>Manipulators defined in &lt;iostream&gt;</TH></TR>
+        <TR class=misc-table-tr-1>
+          <TH>Manipulator</TH>
+          <TH>Description</TH>
+          <TH>Input</TH>
+          <TH>Output</TH></TR>
+        <TR class=misc-table-tr-2>
+          <TD>boolalpha</TD>
+          <TD>Turns on the boolalpha flag</TD>
+          <TD>X</TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>dec</TD>
+          <TD>Turns on the dec flag</TD>
+          <TD>X</TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>endl</TD>
+          <TD>Output a newline character, flush the stream</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>ends</TD>
+          <TD>Output a null character</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>fixed</TD>
+          <TD>Turns on the fixed flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>flush</TD>
+          <TD>Flushes the stream</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>hex</TD>
+          <TD>Turns on the hex flag</TD>
+          <TD>X</TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>internal</TD>
+          <TD>Turns on the internal flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>left</TD>
+          <TD>Turns on the left flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>noboolalpha</TD>
+          <TD>Turns off the boolalpha flag</TD>
+          <TD>X</TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>noshowbase</TD>
+          <TD>Turns off the showbase flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>noshowpoint</TD>
+          <TD>Turns off the showpoint flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>noshowpos</TD>
+          <TD>Turns off the showpos flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>noskipws</TD>
+          <TD>Turns off the skipws flag</TD>
+          <TD>X</TD>
+          <TD></TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>nounitbuf</TD>
+          <TD>Turns off the unitbuf flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>nouppercase</TD>
+          <TD>Turns off the uppercase flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>oct</TD>
+          <TD>Turns on the oct flag</TD>
+          <TD>X</TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>right</TD>
+          <TD>Turns on the right flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>scientific</TD>
+          <TD>Turns on the scientific flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>showbase</TD>
+          <TD>Turns on the showbase flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>showpoint</TD>
+          <TD>Turns on the showpoint flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>showpos</TD>
+          <TD>Turns on the showpos flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>skipws</TD>
+          <TD>Turns on the skipws flag</TD>
+          <TD>X</TD>
+          <TD></TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>unitbuf</TD>
+          <TD>Turns on the unitbuf flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>uppercase</TD>
+          <TD>Turns on the uppercase flag</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>ws</TD>
+          <TD>Skip any leading whitespace</TD>
+          <TD>X</TD>
+          <TD></TD></TR></TBODY></TABLE>
+      <TABLE class=misc-table>
+        <TBODY>
+        <TR class=misc-table-tr-1>
+          <TH colSpan=4>Manipulators defined in &lt;iomanip&gt;</TH></TR>
+        <TR class=misc-table-tr-1>
+          <TH>Manipulator</TH>
+          <TH>Description</TH>
+          <TH>Input</TH>
+          <TH>Output</TH></TR>
+        <TR class=misc-table-tr-2>
+          <TD>resetiosflags( long f )</TD>
+          <TD>Turn off the flags specified by <I>f</I></TD>
+          <TD>X</TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>setbase( int base )</TD>
+          <TD>Sets the number base to <I>base</I></TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>setfill( int ch )</TD>
+          <TD>Sets the fill character to <I>ch</I></TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>setiosflags( long f )</TD>
+          <TD>Turn on the flags specified by <I>f</I></TD>
+          <TD>X</TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>setprecision( int p )</TD>
+          <TD>Sets the number of digits of precision</TD>
+          <TD></TD>
+          <TD>X</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>setw( int w )</TD>
+          <TD>Sets the field width to <I>w</I></TD>
+          <TD></TD>
+          <TD>X</TD></TR></TBODY></TABLE><A name=state_flags>
+      <H2>State flags</H2></A>
+      <P>The I/O stream state flags tell you the current state of an I/O stream. 
+      The flags are:</P>
+      <TABLE class=misc-table>
+        <TBODY>
+        <TR class=misc-table-tr-1>
+          <TH>Flag</TH>
+          <TH>Meaning</TH></TR>
+        <TR class=misc-table-tr-2>
+          <TD>badbit</TD>
+          <TD>a fatal error has occurred</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>eofbit</TD>
+          <TD>EOF has been found</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>failbit</TD>
+          <TD>a nonfatal error has occurred</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>goodbit</TD>
+          <TD>no errors have occurred</TD></TR></TBODY></TABLE><A name=mode_flags>
+      <H2>Mode flags</H2></A>
+      <P>The I/O stream mode flags allow you to access files in different ways. 
+      The flags are:</P>
+      <TABLE class=misc-table>
+        <TBODY>
+        <TR class=misc-table-tr-1>
+          <TH>Mode</TH>
+          <TH>Meaning</TH></TR>
+        <TR class=misc-table-tr-2>
+          <TD>ios::app</TD>
+          <TD>append output</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>ios::ate</TD>
+          <TD>seek to EOF when opened</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>ios::binary</TD>
+          <TD>open the file in binary mode</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>ios::in</TD>
+          <TD>open the file for reading</TD></TR>
+        <TR class=misc-table-tr-2>
+          <TD>ios::out</TD>
+          <TD>open the file for writing</TD></TR>
+        <TR class=misc-table-tr-1>
+          <TD>ios::trunc</TD>
+          <TD>overwrite the existing 
+  file</TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

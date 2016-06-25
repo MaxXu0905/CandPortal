@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.cppreference.com/cppalgorithm/equal.html -->
+<HTML><HEAD><TITLE>equal</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="equal.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/equal.html">equal</A> 
+</DIV>
+      <DIV class=name-format>equal </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool equal( iterator start1, iterator end1, iterator start2 );
+  bool equal( iterator start1, iterator end1, iterator start2, BinPred p );
+</PRE>
+      <P>The equal() function returns true if the elements in two ranges are the 
+      same. The first range of elements are those between <EM>start1</EM> and 
+      <EM>end1</EM>. The second range of elements has the same size as the first 
+      range but starts at <EM>start2</EM>.</P>
+      <P>If the binary predicate <EM>p</EM> is specified, then it is used 
+      instead of == to compare each pair of elements.</P>
+      <P>For example, the following code uses equal() to compare two vectors of 
+      integers:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back( i );
+ }              
+
+ vector&lt;int&gt; v2;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v2.push_back( i );
+ }              
+
+ if( equal( v1.begin(), v1.end(), v2.begin() ) ) {
+   cout &lt;&lt; "v1 and v2 are equal" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "v1 and v2 are NOT equal" &lt;&lt; endl;
+ }              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+      href="../cppalgorithm/lexicographical_compare.html">lexicographical_compare</A><BR><A 
+      href="../cppalgorithm/mismatch.html">mismatch</A><BR><A 
+      href="../cppalgorithm/search.html">search</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

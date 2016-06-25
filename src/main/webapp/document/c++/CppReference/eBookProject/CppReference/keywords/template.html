@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/keywords/template.html -->
+<HTML><HEAD><TITLE>template</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="template.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../keywords/index.html">C/C++ Keywords</A> 
+      &gt; <A 
+      href="../keywords/template.html">template</A> 
+      </DIV>
+      <DIV class=name-format>template </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  template &lt;class data-type&gt; return-type name( parameter-list ) {
+  statement-list;
+  }
+</PRE>
+      <P>Templates are used to create generic functions and can operate on data 
+      without knowing the nature of that data. They accomplish this by using a 
+      placeholder data-type for which many other <A 
+      href="../data_types.html">data types</A> can be 
+      substituted.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the following code uses a template to define a generic 
+      swap function that can swap two variables of any type:</P><PRE class=example-code>   template&lt;class X&gt; void genericSwap( X &amp;a, X &amp;b ) {
+     X tmp;             
+
+     tmp = a;
+     a = b;
+     b = tmp;
+   }
+   int main(void) {
+     ...
+     int num1 = 5;
+     int num2 = 21;
+     cout &lt;&lt; "Before, num1 is " &lt;&lt; num1 &lt;&lt; " and num2 is " &lt;&lt; num2 &lt;&lt; endl;
+     genericSwap( num1, num2 );
+     cout &lt;&lt; "After, num1 is " &lt;&lt; num1 &lt;&lt; " and num2 is " &lt;&lt; num2 &lt;&lt; endl;
+     char c1 = 'a';
+     char c2 = 'z';
+     cout &lt;&lt; "Before, c1 is " &lt;&lt; c1 &lt;&lt; " and c2 is " &lt;&lt; c2 &lt;&lt; endl;
+     genericSwap( c1, c2 );
+     cout &lt;&lt; "After, c1 is " &lt;&lt; c1 &lt;&lt; " and c2 is " &lt;&lt; c2 &lt;&lt; endl;
+     ...
+     return( 0 );
+   }            
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../keywords/typename.html">typename</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

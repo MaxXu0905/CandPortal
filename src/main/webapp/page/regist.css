@@ -1,0 +1,134 @@
+@CHARSET "UTF-8";
+/*
+*完善信息：regist.jsp
+*zengjie
+*14/2/24
+*/
+
+/*主容器*/
+#regist-wrap{
+min-width: 960px;
+min-height:400px;
+}
+select{
+	margin-right:10px;
+	height: 50px;
+}
+label{
+	padding-top: 7px;
+margin-top: 0;
+margin-bottom: 0;
+font-size:16px;
+}
+input,label{
+/* 	min-height:50px; */
+}
+.form-group{
+
+}
+/*步骤提示*/
+.stepspan{
+	background-color: #53bf6b !important;
+	padding-left:7px !important;
+	padding-right:7px !important;
+	width:40px;
+	height:40px;
+	color:#FFF;
+	vertical-align:middle;
+	font-size:30px;
+}
+.stepspan2{
+	background-color: #d1d1d1 !important;
+	padding-left:7px !important;
+	padding-right:7px !important;
+	width:40px;
+	height:40px;
+	color:#FFF;
+	vertical-align:middle;
+	font-size:30px;
+}
+
+#banner{
+	padding-left:100px;
+}
+#banner >li{
+	float:left;
+	margin-left:20px;
+}
+.panel > h3{
+	padding-left:130px;
+}
+.query-menu {
+top: 100%;
+z-index: 1000;
+display: block;
+padding: 5px 0;
+margin: 2px 0 0;
+font-size: 14px;
+list-style: none;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0,0,0,0.15);
+border-radius: 4px;
+-webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+background-clip: padding-box;
+}
+.query-menu >li:hover,.query-menu >li:active{
+	background-color: #f5f5f5;
+}
+.query-menu-hover{
+	background-color: #f5f5f5;
+}
+.goon{font-size:30px;padding:50px 30px;text-align:center;}
+.goon p{margin-top:50px;}
+
+/*扫描二维码*/
+#qrcode-pic{
+	margin-left: 47px;
+	margin-top: 140px;
+}
+#closeqrCode{
+	cursor:pointer;
+}
+
+.qrcodeWrap{
+	position:absolute;
+	width: 700px;
+	z-index: 10000;
+	top: 100px;
+	left: 50%;
+	margin-left: -250px;
+}
+.slogan {
+margin-left: 220px;
+margin-top: -30px;
+font-size: 24px;
+font-weight: 600;
+color: #38afd4;
+}
+.code_top {
+background-image: url(../core/images/codetop.png);
+height: 65px;
+width: 700px;
+background-repeat: no-repeat;
+position: absolute;
+left: -63px;
+top: 15px;
+color: #FFFFFF;
+line-height: 40px;
+padding-left: 80px;
+}
+.codetext {
+width: 560px;
+height: 400px;
+padding: 20px;
+font-size: 14px;
+color: #34495e;
+border-radius: 6px;
+background-color: #fff;
+background-image: url(../core/images/codebg.png);
+background-repeat: no-repeat;
+background-position: 45px 75px;
+}
+/*end 扫描二维码*/

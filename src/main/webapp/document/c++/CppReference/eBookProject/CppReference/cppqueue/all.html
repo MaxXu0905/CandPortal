@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.cppreference.com/cppqueue/all.html -->
+<HTML><HEAD><TITLE>C++ Queues</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppqueue/index.html">C++ Queues</A> 
+      </DIV>
+      <DIV class=name-format>back </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  <A href="../containers.html">TYPE</A>&amp; back();
+  const <A href="../containers.html">TYPE</A>&amp; back() const;
+</PRE>
+      <P>The back() function returns a reference to the last element in the 
+      queue.</P>
+      <P>For example:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 5; i++ ) {
+   v.push_back(i);
+ }
+ cout &lt;&lt; "The first element is " &lt;&lt; v.front()
+      &lt;&lt; " and the last element is " &lt;&lt; v.back() &lt;&lt; endl;           
+</PRE>
+      <P>This code produces the following output:</P><PRE class=example-code> The first element is 0 and the last element is 4               
+</PRE>
+      <P>The back() function runs in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppqueue/front.html">front</A><BR>(C++ 
+      Lists) <A 
+      href="../cpplist/pop_back.html">pop_back</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>empty </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  bool empty() const;
+</PRE>
+<P>The empty() function returns true if the queue has no elements, false 
+otherwise.</P>
+<P>For example, the following code uses empty() as the stopping condition on a 
+(C/C++ Keywords) <A 
+href="../keywords/while.html">while</A> loop to clear a 
+queue and display its contents in reverse order:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 5; i++ ) {
+   v.push_back(i);
+ }
+ while( !v.empty() ) {
+   cout &lt;&lt; v.back() &lt;&lt; endl;
+   v.pop_back();
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppqueue/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>front </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  <A href="../containers.html">TYPE</A>&amp; front();
+  const <A href="../containers.html">TYPE</A>&amp; front() const;
+</PRE>
+<P>The front() function returns a reference to the first element of the queue, 
+and runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppqueue/back.html">back</A><BR>(C++ Lists) <A 
+href="../cpplist/pop_front.html">pop_front</A><BR>(C++ 
+Lists) <A 
+href="../cpplist/push_front.html">push_front</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>pop </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  void pop();
+</PRE>
+<P>The function pop() removes the top element of the queue and discards it.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppqueue/push.html">push</A><BR>(C++ Priority 
+Queues) <A href="../cpppriority_queue/top.html">top</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>push </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  void push( const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The function push() adds <EM>val</EM> to the end of the current queue.</P>
+<P>For example, the following code uses the push() function to add ten integers 
+to the end of a queue:</P><PRE class=example-code>   queue&lt;int&gt; q;
+   for( int i=0; i &lt; 10; i++ )
+     q.push(i);         
+</PRE>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>Queue constructor </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  queue();
+  queue( const Container&amp; con );
+</PRE>
+<P>Queues have an empty constructor and a constructor that can be used to 
+specify a container type.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>size </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  <STRONG>size_type</STRONG> size() const;
+</PRE>
+<P>The size() function returns the number of elements in the current queue.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Strings) <A 
+href="../cppstring/capacity.html">capacity</A><BR><A 
+href="../cppqueue/empty.html">empty</A><BR>(C++ 
+Strings) <A 
+href="../cppstring/length.html">length</A><BR>(C++ 
+Multimaps) <A 
+href="../cppmultimap/max_size.html">max_size</A><BR>(C++ 
+Strings) <A href="../cppstring/resize.html">resize</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

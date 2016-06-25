@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.Map&lt;K,V&gt;">
+    <methods>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[int size()]]></signature>
+            <description><![CDATA[Returns the number of key-value mappings in this map.  If the
+ map contains more than Integer.MAX_VALUE elements, returns
+ Integer.MAX_VALUE.<dl><dt><span class="strong">Returns:</span></dt><dd>the number of key-value mappings in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <signature><![CDATA[boolean isEmpty()]]></signature>
+            <description><![CDATA[Returns true if this map contains no key-value mappings.<dl><dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this map contains no key-value mappings</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>containsKey</name>
+            <signature><![CDATA[boolean containsKey(Object key)]]></signature>
+            <description><![CDATA[Returns true if this map contains a mapping for the specified
+ key.  More formally, returns true if and only if
+ this map contains a mapping for a key k such that
+ (key==null ? k==null : key.equals(k)).  (There can be
+ at most one such mapping.)<dl><dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key whose presence in this map is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this map contains a mapping for the specified
+         key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the key is of an inappropriate type for
+         this map
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null and this map
+         does not permit null keys
+ (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>containsValue</name>
+            <signature><![CDATA[boolean containsValue(Object value)]]></signature>
+            <description><![CDATA[Returns true if this map maps one or more keys to the
+ specified value.  More formally, returns true if and only if
+ this map contains at least one mapping to a value v such that
+ (value==null ? v==null : value.equals(v)).  This operation
+ will probably require time linear in the map size for most
+ implementations of the Map interface.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - value whose presence in this map is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this map maps one or more keys to the
+         specified value</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the value is of an inappropriate type for
+         this map
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified value is null and this
+         map does not permit null values
+ (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>get</name>
+            <signature><![CDATA[V get(Object key)]]></signature>
+            <description><![CDATA[Returns the value to which the specified key is mapped,
+ or null if this map contains no mapping for the key.
+
+ More formally, if this map contains a mapping from a key
+ k to a value v such that (key==null ? k==null :
+ key.equals(k)), then this method returns v; otherwise
+ it returns null.  (There can be at most one such mapping.)
+
+ If this map permits null values, then a return value of
+ null does not necessarily indicate that the map
+ contains no mapping for the key; it's also possible that the map
+ explicitly maps the key to null.  The containsKey operation may be used to distinguish these two cases.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key whose associated value is to be returned</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value to which the specified key is mapped, or
+         <code>null</code> if this map contains no mapping for the key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the key is of an inappropriate type for
+         this map
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null and this map
+         does not permit null keys
+ (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>put</name>
+            <signature><![CDATA[V put(K key,
+    V value)]]></signature>
+            <description><![CDATA[Associates the specified value with the specified key in this map
+ (optional operation).  If the map previously contained a mapping for
+ the key, the old value is replaced by the specified value.  (A map
+ m is said to contain a mapping for a key k if and only
+ if m.containsKey(k) would return
+ true.)<dl><dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key with which the specified value is to be associated</dd><dd><code>value</code> - value to be associated with the specified key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the previous value associated with <tt>key</tt>, or
+         <tt>null</tt> if there was no mapping for <tt>key</tt>.
+         (A <tt>null</tt> return can also indicate that the map
+         previously associated <tt>null</tt> with <tt>key</tt>,
+         if the implementation supports <tt>null</tt> values.)</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>put</tt> operation
+         is not supported by this map</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of the specified key or value
+         prevents it from being stored in this map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key or value is null
+         and this map does not permit null keys or values</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of the specified key
+         or value prevents it from being stored in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[V remove(Object key)]]></signature>
+            <description><![CDATA[Removes the mapping for a key from this map if it is present
+ (optional operation).   More formally, if this map contains a mapping
+ from key k to value v such that
+ (key==null ?  k==null : key.equals(k)), that mapping
+ is removed.  (The map can contain at most one such mapping.)
+
+ Returns the value to which this map previously associated the key,
+ or null if the map contained no mapping for the key.
+
+ If this map permits null values, then a return value of
+ null does not necessarily indicate that the map
+ contained no mapping for the key; it's also possible that the map
+ explicitly mapped the key to null.
+
+ The map will not contain a mapping for the specified key once the
+ call returns.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key whose mapping is to be removed from the map</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the previous value associated with <tt>key</tt>, or
+         <tt>null</tt> if there was no mapping for <tt>key</tt>.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>remove</tt> operation
+         is not supported by this map</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the key is of an inappropriate type for
+         this map
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null and this
+         map does not permit null keys
+ (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>putAll</name>
+            <signature><![CDATA[void putAll(Map<? extends K,? extends V> m)]]></signature>
+            <description><![CDATA[Copies all of the mappings from the specified map to this map
+ (optional operation).  The effect of this call is equivalent to that
+ of calling put(k, v) on this map once
+ for each mapping from key k to value v in the
+ specified map.  The behavior of this operation is undefined if the
+ specified map is modified while the operation is in progress.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>m</code> - mappings to be stored in this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>putAll</tt> operation
+         is not supported by this map</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of a key or value in the
+         specified map prevents it from being stored in this map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified map is null, or if
+         this map does not permit null keys or values, and the
+         specified map contains null keys or values</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of a key or value in
+         the specified map prevents it from being stored in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[void clear()]]></signature>
+            <description><![CDATA[Removes all of the mappings from this map (optional operation).
+ The map will be empty after this call returns.<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>clear</tt> operation
+         is not supported by this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>keySet</name>
+            <signature><![CDATA[Set<K> keySet()]]></signature>
+            <description><![CDATA[Returns a Set view of the keys contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own remove operation), the results of
+ the iteration are undefined.  The set supports element removal,
+ which removes the corresponding mapping from the map, via the
+ Iterator.remove, Set.remove,
+ removeAll, retainAll, and clear
+ operations.  It does not support the add or addAll
+ operations.<dl><dt><span class="strong">Returns:</span></dt><dd>a set view of the keys contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>values</name>
+            <signature><![CDATA[Collection<V> values()]]></signature>
+            <description><![CDATA[Returns a Collection view of the values contained in this map.
+ The collection is backed by the map, so changes to the map are
+ reflected in the collection, and vice-versa.  If the map is
+ modified while an iteration over the collection is in progress
+ (except through the iterator's own remove operation),
+ the results of the iteration are undefined.  The collection
+ supports element removal, which removes the corresponding
+ mapping from the map, via the Iterator.remove,
+ Collection.remove, removeAll,
+ retainAll and clear operations.  It does not
+ support the add or addAll operations.<dl><dt><span class="strong">Returns:</span></dt><dd>a collection view of the values contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>entrySet</name>
+            <signature><![CDATA[Set<Map.Entry<K,V>> entrySet()]]></signature>
+            <description><![CDATA[Returns a Set view of the mappings contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own remove operation, or through the
+ setValue operation on a map entry returned by the
+ iterator) the results of the iteration are undefined.  The set
+ supports element removal, which removes the corresponding
+ mapping from the map, via the Iterator.remove,
+ Set.remove, removeAll, retainAll and
+ clear operations.  It does not support the
+ add or addAll operations.<dl><dt><span class="strong">Returns:</span></dt><dd>a set view of the mappings contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[boolean equals(Object o)]]></signature>
+            <description><![CDATA[Compares the specified object with this map for equality.  Returns
+ true if the given object is also a map and the two maps
+ represent the same mappings.  More formally, two maps m1 and
+ m2 represent the same mappings if
+ m1.entrySet().equals(m2.entrySet()).  This ensures that the
+ equals method works properly across different implementations
+ of the Map interface.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - object to be compared for equality with this map</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if the specified object is equal to this map</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.hashCode()</code></a>, 
+<a href="#"><code>HashMap</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hashCode</name>
+            <signature><![CDATA[int hashCode()]]></signature>
+            <description><![CDATA[Returns the hash code value for this map.  The hash code of a map is
+ defined to be the sum of the hash codes of each entry in the map's
+ entrySet() view.  This ensures that m1.equals(m2)
+ implies that m1.hashCode()==m2.hashCode() for any two maps
+ m1 and m2, as required by the general contract of
+ Object.hashCode().<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the hash code value for this map</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Map.Entry.hashCode()</code></a>, 
+<a href="#"><code>Object.equals(Object)</code></a>, 
+<a href="#"><code>equals(Object)</code></a></dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

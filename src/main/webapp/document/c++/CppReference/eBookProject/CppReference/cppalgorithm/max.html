@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/cppalgorithm/max.html -->
+<HTML><HEAD><TITLE>max</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="max.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/max.html">max</A> </DIV>
+      <DIV class=name-format>max </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  const <A href="../containers.html">TYPE</A>&amp; max( const <A href="../containers.html">TYPE</A>&amp; x, const <A href="../containers.html">TYPE</A>&amp; y );
+  const <A href="../containers.html">TYPE</A>&amp; max( const <A href="../containers.html">TYPE</A>&amp; x, const <A href="../containers.html">TYPE</A>&amp; y, BinPred p );
+</PRE>
+      <P>The max() function returns the greater of <EM>x</EM> and 
+<EM>y</EM>.</P>
+      <P>If the binary predicate <EM>p</EM> is given, then it will be used 
+      instead of the &lt; operator to compare the two elements.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the following code snippet displays various uses of the 
+      max() function:</P><PRE class=example-code> cout &lt;&lt; "Max of 1 and 9999 is " &lt;&lt; max( 1, 9999) &lt;&lt; endl;
+ cout &lt;&lt; "Max of 'a' and 'b' is " &lt;&lt; max( 'a', 'b') &lt;&lt; endl;
+ cout &lt;&lt; "Max of 3.14159 and 2.71828 is " &lt;&lt; max( 3.14159, 2.71828) &lt;&lt; endl;                
+</PRE>
+      <P>When run, this code displays:</P><PRE class=example-code> Max of 1 and 9999 is 9999
+ Max of 'a' and 'b' is b
+ Max of 3.14159 and 2.71828 is 3.14159          
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/max_element.html">max_element</A><BR><A 
+      href="../cppalgorithm/min.html">min</A><BR><A 
+      href="../cppalgorithm/min_element.html">min_element</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

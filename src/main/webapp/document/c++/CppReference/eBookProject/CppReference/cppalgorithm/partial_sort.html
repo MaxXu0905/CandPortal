@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://www.cppreference.com/cppalgorithm/partial_sort.html -->
+<HTML><HEAD><TITLE>partial_sort</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="partial_sort.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/partial_sort.html">partial_sort</A> 
+      </DIV>
+      <DIV class=name-format>partial_sort </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void partial_sort( iterator start, iterator middle, iterator end );
+  void partial_sort( iterator start, iterator middle, iterator end, StrictWeakOrdering cmp );
+</PRE>
+      <P>The partial_sort() function arranges the first N elements of the range 
+      [<EM>start</EM>,<EM>end</EM>) in ascending order. N is defined as the 
+      number of elements between <EM>start</EM> and <EM>middle</EM>.</P>
+      <P>By default, the &lt; operator is used to compare two elements. If the 
+      strict weak ordering comparison function <EM>cmp</EM> is given, it is used 
+      instead.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+      href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+      href="../cppalgorithm/nth_element.html">nth_element</A><BR><A 
+      href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+      href="../cppalgorithm/sort.html">sort</A><BR><A 
+      href="../cppalgorithm/stable_sort.html">stable_sort</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

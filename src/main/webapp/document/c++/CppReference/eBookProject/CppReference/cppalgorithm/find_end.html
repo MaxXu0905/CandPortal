@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.cppreference.com/cppalgorithm/find_end.html -->
+<HTML><HEAD><TITLE>find_end</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="find_end.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/find_end.html">find_end</A> 
+      </DIV>
+      <DIV class=name-format>find_end </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator find_end( iterator start, iterator end, iterator seq_start, iterator seq_end );
+  iterator find_end( iterator start, iterator end, iterator seq_start, iterator seq_end, BinPred bp );
+</PRE>
+      <P>The find_end() function searches for the sequence of elements denoted 
+      by <EM>seq_start</EM> and <EM>seq_end</EM>. If such a sequence if found 
+      between <EM>start</EM> and <EM>end</EM>, an iterator to the first element 
+      of the last found sequence is returned. If no such sequence is found, an 
+      iterator pointing to <EM>end</EM> is returned.</P>
+      <P>If the binary predicate <EM>bp</EM> is specified, then it is used to 
+      when elements match.</P>
+      <P>For example, the following code uses find_end() to search for two 
+      different sequences of numbers. The the first chunk of code, the last 
+      occurence of "1 2 3" is found. In the second chunk of code, the sequence 
+      that is being searched for is not found:</P><PRE class=example-code> int nums[] = { 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4 };
+ int* result;
+ int start = 0;
+ int end = 11;          
+
+ int target1[] = { 1, 2, 3 };
+ result = find_end( nums + start, nums + end, target1 + 0, target1 + 2 );
+ if( *result == nums[end] ) {
+   cout &lt;&lt; "Did not find any subsequence matching { 1, 2, 3 }" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "The last matching subsequence is at: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+
+ int target2[] = { 3, 2, 3 };
+ result = find_end( nums + start, nums + end, target2 + 0, target2 + 2 );
+ if( *result == nums[end] ) {
+   cout &lt;&lt; "Did not find any subsequence matching { 3, 2, 3 }" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "The last matching subsequence is at: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+      href="../cppalgorithm/find.html">find</A><BR><A 
+      href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+      href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+      href="../cppalgorithm/search_n.html">search_n</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

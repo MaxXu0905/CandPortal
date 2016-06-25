@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="posix">
+    <methods>
+        <method>
+            <name>posix_ctermid</name>
+            <signature><![CDATA[string posix_ctermid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89948" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >posix_ctermid</B
+> ( void )<BR  ></BR
+><P  >     </P><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_get_last_error</name>
+            <signature><![CDATA[int posix_get_last_error ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89961" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_get_last_error</B
+> ( void )<BR  ></BR
+><P  >     Returns the errno (error number) set by the last posix function that 
+     failed.  If no errors exist, 0 is returned.  If you're wanting the
+     system error message associated with the errno, use 
+     <SPAN HREF="#"><B  CLASS="function" >posix_strerror()</B
+></A
+>.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >posix_strerror()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getcwd</name>
+            <signature><![CDATA[string posix_getcwd ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89975" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >posix_getcwd</B
+> ( void )<BR  ></BR
+><P  >     <B  CLASS="function" >posix_getcwd()</B
+> returns the absolute pathname of the
+     script's current working directory. <B  CLASS="function" >posix_getcwd()</B
+>
+     returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getegid</name>
+            <signature><![CDATA[int posix_getegid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89989" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getegid</B
+> ( void )<BR  ></BR
+><P  >     Return the numeric effective group ID of the current process. See
+     also <SPAN HREF="#"><B  CLASS="function" >posix_getgrgid()</B
+></A
+> for information on how
+     to convert this into a useable group name.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_geteuid</name>
+            <signature><![CDATA[int posix_geteuid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90001" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_geteuid</B
+> ( void )<BR  ></BR
+><P  >     Return the numeric effective user ID of the current process. See
+     also <SPAN HREF="#"><B  CLASS="function" >posix_getpwuid()</B
+></A
+> for information on how
+     to convert this into a useable username.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getgid</name>
+            <signature><![CDATA[int posix_getgid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90013" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getgid</B
+> ( void )<BR  ></BR
+><P  >     Return the numeric real group ID of the current process. See also
+     <SPAN HREF="#"><B  CLASS="function" >posix_getgrgid()</B
+></A
+> for information on how to
+     convert this into a useable group name.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getgrgid</name>
+            <signature><![CDATA[array posix_getgrgid ( int gid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90025" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getgrgid</B
+> ( int gid)<BR  ></BR
+><P  >     Returns an <SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+> of information about a group and
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.  If <TT  CLASS="parameter" ><I  >gid</I
+></TT
+> isn't a number
+     then <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> is returned and an <TT  CLASS="constant" ><B  >E_WARNING</B
+></TT
+> 
+     level error is generated.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN90040" ></A
+><P  ><B  >例子 1. Example use of <B  CLASS="function" >posix_getgrgid()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />$groupid   </font><font  color="#007700">= </font><font  color="#0000BB">posix_getegid</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$groupinfo </font><font  color="#007700">= </font><font  color="#0000BB">posix_getgrgid</font><font  color="#007700">(</font><font  color="#0000BB">$groupid</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$groupinfo</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       An example output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+    [name]    => toons
+    [passwd]  => x
+    [members] => Array 
+        ( 
+            [0] => tom
+            [1] => jerry
+        )
+    [gid]     => 42
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      As of PHP 4.2.0, members is returned as an array of member
+      usernames in the group.  Before this time it was simply an 
+      integer (the number of members in the group) and the member
+      names were returned with numerical indices.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >posix_getegid()</B
+></A
+>,  
+     <SPAN HREF="#"><B  CLASS="function" >filegroup()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stat()</B
+></A
+>, and 
+     <SPAN HREF="#">safe_mode_gid</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getgrnam</name>
+            <signature><![CDATA[array posix_getgrnam ( string name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90057" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getgrnam</B
+> ( string name)<BR  ></BR
+><P  >     </P><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getgroups</name>
+            <signature><![CDATA[array posix_getgroups ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90072" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getgroups</B
+> ( void )<BR  ></BR
+><P  >     Returns an array of integers containing the numeric group ids of
+     the group set of the current process. See also
+     <SPAN HREF="#"><B  CLASS="function" >posix_getgrgid()</B
+></A
+> for information on how to
+     convert this into useable group names.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getlogin</name>
+            <signature><![CDATA[string posix_getlogin ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90084" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >posix_getlogin</B
+> ( void )<BR  ></BR
+><P  >     Returns the login name of the user owning the current process.
+     See <SPAN HREF="#"><B  CLASS="function" >posix_getpwnam()</B
+></A
+> for information how to
+     get more information about this user.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getpgid</name>
+            <signature><![CDATA[int posix_getpgid ( int pid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90096" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getpgid</B
+> ( int pid)<BR  ></BR
+><P  >     Returns the process group identifier of the process
+     <TT  CLASS="parameter" ><I  >pid</I
+></TT
+>.
+    </P
+><P  >     This is not a POSIX function, but is common on BSD and System V
+     systems. If your system does not support this function at system
+     level, this PHP function will always return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getpgrp</name>
+            <signature><![CDATA[int posix_getpgrp ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90112" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getpgrp</B
+> ( void )<BR  ></BR
+><P  >     Return the process group identifier of the current process. See
+     POSIX.1 and the getpgrp(2) manual page on your POSIX system for
+     more information on process groups.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getpid</name>
+            <signature><![CDATA[int posix_getpid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90123" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getpid</B
+> ( void )<BR  ></BR
+><P  >     Return the process identifier of the current process.</P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getppid</name>
+            <signature><![CDATA[int posix_getppid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90134" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getppid</B
+> ( void )<BR  ></BR
+><P  >     Return the process identifier of the parent process of the
+     current process.
+	  </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getpwnam</name>
+            <signature><![CDATA[array posix_getpwnam ( string username)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90145" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getpwnam</B
+> ( string username)<BR  ></BR
+><P  >     Returns an associative array containing information about a user
+     referenced by an alphanumeric username, passed in the
+     <TT  CLASS="parameter" ><I  >username</I
+></TT
+> parameter.
+    </P
+><P  >     The array elements returned are:
+     </P><DIV  CLASS="table" ><A  NAME="AEN90156" ></A
+><P  ><B  >表格 1. The user information array</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Element</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >name</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The name element contains the username of the user. This is
+          a short, usually less than 16 character "handle" of the
+          user, not her real, full name. This should be the same as
+          the <TT  CLASS="parameter" ><I  >username</I
+></TT
+> parameter used when
+          calling the function, and hence redundant.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >passwd</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The passwd element contains the user's password in an
+          encrypted format. Often, for example on a system employing
+          "shadow" passwords, an asterisk is returned instead.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >uid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          User ID of the user in numeric form.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >gid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The group ID of the user. Use the function
+          <SPAN HREF="#"><B  CLASS="function" >posix_getgrgid()</B
+></A
+> to resolve the group
+          name and a list of its members.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >gecos</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          GECOS is an obsolete term that refers to the finger
+          information field on a Honeywell batch processing system.
+          The field, however, lives on, and its contents have been
+          formalized by POSIX. The field contains a comma separated
+          list containing the user's full name, office phone, office
+          number, and home phone number. On most systems, only the
+          user's full name is available.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          This element contains the absolute path to the home
+          directory of the user.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >shell</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The shell element contains the absolute path to the
+          executable of the user's default shell.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getpwuid</name>
+            <signature><![CDATA[array posix_getpwuid ( int uid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90191" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getpwuid</B
+> ( int uid)<BR  ></BR
+><P  >     Returns an associative array containing information about a user
+     referenced by a numeric user ID, passed in the
+     <TT  CLASS="parameter" ><I  >uid</I
+></TT
+> parameter.
+    </P
+><P  >     The array elements returned are:
+     </P><DIV  CLASS="table" ><A  NAME="AEN90202" ></A
+><P  ><B  >表格 1. The user information array</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Element</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >name</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The name element contains the username of the user. This is
+          a short, usually less than 16 character "handle" of the
+          user, not her real, full name.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >passwd</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The passwd element contains the user's password in an
+          encrypted format. Often, for example on a system employing
+          "shadow" passwords, an asterisk is returned instead.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >uid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          User ID, should be the same as the
+          <TT  CLASS="parameter" ><I  >uid</I
+></TT
+> parameter used when calling the
+          function, and hence redundant.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >gid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The group ID of the user. Use the function
+          <SPAN HREF="#"><B  CLASS="function" >posix_getgrgid()</B
+></A
+> to resolve the group
+          name and a list of its members.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >gecos</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          GECOS is an obsolete term that refers to the finger
+          information field on a Honeywell batch processing system.
+          The field, however, lives on, and its contents have been
+          formalized by POSIX. The field contains a comma separated
+          list containing the user's full name, office phone, office
+          number, and home phone number. On most systems, only the
+          user's full name is available.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          This element contains the absolute path to the
+          home directory of the user.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >shell</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The shell element contains the absolute path to the
+          executable of the user's default shell.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getrlimit</name>
+            <signature><![CDATA[array posix_getrlimit ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90237" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getrlimit</B
+> ( void )<BR  ></BR
+><P  >     </P><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getsid</name>
+            <signature><![CDATA[int posix_getsid ( int pid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90250" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getsid</B
+> ( int pid)<BR  ></BR
+><P  >     Return the sid of the process <TT  CLASS="parameter" ><I  >pid</I
+></TT
+>. If
+     <TT  CLASS="parameter" ><I  >pid</I
+></TT
+> is 0, the sid of the current process
+     is returned.
+    </P
+><P  >     This is not a POSIX function, but is common on System V systems.
+     If your system does not support this function at system level,
+     this PHP function will always return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_getuid</name>
+            <signature><![CDATA[int posix_getuid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90267" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_getuid</B
+> ( void )<BR  ></BR
+><P  >     Return the numeric real user ID of the current process. See also
+     <SPAN HREF="#"><B  CLASS="function" >posix_getpwuid()</B
+></A
+> for information on how to
+     convert this into a useable username.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_isatty</name>
+            <signature><![CDATA[bool posix_isatty ( int fd)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90279" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >posix_isatty</B
+> ( int fd)<BR  ></BR
+><P  >     </P><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_kill</name>
+            <signature><![CDATA[bool posix_kill ( int pid, int sig)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90294" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >posix_kill</B
+> ( int pid, int sig)<BR  ></BR
+><P  >     Send the signal <TT  CLASS="parameter" ><I  >sig</I
+></TT
+> to the process with
+     the process identifier <TT  CLASS="parameter" ><I  >pid</I
+></TT
+>. Returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>,
+     if unable to send the signal, <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> otherwise.
+    </P
+><P  >     See also the kill(2) manual page of your POSIX system, which
+     contains additional information about negative process
+     identifiers, the special pid 0, the special pid -1, and the
+     signal number 0.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_mkfifo</name>
+            <signature><![CDATA[bool posix_mkfifo ( string pathname, int mode)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90315" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >posix_mkfifo</B
+> ( string pathname, int mode)<BR  ></BR
+><P  >     <B  CLASS="function" >posix_mkfifo()</B
+> creates a special
+     <TT  CLASS="literal" >FIFO</TT
+> file which exists in the file system and acts as
+     a bidirectional communication endpoint for processes.
+    </P
+><P  >     The second parameter <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> has to be given in octal
+     notation (e.g. 0644). The permission of the newly created
+     <TT  CLASS="literal" >FIFO</TT
+> also depends on the setting of the current
+     <SPAN HREF="#"><B  CLASS="function" >umask()</B
+></A
+>. The permissions of the created file are (mode
+     & ~umask).
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>W当 <SPAN HREF="#">安全模式（safe mode）</A
+> 被激活，PHP 将检查您将要操作的目录和正在执行的脚本是否有相同的 UID。</P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_setegid</name>
+            <signature><![CDATA[bool posix_setegid ( int gid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90340" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >posix_setegid</B
+> ( int gid)<BR  ></BR
+><P  >     Set the effective group ID of the current process. This is a
+     privileged function and you need appropriate privileges (usually
+     root) on your system to be able to perform this function.
+    </P
+><P  >     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_seteuid</name>
+            <signature><![CDATA[bool posix_seteuid ( int uid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90356" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >posix_seteuid</B
+> ( int uid)<BR  ></BR
+><P  >     Set the real user ID of the current process. This is a privileged
+     function and you need appropriate privileges (usually root) on
+     your system to be able to perform this function.
+    </P
+><P  >     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise. See also
+     <SPAN HREF="#"><B  CLASS="function" >posix_setgid()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_setgid</name>
+            <signature><![CDATA[bool posix_setgid ( int gid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90373" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >posix_setgid</B
+> ( int gid)<BR  ></BR
+><P  >     Set the real group ID of the current process. This is a
+     privileged function and you need appropriate privileges (usually
+     root) on your system to be able to perform this function. The
+     appropriate order of function calls is
+     <B  CLASS="function" >posix_setgid()</B
+> first,
+     <SPAN HREF="#"><B  CLASS="function" >posix_setuid()</B
+></A
+> last.
+    </P
+><P  >     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_setpgid</name>
+            <signature><![CDATA[int posix_setpgid ( int pid, int pgid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90391" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_setpgid</B
+> ( int pid, int pgid)<BR  ></BR
+><P  >     Let the process <TT  CLASS="parameter" ><I  >pid</I
+></TT
+> join the process group
+     <TT  CLASS="parameter" ><I  >pgid</I
+></TT
+>. See POSIX.1 and the setsid(2) manual
+     page on your POSIX system for more informations on process groups
+     and job control. Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_setsid</name>
+            <signature><![CDATA[int posix_setsid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90411" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >posix_setsid</B
+> ( void )<BR  ></BR
+><P  >     Make the current process a session leader. See POSIX.1 and the
+     setsid(2) manual page on your POSIX system for more informations
+     on process groups and job control. Returns the session id.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_setuid</name>
+            <signature><![CDATA[bool posix_setuid ( int uid)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90422" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >posix_setuid</B
+> ( int uid)<BR  ></BR
+><P  >     Set the real user ID of the current process. This is a privileged
+     function and you need appropriate privileges (usually root) on
+     your system to be able to perform this function.
+    </P
+><P  >     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise. See also
+     <SPAN HREF="#"><B  CLASS="function" >posix_setgid()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_strerror</name>
+            <signature><![CDATA[string posix_strerror ( int errno)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90439" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >posix_strerror</B
+> ( int errno)<BR  ></BR
+><P  >     Returns the POSIX system error message associated with the given errno.
+     If <TT  CLASS="parameter" ><I  >errno</I
+></TT
+> is 0, then the string "Success" is
+     returned.  The function <SPAN HREF="#"><B  CLASS="function" >posix_get_last_error()</B
+></A
+> is
+     used for retrieving the last POSIX errno.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >posix_get_last_error()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_times</name>
+            <signature><![CDATA[array posix_times ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90456" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_times</B
+> ( void )<BR  ></BR
+><P  >     Returns a hash of strings with information about the current
+     process CPU usage. The indices of the hash are
+     </P><P  ></P
+><UL  ><LI  ><P  >        ticks - the number of clock ticks that have elapsed since
+        reboot.
+       </P
+></LI
+><LI  ><P  >        utime - user time used by the current process.
+       </P
+></LI
+><LI  ><P  >        stime - system time used by the current process.
+       </P
+></LI
+><LI  ><P  >        cutime - user time used by current process and children.
+       </P
+></LI
+><LI  ><P  >        cstime - system time used by current process and children.
+       </P
+></LI
+></UL
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_ttyname</name>
+            <signature><![CDATA[string posix_ttyname ( int fd)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90478" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >posix_ttyname</B
+> ( int fd)<BR  ></BR
+><P  >     </P><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>posix_uname</name>
+            <signature><![CDATA[array posix_uname ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN90493" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_uname</B
+> ( void )<BR  ></BR
+><P  >     Returns a hash of strings with information about the
+     system. The indices of the hash are
+     </P><P  ></P
+><UL  ><LI  ><P  >        sysname - operating system name (e.g. Linux)
+       </P
+></LI
+><LI  ><P  >        nodename - system name (e.g. valiant)
+       </P
+></LI
+><LI  ><P  >        release - operating system release (e.g. 2.2.10)
+       </P
+></LI
+><LI  ><P  >        version - operating system version (e.g. #4 Tue Jul 20
+        17:01:36 MEST 1999)
+       </P
+></LI
+><LI  ><P  >        machine - system architecture (e.g. i586)
+       </P
+></LI
+><LI  ><P  >        domainname - DNS domainname (e.g. php.net)
+       </P
+></LI
+></UL
+>
+    </P
+><P  >     domainname is a GNU extension and not part of POSIX.1, so this
+     field is only available on GNU systems or when using the GNU
+     libc.
+    </P
+><P  >     Posix requires that you must not make any assumptions about the
+     format of the values, e.g. you cannot rely on three digit version
+     numbers or anything else returned by this function.
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

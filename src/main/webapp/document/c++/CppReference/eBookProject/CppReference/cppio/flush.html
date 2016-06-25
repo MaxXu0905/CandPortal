@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/cppio/flush.html -->
+<HTML><HEAD><TITLE>flush</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="flush.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/flush.html">flush</A> </DIV>
+      <DIV class=name-format>flush </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  ostream&amp; flush();
+</PRE>
+      <P>The flush() function causes the buffer for the current output stream to 
+      be actually written out to the attached device.</P>
+      <P>This function is useful for printing out debugging information, because 
+      sometimes programs abort before they have a chance to write their output 
+      buffers to the screen. Judicious use of flush() can ensure that all of 
+      your debugging statements actually get printed.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/put.html">put</A><BR><A 
+      href="../cppio/write.html">write</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

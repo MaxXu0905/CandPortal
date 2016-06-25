@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.cppreference.com/stdother/va_arg.html -->
+<HTML><HEAD><TITLE>va_arg</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="va_arg.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Other Standard C 
+      Functions</A> &gt; <A 
+      href="va_arg.html">va_arg</A> </DIV>
+      <DIV class=name-format>va_arg </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdarg.h&gt;
+  type va_arg( <STRONG>va_list</STRONG> argptr, type );
+  void va_end( <STRONG>va_list</STRONG> argptr );
+  void va_start( <STRONG>va_list</STRONG> argptr, last_parm );
+</PRE>
+      <P>The va_arg() macros are used to pass a variable number of arguments to 
+      a function.</P>
+      <OL>
+        <LI>First, you must have a call to va_start() passing a valid 
+        <STRONG>va_list</STRONG> and the mandatory first argument of the 
+        function. This first argument can be anything; one way to use it is to 
+        have it be an integer describing the number of parameters being passed. 
+        <LI>Next, you call va_arg() passing the <STRONG>va_list</STRONG> and the 
+        type of the argument to be returned. The return value of va_arg() is the 
+        current parameter. 
+        <LI>Repeat calls to va_arg() for however many arguments you have. 
+        <LI>Finally, a call to va_end() passing the <STRONG>va_list</STRONG> is 
+        necessary for proper cleanup. </LI></OL>
+      <P>For example:</P><PRE class=example-code>  int sum( int num, ... ) {
+    int answer = 0;
+    <STRONG>va_list</STRONG> argptr;            
+
+    va_start( argptr, num );            
+
+    for( ; num &gt; 0; num-- ) {
+      answer += va_arg( argptr, int );
+    }           
+
+    va_end( argptr );           
+
+    return( answer );
+  }             
+                
+
+  int main( void ) {            
+
+    int answer = sum( 4, 4, 3, 2, 1 );
+    printf( "The answer is %d\n", answer );           
+
+    return( 0 );
+  }             
+</PRE>
+      <P>This code displays 10, which is 4+3+2+1.</P>
+      <P>Here is another example of variable argument function, which is a 
+      simple printing function:</P><PRE class=example-code> void my_printf( char *format, ... ) {
+   <STRONG>va_list</STRONG> argptr;             
+
+   va_start( argptr, format );          
+
+   while( *format != '\0' ) {
+     // string
+     if( *format == 's' ) {
+       char* s = va_arg( argptr, char * );
+       printf( "Printing a string: %s\n", s );
+     }
+     // character
+     else if( *format == 'c' ) {
+       char c = (char) va_arg( argptr, int );
+       printf( "Printing a character: %c\n", c );
+       break;
+     }
+     // integer
+     else if( *format == 'd' ) {
+       int d = va_arg( argptr, int );
+       printf( "Printing an integer: %d\n", d );
+     }          
+
+     *format++;
+   }            
+
+   va_end( argptr );
+ }              
+                
+
+ int main( void ) {             
+
+   my_printf( "sdc", "This is a string", 29, 'X' );         
+
+   return( 0 );
+ }              
+</PRE>
+      <P>This code displays the following output when run:</P><PRE class=example-code> Printing a string: This is a string
+ Printing an integer: 29
+ Printing a character: X                
+</PRE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

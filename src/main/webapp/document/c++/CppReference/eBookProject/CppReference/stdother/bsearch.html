@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/stdother/bsearch.html -->
+<HTML><HEAD><TITLE>bsearch</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="bsearch.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Other Standard C 
+      Functions</A> &gt; <A 
+      href="bsearch.html">bsearch</A> 
+</DIV>
+      <DIV class=name-format>bsearch </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void *bsearch( const void *key, const void *buf, size_t num, size_t size, int (*compare)(const void *, const void *) );
+</PRE>
+      <P>The bsearch() function searches <EM>buf[0]</EM> to <EM>buf[num-1]</EM> 
+      for an item that matches <EM>key</EM>, using a binary search. The function 
+      <EM>compare</EM> should return negative if its first argument is less than 
+      its second, zero if equal, and positive if greater. The items in the array 
+      <EM>buf</EM> should be in ascending order. The return value of bsearch() 
+      is a pointer to the matching item, or <STRONG>NULL</STRONG> if none is 
+      found.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="qsort.html">qsort</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,2383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="stream">
+    <methods>
+        <method>
+            <name>stream_context_create</name>
+            <signature><![CDATA[resource stream_context_create ( array options)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106137" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >stream_context_create</B
+> ( array options)<BR  ></BR
+><P  >     Creates and returns a stream context with any options supplied in
+     <TT  CLASS="parameter" ><I  >options</I
+></TT
+> preset.
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >options</I
+></TT
+> must be an associative 
+     array of associative arrays in the format 
+     <TT  CLASS="literal" >$arr['wrapper']['option'] = $value</TT
+>.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106150" ></A
+><P  ><B  >例子 1. Using <B  CLASS="function" >stream_context_create()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$opts </font><font  color="#007700">= array(<br  />  </font><font  color="#DD0000">'http'</font><font  color="#007700">=>array(<br  />    </font><font  color="#DD0000">'method'</font><font  color="#007700">=></font><font  color="#DD0000">"GET"</font><font  color="#007700">,<br  />    </font><font  color="#DD0000">'header'</font><font  color="#007700">=></font><font  color="#DD0000">"Accept-language: en\r\n" </font><font  color="#007700">. <br  />              </font><font  color="#DD0000">"Cookie: foo=bar\r\n"<br  />  </font><font  color="#007700">)<br  />);<br  /><br  /></font><font  color="#0000BB">$context </font><font  color="#007700">= </font><font  color="#0000BB">stream_context_create</font><font  color="#007700">(</font><font  color="#0000BB">$opts</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Sends an http request to www.example.com<br  />   with additional headers shown above */<br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">'http://www.example.com'</font><font  color="#007700">, </font><font  color="#DD0000">'r'</font><font  color="#007700">, </font><font  color="#0000BB">false</font><font  color="#007700">, </font><font  color="#0000BB">$context</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fpassthru</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >     See Also:
+     <SPAN HREF="#"><B  CLASS="function" >stream_context_set_option()</B
+></A
+>, and
+     Listing of supported wrappers with context options (<SPAN HREF="#">附录 J</A
+>)
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_context_get_options</name>
+            <signature><![CDATA[array stream_context_get_options ( resource stream|context)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106161" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >stream_context_get_options</B
+> ( resource stream|context)<BR  ></BR
+><P  >     Returns an array of options on the specified stream or context.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_context_set_option</name>
+            <signature><![CDATA[bool stream_context_set_option ( resource context|stream, string wrapper, string option, mixed value)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106174" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_context_set_option</B
+> ( resource context|stream, string wrapper, string option, mixed value)<BR  ></BR
+><P  >      Sets an option on the specified context.  <TT  CLASS="parameter" ><I  >value</I
+></TT
+>
+      is set to <TT  CLASS="parameter" ><I  >option</I
+></TT
+> for <TT  CLASS="parameter" ><I  >wrapper</I
+></TT
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_context_set_params</name>
+            <signature><![CDATA[bool stream_context_set_params ( resource stream|context, array params)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106199" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_context_set_params</B
+> ( resource stream|context, array params)<BR  ></BR
+><P  >     <TT  CLASS="parameter" ><I  >params</I
+></TT
+> should be an associative array of the structure:
+     <TT  CLASS="literal" >$params['paramname'] = "paramvalue";</TT
+>. 
+    </P
+><DIV  CLASS="table" ><A  NAME="AEN106213" ></A
+><P  ><B  >表格 1. Parameters</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Parameters</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Purpose</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >notification</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >         Name of user-defined callback function to be called whenever a stream triggers a notification.
+        </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_copy_to_stream</name>
+            <signature><![CDATA[int stream_copy_to_stream ( resource source, resource dest [, int maxlength])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106229" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >stream_copy_to_stream</B
+> ( resource source, resource dest [, int maxlength])<BR  ></BR
+><P  >     Makes a copy of up to <TT  CLASS="parameter" ><I  >maxlength</I
+></TT
+> bytes
+     of data from the current position in <TT  CLASS="parameter" ><I  >source</I
+></TT
+> to
+     <TT  CLASS="parameter" ><I  >dest</I
+></TT
+>. If <TT  CLASS="parameter" ><I  >maxlength</I
+></TT
+>
+     is not specified, all remaining content in <TT  CLASS="parameter" ><I  >source</I
+></TT
+>
+     will be copied.  Returns the total count of bytes copied.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106249" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >stream_copy_to_stream()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$src </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">'http://www.example.com'</font><font  color="#007700">, </font><font  color="#DD0000">'r'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$dest1 </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">'first1k.txt'</font><font  color="#007700">, </font><font  color="#DD0000">'w'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$dest2 </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">'remainder.txt'</font><font  color="#007700">, </font><font  color="#DD0000">'w'</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">stream_copy_to_stream</font><font  color="#007700">(</font><font  color="#0000BB">$src</font><font  color="#007700">, </font><font  color="#0000BB">$dest1</font><font  color="#007700">, </font><font  color="#0000BB">1024</font><font  color="#007700">) . </font><font  color="#DD0000">" bytes copied to first1k.txt\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">stream_copy_to_stream</font><font  color="#007700">(</font><font  color="#0000BB">$src</font><font  color="#007700">, </font><font  color="#0000BB">$dest2</font><font  color="#007700">) . </font><font  color="#DD0000">" bytes copied to remainder.txt\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >copy()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_filter_append</name>
+            <signature><![CDATA[bool stream_filter_append ( resource stream, string filtername [, int read_write [, mixed params]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106259" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_filter_append</B
+> ( resource stream, string filtername [, int read_write [, mixed params]])<BR  ></BR
+><P  >     Adds <TT  CLASS="parameter" ><I  >filtername</I
+></TT
+> to the list of filters 
+     attached to <TT  CLASS="parameter" ><I  >stream</I
+></TT
+>.  This filter will be
+     added with the specified <TT  CLASS="parameter" ><I  >params</I
+></TT
+>
+     to the <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >end</I
+></SPAN
+> of the list and
+     will therefore be called last during stream operations.  To
+     add a filter to the beginning of the list, use 
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_prepend()</B
+></A
+>.
+    </P
+><P  >     By default, <B  CLASS="function" >stream_filter_append()</B
+> will
+     attach the filter to the <TT  CLASS="literal" >read filter chain</TT
+>
+     if the file was opened for reading (i.e. File Mode:
+     <TT  CLASS="literal" >r</TT
+>, and/or <TT  CLASS="literal" >+</TT
+>).  The filter
+     will also be attached to the <TT  CLASS="literal" >write filter chain</TT
+>
+     if the file was opened for writing (i.e. File Mode:
+     <TT  CLASS="literal" >w</TT
+>, <TT  CLASS="literal" >a</TT
+>, and/or <TT  CLASS="literal" >+</TT
+>).
+     <TT  CLASS="constant" ><B  >STREAM_FILTER_READ</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >STREAM_FILTER_WRITE</B
+></TT
+>, and/or
+     <TT  CLASS="constant" ><B  >STREAM_FILTER_ALL</B
+></TT
+> can also be passed to the
+     <TT  CLASS="parameter" ><I  >read_write</I
+></TT
+> parameter to override this behavior.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106296" ></A
+><P  ><B  >例子 1. Controlling where filters are applied</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">/* Open a test file for reading and writing */<br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"test.txt"</font><font  color="#007700">, </font><font  color="#DD0000">"rw"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Apply the ROT13 filter to the<br  /> * write filter chain, but not the<br  /> * read filter chain */<br  /></font><font  color="#0000BB">stream_filter_append</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"string.rot13"</font><font  color="#007700">, </font><font  color="#0000BB">STREAM_FILTER_WRITE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Write a simple string to the file<br  /> * it will be ROT13 transformed on the<br  /> * way out */<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"This is a test\n"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Back up to the beginning of the file */<br  /></font><font  color="#0000BB">rewind</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Read the contents of the file back out.<br  /> * Had the filter been applied to the<br  /> * read filter chain as well, we would see<br  /> * the text ROT13ed back to its original state */<br  /></font><font  color="#0000BB">fpassthru</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Expected Output<br  />   ---------------<br  /><br  />Guvf vf n grfg<br  /><br  /> */<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >When using custom (user) filters: </B
+>
+      <SPAN HREF="#"><B  CLASS="function" >stream_filter_register()</B
+></A
+> must be called first
+      in order to register the desired user filter to <TT  CLASS="parameter" ><I  >filtername</I
+></TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_register()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_prepend()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_filter_prepend</name>
+            <signature><![CDATA[bool stream_filter_prepend ( resource stream, string filtername [, int read_write [, mixed params]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106311" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_filter_prepend</B
+> ( resource stream, string filtername [, int read_write [, mixed params]])<BR  ></BR
+><P  >     Adds <TT  CLASS="parameter" ><I  >filtername</I
+></TT
+> to the list of filters
+     attached to <TT  CLASS="parameter" ><I  >stream</I
+></TT
+>.  This filter will be
+     added with the specified <TT  CLASS="parameter" ><I  >params</I
+></TT
+>
+     to the <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >beginning</I
+></SPAN
+> of the list and
+     will therefore be called first during stream operations.  To
+     add a filter to the end of the list, use
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_append()</B
+></A
+>.
+    </P
+><P  >     By default, <B  CLASS="function" >stream_filter_prepend()</B
+> will
+     attach the filter to the <TT  CLASS="literal" >read filter chain</TT
+>
+     if the file was opened for reading (i.e. File Mode:
+     <TT  CLASS="literal" >r</TT
+>, and/or <TT  CLASS="literal" >+</TT
+>).  The filter
+     will also be attached to the <TT  CLASS="literal" >write filter chain</TT
+>
+     if the file was opened for writing (i.e. File Mode:
+     <TT  CLASS="literal" >w</TT
+>, <TT  CLASS="literal" >a</TT
+>, and/or <TT  CLASS="literal" >+</TT
+>).
+     <TT  CLASS="constant" ><B  >STREAM_FILTER_READ</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >STREAM_FILTER_WRITE</B
+></TT
+>, and/or
+     <TT  CLASS="constant" ><B  >STREAM_FILTER_ALL</B
+></TT
+> can also be passed to the
+     <TT  CLASS="parameter" ><I  >read_write</I
+></TT
+> parameter to override this behavior.
+     See <SPAN HREF="#"><B  CLASS="function" >stream_filter_append()</B
+></A
+> for an example of
+     using this parameter.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >When using custom (user) filters: </B
+>
+      <SPAN HREF="#"><B  CLASS="function" >stream_filter_register()</B
+></A
+> must be called first
+      in order to register the desired user filter to <TT  CLASS="parameter" ><I  >filtername</I
+></TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_register()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_append()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_filter_register</name>
+            <signature><![CDATA[bool stream_filter_register ( string filtername, string classname)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106361" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_filter_register</B
+> ( string filtername, string classname)<BR  ></BR
+><P  >     <B  CLASS="function" >stream_filter_register()</B
+> allows you to implement
+     your own filter on any registered stream used with all the other
+     filesystem functions (such as <SPAN HREF="#"><B  CLASS="function" >fopen()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+> etc.).
+    </P
+><P  >     To implement a filter, you need to define a class as an extension of
+     <TT  CLASS="literal" >php_user_filter</TT
+> with a number of member functions 
+     as defined below. When performing read/write operations on the stream
+     to which your filter is attached, PHP will pass the data through your
+     filter (and any other filters attached to that stream) so that the
+     data may be modified as desired. You must implement the methods
+     exactly as described below - doing otherwise will lead to undefined
+     behaviour.
+    </P
+><P  >     <B  CLASS="function" >stream_filter_register()</B
+> will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if the
+     <TT  CLASS="parameter" ><I  >filtername</I
+></TT
+> is already defined.
+    </P
+>int <B  CLASS="methodname" >filter</B
+> ( resource in, resource out, int &consumed, bool closing)<BR  ></BR
+><P  >     This method is called whenever data is read from or written to 
+     the attached stream (such as with <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+> or <SPAN HREF="#"><B  CLASS="function" >fwrite()</B
+></A
+>).  
+     <TT  CLASS="parameter" ><I  >in</I
+></TT
+> is a resource pointing to a <TT  CLASS="literal" >bucket brigade</TT
+>
+     which contains one or more <TT  CLASS="literal" >bucket</TT
+> objects containing data to be filtered.
+     <TT  CLASS="parameter" ><I  >out</I
+></TT
+> is a resource pointing to a second <TT  CLASS="literal" >bucket brigade</TT
+>
+     into which your modified buckets should be placed.
+     <TT  CLASS="parameter" ><I  >consumed</I
+></TT
+>, which must <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >always</I
+></SPAN
+>
+     be declared by reference, should be incremented by the length of the data
+     which your filter reads in and alters.  In most cases this means you will
+     increment <TT  CLASS="parameter" ><I  >consumed</I
+></TT
+> by $bucket->datalen for each $bucket.
+     If the stream is in the process of closing (and therefore this is the last pass
+     through the filterchain), the <TT  CLASS="parameter" ><I  >closing</I
+></TT
+> parameter will be
+     set to <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>  The <TT  CLASS="methodname" >filter</TT
+> method must return one of
+     three values upon completion.  
+
+     </P><DIV  CLASS="informaltable" ><A  NAME="AEN106411" ></A
+><P  ></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Return Value</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Meaning</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >PSFS_PASS_ON</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Filter processed successfully with data available in the 
+          <TT  CLASS="parameter" ><I  >out</I
+></TT
+> <TT  CLASS="literal" >bucket brigade</TT
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >PSFS_FEED_ME</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Filter processed successfully, however no data was available to
+          return.  More data is required from the stream or prior filter.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >PSFS_ERR_FATAL</B
+></TT
+> (default)</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The filter experienced an unrecoverable error and cannot continue.  
+         </TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+>void <B  CLASS="methodname" >oncreate</B
+> ( void )<BR  ></BR
+><P  >     This method is called during instantiation of the filter class
+     object.  If your filter allocates or initializes any other resources
+     (such as a buffer), this is the place to do it.  Your implementation of
+     this method should return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure, or <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success.
+    </P
+><P  >     When your filter is first instantiated, and 
+     <TT  CLASS="literal" >yourfilter->oncreate()</TT
+> is called, a number of properties
+     will be available as shown in the table below.
+    </P
+><P  >     </P><DIV  CLASS="informaltable" ><A  NAME="AEN106442" ></A
+><P  ></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Property</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Contents</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >FilterClass->filtername</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >A string containing the name the filter was instantiated with.
+                Filters may be registered under multiple names or under wildcards.
+                Use this property to determine which name was used.</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >FilterClass->params</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >The contents of the <TT  CLASS="parameter" ><I  >params</I
+></TT
+> parameter passed
+                to <SPAN HREF="#"><B  CLASS="function" >stream_filter_append()</B
+></A
+> 
+                or <SPAN HREF="#"><B  CLASS="function" >stream_filter_prepend()</B
+></A
+>.</TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+>void <B  CLASS="methodname" >onclose</B
+> ( void )<BR  ></BR
+><P  >     This method is called upon filter shutdown (typically, this is also
+     during stream shutdown), and is executed <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >after</I
+></SPAN
+>
+     the <TT  CLASS="literal" >flush</TT
+> method is called.  If any resources
+     were allocated or initialzed during <TT  CLASS="literal" >oncreate</TT
+>
+     this would be the time to destroy or dispose of them.
+    </P
+><P  >     The example below implements a filter named <TT  CLASS="literal" >strtoupper</TT
+>
+     on the <TT  CLASS="literal" >foo-bar.txt</TT
+> stream which will capitalize
+     all letter characters written to/read from that stream.
+
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106471" ></A
+><P  ><B  >例子 1. Filter for capitalizing characters on foo-bar.txt stream</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#FF8000">/* Define our filter class */<br  /></font><font  color="#007700">class </font><font  color="#0000BB">strtoupper_filter </font><font  color="#007700">extends </font><font  color="#0000BB">php_user_filter </font><font  color="#007700">{<br  />  function </font><font  color="#0000BB">filter</font><font  color="#007700">(</font><font  color="#0000BB">$in</font><font  color="#007700">, </font><font  color="#0000BB">$out</font><font  color="#007700">, &</font><font  color="#0000BB">$consumed</font><font  color="#007700">, </font><font  color="#0000BB">$closing</font><font  color="#007700">) <br  />  {<br  />    while (</font><font  color="#0000BB">$bucket </font><font  color="#007700">= </font><font  color="#0000BB">stream_bucket_make_writeable</font><font  color="#007700">(</font><font  color="#0000BB">$in</font><font  color="#007700">)) {<br  />      </font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">data </font><font  color="#007700">= </font><font  color="#0000BB">strtoupper</font><font  color="#007700">(</font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">data</font><font  color="#007700">);<br  />      </font><font  color="#0000BB">$consumed </font><font  color="#007700">+= </font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">datalen</font><font  color="#007700">;<br  />      </font><font  color="#0000BB">stream_bucket_append</font><font  color="#007700">(</font><font  color="#0000BB">$out</font><font  color="#007700">, </font><font  color="#0000BB">$bucket</font><font  color="#007700">);<br  />    }<br  />    return </font><font  color="#0000BB">PSFS_PASS_ON</font><font  color="#007700">;<br  />  }<br  />} <br  /><br  /></font><font  color="#FF8000">/* Register our filter with PHP */<br  /></font><font  color="#0000BB">stream_filter_register</font><font  color="#007700">(</font><font  color="#DD0000">"strtoupper"</font><font  color="#007700">, </font><font  color="#DD0000">"strtoupper_filter"</font><font  color="#007700">)<br  />    or die(</font><font  color="#DD0000">"Failed to register filter"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"foo-bar.txt"</font><font  color="#007700">, </font><font  color="#DD0000">"w"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Attach the registered filter to the stream just opened */<br  /></font><font  color="#0000BB">stream_filter_append</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"strtoupper"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"Line1\n"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"Word - 2\n"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"Easy As 123\n"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Read the contents back out<br  /> */<br  /></font><font  color="#0000BB">readfile</font><font  color="#007700">(</font><font  color="#DD0000">"foo-bar.txt"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       Output
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >LINE1
+WORD - 2
+EASY AS 123</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106477" ></A
+><P  ><B  >例子 2. Registering a generic filter class to match multiple filter names.</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#FF8000">/* Define our filter class */<br  /></font><font  color="#007700">class </font><font  color="#0000BB">string_filter </font><font  color="#007700">extends </font><font  color="#0000BB">php_user_filter </font><font  color="#007700">{<br  />  var </font><font  color="#0000BB">$mode</font><font  color="#007700">;<br  /><br  />  function </font><font  color="#0000BB">filter</font><font  color="#007700">(</font><font  color="#0000BB">$in</font><font  color="#007700">, </font><font  color="#0000BB">$out</font><font  color="#007700">, &</font><font  color="#0000BB">$consumed</font><font  color="#007700">, </font><font  color="#0000BB">$closing</font><font  color="#007700">) <br  />  {<br  />    while (</font><font  color="#0000BB">$bucket </font><font  color="#007700">= </font><font  color="#0000BB">stream_bucket_make_writeable</font><font  color="#007700">(</font><font  color="#0000BB">$in</font><font  color="#007700">)) {<br  />      if (</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">mode </font><font  color="#007700">== </font><font  color="#0000BB">1</font><font  color="#007700">) {<br  />        </font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">data </font><font  color="#007700">= </font><font  color="#0000BB">strtoupper</font><font  color="#007700">(</font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">data</font><font  color="#007700">);<br  />      } elseif (</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">mode </font><font  color="#007700">== </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />        </font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">data </font><font  color="#007700">= </font><font  color="#0000BB">strtolower</font><font  color="#007700">(</font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">data</font><font  color="#007700">);<br  />      }<br  /><br  />      </font><font  color="#0000BB">$consumed </font><font  color="#007700">+= </font><font  color="#0000BB">$bucket</font><font  color="#007700">-></font><font  color="#0000BB">datalen</font><font  color="#007700">;<br  />      </font><font  color="#0000BB">stream_bucket_append</font><font  color="#007700">(</font><font  color="#0000BB">$out</font><font  color="#007700">, </font><font  color="#0000BB">$bucket</font><font  color="#007700">);<br  />    }<br  />    return </font><font  color="#0000BB">PSFS_PASS_ON</font><font  color="#007700">;<br  />  }<br  /><br  />  function </font><font  color="#0000BB">oncreate</font><font  color="#007700">() <br  />  {<br  />    if (</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">filtername </font><font  color="#007700">== </font><font  color="#DD0000">'str.toupper'</font><font  color="#007700">) {<br  />      </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">mode </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">;<br  />    } elseif (</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">filtername </font><font  color="#007700">== </font><font  color="#DD0000">'str.tolower'</font><font  color="#007700">) {<br  />      </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">mode </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  />    } else {<br  />      </font><font  color="#FF8000">/* Some other str.* filter was asked for,<br  />         report failure so that PHP will keep looking */<br  />      </font><font  color="#007700">return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />    }<br  /><br  />    return </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />  }<br  />} <br  /><br  /></font><font  color="#FF8000">/* Register our filter with PHP */<br  /></font><font  color="#0000BB">stream_filter_register</font><font  color="#007700">(</font><font  color="#DD0000">"str.*"</font><font  color="#007700">, </font><font  color="#DD0000">"string_filter"</font><font  color="#007700">)<br  />    or die(</font><font  color="#DD0000">"Failed to register filter"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"foo-bar.txt"</font><font  color="#007700">, </font><font  color="#DD0000">"w"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Attach the registered filter to the stream just opened <br  />   We could alternately bind to str.tolower here */<br  /></font><font  color="#0000BB">stream_filter_append</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"str.toupper"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"Line1\n"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"Word - 2\n"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"Easy As 123\n"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Read the contents back out<br  /> */<br  /></font><font  color="#0000BB">readfile</font><font  color="#007700">(</font><font  color="#DD0000">"foo-bar.txt"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Output<br  /> * ------<br  /><br  />LINE1<br  />WORD - 2<br  />EASY AS 123<br  /><br  /> */<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See Also:
+     <SPAN HREF="#"><B  CLASS="function" >stream_wrapper_register()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_prepend()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_append()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_get_contents</name>
+            <signature><![CDATA[string stream_get_contents ( resource handle [, int maxlength])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106488" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_get_contents</B
+> ( resource handle [, int maxlength])<BR  ></BR
+><P  > 
+     Identical to <SPAN HREF="#"><B  CLASS="function" >file_get_contents()</B
+></A
+>, except that
+     <B  CLASS="function" >stream_get_contents()</B
+> operates on an already open
+     file resource and returns the remaining contents, up to
+     <TT  CLASS="parameter" ><I  >maxlength</I
+></TT
+> bytes, in a string.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>该函数适用于二进制对象！</P
+></BLOCKQUOTE
+></DIV
+><P  >     See also: 
+     <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >fpassthru()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_get_filters</name>
+            <signature><![CDATA[array stream_get_filters ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106513" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >stream_get_filters</B
+> ( void )<BR  ></BR
+><P  >     Returns an indexed array containing the name of all stream filters
+     available on the running system.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106521" ></A
+><P  ><B  >例子 1. Using <B  CLASS="function" >stream_get_filters()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$streamlist </font><font  color="#007700">= </font><font  color="#0000BB">stream_get_filters</font><font  color="#007700">();<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$streamlist</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       Output will be similar to the following
+       Note: there may be more or fewer filters in your version of PHP.
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array (
+  [0] => string.rot13
+  [1] => string.toupper
+  [2] => string.tolower
+  [3] => string.base64
+  [4] => string.quoted-printable
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_filter_register()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >stream_get_wrappers()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_get_line</name>
+            <signature><![CDATA[string stream_get_line ( resource handle, int length, string ending)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106534" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_get_line</B
+> ( resource handle, int length, string ending)<BR  ></BR
+><P  >     Returns a string of up to <TT  CLASS="parameter" ><I  >length</I
+></TT
+> bytes read from the file
+     pointed to by <TT  CLASS="parameter" ><I  >handle</I
+></TT
+>. Reading ends when
+     <TT  CLASS="parameter" ><I  >length</I
+></TT
+> bytes have been read, when the string specified by
+     <TT  CLASS="parameter" ><I  >ending</I
+></TT
+> is found (which is <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >not</I
+></SPAN
+>included
+     in the return value), or on EOF (whichever comes first). 
+    </P
+><P  >     If an error occurs, returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >     This function is nearly identical to <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>
+     except in that it allows end of line delimiters other than the
+     standard \n, \r, and \r\n, and does <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >not</I
+></SPAN
+>
+     return the delimiter itself.
+    </P
+><P  > 
+     See also <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >fgetc()</B
+></A
+>,
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_get_meta_data</name>
+            <signature><![CDATA[array stream_get_meta_data ( resource stream)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106567" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >stream_get_meta_data</B
+> ( resource stream)<BR  ></BR
+><P  >     Returns information about an existing <TT  CLASS="parameter" ><I  >stream</I
+></TT
+>.
+     The stream can be any stream created by <SPAN HREF="#"><B  CLASS="function" >fopen()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fsockopen()</B
+></A
+> and <SPAN HREF="#"><B  CLASS="function" >pfsockopen()</B
+></A
+>.
+     The result array contains the following items:
+    </P
+><P  ></P
+><UL  ><LI  ><P  >       <TT  CLASS="parameter" ><I  >timed_out</I
+></TT
+> (bool) - <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the stream
+       timed out while waiting for data on the last call to
+       <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+> or <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>.
+      </P
+></LI
+><LI  ><P  >       <TT  CLASS="parameter" ><I  >blocked</I
+></TT
+> (bool) - <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the stream is
+       in blocking IO mode. See <SPAN HREF="#"><B  CLASS="function" >stream_set_blocking()</B
+></A
+>.
+      </P
+></LI
+><LI  ><P  >       <TT  CLASS="parameter" ><I  >eof</I
+></TT
+> (bool) - <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the stream has reached
+       end-of-file.  Note that for socket streams this member can be <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>
+       even when <TT  CLASS="parameter" ><I  >unread_bytes</I
+></TT
+> is non-zero.  To
+       determine if there is more data to be read, use
+       <SPAN HREF="#"><B  CLASS="function" >feof()</B
+></A
+> instead of reading this item.
+      </P
+></LI
+><LI  ><P  >       <TT  CLASS="parameter" ><I  >unread_bytes</I
+></TT
+> (int) - the number of bytes
+       currently contained in the read buffer.
+      </P
+></LI
+></UL
+><P  >     The following items were added in PHP 4.3:
+    </P
+><P  ></P
+><UL  ><LI  ><P  >       <TT  CLASS="parameter" ><I  >stream_type</I
+></TT
+> (string) - a label describing
+       the underlying implementation of the stream.
+      </P
+></LI
+><LI  ><P  >       <TT  CLASS="parameter" ><I  >wrapper_type</I
+></TT
+> (string) - a label describing
+       the protocol wrapper implementation layered over the stream.
+       See <SPAN HREF="#">附录 J</A
+> for more information about wrappers.
+      </P
+></LI
+><LI  ><P  >       <TT  CLASS="parameter" ><I  >wrapper_data</I
+></TT
+> (mixed) - wrapper specific
+       data attached to this stream.  See <SPAN HREF="#">附录 J</A
+> for
+       more information about wrappers and their wrapper data.
+      </P
+></LI
+><LI  ><P  >       <TT  CLASS="parameter" ><I  >filters</I
+></TT
+> (array) - and array containing
+       the names of any filters that have been stacked onto this stream.
+       Filters are currently undocumented.
+      </P
+></LI
+></UL
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      This function was introduced in PHP 4.3, but prior to this version,
+      <SPAN HREF="#"><B  CLASS="function" >socket_get_status()</B
+></A
+> could be used to retrieve
+      the first four items, for <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >socket based streams only</I
+></SPAN
+>.
+     </P
+><P  >      In PHP 4.3 and later,
+      <SPAN HREF="#"><B  CLASS="function" >socket_get_status()</B
+></A
+> is an alias for this function.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>This function does NOT work on sockets created by the <SPAN HREF="#">Socket extension</A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_get_transports</name>
+            <signature><![CDATA[array stream_get_transports ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106631" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >stream_get_transports</B
+> ( void )<BR  ></BR
+><P  >     Returns an indexed array containing the name of all socket transports
+     available on the running system.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106639" ></A
+><P  ><B  >例子 1. Using <B  CLASS="function" >stream_get_transports()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$xportlist </font><font  color="#007700">= </font><font  color="#0000BB">stream_get_transports</font><font  color="#007700">();<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$xportlist</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       Output will be similar to the following
+       Note: there may be more or fewer transports in your version of PHP
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array (
+  [0] => tcp
+  [1] => udp
+  [2] => unix
+  [3] => udg
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_get_filters()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >stream_get_wrappers()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_get_wrappers</name>
+            <signature><![CDATA[array stream_get_wrappers ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106652" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >stream_get_wrappers</B
+> ( void )<BR  ></BR
+><P  >     Returns an indexed array containing the name of all stream wrappers
+     available on the running system.
+    </P
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_wrapper_register()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_select</name>
+            <signature><![CDATA[int stream_select ( resource &read, resource &write, resource &except, int tv_sec [, int tv_usec])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106677" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >stream_select</B
+> ( resource &read, resource &write, resource &except, int tv_sec [, int tv_usec])<BR  ></BR
+><P  >     The <B  CLASS="function" >stream_select()</B
+> function accepts arrays of streams and
+     waits for them to change status. Its operation is equivalent to that of
+     the <SPAN HREF="#"><B  CLASS="function" >socket_select()</B
+></A
+> function except in that it acts on streams.
+    </P
+><P  >     The streams listed in the <TT  CLASS="parameter" ><I  >read</I
+></TT
+> array will be watched to
+     see if characters become available for reading (more precisely, to see if
+     a read will not block - in particular, a stream resource is also ready on
+     end-of-file, in which case an <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+> will return
+     a zero length string).
+    </P
+><P  >     The streams listed in the <TT  CLASS="parameter" ><I  >write</I
+></TT
+> array will be
+     watched to see if a write will not block.
+    </P
+><P  >     The streams listed in the <TT  CLASS="parameter" ><I  >except</I
+></TT
+> array will be
+     watched for high priority exceptional ("out-of-band") data arriving.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      When <B  CLASS="function" >stream_select()</B
+> returns, the arrays
+      <TT  CLASS="parameter" ><I  >read</I
+></TT
+>, <TT  CLASS="parameter" ><I  >write</I
+></TT
+> and
+      <TT  CLASS="parameter" ><I  >except</I
+></TT
+> are modified to indicate which stream
+      resource(s) actually changed status.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     The <TT  CLASS="parameter" ><I  >tv_sec</I
+></TT
+> and <TT  CLASS="parameter" ><I  >tv_usec</I
+></TT
+>
+     together form the <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >timeout</I
+></SPAN
+> parameter,
+     <TT  CLASS="parameter" ><I  >tv_sec</I
+></TT
+> specifies the number of seconds while
+     <TT  CLASS="parameter" ><I  >tv_usec</I
+></TT
+> the number of microseconds.
+     The <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >timeout</I
+></SPAN
+> is an upper bound on the amount of time
+     that <B  CLASS="function" >stream_select()</B
+> will wait before it returns.
+     If <TT  CLASS="parameter" ><I  >tv_sec</I
+></TT
+> and <TT  CLASS="parameter" ><I  >tv_usec</I
+></TT
+> are
+     both set to <TT  CLASS="literal" >0</TT
+>, <B  CLASS="function" >stream_select()</B
+> will
+     not wait for data - instead it will return immediately, indicating the
+     current status of the streams.
+     If <TT  CLASS="parameter" ><I  >tv_sec</I
+></TT
+> is <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> <B  CLASS="function" >stream_select()</B
+>
+     can block indefinitely, returning only when an event on one of the
+     watched streams occurs (or if a signal interrupts the system call).
+    </P
+><P  >     On success <B  CLASS="function" >stream_select()</B
+> returns the number of
+     stream resources contained in the modified arrays, which may be zero if
+     the timeout expires before anything interesting happens. On error <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>
+     is returned and a warning raised (this can happen if the system call is
+     interrupted by an incoming signal).
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      Using a timeout value of <TT  CLASS="literal" >0</TT
+> allows you to
+      instantaneously poll the status of the streams, however, it is NOT a
+      good idea to use a <TT  CLASS="literal" >0</TT
+> timeout value in a loop as it
+      will cause your script to consume too much CPU time.
+     </P
+><P  >      It is much better to specify a timeout value of a few seconds, although
+      if you need to be checking and running other code concurrently, using a
+      timeout value of at least <TT  CLASS="literal" >200000</TT
+> microseconds will
+      help reduce the CPU usage of your script.
+     </P
+><P  >      Remember that the timeout value is the
+      maximum time that will elapse; <B  CLASS="function" >stream_select()</B
+> will
+      return as soon as the requested streams are ready for use.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     You do not need to pass every array to
+     <B  CLASS="function" >stream_select()</B
+>. You can leave it out and use an
+     empty array or <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> instead. Also do not forget that those arrays are
+     passed <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >by reference</I
+></SPAN
+> and will be modified after
+     <B  CLASS="function" >stream_select()</B
+> returns.
+    </P
+><P  >     This example checks to see if data has arrived for reading on either
+     <TT  CLASS="parameter" ><I  >$stream1</I
+></TT
+> or <TT  CLASS="parameter" ><I  >$stream2</I
+></TT
+>.
+     Since the timeout value is <TT  CLASS="literal" >0</TT
+> it will return
+     immediately:
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">/* Prepare the read array */<br  /></font><font  color="#0000BB">$read </font><font  color="#007700">= array(</font><font  color="#0000BB">$stream1</font><font  color="#007700">, </font><font  color="#0000BB">$stream2</font><font  color="#007700">);<br  /><br  />if (</font><font  color="#0000BB">false </font><font  color="#007700">=== (</font><font  color="#0000BB">$num_changed_streams </font><font  color="#007700">= </font><font  color="#0000BB">stream_select</font><font  color="#007700">(</font><font  color="#0000BB">$read</font><font  color="#007700">, </font><font  color="#0000BB">$write </font><font  color="#007700">= </font><font  color="#0000BB">NULL</font><font  color="#007700">, </font><font  color="#0000BB">$except </font><font  color="#007700">= </font><font  color="#0000BB">NULL</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">))) {<br  />    </font><font  color="#FF8000">/* Error handling */<br  /></font><font  color="#007700">} elseif (</font><font  color="#0000BB">$num_changed_streams </font><font  color="#007700">> </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />    </font><font  color="#FF8000">/* At least on one of the streams something interesting happened */<br  /></font><font  color="#007700">}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Due to a limitation in the current Zend Engine it is not possible to pass a
+      constant modifier like <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> directly as a parameter to a function
+      which expects this parameter to be passed by reference. Instead use a
+      temporary variable or an expression with the leftmost member being a
+      temporary variable:
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />stream_select</font><font  color="#007700">(</font><font  color="#0000BB">$r</font><font  color="#007700">, </font><font  color="#0000BB">$w</font><font  color="#007700">, </font><font  color="#0000BB">$e </font><font  color="#007700">= </font><font  color="#0000BB">NULL</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+     Be sure to use the <TT  CLASS="literal" >===</TT
+> operator when checking for an
+     error. Since the <B  CLASS="function" >stream_select()</B
+> may return 0 the
+     comparison with <TT  CLASS="literal" >==</TT
+> would evaluate to <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>:
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">false </font><font  color="#007700">=== </font><font  color="#0000BB">stream_select</font><font  color="#007700">(</font><font  color="#0000BB">$r</font><font  color="#007700">, </font><font  color="#0000BB">$w</font><font  color="#007700">, </font><font  color="#0000BB">$e </font><font  color="#007700">= </font><font  color="#0000BB">NULL</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">)) {<br  />    echo </font><font  color="#DD0000">"stream_select() failed\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      If you read/write to a stream returned in the arrays be aware that
+      they do not necessarily read/write the full amount of data you have
+      requested. Be prepared to even only be able to read/write a single
+      byte.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >Windows 98 Note: </B
+>
+      <B  CLASS="function" >stream_select()</B
+> used on a pipe returned from
+      <SPAN HREF="#"><B  CLASS="function" >proc_open()</B
+></A
+> may cause data loss under
+      Windows 98.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_set_blocking()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_set_blocking</name>
+            <signature><![CDATA[bool stream_set_blocking ( resource stream, int mode)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106773" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_set_blocking</B
+> ( resource stream, int mode)<BR  ></BR
+><P  >     If <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> is <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>, the given stream
+     will be switched to non-blocking mode, and if <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>, it
+     will be switched to blocking mode.  This affects calls like
+     <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+> and <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+>
+     that read from the stream.  In non-blocking mode an
+     <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+> call will always return right away
+     while in blocking mode it will wait for data to become available
+     on the stream.
+    </P
+><P  >     如果成功则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，失败则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     This function was previously called as
+     <B  CLASS="function" >set_socket_blocking()</B
+> and later
+     <SPAN HREF="#"><B  CLASS="function" >socket_set_blocking()</B
+></A
+> but this usage is deprecated.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Prior to PHP 4.3, this function only worked on socket based streams.
+      Since PHP 4.3, this function works for any stream that supports
+      non-blocking mode (currently, regular files and socket streams).
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_select()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_set_timeout</name>
+            <signature><![CDATA[bool stream_set_timeout ( resource stream, int seconds [, int microseconds])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106805" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_set_timeout</B
+> ( resource stream, int seconds [, int microseconds])<BR  ></BR
+><P  >     Sets the timeout value on <TT  CLASS="parameter" ><I  >stream</I
+></TT
+>,
+     expressed in the sum of <TT  CLASS="parameter" ><I  >seconds</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >microseconds</I
+></TT
+>. 如果成功则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，失败则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106825" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >stream_set_timeout()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$fp </font><font  color="#007700">= </font><font  color="#0000BB">fsockopen</font><font  color="#007700">(</font><font  color="#DD0000">"www.example.com"</font><font  color="#007700">, </font><font  color="#0000BB">80</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$fp</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"Unable to open\n"</font><font  color="#007700">;<br  />} else {<br  />    </font><font  color="#0000BB">fputs</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"GET / HTTP/1.0\n\n"</font><font  color="#007700">);<br  />    </font><font  color="#0000BB">stream_set_timeout</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">);<br  />    </font><font  color="#0000BB">$res </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">2000</font><font  color="#007700">);<br  />    </font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">stream_get_meta_data</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">));<br  />    </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />    echo </font><font  color="#0000BB">$res</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      As of PHP 4.3, this function can (potentially) work on any kind of
+      stream.  In PHP 4.3, socket based streams are still the only kind
+      supported in the PHP core, although streams from other extensions
+      may support this function.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     This function was previously called as
+     <B  CLASS="function" >set_socket_timeout()</B
+> and later
+     <SPAN HREF="#"><B  CLASS="function" >socket_set_timeout()</B
+></A
+> but this usage is deprecated.
+    </P
+><P  >     See also: <SPAN HREF="#"><B  CLASS="function" >fsockopen()</B
+></A
+> and <SPAN HREF="#"><B  CLASS="function" >fopen()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_set_write_buffer</name>
+            <signature><![CDATA[int stream_set_write_buffer ( resource stream, int buffer)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106841" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >stream_set_write_buffer</B
+> ( resource stream, int buffer)<BR  ></BR
+><P  >     Output using <SPAN HREF="#"><B  CLASS="function" >fwrite()</B
+></A
+> is normally buffered at
+     8K.  This means that if there are two processes wanting to write
+     to the same output stream (a file), each is paused after 8K of
+     data to allow the other to write.
+     <B  CLASS="function" >stream_set_write_buffer()</B
+>
+     sets the buffering for write operations on the given filepointer
+     <TT  CLASS="parameter" ><I  >stream</I
+></TT
+> to <TT  CLASS="parameter" ><I  >buffer</I
+></TT
+> bytes.
+     If <TT  CLASS="parameter" ><I  >buffer</I
+></TT
+> is 0 then write operations are
+     unbuffered.  This ensures that all writes with
+     <SPAN HREF="#"><B  CLASS="function" >fwrite()</B
+></A
+> are completed before other processes
+     are allowed to write to that output stream.
+    </P
+><P  >     The function returns 0 on success, or EOF if the request cannot
+     be honored.
+    </P
+><P  >     The following example demonstrates how to use
+     <B  CLASS="function" >stream_set_write_buffer()</B
+> to create an unbuffered stream.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106862" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >stream_set_write_buffer()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">, </font><font  color="#DD0000">"w"</font><font  color="#007700">);<br  />if (</font><font  color="#0000BB">$fp</font><font  color="#007700">) {<br  />  </font><font  color="#0000BB">stream_set_write_buffer</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  />  </font><font  color="#0000BB">fputs</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">$output</font><font  color="#007700">);<br  />  </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >fopen()</B
+></A
+> and <SPAN HREF="#"><B  CLASS="function" >fwrite()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_socket_accept</name>
+            <signature><![CDATA[resource stream_socket_accept ( resource server_socket [, int timeout [, string &peername]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106874" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >stream_socket_accept</B
+> ( resource server_socket [, int timeout [, string &peername]])<BR  ></BR
+><P  >     Accept a connection on a socket previously created by
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_server()</B
+></A
+>.  If
+     <TT  CLASS="parameter" ><I  >timeout</I
+></TT
+> is specified, the default
+     socket accept timeout will be overridden with the time 
+     specified in seconds.  The name (address) of the client
+     which connected will be passed back in <TT  CLASS="parameter" ><I  >peername</I
+></TT
+>
+     if included and available from the selected transport.
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >peername</I
+></TT
+> can also be determined later
+     using <SPAN HREF="#"><B  CLASS="function" >stream_socket_get_name()</B
+></A
+>.
+    </P
+><P  >     If the call fails, it will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >stream_socket_server()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_get_name()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stream_set_blocking()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stream_set_timeout()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fgetss()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >fputs()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fclose()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >feof()</B
+></A
+>, and
+     the <SPAN HREF="#">Curl extension</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_socket_client</name>
+            <signature><![CDATA[resource stream_socket_client ( string remote_socket [, int &errno [, string &errstr [, float timeout [, int flags [, resource context]]]]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106912" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >stream_socket_client</B
+> ( string remote_socket [, int &errno [, string &errstr [, float timeout [, int flags [, resource context]]]]])<BR  ></BR
+><P  >     Initiates a stream or datagram connection to the destination specified
+     by <TT  CLASS="parameter" ><I  >remote_socket</I
+></TT
+>.  The type of socket created
+     is determined by the transport specified using standard URL formatting:
+     <TT  CLASS="literal" >transport://target</TT
+>.  For Internet Domain sockets
+     (AF_INET) such as TCP and UDP, the <TT  CLASS="literal" >target</TT
+> portion
+     of the <TT  CLASS="parameter" ><I  >remote_socket</I
+></TT
+> parameter should consist of
+     a hostname or IP address followed by a colon and a port number.  For Unix
+     domain sockets, the <TT  CLASS="parameter" ><I  >target</I
+></TT
+> portion should point
+     to the socket file on the filesystem.
+
+     The optional <TT  CLASS="parameter" ><I  >timeout</I
+></TT
+> can be used to
+     set a timeout in seconds for the connect system call.
+
+     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> is a bitmask field which may be set to any
+     combination of connection flags.  Currently the selection of connection
+     flags is limited to <TT  CLASS="constant" ><B  >STREAM_CLIENT_ASYNC_CONNECT</B
+></TT
+> and
+     <TT  CLASS="constant" ><B  >STREAM_CLIENT_PERSISTENT</B
+></TT
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      If you need to set a timeout for reading/writing data over the socket,
+      use <SPAN HREF="#"><B  CLASS="function" >stream_set_timeout()</B
+></A
+>, as the <TT  CLASS="parameter" ><I  >timeout</I
+></TT
+>
+      parameter to <B  CLASS="function" >stream_socket_client()</B
+> only applies while
+      connecting the socket.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <B  CLASS="function" >stream_socket_client()</B
+> returns a
+     stream resource which may
+     be used together with the other file functions (such as
+     <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >fgetss()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fputs()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >fclose()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >feof()</B
+></A
+>).
+    </P
+><P  >     If the call fails, it will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> and if the optional
+     <TT  CLASS="parameter" ><I  >errno</I
+></TT
+> and <TT  CLASS="parameter" ><I  >errstr</I
+></TT
+>
+     arguments are present they will be set to indicate the actual
+     system level error that occurred in the system-level
+     <TT  CLASS="literal" >connect()</TT
+> call. If the value returned in
+     <TT  CLASS="parameter" ><I  >errno</I
+></TT
+> is <TT  CLASS="literal" >0</TT
+> and the
+     function returned <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>, it is an indication that the error
+     occurred before the <TT  CLASS="literal" >connect()</TT
+> call. This is
+     most likely due to a problem initializing the socket. Note that
+     the <TT  CLASS="parameter" ><I  >errno</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >errstr</I
+></TT
+> arguments will always be passed by
+     reference.
+    </P
+><P  >     Depending on the environment, the Unix domain or the optional
+     connect timeout may not be available.  A list of available
+     transports can be retrieved using <SPAN HREF="#"><B  CLASS="function" >stream_get_transports()</B
+></A
+>.
+     See <SPAN HREF="#">附录 K</A
+> for a list of built in transports.
+    </P
+><P  >     The stream will by default be opened in blocking mode.  You can
+     switch it to non-blocking mode by using
+     <SPAN HREF="#"><B  CLASS="function" >stream_set_blocking()</B
+></A
+>.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106973" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >stream_socket_client()</B
+> Example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$fp </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_client</font><font  color="#007700">(</font><font  color="#DD0000">"tcp://www.example.com:80"</font><font  color="#007700">, </font><font  color="#0000BB">$errno</font><font  color="#007700">, </font><font  color="#0000BB">$errstr</font><font  color="#007700">, </font><font  color="#0000BB">30</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$fp</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"$errstr ($errno)<br />\n"</font><font  color="#007700">;<br  />} else {<br  />    </font><font  color="#0000BB">fputs</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"GET / HTTP/1.0\r\nHost: www.example.com\r\nAccept: */*\r\n\r\n"</font><font  color="#007700">);<br  />    while (!</font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">)) {<br  />        echo </font><font  color="#0000BB">fgets</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">1024</font><font  color="#007700">);<br  />    }<br  />    </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     The example below shows how to retrieve the day and time
+     from the UDP service "daytime" (port 13) in your own machine.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN106977" ></A
+><P  ><B  >例子 2. Using UDP connection</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$fp </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_client</font><font  color="#007700">(</font><font  color="#DD0000">"udp://127.0.0.1:13"</font><font  color="#007700">, </font><font  color="#0000BB">$errno</font><font  color="#007700">, </font><font  color="#0000BB">$errstr</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$fp</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"ERROR: $errno - $errstr<br />\n"</font><font  color="#007700">;<br  />} else {<br  />    </font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"\n"</font><font  color="#007700">);<br  />    echo </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">26</font><font  color="#007700">);<br  />    </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >        UDP sockets will sometimes appear to have opened without an error,
+        even if the remote host is unreachable.  The error will only
+        become apparent when you read or write data to/from the socket.
+        The reason for this is because UDP is a "connectionless" protocol,
+        which means that the operating system does not try to establish
+        a link for the socket until it actually needs to send or receive data.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>当指定数字的
+IPv6 地址（例如 fe80::1）时必须将 IP 地址放在方括号内。例如
+<TT  CLASS="literal" >tcp://[fe80::1]:80</TT
+>。</P
+></BLOCKQUOTE
+></DIV
+>
+     See also <SPAN HREF="#"><B  CLASS="function" >stream_socket_server()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >stream_set_blocking()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stream_set_timeout()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fgetss()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >fputs()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fclose()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >feof()</B
+></A
+>, and
+     the <SPAN HREF="#">Curl extension</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_socket_get_name</name>
+            <signature><![CDATA[string stream_socket_get_name ( resource handle, bool want_peer)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106998" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_socket_get_name</B
+> ( resource handle, bool want_peer)<BR  ></BR
+><P  >     Returns the local or remote name of a given socket connection.
+     If <TT  CLASS="parameter" ><I  >want_peer</I
+></TT
+> is set to <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> the remote
+     socket name will be returned, if it is set to <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> the local
+     socket name will be returned.
+    </P
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_accept()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_socket_recvfrom</name>
+            <signature><![CDATA[string stream_socket_recvfrom ( resource socket, int length [, int flags [, string &address]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN107019" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_socket_recvfrom</B
+> ( resource socket, int length [, int flags [, string &address]])<BR  ></BR
+><P  >     The function <B  CLASS="function" >stream_socket_recvfrom()</B
+> accepts
+     data from a remote socket up to <TT  CLASS="parameter" ><I  >length</I
+></TT
+> bytes.
+     If <TT  CLASS="parameter" ><I  >address</I
+></TT
+> is provided it will be populated with
+     the address of the remote socket.
+    </P
+><P  >     The value of <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> can be any combination
+     of the following:
+     </P><DIV  CLASS="table" ><A  NAME="AEN107042" ></A
+><P  ><B  >表格 1. possible values for <TT  CLASS="parameter" ><I  >flags</I
+></TT
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STREAM_OOB</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Process OOB (out-of-band) data.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STREAM_PEEK</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Retrieve data from the socket, but do not consume the buffer.
+          Subsequent calls to <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+> or 
+          <B  CLASS="function" >stream_socket_recvfrom()</B
+> will see
+          the same data.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107057" ></A
+><P  ><B  >例子 1. <SPAN HREF="#"><B  CLASS="function" >stream_socket_sendto()</B
+></A
+> Example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">/* Open a server socket to port 1234 on localhost */<br  /></font><font  color="#0000BB">$server </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_server</font><font  color="#007700">(</font><font  color="#DD0000">'tcp://127.0.0.1:1234'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Accept a connection */<br  /></font><font  color="#0000BB">$socket </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_accept</font><font  color="#007700">(</font><font  color="#0000BB">$server</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Grab a packet (1500 is a typical MTU size) of OOB data */<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Received Out-Of-Band: '" </font><font  color="#007700">. </font><font  color="#0000BB">stream_socket_recvfrom</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#0000BB">1500</font><font  color="#007700">, </font><font  color="#0000BB">STREAM_OOB</font><font  color="#007700">) . </font><font  color="#DD0000">"'\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Take a peek at the normal in-band data, but don't comsume it. */<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Data: '" </font><font  color="#007700">. </font><font  color="#0000BB">stream_socket_recvfrom</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#0000BB">1500</font><font  color="#007700">, </font><font  color="#0000BB">STREAM_PEEK</font><font  color="#007700">) . </font><font  color="#DD0000">"'\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Get the exact same packet again, but remove it from the buffer this time. */<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Data: '" </font><font  color="#007700">. </font><font  color="#0000BB">stream_socket_recvfrom</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#0000BB">1500</font><font  color="#007700">) . </font><font  color="#DD0000">"'\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Close it up */<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$server</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_sendto()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_client()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_server()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_socket_sendto</name>
+            <signature><![CDATA[int stream_socket_sendto ( resource socket, string data [, int flags [, string address]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN107069" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >stream_socket_sendto</B
+> ( resource socket, string data [, int flags [, string address]])<BR  ></BR
+><P  >     The function <B  CLASS="function" >stream_socket_sendto()</B
+> sends 
+     the data specified by <TT  CLASS="parameter" ><I  >data</I
+></TT
+> through the
+     socket specified by <TT  CLASS="parameter" ><I  >socket</I
+></TT
+>.  The address
+     specified when the socket stream was created will be used unless
+     an alternate address is specified in <TT  CLASS="parameter" ><I  >address</I
+></TT
+>.
+    </P
+><P  >     The value of <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> can be any combination
+     of the following:
+     </P><DIV  CLASS="table" ><A  NAME="AEN107093" ></A
+><P  ><B  >表格 1. possible values for <TT  CLASS="parameter" ><I  >flags</I
+></TT
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STREAM_OOB</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Process OOB (out-of-band) data.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107102" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >stream_socket_sendto()</B
+> Example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">/* Open a socket to port 1234 on localhost */<br  /></font><font  color="#0000BB">$socket </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_client</font><font  color="#007700">(</font><font  color="#DD0000">'tcp://127.0.0.1:1234'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Send ordinary data via ordinary channels. */<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#DD0000">"Normal data transmit."</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Send more data out of band. */<br  /></font><font  color="#0000BB">stream_socket_sendto</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#DD0000">"Out of Band data."</font><font  color="#007700">, </font><font  color="#0000BB">STREAM_OOB</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Close it up */<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_recvfrom()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_client()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >stream_socket_server()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_socket_server</name>
+            <signature><![CDATA[resource stream_socket_server ( string local_socket [, int &errno [, string &errstr [, int flags [, resource context]]]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN107114" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >stream_socket_server</B
+> ( string local_socket [, int &errno [, string &errstr [, int flags [, resource context]]]])<BR  ></BR
+><P  >     Creates a stream or datagram socket on the specified 
+     <TT  CLASS="parameter" ><I  >local_socket</I
+></TT
+>.  The type of socket created
+     is determined by the transport specified using standard URL formatting:
+     <TT  CLASS="literal" >transport://target</TT
+>.  For Internet Domain sockets
+     (AF_INET) such as TCP and UDP, the <TT  CLASS="literal" >target</TT
+> portion
+     of the <TT  CLASS="parameter" ><I  >remote_socket</I
+></TT
+> parameter should consist of
+     a hostname or IP address followed by a colon and a port number.  For Unix
+     domain sockets, the <TT  CLASS="parameter" ><I  >target</I
+></TT
+> portion should point
+     to the socket file on the filesystem.
+
+     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> is a bitmask field which may be set to any
+     combination of socket creation flags.  The default value of flags is
+     <TT  CLASS="constant" ><B  >STREAM_SERVER_BIND</B
+></TT
+> | <TT  CLASS="constant" ><B  >STREAM_SERVER_LISTEN</B
+></TT
+>.
+    </P
+><P  >     This function only creates a socket, to begin accepting connections
+     use <SPAN HREF="#"><B  CLASS="function" >stream_socket_accept()</B
+></A
+>.
+    </P
+><P  >     If the call fails, it will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> and if the optional
+     <TT  CLASS="parameter" ><I  >errno</I
+></TT
+> and <TT  CLASS="parameter" ><I  >errstr</I
+></TT
+>
+     arguments are present they will be set to indicate the actual
+     system level error that occurred in the system-level
+     <TT  CLASS="literal" >socket()</TT
+>, <TT  CLASS="literal" >bind()</TT
+>, and
+     <TT  CLASS="literal" >listen()</TT
+> calls. If the value returned in
+     <TT  CLASS="parameter" ><I  >errno</I
+></TT
+> is <TT  CLASS="literal" >0</TT
+> and the
+     function returned <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>, it is an indication that the error
+     occurred before the <TT  CLASS="literal" >bind()</TT
+> call. This is
+     most likely due to a problem initializing the socket. Note that
+     the <TT  CLASS="parameter" ><I  >errno</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >errstr</I
+></TT
+> arguments will always be passed by
+     reference.
+    </P
+><P  >     Depending on the environment, Unix domain sockets may not be available.  
+     A list of available transports can be retrieved using 
+     <SPAN HREF="#"><B  CLASS="function" >stream_get_transports()</B
+></A
+>. See
+     <SPAN HREF="#">附录 K</A
+> for a list of bulitin transports.
+    </P
+><P  >     <B  CLASS="function" >stream_socket_server()</B
+>.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107163" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >stream_socket_server()</B
+> Example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$socket </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_server</font><font  color="#007700">(</font><font  color="#DD0000">"tcp://0.0.0.0:8000"</font><font  color="#007700">, </font><font  color="#0000BB">$errno</font><font  color="#007700">, </font><font  color="#0000BB">$errstr</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$socket</font><font  color="#007700">) {<br  />  echo </font><font  color="#DD0000">"$errstr ($errno)<br />\n"</font><font  color="#007700">;<br  />} else {<br  />  while (</font><font  color="#0000BB">$conn </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_accept</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">)) {<br  />    </font><font  color="#0000BB">fputs</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#DD0000">'The local time is ' </font><font  color="#007700">. </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">'n/j/Y g:i a'</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">);<br  />    </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">);<br  />  }<br  />  </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >      The example below shows how to act as a time server which can respond
+      to time queries as shown in an example on <SPAN HREF="#"><B  CLASS="function" >stream_socket_client()</B
+></A
+>.
+      </P><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+        Most systems require root access to create a server socket on a port
+        below 1024.
+       </P
+></BLOCKQUOTE
+></DIV
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107171" ></A
+><P  ><B  >例子 2. Using UDP server sockets</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$socket </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_server</font><font  color="#007700">(</font><font  color="#DD0000">"udp://0.0.0.0:13"</font><font  color="#007700">, </font><font  color="#0000BB">$errno</font><font  color="#007700">, </font><font  color="#0000BB">$errstr</font><font  color="#007700">, </font><font  color="#0000BB">STREAM_SERVER_BIND</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$socket</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"ERROR: $errno - $errstr<br />\n"</font><font  color="#007700">;<br  />} else {<br  />  while (</font><font  color="#0000BB">$conn </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_accept</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">)) {<br  />    </font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"D M j H:i:s Y\r\n"</font><font  color="#007700">));<br  />    </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">);<br  />  }<br  />  </font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>当指定数字的
+IPv6 地址（例如 fe80::1）时必须将 IP 地址放在方括号内。例如
+<TT  CLASS="literal" >tcp://[fe80::1]:80</TT
+>。</P
+></BLOCKQUOTE
+></DIV
+><P  >      See also <SPAN HREF="#"><B  CLASS="function" >stream_socket_client()</B
+></A
+>, 
+      <SPAN HREF="#"><B  CLASS="function" >stream_set_blocking()</B
+></A
+>,
+      <SPAN HREF="#"><B  CLASS="function" >stream_set_timeout()</B
+></A
+>, 
+      <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+>,
+      <SPAN HREF="#"><B  CLASS="function" >fgetss()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >fputs()</B
+></A
+>,
+      <SPAN HREF="#"><B  CLASS="function" >fclose()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >feof()</B
+></A
+>, and
+      the <SPAN HREF="#">Curl extension</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_wrapper_register</name>
+            <signature><![CDATA[bool stream_wrapper_register ( string protocol, string classname)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN107191" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_wrapper_register</B
+> ( string protocol, string classname)<BR  ></BR
+><P  >     <B  CLASS="function" >stream_wrapper_register()</B
+> allows you to implement
+     your own protocol handlers and streams for use with all the other
+     filesystem functions (such as <SPAN HREF="#"><B  CLASS="function" >fopen()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+> etc.).
+    </P
+><P  >     To implement a wrapper, you need to define a class with a number of
+     member functions, as defined below. When someone fopens your stream,
+     PHP will create an instance of <TT  CLASS="parameter" ><I  >classname</I
+></TT
+> and
+     then call methods on that instance.  You must implement the methods
+     exactly as described below - doing otherwise will lead to undefined
+     behaviour.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      As of <TT  CLASS="literal" >PHP 5.0.0</TT
+> the instance of 
+      <TT  CLASS="parameter" ><I  >classname</I
+></TT
+> will be populated with a
+      <TT  CLASS="parameter" ><I  >context</I
+></TT
+> property referencing a 
+      <TT  CLASS="literal" >Context Resource</TT
+> which may be accessed
+      with <SPAN HREF="#"><B  CLASS="function" >stream_context_get_options()</B
+></A
+>.
+      If no context was passed to the stream creation function,
+      <TT  CLASS="parameter" ><I  >context</I
+></TT
+> will be set to <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <B  CLASS="function" >stream_wrapper_register()</B
+> will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if the
+     <TT  CLASS="parameter" ><I  >protocol</I
+></TT
+> already has a handler.
+    </P
+>bool <B  CLASS="methodname" >stream_open</B
+> ( string path, string mode, int options, string opened_path)<BR  ></BR
+><P  >     This method is called immediately after your stream object is
+     created.  <TT  CLASS="parameter" ><I  >path</I
+></TT
+> specifies the URL that was
+     passed to <SPAN HREF="#"><B  CLASS="function" >fopen()</B
+></A
+> and that this object is
+     expected to retrieve.  You can use <SPAN HREF="#"><B  CLASS="function" >parse_url()</B
+></A
+>
+     to break it apart.
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> is the mode used to open the file,
+     as detailed for <SPAN HREF="#"><B  CLASS="function" >fopen()</B
+></A
+>.  You are responsible
+     for checking that <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> is valid for the
+     <TT  CLASS="parameter" ><I  >path</I
+></TT
+> requested.
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >options</I
+></TT
+> holds additional flags set
+     by the streams API. It can hold one or more of the following
+     values OR'd together.
+     </P><DIV  CLASS="informaltable" ><A  NAME="AEN107247" ></A
+><P  ></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Flag</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >STREAM_USE_PATH</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >If <TT  CLASS="parameter" ><I  >path</I
+></TT
+> is relative, search
+          for the resource using the include_path.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >STREAM_REPORT_ERRORS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >If this flag is set, you are responsible for raising
+          errors using <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+> during
+          opening of the stream.  If this flag is not set, you
+          should not raise any errors.
+         </TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     If the <TT  CLASS="parameter" ><I  >path</I
+></TT
+> is opened successfully,
+     and STREAM_USE_PATH is set in <TT  CLASS="parameter" ><I  >options</I
+></TT
+>,
+     you should set <TT  CLASS="parameter" ><I  >opened_path</I
+></TT
+> to the full
+     path of the file/resource that was actually opened.
+    </P
+><P  >     If the requested resource was opened successfully, you should
+     return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>, otherwise you should return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>
+    </P
+>void <B  CLASS="methodname" >stream_close</B
+> ( void )<BR  ></BR
+><P  >     This method is called when the stream is closed, using
+     <SPAN HREF="#"><B  CLASS="function" >fclose()</B
+></A
+>.  You must release any resources
+     that were locked or allocated by the stream.
+    </P
+>string <B  CLASS="methodname" >stream_read</B
+> ( int count)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+>
+     and <SPAN HREF="#"><B  CLASS="function" >fgets()</B
+></A
+> calls on the stream.  You
+     must return up-to <TT  CLASS="parameter" ><I  >count</I
+></TT
+> bytes of data
+     from the current read/write position as a string.
+     If there are less than <TT  CLASS="parameter" ><I  >count</I
+></TT
+>
+     bytes available, return as many as are available.  If no
+     more data is available, return either <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> or an
+     empty string.
+     You must also update the read/write position of the stream
+     by the number of bytes that were successfully read.
+    </P
+>int <B  CLASS="methodname" >stream_write</B
+> ( string data)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >fwrite()</B
+></A
+>
+     calls on the stream.  You should store <TT  CLASS="parameter" ><I  >data</I
+></TT
+>
+     into the underlying storage used by your stream.  If there is not
+     enough room, try to store as many bytes as possible.
+     You should return the number of bytes that were successfully
+     stored in the stream, or 0 if none could be stored.
+     You must also update the read/write position of the stream
+     by the number of bytes that were successfully written.
+    </P
+>bool <B  CLASS="methodname" >stream_eof</B
+> ( void )<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >feof()</B
+></A
+>
+     calls on the stream.  You should return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the read/write
+     position is at the end of the stream and if no more data is available
+     to be read, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+>int <B  CLASS="methodname" >stream_tell</B
+> ( void )<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >ftell()</B
+></A
+>
+     calls on the stream.  You should return the current read/write
+     position of the stream.
+    </P
+>bool <B  CLASS="methodname" >stream_seek</B
+> ( int offset, int whence)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >fseek()</B
+></A
+>
+     calls on the stream.  You should update the read/write position
+     of the stream according to <TT  CLASS="parameter" ><I  >offset</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >whence</I
+></TT
+>.  See <SPAN HREF="#"><B  CLASS="function" >fseek()</B
+></A
+>
+     for more information about these parameters.
+     Return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the position was updated, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+>bool <B  CLASS="methodname" >stream_flush</B
+> ( void )<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >fflush()</B
+></A
+>
+     calls on the stream.  If you have cached data in your stream
+     but not yet stored it into the underlying storage, you should
+     do so now.
+     Return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the cached data was successfully stored (or
+     if there was no data to store), or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if the data could
+     not be stored.
+    </P
+>array <B  CLASS="methodname" >stream_stat</B
+> ( void )<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >fstat()</B
+></A
+>
+     calls on the stream and should return an array containing the same
+     values as appropriate for the stream.
+    </P
+>bool <B  CLASS="methodname" >unlink</B
+> ( string path)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >unlink()</B
+></A
+>
+     calls on URL paths associated with the wrapper and should attempt
+     to delete the item specified by <TT  CLASS="parameter" ><I  >path</I
+></TT
+>.
+     It should return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+     In order for the appropriate error message to be returned,
+     do not define this method if your wrapper does not support unlinking.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Userspace wrapper unlink method is not supported prior to 
+      <TT  CLASS="literal" >PHP 5.0.0</TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+>bool <B  CLASS="methodname" >rename</B
+> ( string path_from, string path_to)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >rename()</B
+></A
+>
+     calls on URL paths associated with the wrapper and should attempt
+     to rename the item specified by <TT  CLASS="parameter" ><I  >path_from</I
+></TT
+>
+     to the specification given by <TT  CLASS="parameter" ><I  >path_to</I
+></TT
+>.
+     It should return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+     In order for the appropriate error message to be returned,
+     do not define this method if your wrapper does not support renaming.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Userspace wrapper rename method is not supported prior to 
+      <TT  CLASS="literal" >PHP 5.0.0</TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+>bool <B  CLASS="methodname" >mkdir</B
+> ( string path, int mode, int options)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >mkdir()</B
+></A
+>
+     calls on URL paths associated with the wrapper and should attempt
+     to create the directory specified by <TT  CLASS="parameter" ><I  >path</I
+></TT
+>.
+     It should return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+     In order for the appropriate error message to be returned,
+     do not define this method if your wrapper does not support 
+     creating directories.  Posible values for <TT  CLASS="parameter" ><I  >options</I
+></TT
+>
+     include <TT  CLASS="constant" ><B  >STREAM_REPORT_ERRORS</B
+></TT
+> and 
+     <TT  CLASS="constant" ><B  >STREAM_MKDIR_RECURSIVE</B
+></TT
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Userspace wrapper mkdir method is not supported prior to 
+      <TT  CLASS="literal" >PHP 5.0.0</TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+>bool <B  CLASS="methodname" >rmdir</B
+> ( string path, int options)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >rmdir()</B
+></A
+>
+     calls on URL paths associated with the wrapper and should attempt
+     to remove the directory specified by <TT  CLASS="parameter" ><I  >path</I
+></TT
+>.
+     It should return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+     In order for the appropriate error message to be returned,
+     do not define this method if your wrapper does not support 
+     removing directories.  Possible values for <TT  CLASS="parameter" ><I  >options</I
+></TT
+>
+     include <TT  CLASS="constant" ><B  >STREAM_REPORT_ERRORS</B
+></TT
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Userspace wrapper rmdir method is not supported prior to 
+      <TT  CLASS="literal" >PHP 5.0.0</TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+>bool <B  CLASS="methodname" >dir_opendir</B
+> ( string path, int options)<BR  ></BR
+><P  >     This method is called immediately when your stream object is created for
+     examining directory contents with <SPAN HREF="#"><B  CLASS="function" >opendir()</B
+></A
+>.
+     <TT  CLASS="parameter" ><I  >path</I
+></TT
+> specifies the URL that was
+     passed to <SPAN HREF="#"><B  CLASS="function" >opendir()</B
+></A
+> and that this object is
+     expected to explore.  You can use <SPAN HREF="#"><B  CLASS="function" >parse_url()</B
+></A
+>
+     to break it apart.
+    </P
+>array <B  CLASS="methodname" >url_stat</B
+> ( string path, int flags)<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >stat()</B
+></A
+>
+     calls on the URL paths associated with the wrapper and should
+     return as many elements in common with the system function as
+     possible.  Unknown or unavailable values should be set to a
+     rational value (usually <TT  CLASS="constant" ><B  >0</B
+></TT
+>).
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> holds additional flags set
+     by the streams API. It can hold one or more of the following
+     values OR'd together.
+     </P><DIV  CLASS="informaltable" ><A  NAME="AEN107442" ></A
+><P  ></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Flag</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >STREAM_URL_STAT_LINK</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          For resources with the ability to link to other resource
+          (such as an HTTP Location: forward, or a filesystem
+          symlink).  This flag specified that only information
+          about the link itself should be returned.  Not the
+          resource pointed to by the link.  This flag is set in
+          response to calls to <SPAN HREF="#"><B  CLASS="function" >lstat()</B
+></A
+>,
+          <SPAN HREF="#"><B  CLASS="function" >is_link()</B
+></A
+>, or <SPAN HREF="#"><B  CLASS="function" >filetype()</B
+></A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >STREAM_URL_STAT_QUIET</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >If this flag is set, your wrapper should not raise any
+          errors.  If this flag is not set, you are responsible for
+          reporting errors using the <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+> 
+          function during stating of the path.  
+         </TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+>string <B  CLASS="methodname" >dir_readdir</B
+> ( void )<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >readdir()</B
+></A
+>
+     and should return a string representing the next filename in the
+     location opened by <B  CLASS="function" >dir_opendir()</B
+>.
+    </P
+>bool <B  CLASS="methodname" >dir_rewinddir</B
+> ( void )<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >rewinddir()</B
+></A
+>
+     and should reset the output generated by <B  CLASS="function" >dir_readdir()</B
+>.
+     i.e.: The next call to <B  CLASS="function" >dir_readdir()</B
+> should return
+     the first entry in the location returned by <B  CLASS="function" >dir_opendir()</B
+>.
+    </P
+>bool <B  CLASS="methodname" >dir_closedir</B
+> ( void )<BR  ></BR
+><P  >     This method is called in response to <SPAN HREF="#"><B  CLASS="function" >closedir()</B
+></A
+>.
+     You should release any resources which were locked or allocated during
+     the opening and use of the directory stream.
+    </P
+><P  >     The example below implements a var:// protocol handler that
+     allows read/write access to a named global variable using
+     standard filesystem stream functions such as <SPAN HREF="#"><B  CLASS="function" >fread()</B
+></A
+>.
+     The var:// protocol implemented below, given the URL
+     "var://foo" will read/write data to/from $GLOBALS["foo"].
+
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107483" ></A
+><P  ><B  >例子 1. A Stream for reading/writing global variables</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">class </font><font  color="#0000BB">VariableStream </font><font  color="#007700">{<br  />    var </font><font  color="#0000BB">$position</font><font  color="#007700">;<br  />    var </font><font  color="#0000BB">$varname</font><font  color="#007700">;<br  />   <br  />    function </font><font  color="#0000BB">stream_open</font><font  color="#007700">(</font><font  color="#0000BB">$path</font><font  color="#007700">, </font><font  color="#0000BB">$mode</font><font  color="#007700">, </font><font  color="#0000BB">$options</font><font  color="#007700">, &</font><font  color="#0000BB">$opened_path</font><font  color="#007700">) <br  />    {<br  />        </font><font  color="#0000BB">$url </font><font  color="#007700">= </font><font  color="#0000BB">parse_url</font><font  color="#007700">(</font><font  color="#0000BB">$path</font><font  color="#007700">);<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname </font><font  color="#007700">= </font><font  color="#0000BB">$url</font><font  color="#007700">[</font><font  color="#DD0000">"host"</font><font  color="#007700">];<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  />        <br  />        return </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />    }<br  /><br  />    function </font><font  color="#0000BB">stream_read</font><font  color="#007700">(</font><font  color="#0000BB">$count</font><font  color="#007700">) <br  />    {<br  />        </font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">], </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position</font><font  color="#007700">, </font><font  color="#0000BB">$count</font><font  color="#007700">);<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">+= </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$ret</font><font  color="#007700">);<br  />        return </font><font  color="#0000BB">$ret</font><font  color="#007700">;<br  />    }<br  /><br  />    function </font><font  color="#0000BB">stream_write</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">) <br  />    {<br  />        </font><font  color="#0000BB">$left </font><font  color="#007700">= </font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">], </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position</font><font  color="#007700">);<br  />        </font><font  color="#0000BB">$right </font><font  color="#007700">= </font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">], </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">+ </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">));<br  />        </font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">] = </font><font  color="#0000BB">$left </font><font  color="#007700">. </font><font  color="#0000BB">$data </font><font  color="#007700">. </font><font  color="#0000BB">$right</font><font  color="#007700">;<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">+= </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">);<br  />        return </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">);<br  />    }<br  /><br  />    function </font><font  color="#0000BB">stream_tell</font><font  color="#007700">() <br  />    {<br  />        return </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position</font><font  color="#007700">;<br  />    }<br  /><br  />    function </font><font  color="#0000BB">stream_eof</font><font  color="#007700">() <br  />    {<br  />        return </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">>= </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">]);<br  />    }<br  /><br  />    function </font><font  color="#0000BB">stream_seek</font><font  color="#007700">(</font><font  color="#0000BB">$offset</font><font  color="#007700">, </font><font  color="#0000BB">$whence</font><font  color="#007700">) <br  />    {<br  />        switch (</font><font  color="#0000BB">$whence</font><font  color="#007700">) {<br  />            case </font><font  color="#0000BB">SEEK_SET</font><font  color="#007700">:<br  />                if (</font><font  color="#0000BB">$offset </font><font  color="#007700">< </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">]) && </font><font  color="#0000BB">$offset </font><font  color="#007700">>= </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />                     </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">= </font><font  color="#0000BB">$offset</font><font  color="#007700">;<br  />                     return </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />                } else {<br  />                     return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />                }<br  />                break;<br  />                <br  />            case </font><font  color="#0000BB">SEEK_CUR</font><font  color="#007700">:<br  />                if (</font><font  color="#0000BB">$offset </font><font  color="#007700">>= </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />                     </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">+= </font><font  color="#0000BB">$offset</font><font  color="#007700">;<br  />                     return </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />                } else {<br  />                     return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />                }<br  />                break;<br  />                <br  />            case </font><font  color="#0000BB">SEEK_END</font><font  color="#007700">:<br  />                if (</font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">]) + </font><font  color="#0000BB">$offset </font><font  color="#007700">>= </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />                     </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">position </font><font  color="#007700">= </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">varname</font><font  color="#007700">]) + </font><font  color="#0000BB">$offset</font><font  color="#007700">;<br  />                     return </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />                } else {<br  />                     return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />                }<br  />                break;<br  />                <br  />            default:<br  />                return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />        }<br  />    }<br  />}<br  /><br  /></font><font  color="#0000BB">stream_wrapper_register</font><font  color="#007700">(</font><font  color="#DD0000">"var"</font><font  color="#007700">, </font><font  color="#DD0000">"VariableStream"</font><font  color="#007700">)<br  />    or die(</font><font  color="#DD0000">"Failed to register protocol"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$myvar </font><font  color="#007700">= </font><font  color="#DD0000">""</font><font  color="#007700">;<br  />    <br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"var://myvar"</font><font  color="#007700">, </font><font  color="#DD0000">"r+"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"line1\n"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"line2\n"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"line3\n"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">rewind</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />while (!</font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">)) {<br  />    echo </font><font  color="#0000BB">fgets</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$myvar</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>stream_register_wrapper</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN106666" ></A
+><H2  >Description</H2
+><P  >     This function is an alias of <SPAN HREF="#"><B  CLASS="function" >stream_wrapper_register()</B
+></A
+>.
+     This function is included for compatability with <TT  CLASS="literal" >PHP 4.3.0</TT
+>
+     and <TT  CLASS="literal" >PHP 4.3.1</TT
+> only.  <SPAN HREF="#"><B  CLASS="function" >stream_wrapper_register()</B
+></A
+>
+     should be used instead.
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

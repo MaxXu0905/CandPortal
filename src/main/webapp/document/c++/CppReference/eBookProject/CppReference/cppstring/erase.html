@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.cppreference.com/cppstring/erase.html -->
+<HTML><HEAD><TITLE>erase</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="erase.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A href="../cppstring/erase.html">erase</A> 
+      </DIV>
+      <DIV class=name-format>erase </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  iterator erase( iterator loc );
+  iterator erase( iterator start, iterator end );
+  string&amp; erase( <STRONG>size_type</STRONG> index = 0, <STRONG>size_type</STRONG> num = npos );
+</PRE>
+      <P>The erase() function either:</P>
+      <UL>
+        <LI>removes the character pointed to by <EM>loc</EM>, returning an 
+        iterator to the next character, 
+        <LI>removes the characters between <EM>start</EM> and <EM>end</EM> 
+        (including the one at <EM>start</EM> but not the one at <EM>end</EM>), 
+        returning an iterator to the character after the last character removed, 
+
+        <LI>or removes <EM>num</EM> characters from the current string, starting 
+        at <EM>index</EM>, and returns *this. </LI></UL>
+      <P>The parameters <EM>index</EM> and <EM>num</EM> have default values, 
+      which means that erase() can be called with just <EM>index</EM> to erase 
+      all characters after <EM>index</EM> or with no arguments to erase all 
+      characters.</P>
+      <P>For example:</P><PRE class=example-code>   string s("So, you like donuts, eh? Well, have all the donuts in the world!");
+   cout &lt;&lt; "The original string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;          
+
+   s.erase( 50, 14 );
+   cout &lt;&lt; "Now the string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;
+   s.erase( 24 );
+   cout &lt;&lt; "Now the string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;
+   s.erase();
+   cout &lt;&lt; "Now the string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;               
+</PRE>
+      <P>will display</P><PRE class=example-code>   The original string is 'So, you like donuts, eh? Well, have all the donuts in the world!'
+   Now the string is 'So, you like donuts, eh? Well, have all the donuts'
+   Now the string is 'So, you like donuts, eh?'
+   Now the string is ''         
+</PRE>
+      <P>erase() runs in <A 
+      href="../complexity.html">linear time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppstring/insert.html">insert</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

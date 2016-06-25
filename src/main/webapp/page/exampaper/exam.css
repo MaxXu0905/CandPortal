@@ -1,0 +1,837 @@
+@CHARSET "UTF-8";
+ul, ol {
+margin-top: 0;
+margin-bottom: 0; 
+}
+.btn-default {
+margin-left: -1px;
+}
+/*主区*/
+#header{
+	background-color: #fff;
+	z-index: 2;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+#exam-wrap-inner{
+padding:5px;
+}
+#exam-wrap:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+#exam-wrap-inner:after{
+	content:".";display:block;height:0;clear:both;visibility:hidden;
+}
+
+/*答题区*/
+.btn>[class*="icon-"].icon-on-right {
+	margin-right: 0;
+	margin-left: 6px;
+}
+.btn>[class*="icon-"].icon-on-left {
+	margin-left: 0;
+	margin-right: 6px;
+}
+#exam-answer{
+	/* margin-left: 225px; */
+	margin-top: 15px;
+	background-color: #fff !important;
+	margin-right: 255px;
+	max-height: 480px;
+	overflow-y: auto;
+}
+#sidebarUL >li{
+	background-color: #fff!important;
+}
+
+/*题目区*/
+.question-wrap {
+  margin:0px;
+  background: #fff;
+}
+.question-wrap.col3{
+	padding: 0 ;
+}
+.anserHead.col3{
+	margin:0px;
+	float: left;
+	width: 300px;
+	padding: 0 ;
+}
+.anserHead.col3 img {
+	width: 300px;
+}	
+.keyword.col3{
+	padding: 0px 15px;
+}
+.operate-wrap {
+  width: 255px;
+  margin: 0 0 0 0;
+  background: #ddecf3;
+  text-align: center;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom:0px;
+  padding-top: 50px;
+}
+.operate-wrap .top_content {
+width: 100%;
+overflow: hidden;
+}
+.operate-wrap .bottom_content {
+text-align:center;
+width: 100%;
+padding: 0px 1%;
+}
+.operate-wrap .btnarea {
+	margin-top: 10px;
+	text-align:center;
+	/* width: 20%; */
+	padding: 0px 13px;
+	/* position: fixed; */
+}
+button#next,button#submitPart,button#next {
+	width: 100%;
+}
+.question:before {
+visibility: visible;
+content: '';
+position: absolute;
+z-index: 1;
+width: 20px;
+height: 100%;
+margin: 0 0 0 -20px;
+background: url(core/images/artical-shadow.png) right top no-repeat;
+}
+
+.page-header {
+    margin: 0 0 12px;
+    border-bottom: 1px dotted #e2e2e2;
+    padding-bottom: 16px;
+    padding-top: 7px
+}
+
+.page-header h1 {
+    padding: 0;
+    margin: 0 8px;
+    font-size: 24px;
+    font-weight: lighter;
+    color: #2679b5
+}
+
+.page-header h1 small {
+    margin: 0 6px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #8089a0
+}
+
+[class*=" icon-"],[class^="icon-"] {
+    display: inline-block;
+    text-align: center
+}
+
+a:focus,a:active {
+    text-decoration: none
+}
+/*答题区*/
+
+
+
+/*摄像头*/
+#camera {
+	z-index:9999;
+}
+#interview-wrap{
+	margin-left: 100px;
+}
+.interview {
+background: url("../../core/images/imac.png") 0 0 no-repeat;
+background-size: 600px 635px;
+color: black;
+/* margin-bottom: 77px; */
+padding: 29px 24px 267px;
+position: relative;
+}
+/*end 摄像头*/
+/*答题区*/
+.tagico{
+	float: left;
+	display:block;
+	padding-left: 35px;
+	background: url(../../core/images/b_icon.png) no-repeat;
+}
+.exam.mark{
+	border:1px solid red;
+}
+.exam.current{
+	background-color: #f5f5f5 ;
+}
+/* ul.p-answerlist{
+	margin:20px 0px 20px 0px !important;
+} */
+ul.p-answerlist >li{
+	width: 100%;
+	/* padding: 8px; */
+	
+	vertical-align: middle;
+/*border: 1px solid #eeeeee;*/
+	font-size:18px;
+	margin-bottom: 10px;
+	border-radius: 2px;	
+}
+.p-answerlist .sn {
+padding-right: 8px;
+color: #999;
+}
+.answer-active {
+	color:#FFF !important;
+	background-color: #FF9900 !important;
+	border: 2px solid #FF9900 !important;
+}
+.answer-right {
+	color:#FFF !important;
+	background-color: #53bf6b !important;
+	border: 2px solid #53bf6b !important;
+}
+.answer-wrong{
+	color:#FFF !important;
+	background-color: #f15755 !important;
+	border: 2px solid #f15755 !important;
+}
+
+/*不可点击*/
+.p-answerlist .disabled,.p-answerlist .disabled:hover {
+	border-color: #fff;
+	background: #fff;
+	cursor:default !important;
+    color: #bbb !important;
+}
+/*错误答案*/
+.p-answerlist .wrong,.p-answerlist .wrong:hover {
+    position: relative;
+    border: 1px solid #f15a4e;
+    background: #f15a4e;
+    color: #fff;
+}
+.p-answerlist .wrong .i-skill-ico {
+    position: absolute;
+    left: 10px;
+    top: 11px;
+}
+
+.p-answerlist .wrong .i-skill-error-ico {
+    background-position: -40px 0;
+}
+
+.p-answerlist .wrong .sn {
+    color: #fff;
+}
+/*正确答案*/
+.p-answerlist .right,.p-answerlist .right:hover {
+    position: relative;
+    border: 1px solid #44a881;
+    background: #44a881;
+    color: #fff;
+}
+
+.p-answerlist .right .i-skill-ico {
+    position: absolute;
+    left: 10px;
+    top: 11px;
+}
+
+.p-answerlist .right .i-skill-right-ico {
+    background-position: -40px -21px;
+}
+
+.p-answerlist .right .sn {
+    color: #fff;
+}
+
+.numb{padding:4px 12px;}
+li.numb span{
+	height: 22px;
+	width: 22px;
+	font-size: 14px;
+	display: block;
+	float: left;
+	margin:4px !important;
+	text-align: center;
+	line-height: 22px;
+	padding: 0px !important;
+	
+}
+.numb_bg1{/*初始状态*/
+	color: #1f1f1f;
+	border: 1px solid #e5e5e5;
+	border-top:2px solid #f2f2f2;
+	border-bottom:2px solid #d2d2d2;
+	background-color:#eaeaea;
+	/* background: url(../../core/images/numbbg.gif) no-repeat top center;  */
+}
+.numb_bg2{/*已做的*/
+border: 1px solid #989898;
+border-top:2px solid #838383;
+border-bottom:2px solid #aaaaaa;
+background-color:#aaaaaa;
+/* 	background: url("../../core/images/numbbg.gif") no-repeat center bottom; */
+
+color:#fff;
+}
+.numb_bg3{/*已标记*/
+border:2px solid #ff7a16 !important;
+}
+.numb_bg4{/*当前题*/
+	background-color:#53bf6b;
+	border-top:2px solid #53bf6b;
+	border-bottom:2px solid #53bf6b;
+	color: #fff;
+}
+.numb_bg5{/*不可点击*/
+	background-color:#EAEAEA;
+	color:#FAFAFA;
+}
+.numb_bg_{/*未做未标记状态*/
+	color: #1f1f1f;
+	border: 1px solid #e5e5e5;
+	border-top:2px solid #f2f2f2;
+	border-bottom:2px solid #d2d2d2;
+	background-color:#eaeaea;
+/* 	background: url("../../core/images/numbbg.gif") no-repeat center top; */
+}
+.numb_bg_1{/*未做已标记状态*/
+	color: #1f1f1f;
+	border: 2px solid #ff7a16 !important;
+	/* border-top:1px solid #f2f2f2;
+	border-bottom:1px solid #f2f2f2; */
+	background-color:#eaeaea;
+/* 	background: url("../../core/images/numbbg.gif") no-repeat center top; */
+	
+}
+.numb_bg1_{/*已做未标记状态*/
+	color: #fff;
+	border: 1px solid #989898;
+	border-top:2px solid #838383;
+	border-bottom:2px solid #aaaaaa;
+	background-color:#aaaaaa;
+	/* background: url("../../core/images/numbbg.gif") no-repeat center bottom; */	
+}
+.numb_bg1_1{/*已做已标记状态*/
+	color: #fff;
+	border:2px solid #ff7a16 !important;
+	background-color:#aaaaaa;
+	color:#fff;
+}
+li.numb a{
+	height: 32px;
+	width: 32px;
+	font-size: 14px;
+	display: block;
+	float: left;
+	margin-left: 6px !important;
+	margin-right: 4px !important;
+	margin-bottom: 4px !important;
+	text-align: center;
+	line-height: 32px;
+	padding: 0px !important;
+	
+}
+li.numb span{
+	height: 22px;
+	width: 22px;
+	font-size: 14px;
+	display: block;
+	float: left;
+	margin-right: 4px !important;
+	margin-bottom: 4px !important;
+	text-align: center;
+	line-height: 22px;
+	padding: 0px !important;
+	
+}
+#gameover{
+	color: #38ad5a;
+	border-color: #38ad5a;
+	background: #fff;
+	bottom:10px;
+}
+#gameover:hover{
+	color: #fff;
+background: #53bf68;
+}
+
+/*答错*/
+.p-recovery-answer .error {
+color: #f15755;
+}
+.i-skill-ico.i-skill-broken-ico {
+width: 16px;
+height: 15px;
+background-position: 0 -464px;
+}
+.i-skill-ico {
+background: url(../../core/images/skill_ico_8.png) no-repeat;
+display: inline-block;
+vertical-align: middle;
+}
+.p-recovery-answer .error p, .p-recovery-answer .right p {
+font-size: 14px;
+}
+/*答对*/
+.p-recovery-answer .right {
+position: relative;
+z-index: 2;
+padding-bottom: 20px;
+color: #44a897;
+}
+.i-skill-right-ico {
+width: 16px;
+height: 16px;
+background-position: 0 -52px;
+}
+/*下一题*/
+.p-nextquestion {
+position: absolute;
+right: -100px;
+top: -10px;
+width: 57px;
+height: 67px;
+overflow: hidden;
+}
+
+/*答题结束*/
+
+/*遮罩层*/
+.finish{
+	margin-left: -242px;
+width: 484px;
+height: 400px;
+z-index: 10001;
+top: 23px;
+position: fixed;
+}
+.header {
+padding:35px 70px 10px 70px;
+font-size:24px;
+font-weight: 700;
+color:#38485a;
+}
+.layer-title {
+padding: 34px 0 16px;
+text-align: center;
+font-size: 24px;
+color: #771f01;
+}
+.i-skill-yahei {
+font-family: "MicroSoft Yahei","微软雅黑";
+}
+.i-skill-layer-total .header .dia-total {
+color: #color;
+text-align: center;
+font-size: 14px;
+}
+.i-skill-layer-total .dia-detail {
+height: 112px;
+overflow: hidden;
+}
+.i-skill-layer-total .dia-detail{
+margin: 120px auto 0;
+}
+.detailbody{
+font-size:18px;
+line-height:30px;
+padding:10px 70px;
+} 
+.tucaobody {
+font-size: 16px;
+line-height: 24px;
+padding: 10px 70px;
+}
+.i-skill-layer-total .dia-detail .list {
+width: 200px;
+margin: 0 auto 10px;
+}
+.i-skill-layer-total .dia-detail .item-title {
+float: left;
+margin-right: 4px;
+white-space: nowrap;
+color: #803305;
+font-weight: bold;
+}
+.i-skill-layer-total .dia-detail .score {
+float: right;
+margin-left: 4px;
+white-space: nowrap;
+color: #803305;
+}
+.i-skill-layer-total .dia-detail .linebody {
+overflow: hidden;
+}
+.i-skill-layer-total .dia-score {
+height: 44px;
+margin-bottom: 20px;
+line-height: 44px;
+font-size: 18px;
+text-align: center;
+}
+.i-skill-layer-total {
+position: fixed;
+z-index: 10001;
+left: 50%;
+margin-left: -242px;
+width: 640px;
+background: url(../../core/images/layer_total.png) no-repeat;
+
+}
+/*end 答题结束*/
+
+/*倒计时*/
+#countdown_dashboard.countdown-closeEnd{
+	color:#ff4800;
+}
+/*end 倒计时*/
+
+.title_part{color:#fff;font-size:27px;
+font-family: "Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
+
+}
+/** CodeMatrix全屏样式 */
+
+/*视频模态框*/
+.view-model {
+left: 50%;
+margin-left: -242px;
+/* width: 598px; */
+background-color:#fff;
+ position: relative;
+    width: auto;
+    margin: 10px;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+}
+.view-footer{
+	background-color:#fff;
+	width: auto;
+    margin: 10px;
+}
+/*end 视频模态框*/
+.part_title{
+	font-size:22px;
+	color:#38485a;
+	font-weight: 900px;	
+}
+.nav_btn{
+padding-top:0px !important;
+}
+/*离开次数提示*/
+.leave{
+width:525px;
+height:315px;
+background:#fff;
+position: fixed;
+z-index: 10001;
+left: 50%;
+}
+.leave >.l_t{
+height:210px;
+font-size:16px;
+line-height:26px;
+padding-left:180px;
+} 
+.leave >.l_t >div{padding-top:40px;font-size:24px;color:#e33a2b;line-height:55px;}
+.leave >.l_b{height:45px;line-height:40px;font-size:16px;padding:20px 30px 10px 40px; }
+.leave >.l_b>button{margin-left:30px;}
+.warn_1{
+	border-bottom:1px solid #ececec;
+	background:#f3f3f3 url(../../core/images/warn_1.png) no-repeat 30px 40px;
+}
+.warn_2{
+	border-bottom:1px solid #ececec;
+	background:#f3f3f3 url(../../core/images/warn_1.png) no-repeat 30px 40px;
+}
+.warn_3{
+	border-bottom:1px solid #ececec;
+	background:#f3f3f3 url(../../core/images/warn_3.png) no-repeat 30px 40px;
+}
+.warn_4{
+	border-bottom:1px solid #ececec;
+	background:#f3f3f3 url(../../core/images/warn_4.png) no-repeat 30px 40px;
+}
+.warn_5{
+	background:#e33a2b url(../../core/images/warn_5.png) no-repeat 30px 40px;
+	color:#FFFFFF !important;
+} 
+.warn_5 div{color:#FFFFFF  !important;}
+/*end 离开次数提示*/
+
+/*吐槽*/
+.feedback {
+
+}
+#up-tucao{
+	color:#E74C3C;
+}
+#down-tucao{
+	color:#1ABC9C;
+}
+#drop-tucao{
+	color:#E67E22;
+}
+#drop-tucao i {
+vertical-align: middle;
+}
+#feedbackControls{
+	margin-top:10px;
+}
+#feedbackControls .feedback .vote:hover {
+border-color: #798d98;
+}
+#feedbackControls .feedback .vote {
+cursor:pointer;
+float: left;
+display: block;
+border: 2px solid #cbd5db;
+width: 15%;
+margin: 0 10px 0 0;
+}
+#feedbackControls .feedback .feedback-selected {
+background-color: #ebebeb;
+border-color: #adadad;
+}
+
+#feedbackControls .feedback a, #feedbackControls .feedback label {
+border-radius: 5px;
+height: 48px;
+line-height: 46px;
+}
+#feedbackControls .feedback .other_container {
+float: left;
+width: 60%;
+}
+#feedbackControls .feedback .report {
+display: block;
+width: 100%;
+text-decoration: none;
+margin: 0 0 0 0;
+}
+}
+#feedbackControls .feedback a, #feedbackControls .feedback label {
+border-radius: 5px;
+height: 48px;
+line-height: 46px;
+}
+#feedbackControls .reportOptions {
+z-index: 1000;
+display: none;
+padding: 5px 0;
+margin-top: 40px;
+font-size: 14px;
+list-style: none;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0,0,0,0.15);
+border-radius: 4px;
+-webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+background-clip: padding-box;
+text-decoration: none;
+max-height: 200px;
+overflow-y: auto;
+clear: left;
+}
+#feedbackControls .reportOptions li {
+padding: 0;
+font-size: 13px;
+}
+#feedbackControls .reportOptions label {
+height: 42px;
+line-height: 42px;
+display: block;
+color:#E67E22;
+font-size: 13px;
+text-decoration: none;
+margin: -2px 0 0 0;
+position: relative;
+z-index: 1;
+border-radius: 0px;
+}
+.reportOptions>li>label:hover, .reportOptions>li>label:focus {
+color: #fff !important;
+text-decoration: none;
+background-color: #D35400;
+}
+#reportComment {
+clear: both;
+margin: 4px auto 0px 20px;
+background: #fff;
+padding: 18px;
+width: 84%;
+border: 1px solid #ccc;
+border-radius: 5px;
+float: left;
+box-sizing: border-box;
+}
+#reportComment label {
+font-style: normal;
+font-size: 13px;
+margin: 0 0 10px 0;
+color: #E67E22;
+}
+#reportComment textarea {
+height: 100px;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+width: 100%;
+background: none;
+border: 1px solid #bbb;
+box-shadow: none;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+border-radius: 3px;
+font-size: 13px;
+color: #333;
+}
+#reportComment input[type="submit"] {
+width: 100%;
+border-radius: 5px;
+background: #E67E22;
+font-weight: 200;
+height: 38px;
+color: #fff;
+line-height: 40px;
+font-size: 16px;
+border: 0;
+text-align: center;
+cursor: pointer;
+margin-top: 10px;
+}
+.tucao-close{
+	display:inline-block;
+	border:0px ;
+	float: right;
+	cursor: pointer;
+	width:25px;
+	height:25px;
+	background: url(../../core/images/close_a.png) no-repeat;
+	position: relative;
+	right: 50px;
+	top: -50px;
+}
+.tucao-close:hover,.tucao-close:active,.tucao-close:visited{
+	border:0px !important;
+	background: url(../../core/images/close_b.png) no-repeat;	
+}
+
+/*end 吐槽*/
+
+
+/** 等待模态框 start ******/
+.watting_modal {
+	padding-top: 150px;
+	overflow: hidden;
+}
+
+.watting_modal .modal-content {
+	border: none;
+}
+
+.watting_modal .modal-body {
+	width: 400px;
+	margin: 0 auto;
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+
+.watting_modal .spinner {
+	background: none;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+	float: left;
+	height: 40px;
+	position: relative;
+	width: 40px;
+}
+
+.watting_modal .title {
+	text-align: center;
+	width: 400px;
+	color: #FFF;
+	font-size: 20px;
+	height: 60px;
+	line-height: 60px;
+	/* overflow: hidden; */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.exam-mask {
+color: #fff;
+text-align: center;
+vertical-align: middle;
+position: absolute;
+left: 0px;
+top: 0;
+bottom: 0;
+right: 255px;
+z-index: 12;
+background: #000;
+opacity: .6;
+filter: alpha(opacity=60);
+}
+.mask-body{
+margin-left: 50%;
+margin-top: 150px;
+font-size: 20px;
+}
+
+/** 等待模态框 end ******/
+.question-header >pre,.options>pre{
+display: inline;
+font-size: inherit;
+border: none;
+background-color: inherit;
+color: inherit;
+padding:0;
+}
+	
+/*题板*/
+div#questionPanel {
+background: #fff;
+width: 100%;
+padding: 15px;
+border-top: 1px solid #ccc;
+box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+.currentAnswer{
+	background: #38afd4 !important;
+	color:#fff;
+}
+.currentAnswer:hover, .currentAnswer:focus{
+	color:#fff;
+}
+.answered{
+	background: #ddecf3;
+	border-color: #ccc;
+	
+}
+.unAnswer{
+	background: #fff;
+	border-color: #ccc;
+}
+.unAnswer,.currentAnswer,.answered{
+	width:58px;
+	height:34px;
+}
+/*end 题板*/

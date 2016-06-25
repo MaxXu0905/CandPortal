@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.ArrayList&lt;E&gt;">
+    <constructors>
+        <constructor>
+            <name>ArrayList</name>
+            <signature><![CDATA[public ArrayList(int initialCapacity)]]></signature>
+            <description><![CDATA[Constructs an empty list with the specified initial capacity.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>initialCapacity</code> - the initial capacity of the list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the specified initial capacity
+         is negative</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>ArrayList</name>
+            <signature><![CDATA[public ArrayList()]]></signature>
+            <description><![CDATA[Constructs an empty list with an initial capacity of ten.]]></description>
+        </constructor>
+        <constructor>
+            <name>ArrayList</name>
+            <signature><![CDATA[public ArrayList(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Constructs a list containing the elements of the specified
+ collection, in the order they are returned by the collection's
+ iterator.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - the collection whose elements are to be placed into this list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection is null</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>trimToSize</name>
+            <signature><![CDATA[public void trimToSize()]]></signature>
+            <description><![CDATA[Trims the capacity of this ArrayList instance to be the
+ list's current size.  An application can use this operation to minimize
+ the storage of an ArrayList instance.]]></description>
+        </method>
+        <method>
+            <name>ensureCapacity</name>
+            <signature><![CDATA[public void ensureCapacity(int minCapacity)]]></signature>
+            <description><![CDATA[Increases the capacity of this ArrayList instance, if
+ necessary, to ensure that it can hold at least the number of elements
+ specified by the minimum capacity argument.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>minCapacity</code> - the desired minimum capacity</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[public int size()]]></signature>
+            <description><![CDATA[Returns the number of elements in this list.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of elements in this list</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <signature><![CDATA[public boolean isEmpty()]]></signature>
+            <description><![CDATA[Returns true if this list contains no elements.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list contains no elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>contains</name>
+            <signature><![CDATA[public boolean contains(Object o)]]></signature>
+            <description><![CDATA[Returns true if this list contains the specified element.
+ More formally, returns true if and only if this list contains
+ at least one element e such that
+ (o==null ? e==null : o.equals(e)).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">contains</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">contains</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">contains</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element whose presence in this list is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list contains the specified element</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>indexOf</name>
+            <signature><![CDATA[public int indexOf(Object o)]]></signature>
+            <description><![CDATA[Returns the index of the first occurrence of the specified element
+ in this list, or -1 if this list does not contain the element.
+ More formally, returns the lowest index i such that
+ (o==null ? get(i)==null : o.equals(get(i))),
+ or -1 if there is no such index.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">indexOf</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">indexOf</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element to search for</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the index of the first occurrence of the specified element in
+         this list, or -1 if this list does not contain the element</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lastIndexOf</name>
+            <signature><![CDATA[public int lastIndexOf(Object o)]]></signature>
+            <description><![CDATA[Returns the index of the last occurrence of the specified element
+ in this list, or -1 if this list does not contain the element.
+ More formally, returns the highest index i such that
+ (o==null ? get(i)==null : o.equals(get(i))),
+ or -1 if there is no such index.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">lastIndexOf</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">lastIndexOf</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element to search for</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the index of the last occurrence of the specified element in
+         this list, or -1 if this list does not contain the element</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clone</name>
+            <signature><![CDATA[public Object clone()]]></signature>
+            <description><![CDATA[Returns a shallow copy of this ArrayList instance.  (The
+ elements themselves are not copied.)<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clone</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a clone of this <tt>ArrayList</tt> instance</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Cloneable</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toArray</name>
+            <signature><![CDATA[public Object[] toArray()]]></signature>
+            <description><![CDATA[Returns an array containing all of the elements in this list
+ in proper sequence (from first to last element).
+
+ The returned array will be "safe" in that no references to it are
+ maintained by this list.  (In other words, this method must allocate
+ a new array).  The caller is thus free to modify the returned array.
+
+ This method acts as bridge between array-based and collection-based
+ APIs.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an array containing all of the elements in this list in
+         proper sequence</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Arrays.asList(Object[])</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toArray</name>
+            <signature><![CDATA[public <T> T[] toArray(T[] a)]]></signature>
+            <description><![CDATA[Returns an array containing all of the elements in this list in proper
+ sequence (from first to last element); the runtime type of the returned
+ array is that of the specified array.  If the list fits in the
+ specified array, it is returned therein.  Otherwise, a new array is
+ allocated with the runtime type of the specified array and the size of
+ this list.
+
+ If the list fits in the specified array with room to spare
+ (i.e., the array has more elements than the list), the element in
+ the array immediately following the end of the collection is set to
+ null.  (This is useful in determining the length of the
+ list only if the caller knows that the list does not contain
+ any null elements.)<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the array into which the elements of the list are to
+          be stored, if it is big enough; otherwise, a new array of the
+          same runtime type is allocated for this purpose.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an array containing the elements of the list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ArrayStoreException</a></code> - if the runtime type of the specified array
+         is not a supertype of the runtime type of every element in
+         this list</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified array is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>get</name>
+            <signature><![CDATA[public E get(int index)]]></signature>
+            <description><![CDATA[Returns the element at the specified position in this list.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">get</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">get</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index of the element to return</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the element at the specified position in this list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index >= size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>set</name>
+            <signature><![CDATA[public E set(int index,
+    E element)]]></signature>
+            <description><![CDATA[Replaces the element at the specified position in this list with
+ the specified element.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">set</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">set</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index of the element to replace</dd><dd><code>element</code> - element to be stored at the specified position</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the element previously at the specified position</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index >= size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[public boolean add(E e)]]></signature>
+            <description><![CDATA[Appends the specified element to the end of this list.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">add</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - element to be appended to this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> (as specified by <a href="#"><code>Collection.add(E)</code></a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[public void add(int index,
+       E element)]]></signature>
+            <description><![CDATA[Inserts the specified element at the specified position in this
+ list. Shifts the element currently at that position (if any) and
+ any subsequent elements to the right (adds one to their indices).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">add</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index at which the specified element is to be inserted</dd><dd><code>element</code> - element to be inserted</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index > size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[public E remove(int index)]]></signature>
+            <description><![CDATA[Removes the element at the specified position in this list.
+ Shifts any subsequent elements to the left (subtracts one from their
+ indices).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">remove</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - the index of the element to be removed</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the element that was removed from the list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index >= size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[public boolean remove(Object o)]]></signature>
+            <description><![CDATA[Removes the first occurrence of the specified element from this list,
+ if it is present.  If the list does not contain the element, it is
+ unchanged.  More formally, removes the element with the lowest index
+ i such that
+ (o==null ? get(i)==null : o.equals(get(i)))
+ (if such an element exists).  Returns true if this list
+ contained the specified element (or equivalently, if this list
+ changed as a result of the call).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">remove</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element to be removed from this list, if present</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list contained the specified element</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[public void clear()]]></signature>
+            <description><![CDATA[Removes all of the elements from this list.  The list will
+ be empty after this call returns.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clear</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+</dl>]]></description>
+        </method>
+        <method>
+            <name>addAll</name>
+            <signature><![CDATA[public boolean addAll(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Appends all of the elements in the specified collection to the end of
+ this list, in the order that they are returned by the
+ specified collection's Iterator.  The behavior of this operation is
+ undefined if the specified collection is modified while the operation
+ is in progress.  (This implies that the behavior of this call is
+ undefined if the specified collection is this list, and this
+ list is nonempty.)<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be added to this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>AbstractCollection.add(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>addAll</name>
+            <signature><![CDATA[public boolean addAll(int index,
+             Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Inserts all of the elements in the specified collection into this
+ list, starting at the specified position.  Shifts the element
+ currently at that position (if any) and any subsequent elements to
+ the right (increases their indices).  The new elements will appear
+ in the list in the order that they are returned by the
+ specified collection's iterator.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index at which to insert the first element from the
+              specified collection</dd><dd><code>c</code> - collection containing elements to be added to this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index > size()</tt>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>removeRange</name>
+            <signature><![CDATA[protected void removeRange(int fromIndex,
+               int toIndex)]]></signature>
+            <description><![CDATA[Removes from this list all of the elements whose index is between
+ fromIndex, inclusive, and toIndex, exclusive.
+ Shifts any succeeding elements to the left (reduces their index).
+ This call shortens the list by (toIndex - fromIndex) elements.
+ (If toIndex==fromIndex, this operation has no effect.)<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">removeRange</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromIndex</code> - index of first element to be removed</dd><dd><code>toIndex</code> - index after last element to be removed</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if <code>fromIndex</code> or
+         <code>toIndex</code> is out of range
+         (<code>fromIndex < 0 ||
+          fromIndex >= size() ||
+          toIndex > size() ||
+          toIndex < fromIndex</code>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>removeAll</name>
+            <signature><![CDATA[public boolean removeAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Removes from this list all of its elements that are contained in the
+ specified collection.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">removeAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">removeAll</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">removeAll</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be removed from this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of an element of this list
+         is incompatible with the specified collection
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if this list contains a null element and the
+         specified collection does not permit null elements
+ (<a href="#">optional</a>),
+         or if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Collection.contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>retainAll</name>
+            <signature><![CDATA[public boolean retainAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Retains only the elements in this list that are contained in the
+ specified collection.  In other words, removes from this list all
+ of its elements that are not contained in the specified collection.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">retainAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">retainAll</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">retainAll</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be retained in this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of an element of this list
+         is incompatible with the specified collection
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if this list contains a null element and the
+         specified collection does not permit null elements
+ (<a href="#">optional</a>),
+         or if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Collection.contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>listIterator</name>
+            <signature><![CDATA[public ListIterator<E> listIterator(int index)]]></signature>
+            <description><![CDATA[Returns a list iterator over the elements in this list (in proper
+ sequence), starting at the specified position in the list.
+ The specified index indicates the first element that would be
+ returned by an initial call to next.
+ An initial call to previous would
+ return the element with the specified index minus one.
+
+ The returned list iterator is fail-fast.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">listIterator</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">listIterator</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index of the first element to be returned from the
+        list iterator (by a call to <a href="#"><code>next</code></a>)</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list iterator over the elements in this list (in proper
+         sequence), starting at the specified position in the list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<code>index < 0 || index > size()</code>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>listIterator</name>
+            <signature><![CDATA[public ListIterator<E> listIterator()]]></signature>
+            <description><![CDATA[Returns a list iterator over the elements in this list (in proper
+ sequence).
+
+ The returned list iterator is fail-fast.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">listIterator</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">listIterator</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list iterator over the elements in this list (in proper
+         sequence)</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>listIterator(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>iterator</name>
+            <signature><![CDATA[public Iterator<E> iterator()]]></signature>
+            <description><![CDATA[Returns an iterator over the elements in this list in proper sequence.
+
+ The returned iterator is fail-fast.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Iterable</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an iterator over the elements in this list in proper sequence</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>subList</name>
+            <signature><![CDATA[public List<E> subList(int fromIndex,
+              int toIndex)]]></signature>
+            <description><![CDATA[Returns a view of the portion of this list between the specified
+ fromIndex, inclusive, and toIndex, exclusive.  (If
+ fromIndex and toIndex are equal, the returned list is
+ empty.)  The returned list is backed by this list, so non-structural
+ changes in the returned list are reflected in this list, and vice-versa.
+ The returned list supports all of the optional list operations.
+
+ This method eliminates the need for explicit range operations (of
+ the sort that commonly exist for arrays).  Any operation that expects
+ a list can be used as a range operation by passing a subList view
+ instead of a whole list.  For example, the following idiom
+ removes a range of elements from a list:
+ 
+      list.subList(from, to).clear();
+ 
+ Similar idioms may be constructed for indexOf(Object) and
+ lastIndexOf(Object), and all of the algorithms in the
+ Collections class can be applied to a subList.
+
+ The semantics of the list returned by this method become undefined if
+ the backing list (i.e., this list) is structurally modified in
+ any way other than via the returned list.  (Structural modifications are
+ those that change the size of this list, or otherwise perturb it in such
+ a fashion that iterations in progress may yield incorrect results.)<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">subList</a></code> in interface <code><a href="#">List</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">subList</a></code> in class <code><a href="#">AbstractList</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromIndex</code> - low endpoint (inclusive) of the subList</dd><dd><code>toIndex</code> - high endpoint (exclusive) of the subList</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the specified range within this list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if an endpoint index value is out of range
+         <code>(fromIndex < 0 || toIndex > size)</code></dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the endpoint indices are out of order
+         <code>(fromIndex > toIndex)</code></dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

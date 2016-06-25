@@ -1,0 +1,1704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="variables">
+    <methods>
+        <method>
+            <name>doubleval</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115343" ></A
+><H2  >描述</H2
+><P  >     此函数是 <SPAN HREF="#"><B  CLASS="function" >floatval()</B
+></A
+> 的别名。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      此别名是函数改名之后的遗留问题。在 PHP
+      旧的版本中由于还没有 <SPAN HREF="#"><B  CLASS="function" >floatval()</B
+></A
+>
+      函数，所以你可能需要用到这个 <SPAN HREF="#"><B  CLASS="function" >floatval()</B
+></A
+>
+      的别名函数。
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>empty</name>
+            <signature><![CDATA[bool empty ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115355" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >empty</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是非空或非零的值，则
+     <B  CLASS="function" >empty()</B
+> 返回 
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。换句话说，<TT  CLASS="literal" >""</TT
+>、<TT  CLASS="literal" >0</TT
+>、<TT  CLASS="literal" >"0"</TT
+>、<TT  CLASS="constant" ><B  >NULL</B
+></TT
+>、<TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>、<TT  CLASS="literal" >array()</TT
+>、<TT  CLASS="literal" >var $var;</TT
+>
+     以及没有任何属性的对象都将被认为是空的，如果
+     <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 为空，则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>。
+    </P
+><P  >     
+     除了当变量没有置值时不产生警告之外，<B  CLASS="function" >empty()</B
+> 是
+     <TT  CLASS="literal" >(boolean) <TT  CLASS="parameter" ><I  >var</I
+></TT
+></TT
+>
+     的反义词。参见<SPAN HREF="#">转换为布尔值</A
+>获取更多信息。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115382" ></A
+><P  ><B  >例子 1. 
+       <B  CLASS="function" >empty()</B
+> 与 <SPAN HREF="#"><B  CLASS="function" >isset()</B
+></A
+>
+       的一个简单比较。
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$var </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// 结果为 true，因为 $var 为空<br  /></font><font  color="#007700">if (empty(</font><font  color="#0000BB">$var</font><font  color="#007700">)) {  <br  />    echo </font><font  color="#DD0000">'$var is either 0 or not set at all'</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">// 结果为 false，因为 $var 已设置<br  /></font><font  color="#007700">if (!isset(</font><font  color="#0000BB">$var</font><font  color="#007700">)) { <br  />    echo </font><font  color="#DD0000">'$var is not set at all'</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>由于这是一个语言结构而非函数，因此它无法被“<SPAN HREF="#">变量函数</A
+>”调用。</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      <B  CLASS="function" >empty()</B
+> 只检测变量，检测任何非变量的东西都将导致解析错误。换句话说，后边的语句将不会起作用：
+      <B  CLASS="command" >empty(addslashes($name))</B
+>。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >isset()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >unset()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >array_key_exists()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >count()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >strlen()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>floatval</name>
+            <signature><![CDATA[float floatval ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115404" ></A
+><H2  >描述</H2
+>float <B  CLASS="methodname" >floatval</B
+> ( mixed var)<BR  ></BR
+><P  >     返回变量 <TT  CLASS="parameter" ><I  >var</I
+></TT
+>
+     的 <SPAN HREF="#"><B  CLASS="type" >float</B
+></A
+> 数值。
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 可以是任何标量类型。你不能将
+     <B  CLASS="function" >floatval()</B
+> 用于数组或对象。
+    </P><DIV  CLASS="informalexample" ><A  NAME="AEN115418" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$var </font><font  color="#007700">= </font><font  color="#DD0000">'122.34343The'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$float_value_of_var </font><font  color="#007700">= </font><font  color="#0000BB">floatval </font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">);<br  />print </font><font  color="#0000BB">$float_value_of_var</font><font  color="#007700">; </font><font  color="#FF8000">// 打印出 122.34343<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >intval()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >strval()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >settype()</B
+></A
+> 和
+     <SPAN HREF="#">类型戏法</A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_defined_vars</name>
+            <signature><![CDATA[array get_defined_vars ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115429" ></A
+><H2  >描述</H2
+>array <B  CLASS="methodname" >get_defined_vars</B
+> ( void )<BR  ></BR
+><P  >     此函数返回一个包含所有已定义变量列表的多维数组，这些变量包括环境变量、服务器变量和用户定义的变量。
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN115436" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$b </font><font  color="#007700">= array(</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">2</font><font  color="#007700">,</font><font  color="#0000BB">3</font><font  color="#007700">,</font><font  color="#0000BB">5</font><font  color="#007700">,</font><font  color="#0000BB">8</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$arr </font><font  color="#007700">= </font><font  color="#0000BB">get_defined_vars</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// 打印 $b<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"b"</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// 打印 PHP 解释程序的路径（如果 PHP 作为 CGI 使用的话）<br  />// 例如：/usr/local/bin/php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"_"</font><font  color="#007700">];<br  /><br  /></font><font  color="#FF8000">// 打印命令行参数（如果有的话）<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"argv"</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// 打印所有服务器变量<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"_SERVER"</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// 打印变量数组的所有可用键值<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">array_keys</font><font  color="#007700">(</font><font  color="#0000BB">get_defined_vars</font><font  color="#007700">()));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_defined_functions()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >get_defined_constants()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_resource_type</name>
+            <signature><![CDATA[string get_resource_type ( resource handle)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115445" ></A
+><H2  >描述</H2
+>string <B  CLASS="methodname" >get_resource_type</B
+> ( resource handle)<BR  ></BR
+><P  >     此函数返回一个字符串，用于表示传递给它的 <SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+> 的类型。如果参数不是合法的 <SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+>，将产生错误。
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN115456" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$c </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">get_resource_type</font><font  color="#007700">(</font><font  color="#0000BB">$c</font><font  color="#007700">).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#FF8000">// 打印：mysql link<br  /><br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"foo"</font><font  color="#007700">,</font><font  color="#DD0000">"w"</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">get_resource_type</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#FF8000">// 打印：file<br  /><br  /></font><font  color="#0000BB">$doc </font><font  color="#007700">= </font><font  color="#0000BB">new_xmldoc</font><font  color="#007700">(</font><font  color="#DD0000">"1.0"</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">get_resource_type</font><font  color="#007700">(</font><font  color="#0000BB">$doc</font><font  color="#007700">-></font><font  color="#0000BB">doc</font><font  color="#007700">).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#FF8000">// 打印：domxml document<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>gettype</name>
+            <signature><![CDATA[string gettype ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115462" ></A
+><H2  >描述</H2
+>string <B  CLASS="methodname" >gettype</B
+> ( mixed var)<BR  ></BR
+><P  >     返回 PHP 变量的类型
+     <TT  CLASS="parameter" ><I  >var</I
+></TT
+>.
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      不要使用 <B  CLASS="function" >gettype()</B
+>
+      来测试某种类型，因为其返回的字符串在未来的版本中可能需要改变。此外，由于包含了字符串的比较，它的运行也是较慢的。
+      
+     </P
+><P  >      使用 <TT  CLASS="literal" >is_*</TT
+> 函数代替。
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     返回的字符串的可能值为：
+     </P><P  ></P
+><UL  ><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >boolean</B
+></A
+>”（从 PHP 4 起）</P
+></LI
+><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >integer</B
+></A
+>”</P
+></LI
+><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >double</B
+></A
+>”（由于历史原因，如果是 <SPAN HREF="#"><B  CLASS="type" >float</B
+></A
+> 则返回“double”，而不是“float”）</P
+></LI
+><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+>”</P
+></LI
+><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+>”</P
+></LI
+><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+>”</P
+></LI
+><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+>”（从 PHP 4 起）</P
+></LI
+><LI  ><P  >“<SPAN HREF="#"><B  CLASS="type" >NULL</B
+></A
+>”（从 PHP 4 起）</P
+></LI
+><LI  ><P  >“user function”（只用于 PHP 3，现已停用）</P
+></LI
+><LI  ><P  >“unknown type”</P
+></LI
+></UL
+>
+    </P
+><P  >     对于 PHP 4，你应该使用 <SPAN HREF="#"><B  CLASS="function" >function_exists()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >method_exists()</B
+></A
+>
+     取代先前将 <B  CLASS="function" >gettype()</B
+>
+     作用于函数的用法。
+    </P
+><P  >     参见
+     <SPAN HREF="#"><B  CLASS="function" >settype()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_null()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_numeric()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_resource()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_scalar()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>import_request_variables</name>
+            <signature><![CDATA[bool import_request_variables ( string types [, string prefix])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115528" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >import_request_variables</B
+> ( string types [, string prefix])<BR  ></BR
+><P  >     将 GET／POST／Cookie 变量导入到全局作用域中。如果你禁止了
+     <SPAN HREF="#">register_globals</A
+>，但又想用到一些全局变量，那么此函数就很有用。
+    </P
+><P  >     你可以使用 <TT  CLASS="parameter" ><I  >types</I
+></TT
+>
+     参数指定需要导入的变量。可以用字母‘G’、‘P’和‘C’分别表示
+     GET、POST 和 Cookie。这些字母不区分大小写，所以你可以使用‘g’、‘p’和‘c’的任何组合。POST
+     包含了通过 POST 方法上传的文件信息。注意这些字母的顺序，当使用“gp”时，POST
+     变量将使用相同的名字覆盖 GET 变量。任何 GPC
+     以外的字母都将被忽略。
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+> 参数作为变量名的前缀，置于所有被导入到全局作用域的变量之前。所以如果你有个名为“userid”的
+     GET 变量，同时提供了“pref_”作为前缀，那么你将获得一个名为 $pref_userid
+     的全局变量。
+    </P
+><P  >     如果你对导入其它全局变量（例如 SERVER 变量）感兴趣，请考虑使用
+     <SPAN HREF="#"><B  CLASS="function" >extract()</B
+></A
+>。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      虽然 <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+> 参数是可选的，但如果不指定前缀，或者指定一个空字符串作为前缀，你将获得一个
+      <SPAN HREF="#">E_NOTICE</A
+> 
+      级别的错误。使用默认<SPAN HREF="#">错误报告</A
+>级别是不显示注意（Notice）级别的错误的。
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="informalexample" ><A  NAME="AEN115552" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// 此处将导入 GET 和 POST 变量<br  />// 使用“rvar_”作为前缀<br  /></font><font  color="#0000BB">import_request_variables</font><font  color="#007700">(</font><font  color="#DD0000">"gP"</font><font  color="#007700">, </font><font  color="#DD0000">"rvar_"</font><font  color="#007700">);<br  /><br  />print </font><font  color="#0000BB">$rvar_foo</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >     参见
+     <SPAN HREF="#">$_REQUEST</A
+>、<SPAN HREF="#">register_globals</A
+>、<SPAN HREF="#">预定义变量</A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >extract()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>intval</name>
+            <signature><![CDATA[int intval ( mixed var [, int base])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115563" ></A
+><H2  >描述</H2
+>int <B  CLASS="methodname" >intval</B
+> ( mixed var [, int base])<BR  ></BR
+><P  >     通过使用特定的进制转换（默认是十进制），返回变量 <TT  CLASS="parameter" ><I  >var</I
+></TT
+>
+     的 <SPAN HREF="#"><B  CLASS="type" >integer</B
+></A
+> 数值。 
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 可以是任何标量类型。<B  CLASS="function" >intval()</B
+>
+     不能用于 <SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+> 或 <SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+>。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      除非 <TT  CLASS="parameter" ><I  >var</I
+></TT
+>
+      参数是字符串，否则 <B  CLASS="function" >intval()</B
+>
+      的 <TT  CLASS="parameter" ><I  >base</I
+></TT
+>
+      参数不会有效果。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >floatval()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >strval()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >settype()</B
+></A
+>
+     和 <SPAN HREF="#">类型戏法</A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_array</name>
+            <signature><![CDATA[bool is_array ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115596" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_array</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+>
+     是 <SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+>，则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     参见 
+     <SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_bool</name>
+            <signature><![CDATA[bool is_bool ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115619" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_bool</B
+> ( mixed var)<BR  ></BR
+><P  >      如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+>
+      是 <SPAN HREF="#"><B  CLASS="type" >boolean</B
+></A
+> 则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>。
+     </P
+><P  >      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115632" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >is_bool()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">false</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// 因为 $a 是布尔型，所以结果为真<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">is_bool</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">)) {<br  />    print </font><font  color="#DD0000">"Yes, this is a boolean"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">// 因为 $b 不是布尔型，所以结果为非真<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">is_bool</font><font  color="#007700">(</font><font  color="#0000BB">$b</font><font  color="#007700">)) {<br  />    print </font><font  color="#DD0000">"Yes, this is a boolean"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >     参见 
+     <SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_callable</name>
+            <signature><![CDATA[bool is_callable ( mixed var [, bool syntax_only [, string callable_name]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115647" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_callable</B
+> ( mixed var [, bool syntax_only [, string callable_name]])<BR  ></BR
+><P  >     </P><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_double</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115669" ></A
+><H2  >描述</H2
+><P  >     此函数是 <SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+> 的别名函数。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_float</name>
+            <signature><![CDATA[bool is_float ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115677" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_float</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是 <SPAN HREF="#"><B  CLASS="type" >float</B
+></A
+> 则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      若想测试一个变量是否是数字或数字字符串（如表单输入，它们通常为字符串），必须使用
+      <SPAN HREF="#"><B  CLASS="function" >is_numeric()</B
+></A
+>。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 
+     <SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_numeric()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+> 
+     和 <SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_int</name>
+            <signature><![CDATA[bool is_int ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115705" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_int</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是 <SPAN HREF="#"><B  CLASS="type" >integer</B
+></A
+> 则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      若想测试一个变量是否是数字或数字字符串（如表单输入，它们通常为字符串），必须使用
+      <SPAN HREF="#"><B  CLASS="function" >is_numeric()</B
+></A
+>。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见
+     <SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_numeric()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_integer</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115734" ></A
+><H2  >描述</H2
+><P  >     此函数是 <SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+> 的别名函数。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_long</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115743" ></A
+><H2  >描述</H2
+><P  >     此函数是 <SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+> 的别名函数。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_null</name>
+            <signature><![CDATA[bool is_null ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115752" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_null</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是 <SPAN HREF="#"><B  CLASS="type" >null</B
+></A
+> 则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     查看 <SPAN HREF="#"><TT  CLASS="constant" ><B  >NULL</B
+></TT
+></A
+> 类型获知变量什么时候被认为是 <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>，而什么时候不是。
+    </P
+><P  >     参见
+     <SPAN HREF="#"><TT  CLASS="constant" ><B  >NULL</B
+></TT
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_numeric()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_real()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_numeric</name>
+            <signature><![CDATA[bool is_numeric ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115785" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_numeric</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是数字和数字字符串则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     参见
+     <SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_object</name>
+            <signature><![CDATA[bool is_object ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115809" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_object</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是一个 <SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+> 则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     参见
+     <SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_real</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115834" ></A
+><H2  >描述</H2
+><P  >     此函数是 <SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+> 的别名函数。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_resource</name>
+            <signature><![CDATA[bool is_resource ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115842" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_resource</B
+> ( mixed var)<BR  ></BR
+><P  >     如果给出的参数 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是 <SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+> 类型，<B  CLASS="function" >is_resource()</B
+>
+     返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     查看 <SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+> 类型文档获取更多的信息。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_scalar</name>
+            <signature><![CDATA[bool is_scalar ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115862" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_scalar</B
+> ( mixed var)<BR  ></BR
+><P  >     如果给出的变量参数 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是一个标量，<B  CLASS="function" >is_scalar()</B
+>
+     返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     标量变量是指那些包含了
+     <SPAN HREF="#"><B  CLASS="type" >integer</B
+></A
+>、<SPAN HREF="#"><B  CLASS="type" >float</B
+></A
+>、<SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+> 
+     或 <SPAN HREF="#"><B  CLASS="type" >boolean</B
+></A
+>的变量，而 
+     <SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+>、<SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+> 和 <SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+> 则不是标量。
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN115883" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">show_var</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">) {<br  />    if (</font><font  color="#0000BB">is_scalar</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">)) {<br  />        echo </font><font  color="#0000BB">$var</font><font  color="#007700">;<br  />    } else {<br  />        </font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">);<br  />    }<br  />}<br  /></font><font  color="#0000BB">$pi </font><font  color="#007700">= </font><font  color="#0000BB">3.1416</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$proteins </font><font  color="#007700">= array(</font><font  color="#DD0000">"hemoglobin"</font><font  color="#007700">, </font><font  color="#DD0000">"cytochrome c oxidase"</font><font  color="#007700">, </font><font  color="#DD0000">"ferredoxin"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">show_var</font><font  color="#007700">(</font><font  color="#0000BB">$pi</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// 打印：3.1416<br  /><br  /></font><font  color="#0000BB">show_var</font><font  color="#007700">(</font><font  color="#0000BB">$proteins</font><font  color="#007700">)<br  /></font><font  color="#FF8000">// 打印：<br  />// array(3) {<br  />//   [0]=><br  />//   string(10) "hemoglobin"<br  />//   [1]=><br  />//   string(20) "cytochrome c oxidase"<br  />//   [2]=><br  />//   string(10) "ferredoxin"<br  />// }<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      尽管当前的 <SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+> 类型是居于整数的，但 
+      <B  CLASS="function" >is_scalar()</B
+> 不会把它们当作是标量，因为资源是抽象数据类型。不能依赖于执行细节，因为它可能会改变。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_numeric()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_real()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_string()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_string</name>
+            <signature><![CDATA[bool is_string ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115903" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_string</B
+> ( mixed var)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 是 <SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+> 则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     参见
+     <SPAN HREF="#"><B  CLASS="function" >is_bool()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_int()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_integer()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_float()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_real()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >is_object()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >is_array()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>isset</name>
+            <signature><![CDATA[bool isset ( mixed var [, mixed var [, ...]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115928" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >isset</B
+> ( mixed var [, mixed var [, ...]])<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 存在则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     如果已经使用 <SPAN HREF="#"><B  CLASS="function" >unset()</B
+></A
+> 
+     释放了一个变量之后，它将不再是 
+     <B  CLASS="function" >isset()</B
+>。若使用 <B  CLASS="function" >isset()</B
+>
+     测试一个被设置成 <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> 的变量，将返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。同时要注意的是一个 <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> 字节（<TT  CLASS="literal" >"\0"</TT
+>）并不等同于
+     PHP 的  <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> 常数。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >警告: </B
+>
+      <B  CLASS="function" >isset()</B
+> 
+      只能用于变量，因为传递任何其它参数都将造成解析错误。若想检测<SPAN HREF="#">常量</A
+>是否已设置，可使用 
+      <SPAN HREF="#"><B  CLASS="function" >defined()</B
+></A
+> 函数。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN115961" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />$var </font><font  color="#007700">= </font><font  color="#DD0000">''</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// 结果为 TRUE，所以后边的文本将被打印出来。<br  /></font><font  color="#007700">if (isset(</font><font  color="#0000BB">$var</font><font  color="#007700">)) {<br  />    print </font><font  color="#DD0000">"This var is set set so I will print."</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">// 在后边的例子中，我们将使用 var_dump 输出 isset() 的返回值。<br  /><br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= </font><font  color="#DD0000">"test"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#DD0000">"anothertest"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset(</font><font  color="#0000BB">$a</font><font  color="#007700">) );      </font><font  color="#FF8000">// TRUE<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset (</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">) ); </font><font  color="#FF8000">// TRUE<br  /><br  /></font><font  color="#007700">unset (</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset (</font><font  color="#0000BB">$a</font><font  color="#007700">) );     </font><font  color="#FF8000">// FALSE<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset (</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">) ); </font><font  color="#FF8000">// FALSE<br  /><br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#0000BB">NULL</font><font  color="#007700">;<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset (</font><font  color="#0000BB">$foo</font><font  color="#007700">) );   </font><font  color="#FF8000">// FALSE<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     这对于数组中的元素也同样有效：
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN115964" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />$a </font><font  color="#007700">= array (</font><font  color="#DD0000">'test' </font><font  color="#007700">=> </font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#DD0000">'hello' </font><font  color="#007700">=> </font><font  color="#0000BB">NULL</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset (</font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#DD0000">'test'</font><font  color="#007700">]) );            </font><font  color="#FF8000">// TRUE<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset (</font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#DD0000">'foo'</font><font  color="#007700">]) );             </font><font  color="#FF8000">// FALSE<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( isset (</font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#DD0000">'hello'</font><font  color="#007700">]) );           </font><font  color="#FF8000">// FALSE<br  /><br  />// 键 'hello' 的值等于 NULL，所以被认为是未置值的。<br  />// 如果想检测 NULL 键值，可以试试下边的方法。 <br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">( </font><font  color="#0000BB">array_key_exists</font><font  color="#007700">(</font><font  color="#DD0000">'hello'</font><font  color="#007700">, </font><font  color="#0000BB">$a</font><font  color="#007700">) ); </font><font  color="#FF8000">// TRUE<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>由于这是一个语言结构而非函数，因此它无法被“<SPAN HREF="#">变量函数</A
+>”调用。</P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >empty()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >unset()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >defined()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >array_key_exists()</B
+></A
+> 和错误控制 
+     <SPAN HREF="#">@</A
+>
+     运算符。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>print_r</name>
+            <signature><![CDATA[bool print_r ( mixed expression [, bool return])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN115979" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >print_r</B
+> ( mixed expression [, bool return])<BR  ></BR
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      参数 <TT  CLASS="parameter" ><I  >return</I
+></TT
+> 是在 PHP 4.3.0 的时候加上的
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <B  CLASS="function" >print_r()</B
+> 显示关于一个变量的易于理解的信息。如果给出的是
+     <SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+>、<SPAN HREF="#"><B  CLASS="type" >integer</B
+></A
+> 
+     或 <SPAN HREF="#"><B  CLASS="type" >float</B
+></A
+>，将打印变量值本身。如果给出的是  
+     <SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+>，将会按照一定格式显示键和元素。<SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+>
+     与数组类似。
+    </P
+><P  >     记住，<B  CLASS="function" >print_r()</B
+> 将把数组的指针移到最后边。使用
+     <SPAN HREF="#"><B  CLASS="function" >reset()</B
+></A
+> 可让指针回到开始处。
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN116004" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<pre><br  /><font  color="#0000BB"><?php<br  />    $a </font><font  color="#007700">= array (</font><font  color="#DD0000">'a' </font><font  color="#007700">=> </font><font  color="#DD0000">'apple'</font><font  color="#007700">, </font><font  color="#DD0000">'b' </font><font  color="#007700">=> </font><font  color="#DD0000">'banana'</font><font  color="#007700">, </font><font  color="#DD0000">'c' </font><font  color="#007700">=> array (</font><font  color="#DD0000">'x'</font><font  color="#007700">,</font><font  color="#DD0000">'y'</font><font  color="#007700">,</font><font  color="#DD0000">'z'</font><font  color="#007700">));<br  />    </font><font  color="#0000BB">print_r </font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?><br  /></font></pre></font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     上边的代码将输出：
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" ><pre>
+Array
+(
+    [a] => apple
+    [b] => banana
+    [c] => Array
+        (
+            [0] => x
+            [1] => y
+            [2] => z
+        )
+)
+</pre></PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     如果想捕捉 <B  CLASS="function" >print_r()</B
+> 的输出，可使用 
+     <TT  CLASS="parameter" ><I  >return</I
+></TT
+> 参数。若此参数设为
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，<B  CLASS="function" >print_r()</B
+> 将不打印结果（此为默认动作），而是返回其输出。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116014" ></A
+><P  ><B  >例子 1. <TT  CLASS="parameter" ><I  >return</I
+></TT
+> 参数示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />    $b </font><font  color="#007700">= array (</font><font  color="#DD0000">'m' </font><font  color="#007700">=> </font><font  color="#DD0000">'monkey'</font><font  color="#007700">, </font><font  color="#DD0000">'foo' </font><font  color="#007700">=> </font><font  color="#DD0000">'bar'</font><font  color="#007700">, </font><font  color="#DD0000">'x' </font><font  color="#007700">=> array (</font><font  color="#DD0000">'x'</font><font  color="#007700">, </font><font  color="#DD0000">'y'</font><font  color="#007700">, </font><font  color="#DD0000">'z'</font><font  color="#007700">));<br  />    </font><font  color="#0000BB">$results </font><font  color="#007700">= </font><font  color="#0000BB">print_r </font><font  color="#007700">(</font><font  color="#0000BB">$b</font><font  color="#007700">, </font><font  color="#0000BB">true</font><font  color="#007700">); </font><font  color="#FF8000">//$results 包含了 print_r 的输出结果<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      如果想在 PHP 4.3.0 之前的版本中捕捉
+      <B  CLASS="function" >print_r()</B
+> 的输出，可使用<SPAN HREF="#">输出控制函数</A
+>。
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      在 PHP 4.0.4 之前的版本中，如果给出的
+      <SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+> 或 <SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+> 包含了直接或间接指向自身的引用，<B  CLASS="function" >print_r()</B
+>
+      将永远继续下去。<TT  CLASS="literal" >print_r($GLOBALS)</TT
+>
+      就是一个例子，因为 <TT  CLASS="literal" >$GLOBALS</TT
+>
+      自身即是全局变量，其包含了指向自身的引用。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >      参见 <SPAN HREF="#"><B  CLASS="function" >ob_start()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >var_dump()</B
+></A
+>
+      和 <SPAN HREF="#"><B  CLASS="function" >var_export()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>serialize</name>
+            <signature><![CDATA[string serialize ( mixed value)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN116037" ></A
+><H2  >描述</H2
+>string <B  CLASS="methodname" >serialize</B
+> ( mixed value)<BR  ></BR
+><P  >     <B  CLASS="function" >serialize()</B
+> 返回字符串，此字符串包含了表示 
+     <TT  CLASS="parameter" ><I  >value</I
+></TT
+> 的字节流，可以存储于任何地方。
+    </P
+><P  >     这有利于存储或传递 PHP 的值，同时不丢失其类型和结构。
+    </P
+><P  >    想要将已序列化的字符串变回 PHP 的值，可使用
+    <SPAN HREF="#"><B  CLASS="function" >unserialize()</B
+></A
+>。<B  CLASS="function" >serialize()</B
+>
+    可处理除了 <SPAN HREF="#"><B  CLASS="type" >resource</B
+></A
+> 
+    之外的任何类型。甚至可以 <B  CLASS="function" >serialize()</B
+> 那些包含了指向其自身引用的数组。你正 
+    <B  CLASS="function" >serialize()</B
+>  的数组／对象中的引用也将被存储。
+   </P
+><P  >   当序列化对象时，PHP 将试图在序列动作之前调用该对象的成员函数
+   <B  CLASS="function" >__sleep()</B
+>。这样就允许对象在被序列化之前做任何清除操作。类似的，当使用 
+   <SPAN HREF="#"><B  CLASS="function" >unserialize()</B
+></A
+> 恢复对象时， 将调用
+   <B  CLASS="function" >__wakeup()</B
+> 成员函数。
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+     在 PHP 3 中，对象属性将被序列化，但是方法则会丢失。PHP 4 
+     打破了此限制，可以同时存储属性和方法。请参见<SPAN HREF="#">类与对象</A
+>中的<SPAN HREF="#">序列化对象</A
+>部分获取更多信息。
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116064" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >serialize()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// $session_data 是包含了当前用户 session 信息的多维数组。<br  />// 我们使用 serialize() 在请求结束之前将其存储到数据库中。<br  /><br  /></font><font  color="#0000BB">$conn </font><font  color="#007700">= </font><font  color="#0000BB">odbc_connect </font><font  color="#007700">(</font><font  color="#DD0000">"webdb"</font><font  color="#007700">, </font><font  color="#DD0000">"php"</font><font  color="#007700">, </font><font  color="#DD0000">"chicken"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$stmt </font><font  color="#007700">= </font><font  color="#0000BB">odbc_prepare </font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">,<br  />      </font><font  color="#DD0000">"UPDATE sessions SET data = ? WHERE id = ?"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$sqldata </font><font  color="#007700">= array (</font><font  color="#0000BB">serialize</font><font  color="#007700">(</font><font  color="#0000BB">$session_data</font><font  color="#007700">), </font><font  color="#0000BB">$PHP_AUTH_USER</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">odbc_execute </font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">, &</font><font  color="#0000BB">$sqldata</font><font  color="#007700">)) {<br  />    </font><font  color="#0000BB">$stmt </font><font  color="#007700">= </font><font  color="#0000BB">odbc_prepare</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">,<br  />     </font><font  color="#DD0000">"INSERT INTO sessions (id, data) VALUES(?, ?)"</font><font  color="#007700">);<br  />    if (!</font><font  color="#0000BB">odbc_execute</font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">, &</font><font  color="#0000BB">$sqldata</font><font  color="#007700">)) {<br  />    </font><font  color="#FF8000">/* 出错 */<br  />    </font><font  color="#007700">}<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >    参见：<SPAN HREF="#"><B  CLASS="function" >unserialize()</B
+></A
+>。
+   </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>settype</name>
+            <signature><![CDATA[bool settype ( mixed var, string type)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN116074" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >settype</B
+> ( mixed var, string type)<BR  ></BR
+><P  >     将变量 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 的类型设置成
+     <TT  CLASS="parameter" ><I  >type</I
+></TT
+>。
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >type</I
+></TT
+> 的可能值为：
+     </P><P  ></P
+><UL  ><LI  ><P  >        “boolean” （或为“bool”，从 PHP 4.2.0 起）
+       </P
+></LI
+><LI  ><P  >        “integer” （或为“int”，从 PHP 4.2.0 起）
+       </P
+></LI
+><LI  ><P  >        “float” （只在 PHP 4.2.0 之后可以使用，对于旧版本中使用的“double”现已停用）
+       </P
+></LI
+><LI  ><P  >        “string”
+       </P
+></LI
+><LI  ><P  >        “array”
+       </P
+></LI
+><LI  ><P  >        “object”
+       </P
+></LI
+><LI  ><P  >        “null” （从 PHP 4.2.0 起）
+       </P
+></LI
+></UL
+>
+    </P
+><P  >     如果成功则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，失败则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116109" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >settype()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$foo </font><font  color="#007700">= </font><font  color="#DD0000">"5bar"</font><font  color="#007700">; </font><font  color="#FF8000">// string<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#0000BB">true</font><font  color="#007700">;   </font><font  color="#FF8000">// boolean<br  /><br  /></font><font  color="#0000BB">settype</font><font  color="#007700">(</font><font  color="#0000BB">$foo</font><font  color="#007700">, </font><font  color="#DD0000">"integer"</font><font  color="#007700">); </font><font  color="#FF8000">// $foo 现在是 5   (integer)<br  /></font><font  color="#0000BB">settype</font><font  color="#007700">(</font><font  color="#0000BB">$bar</font><font  color="#007700">, </font><font  color="#DD0000">"string"</font><font  color="#007700">);  </font><font  color="#FF8000">// $bar 现在是 "1" (string)<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >gettype()</B
+></A
+>、<SPAN HREF="#">类型转换</A
+>和<SPAN HREF="#">类型戏法</A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>strval</name>
+            <signature><![CDATA[string strval ( mixed var)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN116121" ></A
+><H2  >描述</H2
+>string <B  CLASS="methodname" >strval</B
+> ( mixed var)<BR  ></BR
+><P  >     返回 <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 的 <SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+> 值。
+     参见 <SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+> 文档获取更多关于字符串转换的信息。
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >var</I
+></TT
+> 可以是任何标量类型。不能将
+     <B  CLASS="function" >strval()</B
+> 用于数组或对象。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >floatval()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >intval()</B
+></A
+>、<SPAN HREF="#"><B  CLASS="function" >settype()</B
+></A
+> 和<SPAN HREF="#">类型戏法</A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>unserialize</name>
+            <signature><![CDATA[mixed unserialize ( string str [, string callback])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN116145" ></A
+><H2  >描述</H2
+>mixed <B  CLASS="methodname" >unserialize</B
+> ( string str [, string callback])<BR  ></BR
+><P  >     <B  CLASS="function" >unserialize()</B
+> 对单一的已序列化的变量进行操作，将其转换回 
+     PHP 的值。返回的是转换之后的值，可为 
+     <SPAN HREF="#"><B  CLASS="type" >integer</B
+></A
+>、<SPAN HREF="#"><B  CLASS="type" >float</B
+></A
+>、<SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+>、<SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+>
+     或 <SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+>。如果传递的字符串不可解序列化，则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >unserialize_callback_func 指令: </B
+>
+      如果在解序列化的时候需要实例化一个未定义类，则可以设置回调函数以供调用（以免得到的是不完整的
+      <SPAN HREF="#"><B  CLASS="type" >object</B
+></A
+> “__PHP_Incomplete_Class”）。可通过
+      <TT  CLASS="filename" >php.ini</TT
+>、<SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+> 或 <TT  CLASS="filename" >.htaccess</TT
+> 
+      定义‘unserialize_callback_func’。每次实例化一个未定义类时它都会被调用。若要禁止这个特性，只需置空此设定。还需要注意的是
+      unserialize_callback_func 指令是从 PHP 4.2.0 开始提供使用的。
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+     <TT  CLASS="parameter" ><I  >callback</I
+></TT
+> 参数是在 PHP 4.2.0 中添加的
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     若被解序列化的变量是一个对象，在成功地重新构造对象之后，PHP
+     会自动地试图去调用 <B  CLASS="function" >__wakeup()</B
+>
+     成员函数（如果存在的话）。 
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116176" ></A
+><P  ><B  >例子 1. unserialize_callback_func 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$serialized_object</font><font  color="#007700">=</font><font  color="#DD0000">'O:1:"a":1:{s:5:"value";s:3:"100";}'</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// unserialize_callback_func 从 PHP 4.2.0 起可用<br  /></font><font  color="#0000BB">ini_set</font><font  color="#007700">(</font><font  color="#DD0000">'unserialize_callback_func'</font><font  color="#007700">,</font><font  color="#DD0000">'mycallback'</font><font  color="#007700">); </font><font  color="#FF8000">// 设置您的回调函数<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">mycallback</font><font  color="#007700">(</font><font  color="#0000BB">$classname</font><font  color="#007700">) {<br  />    </font><font  color="#FF8000">// 只需包含含有类定义的文件<br  />    // $classname 指出需要的是哪一个类<br  /></font><font  color="#007700">}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      在 PHP 3 中，解序列化一个对象时是不保存方法的。而
+      PHP 4 打破了这个限制，同时保存了属性和方法。请参见<SPAN HREF="#">类与对象</A
+>中的<SPAN HREF="#">序列化对象</A
+>部分获取更多信息。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116184" ></A
+><P  ><B  >例子 2. <B  CLASS="function" >unserialize()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// 这里，我们使用 unserialize() 装载来自数据库的 $session_data 数组中的会话数据。<br  />// 此例是描述 serialize() 的那个例子的补充。<br  /><br  /></font><font  color="#0000BB">$conn </font><font  color="#007700">= </font><font  color="#0000BB">odbc_connect </font><font  color="#007700">(</font><font  color="#DD0000">"webdb"</font><font  color="#007700">, </font><font  color="#DD0000">"php"</font><font  color="#007700">, </font><font  color="#DD0000">"chicken"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$stmt </font><font  color="#007700">= </font><font  color="#0000BB">odbc_prepare </font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#DD0000">"SELECT data FROM sessions WHERE id = ?"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$sqldata </font><font  color="#007700">= array (</font><font  color="#0000BB">$PHP_AUTH_USER</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">odbc_execute </font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">, &</font><font  color="#0000BB">$sqldata</font><font  color="#007700">) || !</font><font  color="#0000BB">odbc_fetch_into </font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">, &</font><font  color="#0000BB">$tmp</font><font  color="#007700">)) {<br  />    </font><font  color="#FF8000">// 如果执行出错或返回错误，则初始化为空数组<br  />    </font><font  color="#0000BB">$session_data </font><font  color="#007700">= array();<br  />} else {<br  />    </font><font  color="#FF8000">// 现在我们需要的是 $tmp[0] 中已序列化的数据。<br  />    </font><font  color="#0000BB">$session_data </font><font  color="#007700">= </font><font  color="#0000BB">unserialize </font><font  color="#007700">(</font><font  color="#0000BB">$tmp</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]);<br  />    if (!</font><font  color="#0000BB">is_array </font><font  color="#007700">(</font><font  color="#0000BB">$session_data</font><font  color="#007700">)) {<br  />        </font><font  color="#FF8000">// 出错，初始化为空数组<br  />        </font><font  color="#0000BB">$session_data </font><font  color="#007700">= array();<br  />    }<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >    参见 <SPAN HREF="#"><B  CLASS="function" >serialize()</B
+></A
+>。
+   </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>unset</name>
+            <signature><![CDATA[void unset ( mixed var [, mixed var [, ...]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN116194" ></A
+><H2  >描述</H2
+>void <B  CLASS="methodname" >unset</B
+> ( mixed var [, mixed var [, ...]])<BR  ></BR
+><P  >     <B  CLASS="function" >unset()</B
+> 销毁指定的变量。注意在
+     PHP 3 中，<B  CLASS="function" >unset()</B
+> 将返回
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>（实际上是整型值 1），而在 PHP 4
+     中，<B  CLASS="function" >unset()</B
+> 
+     不再是一个真正的函数：它现在是一个语句。这样就没有了返回值，试图获取
+     <B  CLASS="function" >unset()</B
+> 的返回值将导致解析错误。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116214" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >unset()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// 销毁单个变量<br  /></font><font  color="#007700">unset (</font><font  color="#0000BB">$foo</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// 销毁单个数组元素<br  /></font><font  color="#007700">unset (</font><font  color="#0000BB">$bar</font><font  color="#007700">[</font><font  color="#DD0000">'quux'</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// 销毁一个以上的变量<br  /></font><font  color="#007700">unset (</font><font  color="#0000BB">$foo1</font><font  color="#007700">, </font><font  color="#0000BB">$foo2</font><font  color="#007700">, </font><font  color="#0000BB">$foo3</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     <B  CLASS="function" >unset()</B
+> 在函数中的行为会依赖于想要销毁的变量的类型而有所不同。
+    </P
+><P  >     如果在函数中 <B  CLASS="function" >unset()</B
+> 
+     一个全局变量，则只是局部变量被销毁，而在调用环境中的变量将保持调用
+     <B  CLASS="function" >unset()</B
+> 之前一样的值。
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN116223" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">destroy_foo</font><font  color="#007700">() {<br  />    global </font><font  color="#0000BB">$foo</font><font  color="#007700">;<br  />    unset(</font><font  color="#0000BB">$foo</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#DD0000">'bar'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">destroy_foo</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">$foo</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     上边的例子将输出：
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116225" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >bar</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     如果在函数中 <B  CLASS="function" >unset()</B
+> 
+     一个通过引用传递的变量，则只是局部变量被销毁，而在调用环境中的变量将保持调用
+     <B  CLASS="function" >unset()</B
+> 之前一样的值。
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN116230" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">(&</font><font  color="#0000BB">$bar</font><font  color="#007700">) {<br  />    unset(</font><font  color="#0000BB">$bar</font><font  color="#007700">);<br  />    </font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">"blah"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">'something'</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"$bar\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">(</font><font  color="#0000BB">$bar</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"$bar\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     上边的例子将输出：
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116232" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >something
+something</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     如果在函数中 <B  CLASS="function" >unset()</B
+> 
+     一个静态变量，则 <B  CLASS="function" >unset()</B
+>
+     将销毁此变量及其所有的引用。
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN116237" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() {<br  />    static </font><font  color="#0000BB">$a</font><font  color="#007700">;<br  />    </font><font  color="#0000BB">$a</font><font  color="#007700">++;<br  />    echo </font><font  color="#DD0000">"$a\n"</font><font  color="#007700">;<br  />    unset(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     上边的例子将输出：
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116239" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >1
+2
+3</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     如果您想在函数中 <B  CLASS="function" >unset()</B
+>
+     一个全局变量，可使用 <TT  CLASS="varname" >$GLOBALS</TT
+>
+     数组来实现：
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN116244" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() {<br  />    unset(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#DD0000">'bar'</font><font  color="#007700">]);<br  />}<br  /><br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">"something"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>由于这是一个语言结构而非函数，因此它无法被“<SPAN HREF="#">变量函数</A
+>”调用。</P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >isset()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >empty()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>var_dump</name>
+            <signature><![CDATA[void var_dump ( mixed expression [, mixed expression [, ...]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN116256" ></A
+><H2  >描述</H2
+>void <B  CLASS="methodname" >var_dump</B
+> ( mixed expression [, mixed expression [, ...]])<BR  ></BR
+><P  >     此函数显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。
+    </P
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >提示: </B
+>为了防止程序直接将结果输出到浏览器，您可以使用<SPAN HREF="#">输出控制函数（output-control
+functions）</A
+>来捕获函数的输出，并把它们保存到一个 <SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+> 型的变量中。
+</P
+></BLOCKQUOTE
+></DIV
+><P  >     可以比较一下 <B  CLASS="function" >var_dump()</B
+> 与
+     <SPAN HREF="#"><B  CLASS="function" >print_r()</B
+></A
+>。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116278" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >var_dump()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<pre><br  /><font  color="#0000BB"><?php<br  />$a </font><font  color="#007700">= array (</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, array (</font><font  color="#DD0000">"a"</font><font  color="#007700">, </font><font  color="#DD0000">"b"</font><font  color="#007700">, </font><font  color="#DD0000">"c"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">var_dump </font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* 输出：<br  />array(3) {<br  />  [0]=><br  />  int(1)<br  />  [1]=><br  />  int(2)<br  />  [2]=><br  />  array(3) {<br  />    [0]=><br  />    string(1) "a"<br  />    [1]=><br  />    string(1) "b"<br  />    [2]=><br  />    string(1) "c"<br  />  }<br  />}<br  /><br  />*/<br  /><br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">3.1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$c </font><font  color="#007700">= </font><font  color="#0000BB">TRUE</font><font  color="#007700">;<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$b</font><font  color="#007700">,</font><font  color="#0000BB">$c</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* 输出：<br  />float(3.1)<br  />bool(true)<br  /><br  />*/<br  /></font><font  color="#0000BB">?><br  /></font></pre></font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>var_export</name>
+            <signature><![CDATA[mixed var_export ( mixed expression [, bool return])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN116286" ></A
+><H2  >描述</H2
+>mixed <B  CLASS="methodname" >var_export</B
+> ( mixed expression [, bool return])<BR  ></BR
+><P  >      此函数返回关于传递给该函数的变量的结构信息，它和
+      <SPAN HREF="#"><B  CLASS="function" >var_dump()</B
+></A
+> 类似，不同的是其返回的表示是合法的
+      PHP 代码。
+    </P
+><P  >     您可以通过将函数的第二个参数设置为
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，从而返回变量的表示。
+    </P
+><P  >     比较 <B  CLASS="function" >var_export()</B
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >var_dump()</B
+></A
+>.
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN116305" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<pre><br  /><font  color="#0000BB"><?php<br  />$a </font><font  color="#007700">= array (</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, array (</font><font  color="#DD0000">"a"</font><font  color="#007700">, </font><font  color="#DD0000">"b"</font><font  color="#007700">, </font><font  color="#DD0000">"c"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">var_export </font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* 输出：<br  />array (<br  />  0 => 1,<br  />  1 => 2,<br  />  2 => <br  />  array (<br  />    0 => 'a',<br  />    1 => 'b',<br  />    2 => 'c',<br  />  ),<br  />)<br  />*/<br  /><br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">3.1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$v </font><font  color="#007700">= </font><font  color="#0000BB">var_export</font><font  color="#007700">(</font><font  color="#0000BB">$b</font><font  color="#007700">, </font><font  color="#0000BB">TRUE</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$v</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* 输出：<br  />3.1<br  />*/<br  /></font><font  color="#0000BB">?><br  /></font></pre></font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

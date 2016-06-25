@@ -1,0 +1,837 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/stdstring/all.html -->
+<HTML><HEAD><TITLE>Standard C String and Character</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C String 
+      and Character</A> </DIV>
+      <DIV class=name-format>atof </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  double atof( const char *str );
+</PRE>
+      <P>The function atof() converts <EM>str</EM> into a double, then returns 
+      that value. <EM>str</EM> must start with a valid number, but can be 
+      terminated with any non-numerical character, other than "E" or "e". For 
+      example,</P><PRE class=example-code>   x = atof( "42.0is_the_answer" );           
+</PRE>
+      <P>results in x being set to 42.0.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="atoi.html">atoi</A><BR><A 
+      href="atol.html">atol</A><BR>(Standard 
+      C I/O) <A 
+      href="../stdio/sprintf.html">sprintf</A><BR><A 
+      href="strtod.html">strtod</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>atoi </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  int atoi( const char *str );
+</PRE>
+<P>The atoi() function converts <EM>str</EM> into an integer, and returns that 
+integer. <EM>str</EM> should start with some sort of number, and atoi() will 
+stop reading from <EM>str</EM> as soon as a non-numerical character has been 
+read. For example,</P><PRE class=example-code>   i = atoi( "512.035" );             
+</PRE>
+<P>would result in i being set to 512.</P>
+<P>You can use (Standard C I/O) <A 
+href="../stdio/sprintf.html">sprintf</A>() to convert a 
+number into a string.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="atof.html">atof</A><BR><A 
+href="atol.html">atol</A><BR>(Standard C 
+I/O) <A href="../stdio/sprintf.html">sprintf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>atol </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  long atol( const char *str );
+</PRE>
+<P>The function atol() converts <EM>str</EM> into a long, then returns that 
+value. atol() will read from <EM>str</EM> until it finds any character that 
+should not be in a long. The resulting truncated value is then converted and 
+returned. For example,</P><PRE class=example-code>   x = atol( "1024.0001" );           
+</PRE>
+<P>results in x being set to 1024L.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="atof.html">atof</A><BR><A 
+href="atoi.html">atoi</A><BR>(Standard C 
+I/O) <A href="../stdio/sprintf.html">sprintf</A><BR><A 
+href="strtol.html">strtol</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isalnum </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isalnum( int ch );
+</PRE>
+<P>The function isalnum() returns non-zero if its argument is a numeric digit or 
+a letter of the alphabet. Otherwise, zero is returned.</P><PRE class=example-code>   char c;
+   scanf( "%c", &amp;c );
+   if( isalnum(c) )
+     printf( "You entered the alphanumeric character %c\n", c );              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="isprint.html">isprint</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isspace.html">isspace</A><BR><A 
+href="isxdigit.html">isxdigit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isalpha </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isalpha( int ch );
+</PRE>
+<P>The function isalpha() returns non-zero if its argument is a letter of the 
+alphabet. Otherwise, zero is returned.</P><PRE class=example-code>   char c;
+   scanf( "%c", &amp;c );
+   if( isalpha(c) )
+     printf( "You entered a letter of the alphabet\n" );              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="isprint.html">isprint</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isspace.html">isspace</A><BR><A 
+href="isxdigit.html">isxdigit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>iscntrl </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int iscntrl( int ch );
+</PRE>
+<P>The iscntrl() function returns non-zero if its argument is a control 
+character (between 0 and 0x1F or equal to 0x7F). Otherwise, zero is 
+returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="isprint.html">isprint</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isspace.html">isspace</A><BR><A 
+href="isxdigit.html">isxdigit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isdigit </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isdigit( int ch );
+</PRE>
+<P>The function isdigit() returns non-zero if its argument is a digit between 0 
+and 9. Otherwise, zero is returned.</P><PRE class=example-code>   char c;
+   scanf( "%c", &amp;c );
+   if( isdigit(c) )
+     printf( "You entered the digit %c\n", c );               
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="isprint.html">isprint</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isspace.html">isspace</A><BR><A 
+href="isxdigit.html">isxdigit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isgraph </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isgraph( int ch );
+</PRE>
+<P>The function isgraph() returns non-zero if its argument is any printable 
+character other than a space (if you can see the character, then isgraph() will 
+return a non-zero value). Otherwise, zero is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isprint.html">isprint</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isspace.html">isspace</A><BR><A 
+href="isxdigit.html">isxdigit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>islower </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int islower( int ch );
+</PRE>
+<P>The islower() function returns non-zero if its argument is a lowercase 
+letter. Otherwise, zero is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isupper.html">isupper</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isprint </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isprint( int ch );
+</PRE>
+<P>The function isprint() returns non-zero if its argument is a printable 
+character (including a space). Otherwise, zero is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isspace.html">isspace</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ispunct </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int ispunct( int ch );
+</PRE>
+<P>The ispunct() function returns non-zero if its argument is a printing 
+character but neither alphanumeric nor a space. Otherwise, zero is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="isprint.html">isprint</A><BR><A 
+href="isspace.html">isspace</A><BR><A 
+href="isxdigit.html">isxdigit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isspace </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isspace( int ch );
+</PRE>
+<P>The isspace() function returns non-zero if its argument is some sort of space 
+(i.e. single space, tab, vertical tab, form feed, carriage return, or newline). 
+Otherwise, zero is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="isprint.html">isprint</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isxdigit.html">isxdigit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isupper </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isupper( int ch );
+</PRE>
+<P>The isupper() function returns non-zero if its argument is an uppercase 
+letter. Otherwise, zero is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="islower.html">islower</A><BR><A 
+href="tolower.html">tolower</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>isxdigit </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int isxdigit( int ch );
+</PRE>
+<P>The function isxdigit() returns non-zero if its argument is a hexidecimal 
+digit (i.e. A-F, a-f, or 0-9). Otherwise, zero is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isalnum.html">isalnum</A><BR><A 
+href="isalpha.html">isalpha</A><BR><A 
+href="iscntrl.html">iscntrl</A><BR><A 
+href="isdigit.html">isdigit</A><BR><A 
+href="isgraph.html">isgraph</A><BR><A 
+href="ispunct.html">ispunct</A><BR><A 
+href="isspace.html">isspace</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>memchr </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  void *memchr( const void *buffer, int ch, size_t count );
+</PRE>
+<P>The memchr() function looks for the first occurrence of <EM>ch</EM> within 
+<EM>count</EM> characters in the array pointed to by <EM>buffer</EM>. The return 
+value points to the location of the first occurrence of <EM>ch</EM>, or 
+<STRONG>NULL</STRONG> if <EM>ch</EM> isn't found. For example:</P><PRE class=example-code>   char names[] = "Alan Bob Chris X Dave";
+   if( memchr(names,'X',strlen(names)) == <STRONG>NULL</STRONG> )
+     printf( "Didn't find an X\n" );
+   else
+     printf( "Found an X\n" );                
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memcmp.html">memcmp</A><BR><A 
+href="memcpy.html">memcpy</A><BR><A 
+href="strstr.html">strstr</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>memcmp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  int memcmp( const void *buffer1, const void *buffer2, size_t count );
+</PRE>
+<P>The function memcmp() compares the first <EM>count</EM> characters of 
+<EM>buffer1</EM> and <EM>buffer2</EM>. The return values are as follows:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Value</TH>
+    <TH class=code-table-th>Explanation</TH></TR>
+  <TR>
+    <TD class=code-table-td>less than 0</TD>
+    <TD class=code-table-td>buffer1 is less than buffer2</TD></TR>
+  <TR>
+    <TD class=code-table-td>equal to 0</TD>
+    <TD class=code-table-td>buffer1 is equal to buffer2</TD></TR>
+  <TR>
+    <TD class=code-table-td>greater than 0</TD>
+    <TD class=code-table-td>buffer1 is greater than 
+buffer2</TD></TR></TBODY></TABLE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memchr.html">memchr</A><BR><A 
+href="memcpy.html">memcpy</A><BR><A 
+href="memset.html">memset</A><BR><A 
+href="strcmp.html">strcmp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>memcpy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  void *memcpy( void *to, const void *from, size_t count );
+</PRE>
+<P>The function memcpy() copies <EM>count</EM> characters from the array 
+<EM>from</EM> to the array <EM>to</EM>. The return value of memcpy() is 
+<EM>to</EM>. The behavior of memcpy() is undefined if <EM>to</EM> and 
+<EM>from</EM> overlap.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memchr.html">memchr</A><BR><A 
+href="memcmp.html">memcmp</A><BR><A 
+href="memmove.html">memmove</A><BR><A 
+href="memset.html">memset</A><BR><A 
+href="strcpy.html">strcpy</A><BR><A 
+href="strlen.html">strlen</A><BR><A 
+href="strncpy.html">strncpy</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>memmove </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  void *memmove( void *to, const void *from, size_t count );
+</PRE>
+<P>The memmove() function is identical to <A 
+href="memcpy.html">memcpy</A>(), except 
+that it works even if <EM>to</EM> and <EM>from</EM> overlap.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memcpy.html">memcpy</A><BR><A 
+href="memset.html">memset</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>memset </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  void* memset( void* buffer, int ch, size_t count );
+</PRE>
+<P>The function memset() copies <EM>ch</EM> into the first <EM>count</EM> 
+characters of <EM>buffer</EM>, and returns <EM>buffer</EM>. memset() is useful 
+for intializing a section of memory to some value. For example, this 
+command:</P><PRE class=example-code>   memset( the_array, '\0', sizeof(the_array) );                
+</PRE>
+<P>...is a very efficient way to set all values of the_array to zero.</P>
+<P>The table below compares two different methods for initializing an array of 
+characters: a for-loop versus memset(). As the size of the data being 
+initialized increases, memset() clearly gets the job done much more quickly:</P>
+<TABLE class=misc-table>
+  <TBODY>
+  <TR class=misc-table-tr-1>
+    <TH>Input size</TH>
+    <TH>Initialized with a for-loop</TH>
+    <TH>Initialized with memset()</TH></TR>
+  <TR class=misc-table-tr-2>
+    <TD>1000</TD>
+    <TD>0.016</TD>
+    <TD>0.017</TD></TR>
+  <TR class=misc-table-tr-1>
+    <TD>10000</TD>
+    <TD>0.055</TD>
+    <TD>0.013</TD></TR>
+  <TR class=misc-table-tr-2>
+    <TD>100000</TD>
+    <TD>0.443</TD>
+    <TD>0.029</TD></TR>
+  <TR class=misc-table-tr-1>
+    <TD>1000000</TD>
+    <TD>4.337</TD>
+    <TD>0.291</TD></TR></TBODY></TABLE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memcmp.html">memcmp</A><BR><A 
+href="memcpy.html">memcpy</A><BR><A 
+href="memmove.html">memmove</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strcat </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strcat( char *str1, const char *str2 );
+</PRE>
+<P>The strcat() function concatenates <EM>str2</EM> onto the end of 
+<EM>str1</EM>, and returns <EM>str1</EM>. For example:</P><PRE class=example-code>   printf( "Enter your name: " );
+   scanf( "%s", name );
+   title = strcat( name, " the Great" );
+   printf( "Hello, %s\n", title );            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcmp.html">strcmp</A><BR><A 
+href="strcpy.html">strcpy</A><BR><A 
+href="strncat.html">strncat</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strchr </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strchr( const char *str, int ch );
+</PRE>
+<P>The function strchr() returns a pointer to the first occurence of <EM>ch</EM> 
+in <EM>str</EM>, or <STRONG>NULL</STRONG> if <EM>ch</EM> is not found.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strcat.html">strcat</A><BR><A 
+href="strcmp.html">strcmp</A><BR><A 
+href="strcpy.html">strcpy</A><BR><A 
+href="strlen.html">strlen</A><BR><A 
+href="strncat.html">strncat</A><BR><A 
+href="strncmp.html">strncmp</A><BR><A 
+href="strncpy.html">strncpy</A><BR><A 
+href="strpbrk.html">strpbrk</A><BR><A 
+href="strspn.html">strspn</A><BR><A 
+href="strstr.html">strstr</A><BR><A 
+href="strtok.html">strtok</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strcmp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  int strcmp( const char *str1, const char *str2 );
+</PRE>
+<P>The function strcmp() compares <EM>str1</EM> and <EM>str2</EM>, then 
+returns:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Return value</TH>
+    <TH class=code-table-th>Explanation</TH></TR>
+  <TR>
+    <TD class=code-table-td>less than 0</TD>
+    <TD class=code-table-td>''str1'' is less than ''str2''</TD></TR>
+  <TR>
+    <TD class=code-table-td>equal to 0</TD>
+    <TD class=code-table-td>''str1'' is equal to ''str2''</TD></TR>
+  <TR>
+    <TD class=code-table-td>greater than 0</TD>
+    <TD class=code-table-td>''str1'' is greater than 
+''str2''</TD></TR></TBODY></TABLE>
+<P>For example:</P><PRE class=example-code>   printf( "Enter your name: " );
+   scanf( "%s", name );
+   if( strcmp( name, "Mary" ) == 0 )
+     printf( "Hello, Dr. Mary!\n" );          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memcmp.html">memcmp</A><BR><A 
+href="strcat.html">strcat</A><BR><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcoll.html">strcoll</A><BR><A 
+href="strcpy.html">strcpy</A><BR><A 
+href="strlen.html">strlen</A><BR><A 
+href="strncmp.html">strncmp</A><BR><A 
+href="strxfrm.html">strxfrm</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strcoll </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  int strcoll( const char *str1, const char *str2 );
+</PRE>
+<P>The strcoll() function compares <EM>str1</EM> and <EM>str2</EM>, much like <A 
+href="strcmp.html">strcmp</A>(). However, 
+strcoll() performs the comparison using the locale specified by the (Standard C 
+Date &amp; Time) <A 
+href="../stddate/setlocale.html">setlocale</A>() 
+function.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(Standard C Date &amp; Time) <A 
+href="../stddate/setlocale.html">setlocale</A><BR><A 
+href="strcmp.html">strcmp</A><BR><A 
+href="strxfrm.html">strxfrm</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strcpy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strcpy( char *to, const char *from );
+</PRE>
+<P>The strcpy() function copies characters in the string <EM>from</EM> to the 
+string <EM>to</EM>, including the null termination. The return value is 
+<EM>to</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memcpy.html">memcpy</A><BR><A 
+href="strcat.html">strcat</A><BR><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcmp.html">strcmp</A><BR><A 
+href="strncmp.html">strncmp</A><BR><A 
+href="strncpy.html">strncpy</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strcspn </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  size_t strcspn( const char *str1, const char *str2 );
+</PRE>
+<P>The function strcspn() returns the index of the first character in 
+<EM>str1</EM> that matches any of the characters in <EM>str2</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strpbrk.html">strpbrk</A><BR><A 
+href="strrchr.html">strrchr</A><BR><A 
+href="strstr.html">strstr</A><BR><A 
+href="strtok.html">strtok</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strerror </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strerror( int num );
+</PRE>
+<P>The function strerror() returns an implementation defined string 
+corresponding to <EM>num</EM>.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strlen </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  size_t strlen( char *str );
+</PRE>
+<P>The strlen() function returns the length of <EM>str</EM> (determined by the 
+number of characters before null termination).</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memcpy.html">memcpy</A><BR><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcmp.html">strcmp</A><BR><A 
+href="strncmp.html">strncmp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strncat </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strncat( char *str1, const char *str2, size_t count );
+</PRE>
+<P>The function strncat() concatenates at most <EM>count</EM> characters of 
+<EM>str2</EM> onto <EM>str1</EM>, adding a null termination. The resulting 
+string is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strcat.html">strcat</A><BR><A 
+href="strchr.html">strchr</A><BR><A 
+href="strncmp.html">strncmp</A><BR><A 
+href="strncpy.html">strncpy</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strncmp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  int strncmp( const char *str1, const char *str2, size_t count );
+</PRE>
+<P>The strncmp() function compares at most <EM>count</EM> characters of 
+<EM>str1</EM> and <EM>str2</EM>. The return value is as follows:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Return value</TH>
+    <TH class=code-table-th>Explanation</TH></TR>
+  <TR>
+    <TD class=code-table-td>less than 0</TD>
+    <TD class=code-table-td>''str1'' is less than ''str2''</TD></TR>
+  <TR>
+    <TD class=code-table-td>equal to 0</TD>
+    <TD class=code-table-td>''str1'' is equal to ''str2''</TD></TR>
+  <TR>
+    <TD class=code-table-td>greater than 0</TD>
+    <TD class=code-table-td>''str1'' is greater than 
+str2''</TD></TR></TBODY></TABLE>
+<P>If there are less than <EM>count</EM> characters in either string, then the 
+comparison will stop after the first null termination is encountered.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcmp.html">strcmp</A><BR><A 
+href="strcpy.html">strcpy</A><BR><A 
+href="strlen.html">strlen</A><BR><A 
+href="strncat.html">strncat</A><BR><A 
+href="strncpy.html">strncpy</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strncpy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strncpy( char *to, const char *from, size_t count );
+</PRE>
+<P>The strncpy() function copies at most <EM>count</EM> characters of 
+<EM>from</EM> to the string <EM>to</EM>. If from has less than <EM>count</EM> 
+characters, the remainder is padded with '\0' characters. The return value is 
+the resulting string.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memcpy.html">memcpy</A><BR><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcpy.html">strcpy</A><BR><A 
+href="strncat.html">strncat</A><BR><A 
+href="strncmp.html">strncmp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strpbrk </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char* strpbrk( const char* str1, const char* str2 );
+</PRE>
+<P>The function strpbrk() returns a pointer to the first ocurrence in 
+<EM>str1</EM> of any character in <EM>str2</EM>, or <STRONG>NULL</STRONG> if no 
+such characters are present.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Algorithms) <A 
+href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcspn.html">strcspn</A><BR><A 
+href="strrchr.html">strrchr</A><BR><A 
+href="strspn.html">strspn</A><BR><A 
+href="strstr.html">strstr</A><BR><A 
+href="strtok.html">strtok</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strrchr </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strrchr( const char *str, int ch );
+</PRE>
+<P>The function strrchr() returns a pointer to the last occurrence of 
+<EM>ch</EM> in <EM>str</EM>, or <STRONG>NULL</STRONG> if no match is found.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strcspn.html">strcspn</A><BR><A 
+href="strpbrk.html">strpbrk</A><BR><A 
+href="strspn.html">strspn</A><BR><A 
+href="strstr.html">strstr</A><BR><A 
+href="strtok.html">strtok</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strspn </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  size_t strspn( const char *str1, const char *str2 );
+</PRE>
+<P>The strspn() function returns the index of the first character in 
+<EM>str1</EM> that doesn't match any character in <EM>str2</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strchr.html">strchr</A><BR><A 
+href="strpbrk.html">strpbrk</A><BR><A 
+href="strrchr.html">strrchr</A><BR><A 
+href="strstr.html">strstr</A><BR><A 
+href="strtok.html">strtok</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strstr </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strstr( const char *str1, const char *str2 );
+</PRE>
+<P>The function strstr() returns a pointer to the first occurrence of 
+<EM>str2</EM> in <EM>str1</EM>, or <STRONG>NULL</STRONG> if no match is found. 
+If the length of <EM>str2</EM> is zero, then strstr() will simply return 
+<EM>str1</EM>. </P>
+<P>For example, the following code checks for the existence of one string within 
+another string:</P><PRE class=example-code>  char* str1 = "this is a string of characters";
+  char* str2 = "a string";
+  char* result = strstr( str1, str2 );
+  if( result == NULL ) printf( "Could not find '%s' in '%s'\n", str2, str1 );
+  else printf( "Found a substring: '%s'\n", result );
+</PRE>
+<P>When run, the above code displays this output:</P><PRE class=example-code>  Found a substring: 'a string of characters'
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="memchr.html">memchr</A><BR><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcspn.html">strcspn</A><BR><A 
+href="strpbrk.html">strpbrk</A><BR><A 
+href="strrchr.html">strrchr</A><BR><A 
+href="strspn.html">strspn</A><BR><A 
+href="strtok.html">strtok</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strtod </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  double strtod( const char *start, char **end );
+</PRE>
+<P>The function strtod() returns whatever it encounters first in <EM>start</EM> 
+as a double. <EM>end</EM> is set to point at whatever is left in <EM>start</EM> 
+after that double. If overflow occurs, strtod() returns either 
+<STRONG>HUGE_VAL</STRONG> or -<STRONG>HUGE_VAL</STRONG>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="atof.html">atof</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strtok </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strtok( char *str1, const char *str2 );
+</PRE>
+<P>The strtok() function returns a pointer to the next "token" in <EM>str1</EM>, 
+where <EM>str2</EM> contains the delimiters that determine the token. strtok() 
+returns <STRONG>NULL</STRONG> if no token is found. In order to convert a string 
+to tokens, the first call to strtok() should have <EM>str1</EM> point to the 
+string to be tokenized. All calls after this should have <EM>str1</EM> be 
+<STRONG>NULL</STRONG>.</P>
+<P>For example:</P><PRE class=example-code>   char str[] = "now # is the time for all # good men to come to the # aid of their country";
+   char delims[] = "#";
+   char *result = <STRONG>NULL</STRONG>;
+   result = strtok( str, delims );
+   while( result != <STRONG>NULL</STRONG> ) {
+       printf( "result is \"%s\"\n", result );
+       result = strtok( <STRONG>NULL</STRONG>, delims );
+   }            
+</PRE>
+<P>The above code will display the following output:</P><PRE class=example-code>   result is "now "
+   result is " is the time for all "
+   result is " good men to come to the "
+   result is " aid of their country"          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strchr.html">strchr</A><BR><A 
+href="strcspn.html">strcspn</A><BR><A 
+href="strpbrk.html">strpbrk</A><BR><A 
+href="strrchr.html">strrchr</A><BR><A 
+href="strspn.html">strspn</A><BR><A 
+href="strstr.html">strstr</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strtol </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  long strtol( const char *start, char **end, int base );
+</PRE>
+<P>The strtol() function returns whatever it encounters first in <EM>start</EM> 
+as a long, doing the conversion to <EM>base</EM> if necessary. <EM>end</EM> is 
+set to point to whatever is left in <EM>start</EM> after the long. If the result 
+can not be represented by a long, then strtol() returns either 
+<STRONG>LONG_MAX</STRONG> or <STRONG>LONG_MIN</STRONG>. Zero is returned upon 
+error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="atol.html">atol</A><BR><A 
+href="strtoul.html">strtoul</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strtoul </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  unsigned long strtoul( const char *start, char **end, int base );
+</PRE>
+<P>The function strtoul() behaves exactly like <A 
+href="strtol.html">strtol</A>(), except 
+that it returns an unsigned long rather than a mere long.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strtol.html">strtol</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strxfrm </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  size_t strxfrm( char *str1, const char *str2, size_t num );
+</PRE>
+<P>The strxfrm() function manipulates the first <EM>num</EM> characters of 
+<EM>str2</EM> and stores them in <EM>str1</EM>. The result is such that if a <A 
+href="strcoll.html">strcoll</A>() is 
+performed on <EM>str1</EM> and the old <EM>str2</EM>, you will get the same 
+result as with a <A 
+href="strcmp.html">strcmp</A>().</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="strcmp.html">strcmp</A><BR><A 
+href="strcoll.html">strcoll</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>tolower </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int tolower( int ch );
+</PRE>
+<P>The function tolower() returns the lowercase version of the character 
+<EM>ch</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="isupper.html">isupper</A><BR><A 
+href="toupper.html">toupper</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>toupper </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;ctype.h&gt;
+  int toupper( int ch );
+</PRE>
+<P>The toupper() function returns the uppercase version of the character 
+<EM>ch</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="tolower.html">tolower</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/cppsstream/all.html -->
+<HTML><HEAD><TITLE>C++ String Streams</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppsstream/index.html">C++ String 
+      Streams</A> </DIV>
+      <DIV class=name-format>String Stream Constructors </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;sstream&gt;
+  stringstream()
+  stringstream( openmode mode )
+  stringstream( string s, openmode mode )
+  ostringstream()
+  ostringstream( openmode mode )
+  ostringstream( string s, openmode mode )
+  istringstream()
+  istringstream( openmode mode )
+  istringstream( string s, openmode mode )
+</PRE>
+      <P>The stringstream, ostringstream, and istringstream objects are used for 
+      input and output to a string. They behave in a manner similar to fstream, 
+      ofstream and ifstream objects.</P>
+      <P>The optional <EM>mode</EM> parameter defines how the file is to be 
+      opened, according to the <A 
+      href="../io_flags.html#mode_flags">io stream mode 
+      flags</A>.
+      <P>
+      <P>An ostringstream object can be used to write to a string. This is 
+      similar to the C <A 
+      href="../stdio/sprintf.html">sprintf()</A> 
+      function. For example:</P><PRE class=example-code>  ostringstream s1;
+  int i = 22;
+  s1 &lt;&lt; "Hello " &lt;&lt; i &lt;&lt; endl;
+  string s2 = s1.str();
+  cout &lt;&lt; s2;
+</PRE>
+      <P>An istringstream object can be used to read from a string. This is 
+      similar to the C <A 
+      href="../stdio/sscanf.html">sscanf()</A> 
+      function. For example:</P><PRE class=example-code>  istringstream stream1;
+  string string1 = "25";
+  stream1.str(string1);
+  int i;
+  stream1 &gt;&gt; i;
+  cout &lt;&lt; i &lt;&lt; endl;  // displays 25
+</PRE>
+      <P>You can also specify the input string in the istringstream constructor 
+      as in this example:</P><PRE class=example-code>  string string1 = "25";
+  istringstream stream1(string1);
+  int i;
+  stream1 &gt;&gt; i;
+  cout &lt;&lt; i &lt;&lt; endl;  // displays 25
+</PRE>
+      <P>A stringstream object can be used for both input and output to a string 
+      like an fstream object.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/index.html">C++ I/O 
+      Streams</A><BR></DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>String Stream Operators </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;sstream&gt;
+  operator&lt;&lt;
+  operator&gt;&gt;
+</PRE>
+<P>Like <A href="../cppio/index.html">C++ I/O 
+Streams</A>, the simplest way to use string streams is to take advantage of the 
+overloaded &lt;&lt; and &gt;&gt; operators.</P>
+<P>The &lt;&lt; operator inserts data into the stream. For example:</P><PRE class=example-code>  stream1 &lt;&lt; "hello" &lt;&lt; i;
+</PRE>
+<P>This example inserts the string "hello" and the variable <I>i</I> into 
+<I>stream1</I>. In contrast, the &gt;&gt; operator extracts data out of a string 
+stream:</P><PRE class=example-code>  stream1 &gt;&gt; i;
+</PRE>
+<P>This code reads a value from <I>stream1</I> and assigns the variable <I>i</I> 
+that value.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/index.html">C++ I/O 
+Streams</A><BR></DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rdbuf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;sstream&gt;
+  stringbuf* rdbuf();
+</PRE>
+<P>The <EM>rdbuf()</EM> function returns a pointer to the string buffer for the 
+current string stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppsstream/str.html">str()</A><BR><A 
+href="../cppio/index.html">C++ I/O 
+Streams</A><BR></DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>str </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;sstream&gt;
+  void str( string s );
+  string str();
+</PRE>
+<P>The function <EM>str()</EM> can be used in two ways. First, it can be used to 
+get a copy of the string that is being manipulated by the current stream string. 
+This is most useful with output strings. For example:</P><PRE class=example-code>  ostringstream stream1;
+  stream1 &lt;&lt; "Testing!" &lt;&lt; endl;
+  cout &lt;&lt; stream1.str();
+</PRE>
+<P>Second, <EM>str()</EM> can be used to copy a string into the stream. This is 
+most useful with input strings. For example:</P><PRE class=example-code>  istringstream stream1;
+  string string1 = "25";
+  stream1.str(string1);
+</PRE>
+<P><EM>str()</EM>, along with <EM>clear()</EM>, is also handy when you need to 
+clear the stream so that it can be reused:</P><PRE class=example-code>  istringstream stream1;
+  float num;
+
+  // use it once
+  string string1 = "25 1 3.235\n1111111\n222222";
+  stream1.str(string1);
+  while( stream1 &gt;&gt; num ) cout &lt;&lt; "num: " &lt;&lt; num &lt;&lt; endl;  // displays numbers, one per line
+
+  // use the same string stream again with clear() and str()
+  string string2 = "1 2 3 4 5  6 7 8 9 10";
+  stream1.clear();
+  stream1.str(string2);
+
+  while( stream1 &gt;&gt; num ) cout &lt;&lt; "num: " &lt;&lt; num &lt;&lt; endl;  // displays numbers, one per line
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppsstream/rdbuf.html">rdbuf()</A><BR><A 
+href="../cppio/index.html">C++ I/O 
+Streams</A><BR></DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

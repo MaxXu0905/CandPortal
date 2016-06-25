@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/cppstring/getline.html -->
+<HTML><HEAD><TITLE>getline</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="getline.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A 
+      href="../cppstring/getline.html">getline</A> 
+      </DIV>
+      <DIV class=name-format>getline </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  istream&amp; getline( istream&amp; is, string&amp; s, char delimiter = '\n' );
+</PRE>
+      <P>The C++ string class defines the global function getline() to read 
+      strings from and I/O stream. The getline() function, which is not part of 
+      the string class, reads a line from <EM>is</EM> and stores it into 
+      <EM>s</EM>. If a character <EM>delimiter</EM> is specified, then getline() 
+      will use <EM>delimiter</EM> to decide when to stop reading data.</P>
+      <P>For example, the following code reads a line of text from 
+      <STRONG>STDIN</STRONG> and displays it to <STRONG>STDOUT</STRONG>:</P><PRE class=example-code> string s;
+ getline( cin, s );
+ cout &lt;&lt; "You entered " &lt;&lt; s &lt;&lt; endl;               
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content>(C++ I/O) <A 
+      href="../cppio/get.html">get</A><BR>(C++ I/O) <A 
+      href="../cppio/getline.html">getline</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

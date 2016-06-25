@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/cppalgorithm/sort.html -->
+<HTML><HEAD><TITLE>sort</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="sort.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/sort.html">sort</A> </DIV>
+      <DIV class=name-format>sort </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void sort( iterator start, iterator end );
+  void sort( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+      <P>The sort() algorithm sorts the elements in the range 
+      [<EM>start</EM>,<EM>end</EM>) into ascending order. If two elements are 
+      equal, there is no guarantee what order they will be in.</P>
+      <P>If the strict weak ordering function object <EM>cmp</EM> is given, then 
+      it will be used to compare two objects instead of the &lt; operator.</P>
+      <P>The algorithm behind sort() is the <EM>introsort</EM> algorithm. sort() 
+      runs in O(N log(N)) time (average and worst case) which is faster than 
+      polynomial time but slower than <A 
+      href="../complexity.html">linear time</A>.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the following code sorts a vector of integers into 
+      ascending order:</P><PRE class=example-code> vector&lt;int&gt; v;
+ v.push_back( 23 );
+ v.push_back( -1 );
+ v.push_back( 9999 );
+ v.push_back( 0 );
+ v.push_back( 4 );              
+
+ cout &lt;&lt; "Before sorting: ";
+ for( unsigned int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ sort( v.begin(), v.end() );            
+
+ cout &lt;&lt; "After sorting: ";
+ for( unsigned int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <P>When run, the above code displays this output:</P><PRE class=example-code> Before sorting: 23 -1 9999 0 4
+ After sorting: -1 0 4 23 9999          
+</PRE>
+      <P>Alternatively, the following code uses the sort() function to sort a 
+      normal array of integers, and displays the same output as the previous 
+      example:</P><PRE class=example-code> int array[] = { 23, -1, 9999, 0, 4 };
+ unsigned int array_size = 5;           
+
+ cout &lt;&lt; "Before sorting: ";
+ for( unsigned int i = 0; i &lt; array_size; i++ ) {
+   cout &lt;&lt; array[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ sort( array, array + array_size );             
+
+ cout &lt;&lt; "After sorting: ";
+ for( unsigned int i = 0; i &lt; array_size; i++ ) {
+   cout &lt;&lt; array[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <P>This next example shows how to use sort() with a user-specified 
+      comparison function. The function <STRONG>cmp</STRONG> is defined to do 
+      the opposite of the &lt; operator. When sort() is called with 
+      <STRONG>cmp</STRONG> used as the comparison function, the result is a list 
+      sorted in descending, rather than ascending, order:</P><PRE class=example-code> bool cmp( int a, int b ) {
+   return a &gt; b;
+ }              
+
+ ...            
+
+ vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v.push_back(i);
+ }              
+
+ cout &lt;&lt; "Before: ";
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ sort( v.begin(), v.end(), cmp );               
+
+ cout &lt;&lt; "After: ";
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+      href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+      href="../cppalgorithm/merge.html">merge</A><BR><A 
+      href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+      href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+      href="../cppalgorithm/stable_sort.html">stable_sort</A><BR>(Other 
+      Standard C Functions) <A 
+      href="../stdother/qsort.html">qsort</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

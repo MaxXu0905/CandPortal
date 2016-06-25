@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.cppreference.com/cppvector/at.html -->
+<HTML><HEAD><TITLE>at</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="at.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="http://www.cppreference.com/index.html">cppreference.com</A> &gt; <A 
+      href="http://www.cppreference.com/cppvector/index.html">C++ Vectors</A> 
+      &gt; <A href="http://www.cppreference.com/cppvector/at.html">at</A> </DIV>
+      <DIV class=name-format>at </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;vector&gt;
+  <A href="http://www.cppreference.com/containers.html">TYPE</A>&amp; at( <STRONG>size_type</STRONG> loc );
+  const <A href="http://www.cppreference.com/containers.html">TYPE</A>&amp; at( <STRONG>size_type</STRONG> loc ) const;
+</PRE>
+      <P>The at() function returns a reference to the element in the vector at 
+      index <EM>loc</EM>. The at() function is safer than the [] operator, 
+      because it won't let you reference items outside the bounds of the 
+      vector.</P>
+      <P>For example, consider the following code:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v[i] &lt;&lt; endl;
+ }              
+</PRE>
+      <P>This code overrunns the end of the vector, producing potentially 
+      dangerous results. The following code would be much safer:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v.at(i) &lt;&lt; endl;
+ }              
+</PRE>
+      <P>Instead of attempting to read garbage values from memory, the at() 
+      function will realize that it is about to overrun the vector and will 
+      throw an exception.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="http://www.cppreference.com/cppvector/vector_operators.html">Vector 
+      operators</A> </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

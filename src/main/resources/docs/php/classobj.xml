@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="classobj">
+    <methods>
+        <method>
+            <name>call_user_method_array</name>
+            <signature><![CDATA[mixed call_user_method_array ( string method_name, object obj [, array paramarr])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN12892" ></A
+><H2  >描述</H2
+>mixed <B  CLASS="methodname" >call_user_method_array</B
+> ( string method_name, object obj [, array paramarr])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      <B  CLASS="function" >call_user_method_array()</B
+>
+      函数从 PHP 4.1.0 开始已经停用，使用  <SPAN HREF="#"><B  CLASS="function" >call_user_func_array()</B
+></A
+> 
+      函数和  <TT  CLASS="literal" >array(&$obj, "method_name")</TT
+>
+      语法代替。
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     从用户定义的 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+> 
+     对象中调用 <TT  CLASS="parameter" ><I  >method_name</I
+></TT
+>
+     所指的方法，同时使用 <TT  CLASS="parameter" ><I  >paramarr</I
+></TT
+>
+     中的参数。
+    </P
+><P  >     参见：
+     <SPAN HREF="#"><B  CLASS="function" >call_user_func_array()</B
+></A
+>、
+     <SPAN HREF="#"><B  CLASS="function" >call_user_func()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >call_user_method()</B
+></A
+>。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      此函数是在 PHP 4.0.4pl1 发行版之后加入到 CVS 代码中的
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>call_user_method</name>
+            <signature><![CDATA[mixed call_user_method ( string method_name, object obj [, mixed parameter [, mixed ...]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN12925" ></A
+><H2  >描述</H2
+>mixed <B  CLASS="methodname" >call_user_method</B
+> ( string method_name, object obj [, mixed parameter [, mixed ...]])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      <B  CLASS="function" >call_user_method()</B
+> 
+      函数从 PHP 4.1.0 开始已经停用，使用 <SPAN HREF="#"><B  CLASS="function" >call_user_func()</B
+></A
+> 
+      函数和 <TT  CLASS="literal" >array(&$obj, "method_name")</TT
+>
+      语法代替。
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     从用户定义的 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+> 
+     对象中调用 <TT  CLASS="parameter" ><I  >method_name</I
+></TT
+>
+     所指的方法。下边是用法示例，我们定义了一个类，接着创建了一个对象实例，然后使用
+     <B  CLASS="function" >call_user_method()</B
+> 间接调用它的
+     <TT  CLASS="varname" >print_info</TT
+> 方法。
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN12952" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">Country </font><font  color="#007700">{<br  />    var </font><font  color="#0000BB">$NAME</font><font  color="#007700">;<br  />    var </font><font  color="#0000BB">$TLD</font><font  color="#007700">;<br  />    <br  />    function </font><font  color="#0000BB">Country</font><font  color="#007700">(</font><font  color="#0000BB">$name</font><font  color="#007700">, </font><font  color="#0000BB">$tld</font><font  color="#007700">) {<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">NAME </font><font  color="#007700">= </font><font  color="#0000BB">$name</font><font  color="#007700">;<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">TLD </font><font  color="#007700">= </font><font  color="#0000BB">$tld</font><font  color="#007700">;<br  />    }<br  /><br  />    function </font><font  color="#0000BB">print_info</font><font  color="#007700">(</font><font  color="#0000BB">$prestr</font><font  color="#007700">=</font><font  color="#DD0000">""</font><font  color="#007700">) {<br  />        echo </font><font  color="#0000BB">$prestr</font><font  color="#007700">.</font><font  color="#DD0000">"Country: "</font><font  color="#007700">.</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">NAME</font><font  color="#007700">.</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />        echo </font><font  color="#0000BB">$prestr</font><font  color="#007700">.</font><font  color="#DD0000">"Top Level Domain: "</font><font  color="#007700">.</font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">TLD</font><font  color="#007700">.</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />    }<br  />}<br  /><br  /></font><font  color="#0000BB">$cntry </font><font  color="#007700">= new </font><font  color="#0000BB">Country</font><font  color="#007700">(</font><font  color="#DD0000">"Peru"</font><font  color="#007700">,</font><font  color="#DD0000">"pe"</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"* Calling the object method directly\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$cntry</font><font  color="#007700">-></font><font  color="#0000BB">print_info</font><font  color="#007700">();<br  /><br  />echo </font><font  color="#DD0000">"\n* Calling the same method indirectly\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">call_user_method </font><font  color="#007700">(</font><font  color="#DD0000">"print_info"</font><font  color="#007700">, </font><font  color="#0000BB">$cntry</font><font  color="#007700">, </font><font  color="#DD0000">"\t"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >call_user_func_array()</B
+></A
+>、
+     <SPAN HREF="#"><B  CLASS="function" >call_user_func()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >call_user_method_array()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>class_exists</name>
+            <signature><![CDATA[bool class_exists ( string class_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN12962" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >class_exists</B
+> ( string class_name)<BR  ></BR
+><P  >     如果由 <TT  CLASS="parameter" ><I  >class_name</I
+></TT
+>
+     所指的类已经定义，此函数返回 
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_declared_classes()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_class_methods</name>
+            <signature><![CDATA[array get_class_methods ( mixed class_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN12980" ></A
+><H2  >描述</H2
+>array <B  CLASS="methodname" >get_class_methods</B
+> ( mixed class_name)<BR  ></BR
+><P  >     返回由 <TT  CLASS="parameter" ><I  >class_name</I
+></TT
+>
+     指定的类中定义的方法名所组成的数组。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      从 PHP 4.0.6 开始，可以指定对象本身来代替
+      <TT  CLASS="parameter" ><I  >class_name</I
+></TT
+>，例如：
+      </P><DIV  CLASS="informalexample" ><A  NAME="AEN12993" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >$class_methods = get_class_methods($my_class); // see below the full example</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN12996" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >get_class_methods()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">class </font><font  color="#0000BB">myclass </font><font  color="#007700">{<br  />    </font><font  color="#FF8000">// constructor<br  />    </font><font  color="#007700">function </font><font  color="#0000BB">myclass</font><font  color="#007700">() {<br  />        return(</font><font  color="#0000BB">TRUE</font><font  color="#007700">);<br  />    }<br  />    <br  />    </font><font  color="#FF8000">// method 1<br  />    </font><font  color="#007700">function </font><font  color="#0000BB">myfunc1</font><font  color="#007700">() {<br  />        return(</font><font  color="#0000BB">TRUE</font><font  color="#007700">);<br  />    }<br  /><br  />    </font><font  color="#FF8000">// method 2<br  />    </font><font  color="#007700">function </font><font  color="#0000BB">myfunc2</font><font  color="#007700">() {<br  />        return(</font><font  color="#0000BB">TRUE</font><font  color="#007700">);<br  />    }<br  />}<br  /><br  /></font><font  color="#0000BB">$my_object </font><font  color="#007700">= new </font><font  color="#0000BB">myclass</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">$class_methods </font><font  color="#007700">= </font><font  color="#0000BB">get_class_methods</font><font  color="#007700">(</font><font  color="#0000BB">get_class</font><font  color="#007700">(</font><font  color="#0000BB">$my_object</font><font  color="#007700">));<br  /><br  />foreach (</font><font  color="#0000BB">$class_methods </font><font  color="#007700">as </font><font  color="#0000BB">$method_name</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"$method_name\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     运行结果：
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN13001" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >myclass
+myfunc1
+myfunc2</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_class_vars()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >get_object_vars()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_class_vars</name>
+            <signature><![CDATA[array get_class_vars ( string class_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13010" ></A
+><H2  >描述</H2
+>array <B  CLASS="methodname" >get_class_vars</B
+> ( string class_name)<BR  ></BR
+><P  >     返回由类的默认属性组成的关联数组，此数组的元素以
+     <TT  CLASS="parameter" ><I  >varname => value</I
+></TT
+> 的形式存在。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      在 PHP 4.2.0 之前，<B  CLASS="function" >get_class_vars()</B
+>
+      不会包含未初始化的类变量。 
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN13024" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >get_class_vars()</B
+> 示例</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">class </font><font  color="#0000BB">myclass </font><font  color="#007700">{<br  /><br  />    var </font><font  color="#0000BB">$var1</font><font  color="#007700">; </font><font  color="#FF8000">// 此变量没有默认值……<br  />    </font><font  color="#007700">var </font><font  color="#0000BB">$var2 </font><font  color="#007700">= </font><font  color="#DD0000">"xyz"</font><font  color="#007700">;<br  />    var </font><font  color="#0000BB">$var3 </font><font  color="#007700">= </font><font  color="#0000BB">100</font><font  color="#007700">;<br  />    <br  />    </font><font  color="#FF8000">// constructor<br  />    </font><font  color="#007700">function </font><font  color="#0000BB">myclass</font><font  color="#007700">() {<br  />        return(</font><font  color="#0000BB">TRUE</font><font  color="#007700">);<br  />    }<br  /><br  />}<br  /><br  /></font><font  color="#0000BB">$my_class </font><font  color="#007700">= new </font><font  color="#0000BB">myclass</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">$class_vars </font><font  color="#007700">= </font><font  color="#0000BB">get_class_vars</font><font  color="#007700">(</font><font  color="#0000BB">get_class</font><font  color="#007700">(</font><font  color="#0000BB">$my_class</font><font  color="#007700">));<br  /><br  />foreach (</font><font  color="#0000BB">$class_vars </font><font  color="#007700">as </font><font  color="#0000BB">$name </font><font  color="#007700">=> </font><font  color="#0000BB">$value</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"$name : $value\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     运行结果：
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN13029" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >// 在 PHP 4.2.0 之前
+var2 : xyz
+var3 : 100
+
+// 从 PHP 4.2.0 开始
+var1 :
+var2 : xyz
+var3 : 100</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_class_methods()</B
+></A
+>、
+     <SPAN HREF="#"><B  CLASS="function" >get_object_vars()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_class</name>
+            <signature><![CDATA[string get_class ( object obj)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13038" ></A
+><H2  >描述</H2
+>string <B  CLASS="methodname" >get_class</B
+> ( object obj)<BR  ></BR
+><P  >     返回对象实例 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+>
+     所属类的名字。如果 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+>
+     不是一个对象则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      <B  CLASS="function" >get_class()</B
+> 返回用户定义的类名的小写形式。在
+      PHP 扩展中定义的类则返回其原有的名字。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_parent_class()</B
+></A
+>、
+     <SPAN HREF="#"><B  CLASS="function" >gettype()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >is_subclass_of()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_declared_classes</name>
+            <signature><![CDATA[array get_declared_classes ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13061" ></A
+><H2  >描述</H2
+>array <B  CLASS="methodname" >get_declared_classes</B
+> ( void )<BR  ></BR
+><P  >     返回由当前脚本中已定义类的名字组成的数组。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      在 PHP 4.0.1pl2 中，有三个额外的类存在于返回的数组中：<B  CLASS="classname" >stdClass</B
+>（在 
+      <TT  CLASS="filename" >Zend/zend.c</TT
+> 中定义）、<B  CLASS="classname" >OverloadedTestClass</B
+>（在
+      <TT  CLASS="filename" >ext/standard/basic_functions.c</TT
+> 中定义）和
+      <B  CLASS="classname" >Directory</B
+>（在<TT  CLASS="filename" > ext/standard/dir.c</TT
+> 中定义）。
+     </P
+><P  >      还需要注意的是额外类的出现依赖于你已编译到 PHP 
+      中的库。这意味着你不能使用这些类名定义自己的类。在附录的
+      <SPAN HREF="#">预定义类</A
+>
+      部分有预定义类的列表。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >class_exists()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_object_vars</name>
+            <signature><![CDATA[array get_object_vars ( object obj)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13084" ></A
+><H2  >描述</H2
+>array <B  CLASS="methodname" >get_object_vars</B
+> ( object obj)<BR  ></BR
+><P  >     返回由 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+> 
+     指定的对象中定义的属性组成的关联数组。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      在 PHP 4.2.0 之前的版本中，如果在 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+>
+      对象实例中声明的变量没有被赋值，则它们将不会在返回的数组中。而在
+      PHP 4.2.0 之后，这些变量作为键名将被赋予 <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>
+      值。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN13099" ></A
+><P  ><B  >例子 1. 使用 <B  CLASS="function" >get_object_vars()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">Point2D </font><font  color="#007700">{<br  />    var </font><font  color="#0000BB">$x</font><font  color="#007700">, </font><font  color="#0000BB">$y</font><font  color="#007700">;<br  />    var </font><font  color="#0000BB">$label</font><font  color="#007700">;<br  /><br  />    function </font><font  color="#0000BB">Point2D</font><font  color="#007700">(</font><font  color="#0000BB">$x</font><font  color="#007700">, </font><font  color="#0000BB">$y</font><font  color="#007700">) {<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">x </font><font  color="#007700">= </font><font  color="#0000BB">$x</font><font  color="#007700">;<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">y </font><font  color="#007700">= </font><font  color="#0000BB">$y</font><font  color="#007700">;<br  />    }<br  /><br  />    function </font><font  color="#0000BB">setLabel</font><font  color="#007700">(</font><font  color="#0000BB">$label</font><font  color="#007700">) {<br  />        </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">label </font><font  color="#007700">= </font><font  color="#0000BB">$label</font><font  color="#007700">;<br  />    }<br  /><br  />    function </font><font  color="#0000BB">getPoint</font><font  color="#007700">() {<br  />        return array(</font><font  color="#DD0000">"x" </font><font  color="#007700">=> </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">x</font><font  color="#007700">,<br  />                     </font><font  color="#DD0000">"y" </font><font  color="#007700">=> </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">y</font><font  color="#007700">,<br  />                     </font><font  color="#DD0000">"label" </font><font  color="#007700">=> </font><font  color="#0000BB">$this</font><font  color="#007700">-></font><font  color="#0000BB">label</font><font  color="#007700">);<br  />    }<br  />}<br  /><br  /></font><font  color="#FF8000">// "$label" is declared but not defined<br  /></font><font  color="#0000BB">$p1 </font><font  color="#007700">= new </font><font  color="#0000BB">Point2D</font><font  color="#007700">(</font><font  color="#0000BB">1.233</font><font  color="#007700">, </font><font  color="#0000BB">3.445</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_object_vars</font><font  color="#007700">(</font><font  color="#0000BB">$p1</font><font  color="#007700">));<br  /><br  /></font><font  color="#0000BB">$p1</font><font  color="#007700">-></font><font  color="#0000BB">setLabel</font><font  color="#007700">(</font><font  color="#DD0000">"point #1"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_object_vars</font><font  color="#007700">(</font><font  color="#0000BB">$p1</font><font  color="#007700">));<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     上边的程序将输出： 
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+ (
+     [x] => 1.233
+     [y] => 3.445
+     [label] =>
+ )
+
+ Array
+ (
+     [x] => 1.233
+     [y] => 3.445
+     [label] => point #1
+ )</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_class_methods()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >get_class_vars()</B
+></A
+>！
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_parent_class</name>
+            <signature><![CDATA[string get_parent_class ( mixed obj)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13111" ></A
+><H2  >描述</H2
+>string <B  CLASS="methodname" >get_parent_class</B
+> ( mixed obj)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+>
+     是对象，则返回对象实例 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+>
+     所属类的父类名。
+    </P
+><P  >     如果 <TT  CLASS="parameter" ><I  >obj</I
+></TT
+>
+     是字符串，则返回以此字符串为名的类的父类名。此功能是在
+     PHP 4.0.5 中增加的。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_class()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >is_subclass_of()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_a</name>
+            <signature><![CDATA[bool is_a ( object object, string class_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13132" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_a</B
+> ( object object, string class_name)<BR  ></BR
+><P  >     如果对象是该类或该类是此对象的父类则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_class()</B
+></A
+>、 
+     <SPAN HREF="#"><B  CLASS="function" >get_parent_class()</B
+></A
+> 和 
+     <SPAN HREF="#"><B  CLASS="function" >is_subclass_of()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>is_subclass_of</name>
+            <signature><![CDATA[bool is_subclass_of ( object object, string class_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13155" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >is_subclass_of</B
+> ( object object, string class_name)<BR  ></BR
+><P  >     如果对象 <TT  CLASS="parameter" ><I  >object</I
+></TT
+>
+     所属类是类 <TT  CLASS="parameter" ><I  >class_name</I
+></TT
+>
+     的子类，则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >get_class()</B
+></A
+>、 
+     <SPAN HREF="#"><B  CLASS="function" >get_parent_class()</B
+></A
+> 和 
+     <SPAN HREF="#"><B  CLASS="function" >is_a()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>method_exists</name>
+            <signature><![CDATA[bool method_exists ( object object, string method_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN13179" ></A
+><H2  >描述</H2
+>bool <B  CLASS="methodname" >method_exists</B
+> ( object object, string method_name)<BR  ></BR
+><P  >     如果 <TT  CLASS="parameter" ><I  >method_name</I
+></TT
+>
+     所指的方法在 <TT  CLASS="parameter" ><I  >object</I
+></TT
+>
+     所指的对象类中已定义，则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

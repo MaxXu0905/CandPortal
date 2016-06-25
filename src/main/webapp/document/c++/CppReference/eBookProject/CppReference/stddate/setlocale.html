@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/stddate/setlocale.html -->
+<HTML><HEAD><TITLE>setlocale</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="setlocale.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C Date 
+      &amp; Time</A> &gt; <A 
+      href="setlocale.html">setlocale</A> 
+      </DIV>
+      <DIV class=name-format>setlocale </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;locale.h&gt;
+  char *setlocale( int category, const char * locale );
+</PRE>
+      <P>The setlocale() function is used to set and retrieve the current 
+      locale. If <EM>locale</EM> is <STRONG>NULL</STRONG>, the current locale is 
+      returned. Otherwise, <EM>locale</EM> is used to set the locale for the 
+      given <EM>category</EM>.</P>
+      <P><EM>category</EM> can have the following values:</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Value</TH>
+          <TH class=code-table-th>Description</TH></TR>
+        <TR>
+          <TD class=code-table-td>LC_ALL</TD>
+          <TD class=code-table-td>All of the locale</TD></TR>
+        <TR>
+          <TD class=code-table-td>LC_TIME</TD>
+          <TD class=code-table-td>Date and time formatting</TD></TR>
+        <TR>
+          <TD class=code-table-td>LC_NUMERIC</TD>
+          <TD class=code-table-td>Number formatting</TD></TR>
+        <TR>
+          <TD class=code-table-td>LC_COLLATE</TD>
+          <TD class=code-table-td>String collation and regular expression 
+            matching</TD></TR>
+        <TR>
+          <TD class=code-table-td>LC_C<A 
+            href="../containers.html">TYPE</A></TD>
+          <TD class=code-table-td>Regular expression matching, conversion, 
+            case-sensitive comparison, wide character functions, and character 
+            classification.</TD></TR>
+        <TR>
+          <TD class=code-table-td>LC_MONETARY</TD>
+          <TD class=code-table-td>For monetary formatting</TD></TR>
+        <TR>
+          <TD class=code-table-td>LC_MESSAGES</TD>
+          <TD class=code-table-td>For natural language 
+      messages</TD></TR></TBODY></TABLE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content>(Standard C String and Character) <A 
+      href="strcoll.html">strcoll</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

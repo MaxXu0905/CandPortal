@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="spl">
+    <methods>
+        <method>
+            <name>ArrayIterator::current</name>
+            <signature><![CDATA[mixed|false ArrayIterator::current ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105411" ></A
+><H2  >Description</H2
+>mixed|false <B  CLASS="methodname" >ArrayIterator::current</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ArrayIterator::hasMore</name>
+            <signature><![CDATA[bool ArrayIterator::hasMore ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105423" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >ArrayIterator::hasMore</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ArrayIterator::key</name>
+            <signature><![CDATA[mixed|false ArrayIterator::key ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105435" ></A
+><H2  >Description</H2
+>mixed|false <B  CLASS="methodname" >ArrayIterator::key</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ArrayIterator::next</name>
+            <signature><![CDATA[void ArrayIterator::next ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105447" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >ArrayIterator::next</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ArrayIterator::rewind</name>
+            <signature><![CDATA[void ArrayIterator::rewind ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105459" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >ArrayIterator::rewind</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ArrayObject::__construct</name>
+            <signature><![CDATA[void ArrayObject::__construct ( array|object ar)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105471" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >ArrayObject::__construct</B
+> ( array|object ar)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ArrayObject::getIterator</name>
+            <signature><![CDATA[ArrayIterator ArrayObject::getIterator ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105485" ></A
+><H2  >Description</H2
+>ArrayIterator <B  CLASS="methodname" >ArrayObject::getIterator</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::__construct</name>
+            <signature><![CDATA[void DirectoryIterator::__construct ( string path)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105497" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >DirectoryIterator::__construct</B
+> ( string path)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::current</name>
+            <signature><![CDATA[DirectoryIterator DirectoryIterator::current ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105511" ></A
+><H2  >Description</H2
+>DirectoryIterator <B  CLASS="methodname" >DirectoryIterator::current</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileATime</name>
+            <signature><![CDATA[int DirectoryIterator::fileATime ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105523" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::fileATime</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileCTime</name>
+            <signature><![CDATA[int DirectoryIterator::fileCTime ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105535" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::fileCTime</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileGroup</name>
+            <signature><![CDATA[int DirectoryIterator::fileGroup ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105547" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::fileGroup</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileInode</name>
+            <signature><![CDATA[int DirectoryIterator::fileInode ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105559" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::fileInode</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileMTime</name>
+            <signature><![CDATA[int DirectoryIterator::fileMTime ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105571" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::fileMTime</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileOwner</name>
+            <signature><![CDATA[int DirectoryIterator::fileOwner ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105583" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::fileOwner</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::filePerms</name>
+            <signature><![CDATA[int DirectoryIterator::filePerms ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105595" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::filePerms</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileSize</name>
+            <signature><![CDATA[int DirectoryIterator::fileSize ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105607" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >DirectoryIterator::fileSize</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::fileType</name>
+            <signature><![CDATA[string DirectoryIterator::fileType ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105619" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >DirectoryIterator::fileType</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::getChildren</name>
+            <signature><![CDATA[RecursiveDirectoryIterator DirectoryIterator::getChildren ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105631" ></A
+><H2  >Description</H2
+>RecursiveDirectoryIterator <B  CLASS="methodname" >DirectoryIterator::getChildren</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::getFilename</name>
+            <signature><![CDATA[string DirectoryIterator::getFilename ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105643" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >DirectoryIterator::getFilename</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::getPath</name>
+            <signature><![CDATA[string DirectoryIterator::getPath ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105655" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >DirectoryIterator::getPath</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::getPathname</name>
+            <signature><![CDATA[string DirectoryIterator::getPathname ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105667" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >DirectoryIterator::getPathname</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::hasMore</name>
+            <signature><![CDATA[string DirectoryIterator::hasMore ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105679" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >DirectoryIterator::hasMore</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::isDir</name>
+            <signature><![CDATA[bool DirectoryIterator::isDir ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105691" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >DirectoryIterator::isDir</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::isDot</name>
+            <signature><![CDATA[bool DirectoryIterator::isDot ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105703" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >DirectoryIterator::isDot</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::isExecutable</name>
+            <signature><![CDATA[bool DirectoryIterator::isExecutable ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105715" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >DirectoryIterator::isExecutable</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::isFile</name>
+            <signature><![CDATA[bool DirectoryIterator::isFile ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105727" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >DirectoryIterator::isFile</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::isLink</name>
+            <signature><![CDATA[bool DirectoryIterator::isLink ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105739" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >DirectoryIterator::isLink</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::isReadable</name>
+            <signature><![CDATA[bool DirectoryIterator::isReadable ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105751" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >DirectoryIterator::isReadable</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::isWritable</name>
+            <signature><![CDATA[bool DirectoryIterator::isWritable ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105763" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >DirectoryIterator::isWritable</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::key</name>
+            <signature><![CDATA[string DirectoryIterator::key ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105775" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >DirectoryIterator::key</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::next</name>
+            <signature><![CDATA[void DirectoryIterator::next ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105787" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >DirectoryIterator::next</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>DirectoryIterator::rewind</name>
+            <signature><![CDATA[void DirectoryIterator::rewind ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105799" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >DirectoryIterator::rewind</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>RecursiveDirectoryIterator::hasChildren</name>
+            <signature><![CDATA[bool RecursiveDirectoryIterator::hasChildren ( [bool $allow_links [, = false]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105811" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >RecursiveDirectoryIterator::hasChildren</B
+> ( [bool $allow_links [, = false]])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>RecursiveDirectoryIterator::key</name>
+            <signature><![CDATA[string RecursiveDirectoryIterator::key ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105828" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >RecursiveDirectoryIterator::key</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>RecursiveDirectoryIterator::next</name>
+            <signature><![CDATA[void RecursiveDirectoryIterator::next ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105840" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >RecursiveDirectoryIterator::next</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>RecursiveDirectoryIterator::rewind</name>
+            <signature><![CDATA[void RecursiveDirectoryIterator::rewind ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN105852" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >RecursiveDirectoryIterator::rewind</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

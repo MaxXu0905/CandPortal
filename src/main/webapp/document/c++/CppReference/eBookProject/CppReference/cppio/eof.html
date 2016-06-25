@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.cppreference.com/cppio/eof.html -->
+<HTML><HEAD><TITLE>eof</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="eof.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/eof.html">eof</A> </DIV>
+      <DIV class=name-format>eof </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  bool eof();
+</PRE>
+      <P>The function eof() returns true if the end of the associated input file 
+      has been reached, false otherwise.</P>
+      <P>For example, the following code reads data from an input stream 
+      <EM>in</EM> and writes it to an output stream <EM>out</EM>, using eof() at 
+      the end to check if an error occurred:</P><PRE class=example-code> char buf[BUFSIZE];
+ do {
+   in.read( buf, BUFSIZE );
+   std::streamsize n = in.gcount();
+   out.write( buf, n );
+ } while( in.good() );
+ if( in.bad() || !in.eof() ) {
+   // fatal error occurred
+ }
+ in.close();            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/bad.html">bad</A><BR><A 
+      href="../cppio/clear.html">clear</A><BR><A 
+      href="../cppio/fail.html">fail</A><BR><A 
+      href="../cppio/good.html">good</A><BR><A 
+      href="../cppio/rdstate.html">rdstate</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

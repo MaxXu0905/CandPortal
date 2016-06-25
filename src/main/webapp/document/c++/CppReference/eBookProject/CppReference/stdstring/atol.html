@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/stdstring/atol.html -->
+<HTML><HEAD><TITLE>atol</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="atol.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C String 
+      and Character</A> &gt; <A 
+      href="atol.html">atol</A> </DIV>
+      <DIV class=name-format>atol </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  long atol( const char *str );
+</PRE>
+      <P>The function atol() converts <EM>str</EM> into a long, then returns 
+      that value. atol() will read from <EM>str</EM> until it finds any 
+      character that should not be in a long. The resulting truncated value is 
+      then converted and returned. For example,</P><PRE class=example-code>   x = atol( "1024.0001" );           
+</PRE>
+      <P>results in x being set to 1024L.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="atof.html">atof</A><BR><A 
+      href="atoi.html">atoi</A><BR>(Standard 
+      C I/O) <A 
+      href="../stdio/sprintf.html">sprintf</A><BR><A 
+      href="strtol.html">strtol</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

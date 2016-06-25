@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/stdio/fgets.html -->
+<HTML><HEAD><TITLE>fgets</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="fgets.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A href="fgets.html">fgets</A> 
+      </DIV>
+      <DIV class=name-format>fgets </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  char *fgets( char *str, int num, FILE *stream );
+</PRE>
+      <P>The function fgets() reads up to <EM>num</EM> - 1 characters from the 
+      given file <EM>stream</EM> and dumps them into <EM>str</EM>. The string 
+      that fgets() produces is always <STRONG>NULL</STRONG>-terminated. fgets() 
+      will stop when it reaches the end of a line, in which case <EM>str</EM> 
+      will contain that newline character. Otherwise, fgets() will stop when it 
+      reaches <EM>num</EM> - 1 characters or encounters the <STRONG>EOF</STRONG> 
+      character. fgets() returns <EM>str</EM> on success, and 
+      <STRONG>NULL</STRONG> on an error.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="fputs.html">fputs</A><BR><A 
+      href="fscanf.html">fscanf</A><BR><A 
+      href="gets.html">gets</A><BR><A 
+      href="scanf.html">scanf</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

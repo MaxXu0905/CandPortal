@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.cppreference.com/stdother/signal.html -->
+<HTML><HEAD><TITLE>signal</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="signal.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Other Standard C 
+      Functions</A> &gt; <A 
+      href="signal.html">signal</A> </DIV>
+      <DIV class=name-format>signal </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;signal.h&gt;
+  void ( *signal( int signal, void (* func) (int)) ) (int);
+</PRE>
+      <P>The signal() function sets <EM>func</EM> to be called when 
+      <EM>signal</EM> is recieved by your program. <EM>func</EM> can be a custom 
+      signal handler, or one of these macros (defined in signal.h):</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Macro</TH>
+          <TH class=code-table-th>Explanation</TH></TR>
+        <TR>
+          <TD class=code-table-td>SIG_DFL</TD>
+          <TD class=code-table-td>default signal handling</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIG_IGN</TD>
+          <TD class=code-table-td>ignore the signal</TD></TR></TBODY></TABLE>
+      <P>Some basic signals that you can attach a signal handler to are:</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Signal</TH>
+          <TH class=code-table-th>Description</TH></TR>
+        <TR>
+          <TD class=code-table-td>SIGTERM</TD>
+          <TD class=code-table-td>Generic stop signal that can be 
+caught.</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGINT</TD>
+          <TD class=code-table-td>Interrupt program, normally ctrl-c.</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGQUIT</TD>
+          <TD class=code-table-td>Interrupt program, similar to SIGINT.</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGKILL</TD>
+          <TD class=code-table-td>Stops the program. Cannot be caught.</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGHUP</TD>
+          <TD class=code-table-td>Reports a disconnected 
+        terminal.</TD></TR></TBODY></TABLE>
+      <P>The return value of signal() is the address of the previously defined 
+      function for this signal, or SIG_ERR is there is an error.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>The following example uses the signal() function to call an arbitrary 
+      number of functions when the user aborts the program. The functions are 
+      stored in a vector, and a single "clean-up" function calls each function 
+      in that vector of functions when the program is aborted:</P><PRE class=example-code>void f1() {
+  cout &lt;&lt; "calling f1()..." &lt;&lt; endl;
+}               
+
+void f2() {
+  cout &lt;&lt; "calling f2()..." &lt;&lt; endl;
+}               
+
+typedef void(*endFunc)(void);
+vector&lt;endFunc&gt; endFuncs;         
+
+void cleanUp( int dummy ) {
+  for( unsigned int i = 0; i &lt; endFuncs.size(); i++ ) {
+    endFunc f = endFuncs.at(i);
+    (*f)();
+  }
+  exit(-1);
+}               
+
+int main() {            
+
+  // connect various signals to our clean-up function
+  signal( SIGTERM, cleanUp );
+  signal( SIGINT, cleanUp );
+  signal( SIGQUIT, cleanUp );
+  signal( SIGHUP, cleanUp );            
+
+  // add two specific clean-up functions to a list of functions
+  endFuncs.push_back( f1 );
+  endFuncs.push_back( f2 );             
+
+  // loop until the user breaks
+  while( 1 );           
+
+  return 0;
+}               
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="raise.html">raise</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

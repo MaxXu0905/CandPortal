@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.cppreference.com/cppalgorithm/index.html -->
+<HTML><HEAD><TITLE>C++ Algorithms</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="index.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> </DIV>
+      <DIV class=name-format>C++ Algorithms </DIV>
+      <P><A href="../cppalgorithm/all.html">Display all 
+      entries</A> for C++ Algorithms on one page, or view entries 
+      individually:</P>
+      <TABLE class=category-table>
+        <TBODY>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/accumulate.html">accumulate</A></TD>
+          <TD class=category-table-td>sum up a range of elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A></TD>
+          <TD class=category-table-td>compute the differences between adjacent 
+            elements in a range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/adjacent_find.html">adjacent_find</A></TD>
+          <TD class=category-table-td>finds two items that are adjacent to 
+            eachother</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/binary_search.html">binary_search</A></TD>
+          <TD class=category-table-td>determine if an element exists in a 
+            certain range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/copy.html">copy</A></TD>
+          <TD class=category-table-td>copy some range of elements to a new 
+            location</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/copy_backward.html">copy_backward</A></TD>
+          <TD class=category-table-td>copy a range of elements in backwards 
+            order</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/copy_n.html">copy_n</A></TD>
+          <TD class=category-table-td>copy N elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/count.html">count</A></TD>
+          <TD class=category-table-td>return the number of elements matching a 
+            given value</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/count_if.html">count_if</A></TD>
+          <TD class=category-table-td>return the number of elements for which 
+            a predicate is true</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/equal.html">equal</A></TD>
+          <TD class=category-table-td>determine if two sets of elements are 
+            the same</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/equal_range.html">equal_range</A></TD>
+          <TD class=category-table-td>search for a range of elements that are 
+            all equal to a certain element</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/fill.html">fill</A></TD>
+          <TD class=category-table-td>assign a range of elements a certain 
+            value</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/fill_n.html">fill_n</A></TD>
+          <TD class=category-table-td>assign a value to some number of 
+          elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/find.html">find</A></TD>
+          <TD class=category-table-td>find a value in a given range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/find_end.html">find_end</A></TD>
+          <TD class=category-table-td>find the last sequence of elements in a 
+            certain range</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/find_first_of.html">find_first_of</A></TD>
+          <TD class=category-table-td>search for any one of a set of 
+          elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/find_if.html">find_if</A></TD>
+          <TD class=category-table-td>find the first element for which a 
+            certain predicate is true</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/for_each.html">for_each</A></TD>
+          <TD class=category-table-td>apply a function to a range of 
+          elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/generate.html">generate</A></TD>
+          <TD class=category-table-td>saves the result of a function in a 
+          range</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/generate_n.html">generate_n</A></TD>
+          <TD class=category-table-td>saves the result of N applications of a 
+            function</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/includes.html">includes</A></TD>
+          <TD class=category-table-td>returns true if one set is a subset of 
+            another</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/inner_product.html">inner_product</A></TD>
+          <TD class=category-table-td>compute the inner product of two ranges 
+            of elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/inplace_merge.html">inplace_merge</A></TD>
+          <TD class=category-table-td>merge two ordered ranges in-place</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/iota.html">iota</A></TD>
+          <TD class=category-table-td>assign increasing values to a range of 
+            elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/is_heap.html">is_heap</A></TD>
+          <TD class=category-table-td>returns true if a given range is a 
+          heap</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/is_sorted.html">is_sorted</A></TD>
+          <TD class=category-table-td>returns true if a range is sorted in 
+            ascending order</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/iter_swap.html">iter_swap</A></TD>
+          <TD class=category-table-td>swaps the elements pointed to by two 
+            iterators</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/lexicographical_compare.html">lexicographical_compare</A></TD>
+          <TD class=category-table-td>returns true if one range is 
+            lexicographically less than another</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/lexicographical_compare_3.html">lexicographical_compare_3way</A></TD>
+          <TD class=category-table-td>determines if one range is 
+            lexicographically less than or greater than another</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/lower_bound.html">lower_bound</A></TD>
+          <TD class=category-table-td>search for the first place that a value 
+            can be inserted while preserving order</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/make_heap.html">make_heap</A></TD>
+          <TD class=category-table-td>creates a heap out of a range of 
+          elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/max.html">max</A></TD>
+          <TD class=category-table-td>returns the larger of two elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/max_element.html">max_element</A></TD>
+          <TD class=category-table-td>returns the largest element in a 
+        range</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/merge.html">merge</A></TD>
+          <TD class=category-table-td>merge two sorted ranges</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/min.html">min</A></TD>
+          <TD class=category-table-td>returns the smaller of two 
+elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/min_element.html">min_element</A></TD>
+          <TD class=category-table-td>returns the smallest element in a 
+          range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/mismatch.html">mismatch</A></TD>
+          <TD class=category-table-td>finds the first position where two 
+            ranges differ</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/next_permutation.html">next_permutation</A></TD>
+          <TD class=category-table-td>generates the next greater lexicographic 
+            permutation of a range of elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/nth_element.html">nth_element</A></TD>
+          <TD class=category-table-td>put one element in its sorted location 
+            and make sure that no elements to its left are greater than any 
+            elements to its right</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/partial_sort.html">partial_sort</A></TD>
+          <TD class=category-table-td>sort the first N elements of a 
+        range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A></TD>
+          <TD class=category-table-td>copy and partially sort a range of 
+            elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/partial_sum.html">partial_sum</A></TD>
+          <TD class=category-table-td>compute the partial sum of a range of 
+            elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/partition.html">partition</A></TD>
+          <TD class=category-table-td>divide a range of elements into two 
+            groups</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/pop_heap.html">pop_heap</A></TD>
+          <TD class=category-table-td>remove the largest element from a 
+        heap</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/power.html">power</A></TD>
+          <TD class=category-table-td>compute the value of some number raised 
+            to the Nth power</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/prev_permutation.html">prev_permutation</A></TD>
+          <TD class=category-table-td>generates the next smaller lexicographic 
+            permutation of a range of elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/push_heap.html">push_heap</A></TD>
+          <TD class=category-table-td>add an element to a heap</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/random_sample.html">random_sample</A></TD>
+          <TD class=category-table-td>randomly copy elements from one range to 
+            another</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/random_sample_n.html">random_sample_n</A></TD>
+          <TD class=category-table-td>sample N random elements from a 
+        range</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/random_shuffle.html">random_shuffle</A></TD>
+          <TD class=category-table-td>randomly re-order elements in some 
+          range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/remove.html">remove</A></TD>
+          <TD class=category-table-td>remove elements equal to certain 
+        value</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/remove_copy.html">remove_copy</A></TD>
+          <TD class=category-table-td>copy a range of elements omitting those 
+            that match a certian value</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/remove_copy_if.html">remove_copy_if</A></TD>
+          <TD class=category-table-td>create a copy of a range of elements, 
+            omitting any for which a predicate is true</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/remove_if.html">remove_if</A></TD>
+          <TD class=category-table-td>remove all elements for which a 
+            predicate is true</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/replace.html">replace</A></TD>
+          <TD class=category-table-td>replace every occurrence of some value 
+            in a range with another value</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/replace_copy.html">replace_copy</A></TD>
+          <TD class=category-table-td>copy a range, replacing certain elements 
+            with new ones</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/replace_copy_if.html">replace_copy_if</A></TD>
+          <TD class=category-table-td>copy a range of elements, replacing 
+            those for which a predicate is true</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/replace_if.html">replace_if</A></TD>
+          <TD class=category-table-td>change the values of elements for which 
+            a predicate is true</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/reverse.html">reverse</A></TD>
+          <TD class=category-table-td>reverse elements in some range</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/reverse_copy.html">reverse_copy</A></TD>
+          <TD class=category-table-td>create a copy of a range that is 
+          reversed</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/rotate.html">rotate</A></TD>
+          <TD class=category-table-td>move the elements in some range to the 
+            left by some amount</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/rotate_copy.html">rotate_copy</A></TD>
+          <TD class=category-table-td>copy and rotate a range of 
+elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/search.html">search</A></TD>
+          <TD class=category-table-td>search for a range of elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/search_n.html">search_n</A></TD>
+          <TD class=category-table-td>search for N consecutive copies of an 
+            element in some range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/set_difference.html">set_difference</A></TD>
+          <TD class=category-table-td>computes the difference between two 
+          sets</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/set_intersection.html">set_intersection</A></TD>
+          <TD class=category-table-td>computes the intersection of two 
+        sets</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/set_symmetric_difference.html">set_symmetric_difference</A></TD>
+          <TD class=category-table-td>computes the symmetric difference 
+            between two sets</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/set_union.html">set_union</A></TD>
+          <TD class=category-table-td>computes the union of two sets</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/sort.html">sort</A></TD>
+          <TD class=category-table-td>sort a range into ascending order</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/sort_heap.html">sort_heap</A></TD>
+          <TD class=category-table-td>turns a heap into a sorted range of 
+            elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/stable_partition.html">stable_partition</A></TD>
+          <TD class=category-table-td>divide elements into two groups while 
+            preserving their relative order</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/stable_sort.html">stable_sort</A></TD>
+          <TD class=category-table-td>sort a range of elements while 
+            preserving order between equal elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/swap.html">swap</A></TD>
+          <TD class=category-table-td>swap the values of two objects</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/swap_ranges.html">swap_ranges</A></TD>
+          <TD class=category-table-td>swaps two ranges of elements</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/transform.html">transform</A></TD>
+          <TD class=category-table-td>applies a function to a range of 
+          elements</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/unique.html">unique</A></TD>
+          <TD class=category-table-td>remove consecutive duplicate elements in 
+            a range</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/unique_copy.html">unique_copy</A></TD>
+          <TD class=category-table-td>create a copy of some range of elements 
+            that contains no consecutive duplicates</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppalgorithm/upper_bound.html">upper_bound</A></TD>
+          <TD class=category-table-td>searches for the last possible location 
+            to insert an element into an ordered 
+    range</TD></TR></TBODY></TABLE></DIV></TD>
+    <TD vAlign=top width=120>
+      <SCRIPT type=text/javascript><!--
+  google_ad_client = "pub-6243170425937584";
+  google_ad_width = 120;
+  google_ad_height = 600;
+  google_ad_format = "120x600_as";
+  google_ad_type = "text";
+  google_ad_channel ="";
+  google_color_border = "EEEEFF";
+  google_color_bg = "FFFFFF";
+  google_color_link = "000000";
+  google_color_url = "336699";
+  google_color_text = "333333";
+  //--></SCRIPT>
+
+      <SCRIPT src="index.files/show_ads.js" type=text/javascript>
+</SCRIPT>
+    </TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://www.cppreference.com/stdio/putc.html -->
+<HTML><HEAD><TITLE>putc</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="putc.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A href="putc.html">putc</A> </DIV>
+      <DIV class=name-format>putc </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int putc( int ch, FILE *stream );
+</PRE>
+      <P>The putc() function writes the character <EM>ch</EM> to 
+      <EM>stream</EM>. The return value is the character written, or 
+      <STRONG>EOF</STRONG> if there is an error. For example:</P><PRE class=example-code>   int ch;
+   FILE *input, *output;
+   input = fopen( "tmp.c", "r" );
+   output = fopen( "tmpCopy.c", "w" );
+   ch = getc( input );
+   while( ch != <STRONG>EOF</STRONG> ) {
+     putc( ch, output );
+     ch = getc( input );
+   }
+   fclose( input );
+   fclose( output );            
+</PRE>
+      <P>generates a copy of the file tmp.c called tmpCopy.c.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="feof.html">feof</A><BR><A 
+      href="fflush.html">fflush</A><BR><A 
+      href="fgetc.html">fgetc</A><BR><A 
+      href="fputc.html">fputc</A><BR><A 
+      href="getc.html">getc</A><BR><A 
+      href="getchar.html">getchar</A><BR><A 
+      href="putchar.html">putchar</A><BR><A 
+      href="puts.html">puts</A> 
+  </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

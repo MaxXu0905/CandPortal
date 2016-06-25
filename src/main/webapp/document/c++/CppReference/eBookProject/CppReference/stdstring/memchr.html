@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/stdstring/memchr.html -->
+<HTML><HEAD><TITLE>memchr</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="memchr.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C String 
+      and Character</A> &gt; <A 
+      href="memchr.html">memchr</A> </DIV>
+      <DIV class=name-format>memchr </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  void *memchr( const void *buffer, int ch, size_t count );
+</PRE>
+      <P>The memchr() function looks for the first occurrence of <EM>ch</EM> 
+      within <EM>count</EM> characters in the array pointed to by 
+      <EM>buffer</EM>. The return value points to the location of the first 
+      occurrence of <EM>ch</EM>, or <STRONG>NULL</STRONG> if <EM>ch</EM> isn't 
+      found. For example:</P><PRE class=example-code>   char names[] = "Alan Bob Chris X Dave";
+   if( memchr(names,'X',strlen(names)) == <STRONG>NULL</STRONG> )
+     printf( "Didn't find an X\n" );
+   else
+     printf( "Found an X\n" );                
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="memcmp.html">memcmp</A><BR><A 
+      href="memcpy.html">memcpy</A><BR><A 
+      href="strstr.html">strstr</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

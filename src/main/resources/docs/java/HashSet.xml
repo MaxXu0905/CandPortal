@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.HashSet&lt;E&gt;">
+    <constructors>
+        <constructor>
+            <name>HashSet</name>
+            <signature><![CDATA[public HashSet()]]></signature>
+            <description><![CDATA[Constructs a new, empty set; the backing HashMap instance has
+ default initial capacity (16) and load factor (0.75).]]></description>
+        </constructor>
+        <constructor>
+            <name>HashSet</name>
+            <signature><![CDATA[public HashSet(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Constructs a new set containing the elements in the specified
+ collection.  The HashMap is created with default load factor
+ (0.75) and an initial capacity sufficient to contain the elements in
+ the specified collection.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - the collection whose elements are to be placed into this set</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection is null</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>HashSet</name>
+            <signature><![CDATA[public HashSet(int initialCapacity,
+       float loadFactor)]]></signature>
+            <description><![CDATA[Constructs a new, empty set; the backing HashMap instance has
+ the specified initial capacity and the specified load factor.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>initialCapacity</code> - the initial capacity of the hash map</dd><dd><code>loadFactor</code> - the load factor of the hash map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the initial capacity is less
+             than zero, or if the load factor is nonpositive</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>HashSet</name>
+            <signature><![CDATA[public HashSet(int initialCapacity)]]></signature>
+            <description><![CDATA[Constructs a new, empty set; the backing HashMap instance has
+ the specified initial capacity and default load factor (0.75).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>initialCapacity</code> - the initial capacity of the hash table</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the initial capacity is less
+             than zero</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>iterator</name>
+            <signature><![CDATA[public Iterator<E> iterator()]]></signature>
+            <description><![CDATA[Returns an iterator over the elements in this set.  The elements
+ are returned in no particular order.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Iterable</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an Iterator over the elements in this set</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>ConcurrentModificationException</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[public int size()]]></signature>
+            <description><![CDATA[Returns the number of elements in this set (its cardinality).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of elements in this set (its cardinality)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <signature><![CDATA[public boolean isEmpty()]]></signature>
+            <description><![CDATA[Returns true if this set contains no elements.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this set contains no elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>contains</name>
+            <signature><![CDATA[public boolean contains(Object o)]]></signature>
+            <description><![CDATA[Returns true if this set contains the specified element.
+ More formally, returns true if and only if this set
+ contains an element e such that
+ (o==null ? e==null : o.equals(e)).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">contains</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">contains</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">contains</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element whose presence in this set is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this set contains the specified element</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[public boolean add(E e)]]></signature>
+            <description><![CDATA[Adds the specified element to this set if it is not already present.
+ More formally, adds the specified element e to this set if
+ this set contains no element e2 such that
+ (e==null ? e2==null : e.equals(e2)).
+ If this set already contains the element, the call leaves the set
+ unchanged and returns false.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">add</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - element to be added to this set</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this set did not already contain the specified
+ element</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[public boolean remove(Object o)]]></signature>
+            <description><![CDATA[Removes the specified element from this set if it is present.
+ More formally, removes an element e such that
+ (o==null ? e==null : o.equals(e)),
+ if this set contains such an element.  Returns true if
+ this set contained the element (or equivalently, if this set
+ changed as a result of the call).  (This set will not contain the
+ element once the call returns.)<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">remove</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - object to be removed from this set, if present</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if the set contained the specified element</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[public void clear()]]></signature>
+            <description><![CDATA[Removes all of the elements from this set.
+ The set will be empty after this call returns.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clear</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+</dl>]]></description>
+        </method>
+        <method>
+            <name>clone</name>
+            <signature><![CDATA[public Object clone()]]></signature>
+            <description><![CDATA[Returns a shallow copy of this HashSet instance: the elements
+ themselves are not cloned.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clone</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a shallow copy of this set</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Cloneable</code></a></dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

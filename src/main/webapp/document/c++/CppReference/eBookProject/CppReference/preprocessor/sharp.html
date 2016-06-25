@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.cppreference.com/preprocessor/sharp.html -->
+<HTML><HEAD><TITLE>#, ##</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="sharp.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../preprocessor/index.html">C/C++ 
+      Pre-processor Commands</A> &gt; <A 
+      href="../preprocessor/sharp.html">#, ##</A> 
+</DIV>
+      <DIV class=name-format>#, ## </DIV>
+      <P>The # and ## operators are used with the <A 
+      href="../preprocessor/define.html">#define</A> 
+      macro. Using # causes the first argument after the # to be returned as a 
+      string in quotes. Using ## concatenates what's before the ## with what's 
+      after it.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the command</P><PRE class=example-code>   #define to_string( s ) # s           
+</PRE>
+      <P>will make the compiler turn this command</P><PRE class=example-code>   cout &lt;&lt; to_string( Hello World! ) &lt;&lt; endl;               
+</PRE>
+      <P>into</P><PRE class=example-code>   cout &lt;&lt; "Hello World!" &lt;&lt; endl;                
+</PRE>
+      <P>Here is an example of the ## command:</P><PRE class=example-code>   #define concatenate( x, y ) x ## y
+   ...
+   int xy = 10;
+   ...          
+</PRE>
+      <P>This code will make the compiler turn</P><PRE class=example-code>   cout &lt;&lt; concatenate( x, y ) &lt;&lt; endl;             
+</PRE>
+      <P>into</P><PRE class=example-code>   cout &lt;&lt; xy &lt;&lt; endl;              
+</PRE>
+      <P>which will, of course, display '10' to standard output.</P></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../preprocessor/define.html">#define</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

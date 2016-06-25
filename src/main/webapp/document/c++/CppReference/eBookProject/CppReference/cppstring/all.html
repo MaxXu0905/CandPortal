@@ -1,0 +1,1023 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/cppstring/all.html -->
+<HTML><HEAD><TITLE>C++ Strings</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      </DIV>
+      <DIV class=name-format>append </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  string&amp; append( const string&amp; str );
+  string&amp; append( const char* str );
+  string&amp; append( const string&amp; str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> len );
+  string&amp; append( const char* str, <STRONG>size_type</STRONG> num );
+  string&amp; append( <STRONG>size_type</STRONG> num, char ch );
+  string&amp; append( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+</PRE>
+      <P>The append() function either:</P>
+      <UL>
+        <LI>appends <EM>str</EM> on to the end of the current string, 
+        <LI>appends a substring of <EM>str</EM> starting at <EM>index</EM> that 
+        is <EM>len</EM> characters long on to the end of the current string, 
+        <LI>appends <EM>num</EM> characters of <EM>str</EM> on to the end of the 
+        current string, 
+        <LI>appends <EM>num</EM> repititions of <EM>ch</EM> on to the end of the 
+        current string, 
+        <LI>or appends the sequence denoted by <EM>start</EM> and <EM>end</EM> 
+        on to the end of the current string. </LI></UL>
+      <P>For example, the following code uses append() to add 10 copies of the 
+      '!' character to a string:</P><PRE class=example-code>   string str = "Hello World";
+   str.append( 10, '!' );
+   cout &lt;&lt; str &lt;&lt; endl;             
+</PRE>
+      <P>That code displays:</P><PRE class=example-code>   Hello World!!!!!!!!!!                
+</PRE>
+      <P>In the next example, append() is used to concatenate a substring of one 
+      string onto another string:</P><PRE class=example-code> string str1 = "Eventually I stopped caring...";
+ string str2 = "but that was the '80s so nobody noticed.";
+
+ str1.append( str2, 25, 15 );
+ cout &lt;&lt; "str1 is " &lt;&lt; str1 &lt;&lt; endl; 
+</PRE>
+      <P>When run, the above code displays:</P><PRE class=example-code> str1 is Eventually I stopped caring...nobody noticed.          
+</PRE></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>assign </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  void assign( <STRONG>size_type</STRONG> num, const char&amp; val );
+  void assign( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+  string&amp; assign( const string&amp; str );
+  string&amp; assign( const char* str );
+  string&amp; assign( const char* str, <STRONG>size_type</STRONG> num );
+  string&amp; assign( const string&amp; str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> len );
+  string&amp; assign( <STRONG>size_type</STRONG> num, const char&amp; ch );
+</PRE>
+<P>The deafult assign() function gives the current string the values from 
+<EM>start</EM> to <EM>end</EM>, or gives it <EM>num</EM> copies of 
+<EM>val</EM>.</P>
+<P>In addition to the normal (C++ Lists) <A 
+href="../cpplist/assign.html">assign</A>() 
+functionality that all C++ containers have, strings possess an assign() function 
+that also allows them to:</P>
+<UL>
+  <LI>assign <EM>str</EM> to the current string, 
+  <LI>assign the first <EM>num</EM> characters of <EM>str</EM> to the current 
+  string, 
+  <LI>assign a substring of <EM>str</EM> starting at <EM>index</EM> that is 
+  <EM>len</EM> characters long to the current string, </LI></UL>
+<P>For example, the following code:</P><PRE class=example-code>   string str1, str2 = "War and Peace";
+   str1.assign( str2, 4, 3 );
+   cout &lt;&lt; str1 &lt;&lt; endl;            
+</PRE>
+<P>displays</P><PRE class=example-code>   and          
+</PRE>
+<P>This function will destroy the previous contents of the string.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Lists) <A 
+href="../cpplist/assign.html">assign</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>at </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <A href="../containers.html">TYPE</A>&amp; at( <STRONG>size_type</STRONG> loc );
+  const <A href="../containers.html">TYPE</A>&amp; at( <STRONG>size_type</STRONG> loc ) const;
+</PRE>
+<P>The at() function returns a reference to the element in the string at index 
+<EM>loc</EM>. The at() function is safer than the [] operator, because it won't 
+let you reference items outside the bounds of the string.</P>
+<P>For example, consider the following code:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v[i] &lt;&lt; endl;
+ }              
+</PRE>
+<P>This code overrunns the end of the vector, producing potentially dangerous 
+results. The following code would be much safer:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v.at(i) &lt;&lt; endl;
+ }              
+</PRE>
+<P>Instead of attempting to read garbage values from memory, the at() function 
+will realize that it is about to overrun the vector and will throw an 
+exception.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Multimaps) <A 
+href="../cppmultimap/container_operators.html">Container 
+operators</A><BR>(C++ Double-ended Queues) <A 
+href="../cppdeque/container_operators.html">Container 
+operators</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>begin </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  iterator begin();
+  const_iterator begin() const;
+</PRE>
+<P>The function begin() returns an iterator to the first element of the string. 
+begin() should run in <A 
+href="../complexity.html">constant time</A>.</P>
+<P>For example, the following code uses begin() to initialize an iterator that 
+is used to traverse a list:</P><PRE class=example-code>   // Create a list of characters
+   list&lt;char&gt; charList;
+   for( int i=0; i &lt; 10; i++ ) {
+     charList.push_front( i + 65 );
+   }
+   // Display the list
+   list&lt;char&gt;::iterator theIterator;
+   for( theIterator = charList.begin(); theIterator != charList.end(); theIterator++ ) {
+     cout &lt;&lt; *theIterator;
+   }            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/end.html">end</A><BR><A 
+href="../cppstring/rbegin.html">rbegin</A><BR><A 
+href="../cppstring/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>c_str </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  const char* c_str();
+</PRE>
+<P>The function c_str() returns a const pointer to a regular C string, identical 
+to the current string. The returned string is null-terminated.</P>
+<P>Note that since the returned pointer is of type (C/C++ Keywords) <A 
+href="../keywords/const.html">const</A>, the character 
+data that c_str() returns cannot be modified.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/string_operators.html">String 
+operators</A><BR><A 
+href="../cppstring/data.html">data</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>capacity </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> capacity() const;
+</PRE>
+<P>The capacity() function returns the number of elements that the string can 
+hold before it will need to allocate more space.</P>
+<P>For example, the following code uses two different methods to set the 
+capacity of two vectors. One method passes an argument to the constructor that 
+suggests an initial size, the other method calls the reserve function to achieve 
+a similar goal:</P><PRE class=example-code> vector&lt;int&gt; v1(10);
+ cout &lt;&lt; "The capacity of v1 is " &lt;&lt; v1.capacity() &lt;&lt; endl;
+ vector&lt;int&gt; v2;
+ v2.reserve(20);
+ cout &lt;&lt; "The capacity of v2 is " &lt;&lt; v2.capacity() &lt;&lt; endl;         
+</PRE>
+<P>When run, the above code produces the following output:</P><PRE class=example-code> The capacity of v1 is 10
+ The capacity of v2 is 20               
+</PRE>
+<P>C++ containers are designed to grow in size dynamically. This frees the 
+programmer from having to worry about storing an arbitrary number of elements in 
+a container. However, sometimes the programmer can improve the performance of 
+her program by giving hints to the compiler about the size of the containers 
+that the program will use. These hints come in the form of the <A 
+href="../cppstring/reserve.html">reserve</A>() function 
+and the constructor used in the above example, which tell the compiler how large 
+the container is expected to get.</P>
+<P>The capacity() function runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/reserve.html">reserve</A><BR><A 
+href="../cppstring/resize.html">resize</A><BR><A 
+href="../cppstring/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>clear </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  void clear();
+</PRE>
+<P>The function clear() deletes all of the elements in the string. clear() runs 
+in <A href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Lists) <A 
+href="../cpplist/erase.html">erase</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>compare </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  int compare( const string&amp; str );
+  int compare( const char* str );
+  int compare( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length, const string&amp; str );
+  int compare( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length, const string&amp; str, <STRONG>size_type</STRONG> index2,
+  <STRONG>size_type</STRONG> length2 );
+  int compare( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length, const char* str, <STRONG>size_type</STRONG> length2 );
+</PRE>
+<P>The compare() function either compares <EM>str</EM> to the current string in 
+a variety of ways, returning</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Return Value</TH>
+    <TH class=code-table-th>Case</TH></TR>
+  <TR>
+    <TD class=code-table-td>less than zero</TD>
+    <TD class=code-table-td>this &lt; str</TD></TR>
+  <TR>
+    <TD class=code-table-td>zero</TD>
+    <TD class=code-table-td>this == str</TD></TR>
+  <TR>
+    <TD class=code-table-td>greater than zero</TD>
+    <TD class=code-table-td>this &gt; str</TD></TR></TBODY></TABLE>
+<P>The various functions either:</P>
+<UL>
+  <LI>compare <EM>str</EM> to the current string, 
+  <LI>compare <EM>str</EM> to a substring of the current string, starting at 
+  <EM>index</EM> for <EM>length</EM> characters, 
+  <LI>compare a substring of <EM>str</EM> to a substring of the current string, 
+  where <EM>index2</EM> and <EM>length2</EM> refer to <EM>str</EM> and 
+  <EM>index</EM> and <EM>length</EM> refer to the current string, 
+  <LI>or compare a substring of <EM>str</EM> to a substring of the current 
+  string, where the substring of <EM>str</EM> begins at zero and is 
+  <EM>length2</EM> characters long, and the substring of the current string 
+  begins at <EM>index</EM> and is <EM>length</EM> characters long. </LI></UL>
+<P>For example, the following code uses compare() to compare four strings with 
+eachother:</P><PRE class=example-code> string names[] = {"Homer", "Marge", "3-eyed fish", "inanimate carbon rod"};            
+
+ for( int i = 0; i &lt; 4; i++ ) {
+   for( int j = 0; j &lt; 4; j++ ) {
+     cout &lt;&lt; names[i].compare( names[j] ) &lt;&lt; " ";
+   }
+   cout &lt;&lt; endl;
+ }              
+</PRE>
+<P>Data from the above code was used to generate this table, which shows how the 
+various strings compare to eachother:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th></TH>
+    <TH class=code-table-th>Homer</TH>
+    <TH class=code-table-th>Marge</TH>
+    <TH class=code-table-th>3-eyed fish</TH>
+    <TH class=code-table-th>inanimate carbon rod</TH></TR>
+  <TR>
+    <TD class=code-table-td>"Homer".compare( x )</TD>
+    <TD class=code-table-td>0</TD>
+    <TD class=code-table-td>-1</TD>
+    <TD class=code-table-td>1</TD>
+    <TD class=code-table-td>-1</TD></TR>
+  <TR>
+    <TD class=code-table-td>"Marge".compare( x )</TD>
+    <TD class=code-table-td>1</TD>
+    <TD class=code-table-td>0</TD>
+    <TD class=code-table-td>1</TD>
+    <TD class=code-table-td>-1</TD></TR>
+  <TR>
+    <TD class=code-table-td>"3-eyed fish".compare( x )</TD>
+    <TD class=code-table-td>-1</TD>
+    <TD class=code-table-td>-1</TD>
+    <TD class=code-table-td>0</TD>
+    <TD class=code-table-td>-1</TD></TR>
+  <TR>
+    <TD class=code-table-td>"inanimate carbon rod".compare( x )</TD>
+    <TD class=code-table-td>1</TD>
+    <TD class=code-table-td>1</TD>
+    <TD class=code-table-td>1</TD>
+    <TD class=code-table-td>0</TD></TR></TBODY></TABLE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/string_operators.html">String 
+operators</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> copy( char* str, <STRONG>size_type</STRONG> num, <STRONG>size_type</STRONG> index = 0 );
+</PRE>
+<P>The copy() function copies <EM>num</EM> characters of the current string 
+(starting at <EM>index</EM> if it's specified, 0 otherwise) into 
+<EM>str</EM>.</P>
+<P>The return value of copy() is the number of characters copied.</P>
+<P>For example, the following code uses copy() to extract a substring of a 
+string into an array of characters:</P><PRE class=example-code> char buf[30];
+ memset( buf, '\0', 30 );
+ string str = "Trying is the first step towards failure.";
+ str.copy( buf, 24 );
+ cout &lt;&lt; buf &lt;&lt; endl;               
+</PRE>
+<P>When run, this code displays:</P><PRE class=example-code> Trying is the first step               
+</PRE>
+<P>Note that before calling copy(), we first call (Standard C String and 
+Character) <A 
+href="../stdstring/memset.html">memset</A>() to fill 
+the destination array with copies of the <STRONG>NULL</STRONG> character. This 
+step is included to make sure that the resulting array of characters is 
+<STRONG>NULL</STRONG>-terminated.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/substr.html">substr</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>data </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  const char *data();
+</PRE>
+<P>The function data() returns a pointer to the first character in the current 
+string.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/string_operators.html">String 
+operators</A><BR><A 
+href="../cppstring/c_str.html">c_str</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>empty </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  bool empty() const;
+</PRE>
+<P>The empty() function returns true if the string has no elements, false 
+otherwise.</P>
+<P>For example, the following code uses empty() as the stopping condition on a 
+(C/C++ Keywords) <A 
+href="../keywords/while.html">while</A> loop to clear a 
+string and display its contents in reverse order:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 5; i++ ) {
+   v.push_back(i);
+ }
+ while( !v.empty() ) {
+   cout &lt;&lt; v.back() &lt;&lt; endl;
+   v.pop_back();
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>end </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  iterator end();
+  const_iterator end() const;
+</PRE>
+<P>The end() function returns an iterator just past the end of the string.</P>
+<P>Note that before you can access the last element of the string using an 
+iterator that you get from a call to end(), you'll have to decrement the 
+iterator first.</P>
+<P>For example, the following code uses <A 
+href="../cppstring/begin.html">begin</A>() and end() to 
+iterate through all of the members of a vector:</P><PRE class=example-code> vector&lt;int&gt; v1( 5, 789 );
+ vector&lt;int&gt;::iterator it;
+ for( it = v1.begin(); it != v1.end(); it++ ) {
+   cout &lt;&lt; *it &lt;&lt; endl;
+ }              
+</PRE>
+<P>The iterator is initialized with a call to <A 
+href="../cppstring/begin.html">begin</A>(). After the 
+body of the loop has been executed, the iterator is incremented and tested to 
+see if it is equal to the result of calling end(). Since end() returns an 
+iterator pointing to an element just after the last element of the vector, the 
+loop will only stop once all of the elements of the vector have been 
+displayed.</P>
+<P>end() runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/begin.html">begin</A><BR><A 
+href="../cppstring/rbegin.html">rbegin</A><BR><A 
+href="../cppstring/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>erase </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  iterator erase( iterator loc );
+  iterator erase( iterator start, iterator end );
+  string&amp; erase( <STRONG>size_type</STRONG> index = 0, <STRONG>size_type</STRONG> num = npos );
+</PRE>
+<P>The erase() function either:</P>
+<UL>
+  <LI>removes the character pointed to by <EM>loc</EM>, returning an iterator to 
+  the next character, 
+  <LI>removes the characters between <EM>start</EM> and <EM>end</EM> (including 
+  the one at <EM>start</EM> but not the one at <EM>end</EM>), returning an 
+  iterator to the character after the last character removed, 
+  <LI>or removes <EM>num</EM> characters from the current string, starting at 
+  <EM>index</EM>, and returns *this. </LI></UL>
+<P>The parameters <EM>index</EM> and <EM>num</EM> have default values, which 
+means that erase() can be called with just <EM>index</EM> to erase all 
+characters after <EM>index</EM> or with no arguments to erase all 
+characters.</P>
+<P>For example:</P><PRE class=example-code>   string s("So, you like donuts, eh? Well, have all the donuts in the world!");
+   cout &lt;&lt; "The original string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;          
+
+   s.erase( 50, 14 );
+   cout &lt;&lt; "Now the string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;
+   s.erase( 24 );
+   cout &lt;&lt; "Now the string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;
+   s.erase();
+   cout &lt;&lt; "Now the string is '" &lt;&lt; s &lt;&lt; "'" &lt;&lt; endl;               
+</PRE>
+<P>will display</P><PRE class=example-code>   The original string is 'So, you like donuts, eh? Well, have all the donuts in the world!'
+   Now the string is 'So, you like donuts, eh? Well, have all the donuts'
+   Now the string is 'So, you like donuts, eh?'
+   Now the string is ''         
+</PRE>
+<P>erase() runs in <A href="../complexity.html">linear 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/insert.html">insert</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> find( const string&amp; str, <STRONG>size_type</STRONG> index );
+  <STRONG>size_type</STRONG> find( const char* str, <STRONG>size_type</STRONG> index );
+  <STRONG>size_type</STRONG> find( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length );
+  <STRONG>size_type</STRONG> find( char ch, <STRONG>size_type</STRONG> index );
+</PRE>
+<P>The function find() either:</P>
+<UL>
+  <LI>returns the first occurrence of <EM>str</EM> within the current string, 
+  starting at <EM>index</EM>, string::npos if nothing is found, 
+  <LI>returns the first occurrence of <EM>str</EM> within the current string and 
+  within <EM>length</EM> characters, starting at <EM>index</EM>, string::npos if 
+  nothing is found, 
+  <LI>or returns the index of the first occurrence <EM>ch</EM> within the 
+  current string, starting at <EM>index</EM>, string::npos if nothing is found. 
+  </LI></UL>
+<P>For example:</P><PRE class=example-code>   string str1( "Alpha Beta Gamma Delta" );
+   string::size_type loc = str1.find( "Omega", 0 );
+   if( loc != string::npos )
+     cout &lt;&lt; "Found Omega at " &lt;&lt; loc &lt;&lt; endl;
+   else
+     cout &lt;&lt; "Didn't find Omega" &lt;&lt; endl;         
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+href="../cppstring/find_first_of.html">find_first_of</A><BR><A 
+href="../cppstring/find_last_not_of.html">find_last_not_of</A><BR><A 
+href="../cppstring/find_last_of.html">find_last_of</A><BR><A 
+href="../cppstring/rfind.html">rfind</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find_first_not_of </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> find_first_not_of( const string&amp; str, <STRONG>size_type</STRONG> index = 0 );
+  <STRONG>size_type</STRONG> find_first_not_of( const char* str, <STRONG>size_type</STRONG> index = 0 );
+  <STRONG>size_type</STRONG> find_first_not_of( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num );
+  <STRONG>size_type</STRONG> find_first_not_of( char ch, <STRONG>size_type</STRONG> index = 0 );
+</PRE>
+<P>The find_first_not_of() function either:</P>
+<UL>
+  <LI>returns the index of the first character within the current string that 
+  does not match any character in <EM>str</EM>, beginning the search at 
+  <EM>index</EM>, string::npos if nothing is found, 
+  <LI>returns the index of the first character within the current string that 
+  does not match any character in <EM>str</EM>, beginning the search at 
+  <EM>index</EM> and searching at most <EM>num</EM> characters, string::npos if 
+  nothing is found, 
+  <LI>or returns the index of the first occurrence of a character that does not 
+  match <EM>ch</EM> in the current string, starting the search at 
+  <EM>index</EM>, string::npos if nothing is found. </LI></UL>
+<P>For example, the following code searches a string of text for the first 
+character that is not a lower-case character, space, comma, or hypen:</P><PRE class=example-code> string lower_case = "abcdefghijklmnopqrstuvwxyz ,-";
+ string str = "this is the lower-case part, AND THIS IS THE UPPER-CASE PART";
+ cout &lt;&lt; "first non-lower-case letter in str at: " &lt;&lt; str.find_first_not_of(lower_case) &lt;&lt; endl;            
+</PRE>
+<P>When run, find_first_not_of() finds the first upper-case letter in 
+<EM>str</EM> at index 29 and displays this output:</P><PRE class=example-code> first non-lower-case letter in str at: 29              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/find.html">find</A><BR><A 
+href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+href="../cppstring/find_first_of.html">find_first_of</A><BR><A 
+href="../cppstring/find_last_not_of.html">find_last_not_of</A><BR><A 
+href="../cppstring/find_last_of.html">find_last_of</A><BR><A 
+href="../cppstring/rfind.html">rfind</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find_first_of </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> find_first_of( const string &amp;str, <STRONG>size_type</STRONG> index = 0 );
+  <STRONG>size_type</STRONG> find_first_of( const char* str, <STRONG>size_type</STRONG> index = 0 );
+  <STRONG>size_type</STRONG> find_first_of( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num );
+  <STRONG>size_type</STRONG> find_first_of( char ch, <STRONG>size_type</STRONG> index = 0 );
+</PRE>
+<P>The find_first_of() function either:</P>
+<UL>
+  <LI>returns the index of the first character within the current string that 
+  matches any character in <EM>str</EM>, beginning the search at <EM>index</EM>, 
+  string::npos if nothing is found, 
+  <LI>returns the index of the first character within the current string that 
+  matches any character in <EM>str</EM>, beginning the search at <EM>index</EM> 
+  and searching at most <EM>num</EM> characters, string::npos if nothing is 
+  found, 
+  <LI>or returns the index of the first occurrence of <EM>ch</EM> in the current 
+  string, starting the search at <EM>index</EM>, string::npos if nothing is 
+  found. </LI></UL>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/find.html">find</A><BR><A 
+href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+href="../cppstring/find_last_not_of.html">find_last_not_of</A><BR><A 
+href="../cppstring/find_last_of.html">find_last_of</A><BR><A 
+href="../cppstring/rfind.html">rfind</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find_last_not_of </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> find_last_not_of( const string&amp; str, <STRONG>size_type</STRONG> index = npos );
+  <STRONG>size_type</STRONG> find_last_not_of( const char* str, <STRONG>size_type</STRONG> index = npos);
+  <STRONG>size_type</STRONG> find_last_not_of( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num );
+  <STRONG>size_type</STRONG> find_last_not_of( char ch, <STRONG>size_type</STRONG> index = npos );
+</PRE>
+<P>The find_last_not_of() function either:</P>
+<UL>
+  <LI>returns the index of the last character within the current string that 
+  does not match any character in <EM>str</EM>, doing a reverse search from 
+  <EM>index</EM>, string::npos if nothing is found, 
+  <LI>returns the index of the last character within the current string that 
+  does not match any character in <EM>str</EM>, doing a reverse search from 
+  <EM>index</EM> and searching at most <EM>num</EM> characters of <EM>str</EM>, 
+  or returning string::npos if nothing is found, 
+  <LI>or returns the index of the last occurrence of a character that does not 
+  match <EM>ch</EM> in the current string, doing a reverse search from 
+  <EM>index</EM>, string::npos if nothing is found. </LI></UL>
+<P>For example, the following code searches for the last non-lower-case 
+character in a mixed string of characters:</P><PRE class=example-code> string lower_case = "abcdefghijklmnopqrstuvwxyz";
+ string str = "abcdefgABCDEFGhijklmnop";
+ cout &lt;&lt; "last non-lower-case letter in str at: " &lt;&lt; str.find_last_not_of(lower_case) &lt;&lt; endl;              
+</PRE>
+<P>This code displays the following output:</P><PRE class=example-code> last non-lower-case letter in str at: 13               
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/find.html">find</A><BR><A 
+href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+href="../cppstring/find_first_of.html">find_first_of</A><BR><A 
+href="../cppstring/find_last_of.html">find_last_of</A><BR><A 
+href="../cppstring/rfind.html">rfind</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find_last_of </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> find_last_of( const string&amp; str, <STRONG>size_type</STRONG> index = npos );
+  <STRONG>size_type</STRONG> find_last_of( const char* str, <STRONG>size_type</STRONG> index = npos );
+  <STRONG>size_type</STRONG> find_last_of( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num );
+  <STRONG>size_type</STRONG> find_last_of( char ch, <STRONG>size_type</STRONG> index = npos );
+</PRE>
+<P>The find_last_of() function either:</P>
+<UL>
+  <LI>returns the index of the first character within the current string that 
+  matches any character in <EM>str</EM>, doing a reverse search from 
+  <EM>index</EM>, string::npos if nothing is found, 
+  <LI>returns the index of the first character within the current string that 
+  matches any character in <EM>str</EM>, doing a reverse search from 
+  <EM>index</EM> and searching at most <EM>num</EM> characters, string::npos if 
+  nothing is found, 
+  <LI>or returns the index of the first occurrence of <EM>ch</EM> in the current 
+  string, doing a reverse search from <EM>index</EM>, string::npos if nothing is 
+  found. </LI></UL>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/find.html">find</A><BR><A 
+href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+href="../cppstring/find_first_of.html">find_first_of</A><BR><A 
+href="../cppstring/find_last_not_of.html">find_last_not_of</A><BR><A 
+href="../cppstring/rfind.html">rfind</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>getline </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  istream&amp; getline( istream&amp; is, string&amp; s, char delimiter = '\n' );
+</PRE>
+<P>The C++ string class defines the global function getline() to read strings 
+from and I/O stream. The getline() function, which is not part of the string 
+class, reads a line from <EM>is</EM> and stores it into <EM>s</EM>. If a 
+character <EM>delimiter</EM> is specified, then getline() will use 
+<EM>delimiter</EM> to decide when to stop reading data.</P>
+<P>For example, the following code reads a line of text from 
+<STRONG>STDIN</STRONG> and displays it to <STRONG>STDOUT</STRONG>:</P><PRE class=example-code> string s;
+ getline( cin, s );
+ cout &lt;&lt; "You entered " &lt;&lt; s &lt;&lt; endl;               
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ I/O) <A 
+href="../cppio/get.html">get</A><BR>(C++ I/O) <A 
+href="../cppio/getline.html">getline</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>insert </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  iterator insert( iterator i, const char&amp; ch );
+  string&amp; insert( <STRONG>size_type</STRONG> index, const string&amp; str );
+  string&amp; insert( <STRONG>size_type</STRONG> index, const char* str );
+  string&amp; insert( <STRONG>size_type</STRONG> index1, const string&amp; str, <STRONG>size_type</STRONG> index2, <STRONG>size_type</STRONG> num );
+  string&amp; insert( <STRONG>size_type</STRONG> index, const char* str, <STRONG>size_type</STRONG> num );
+  string&amp; insert( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num, char ch );
+  void insert( iterator i, <STRONG>size_type</STRONG> num, const char&amp; ch );
+  void insert( iterator i, iterator start, iterator end );
+</PRE>
+<P>The very multi-purpose insert() function either:</P>
+<UL>
+  <LI>inserts <EM>ch</EM> before the character denoted by <EM>i</EM>, 
+  <LI>inserts <EM>str</EM> into the current string, at location <EM>index</EM>, 
+  <LI>inserts a substring of <EM>str</EM> (starting at <EM>index2</EM> and 
+  <EM>num</EM> characters long) into the current string, at location 
+  <EM>index1</EM>, 
+  <LI>inserts <EM>num</EM> characters of <EM>str</EM> into the current string, 
+  at location <EM>index</EM>, 
+  <LI>inserts <EM>num</EM> copies of <EM>ch</EM> into the current string, at 
+  location <EM>index</EM>, 
+  <LI>inserts <EM>num</EM> copies of <EM>ch</EM> into the current string, before 
+  the character denoted by <EM>i</EM>, 
+  <LI>or inserts the characters denoted by <EM>start</EM> and <EM>end</EM> into 
+  the current string, before the character specified by <EM>i</EM>. </LI></UL>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/erase.html">erase</A><BR><A 
+href="../cppstring/replace.html">replace</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>length </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> length() const;
+</PRE><PRE class=example-code>The length() function returns the number of elements in the current string, performing the same role as the <A href="../cppstring/size.html">size</A>() function.            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>max_size </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> max_size() const;
+</PRE>
+<P>The max_size() function returns the maximum number of elements that the 
+string can hold. The max_size() function should not be confused with the <A 
+href="../cppstring/size.html">size</A>() or <A 
+href="../cppstring/capacity.html">capacity</A>() 
+functions, which return the number of elements currently in the string and the 
+the number of elements that the string will be able to hold before more memory 
+will have to be allocated, respectively.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>push_back </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  void push_back( const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The push_back() function appends <EM>val</EM> to the end of the string.</P>
+<P>For example, the following code puts 10 integers into a list:</P><PRE class=example-code>   list&lt;int&gt; the_list;
+   for( int i = 0; i &lt; 10; i++ )
+     the_list.push_back( i );           
+</PRE>
+<P>When displayed, the resulting list would look like this:</P><PRE class=example-code> 0 1 2 3 4 5 6 7 8 9            
+</PRE>
+<P>push_back() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Lists) <A 
+href="../cpplist/assign.html">assign</A><BR>(C++ Lists) 
+<A href="../cpplist/insert.html">insert</A><BR>(C++ 
+Lists) <A 
+href="../cpplist/pop_back.html">pop_back</A><BR>(C++ 
+Lists) <A 
+href="../cpplist/push_front.html">push_front</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rbegin </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <A href="../iterators.html">reverse_iterator</A> rbegin();
+  const_<A href="../iterators.html">reverse_iterator</A> rbegin() const;
+</PRE>
+<P>The rbegin() function returns a <A 
+href="../iterators.html">reverse_iterator</A> to the 
+end of the current string.</P>
+<P>rbegin() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/begin.html">begin</A><BR><A 
+href="../cppstring/end.html">end</A><BR><A 
+href="../cppstring/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rend </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <A href="../iterators.html">reverse_iterator</A> rend();
+  const_<A href="../iterators.html">reverse_iterator</A> rend() const;
+</PRE>
+<P>The function rend() returns a <A 
+href="../iterators.html">reverse_iterator</A> to the 
+beginning of the current string.</P>
+<P>rend() runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/begin.html">begin</A><BR><A 
+href="../cppstring/end.html">end</A><BR><A 
+href="../cppstring/rbegin.html">rbegin</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>replace </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  string&amp; replace( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num, const string&amp; str );
+  string&amp; replace( <STRONG>size_type</STRONG> index1, <STRONG>size_type</STRONG> num1, const string&amp; str, <STRONG>size_type</STRONG> index2, <STRONG>size_type</STRONG> num2 );
+  string&amp; replace( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num, const char* str );
+  string&amp; replace( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num1, const char* str, <STRONG>size_type</STRONG> num2 );
+  string&amp; replace( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num1, <STRONG>size_type</STRONG> num2, char ch );
+  string&amp; replace( iterator start, iterator end, const string&amp; str );
+  string&amp; replace( iterator start, iterator end, const char* str );
+  string&amp; replace( iterator start, iterator end, const char* str, <STRONG>size_type</STRONG> num );
+  string&amp; replace( iterator start, iterator end, <STRONG>size_type</STRONG> num, char ch );
+</PRE>
+<P>The function replace() either:</P>
+<UL>
+  <LI>replaces characters of the current string with up to <EM>num</EM> 
+  characters from <EM>str</EM>, beginning at <EM>index</EM>, 
+  <LI>replaces up to <EM>num1</EM> characters of the current string (starting at 
+  <EM>index1</EM>) with up to <EM>num2</EM> characters from <EM>str</EM> 
+  beginning at <EM>index2</EM>, 
+  <LI>replaces up to <EM>num</EM> characters of the current string with 
+  characters from <EM>str</EM>, beginning at <EM>index</EM> in <EM>str</EM>, 
+  <LI>replaces up to <EM>num1</EM> characters in the current string (beginning 
+  at <EM>index1</EM>) with <EM>num2</EM> characters from <EM>str</EM> beginning 
+  at <EM>index2</EM>, 
+  <LI>replaces up to <EM>num1</EM> characters in the current string (beginning 
+  at <EM>index</EM>) with <EM>num2</EM> copies of <EM>ch</EM>, 
+  <LI>replaces the characters in the current string from <EM>start</EM> to 
+  <EM>end</EM> with <EM>str</EM>, 
+  <LI>replaces characters in the current string from <EM>start</EM> to 
+  <EM>end</EM> with <EM>num</EM> characters from <EM>str</EM>, 
+  <LI>or replaces the characters in the current string from <EM>start</EM> to 
+  <EM>end</EM> with <EM>num</EM> copies of <EM>ch</EM>. </LI></UL>
+<P>For example, the following code displays the string "They say he carved it 
+himself...find your soul-mate, Homer."</P><PRE class=example-code>   string s = "They say he carved it himself...from a BIGGER spoon";
+   string s2 = "find your soul-mate, Homer.";
+   s.replace( 32, s2.length(), s2 );
+   cout &lt;&lt; s &lt;&lt; endl;               
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/insert.html">insert</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>reserve </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  void reserve( <STRONG>size_type</STRONG> size );
+</PRE>
+<P>The reserve() function sets the capacity of the string to at least 
+<EM>size</EM>.</P>
+<P>reserve() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/capacity.html">capacity</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>resize </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  void resize( <STRONG>size_type</STRONG> num, const <A href="../containers.html">TYPE</A>&amp; val = <A href="../containers.html">TYPE</A>() );
+</PRE>
+<P>The function resize() changes the size of the string to <EM>size</EM>. If 
+<EM>val</EM> is specified then any newly-created elements will be initialized to 
+have a value of <EM>val</EM>.</P>
+<P>This function runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Multimaps) <A 
+href="../cppmultimap/container_constructors.html">Container 
+constructors &amp; destructors</A><BR><A 
+href="../cppstring/capacity.html">capacity</A><BR><A 
+href="../cppstring/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rfind </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> rfind( const string&amp; str, <STRONG>size_type</STRONG> index );
+  <STRONG>size_type</STRONG> rfind( const char* str, <STRONG>size_type</STRONG> index );
+  <STRONG>size_type</STRONG> rfind( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num );
+  <STRONG>size_type</STRONG> rfind( char ch, <STRONG>size_type</STRONG> index );
+</PRE>
+<P>The rfind() function either:</P>
+<UL>
+  <LI>returns the location of the first occurrence of <EM>str</EM> in the 
+  current string, doing a reverse search from <EM>index</EM>, string::npos if 
+  nothing is found, 
+  <LI>returns the location of the first occurrence of <EM>str</EM> in the 
+  current string, doing a reverse search from <EM>index</EM>, searching at most 
+  <EM>num</EM> characters, string::npos if nothing is found, 
+  <LI>or returns the location of the first occurrence of <EM>ch</EM> in the 
+  current string, doing a reverse search from <EM>index</EM>, string::npos if 
+  nothing is found. </LI></UL>
+<P>For example, in the following code, the first call to rfind() returns 
+string::npos, because the target word is not within the first 8 characters of 
+the string. However, the second call returns 9, because the target word is 
+within 20 characters of the beginning of the string.</P><PRE class=example-code>   int loc;
+   string s = "My cat's breath smells like cat food.";
+   loc = s.rfind( "breath", 8 );
+   cout &lt;&lt; "The word breath is at index " &lt;&lt; loc &lt;&lt; endl;
+   loc = s.rfind( "breath", 20 );
+   cout &lt;&lt; "The word breath is at index " &lt;&lt; loc &lt;&lt; endl;           
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/find.html">find</A><BR><A 
+href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+href="../cppstring/find_first_of.html">find_first_of</A><BR><A 
+href="../cppstring/find_last_not_of.html">find_last_not_of</A><BR><A 
+href="../cppstring/find_last_of.html">find_last_of</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>size </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> size() const;
+</PRE>
+<P>The size() function returns the number of elements in the current string.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/capacity.html">capacity</A><BR><A 
+href="../cppstring/empty.html">empty</A><BR><A 
+href="../cppstring/length.html">length</A><BR><A 
+href="../cppstring/max_size.html">max_size</A><BR><A 
+href="../cppstring/resize.html">resize</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>String constructors </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  string();
+  string( const string&amp; s );
+  string( <STRONG>size_type</STRONG> length, const char&amp; ch );
+  string( const char* str );
+  string( const char* str, <STRONG>size_type</STRONG> length );
+  string( const string&amp; str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length );
+  string( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+  ~string();
+</PRE>
+<P>The string constructors create a new string containing:</P>
+<UL>
+  <LI>nothing; an empty string, 
+  <LI>a copy of the given string <EM>s</EM>, 
+  <LI><EM>length</EM> copies of <EM>ch</EM>, 
+  <LI>a duplicate of <EM>str</EM> (optionally up to <EM>length</EM> characters 
+  long), 
+  <LI>a substring of <EM>str</EM> starting at <EM>index</EM> and <EM>length</EM> 
+  characters long 
+  <LI>a string of characterss denoted by the <EM>start</EM> and <EM>end</EM> 
+  iterators </LI></UL>
+<P>For example,</P><PRE class=example-code>   string str1( 5, 'c' );
+   string str2( "Now is the time..." );
+   string str3( str2, 11, 4 );
+   cout &lt;&lt; str1 &lt;&lt; endl;
+   cout &lt;&lt; str2 &lt;&lt; endl;
+   cout &lt;&lt; str3 &lt;&lt; endl;            
+</PRE>
+<P>displays</P><PRE class=example-code>   ccccc
+   Now is the time...
+   time         
+</PRE>
+<P>The string constructors usually run in <A 
+href="../complexity.html">linear time</A>, except the 
+empty constructor, which runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>String operators </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  bool operator==(const string&amp; c1, const string&amp; c2);
+  bool operator!=(const string&amp; c1, const string&amp; c2);
+  bool operator&lt;(const string&amp; c1, const string&amp; c2);
+  bool operator&gt;(const string&amp; c1, const string&amp; c2);
+  bool operator&lt;=(const string&amp; c1, const string&amp; c2);
+  bool operator&gt;=(const string&amp; c1, const string&amp; c2);
+  string operator+(const string&amp; s1, const string&amp; s2 );
+  string operator+(const char* s, const string&amp; s2 );
+  string operator+( char c, const string&amp; s2 );
+  string operator+( const string&amp; s1, const char* s );
+  string operator+( const string&amp; s1, char c );
+  ostream&amp; operator&lt;&lt;( ostream&amp; os, const string&amp; s );
+  istream&amp; operator&gt;&gt;( istream&amp; is, string&amp; s );
+  string&amp; operator=( const string&amp; s );
+  string&amp; operator=( const char* s );
+  string&amp; operator=( char ch );
+  char&amp; operator[]( <STRONG>size_type</STRONG> index );
+</PRE>
+<P>C++ strings can be compared and assigned with the standard comparison 
+operators: ==, !=, &lt;=, &gt;=, &lt;, &gt;, and =. Performing a comparison or 
+assigning one string to another takes <A 
+href="../complexity.html">linear time</A>.</P>
+<P>Two strings are equal if:</P><PRE class=example-code>  1. Their size is the same, and
+  2. Each member in location i in one string is equal to the the member in location i in the other string.              
+</PRE>
+<P>Comparisons among strings are done lexicographically.</P>
+<P>In addition to these normal (C++ Multimaps) <A 
+href="../cppmultimap/container_operators.html">Container 
+operators</A>, strings can also be concatenated with the + operator and fed to 
+the C++ I/O stream classes with the &lt;&lt; and &gt;&gt; operators.</P>
+<P>For example, the following code concatenates two strings and displays the 
+result:</P><PRE class=example-code> string s1 = "Now is the time...";
+ string s2 = "for all good men...";
+ string s3 = s1 + s2;
+ cout &lt;&lt; "s3 is " &lt;&lt; s3 &lt;&lt; endl;            
+</PRE>
+<P>Furthermore, strings can be assigned values that are other strings, character 
+arrays, or even single characters. The following code is perfectly valid:</P><PRE class=example-code> char ch = 'N';
+ string s = ch;         
+</PRE>
+<P>Individual characters of a string can be examined with the [] operator, which 
+runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Multimaps) <A 
+href="../cppmultimap/container_operators.html">Container 
+operators</A><BR><A 
+href="../cppstring/c_str.html">c_str</A><BR><A 
+href="../cppstring/compare.html">compare</A><BR><A 
+href="../cppstring/data.html">data</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>substr </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  string substr( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num = npos );
+</PRE>
+<P>The substr() function returns a substring of the current string, starting at 
+<EM>index</EM>, and <EM>num</EM> characters long. If <EM>num</EM> is omitted, it 
+will default to string::npos, and the substr() function will simply return the 
+remainder of the string starting at <EM>index</EM>.</P>
+<P>For example:</P><PRE class=example-code>   string s("What we have here is a failure to communicate");
+   string sub = s.substr(21);
+   cout &lt;&lt; "The original string is " &lt;&lt; s &lt;&lt; endl;
+   cout &lt;&lt; "The substring is " &lt;&lt; sub &lt;&lt; endl;              
+</PRE>
+<P>displays</P><PRE class=example-code>   The original string is What we have here is a failure to communicate
+   The substring is a failure to communicate            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppstring/copy.html">copy</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>swap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  void swap( const container&amp; from );
+</PRE>
+<P>The swap() function exchanges the elements of the current string with those 
+of <EM>from</EM>. This function operates in <A 
+href="../complexity.html">constant time</A>.</P>
+<P>For example, the following code uses the swap() function to exchange the 
+values of two strings:</P><PRE class=example-code>   string first( "This comes first" );
+   string second( "And this is second" );
+   first.swap( second );
+   cout &lt;&lt; first &lt;&lt; endl;
+   cout &lt;&lt; second &lt;&lt; endl;          
+</PRE>
+<P>The above code displays:</P><PRE class=example-code>   And this is second
+   This comes first             
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Lists) <A 
+href="../cpplist/splice.html">splice</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.Calendar">
+    <fields>
+        <field>
+            <name>ERA</name>
+            <signature><![CDATA[public static final int ERA]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ era, e.g., AD or BC in the Julian calendar. This is a calendar-specific
+ value; see subclass documentation.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>GregorianCalendar.AD</code></a>, 
+<a href="#"><code>GregorianCalendar.BC</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>YEAR</name>
+            <signature><![CDATA[public static final int YEAR]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ year. This is a calendar-specific value; see subclass documentation.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MONTH</name>
+            <signature><![CDATA[public static final int MONTH]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ month. This is a calendar-specific value. The first month of
+ the year in the Gregorian and Julian calendars is
+ JANUARY which is 0; the last depends on the number
+ of months in a year.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>JANUARY</code></a>, 
+<a href="#"><code>FEBRUARY</code></a>, 
+<a href="#"><code>MARCH</code></a>, 
+<a href="#"><code>APRIL</code></a>, 
+<a href="#"><code>MAY</code></a>, 
+<a href="#"><code>JUNE</code></a>, 
+<a href="#"><code>JULY</code></a>, 
+<a href="#"><code>AUGUST</code></a>, 
+<a href="#"><code>SEPTEMBER</code></a>, 
+<a href="#"><code>OCTOBER</code></a>, 
+<a href="#"><code>NOVEMBER</code></a>, 
+<a href="#"><code>DECEMBER</code></a>, 
+<a href="#"><code>UNDECIMBER</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>WEEK_OF_YEAR</name>
+            <signature><![CDATA[public static final int WEEK_OF_YEAR]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ week number within the current year.  The first week of the year, as
+ defined by getFirstDayOfWeek() and
+ getMinimalDaysInFirstWeek(), has value 1.  Subclasses define
+ the value of WEEK_OF_YEAR for days before the first week of
+ the year.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getFirstDayOfWeek()</code></a>, 
+<a href="#"><code>getMinimalDaysInFirstWeek()</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>WEEK_OF_MONTH</name>
+            <signature><![CDATA[public static final int WEEK_OF_MONTH]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ week number within the current month.  The first week of the month, as
+ defined by getFirstDayOfWeek() and
+ getMinimalDaysInFirstWeek(), has value 1.  Subclasses define
+ the value of WEEK_OF_MONTH for days before the first week of
+ the month.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getFirstDayOfWeek()</code></a>, 
+<a href="#"><code>getMinimalDaysInFirstWeek()</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DATE</name>
+            <signature><![CDATA[public static final int DATE]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ day of the month. This is a synonym for DAY_OF_MONTH.
+ The first day of the month has value 1.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>DAY_OF_MONTH</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DAY_OF_MONTH</name>
+            <signature><![CDATA[public static final int DAY_OF_MONTH]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ day of the month. This is a synonym for DATE.
+ The first day of the month has value 1.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>DATE</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DAY_OF_YEAR</name>
+            <signature><![CDATA[public static final int DAY_OF_YEAR]]></signature>
+            <description><![CDATA[Field number for get and set indicating the day
+ number within the current year.  The first day of the year has value 1.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DAY_OF_WEEK</name>
+            <signature><![CDATA[public static final int DAY_OF_WEEK]]></signature>
+            <description><![CDATA[Field number for get and set indicating the day
+ of the week.  This field takes values SUNDAY,
+ MONDAY, TUESDAY, WEDNESDAY,
+ THURSDAY, FRIDAY, and SATURDAY.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>SUNDAY</code></a>, 
+<a href="#"><code>MONDAY</code></a>, 
+<a href="#"><code>TUESDAY</code></a>, 
+<a href="#"><code>WEDNESDAY</code></a>, 
+<a href="#"><code>THURSDAY</code></a>, 
+<a href="#"><code>FRIDAY</code></a>, 
+<a href="#"><code>SATURDAY</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DAY_OF_WEEK_IN_MONTH</name>
+            <signature><![CDATA[public static final int DAY_OF_WEEK_IN_MONTH]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ ordinal number of the day of the week within the current month. Together
+ with the DAY_OF_WEEK field, this uniquely specifies a day
+ within a month.  Unlike WEEK_OF_MONTH and
+ WEEK_OF_YEAR, this field's value does not depend on
+ getFirstDayOfWeek() or
+ getMinimalDaysInFirstWeek().  DAY_OF_MONTH 1
+ through 7 always correspond to DAY_OF_WEEK_IN_MONTH
+ 1; 8 through 14 correspond to
+ DAY_OF_WEEK_IN_MONTH 2, and so on.
+ DAY_OF_WEEK_IN_MONTH 0 indicates the week before
+ DAY_OF_WEEK_IN_MONTH 1.  Negative values count back from the
+ end of the month, so the last Sunday of a month is specified as
+ DAY_OF_WEEK = SUNDAY, DAY_OF_WEEK_IN_MONTH = -1.  Because
+ negative values count backward they will usually be aligned differently
+ within the month than positive values.  For example, if a month has 31
+ days, DAY_OF_WEEK_IN_MONTH -1 will overlap
+ DAY_OF_WEEK_IN_MONTH 5 and the end of 4.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>DAY_OF_WEEK</code></a>, 
+<a href="#"><code>WEEK_OF_MONTH</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>AM_PM</name>
+            <signature><![CDATA[public static final int AM_PM]]></signature>
+            <description><![CDATA[Field number for get and set indicating
+ whether the HOUR is before or after noon.
+ E.g., at 10:04:15.250 PM the AM_PM is PM.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>AM</code></a>, 
+<a href="#"><code>PM</code></a>, 
+<a href="#"><code>HOUR</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>HOUR</name>
+            <signature><![CDATA[public static final int HOUR]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ hour of the morning or afternoon. HOUR is used for the
+ 12-hour clock (0 - 11). Noon and midnight are represented by 0, not by 12.
+ E.g., at 10:04:15.250 PM the HOUR is 10.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>AM_PM</code></a>, 
+<a href="#"><code>HOUR_OF_DAY</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>HOUR_OF_DAY</name>
+            <signature><![CDATA[public static final int HOUR_OF_DAY]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ hour of the day. HOUR_OF_DAY is used for the 24-hour clock.
+ E.g., at 10:04:15.250 PM the HOUR_OF_DAY is 22.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>HOUR</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MINUTE</name>
+            <signature><![CDATA[public static final int MINUTE]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ minute within the hour.
+ E.g., at 10:04:15.250 PM the MINUTE is 4.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SECOND</name>
+            <signature><![CDATA[public static final int SECOND]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ second within the minute.
+ E.g., at 10:04:15.250 PM the SECOND is 15.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MILLISECOND</name>
+            <signature><![CDATA[public static final int MILLISECOND]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ millisecond within the second.
+ E.g., at 10:04:15.250 PM the MILLISECOND is 250.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>ZONE_OFFSET</name>
+            <signature><![CDATA[public static final int ZONE_OFFSET]]></signature>
+            <description><![CDATA[Field number for get and set
+ indicating the raw offset from GMT in milliseconds.
+ 
+ This field reflects the correct GMT offset value of the time
+ zone of this Calendar if the
+ TimeZone implementation subclass supports
+ historical GMT offset changes.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DST_OFFSET</name>
+            <signature><![CDATA[public static final int DST_OFFSET]]></signature>
+            <description><![CDATA[Field number for get and set indicating the
+ daylight saving offset in milliseconds.
+ 
+ This field reflects the correct daylight saving offset value of
+ the time zone of this Calendar if the
+ TimeZone implementation subclass supports
+ historical Daylight Saving Time schedule changes.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>FIELD_COUNT</name>
+            <signature><![CDATA[public static final int FIELD_COUNT]]></signature>
+            <description><![CDATA[The number of distinct fields recognized by get and set.
+ Field numbers range from 0..FIELD_COUNT-1.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SUNDAY</name>
+            <signature><![CDATA[public static final int SUNDAY]]></signature>
+            <description><![CDATA[Value of the DAY_OF_WEEK field indicating
+ Sunday.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MONDAY</name>
+            <signature><![CDATA[public static final int MONDAY]]></signature>
+            <description><![CDATA[Value of the DAY_OF_WEEK field indicating
+ Monday.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>TUESDAY</name>
+            <signature><![CDATA[public static final int TUESDAY]]></signature>
+            <description><![CDATA[Value of the DAY_OF_WEEK field indicating
+ Tuesday.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>WEDNESDAY</name>
+            <signature><![CDATA[public static final int WEDNESDAY]]></signature>
+            <description><![CDATA[Value of the DAY_OF_WEEK field indicating
+ Wednesday.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>THURSDAY</name>
+            <signature><![CDATA[public static final int THURSDAY]]></signature>
+            <description><![CDATA[Value of the DAY_OF_WEEK field indicating
+ Thursday.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>FRIDAY</name>
+            <signature><![CDATA[public static final int FRIDAY]]></signature>
+            <description><![CDATA[Value of the DAY_OF_WEEK field indicating
+ Friday.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SATURDAY</name>
+            <signature><![CDATA[public static final int SATURDAY]]></signature>
+            <description><![CDATA[Value of the DAY_OF_WEEK field indicating
+ Saturday.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>JANUARY</name>
+            <signature><![CDATA[public static final int JANUARY]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ first month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>FEBRUARY</name>
+            <signature><![CDATA[public static final int FEBRUARY]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ second month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MARCH</name>
+            <signature><![CDATA[public static final int MARCH]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ third month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>APRIL</name>
+            <signature><![CDATA[public static final int APRIL]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ fourth month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAY</name>
+            <signature><![CDATA[public static final int MAY]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ fifth month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>JUNE</name>
+            <signature><![CDATA[public static final int JUNE]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ sixth month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>JULY</name>
+            <signature><![CDATA[public static final int JULY]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ seventh month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>AUGUST</name>
+            <signature><![CDATA[public static final int AUGUST]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ eighth month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SEPTEMBER</name>
+            <signature><![CDATA[public static final int SEPTEMBER]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ ninth month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>OCTOBER</name>
+            <signature><![CDATA[public static final int OCTOBER]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ tenth month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>NOVEMBER</name>
+            <signature><![CDATA[public static final int NOVEMBER]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ eleventh month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DECEMBER</name>
+            <signature><![CDATA[public static final int DECEMBER]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ twelfth month of the year in the Gregorian and Julian calendars.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>UNDECIMBER</name>
+            <signature><![CDATA[public static final int UNDECIMBER]]></signature>
+            <description><![CDATA[Value of the MONTH field indicating the
+ thirteenth month of the year. Although GregorianCalendar
+ does not use this value, lunar calendars do.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>AM</name>
+            <signature><![CDATA[public static final int AM]]></signature>
+            <description><![CDATA[Value of the AM_PM field indicating the
+ period of the day from midnight to just before noon.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>PM</name>
+            <signature><![CDATA[public static final int PM]]></signature>
+            <description><![CDATA[Value of the AM_PM field indicating the
+ period of the day from noon to just before midnight.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>ALL_STYLES</name>
+            <signature><![CDATA[public static final int ALL_STYLES]]></signature>
+            <description><![CDATA[A style specifier for getDisplayNames indicating names in all styles, such as
+ "January" and "Jan".<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>SHORT</code></a>, 
+<a href="#"><code>LONG</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SHORT</name>
+            <signature><![CDATA[public static final int SHORT]]></signature>
+            <description><![CDATA[A style specifier for getDisplayName and getDisplayNames indicating a short name, such as "Jan".<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>LONG</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>LONG</name>
+            <signature><![CDATA[public static final int LONG]]></signature>
+            <description><![CDATA[A style specifier for getDisplayName and getDisplayNames indicating a long name, such as "January".<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>SHORT</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>fields</name>
+            <signature><![CDATA[protected int[] fields]]></signature>
+            <description><![CDATA[The calendar field values for the currently set time for this calendar.
+ This is an array of FIELD_COUNT integers, with index values
+ ERA through DST_OFFSET.]]></description>
+        </field>
+        <field>
+            <name>isSet</name>
+            <signature><![CDATA[protected boolean[] isSet]]></signature>
+            <description><![CDATA[The flags which tell if a specified calendar field for the calendar is set.
+ A new object has no fields set.  After the first call to a method
+ which generates the fields, they all remain set after that.
+ This is an array of FIELD_COUNT booleans, with index values
+ ERA through DST_OFFSET.]]></description>
+        </field>
+        <field>
+            <name>time</name>
+            <signature><![CDATA[protected long time]]></signature>
+            <description><![CDATA[The currently set time for this calendar, expressed in milliseconds after
+ January 1, 1970, 0:00:00 GMT.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isTimeSet</code></a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>isTimeSet</name>
+            <signature><![CDATA[protected boolean isTimeSet]]></signature>
+            <description><![CDATA[True if then the value of time is valid.
+ The time is made invalid by a change to an item of field[].<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>time</code></a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>areFieldsSet</name>
+            <signature><![CDATA[protected boolean areFieldsSet]]></signature>
+            <description><![CDATA[True if fields[] are in sync with the currently set time.
+ If false, then the next attempt to get the value of a field will
+ force a recomputation of all fields from the current value of
+ time.]]></description>
+        </field>
+    </fields>
+    <constructors>
+        <constructor>
+            <name>Calendar</name>
+            <signature><![CDATA[protected Calendar()]]></signature>
+            <description><![CDATA[Constructs a Calendar with the default time zone
+ and locale.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>TimeZone.getDefault()</code></a></dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>Calendar</name>
+            <signature><![CDATA[protected Calendar(TimeZone zone,
+        Locale aLocale)]]></signature>
+            <description><![CDATA[Constructs a calendar with the specified time zone and locale.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>zone</code> - the time zone to use</dd><dd><code>aLocale</code> - the locale for the week data</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>getInstance</name>
+            <signature><![CDATA[public static Calendar getInstance()]]></signature>
+            <description><![CDATA[Gets a calendar using the default time zone and locale. The
+ Calendar returned is based on the current time
+ in the default time zone with the default locale.<dl><dt><span class="strong">Returns:</span></dt><dd>a Calendar.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getInstance</name>
+            <signature><![CDATA[public static Calendar getInstance(TimeZone zone)]]></signature>
+            <description><![CDATA[Gets a calendar using the specified time zone and default locale.
+ The Calendar returned is based on the current time
+ in the given time zone with the default locale.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>zone</code> - the time zone to use</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a Calendar.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getInstance</name>
+            <signature><![CDATA[public static Calendar getInstance(Locale aLocale)]]></signature>
+            <description><![CDATA[Gets a calendar using the default time zone and specified locale.
+ The Calendar returned is based on the current time
+ in the default time zone with the given locale.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>aLocale</code> - the locale for the week data</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a Calendar.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getInstance</name>
+            <signature><![CDATA[public static Calendar getInstance(TimeZone zone,
+                   Locale aLocale)]]></signature>
+            <description><![CDATA[Gets a calendar with the specified time zone and locale.
+ The Calendar returned is based on the current time
+ in the given time zone with the given locale.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>zone</code> - the time zone to use</dd><dd><code>aLocale</code> - the locale for the week data</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a Calendar.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getAvailableLocales</name>
+            <signature><![CDATA[public static Locale[] getAvailableLocales()]]></signature>
+            <description><![CDATA[Returns an array of all locales for which the getInstance
+ methods of this class can return localized instances.
+ The array returned must contain at least a Locale
+ instance equal to Locale.US.<dl><dt><span class="strong">Returns:</span></dt><dd>An array of locales for which localized
+         <code>Calendar</code> instances are available.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>computeTime</name>
+            <signature><![CDATA[protected abstract void computeTime()]]></signature>
+            <description><![CDATA[Converts the current calendar field values in fields[]
+ to the millisecond time value
+ time.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>complete()</code></a>, 
+<a href="#"><code>computeFields()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>computeFields</name>
+            <signature><![CDATA[protected abstract void computeFields()]]></signature>
+            <description><![CDATA[Converts the current millisecond time value time
+ to calendar field values in fields[].
+ This allows you to sync up the calendar field values with
+ a new time that is set for the calendar.  The time is not
+ recomputed first; to recompute the time, then the fields, call the
+ complete() method.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>computeTime()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getTime</name>
+            <signature><![CDATA[public final Date getTime()]]></signature>
+            <description><![CDATA[Returns a Date object representing this
+ Calendar's time value (millisecond offset from the Epoch").<dl><dt><span class="strong">Returns:</span></dt><dd>a <code>Date</code> representing the time value.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>setTime(Date)</code></a>, 
+<a href="#"><code>getTimeInMillis()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>setTime</name>
+            <signature><![CDATA[public final void setTime(Date date)]]></signature>
+            <description><![CDATA[Sets this Calendar's time with the given Date.
+ 
+ Note: Calling setTime() with
+ Date(Long.MAX_VALUE) or Date(Long.MIN_VALUE)
+ may yield incorrect field values from get().<dl><dt><span class="strong">Parameters:</span></dt><dd><code>date</code> - the given Date.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getTime()</code></a>, 
+<a href="#"><code>setTimeInMillis(long)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getTimeInMillis</name>
+            <signature><![CDATA[public long getTimeInMillis()]]></signature>
+            <description><![CDATA[Returns this Calendar's time value in milliseconds.<dl><dt><span class="strong">Returns:</span></dt><dd>the current time as UTC milliseconds from the epoch.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getTime()</code></a>, 
+<a href="#"><code>setTimeInMillis(long)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>setTimeInMillis</name>
+            <signature><![CDATA[public void setTimeInMillis(long millis)]]></signature>
+            <description><![CDATA[Sets this Calendar's current time from the given long value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>millis</code> - the new time in UTC milliseconds from the epoch.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>setTime(Date)</code></a>, 
+<a href="#"><code>getTimeInMillis()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>get</name>
+            <signature><![CDATA[public int get(int field)]]></signature>
+            <description><![CDATA[Returns the value of the given calendar field. In lenient mode,
+ all calendar fields are normalized. In non-lenient mode, all
+ calendar fields are validated and this method throws an
+ exception if any calendar fields have out-of-range values. The
+ normalization and validation are handled by the
+ complete() method, which process is calendar
+ system dependent.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the given calendar field.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value for the given calendar field.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ArrayIndexOutOfBoundsException</a></code> - if the specified field is out of range
+             (<code>field < 0 || field >= FIELD_COUNT</code>).</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>set(int,int)</code></a>, 
+<a href="#"><code>complete()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>internalGet</name>
+            <signature><![CDATA[protected final int internalGet(int field)]]></signature>
+            <description><![CDATA[Returns the value of the given calendar field. This method does
+ not involve normalization or validation of the field value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the given calendar field.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value for the given calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>get(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>set</name>
+            <signature><![CDATA[public void set(int field,
+       int value)]]></signature>
+            <description><![CDATA[Sets the given calendar field to the given value. The value is not
+ interpreted by this method regardless of the leniency mode.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the given calendar field.</dd><dd><code>value</code> - the value to be set for the given calendar field.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ArrayIndexOutOfBoundsException</a></code> - if the specified field is out of range
+             (<code>field < 0 || field >= FIELD_COUNT</code>).
+ in non-lenient mode.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>set(int,int,int)</code></a>, 
+<a href="#"><code>set(int,int,int,int,int)</code></a>, 
+<a href="#"><code>set(int,int,int,int,int,int)</code></a>, 
+<a href="#"><code>get(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>set</name>
+            <signature><![CDATA[public final void set(int year,
+       int month,
+       int date)]]></signature>
+            <description><![CDATA[Sets the values for the calendar fields YEAR,
+ MONTH, and DAY_OF_MONTH.
+ Previous values of other calendar fields are retained.  If this is not desired,
+ call clear() first.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>year</code> - the value used to set the <code>YEAR</code> calendar field.</dd><dd><code>month</code> - the value used to set the <code>MONTH</code> calendar field.
+ Month value is 0-based. e.g., 0 for January.</dd><dd><code>date</code> - the value used to set the <code>DAY_OF_MONTH</code> calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>set(int,int)</code></a>, 
+<a href="#"><code>set(int,int,int,int,int)</code></a>, 
+<a href="#"><code>set(int,int,int,int,int,int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>set</name>
+            <signature><![CDATA[public final void set(int year,
+       int month,
+       int date,
+       int hourOfDay,
+       int minute)]]></signature>
+            <description><![CDATA[Sets the values for the calendar fields YEAR,
+ MONTH, DAY_OF_MONTH,
+ HOUR_OF_DAY, and MINUTE.
+ Previous values of other fields are retained.  If this is not desired,
+ call clear() first.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>year</code> - the value used to set the <code>YEAR</code> calendar field.</dd><dd><code>month</code> - the value used to set the <code>MONTH</code> calendar field.
+ Month value is 0-based. e.g., 0 for January.</dd><dd><code>date</code> - the value used to set the <code>DAY_OF_MONTH</code> calendar field.</dd><dd><code>hourOfDay</code> - the value used to set the <code>HOUR_OF_DAY</code> calendar field.</dd><dd><code>minute</code> - the value used to set the <code>MINUTE</code> calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>set(int,int)</code></a>, 
+<a href="#"><code>set(int,int,int)</code></a>, 
+<a href="#"><code>set(int,int,int,int,int,int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>set</name>
+            <signature><![CDATA[public final void set(int year,
+       int month,
+       int date,
+       int hourOfDay,
+       int minute,
+       int second)]]></signature>
+            <description><![CDATA[Sets the values for the fields YEAR, MONTH,
+ DAY_OF_MONTH, HOUR, MINUTE, and
+ SECOND.
+ Previous values of other fields are retained.  If this is not desired,
+ call clear() first.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>year</code> - the value used to set the <code>YEAR</code> calendar field.</dd><dd><code>month</code> - the value used to set the <code>MONTH</code> calendar field.
+ Month value is 0-based. e.g., 0 for January.</dd><dd><code>date</code> - the value used to set the <code>DAY_OF_MONTH</code> calendar field.</dd><dd><code>hourOfDay</code> - the value used to set the <code>HOUR_OF_DAY</code> calendar field.</dd><dd><code>minute</code> - the value used to set the <code>MINUTE</code> calendar field.</dd><dd><code>second</code> - the value used to set the <code>SECOND</code> calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>set(int,int)</code></a>, 
+<a href="#"><code>set(int,int,int)</code></a>, 
+<a href="#"><code>set(int,int,int,int,int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[public final void clear()]]></signature>
+            <description><![CDATA[Sets all the calendar field values and the time value
+ (millisecond offset from the Epoch) of
+ this Calendar undefined. This means that isSet() will return false for all the
+ calendar fields, and the date and time calculations will treat
+ the fields as if they had never been set. A
+ Calendar implementation class may use its specific
+ default field values for date/time calculations. For example,
+ GregorianCalendar uses 1970 if the
+ YEAR field value is undefined.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>clear(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[public final void clear(int field)]]></signature>
+            <description><![CDATA[Sets the given calendar field value and the time value
+ (millisecond offset from the Epoch) of
+ this Calendar undefined. This means that isSet(field) will return false, and
+ the date and time calculations will treat the field as if it
+ had never been set. A Calendar implementation
+ class may use the field's specific default value for date and
+ time calculations.
+
+ The HOUR_OF_DAY, HOUR and AM_PM
+ fields are handled independently and the the resolution rule for the time of
+ day is applied. Clearing one of the fields doesn't reset
+ the hour of day value of this Calendar. Use set(Calendar.HOUR_OF_DAY, 0) to reset the hour
+ value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field to be cleared.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>clear()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isSet</name>
+            <signature><![CDATA[public final boolean isSet(int field)]]></signature>
+            <description><![CDATA[Determines if the given calendar field has a value set,
+ including cases that the value has been set by internal fields
+ calculations triggered by a get method call.<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the given calendar field has a value set;
+ <code>false</code> otherwise.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getDisplayName</name>
+            <signature><![CDATA[public String getDisplayName(int field,
+                    int style,
+                    Locale locale)]]></signature>
+            <description><![CDATA[Returns the string representation of the calendar
+ field value in the given style and
+ locale.  If no string representation is
+ applicable, null is returned. This method calls
+ get(field) to get the calendar
+ field value if the string representation is
+ applicable to the given calendar field.
+
+ For example, if this Calendar is a
+ GregorianCalendar and its date is 2005-01-01, then
+ the string representation of the MONTH field would be
+ "January" in the long style in an English locale or "Jan" in
+ the short style. However, no string representation would be
+ available for the DAY_OF_MONTH field, and this method
+ would return null.
+
+ The default implementation supports the calendar fields for
+ which a DateFormatSymbols has names in the given
+ locale.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field for which the string representation
+        is returned</dd><dd><code>style</code> - the style applied to the string representation; one of
+        <a href="#"><code>SHORT</code></a> or <a href="#"><code>LONG</code></a>.</dd><dd><code>locale</code> - the locale for the string representation</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the string representation of the given
+        <code>field</code> in the given <code>style</code>, or
+        <code>null</code> if no string representation is
+        applicable.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>field</code> or <code>style</code> is invalid,
+        or if this <code>Calendar</code> is non-lenient and any
+        of the calendar fields have invalid values</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>locale</code> is null</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getDisplayNames</name>
+            <signature><![CDATA[public Map<String,Integer> getDisplayNames(int field,
+                                  int style,
+                                  Locale locale)]]></signature>
+            <description><![CDATA[Returns a Map containing all names of the calendar
+ field in the given style and
+ locale and their corresponding field values. For
+ example, if this Calendar is a GregorianCalendar, the returned map would contain "Jan" to
+ JANUARY, "Feb" to FEBRUARY, and so on, in the
+ short style in an English locale.
+
+ The values of other calendar fields may be taken into
+ account to determine a set of display names. For example, if
+ this Calendar is a lunisolar calendar system and
+ the year value given by the YEAR field has a leap
+ month, this method would return month names containing the leap
+ month name, and month names are mapped to their values specific
+ for the year.
+
+ The default implementation supports display names contained in
+ a DateFormatSymbols. For example, if field
+ is MONTH and style is ALL_STYLES, this method returns a Map containing
+ all strings returned by DateFormatSymbols.getShortMonths()
+ and DateFormatSymbols.getMonths().<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field for which the display names are returned</dd><dd><code>style</code> - the style applied to the display names; one of <a href="#"><code>SHORT</code></a>, <a href="#"><code>LONG</code></a>, or <a href="#"><code>ALL_STYLES</code></a>.</dd><dd><code>locale</code> - the locale for the display names</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>Map</code> containing all display names in
+        <code>style</code> and <code>locale</code> and their
+        field values, or <code>null</code> if no display names
+        are defined for <code>field</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>field</code> or <code>style</code> is invalid,
+        or if this <code>Calendar</code> is non-lenient and any
+        of the calendar fields have invalid values</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>locale</code> is null</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>complete</name>
+            <signature><![CDATA[protected void complete()]]></signature>
+            <description><![CDATA[Fills in any unset fields in the calendar fields. First, the computeTime() method is called if the time value (millisecond offset
+ from the Epoch) has not been calculated from
+ calendar field values. Then, the computeFields() method is
+ called to calculate all calendar field values.]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[public boolean equals(Object obj)]]></signature>
+            <description><![CDATA[Compares this Calendar to the specified
+ Object.  The result is true if and only if
+ the argument is a Calendar object of the same calendar
+ system that represents the same time value (millisecond offset from the
+ Epoch) under the same
+ Calendar parameters as this object.
+
+ The Calendar parameters are the values represented
+ by the isLenient, getFirstDayOfWeek,
+ getMinimalDaysInFirstWeek and getTimeZone
+ methods. If there is any difference in those parameters
+ between the two Calendars, this method returns
+ false.
+
+ Use the compareTo method to
+ compare only the time values.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>obj</code> - the object to compare with.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this object is equal to <code>obj</code>;
+ <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.hashCode()</code></a>, 
+<a href="#"><code>HashMap</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hashCode</name>
+            <signature><![CDATA[public int hashCode()]]></signature>
+            <description><![CDATA[Returns a hash code for this calendar.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a hash code value for this object.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.equals(java.lang.Object)</code></a>, 
+<a href="#"><code>System.identityHashCode(java.lang.Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>before</name>
+            <signature><![CDATA[public boolean before(Object when)]]></signature>
+            <description><![CDATA[Returns whether this Calendar represents a time
+ before the time represented by the specified
+ Object. This method is equivalent to:
+ 
+         compareTo(when) < 0
+ 
+ if and only if when is a Calendar
+ instance. Otherwise, the method returns false.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>when</code> - the <code>Object</code> to be compared</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the time of this
+ <code>Calendar</code> is before the time represented by
+ <code>when</code>; <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>compareTo(Calendar)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>after</name>
+            <signature><![CDATA[public boolean after(Object when)]]></signature>
+            <description><![CDATA[Returns whether this Calendar represents a time
+ after the time represented by the specified
+ Object. This method is equivalent to:
+ 
+         compareTo(when) > 0
+ 
+ if and only if when is a Calendar
+ instance. Otherwise, the method returns false.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>when</code> - the <code>Object</code> to be compared</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the time of this <code>Calendar</code> is
+ after the time represented by <code>when</code>; <code>false</code>
+ otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>compareTo(Calendar)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>compareTo</name>
+            <signature><![CDATA[public int compareTo(Calendar anotherCalendar)]]></signature>
+            <description><![CDATA[Compares the time values (millisecond offsets from the Epoch) represented by two
+ Calendar objects.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">compareTo</a></code> in interface <code><a href="#">Comparable</a><<a href="#">Calendar</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>anotherCalendar</code> - the <code>Calendar</code> to be compared.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value <code>0</code> if the time represented by the argument
+ is equal to the time represented by this <code>Calendar</code>; a value
+ less than <code>0</code> if the time of this <code>Calendar</code> is
+ before the time represented by the argument; and a value greater than
+ <code>0</code> if the time of this <code>Calendar</code> is after the
+ time represented by the argument.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified <code>Calendar</code> is
+            <code>null</code>.</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the time value of the
+ specified <code>Calendar</code> object can't be obtained due to
+ any invalid calendar values.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[public abstract void add(int field,
+       int amount)]]></signature>
+            <description><![CDATA[Adds or subtracts the specified amount of time to the given calendar field,
+ based on the calendar's rules. For example, to subtract 5 days from
+ the current time of the calendar, you can achieve it by calling:
+ add(Calendar.DAY_OF_MONTH, -5).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field.</dd><dd><code>amount</code> - the amount of date or time to be added to the field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>roll(int,int)</code></a>, 
+<a href="#"><code>set(int,int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>roll</name>
+            <signature><![CDATA[public abstract void roll(int field,
+        boolean up)]]></signature>
+            <description><![CDATA[Adds or subtracts (up/down) a single unit of time on the given time
+ field without changing larger fields. For example, to roll the current
+ date up by one day, you can achieve it by calling:
+ roll(Calendar.DATE, true).
+ When rolling on the year or Calendar.YEAR field, it will roll the year
+ value in the range between 1 and the value returned by calling
+ getMaximum(Calendar.YEAR).
+ When rolling on the month or Calendar.MONTH field, other fields like
+ date might conflict and, need to be changed. For instance,
+ rolling the month on the date 01/31/96 will result in 02/29/96.
+ When rolling on the hour-in-day or Calendar.HOUR_OF_DAY field, it will
+ roll the hour value in the range between 0 and 23, which is zero-based.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the time field.</dd><dd><code>up</code> - indicates if the value of the specified time field is to be
+ rolled up or rolled down. Use true if rolling up, false otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>add(int,int)</code></a>, 
+<a href="#"><code>set(int,int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>roll</name>
+            <signature><![CDATA[public void roll(int field,
+        int amount)]]></signature>
+            <description><![CDATA[Adds the specified (signed) amount to the specified calendar field
+ without changing larger fields.  A negative amount means to roll
+ down.
+
+ NOTE:  This default implementation on Calendar just repeatedly calls the
+ version of roll() that rolls by one unit.  This may not
+ always do the right thing.  For example, if the DAY_OF_MONTH field is 31,
+ rolling through February will leave it set to 28.  The GregorianCalendar
+ version of this function takes care of this problem.  Other subclasses
+ should also provide overrides of this function that do the right thing.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field.</dd><dd><code>amount</code> - the signed amount to add to the calendar <code>field</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>roll(int,boolean)</code></a>, 
+<a href="#"><code>add(int,int)</code></a>, 
+<a href="#"><code>set(int,int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>setTimeZone</name>
+            <signature><![CDATA[public void setTimeZone(TimeZone value)]]></signature>
+            <description><![CDATA[Sets the time zone with the given time zone value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the given time zone.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getTimeZone</name>
+            <signature><![CDATA[public TimeZone getTimeZone()]]></signature>
+            <description><![CDATA[Gets the time zone.<dl><dt><span class="strong">Returns:</span></dt><dd>the time zone object associated with this calendar.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>setLenient</name>
+            <signature><![CDATA[public void setLenient(boolean lenient)]]></signature>
+            <description><![CDATA[Specifies whether or not date/time interpretation is to be lenient.  With
+ lenient interpretation, a date such as "February 942, 1996" will be
+ treated as being equivalent to the 941st day after February 1, 1996.
+ With strict (non-lenient) interpretation, such dates will cause an exception to be
+ thrown. The default is lenient.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>lenient</code> - <code>true</code> if the lenient mode is to be turned
+ on; <code>false</code> if it is to be turned off.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLenient()</code></a>, 
+<a href="#"><code>DateFormat.setLenient(boolean)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLenient</name>
+            <signature><![CDATA[public boolean isLenient()]]></signature>
+            <description><![CDATA[Tells whether date/time interpretation is to be lenient.<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the interpretation mode of this calendar is lenient;
+ <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>setLenient(boolean)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>setFirstDayOfWeek</name>
+            <signature><![CDATA[public void setFirstDayOfWeek(int value)]]></signature>
+            <description><![CDATA[Sets what the first day of the week is; e.g., SUNDAY in the U.S.,
+ MONDAY in France.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the given first day of the week.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getFirstDayOfWeek()</code></a>, 
+<a href="#"><code>getMinimalDaysInFirstWeek()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getFirstDayOfWeek</name>
+            <signature><![CDATA[public int getFirstDayOfWeek()]]></signature>
+            <description><![CDATA[Gets what the first day of the week is; e.g., SUNDAY in the U.S.,
+ MONDAY in France.<dl><dt><span class="strong">Returns:</span></dt><dd>the first day of the week.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>setFirstDayOfWeek(int)</code></a>, 
+<a href="#"><code>getMinimalDaysInFirstWeek()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>setMinimalDaysInFirstWeek</name>
+            <signature><![CDATA[public void setMinimalDaysInFirstWeek(int value)]]></signature>
+            <description><![CDATA[Sets what the minimal days required in the first week of the year are;
+ For example, if the first week is defined as one that contains the first
+ day of the first month of a year, call this method with value 1. If it
+ must be a full week, use value 7.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the given minimal days required in the first week
+ of the year.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getMinimalDaysInFirstWeek()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getMinimalDaysInFirstWeek</name>
+            <signature><![CDATA[public int getMinimalDaysInFirstWeek()]]></signature>
+            <description><![CDATA[Gets what the minimal days required in the first week of the year are;
+ e.g., if the first week is defined as one that contains the first day
+ of the first month of a year, this method returns 1. If
+ the minimal days required must be a full week, this method
+ returns 7.<dl><dt><span class="strong">Returns:</span></dt><dd>the minimal days required in the first week of the year.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>setMinimalDaysInFirstWeek(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isWeekDateSupported</name>
+            <signature><![CDATA[public boolean isWeekDateSupported()]]></signature>
+            <description><![CDATA[Returns whether this Calendar supports week dates.
+
+ The default implementation of this method returns false.<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this <code>Calendar</code> supports week dates;
+         <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getWeekYear()</code></a>, 
+<a href="#"><code>setWeekDate(int,int,int)</code></a>, 
+<a href="#"><code>getWeeksInWeekYear()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getWeekYear</name>
+            <signature><![CDATA[public int getWeekYear()]]></signature>
+            <description><![CDATA[Returns the week year represented by this Calendar. The
+ week year is in sync with the week cycle. The first day of the first week is the first
+ day of the week year.
+
+ The default implementation of this method throws an
+ UnsupportedOperationException.<dl><dt><span class="strong">Returns:</span></dt><dd>the week year of this <code>Calendar</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if any week year numbering isn't supported
+            in this <code>Calendar</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isWeekDateSupported()</code></a>, 
+<a href="#"><code>getFirstDayOfWeek()</code></a>, 
+<a href="#"><code>getMinimalDaysInFirstWeek()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>setWeekDate</name>
+            <signature><![CDATA[public void setWeekDate(int weekYear,
+               int weekOfYear,
+               int dayOfWeek)]]></signature>
+            <description><![CDATA[Sets the date of this Calendar with the the given date
+ specifiers - week year, week of year, and day of week.
+
+ Unlike the set method, all of the calendar fields
+ and time values are calculated upon return.
+
+ If weekOfYear is out of the valid week-of-year range
+ in weekYear, the weekYear and weekOfYear values are adjusted in lenient mode, or an IllegalArgumentException is thrown in non-lenient mode.
+
+ The default implementation of this method throws an
+ UnsupportedOperationException.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>weekYear</code> - the week year</dd><dd><code>weekOfYear</code> - the week number based on <code>weekYear</code></dd><dd><code>dayOfWeek</code> - the day of week value: one of the constants
+                   for the <a href="#"><code>DAY_OF_WEEK</code></a> field: <a href="#"><code>SUNDAY</code></a>, ..., <a href="#"><code>SATURDAY</code></a>.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if any of the given date specifiers is invalid
+            or any of the calendar fields are inconsistent
+            with the given date specifiers in non-lenient mode</dd>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if any week year numbering isn't supported in this
+            <code>Calendar</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isWeekDateSupported()</code></a>, 
+<a href="#"><code>getFirstDayOfWeek()</code></a>, 
+<a href="#"><code>getMinimalDaysInFirstWeek()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getWeeksInWeekYear</name>
+            <signature><![CDATA[public int getWeeksInWeekYear()]]></signature>
+            <description><![CDATA[Returns the number of weeks in the week year represented by this
+ Calendar.
+
+ The default implementation of this method throws an
+ UnsupportedOperationException.<dl><dt><span class="strong">Returns:</span></dt><dd>the number of weeks in the week year.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if any week year numbering isn't supported in this
+            <code>Calendar</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>WEEK_OF_YEAR</code></a>, 
+<a href="#"><code>isWeekDateSupported()</code></a>, 
+<a href="#"><code>getWeekYear()</code></a>, 
+<a href="#"><code>getActualMaximum(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getMinimum</name>
+            <signature><![CDATA[public abstract int getMinimum(int field)]]></signature>
+            <description><![CDATA[Returns the minimum value for the given calendar field of this
+ Calendar instance. The minimum value is defined as
+ the smallest value returned by the get method
+ for any possible time value.  The minimum value depends on
+ calendar system specific parameters of the instance.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the minimum value for the given calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getMaximum(int)</code></a>, 
+<a href="#"><code>getGreatestMinimum(int)</code></a>, 
+<a href="#"><code>getLeastMaximum(int)</code></a>, 
+<a href="#"><code>getActualMinimum(int)</code></a>, 
+<a href="#"><code>getActualMaximum(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getMaximum</name>
+            <signature><![CDATA[public abstract int getMaximum(int field)]]></signature>
+            <description><![CDATA[Returns the maximum value for the given calendar field of this
+ Calendar instance. The maximum value is defined as
+ the largest value returned by the get method
+ for any possible time value. The maximum value depends on
+ calendar system specific parameters of the instance.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the maximum value for the given calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getMinimum(int)</code></a>, 
+<a href="#"><code>getGreatestMinimum(int)</code></a>, 
+<a href="#"><code>getLeastMaximum(int)</code></a>, 
+<a href="#"><code>getActualMinimum(int)</code></a>, 
+<a href="#"><code>getActualMaximum(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getGreatestMinimum</name>
+            <signature><![CDATA[public abstract int getGreatestMinimum(int field)]]></signature>
+            <description><![CDATA[Returns the highest minimum value for the given calendar field
+ of this Calendar instance. The highest minimum
+ value is defined as the largest value returned by getActualMinimum(int) for any possible time value. The
+ greatest minimum value depends on calendar system specific
+ parameters of the instance.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the highest minimum value for the given calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getMinimum(int)</code></a>, 
+<a href="#"><code>getMaximum(int)</code></a>, 
+<a href="#"><code>getLeastMaximum(int)</code></a>, 
+<a href="#"><code>getActualMinimum(int)</code></a>, 
+<a href="#"><code>getActualMaximum(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getLeastMaximum</name>
+            <signature><![CDATA[public abstract int getLeastMaximum(int field)]]></signature>
+            <description><![CDATA[Returns the lowest maximum value for the given calendar field
+ of this Calendar instance. The lowest maximum
+ value is defined as the smallest value returned by getActualMaximum(int) for any possible time value. The least
+ maximum value depends on calendar system specific parameters of
+ the instance. For example, a Calendar for the
+ Gregorian calendar system returns 28 for the
+ DAY_OF_MONTH field, because the 28th is the last
+ day of the shortest month of this calendar, February in a
+ common year.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the lowest maximum value for the given calendar field.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getMinimum(int)</code></a>, 
+<a href="#"><code>getMaximum(int)</code></a>, 
+<a href="#"><code>getGreatestMinimum(int)</code></a>, 
+<a href="#"><code>getActualMinimum(int)</code></a>, 
+<a href="#"><code>getActualMaximum(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getActualMinimum</name>
+            <signature><![CDATA[public int getActualMinimum(int field)]]></signature>
+            <description><![CDATA[Returns the minimum value that the specified calendar field
+ could have, given the time value of this Calendar.
+
+ The default implementation of this method uses an iterative
+ algorithm to determine the actual minimum value for the
+ calendar field. Subclasses should, if possible, override this
+ with a more efficient implementation - in many cases, they can
+ simply return getMinimum().<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the minimum of the given calendar field for the time
+ value of this <code>Calendar</code></dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getMinimum(int)</code></a>, 
+<a href="#"><code>getMaximum(int)</code></a>, 
+<a href="#"><code>getGreatestMinimum(int)</code></a>, 
+<a href="#"><code>getLeastMaximum(int)</code></a>, 
+<a href="#"><code>getActualMaximum(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getActualMaximum</name>
+            <signature><![CDATA[public int getActualMaximum(int field)]]></signature>
+            <description><![CDATA[Returns the maximum value that the specified calendar field
+ could have, given the time value of this
+ Calendar. For example, the actual maximum value of
+ the MONTH field is 12 in some years, and 13 in
+ other years in the Hebrew calendar system.
+
+ The default implementation of this method uses an iterative
+ algorithm to determine the actual maximum value for the
+ calendar field. Subclasses should, if possible, override this
+ with a more efficient implementation.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>field</code> - the calendar field</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the maximum of the given calendar field for the time
+ value of this <code>Calendar</code></dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>getMinimum(int)</code></a>, 
+<a href="#"><code>getMaximum(int)</code></a>, 
+<a href="#"><code>getGreatestMinimum(int)</code></a>, 
+<a href="#"><code>getLeastMaximum(int)</code></a>, 
+<a href="#"><code>getActualMinimum(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clone</name>
+            <signature><![CDATA[public Object clone()]]></signature>
+            <description><![CDATA[Creates and returns a copy of this object.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clone</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a copy of this object.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Cloneable</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public String toString()]]></signature>
+            <description><![CDATA[Return a string representation of this calendar. This method
+ is intended to be used only for debugging purposes, and the
+ format of the returned string may vary between implementations.
+ The returned string may be empty but may not be null.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">toString</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a string representation of this calendar.</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

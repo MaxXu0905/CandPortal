@@ -1,0 +1,3510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="info">
+    <methods>
+        <method>
+            <name>assert_options</name>
+            <signature><![CDATA[mixed assert_options ( int what [, mixed value])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87656" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >assert_options</B
+> ( int what [, mixed value])<BR  ></BR
+><P  >     Using <B  CLASS="function" >assert_options()</B
+> you may set the various
+     <SPAN HREF="#"><B  CLASS="function" >assert()</B
+></A
+> control options or just query their
+     current settings.
+    </P
+><DIV  CLASS="table" ><A  NAME="AEN87670" ></A
+><P  ><B  >表格 1. Assert Options</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >option</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ini-parameter</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >default</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ASSERT_ACTIVE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.active</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >enable <SPAN HREF="#"><B  CLASS="function" >assert()</B
+></A
+> evaluation</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ASSERT_WARNING</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.warning</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >issue a PHP warning for each failed assertion</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ASSERT_BAIL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.bail</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >terminate execution on failed assertions</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ASSERT_QUIET_EVAL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.quiet_eval</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >         disable error_reporting during assertion expression
+         evaluation
+        </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ASSERT_CALLBACK</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.callback</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >(<TT  CLASS="constant" ><B  >NULL</B
+></TT
+>)</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >user function to call on failed assertions</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><P  >     <B  CLASS="function" >assert_options()</B
+> will return the original
+     setting of any option or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on errors.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>assert</name>
+            <signature><![CDATA[int assert ( mixed assertion)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87715" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >assert</B
+> ( mixed assertion)<BR  ></BR
+><P  >     <B  CLASS="function" >assert()</B
+> will check the given
+     <TT  CLASS="parameter" ><I  >assertion</I
+></TT
+> and take appropriate action if
+     its result is <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >     If the <TT  CLASS="parameter" ><I  >assertion</I
+></TT
+> is given as a string it
+     will be evaluated as PHP code by <B  CLASS="function" >assert()</B
+>.
+     The advantages of a string <TT  CLASS="parameter" ><I  >assertion</I
+></TT
+> are
+     less overhead when assertion checking is off and messages
+     containing the <TT  CLASS="parameter" ><I  >assertion</I
+></TT
+> expression when
+     an assertion fails. This means that if you pass a boolean condition
+     as <TT  CLASS="parameter" ><I  >assertion</I
+></TT
+> this condition will not show up as
+     parameter to the assertion function which you may have defined with the
+     <SPAN HREF="#"><B  CLASS="function" >assert_options()</B
+></A
+> function, the condition is converted
+     to a string before calling that handler function, and the boolean <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>
+     is converted as the empty string.
+    </P
+><P  >     Assertions should be used as a debugging feature only. You may
+     use them for sanity-checks that test for conditions that should
+     always be <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> and that indicate some programming errors if not
+     or to check for the presence of certain features like extension
+     functions or certain system limits and features.
+    </P
+><P  >     Assertions should not be used for normal runtime operations like
+     input parameter checks. As a rule of thumb your code should
+     always be able to work correctly if assertion checking is not
+     activated.
+    </P
+><P  >     The behavior of <B  CLASS="function" >assert()</B
+> may be configured by
+     <SPAN HREF="#"><B  CLASS="function" >assert_options()</B
+></A
+> or by .ini-settings described
+     in that functions manual page.
+    </P
+><P  >     The <SPAN HREF="#"><B  CLASS="function" >assert_options()</B
+></A
+> function and/or
+     ASSERT_CALLBACK configuration directive allow a callback function
+     to be set to handle failed assertions.
+    </P
+><P  >     <B  CLASS="function" >assert()</B
+> callbacks are particularly useful for
+     building automated test suites because they allow you to easily
+     capture the code passed to the assertion, along with information
+     on where the assertion was made. While this information can be
+     captured via other methods, using assertions makes it much faster
+     and easier!
+    </P
+><P  >     The callback function should accept three arguments. The first
+     argument will contain the file the assertion failed in. The
+     second argument will contain the line the assertion failed on and
+     the third argument will contain the expression that failed (if
+     any - literal values such as 1 or "two" will not be passed via
+     this argument)
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN87747" ></A
+><P  ><B  >例子 1. Handle a failed assertion with a custom handler</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// Active assert and make it quiet<br  /></font><font  color="#0000BB">assert_options</font><font  color="#007700">(</font><font  color="#0000BB">ASSERT_ACTIVE</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">);<br  /></font><font  color="#0000BB">assert_options</font><font  color="#007700">(</font><font  color="#0000BB">ASSERT_WARNING</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /></font><font  color="#0000BB">assert_options</font><font  color="#007700">(</font><font  color="#0000BB">ASSERT_QUIET_EVAL</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Create a handler function<br  /></font><font  color="#007700">function </font><font  color="#0000BB">my_assert_handler</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">, </font><font  color="#0000BB">$line</font><font  color="#007700">, </font><font  color="#0000BB">$code</font><font  color="#007700">) <br  />{<br  />    echo </font><font  color="#DD0000">"<hr>Assertion Failed:<br  />        File '$file'<br /><br  />        Line '$line'<br /><br  />        Code '$code'<br /><hr />"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">// Set up the callback<br  /></font><font  color="#0000BB">assert_options</font><font  color="#007700">(</font><font  color="#0000BB">ASSERT_CALLBACK</font><font  color="#007700">, </font><font  color="#DD0000">'my_assert_handler'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Make an assertion that should fail<br  /></font><font  color="#0000BB">assert</font><font  color="#007700">(</font><font  color="#DD0000">'mysql_query("")'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>dl</name>
+            <signature><![CDATA[int dl ( string library)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87754" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >dl</B
+> ( string library)<BR  ></BR
+><P  >     Loads the PHP extension given by the parameter
+     <TT  CLASS="parameter" ><I  >library</I
+></TT
+>. The <TT  CLASS="parameter" ><I  >library</I
+></TT
+>
+     parameter is <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >only</I
+></SPAN
+> the filename of the extension to
+     load which also depends on your platform. For example, the <SPAN HREF="#">sockets</A
+> extension (if compiled as a shared
+     module, not the default!) would be called <TT  CLASS="filename" >sockets.so</TT
+>
+     on Unix platforms whereas it is called
+     <TT  CLASS="filename" >php_sockets.dll</TT
+> on the Windows platform.
+    </P
+><P  >     如果成功则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，失败则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。 If the functionality of loading modules is not available
+     (see Note) or has been disabled (either by turning it off
+     <TT  CLASS="literal" >enable_dl</TT
+> or by enabling <SPAN HREF="#">安全模式</A
+>
+     in <TT  CLASS="filename" >php.ini</TT
+>) an <TT  CLASS="constant" ><B  >E_ERROR</B
+></TT
+> is emitted
+     and execution is stopped. If <B  CLASS="function" >dl()</B
+> fails because the
+     specified library couldn't be loaded, in addition to <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> an
+     <TT  CLASS="constant" ><B  >E_WARNING</B
+></TT
+> message is emitted.
+    </P
+><P  >     Use <SPAN HREF="#"><B  CLASS="function" >extension_loaded()</B
+></A
+> to test whether a given
+     extension is already available or not. This works on both built-in
+     extensions and dynamically loaded ones (either through <TT  CLASS="filename" >php.ini</TT
+>
+     or <B  CLASS="function" >dl()</B
+>).
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN87783" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >dl()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// Example loading an extension based on OS<br  /></font><font  color="#007700">if (!</font><font  color="#0000BB">extension_loaded</font><font  color="#007700">(</font><font  color="#DD0000">'sqlite'</font><font  color="#007700">)) {<br  />    if (</font><font  color="#0000BB">strtoupper</font><font  color="#007700">(</font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">PHP_OS</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">) == </font><font  color="#DD0000">'WIN'</font><font  color="#007700">)) {<br  />        </font><font  color="#0000BB">dl</font><font  color="#007700">(</font><font  color="#DD0000">'php_sqlite.dll'</font><font  color="#007700">);<br  />    } else {<br  />        </font><font  color="#0000BB">dl</font><font  color="#007700">(</font><font  color="#DD0000">'sqlite.so'</font><font  color="#007700">);<br  />    }<br  />}<br  /><br  /></font><font  color="#FF8000">// Or, the PHP_SHLIB_SUFFIX constant is available as of PHP 4.3.0<br  /></font><font  color="#007700">if (!</font><font  color="#0000BB">extension_loaded</font><font  color="#007700">(</font><font  color="#DD0000">'sqlite'</font><font  color="#007700">)) {<br  />    </font><font  color="#0000BB">$prefix </font><font  color="#007700">= (</font><font  color="#0000BB">PHP_SHLIB_SUFFIX </font><font  color="#007700">== </font><font  color="#DD0000">'dll'</font><font  color="#007700">) ? </font><font  color="#DD0000">'php_' </font><font  color="#007700">: </font><font  color="#DD0000">''</font><font  color="#007700">;<br  />    </font><font  color="#0000BB">dl</font><font  color="#007700">(</font><font  color="#0000BB">$prefix </font><font  color="#007700">. </font><font  color="#DD0000">'sqlite.' </font><font  color="#007700">. </font><font  color="#0000BB">PHP_SHLIB_SUFFIX</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >     The directory where the extension is loaded from depends on your
+     platform:
+    </P
+><P  >     Windows - If not explicitly set in the <TT  CLASS="filename" >php.ini</TT
+>, the extension is
+     loaded from <TT  CLASS="filename" >c:\php4\extensions\</TT
+> by default.
+    </P
+><P  >     Unix - If not explicitly set in the <TT  CLASS="filename" >php.ini</TT
+>, the default extension
+     directory depends on
+     </P><P  ></P
+><UL  ><LI  ><P  >        whether PHP has been built with <TT  CLASS="literal" >--enable-debug</TT
+> or
+        not
+       </P
+></LI
+><LI  ><P  >        whether PHP has been built with (experimental) ZTS (Zend Thread Safety)
+        support or not
+       </P
+></LI
+><LI  ><P  >        the current internal <TT  CLASS="literal" >ZEND_MODULE_API_NO</TT
+> (Zend
+        internal module API number, which is basically the date on which a
+        major module API change happened, e.g. <TT  CLASS="literal" >20010901</TT
+>)
+       </P
+></LI
+></UL
+>
+     Taking into account the above, the directory then defaults to
+     <TT  CLASS="literal" ><install-dir>/lib/php/extensions/ <debug-or-not>-<zts-or-not>-ZEND_MODULE_API_NO</TT
+>,
+     e.g.
+     <TT  CLASS="filename" >/usr/local/php/lib/php/extensions/debug-non-zts-20010901</TT
+>
+     or
+     <TT  CLASS="filename" >/usr/local/php/lib/php/extensions/no-debug-zts-20010901</TT
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      <B  CLASS="function" >dl()</B
+> is <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >not</I
+></SPAN
+> supported in
+      multithreaded Web servers. Use the <TT  CLASS="literal" >extensions</TT
+>
+      statement in your <TT  CLASS="filename" >php.ini</TT
+> when operating under such
+      an environment. However, the <TT  CLASS="literal" >CGI</TT
+> and
+      <TT  CLASS="literal" >CLI</TT
+> build are <SPAN  CLASS="strong" ><B  CLASS="emphasis" >not</B
+></SPAN
+>
+      affected !
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      <B  CLASS="function" >dl()</B
+> is case sensitive on Unix platforms.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>该函数在<SPAN HREF="#">安全模式</A
+>中已被屏蔽。</P
+></BLOCKQUOTE
+></DIV
+><P  >     See also
+     <SPAN HREF="#">Extension Loading Directives</A
+>
+     and <SPAN HREF="#"><B  CLASS="function" >extension_loaded()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>extension_loaded</name>
+            <signature><![CDATA[bool extension_loaded ( string name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87828" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >extension_loaded</B
+> ( string name)<BR  ></BR
+><P  >     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the extension identified by <TT  CLASS="parameter" ><I  >name</I
+></TT
+>
+     is loaded, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN87841" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >extension_loaded()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">if (!</font><font  color="#0000BB">extension_loaded</font><font  color="#007700">(</font><font  color="#DD0000">'gd'</font><font  color="#007700">)) {<br  />    if (!</font><font  color="#0000BB">dl</font><font  color="#007700">(</font><font  color="#DD0000">'gd.so'</font><font  color="#007700">)) {<br  />        exit;<br  />    }<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     You can see the names of various extensions by using
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+> or if you're using the
+     <TT  CLASS="literal" >CGI</TT
+> or <TT  CLASS="literal" >CLI</TT
+> version of
+     <TT  CLASS="literal" >PHP</TT
+> you can use the <TT  CLASS="literal" >-m</TT
+> switch to
+     list all available extensions:
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -m
+[PHP Modules]
+xml
+tokenizer
+standard
+sockets
+session
+posix
+pcre
+overload
+mysql
+mbstring
+ctype
+
+[Zend Modules]</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      <B  CLASS="function" >extension_loaded()</B
+> uses the internal extension name
+      to test whether a certain extension is available or not. Most internal
+      extension names are written in lower case but there may be extension
+      available which also use uppercase letters. Be warned that this
+      function compares <SPAN  CLASS="strong" ><B  CLASS="emphasis" >case sensitive</B
+></SPAN
+> !
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >get_loaded_extensions()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_extension_funcs()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >dl()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_cfg_var</name>
+            <signature><![CDATA[string get_cfg_var ( string varname)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87865" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >get_cfg_var</B
+> ( string varname)<BR  ></BR
+><P  >     Returns the current value of the PHP configuration variable
+     specified by <TT  CLASS="parameter" ><I  >varname</I
+></TT
+>, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if an
+     error occurs.
+    </P
+><P  >     It will not return configuration information set when the PHP was
+     compiled, or read from an Apache configuration file (using the
+     php3_configuration_option directives).
+    </P
+><P  >     To check whether the system is using a <SPAN HREF="#">configuration file</A
+>, try
+     retrieving the value of the cfg_file_path configuration
+     setting. If this is available, a configuration file is being
+     used.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_current_user</name>
+            <signature><![CDATA[string get_current_user ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87885" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >get_current_user</B
+> ( void )<BR  ></BR
+><P  >     Returns the name of the owner of the current PHP script.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >getmyuid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmygid()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >getmypid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyinode()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >getlastmod()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_defined_constants</name>
+            <signature><![CDATA[array get_defined_constants ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87902" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >get_defined_constants</B
+> ( void )<BR  ></BR
+><P  >     This function returns the names and values of all the constants
+     currently defined.  This includes those created by extensions as
+     well as those created with the <SPAN HREF="#"><B  CLASS="function" >define()</B
+></A
+>
+     function.
+    </P
+><P  >     For example the line below:
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN87911" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_defined_constants</font><font  color="#007700">());<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       will print a list like:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+    [E_ERROR] => 1
+    [E_WARNING] => 2
+    [E_PARSE] => 4
+    [E_NOTICE] => 8
+    [E_CORE_ERROR] => 16
+    [E_CORE_WARNING] => 32
+    [E_COMPILE_ERROR] => 64
+    [E_COMPILE_WARNING] => 128
+    [E_USER_ERROR] => 256
+    [E_USER_WARNING] => 512
+    [E_USER_NOTICE] => 1024
+    [E_ALL] => 2047
+    [TRUE] => 1
+)</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >get_loaded_extensions()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_defined_functions()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >get_defined_vars()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_extension_funcs</name>
+            <signature><![CDATA[array get_extension_funcs ( string module_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87923" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >get_extension_funcs</B
+> ( string module_name)<BR  ></BR
+><P  >     This function returns the names of all the functions defined in
+     the module indicated by <TT  CLASS="parameter" ><I  >module_name</I
+></TT
+>.
+    </P
+><P  >     For example the lines below
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN87934" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_extension_funcs</font><font  color="#007700">(</font><font  color="#DD0000">"xml"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_extension_funcs</font><font  color="#007700">(</font><font  color="#DD0000">"gd"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       will print a list of the functions in the modules
+       <TT  CLASS="varname" >xml</TT
+> and <TT  CLASS="varname" >gd</TT
+> respectively.
+      </P
+><P  ></P
+></DIV
+>
+    </P
+><P  >     See also: <SPAN HREF="#"><B  CLASS="function" >get_loaded_extensions()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_include_path</name>
+            <signature><![CDATA[string get_include_path ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87945" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >get_include_path</B
+> ( void )<BR  ></BR
+><P  >     Gets the current <SPAN HREF="#">include_path</A
+>
+     configuration option value.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN87954" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >get_include_path()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// Works as of PHP 4.3.0<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">get_include_path</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// Works in all PHP versions<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">ini_get</font><font  color="#007700">(</font><font  color="#DD0000">'include_path'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >restore_include_path()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >set_include_path()</B
+></A
+>, and 
+     <SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_included_files</name>
+            <signature><![CDATA[array get_included_files ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN87967" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >get_included_files</B
+> ( void )<BR  ></BR
+><P  >     Returns an array of the names of all files that have been
+     included using <SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >include_once()</B
+></A
+>, <SPAN HREF="#"><B  CLASS="function" >require()</B
+></A
+>
+     or <SPAN HREF="#"><B  CLASS="function" >require_once()</B
+></A
+>.
+    </P
+><P  >     The script originally called is considered an "included file," so
+     it will be listed together with the files referenced by
+     <SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+> and family.
+    </P
+><P  >     Files that are included or required multiple times only show up
+     once in the returned array.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Files included using the <TT  CLASS="literal" >auto_prepend_file</TT
+>
+      configuration directive are not included in the returned array.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN87985" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >get_included_files()</B
+> example (<TT  CLASS="filename" >abc.php</TT
+>)</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">include </font><font  color="#DD0000">'test1.php'</font><font  color="#007700">;<br  />include_once </font><font  color="#DD0000">'test2.php'</font><font  color="#007700">;<br  />require </font><font  color="#DD0000">'test3.php'</font><font  color="#007700">;<br  />require_once </font><font  color="#DD0000">'test4.php'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$included_files </font><font  color="#007700">= </font><font  color="#0000BB">get_included_files</font><font  color="#007700">();<br  /><br  />foreach (</font><font  color="#0000BB">$included_files </font><font  color="#007700">as </font><font  color="#0000BB">$filename</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"$filename\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       will generate the following output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >abc.php
+test1.php
+test2.php
+test3.php
+test4.php</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      In PHP 4.0.1pl2 and previous versions
+      <B  CLASS="function" >get_included_files()</B
+> assumed that the
+      required files ended in the extension <TT  CLASS="literal" >.php</TT
+>;
+      other extensions would not be returned.  The array returned by
+      <B  CLASS="function" >get_included_files()</B
+> was an associative array
+      and only listed files included by <SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+>
+      and <SPAN HREF="#"><B  CLASS="function" >include_once()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >include_once()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >require()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >require_once()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >get_required_files()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_loaded_extensions</name>
+            <signature><![CDATA[array get_loaded_extensions ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88009" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >get_loaded_extensions</B
+> ( void )<BR  ></BR
+><P  >     This function returns the names of all the modules compiled and
+     loaded in the PHP interpreter.
+    </P
+><P  >     For example the line below
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN88017" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_loaded_extensions</font><font  color="#007700">());<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       will print a list like:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+   [0] => xml
+   [1] => wddx
+   [2] => standard
+   [3] => session
+   [4] => posix
+   [5] => pgsql
+   [6] => pcre
+   [7] => gd
+   [8] => ftp
+   [9] => db
+   [10] => calendar
+   [11] => bcmath
+)</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >get_extension_funcs()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >extension_loaded()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >dl()</B
+></A
+>, and 
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_magic_quotes_gpc</name>
+            <signature><![CDATA[int get_magic_quotes_gpc ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88030" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >get_magic_quotes_gpc</B
+> ( void )<BR  ></BR
+><P  >     Returns the current active configuration setting of <SPAN HREF="#">magic_quotes_gpc</A
+> (0 for
+     off, 1 for on).
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      If the directive <SPAN HREF="#">      magic_quotes_sybase</A
+> is ON it will completely 
+      override <TT  CLASS="parameter" ><I  >magic_quotes_gpc</I
+></TT
+>.  So even
+      when <B  CLASS="function" >get_magic_quotes()</B
+> returns
+      <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> neither double quotes, backslashes or NUL's will
+      be escaped.  Only single quotes will be escaped. In this
+      case they'll look like: <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >''</I
+></SPAN
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     Keep in mind that <SPAN HREF="#">     magic_quotes_gpc</A
+> can not be set at runtime.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN88048" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >get_magic_quotes_gpc()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">get_magic_quotes_gpc</font><font  color="#007700">();         </font><font  color="#FF8000">// 1<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'lastname'</font><font  color="#007700">];             </font><font  color="#FF8000">// O\'reilly<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">addslashes</font><font  color="#007700">(</font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'lastname'</font><font  color="#007700">]); </font><font  color="#FF8000">// O\\\'reilly<br  /><br  /></font><font  color="#007700">if (!</font><font  color="#0000BB">get_magic_quotes_gpc</font><font  color="#007700">()) {<br  />    </font><font  color="#0000BB">$lastname </font><font  color="#007700">= </font><font  color="#0000BB">addslashes</font><font  color="#007700">(</font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'lastname'</font><font  color="#007700">]);<br  />} else {<br  />    </font><font  color="#0000BB">$lastname </font><font  color="#007700">= </font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'lastname'</font><font  color="#007700">];<br  />}<br  /><br  />echo </font><font  color="#0000BB">$lastname</font><font  color="#007700">; </font><font  color="#FF8000">// O\'reilly<br  /></font><font  color="#0000BB">$sql </font><font  color="#007700">= </font><font  color="#DD0000">"INSERT INTO lastnames (lastname) VALUES ('$lastname')"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >addslashes()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >stripslashes()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_magic_quotes_runtime()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_magic_quotes_runtime</name>
+            <signature><![CDATA[int get_magic_quotes_runtime ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88061" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >get_magic_quotes_runtime</B
+> ( void )<BR  ></BR
+><P  >     Returns the current active configuration setting of <SPAN HREF="#">magic_quotes_runtime</A
+>
+     (0 for off, 1 for on).
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >get_magic_quotes_gpc()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >set_magic_quotes_runtime()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_required_files</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88077" ></A
+><H2  >Description</H2
+><P  >     This function is an alias of <SPAN HREF="#"><B  CLASS="function" >get_included_files()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getenv</name>
+            <signature><![CDATA[string getenv ( string varname)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88085" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >getenv</B
+> ( string varname)<BR  ></BR
+><P  >     Returns the value of the environment variable
+     <TT  CLASS="parameter" ><I  >varname</I
+></TT
+>, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on an error.
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN88096" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$ip </font><font  color="#007700">= </font><font  color="#0000BB">getenv</font><font  color="#007700">(</font><font  color="#DD0000">"REMOTE_ADDR"</font><font  color="#007700">); </font><font  color="#FF8000">// get the ip number of the user<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     You can see a list of all the environmental variables by using
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>. You can find out what many of them
+     mean by taking a look at the <SPAN HREF="#">CGI
+     specification</A
+>, specifically the <SPAN HREF="#">page on environmental variables</A
+>.
+    </P
+><P  >     </P><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       This function does not work in ISAPI mode.
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >putenv()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getlastmod</name>
+            <signature><![CDATA[int getlastmod ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88111" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >getlastmod</B
+> ( void )<BR  ></BR
+><P  >     Returns the time of the last modification of the current
+     page. The value returned is a Unix timestamp, suitable for
+     feeding to <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+>. Returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN88121" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >getlastmod()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// outputs e.g. 'Last modified: March 04 1998 20:43:59.'<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Last modified: " </font><font  color="#007700">. </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"F d Y H:i:s."</font><font  color="#007700">, </font><font  color="#0000BB">getlastmod</font><font  color="#007700">());<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      If you're interested in getting the last modification time 
+      of a different file, consider using <SPAN HREF="#"><B  CLASS="function" >filemtime()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyuid()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >getmygid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_current_user()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyinode()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmypid()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >filemtime()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getmygid</name>
+            <signature><![CDATA[int getmygid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88140" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >getmygid</B
+> ( void )<BR  ></BR
+><P  >     Returns the group ID of the current script, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >getmyuid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmypid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_current_user()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyinode()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >getlastmod()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getmyinode</name>
+            <signature><![CDATA[int getmyinode ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88158" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >getmyinode</B
+> ( void )<BR  ></BR
+><P  >     Returns the current script's inode, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >getmygid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyuid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_current_user()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmypid()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >getlastmod()</B
+></A
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>该函数不适用于 Windows 平台！
+</P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getmypid</name>
+            <signature><![CDATA[int getmypid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88178" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >getmypid</B
+> ( void )<BR  ></BR
+><P  >     Returns the current PHP process ID, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      Process IDs are not unique, thus they are a weak entropy
+      source. We recommend against relying on pids in
+      security-dependent contexts.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >getmygid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyuid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_current_user()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyinode()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >getlastmod()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getmyuid</name>
+            <signature><![CDATA[int getmyuid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88198" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >getmyuid</B
+> ( void )<BR  ></BR
+><P  >     Returns the user ID of the current script, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >getmygid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmypid()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_current_user()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >getmyinode()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >getlastmod()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getopt</name>
+            <signature><![CDATA[array getopt ( string options)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88216" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >getopt</B
+> ( string options)<BR  ></BR
+><P  >     Returns an associative array of option / argument pairs based on the
+     options format specified in <TT  CLASS="parameter" ><I  >options</I
+></TT
+>, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>
+     on an error.
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN88228" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// parse the command line ($GLOBALS['argv'])<br  /></font><font  color="#0000BB">$options </font><font  color="#007700">= </font><font  color="#0000BB">getopt</font><font  color="#007700">(</font><font  color="#DD0000">"f:hp:"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     The <TT  CLASS="parameter" ><I  >options</I
+></TT
+> parameter may contain the following
+     elements: individual characters, and characters followed by a colon to
+     indicate an option argument is to follow.  For example, an option string
+     <TT  CLASS="literal" >x</TT
+> recognizes an option <TT  CLASS="literal" >-x</TT
+>, and an
+     option string <TT  CLASS="literal" >x:</TT
+> recognizes an option and argument
+     <TT  CLASS="literal" >-x argument</TT
+>.  It does not matter if an argument has
+     leading white space.
+    </P
+><P  >     This function will return an array of option / argument pairs.  If an
+     option does not have an argument, the value will be set to <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>该函数不适用于 Windows 平台！
+</P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getrusage</name>
+            <signature><![CDATA[array getrusage ( [int who])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88244" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >getrusage</B
+> ( [int who])<BR  ></BR
+><P  >     This is an interface to getrusage(2). It returns an associative
+     array containing the data returned from the system call. If who
+     is 1, getrusage will be called with RUSAGE_CHILDREN.
+    </P
+><P  >     All entries are accessible by using their documented field names.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN88255" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >getrusage()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$dat </font><font  color="#007700">= </font><font  color="#0000BB">getrusage</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_nswap"</font><font  color="#007700">];         </font><font  color="#FF8000">// number of swaps<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_majflt"</font><font  color="#007700">];        </font><font  color="#FF8000">// number of page faults<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_utime.tv_sec"</font><font  color="#007700">];  </font><font  color="#FF8000">// user time used (seconds)<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_utime.tv_usec"</font><font  color="#007700">]; </font><font  color="#FF8000">// user time used (microseconds)<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     See your system's man page on getrusage(2) for more details.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>该函数不适用于 Windows 平台！
+</P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ini_alter</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88266" ></A
+><H2  >Description</H2
+><P  >     This function is an alias of <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ini_get_all</name>
+            <signature><![CDATA[array ini_get_all ( [string extension])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88274" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >ini_get_all</B
+> ( [string extension])<BR  ></BR
+><P  >     Returns all the registered configuration options as an
+     associative array.  If the optional <TT  CLASS="parameter" ><I  >extension</I
+></TT
+>
+     parameter is set, returns only options specific for that
+     extension.
+    </P
+><P  >     The returned array uses the directive name as the array key, with
+     elements of that array being <TT  CLASS="literal" >global_value</TT
+> (set in
+     <TT  CLASS="filename" >php.ini</TT
+>), <TT  CLASS="literal" >local_value</TT
+> (perhaps set with
+     <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+> or <TT  CLASS="filename" >.htaccess</TT
+>), and
+     <TT  CLASS="literal" >access</TT
+> (the access level).  See the manual section
+     on <SPAN HREF="#">configuration changes</A
+>
+     for information on what access levels mean.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      It's possible for a directive to have multiple access levels, which is
+      why <TT  CLASS="literal" >access</TT
+> shows the appropriate bitmask values.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN88296" ></A
+><P  ><B  >例子 1. A <B  CLASS="function" >ini_get_all()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$inis </font><font  color="#007700">= </font><font  color="#0000BB">ini_get_all</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$inis</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       Partial output may look like:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+    [allow_call_time_pass_reference] => Array
+    (
+        [global_value] => 1
+        [local_value] => 1
+        [access] => 6
+    )
+    [allow_url_fopen] => Array
+    (
+        [global_value] => 1
+        [local_value] => 1
+        [access] => 7
+    )
+
+    ...
+
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also: <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >ini_restore()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_loaded_extensions()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ini_get</name>
+            <signature><![CDATA[string ini_get ( string varname)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88312" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >ini_get</B
+> ( string varname)<BR  ></BR
+><P  >     Returns the value of the configuration option on success.  Failure, such
+     as querying for a non-existant value, will return an empty string.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >When querying boolean values: </B
+>
+      A boolean ini value of <TT  CLASS="literal" >off</TT
+> will be returned as an
+      empty string while a boolean ini value of <TT  CLASS="literal" >on</TT
+> will
+      be returned as "1".
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >When querying memory size values: </B
+>
+      Many ini memory size values, such as <TT  CLASS="literal" >upload_max_filesize</TT
+>
+      are stored in the <TT  CLASS="filename" >php.ini</TT
+> file in shorthand notation.  <B  CLASS="function" >ini_get()</B
+>
+      will return the exact string stored in the <TT  CLASS="filename" >php.ini</TT
+> file, <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >NOT</I
+></SPAN
+>
+      its integer equivalent.  Attempting normal arithmetic functions on these values
+      will not have otherwise expected results.
+      </P><DIV  CLASS="informalexample" ><A  NAME="AEN88334" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">/*<br  />Our php.ini contains the following settings:<br  /><br  />display_errors = On<br  />register_globals = Off<br  />post_max_size = 8M<br  />*/<br  /><br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'display_errors = ' </font><font  color="#007700">. </font><font  color="#0000BB">ini_get</font><font  color="#007700">(</font><font  color="#DD0000">'display_errors'</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">'register_globals = ' </font><font  color="#007700">. </font><font  color="#0000BB">ini_get</font><font  color="#007700">(</font><font  color="#DD0000">'register_globals'</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">'post_max_size = ' </font><font  color="#007700">. </font><font  color="#0000BB">ini_get</font><font  color="#007700">(</font><font  color="#DD0000">'post_max_size'</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">'post_max_size+1 = ' </font><font  color="#007700">. (</font><font  color="#0000BB">ini_get</font><font  color="#007700">(</font><font  color="#DD0000">'post_max_size'</font><font  color="#007700">)+</font><font  color="#0000BB">1</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">; <br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >        This script will produce:
+       </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >display_errors = 1
+register_globals = 0
+post_max_size = 8M
+post_max_size+1 = 9</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >get_cfg_var()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >ini_get_all()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >ini_restore()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ini_restore</name>
+            <signature><![CDATA[void ini_restore ( string varname)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88347" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >ini_restore</B
+> ( string varname)<BR  ></BR
+><P  >     Restores a given configuration option to its original value.
+    </P
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >ini_get_all()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ini_set</name>
+            <signature><![CDATA[string ini_set ( string varname, string newvalue)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN88364" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >ini_set</B
+> ( string varname, string newvalue)<BR  ></BR
+><P  >     Sets the value of the given configuration option. Returns the old
+     value on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure. The configuration option
+     will keep this new value during the script's execution, and will
+     be restored at the script's ending.
+    </P
+><P  >     Not all the available options can be changed using
+     <B  CLASS="function" >ini_set()</B
+>. Below is a table with a list of all
+     PHP options (as of PHP 4.2.0), indicating which ones can be
+     changed/set and at what level.
+    </P
+><P  >      </P><DIV  CLASS="table" ><A  NAME="AEN88380" ></A
+><P  ><B  >表格 1. Configuration options</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Name</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Default</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Changeable</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.allow_dcom</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.autoregister_typelib</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.autoregister_verbose</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.autoregister_casesensitive</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.typelib_file</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >crack.default_dictionary</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.encode_unicode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"ISO-8859-15"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_unicode_motorola</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"UCS-2BE"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_unicode_intel</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"UCS-2LE"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.encode_jis</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_jis_motorola</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"JIS"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_jis_intel</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"JIS"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.generate_warnings</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.autocommit</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"128"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.max_connections</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"128"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.max_results</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"128"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.batchSize</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1000"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.default_host</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.default_user</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"_SYSTEM"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.default_password</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.default_database</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >fbsql.default_database_password</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >hwapi.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >hyperwave.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >hyperwave.default_port</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"418"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >iconv.input_encoding</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ICONV_INPUT_ENCODING</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >iconv.output_encoding</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ICONV_OUTPUT_ENCODING</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >iconv.internal_encoding</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ICONV_INTERNAL_ENCODING</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.default_host</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.default_user</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.default_password</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.blobinfile</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.textasvarchar</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.byteasvarchar</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.charasvarchar</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ifx.nullformat</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ingres.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ingres.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ingres.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ingres.default_database</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ingres.default_user</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ingres.default_password</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.default_user</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.default_password</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.timestampformat</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"%m/%d/%Y%H:%M:%S"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.dateformat</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"%m/%d/%Y"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ibase.timeformat</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"%H:%M:%S"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >java.class.path</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >java.home</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >java.library.path</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >java.library</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >JAVALIB</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >java.library</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ldap.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mbstring.detect_order</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mbstring.http_input</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mbstring.http_output</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mbstring.internal_encoding</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mbstring.substitute_character</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mbstring.func_overload</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mcrypt.algorithms_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mcrypt.modes_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mime_magic.magicfile</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"/usr/share/misc/magic.mime"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.max_procs</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"25"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.min_error_severity</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"10"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.min_message_severity</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"10"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.compatability_mode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.connect_timeout</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"5"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.timeout</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"60"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.textsize</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.textlimit</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.batchsize</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.datetimeconvert</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mssql.secure_connection</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_host</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_user</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_password</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_port</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_socket</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ncurses.value</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"42"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ncurses.string</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"foobar"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.default_db</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.default_user</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.default_pw</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.defaultlrl</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"4096"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.defaultbinmode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >odbc.check_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.defaulthost</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"test.signio.com"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" > </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.defaulthost</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"test-payflow.verisign.com"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" > </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.defaultport</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"443"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.defaulttimeout</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"30"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.proxyaddress</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.proxyport</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.proxylogon</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pfpro.proxypassword</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pgsql.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pgsql.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pgsql.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pgsql.auto_reset_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pgsql.ignore_notice</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pgsql.log_notice</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.save_path</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"/tmp"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.name</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"PHPSESSID"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.save_handler</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"files"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.auto_start</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.gc_probability</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.gc_divisor</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"100"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.gc_maxlifetime</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1440"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.serialize_handler</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"php"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.cookie_lifetime</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.cookie_path</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"/"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.cookie_domain</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.cookie_secure</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.use_cookies</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.use_only_cookies</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.referer_check</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.entropy_file</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.entropy_length</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.cache_limiter</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"nocache"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.cache_expire</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"180"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.use_trans_sid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >session.encode_sources</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"globals,track"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.active</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.bail</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.warning</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.callback</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >assert.quiet_eval</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_protected_env_vars</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SAFE_MODE_PROTECTED_ENV_VARS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_allowed_env_vars</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SAFE_MODE_ALLOWED_ENV_VARS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >url_rewriter.tags</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"a=href,area=href,frame=src,form=fakeentry"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sybct.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sybct.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sybct.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sybct.min_server_severity</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"10"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sybct.min_client_severity</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"10"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sybct.hostname</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >vpopmail.directory</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >zlib.output_compression</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >zlib.output_compression_level</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >define_syslog_variables</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >highlight.bg</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >HL_BG_COLOR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >highlight.comment</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >HL_COMMENT_COLOR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >highlight.default</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >HL_DEFAULT_COLOR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >highlight.html</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >HL_HTML_COLOR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >highlight.keyword</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >HL_KEYWORD_COLOR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >highlight.string</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >HL_STRING_COLOR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >allow_call_time_pass_reference</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >asp_tags</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >display_errors</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >display_startup_errors</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >enable_dl</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >expose_php</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >html_errors</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >xmlrpc_errors</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >xmlrpc_error_number</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ignore_user_abort</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >implicit_flush</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >log_errors</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >log_errors_max_len</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1024"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ignore_repeated_errors</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ignore_repeated_source</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >magic_quotes_gpc</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >magic_quotes_runtime</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >magic_quotes_sybase</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >output_buffering</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >output_handler</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >register_argc_argv</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >register_globals</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_include_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_gid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >short_open_tag</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >DEFAULT_SHORT_OPEN_TAG</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sql.safe_mode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >track_errors</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >y2k_compliance</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >unserialize_callback_func</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >arg_separator.output</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"&"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >arg_separator.input</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"&"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >auto_append_file</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >auto_prepend_file</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >doc_root</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >default_charset</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SAPI_DEFAULT_CHARSET</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >default_mimetype</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SAPI_DEFAULT_MIMETYPE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >error_log</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >extension_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_EXTENSION_DIR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >gpc_order</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"GPC"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >include_path</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INCLUDE_PATH</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >max_execution_time</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"30"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >open_basedir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_exec_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >upload_max_filesize</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"2M"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >file_uploads</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >post_max_size</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"8M"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >upload_tmp_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >user_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >variables_order</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >error_append_string</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >error_prepend_string</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SMTP</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"localhost"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >smtp_port</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >25</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >browscap</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >error_reporting</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >memory_limit</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"8M"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >precision</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"14"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sendmail_from</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sendmail_path</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >DEFAULT_SENDMAIL_PATH</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >disable_classes</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="filename" >php.ini</TT
+> only</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >disable_functions</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="filename" >php.ini</TT
+> only</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >allow_url_fopen</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >always_populate_raw_post_data</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM|PHP_INI_PERDIR</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >xbithack</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >engine</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >last_modified</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >child_terminate</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >async_send</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     </P><DIV  CLASS="table" ><A  NAME="AEN89324" ></A
+><P  ><B  >表格 2. Definition of PHP_INI_* constants</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Constant</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Value</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Meaning</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_USER</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Entry can be set in user scripts</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Entry can be set in <TT  CLASS="filename" >php.ini</TT
+>, <TT  CLASS="filename" >.htaccess</TT
+> or <TT  CLASS="filename" >httpd.conf</TT
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Entry can be set in <TT  CLASS="filename" >php.ini</TT
+> or <TT  CLASS="filename" >httpd.conf</TT
+> 
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >7</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Entry can be set anywhere</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     See also: <SPAN HREF="#"><B  CLASS="function" >get_cfg_var()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >ini_get_all()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >ini_restore()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>main</name>
+            <signature><![CDATA[     There is no function named main() except 
+     in the PHP source.  In PHP 4.3.0, a new type of error handling 
+     in the PHP source (php_error_docref) was introduced.  One feature
+     is to provide links to a manual page in PHP error messages when 
+     the PHP directives html_errors 
+     (on by default) and docref_root
+     (on by default until PHP 4.3.2) are set.
+         
+    ]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89364" ></A
+><H2  >Description</H2
+><P  >     There is no function named <B  CLASS="function" >main()</B
+> except 
+     in the PHP source.  In PHP 4.3.0, a new type of error handling 
+     in the PHP source (php_error_docref) was introduced.  One feature
+     is to provide links to a manual page in PHP error messages when 
+     the PHP directives <SPAN HREF="#">html_errors</A
+> 
+     (on by default) and <SPAN HREF="#">docref_root</A
+>
+     (on by default until PHP 4.3.2) are set.
+    </P
+><P  >     Sometimes error messages refer to a manual page for the function 
+     <B  CLASS="function" >main()</B
+> which is why this page exists.   Please 
+     add a user comment below that mentions what PHP function caused the 
+     error that linked to <B  CLASS="function" >main()</B
+> and it will be 
+     fixed and properly documented.
+    </P
+><P  >     </P><DIV  CLASS="table" ><A  NAME="AEN89374" ></A
+><P  ><B  >表格 1. Known errors that point to <B  CLASS="function" >main()</B
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Function name</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >No longer points here as of</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4.3.2</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="function" >include_once()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4.3.2</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="function" >require()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4.3.2</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="function" >require_once()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4.3.2</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     See also <SPAN HREF="#">html_errors</A
+>
+     and <SPAN HREF="#">display_errors</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>memory_get_usage</name>
+            <signature><![CDATA[int memory_get_usage ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89406" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >memory_get_usage</B
+> ( void )<BR  ></BR
+><P  >     Returns the amount of memory, in bytes, that's currently being
+     allocated to your PHP script.
+    </P
+><P  >     <B  CLASS="function" >memory_get_usage()</B
+> will only be defined if your PHP
+     is compiled with the <TT  CLASS="literal" >--enable-memory-limit</TT
+> 
+     configuration option.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89417" ></A
+><P  ><B  >例子 1. A <B  CLASS="function" >memory_get_usage()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// This is only an example, the numbers below will <br  />// differ depending on your system<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">memory_get_usage</font><font  color="#007700">() . </font><font  color="#DD0000">"\n"</font><font  color="#007700">; </font><font  color="#FF8000">// 36640<br  /><br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= </font><font  color="#0000BB">str_repeat</font><font  color="#007700">(</font><font  color="#DD0000">"Hello"</font><font  color="#007700">, </font><font  color="#0000BB">4242</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">memory_get_usage</font><font  color="#007700">() . </font><font  color="#DD0000">"\n"</font><font  color="#007700">; </font><font  color="#FF8000">// 57960<br  /><br  /></font><font  color="#007700">unset(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">memory_get_usage</font><font  color="#007700">() . </font><font  color="#DD0000">"\n"</font><font  color="#007700">; </font><font  color="#FF8000">// 36744<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also 
+     <SPAN HREF="#">memory_limit</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>php_ini_scanned_files</name>
+            <signature><![CDATA[string php_ini_scanned_files ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89427" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >php_ini_scanned_files</B
+> ( void )<BR  ></BR
+><P  >      <B  CLASS="function" >php_ini_scanned_files()</B
+> returns a comma-separated
+      list of configuration files parsed after <TT  CLASS="filename" >php.ini</TT
+>.  These files are
+      found in a directory defined by the
+      <TT  CLASS="literal" >--with-config-file-scan-dir</TT
+>.  option which is set
+      during compilation.
+     </P
+><P  >      Returns a comma-separated string of .ini files on success.  If the
+      directive <TT  CLASS="literal" >--with-config-files-scan-dir</TT
+> wasn't set,
+      <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> is returned.  If it was set and the directory was empty, an
+      empty string is returned.  If a file is unrecognizable, the file will
+      still make it into the returned string but a PHP error will also result.
+      This PHP error will be seen both at compile time and while using
+      <B  CLASS="function" >php_ini_scanned_files()</B
+>.
+     </P
+><P  >      The returned configuration files also include the path as declared in
+      the <TT  CLASS="literal" >--with-config-file-scan-dir</TT
+> directive. Also, each
+      comma is followed by a newline.
+     </P
+><P  >      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89444" ></A
+><P  ><B  >例子 1. A simple example to list the returned ini files</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">$filelist </font><font  color="#007700">= </font><font  color="#0000BB">php_ini_scanned_files</font><font  color="#007700">()) {<br  />    if (</font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$filelist</font><font  color="#007700">) > </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />        </font><font  color="#0000BB">$files </font><font  color="#007700">= </font><font  color="#0000BB">explode</font><font  color="#007700">(</font><font  color="#DD0000">','</font><font  color="#007700">, </font><font  color="#0000BB">$filelist</font><font  color="#007700">);<br  /><br  />        foreach (</font><font  color="#0000BB">$files </font><font  color="#007700">as </font><font  color="#0000BB">$file</font><font  color="#007700">) {<br  />            echo </font><font  color="#DD0000">"<li>" </font><font  color="#007700">. </font><font  color="#0000BB">trim</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">) . </font><font  color="#DD0000">"</li>\n"</font><font  color="#007700">;<br  />        }<br  />    }<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >      See also <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+> and <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>.
+     </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>php_logo_guid</name>
+            <signature><![CDATA[string php_logo_guid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89454" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >php_logo_guid</B
+> ( void )<BR  ></BR
+><P  >     This function returns the ID which can be used to display the PHP logo
+     using the built-in image.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89462" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >php_logo_guid()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'<img src="' </font><font  color="#007700">. </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'PHP_SELF'</font><font  color="#007700">] .<br  />     </font><font  color="#DD0000">'?=' </font><font  color="#007700">. </font><font  color="#0000BB">php_logo_guid</font><font  color="#007700">() . </font><font  color="#DD0000">'" alt="PHP Logo !" />'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >phpversion()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >phpcredits()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >zend_logo_guid()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>php_sapi_name</name>
+            <signature><![CDATA[string php_sapi_name ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89475" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >php_sapi_name</B
+> ( void )<BR  ></BR
+><P  >     <B  CLASS="function" >php_sapi_name()</B
+> returns a lowercase string
+     which describes the type of interface between web server and PHP
+     (Server API, SAPI). In CGI PHP, this string is "cgi", in mod_php
+     for Apache, this string is "apache" and so on.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89484" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >php_sapi_name()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$sapi_type </font><font  color="#007700">= </font><font  color="#0000BB">php_sapi_name</font><font  color="#007700">();<br  />if (</font><font  color="#0000BB">$sapi_type </font><font  color="#007700">== </font><font  color="#DD0000">"cgi"</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"You are using CGI PHP\n"</font><font  color="#007700">;<br  />} else {<br  />    echo </font><font  color="#DD0000">"You are not using CGI PHP\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>php_uname</name>
+            <signature><![CDATA[string php_uname ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89492" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >php_uname</B
+> ( void )<BR  ></BR
+><P  >     <B  CLASS="function" >php_uname()</B
+> returns a <SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+> with a
+     description of the operating system PHP is built on.  If you're just
+     wanting the name of the operating system, consider using the
+     <TT  CLASS="constant" ><B  >PHP_OS</B
+></TT
+> constant.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89503" ></A
+><P  ><B  >例子 1. Some <B  CLASS="function" >php_uname()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">php_uname</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">PHP_OS</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Some possible outputs:<br  />Linux localhost 2.4.21-0.13mdk #1 Fri Mar 14 15:08:06 EST 2003 i686<br  />Linux<br  /><br  />FreeBSD localhost 3.2-RELEASE #15: Mon Dec 17 08:46:02 GMT 2001<br  />FreeBSD<br  /><br  />Windows NT XN1 5.1 build 2600<br  />WINNT<br  />*/<br  /><br  /></font><font  color="#007700">if (</font><font  color="#0000BB">strtoupper</font><font  color="#007700">(</font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">PHP_OS</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">)) === </font><font  color="#DD0000">'WIN'</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">'This is a server using Windows!'</font><font  color="#007700">;<br  />} else {<br  />    echo </font><font  color="#DD0000">'This is a server not using Windows!'</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     There are also some related 
+     <SPAN HREF="#">Predefined PHP
+     constants</A
+> that may come in handy, for example:
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89510" ></A
+><P  ><B  >例子 2. A few OS related constant examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// *nix<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">DIRECTORY_SEPARATOR</font><font  color="#007700">; </font><font  color="#FF8000">// /<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">PHP_SHLIB_SUFFIX</font><font  color="#007700">;    </font><font  color="#FF8000">// so<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">PATH_SEPARATOR</font><font  color="#007700">;      </font><font  color="#FF8000">// :<br  /><br  />// Win*<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">DIRECTORY_SEPARATOR</font><font  color="#007700">; </font><font  color="#FF8000">// \<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">PHP_SHLIB_SUFFIX</font><font  color="#007700">;    </font><font  color="#FF8000">// dll<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">PATH_SEPARATOR</font><font  color="#007700">;      </font><font  color="#FF8000">// ;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >phpversion()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >php_sapi_name()</B
+></A
+>, and 
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>phpcredits</name>
+            <signature><![CDATA[void phpcredits ( [int flag])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89521" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >phpcredits</B
+> ( [int flag])<BR  ></BR
+><P  >     This function prints out the credits listing the PHP developers,
+     modules, etc. It generates the appropriate HTML codes to insert
+     the information in a page. <TT  CLASS="parameter" ><I  >flag</I
+></TT
+> is
+     optional, and it defaults to <TT  CLASS="constant" ><B  >CREDITS_ALL</B
+></TT
+>.
+     To generate a custom credits page, you may want to use the
+     <TT  CLASS="parameter" ><I  >flag</I
+></TT
+> parameter.  For example to print
+     the general credits, you will use somewhere in your code:
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN89534" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />phpcredits</font><font  color="#007700">(</font><font  color="#0000BB">CREDITS_GENERAL</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     And if you want to print the core developers and the
+     documentation group, in a page of its own, you will use:
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN89538" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />phpcredits</font><font  color="#007700">(</font><font  color="#0000BB">CREDITS_GROUP </font><font  color="#007700">+ </font><font  color="#0000BB">CREDITS_DOCS </font><font  color="#007700">+ </font><font  color="#0000BB">CREDITS_FULLPAGE</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     And if you feel like embedding all the credits in your page, then
+     code like the one below will do it:
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN89542" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<html><br  /> <head><br  />  <title>My credits page</title><br  /> </head><br  /> <body><br  /><font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// some code of your own<br  /></font><font  color="#0000BB">phpcredits</font><font  color="#007700">(</font><font  color="#0000BB">CREDITS_ALL </font><font  color="#007700">- </font><font  color="#0000BB">CREDITS_FULLPAGE</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// some more code<br  /></font><font  color="#0000BB">?><br  /></font> </body><br  /></html></font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     </P><DIV  CLASS="table" ><A  NAME="AEN89545" ></A
+><P  ><B  >表格 1. Pre-defined <B  CLASS="function" >phpcredits()</B
+> flags</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >name</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_ALL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          All the credits, equivalent to using: CREDITS_DOCS +
+          CREDITS_GENERAL + CREDITS_GROUP + CREDITS_MODULES +
+          CREDITS_FULLPAGE. It generates a complete stand-alone HTML
+          page with the appropriate tags.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_DOCS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >The credits for the documentation team</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_FULLPAGE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Usually used in combination with the other flags.  Indicates
+          that the a complete stand-alone HTML page needs to be
+          printed including the information indicated by the other
+          flags.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_GENERAL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          General credits: Language design and concept, PHP 4.0
+          authors and SAPI module.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_GROUP</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >A list of the core developers</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_MODULES</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          A list of the extension modules for PHP, and their authors
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_SAPI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          A list of the server API modules for PHP, and their authors
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >phpversion()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >php_logo_guid()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>phpinfo</name>
+            <signature><![CDATA[int phpinfo ( [int what])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89583" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >phpinfo</B
+> ( [int what])<BR  ></BR
+><P  >     Outputs a large amount of information about the current state of
+     PHP. This includes information about PHP compilation options and
+     extensions, the PHP version, server information and environment
+     (if compiled as a module), the PHP environment, OS version
+     information, paths, master and local values of configuration
+     options, HTTP headers, and the PHP License.
+    </P
+><P  >     Because every system is setup differently,
+     <B  CLASS="function" >phpinfo()</B
+> is commonly used to check <SPAN HREF="#">configuration settings</A
+> and for
+     available <SPAN HREF="#">predefined
+     variables</A
+> on a given system.  Also,
+     <B  CLASS="function" >phpinfo()</B
+> is a valuable debugging tool as it
+     contains all EGPCS (Environment, GET, POST, Cookie, Server) data.
+    </P
+><P  >     The output may be customized by passing one or more of the
+     following <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >constants</I
+></SPAN
+> bitwise values summed
+     together in the optional <TT  CLASS="parameter" ><I  >what</I
+></TT
+> parameter.
+     One can also combine the respective constants or bitwise values
+     together with the <SPAN HREF="#">or</A
+> operator.
+    </P
+><P  >     </P><DIV  CLASS="table" ><A  NAME="AEN89602" ></A
+><P  ><B  >表格 1. <B  CLASS="function" >phpinfo()</B
+> options</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Name (constant)</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Value</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_GENERAL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The configuration line, <TT  CLASS="filename" >php.ini</TT
+> location, build date, Web
+          Server, System and more.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_CREDITS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          PHP 4 Credits.  See also <SPAN HREF="#"><B  CLASS="function" >phpcredits()</B
+></A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_CONFIGURATION</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Current Local and Master values for PHP directives.  See
+          also <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_MODULES</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >8</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Loaded modules and their respective settings.  See also
+          <B  CLASS="function" >get_loaded_modules()</B
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_ENVIRONMENT</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >16</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Environment Variable information that's also available in
+          <TT  CLASS="varname" >$_ENV</TT
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_VARIABLES</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >32</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Shows all <SPAN HREF="#">          predefined variables</A
+> from EGPCS (Environment, GET,
+          POST, Cookie, Server).
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_LICENSE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >64</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          PHP License information.  See also the <SPAN HREF="#">license faq</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_ALL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Shows all of the above.  This is the default value.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89652" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >phpinfo()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#FF8000">// Show all information, defaults to INFO_ALL<br  /></font><font  color="#0000BB">phpinfo</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// Show just the module information.<br  />// phpinfo(8) yields identical results.<br  /></font><font  color="#0000BB">phpinfo</font><font  color="#007700">(</font><font  color="#0000BB">INFO_MODULES</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Parts of the information displayed are disabled when the
+      <SPAN HREF="#">expose_php</A
+> configuration setting
+      is set to <TT  CLASS="literal" >off</TT
+>. This includes the PHP and Zend logos,
+      and the credits.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Since PHP 4.3.0, if <SPAN HREF="#">html_errors</A
+>
+      is <TT  CLASS="literal" >off</TT
+>, <B  CLASS="function" >phpinfo()</B
+> outputs plain
+      text instead of HTML.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >    See also <SPAN HREF="#"><B  CLASS="function" >phpversion()</B
+></A
+>,
+    <SPAN HREF="#"><B  CLASS="function" >phpcredits()</B
+></A
+>,
+    <SPAN HREF="#"><B  CLASS="function" >php_logo_guid()</B
+></A
+>, 
+    <SPAN HREF="#"><B  CLASS="function" >ini_get()</B
+></A
+>,
+    <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+>, 
+    <B  CLASS="function" >get_loaded_modules()</B
+>,
+    and the section on <SPAN HREF="#">Predefined
+    Variables</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>phpversion</name>
+            <signature><![CDATA[string phpversion ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89677" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >phpversion</B
+> ( void )<BR  ></BR
+><P  >     Returns a string containing the version of the currently running
+     PHP parser.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      This information is also available in the predefined constant
+      <TT  CLASS="constant" ><B  >PHP_VERSION</B
+></TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89688" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >phpversion()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// prints e.g. 'Current PHP version: 4.1.1'<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'Current PHP version: ' </font><font  color="#007700">. </font><font  color="#0000BB">phpversion</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also 
+     <SPAN HREF="#"><B  CLASS="function" >version_compare()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >phpcredits()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >php_logo_guid()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >zend_version()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>putenv</name>
+            <signature><![CDATA[void putenv ( string setting)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89702" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >putenv</B
+> ( string setting)<BR  ></BR
+><P  >     Adds <TT  CLASS="parameter" ><I  >setting</I
+></TT
+> to the server environment.  The
+     environment variable will only exist for the duration of the current
+     request. At the end of the request the environment is restored to its
+     original state.
+    </P
+><P  >     Setting certain environment variables may be a potential security breach.
+     The <TT  CLASS="literal" >safe_mode_allowed_env_vars</TT
+> directive contains a
+     comma-delimited list of prefixes. In Safe Mode, the user may only alter
+     environment variables whose names begin with the prefixes supplied by
+     this directive. By default, users will only be able to set environment
+     variables that begin with <TT  CLASS="literal" >PHP_</TT
+> (e.g.
+     <TT  CLASS="literal" >PHP_FOO=BAR</TT
+>). Note: if this directive is empty, PHP
+     will let the user modify ANY environment variable!
+    </P
+><P  >     The <TT  CLASS="literal" >safe_mode_protected_env_vars</TT
+> directive contains a
+     comma-delimited list of environment variables, that the end user won't be
+     able to change using <B  CLASS="function" >putenv()</B
+>.  These variables will
+     be protected even if <TT  CLASS="literal" >safe_mode_allowed_env_vars</TT
+> is set
+     to allow to change them.
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      These directives have only effect when <SPAN HREF="#">safe-mode</A
+> itself is enabled!
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89724" ></A
+><P  ><B  >例子 1. Setting an environment variable</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />putenv</font><font  color="#007700">(</font><font  color="#DD0000">"UNIQID=$uniqid"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >getenv()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>restore_include_path</name>
+            <signature><![CDATA[void restore_include_path ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89733" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >restore_include_path</B
+> ( void )<BR  ></BR
+><P  >     Restores the <SPAN HREF="#">include_path</A
+>
+     configuration option back to its original master value as set in
+     <TT  CLASS="filename" >php.ini</TT
+> 
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89743" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >restore_include_path()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">get_include_path</font><font  color="#007700">();  </font><font  color="#FF8000">// .:/usr/local/lib/php<br  /><br  /></font><font  color="#0000BB">set_include_path</font><font  color="#007700">(</font><font  color="#DD0000">'/inc'</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">get_include_path</font><font  color="#007700">();  </font><font  color="#FF8000">// /inc<br  /><br  />// Works as of PHP 4.3.0<br  /></font><font  color="#0000BB">restore_include_path</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// Works in all PHP versions<br  /></font><font  color="#0000BB">ini_restore</font><font  color="#007700">(</font><font  color="#DD0000">'include_path'</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">get_include_path</font><font  color="#007700">();  </font><font  color="#FF8000">// .:/usr/local/lib/php<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >ini_restore()</B
+></A
+>, 
+     <SPAN HREF="#"><B  CLASS="function" >set_include_path()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_include_path()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>set_include_path</name>
+            <signature><![CDATA[string set_include_path ( string new_include_path)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89756" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >set_include_path</B
+> ( string new_include_path)<BR  ></BR
+><P  >     Sets the <SPAN HREF="#">include_path</A
+> 
+     configuration option for the duration of the script.  Returns the old 
+     <SPAN HREF="#">include_path</A
+> on success or 
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89769" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >set_include_path()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// Works as of PHP 4.3.0<br  /></font><font  color="#0000BB">set_include_path</font><font  color="#007700">(</font><font  color="#DD0000">'/inc'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Works in all PHP versions<br  /></font><font  color="#0000BB">ini_set</font><font  color="#007700">(</font><font  color="#DD0000">'include_path'</font><font  color="#007700">, </font><font  color="#DD0000">'/inc'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >get_include_path()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >restore_include_path()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >include()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>set_magic_quotes_runtime</name>
+            <signature><![CDATA[bool set_magic_quotes_runtime ( int new_setting)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89782" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >set_magic_quotes_runtime</B
+> ( int new_setting)<BR  ></BR
+><P  >     Set the current active configuration setting of <SPAN HREF="#">magic_quotes_runtime</A
+> (0
+     for off, 1 for on).
+    </P
+><P  >     See also: <SPAN HREF="#"><B  CLASS="function" >get_magic_quotes_gpc()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >get_magic_quotes_runtime()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>set_time_limit</name>
+            <signature><![CDATA[void set_time_limit ( int seconds)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89799" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >set_time_limit</B
+> ( int seconds)<BR  ></BR
+><P  >     Set the number of seconds a script is allowed to run.  If this is
+     reached, the script returns a fatal error.  The default limit is
+     30 seconds or, if it exists, the
+     <TT  CLASS="literal" >max_execution_time</TT
+> value defined in the <TT  CLASS="filename" >php.ini</TT
+>.
+     If <TT  CLASS="parameter" ><I  >seconds</I
+></TT
+> is set to zero, no time limit is 
+     imposed.
+    </P
+><P  >     When called, <B  CLASS="function" >set_time_limit()</B
+> restarts the
+     timeout counter from zero. In other words, if the timeout is the
+     default 30 seconds, and 25 seconds into script execution a call
+     such as set_time_limit(20) is made, the script will run for a
+     total of 45 seconds before timing out.
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      <B  CLASS="function" >set_time_limit()</B
+> has no effect when PHP is
+      running in <SPAN HREF="#">安全模式</A
+>. There is no workaround other than turning
+      off safe mode or changing the time limit in the <TT  CLASS="filename" >php.ini</TT
+>.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      The <B  CLASS="function" >set_time_limit()</B
+> function and the
+      configuration directive <SPAN HREF="#">max_execution_time</A
+> only
+      affect the execution time of the script itself.  Any time spent
+      on activity that happens outside the execution of the script
+      such as system calls using <SPAN HREF="#"><B  CLASS="function" >system()</B
+></A
+>, stream
+      operations, database queries, etc. is not included when determining the
+      maximum time that the script has been running.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also: <SPAN HREF="#">max_execution_time</A
+> and <SPAN HREF="#">max_input_time</A
+> ini directives.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>version_compare</name>
+            <signature><![CDATA[int version_compare ( string version1, string version2 [, string operator])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89830" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >version_compare</B
+> ( string version1, string version2 [, string operator])<BR  ></BR
+><P  >     <B  CLASS="function" >version_compare()</B
+> compares two
+     "PHP-standardized" version number strings. This is useful if you
+     would like to write programs working only on some versions of
+     PHP.
+    </P
+><P  >     <B  CLASS="function" >version_compare()</B
+> returns -1 if the first
+     version is lower than the second, 0 if they are equal, and +1 if
+     the second is lower.
+    </P
+><P  >     The function first replaces <TT  CLASS="literal" >_</TT
+>, <TT  CLASS="literal" >-</TT
+>
+     and <TT  CLASS="literal" >+</TT
+> with a dot <TT  CLASS="literal" >.</TT
+> in the version 
+     strings and also inserts dots <TT  CLASS="literal" >.</TT
+> before and after any 
+     non number so that for example '4.3.2RC1' becomes '4.3.2.RC.1'. Then it 
+     splits the results like if you were using explode('.', $ver). Then it 
+     compares the parts starting from left to right. If a part contains 
+     special version strings these are handled in the following order: 
+     <TT  CLASS="literal" >dev</TT
+> < <TT  CLASS="literal" >alpha</TT
+> = 
+     <TT  CLASS="literal" >a</TT
+> < <TT  CLASS="literal" >beta</TT
+> = 
+     <TT  CLASS="literal" >b</TT
+> < <TT  CLASS="literal" >RC</TT
+> < 
+     <TT  CLASS="literal" >pl</TT
+>. This way not only versions with different levels
+     like '4.1' and '4.1.2' can be compared but also any PHP specific version
+     containing development state.
+    </P
+><P  >     If you specify the third optional <TT  CLASS="parameter" ><I  >operator</I
+></TT
+>
+     argument, you can test for a particular relationship. The
+     possible operators are: <TT  CLASS="literal" ><</TT
+>,
+     <TT  CLASS="literal" >lt</TT
+>, <TT  CLASS="literal" ><=</TT
+>,
+     <TT  CLASS="literal" >le</TT
+>, <TT  CLASS="literal" >></TT
+>,
+     <TT  CLASS="literal" >gt</TT
+>, <TT  CLASS="literal" >>=</TT
+>,
+     <TT  CLASS="literal" >ge</TT
+>, <TT  CLASS="literal" >==</TT
+>,
+     <TT  CLASS="literal" >=</TT
+>, <TT  CLASS="literal" >eq</TT
+>,
+     <TT  CLASS="literal" >!=</TT
+>, <TT  CLASS="literal" ><></TT
+>,
+     <TT  CLASS="literal" >ne</TT
+> respectively. Using this argument, the
+     function will return 1 if the relationship is the one specified
+     by the operator, 0 otherwise.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89878" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >version_compare()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// prints -1<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">version_compare</font><font  color="#007700">(</font><font  color="#DD0000">"4.0.4"</font><font  color="#007700">, </font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// these all print 1<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">version_compare</font><font  color="#007700">(</font><font  color="#DD0000">"4.0.4"</font><font  color="#007700">, </font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">, </font><font  color="#DD0000">"<"</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">version_compare</font><font  color="#007700">(</font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">, </font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">, </font><font  color="#DD0000">"eq"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>zend_logo_guid</name>
+            <signature><![CDATA[string zend_logo_guid ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89886" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >zend_logo_guid</B
+> ( void )<BR  ></BR
+><P  >     This function returns the ID which can be used to display the Zend logo
+     using the built-in image.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89894" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >zend_logo_uid()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'<img src="' </font><font  color="#007700">. </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'PHP_SELF'</font><font  color="#007700">] .<br  />     </font><font  color="#DD0000">'?=' </font><font  color="#007700">. </font><font  color="#0000BB">zend_logo_guid</font><font  color="#007700">() . </font><font  color="#DD0000">'" alt="Zend Logo !" />'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >php_logo_guid()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>zend_version</name>
+            <signature><![CDATA[string zend_version ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN89904" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >zend_version</B
+> ( void )<BR  ></BR
+><P  >     Returns a string containing the version of the currently running
+     Zend Engine.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89912" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >zend_version()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// prints e.g. 'Zend engine version: 1.0.4'<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Zend engine version: " </font><font  color="#007700">. </font><font  color="#0000BB">zend_version</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >phpinfo()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >phpcredits()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >php_logo_guid()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >phpversion()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

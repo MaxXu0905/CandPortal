@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/stdio/setvbuf.html -->
+<HTML><HEAD><TITLE>setvbuf</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="setvbuf.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A href="setvbuf.html">setvbuf</A> 
+      </DIV>
+      <DIV class=name-format>setvbuf </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int setvbuf( FILE *stream, char *buffer, int mode, size_t size );
+</PRE>
+      <P>The function setvbuf() sets the buffer for <EM>stream</EM> to be 
+      <EM>buffer</EM>, with a size of <EM>size</EM>. <EM>mode</EM> can be:</P>
+      <UL>
+        <LI>_IOFBF, which indicates full buffering 
+        <LI>_IOLBF, which means line buffering 
+        <LI>_IONBF, which means no buffering </LI></UL>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="setbuf.html">setbuf</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

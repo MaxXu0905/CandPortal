@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)http://www.cppreference.com/stdio/vprintf_vfprintf_vsprintf.html -->
+<HTML><HEAD><TITLE>vprintf, vfprintf, and vsprintf</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="vprintf_vfprintf_vsprintf.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A 
+      href="vprintf_vfprintf_vsprintf.html">vprintf, 
+      vfprintf, and vsprintf</A> </DIV>
+      <DIV class=name-format>vprintf, vfprintf, and vsprintf </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdarg.h&gt;
+  #include &lt;stdio.h&gt;
+  int vprintf( char *format, <STRONG>va_list</STRONG> arg_ptr );
+  int vfprintf( FILE *stream, const char *format, <STRONG>va_list</STRONG> arg_ptr );
+  int vsprintf( char *buffer, char *format, <STRONG>va_list</STRONG> arg_ptr );
+</PRE>
+      <P>These functions are very much like <A 
+      href="printf.html">printf</A>(), <A 
+      href="fprintf.html">fprintf</A>(), and 
+      <A href="sprintf.html">sprintf</A>(). 
+      The difference is that the argument list is a pointer to a list of 
+      arguments. <STRONG>va_list</STRONG> is defined in stdarg.h, and is also 
+      used by (Other Standard C Functions) <A 
+      href="../stdother/va_arg.html">va_arg</A>(). For 
+      example:</P><PRE class=example-code>   void error( char *fmt, ... ) {
+     <STRONG>va_list</STRONG> args;
+     va_start( args, fmt );
+     fprintf( stderr, "Error: " );
+     vfprintf( stderr, fmt, args );
+     fprintf( stderr, "\n" );
+     va_end( args );
+     exit( 1 );
+   }            
+</PRE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

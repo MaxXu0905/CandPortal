@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.cppreference.com/cppalgorithm/search_n.html -->
+<HTML><HEAD><TITLE>search_n</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="search_n.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/search_n.html">search_n</A> 
+      </DIV>
+      <DIV class=name-format>search_n </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator search_n( iterator start, iterator end, size_t num, const <A href="../containers.html">TYPE</A>&amp; val );
+  iterator search_n( iterator start, iterator end, size_t num, const <A href="../containers.html">TYPE</A>&amp; val, BinPred p );
+</PRE>
+      <P>The search_n() function looks for <EM>num</EM> occurances of 
+      <EM>val</EM> in the range [<EM>start</EM>,<EM>end</EM>).</P>
+      <P>If <EM>num</EM> consecutive copies of <EM>val</EM> are found, 
+      search_n() returns an iterator to the beginning of that sequence. 
+      Otherwise it returns an iterator to <EM>end</EM>.</P>
+      <P>If the optional binary predicate <EM>p</EM> is given, then it is used 
+      to perform comparisons between elements.</P>
+      <P>This function runs in <A 
+      href="../complexity.html">linear time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+      href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+      href="../cppalgorithm/search.html">search</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

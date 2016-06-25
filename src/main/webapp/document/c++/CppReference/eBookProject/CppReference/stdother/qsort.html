@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/stdother/qsort.html -->
+<HTML><HEAD><TITLE>qsort</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="qsort.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Other Standard C 
+      Functions</A> &gt; <A 
+      href="qsort.html">qsort</A> </DIV>
+      <DIV class=name-format>qsort </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void qsort( void *buf, size_t num, size_t size, int (*compare)(const void *, const void *) );
+</PRE>
+      <P>The qsort() function sorts <EM>buf</EM> (which contains <EM>num</EM> 
+      items, each of size <EM>size</EM>) using <A 
+      href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</A>. The 
+      <EM>compare</EM> function is used to compare the items in <EM>buf</EM>. 
+      <EM>compare</EM> should return negative if the first argument is less than 
+      the second, zero if they are equal, and positive if the first argument is 
+      greater than the second. qsort() sorts <EM>buf</EM> in ascending 
+order.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the following bit of code uses qsort() to sort an array of 
+      integers:</P><PRE class=example-code> int compare_ints( const void* a, const void* b ) {
+   int* arg1 = (int*) a;
+   int* arg2 = (int*) b;
+   if( *arg1 &lt; *arg2 ) return -1;
+   else if( *arg1 == *arg2 ) return 0;
+   else return 1;
+ }              
+
+ int array[] = { -2, 99, 0, -743, 2, 3, 4 };
+ int array_size = 7;            
+
+ ...            
+
+ printf( "Before sorting: " );
+ for( int i = 0; i &lt; array_size; i++ ) {
+   printf( "%d ", array[i] );
+ }
+ printf( "\n" );              
+
+ qsort( array, array_size, sizeof(int), compare_ints );         
+
+ printf( "After sorting: " );
+ for( int i = 0; i &lt; array_size; i++ ) {
+   printf( "%d ", array[i] );
+ }
+ printf( "\n" );              
+</PRE>
+      <P>When run, this code displays the following output:</P><PRE class=example-code> Before sorting: -2 99 0 -743 2 3 4
+ After sorting: -743 -2 0 2 3 4 99              
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="bsearch.html">bsearch</A><BR>(C++ 
+      Algorithms) <A 
+      href="../cppalgorithm/sort.html">sort</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

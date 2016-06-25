@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/stdstring/strstr.html -->
+<HTML><HEAD><TITLE>strstr</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="strstr.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C String 
+      and Character</A> &gt; <A 
+      href="strstr.html">strstr</A> </DIV>
+      <DIV class=name-format>strstr </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  char *strstr( const char *str1, const char *str2 );
+</PRE>
+      <P>The function strstr() returns a pointer to the first occurrence of 
+      <EM>str2</EM> in <EM>str1</EM>, or <STRONG>NULL</STRONG> if no match is 
+      found. If the length of <EM>str2</EM> is zero, then strstr() will simply 
+      return <EM>str1</EM>. </P>
+      <P>For example, the following code checks for the existence of one string 
+      within another string:</P><PRE class=example-code>  char* str1 = "this is a string of characters";
+  char* str2 = "a string";
+  char* result = strstr( str1, str2 );
+  if( result == NULL ) printf( "Could not find '%s' in '%s'\n", str2, str1 );
+  else printf( "Found a substring: '%s'\n", result );
+</PRE>
+      <P>When run, the above code displays this output:</P><PRE class=example-code>  Found a substring: 'a string of characters'
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="memchr.html">memchr</A><BR><A 
+      href="strchr.html">strchr</A><BR><A 
+      href="strcspn.html">strcspn</A><BR><A 
+      href="strpbrk.html">strpbrk</A><BR><A 
+      href="strrchr.html">strrchr</A><BR><A 
+      href="strspn.html">strspn</A><BR><A 
+      href="strtok.html">strtok</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.lang.Number">
+    <constructors>
+        <constructor>
+            <name>Number</name>
+            <signature><![CDATA[public Number()]]></signature>
+            <description><![CDATA[]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>intValue</name>
+            <signature><![CDATA[public abstract int intValue()]]></signature>
+            <description><![CDATA[Returns the value of the specified number as an int.
+ This may involve rounding or truncation.<dl><dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>int</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>longValue</name>
+            <signature><![CDATA[public abstract long longValue()]]></signature>
+            <description><![CDATA[Returns the value of the specified number as a long.
+ This may involve rounding or truncation.<dl><dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>long</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>floatValue</name>
+            <signature><![CDATA[public abstract float floatValue()]]></signature>
+            <description><![CDATA[Returns the value of the specified number as a float.
+ This may involve rounding.<dl><dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>float</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>doubleValue</name>
+            <signature><![CDATA[public abstract double doubleValue()]]></signature>
+            <description><![CDATA[Returns the value of the specified number as a double.
+ This may involve rounding.<dl><dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>double</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>byteValue</name>
+            <signature><![CDATA[public byte byteValue()]]></signature>
+            <description><![CDATA[Returns the value of the specified number as a byte.
+ This may involve rounding or truncation.<dl><dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>byte</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>JDK1.1</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>shortValue</name>
+            <signature><![CDATA[public short shortValue()]]></signature>
+            <description><![CDATA[Returns the value of the specified number as a short.
+ This may involve rounding or truncation.<dl><dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>short</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>JDK1.1</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

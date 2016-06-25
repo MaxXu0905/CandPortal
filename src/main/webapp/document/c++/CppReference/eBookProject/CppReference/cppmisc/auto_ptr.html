@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/cppmisc/auto_ptr.html -->
+<HTML><HEAD><TITLE>auto_ptr</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="auto_ptr.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppmisc/index.html">Miscellaneous 
+      C++</A> &gt; <A 
+      href="../cppmisc/auto_ptr.html">auto_ptr</A> 
+      </DIV>
+      <DIV class=name-format>auto_ptr </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;memory&gt;
+  auto_ptr&lt;class <A href="../containers.html">TYPE</A>&gt; name
+</PRE>
+      <P>The auto_ptr class allows the programmer to create pointers that point 
+      to other objects. When auto_ptr pointers are destroyed, the objects to 
+      which they point are also destroyed.</P>
+      <P>The auto_ptr class supports normal pointer operations like =, *, and 
+      -&gt;, as well as two functions <A 
+      href="../containers.html">TYPE</A>* get() and <A 
+      href="../containers.html">TYPE</A>* release(). 
+      The get() function returns a pointer to the object that the auto_ptr 
+      points to. The release() function acts similarily to the get() function, 
+      but also relieves the auto_ptr of its memory destruction duties. When an 
+      auto_ptr that has been released goes out of scope, it will not call the 
+      destructor of the object that it points to.</P>
+      <P><STRONG>Warning</STRONG>: It is generally a <STRONG>bad idea</STRONG> 
+      to put auto_ptr objects inside C++ STL containers. C++ containers can do 
+      funny things with the data inside them, including frequent reallocation 
+      (when being copied, for instance). Since calling the destructor of an 
+      auto_ptr object will free up the memory associated with that object, any 
+      C++ container reallocation will cause any auto_ptr objects to become 
+      invalid.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples><PRE class=example-code> #include &lt;memory&gt;
+ using namespace std;           
+
+ class MyClass {
+ public:
+   MyClass() {} // nothing
+   ~MyClass() {} // nothing
+   void myFunc() {} // nothing
+ };             
+
+ int main() {
+   auto_ptr&lt;MyClass&gt; ptr1(new MyClass), ptr2;             
+
+   ptr2 = ptr1;
+   ptr2-&gt;myFunc();           
+
+   MyClass* ptr = ptr2.get();           
+
+   ptr-&gt;myFunc();            
+
+   return 0;
+ }              
+</PRE></DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

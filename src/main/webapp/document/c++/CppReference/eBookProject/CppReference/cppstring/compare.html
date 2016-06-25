@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/cppstring/compare.html -->
+<HTML><HEAD><TITLE>compare</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="compare.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A 
+      href="../cppstring/compare.html">compare</A> 
+      </DIV>
+      <DIV class=name-format>compare </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  int compare( const string&amp; str );
+  int compare( const char* str );
+  int compare( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length, const string&amp; str );
+  int compare( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length, const string&amp; str, <STRONG>size_type</STRONG> index2,
+  <STRONG>size_type</STRONG> length2 );
+  int compare( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> length, const char* str, <STRONG>size_type</STRONG> length2 );
+</PRE>
+      <P>The compare() function either compares <EM>str</EM> to the current 
+      string in a variety of ways, returning</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Return Value</TH>
+          <TH class=code-table-th>Case</TH></TR>
+        <TR>
+          <TD class=code-table-td>less than zero</TD>
+          <TD class=code-table-td>this &lt; str</TD></TR>
+        <TR>
+          <TD class=code-table-td>zero</TD>
+          <TD class=code-table-td>this == str</TD></TR>
+        <TR>
+          <TD class=code-table-td>greater than zero</TD>
+          <TD class=code-table-td>this &gt; str</TD></TR></TBODY></TABLE>
+      <P>The various functions either:</P>
+      <UL>
+        <LI>compare <EM>str</EM> to the current string, 
+        <LI>compare <EM>str</EM> to a substring of the current string, starting 
+        at <EM>index</EM> for <EM>length</EM> characters, 
+        <LI>compare a substring of <EM>str</EM> to a substring of the current 
+        string, where <EM>index2</EM> and <EM>length2</EM> refer to <EM>str</EM> 
+        and <EM>index</EM> and <EM>length</EM> refer to the current string, 
+        <LI>or compare a substring of <EM>str</EM> to a substring of the current 
+        string, where the substring of <EM>str</EM> begins at zero and is 
+        <EM>length2</EM> characters long, and the substring of the current 
+        string begins at <EM>index</EM> and is <EM>length</EM> characters long. 
+        </LI></UL>
+      <P>For example, the following code uses compare() to compare four strings 
+      with eachother:</P><PRE class=example-code> string names[] = {"Homer", "Marge", "3-eyed fish", "inanimate carbon rod"};            
+
+ for( int i = 0; i &lt; 4; i++ ) {
+   for( int j = 0; j &lt; 4; j++ ) {
+     cout &lt;&lt; names[i].compare( names[j] ) &lt;&lt; " ";
+   }
+   cout &lt;&lt; endl;
+ }              
+</PRE>
+      <P>Data from the above code was used to generate this table, which shows 
+      how the various strings compare to eachother:</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th></TH>
+          <TH class=code-table-th>Homer</TH>
+          <TH class=code-table-th>Marge</TH>
+          <TH class=code-table-th>3-eyed fish</TH>
+          <TH class=code-table-th>inanimate carbon rod</TH></TR>
+        <TR>
+          <TD class=code-table-td>"Homer".compare( x )</TD>
+          <TD class=code-table-td>0</TD>
+          <TD class=code-table-td>-1</TD>
+          <TD class=code-table-td>1</TD>
+          <TD class=code-table-td>-1</TD></TR>
+        <TR>
+          <TD class=code-table-td>"Marge".compare( x )</TD>
+          <TD class=code-table-td>1</TD>
+          <TD class=code-table-td>0</TD>
+          <TD class=code-table-td>1</TD>
+          <TD class=code-table-td>-1</TD></TR>
+        <TR>
+          <TD class=code-table-td>"3-eyed fish".compare( x )</TD>
+          <TD class=code-table-td>-1</TD>
+          <TD class=code-table-td>-1</TD>
+          <TD class=code-table-td>0</TD>
+          <TD class=code-table-td>-1</TD></TR>
+        <TR>
+          <TD class=code-table-td>"inanimate carbon rod".compare( x )</TD>
+          <TD class=code-table-td>1</TD>
+          <TD class=code-table-td>1</TD>
+          <TD class=code-table-td>1</TD>
+          <TD class=code-table-td>0</TD></TR></TBODY></TABLE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppstring/string_operators.html">String 
+      operators</A> </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* ==  CSS Framework ========================================
+ * Copyright (c) 2014
+ * version: 1.0
+ * -------------------------------------------- 2014/2/12 ----- */
+/**
+ * skin-green
+ * @author zengjie
+ */
+/* 
+----------------------------------------------------------------------------------------------------*/
+/*初始化设置*/
+body,div,li,ul,table,td,th,p,h1,h2,h3,h4,h5,h6{font-family: "微软雅黑";color:#666666;}
+/*logo字体*/
+@font-face {
+    font-family: 'lms_lances_letter_blocksRg';
+    src: url('../fonts/lms_lance_s_letter_blocks.eot');
+    src: url('../fonts/lms_lance_s_letter_blocks.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lms_lance_s_letter_blocks.woff') format('woff'),
+         url('../fonts/lms_lance_s_letter_blocks.ttf') format('truetype'),
+         url('../fonts/lms_lance_s_letter_blocks.svg#lms_lances_letter_blocksRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.logo{color:#FFF;font-family: 'lms_lances_letter_blocksRg';font-color:'#fff';font-size:38px;}
+/*步骤*/
+.stepband
+{
+  background-color: rgba(0, 0, 0, 0.2) !important ;/*透明背景*/
+}
+body {
+background: #F5F5F7;
+}
+/*header*/
+#header,#footer{
+	background-color:#84b928;
+}
+#header .navbar-inner {
+filter: none !important;
+background-image: none !important;
+background-color: #212121 !important;
+}
+#header .brand {
+display: inline-block;
+margin-top: -1px;
+margin-right: 0;
+padding-left: 0;
+padding-right: 0;
+width: 225px;
+}
+#header .dropdown{
+padding-left: 4px;
+padding-right: 4px;
+}
+.user{
+padding: 20px 4px 0px 9px;
+}
+.username{
+	color:#FFF;
+	font-size:18px;
+}
+/*footer*/
+.footfn,.footfn a{color:#FFF}
+#footer {
+	/* height: 80px; */
+	border-top: 1px solid #E5E5E5;
+	margin-top: 20px;
+	padding: 30px 0;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 返回到顶部 */
+#backtotop {
+	bottom: 12px;
+	height: 50px;
+	position: fixed;
+	right: -60px;
+	transition: all 1s ease 0s;
+	width: 50px;
+	z-index: 9999;
+}
+
+#backtotop.showme {
+	 right: 12px;
+     -moz-transform: scale(1) rotate(-360deg) translate(0px);/* Firefox */
+     -webkit-transform: scale(1) rotate(-360deg) translate(0px); /* Safari 和 Chrome */
+     -o-transform: scale(1) rotate(-360deg) translate(0px);/* Opera */
+     transform: scale(1) rotate(-360deg) translate(0px);
+}
+
+#backtotop .bttbg {
+	background: url("../images/top_button.png") no-repeat scroll 0 0;
+	height: 50px;
+	width: 50px;
+}
+
+#backtotop .bttbg:hover {
+	background-position: left bottom;
+}
+
+/*首页contain*/
+.index-container{
+	padding-top:67px;
+	height:100%
+}
+/*首页step*/
+.stepicon{background-color:#C7E21B;display: inline-block;border-radius:25px;box-shadow:5px 5px 2px #888888;border:2px solid #FFF;width:40px;vertical-align: top;text-align:center;color:#FFF;margin-left:-50px;margin-right:10px}
+
+/*footer圆形*/
+.circle{
+text-align:center;
+display: inline-block;
+width:50px;height:50px;text-align:center;color:#FFF;border-radius: 50%;
+}
+.circle-xbig{
+font-size:30px !important;
+text-align:center !important;
+vertical-align:middle !important;
+display: inline-block;
+width:150px;height:150px;text-align:center;color:#FFF;border-radius: 50%;
+}
+.circle-big{
+text-align:center;
+display: inline-block;
+width:100px;height:100px;text-align:center;color:#FFF;border-radius: 50%;
+}
+.circle-mid{
+text-align:center;
+display: inline-block;
+width:80px;height:80px;text-align:center;color:#FFF;border-radius: 50%;
+}
+.circle-sm{
+text-align:center;
+display: inline-block;
+width:50px;height:50px;text-align:center;color:#FFF;border-radius: 50%;
+}
+.circle-xs{
+display: inline-block;
+width:20px;height:20px;text-align:center;color:#FFF;border-radius: 50%;
+}
+.circle_step{
+border:2px solid rgb(247, 200, 14);
+display: inline-block;
+width:100px;height:100px;text-align:center;color:#FFF;border-radius: 50%;
+}
+.ftlc{/*浮动左上角*/
+ margin-top:-10px;
+ margin-left:-15px;
+}
+.ftlc2{/*浮动左上角*/
+ margin-left:-30px;
+}
+
+/*按钮样式*/
+.btn-success {
+  color: #ffffff;
+  background-color: #48BC01;
+  border-color: #38b44a;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+color: #ffffff;
+background-color: #2e953d;
+border-color: #298537;
+}
+
+.btn:hover, .btn:focus {
+color: #ffffff;
+text-decoration: none;
+}
+
+.btn-alert {
+background-color: #DD4814;
+border-color: #DD4814;
+color: #FFF;
+}
+.alert {
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+border-radius: 4px;
+}

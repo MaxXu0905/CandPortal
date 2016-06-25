@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="tokenizer">
+    <methods>
+        <method>
+            <name>token_get_all</name>
+            <signature><![CDATA[array token_get_all ( string source)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN114920" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >token_get_all</B
+> ( string source)<BR  ></BR
+><P  >     <B  CLASS="function" >token_get_all()</B
+> parses the given <TT  CLASS="parameter" ><I  >source</I
+></TT
+> 
+     string into PHP language tokens using the Zend engine's lexical scanner.
+     The function returns an array of token identifiers.  Each individual token
+     identifier is either a single character (i.e.: <TT  CLASS="constant" ><B  >;</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >.</B
+></TT
+>, <TT  CLASS="constant" ><B  >></B
+></TT
+>, <TT  CLASS="constant" ><B  >!</B
+></TT
+>, etc...),
+     or a two element array containing the token index in element 0, and the string
+     content of the original token in element 1.
+    </P
+><P  >     For a list of parser tokens, see <SPAN HREF="#">附录 M</A
+>, or use 
+     <SPAN HREF="#"><B  CLASS="function" >token_name()</B
+></A
+> to translate a token value into its string
+     representation.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN114938" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >token_get_all()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />  $tokens </font><font  color="#007700">= </font><font  color="#0000BB">token_get_all</font><font  color="#007700">(</font><font  color="#DD0000">'<?php'</font><font  color="#007700">); </font><font  color="#FF8000">// => array(array(T_OPEN_TAG, '<?'));<br  />  </font><font  color="#0000BB">$tokens </font><font  color="#007700">= </font><font  color="#0000BB">token_get_all</font><font  color="#007700">(</font><font  color="#DD0000">'<?php echo; ?>'</font><font  color="#007700">); </font><font  color="#FF8000">/* => array(<br  />                                                    array(T_OPEN_TAG, '<?php'), <br  />                                                    array(T_ECHO, 'echo'),<br  />                                                    ';',<br  />                                                    array(T_CLOSE_TAG, '?>') ); */<br  /><br  />/* Note in the following example that the string is parsed as T_INLINE_HTML<br  />   rather than the otherwise expected T_COMMENT (T_ML_COMMENT in PHP <5).<br  />   This is because no open/close tags were used in the "code" provided.<br  />   This would be equivalent to putting a comment outside of <?php ?> tags in a normal file. */<br  />  </font><font  color="#0000BB">$tokens </font><font  color="#007700">= </font><font  color="#0000BB">token_get_all</font><font  color="#007700">(</font><font  color="#DD0000">'/* comment */'</font><font  color="#007700">); </font><font  color="#FF8000">// => array(array(T_INLINE_HTML, '/* comment */'));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>token_name</name>
+            <signature><![CDATA[string token_name ( int token)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN114946" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >token_name</B
+> ( int token)<BR  ></BR
+><P  >     <B  CLASS="function" >token_name()</B
+> returns the symbolic name for a PHP 
+     <TT  CLASS="parameter" ><I  >token</I
+></TT
+> value. The symbolic name 
+     returned matches the name of the matching token constant.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN114957" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >token_name()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />  </font><font  color="#FF8000">// 260 is the token value for the T_REQUIRE token<br  />  </font><font  color="#007700">echo </font><font  color="#0000BB">token_name</font><font  color="#007700">(</font><font  color="#0000BB">260</font><font  color="#007700">);        </font><font  color="#FF8000">// -> "T_REQUIRE"<br  /><br  />  // a token constant maps to its own name<br  />  </font><font  color="#007700">echo </font><font  color="#0000BB">token_name</font><font  color="#007700">(</font><font  color="#0000BB">T_FUNCTION</font><font  color="#007700">); </font><font  color="#FF8000">// -> "T_FUNCTION"<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

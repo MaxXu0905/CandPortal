@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/cppio/clear.html -->
+<HTML><HEAD><TITLE>clear</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="clear.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/clear.html">clear</A> </DIV>
+      <DIV class=name-format>clear </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  void clear( iostate flags = ios::goodbit );
+</PRE>
+      <P>The function clear() does two things:</P>
+      <UL>
+        <LI>it clears all <A 
+        href="../io_flags.html#state_flags">io stream 
+        state flag</A>s associated with the current stream, 
+        <LI>and sets the flags denoted by <EM>flags</EM> </LI></UL>
+      <P>The <EM>flags</EM> argument defaults to ios::goodbit, which means that 
+      by default, all flags will be cleared and ios::goodbit will be set.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the following code uses the clear() function to reset the 
+      flags of an output file stream, after an attempt is made to read from that 
+      output stream:</P><PRE class=example-code> fstream outputFile( "output.txt", fstream::out );            
+
+ // try to read from the output stream; this shouldn't work
+ int val;
+ outputFile &gt;&gt; val;
+ if( outputFile.fail() ) {
+   cout &lt;&lt; "Error reading from the output stream" &lt;&lt; endl;
+   // reset the flags associated with the stream
+   outputFile.clear();
+ }              
+                
+
+ for( int i = 0; i &lt; 10; i++ ) {
+   outputFile &lt;&lt; i &lt;&lt; " ";
+ }
+ outputFile &lt;&lt; endl;              
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/eof.html">eof</A><BR><A 
+      href="../cppio/fail.html">fail</A><BR><A 
+      href="../cppio/good.html">good</A><BR><A 
+      href="../cppio/rdstate.html">rdstate</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

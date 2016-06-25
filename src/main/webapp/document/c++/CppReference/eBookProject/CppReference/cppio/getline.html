@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/cppio/getline.html -->
+<HTML><HEAD><TITLE>getline</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="getline.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/getline.html">getline</A> </DIV>
+      <DIV class=name-format>getline </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  istream&amp; getline( char* buffer, streamsize num );
+  istream&amp; getline( char* buffer, streamsize num, char delim );
+</PRE>
+      <P>The getline() function is used with input streams, and reads characters 
+      into <EM>buffer</EM> until either:</P>
+      <UL>
+        <LI><EM>num</EM> - 1 characters have been read, 
+        <LI>a newline is encountered, 
+        <LI>an <STRONG>EOF</STRONG> is encountered, 
+        <LI>or, optionally, until the character <EM>delim</EM> is read. The 
+        <EM>delim</EM> character is not put into buffer. </LI></UL>
+      <P>Those using a Microsoft compiler may find that getline() reads an extra 
+      character, and should consult the documentation on the <A 
+      href="http://support.microsoft.com/default.aspx?scid=kb;EN-US;q240015">Microsoft 
+      getline bug</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/gcount.html">gcount</A><BR><A 
+      href="../cppio/get.html">get</A><BR>(C++ Strings) 
+      <A 
+      href="../cppstring/getline.html">getline</A><BR><A 
+      href="../cppio/ignore.html">ignore</A><BR><A 
+      href="../cppio/read.html">read</A> 
+  </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

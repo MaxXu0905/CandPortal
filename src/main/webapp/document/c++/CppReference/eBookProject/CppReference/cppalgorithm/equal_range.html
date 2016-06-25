@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://www.cppreference.com/cppalgorithm/equal_range.html -->
+<HTML><HEAD><TITLE>equal_range</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="equal_range.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/equal_range.html">equal_range</A> 
+      </DIV>
+      <DIV class=name-format>equal_range </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  pair&lt;iterator,iterator&gt; equal_range( iterator first, iterator last, const <A href="../containers.html">TYPE</A>&amp; val );
+  pair&lt;iterator,iterator&gt; equal_range( iterator first, iterator last, const <A href="../containers.html">TYPE</A>&amp; val, CompFn comp );
+</PRE>
+      <P>The equal_range() function returns the range of elements between 
+      <EM>first</EM> and <EM>last</EM> that are equal to <EM>val</EM>. This 
+      function assumes that the elements between <EM>first</EM> and 
+      <EM>last</EM> are in order according to <EM>comp</EM>, if it is specified, 
+      or the &lt; operator otherwise.</P>
+      <P>equal_range() can be thought of as a combination of the <A 
+      href="../cppalgorithm/lower_bound.html">lower_bound</A>() 
+      and `upper_bound1`() functions, since the first of the pair of iterators 
+      that it returns is what <A 
+      href="../cppalgorithm/lower_bound.html">lower_bound</A>() 
+      returns and the second iterator in the pair is what `upper_bound1`() 
+      returns.</P>
+      <P>For example, the following code uses equal_range() to determine all of 
+      the possible places that the number 8 can be inserted into an ordered 
+      vector of integers such that the existing ordering is preserved:</P><PRE class=example-code> vector&lt;int&gt; nums;
+ nums.push_back( -242 );
+ nums.push_back( -1 );
+ nums.push_back( 0 );
+ nums.push_back( 5 );
+ nums.push_back( 8 );
+ nums.push_back( 8 );
+ nums.push_back( 11 );          
+
+ pair&lt;vector&lt;int&gt;::iterator, vector&lt;int&gt;::iterator&gt; result;
+ int new_val = 8;               
+
+ result = equal_range( nums.begin(), nums.end(), new_val );             
+
+ cout &lt;&lt; "The first place that " &lt;&lt; new_val &lt;&lt; " could be inserted is before "
+      &lt;&lt; *result.first &lt;&lt; ", and the last place that it could be inserted is before "
+      &lt;&lt; *result.second &lt;&lt; endl;            
+</PRE>
+      <P>The above code produces the following output:</P><PRE class=example-code> The first place that 8 could be inserted is before 8,
+ and the last place that it could be inserted is before 11              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+      href="../cppalgorithm/lower_bound.html">lower_bound</A><BR><A 
+      href="../cppalgorithm/upper_bound.html">upper_bound</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

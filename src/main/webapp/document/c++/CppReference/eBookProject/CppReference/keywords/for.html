@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.cppreference.com/keywords/for.html -->
+<HTML><HEAD><TITLE>for</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="for.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../keywords/index.html">C/C++ Keywords</A> 
+      &gt; <A href="../keywords/for.html">for</A> 
+</DIV>
+      <DIV class=name-format>for </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  for( initialization; test-condition; increment ) {
+  statement-list;
+  }
+</PRE>
+      <P>The for construct is a general looping mechanism consisting of 4 
+      parts:</P>
+      <OL>
+        <LI>the initialization, which consists of 0 or more comma-delimited 
+        variable initialization statements 
+        <LI>the test-condition, which is evaluated to determine if the execution 
+        of the for loop will continue 
+        <LI>the increment, which consists of 0 or more comma-delimited 
+        statements that increment variables 
+        <LI>and the statement-list, which consists of 0 or more statements that 
+        will be executed each time the loop is executed. </LI></OL>
+      <P>For example:</P><PRE class=example-code>   for( int i = 0; i &lt; 10; i++ ) {
+     cout &lt;&lt; "i is " &lt;&lt; i &lt;&lt; endl;
+   }
+   int j, k;
+   for( j = 0, k = 10;
+        j &lt; k;
+        j++, k-- ) {
+     cout &lt;&lt; "j is " &lt;&lt; j &lt;&lt; " and k is " &lt;&lt; k &lt;&lt; endl;
+   }
+   for( ; ; ) {
+     // loop forever!
+   }            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../keywords/break.html">break</A><BR><A 
+      href="../keywords/continue.html">continue</A><BR><A 
+      href="../keywords/do.html">do</A><BR><A 
+      href="../keywords/if.html">if</A><BR><A 
+      href="../keywords/while.html">while</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

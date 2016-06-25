@@ -1,0 +1,89 @@
+.interviewBtn{
+	color:#fff;
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	border:0px;
+}
+.interviewBtn_hover{
+	color:#fff;
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	border:0px;
+}
+
+.interviewLabel
+{
+	color:#ced6df;
+	font-size:16px;
+	line-height:24px;
+	font-family: "华文细黑";
+}
+
+.titleSet
+{
+	font-family:"微软雅黑";
+	color:#38485a;
+	font-size: 18px;
+	line-height:18px;
+	border-thickness:0;
+}
+
+.vScrollBar{
+	downArrowUpSkin: 
+		Embed(source="assets/w.png");
+	downArrowOverSkin: 
+		Embed(source="assets/w.png");
+	downArrowDownSkin: 
+		Embed(source="assets/w.png");
+	upArrowUpSkin: 
+		Embed(source="assets/w.png");
+	upArrowOverSkin: 
+		Embed(source="assets/w.png");
+	upArrowDownSkin: 
+		Embed(source="assets/w.png");
+	thumbDownSkin: 
+		Embed(source="assets/g.png");
+	thumbUpSkin: 
+		Embed(source="assets/g.png");
+	thumbOverSkin: 
+		Embed(source="assets/g.png");
+	trackSkin:
+		Embed(source="assets/w.png");
+	
+}
+
+.hScrollBar { 
+	downArrowUpSkin: 
+		Embed(source="assets/w.png");
+	downArrowOverSkin: 
+		Embed(source="assets/w.png");
+	downArrowDownSkin: 
+		Embed(source="assets/w.png");
+	upArrowUpSkin: 
+		Embed(source="assets/w.png");
+	upArrowOverSkin: 
+		Embed(source="assets/w.png");
+	upArrowDownSkin: 
+		Embed(source="assets/w.png");
+	thumbDownSkin: 
+		Embed(source="assets/g.png");
+	thumbUpSkin: 
+		Embed(source="assets/g.png");
+	thumbOverSkin: 
+		Embed(source="assets/g.png");
+	trackSkin:
+		Embed(source="assets/w.png");
+	fillAlphas:
+		0,0,0,0;
+}
+
+
+.ErrorMessage
+{
+	font-size:16px;
+	borderStyle:none;
+}
+
+

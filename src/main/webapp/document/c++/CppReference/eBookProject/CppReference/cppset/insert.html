@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/cppset/insert.html -->
+<HTML><HEAD><TITLE>insert</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="insert.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppset/index.html">C++ Sets</A> &gt; <A 
+      href="../cppset/insert.html">insert</A> </DIV>
+      <DIV class=name-format>insert </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;set&gt;
+  iterator insert( iterator i, const <A href="../containers.html">TYPE</A>&amp; val );
+  void insert( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+  pair&lt;iterator,bool&gt; insert( const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+      <P>The function insert() either:</P>
+      <UL>
+        <LI>inserts <EM>val</EM> after the element at <EM>pos</EM> (where 
+        <EM>pos</EM> is really just a suggestion as to where <EM>val</EM> should 
+        go, since sets and maps are ordered), and returns an iterator to that 
+        element. 
+        <LI>inserts a range of elements from <EM>start</EM> to <EM>end</EM>. 
+        <LI>inserts <EM>val</EM>, but only if <EM>val</EM> doesn't already 
+        exist. The return value is an iterator to the element inserted, and a 
+        boolean describing whether an insertion took place. </LI></UL>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content>(C++ Maps) <A 
+      href="../cppmap/map_operators.html">Map 
+      operators</A> </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.cppreference.com/keywords/switch.html -->
+<HTML><HEAD><TITLE>switch</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="switch.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../keywords/index.html">C/C++ Keywords</A> 
+      &gt; <A href="../keywords/switch.html">switch</A> 
+      </DIV>
+      <DIV class=name-format>switch </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  switch( expression ) {
+  case A:
+  statement list;
+  break;
+  case B:
+  statement list;
+  break;
+  ...
+  case N:
+  statement list;
+  break;
+  default:
+  statement list;
+  break;
+  }
+</PRE>
+      <P>The switch statement allows you to test an expression for many values, 
+      and is commonly used as a replacement for multiple <A 
+      href="../keywords/if.html">if</A>()...<A 
+      href="../keywords/else.html">else</A> <A 
+      href="../keywords/if.html">if</A>()...<A 
+      href="../keywords/else.html">else</A> <A 
+      href="../keywords/if.html">if</A>()... 
+      statements. <A 
+      href="../keywords/break.html">break</A> 
+      statements are required between each <A 
+      href="../keywords/case.html">case</A> statement, 
+      otherwise execution will "fall-through" to the next <A 
+      href="../keywords/case.html">case</A> statement. 
+      The <A 
+      href="../keywords/default.html">default</A> case 
+      is optional. If provided, it will match any case not explicitly covered by 
+      the preceding cases in the switch statement. For example:</P><PRE class=example-code>   char keystroke = getch();
+   switch( keystroke ) {
+     case 'a':
+     case 'b':
+     case 'c':
+     case 'd':
+       KeyABCDPressed();
+       break;
+     case 'e':
+       KeyEPressed();
+       break;
+     default:
+       UnknownKeyPressed();
+       break;
+   }            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../keywords/break.html">break</A><BR><A 
+      href="../keywords/case.html">case</A><BR><A 
+      href="../keywords/default.html">default</A><BR><A 
+      href="../keywords/if.html">if</A> 
+  </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="calendar">
+    <methods>
+        <method>
+            <name>cal_days_in_month</name>
+            <signature><![CDATA[int cal_days_in_month ( int calendar, int month, int year)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11502" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >cal_days_in_month</B
+> ( int calendar, int month, int year)<BR  ></BR
+><P  >     This function will return the number of days in the
+     <TT  CLASS="parameter" ><I  >month</I
+></TT
+> of <TT  CLASS="parameter" ><I  >year</I
+></TT
+> for
+     the specified <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+>.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11521" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >cal_days_in_month()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$num </font><font  color="#007700">= </font><font  color="#0000BB">cal_days_in_month</font><font  color="#007700">(</font><font  color="#0000BB">CAL_GREGORIAN</font><font  color="#007700">, </font><font  color="#0000BB">8</font><font  color="#007700">, </font><font  color="#0000BB">2003</font><font  color="#007700">); </font><font  color="#FF8000">// 31<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"There was $num days in August 2003"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >jdtounix()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>cal_from_jd</name>
+            <signature><![CDATA[array cal_from_jd ( int jd, int calendar)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11531" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >cal_from_jd</B
+> ( int jd, int calendar)<BR  ></BR
+><P  >     <B  CLASS="function" >cal_from_jd()</B
+> converts the Julian day given in
+     <TT  CLASS="parameter" ><I  >jd</I
+></TT
+> into a date of the specified
+     <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+>. Supported
+     <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+> values are
+     <TT  CLASS="constant" ><B  >CAL_GREGORIAN</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JULIAN</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JEWISH</B
+></TT
+> and
+     <TT  CLASS="constant" ><B  >CAL_FRENCH</B
+></TT
+>.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11552" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >cal_from_jd()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$today </font><font  color="#007700">= </font><font  color="#0000BB">unixtojd</font><font  color="#007700">(</font><font  color="#0000BB">mktime</font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">8</font><font  color="#007700">, </font><font  color="#0000BB">16</font><font  color="#007700">, </font><font  color="#0000BB">2003</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">cal_from_jd</font><font  color="#007700">(</font><font  color="#0000BB">$today</font><font  color="#007700">, </font><font  color="#0000BB">CAL_GREGORIAN</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       This will output :
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+    [date] => 8/16/2003
+    [month] => 8
+    [day] => 16
+    [year] => 2003
+    [dow] => 6
+    [abbrevdayname] => Sat
+    [dayname] => Saturday
+    [abbrevmonth] => Aug
+    [monthname] => August
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >cal_to_jd()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>cal_info</name>
+            <signature><![CDATA[array cal_info ( [int calendar])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11564" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >cal_info</B
+> ( [int calendar])<BR  ></BR
+><P  >     <B  CLASS="function" >cal_info()</B
+> returns information on the
+     specified <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+> or on all supported
+     calendars if no <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+> is specified.
+    </P
+><P  >     Calendar information is returned as an array containing the
+     elements <TT  CLASS="literal" >calname</TT
+>, <TT  CLASS="literal" >calsymbol</TT
+>,
+     <TT  CLASS="literal" >month</TT
+>, <TT  CLASS="literal" >abbrevmonth</TT
+> and
+     <TT  CLASS="literal" >maxdaysinmonth</TT
+>.
+    </P
+><P  >     If no <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+> is specified information on all
+     supported calendars is returned as an array. This functionality
+     will be available beginning with PHP 5.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>cal_to_jd</name>
+            <signature><![CDATA[int cal_to_jd ( int calendar, int month, int day, int year)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11588" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >cal_to_jd</B
+> ( int calendar, int month, int day, int year)<BR  ></BR
+><P  >     <B  CLASS="function" >cal_to_jd()</B
+> calculates the Julian day count
+     for a date in the specified <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+>.
+     Supported <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+>s are
+     <TT  CLASS="constant" ><B  >CAL_GREGORIAN</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JULIAN</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JEWISH</B
+></TT
+> and
+     <TT  CLASS="constant" ><B  >CAL_FRENCH</B
+></TT
+>.
+    </P
+><P  >     See also <B  CLASS="function" >cal_to_jd()</B
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>easter_date</name>
+            <signature><![CDATA[int easter_date ( [int year])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11619" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >easter_date</B
+> ( [int year])<BR  ></BR
+><P  >     Returns the Unix timestamp corresponding to midnight on Easter of
+     the given year.
+    </P
+><P  >     Since <TT  CLASS="literal" >PHP</TT
+> 4.3.0, the <TT  CLASS="parameter" ><I  >year</I
+></TT
+>
+     parameter is optional and defaults to the current year according to the
+     localtime if omitted.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11632" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >easter_date()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">easter_date</font><font  color="#007700">(</font><font  color="#0000BB">1999</font><font  color="#007700">));        </font><font  color="#FF8000">// Apr-04-1999<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">easter_date</font><font  color="#007700">(</font><font  color="#0000BB">2000</font><font  color="#007700">));        </font><font  color="#FF8000">// Apr-23-2000<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">easter_date</font><font  color="#007700">(</font><font  color="#0000BB">2001</font><font  color="#007700">));        </font><font  color="#FF8000">// Apr-15-2001<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      This function will generate a warning if the year is outside
+      of the range for Unix timestamps (i.e. before 1970 or after 2037).
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     The date of Easter Day was defined by the Council of Nicaea in
+     AD325 as the Sunday after the first full moon which falls on or
+     after the Spring Equinox.  The Equinox is assumed to always fall
+     on 21st March, so the calculation reduces to determining the date
+     of the full moon and the date of the following Sunday.  The
+     algorithm used here was introduced around the year 532 by
+     Dionysius Exiguus.  Under the Julian Calendar (for years before
+     1753) a simple 19-year cycle is used to track the phases of the
+     Moon.  Under the Gregorian Calendar (for years after 1753 -
+     devised by Clavius and Lilius, and introduced by Pope Gregory
+     XIII in October 1582, and into Britain and its then colonies in
+     September 1752) two correction factors are added to make the
+     cycle more accurate.
+    </P
+><P  >     (The code is based on a C program by Simon Kershaw,
+     <webmaster at ely.anglican dot org>)
+    </P
+><P  >     See <SPAN HREF="#"><B  CLASS="function" >easter_days()</B
+></A
+> for calculating Easter
+     before 1970 or after 2037.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>easter_days</name>
+            <signature><![CDATA[int easter_days ( [int year [, int method]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11646" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >easter_days</B
+> ( [int year [, int method]])<BR  ></BR
+><P  >     Returns the number of days after March 21 on which Easter falls
+     for a given year. If no year is specified, the current year is
+     assumed.
+    </P
+><P  >     Since <TT  CLASS="literal" >PHP</TT
+> 4.3.0, the <TT  CLASS="parameter" ><I  >year</I
+></TT
+>
+     parameter is optional and defaults to the current year according to the
+     localtime if omitted.
+    </P
+><P  >     The <TT  CLASS="parameter" ><I  >method</I
+></TT
+> parameter was also introduced in
+     <TT  CLASS="literal" >PHP</TT
+> 4.3.0 and allows to calculate easter dates based
+     on the Gregorian calendar during the years 1582 - 1752 when set to
+     <TT  CLASS="constant" ><B  >CAL_EASTER_ROMAN</B
+></TT
+>. See the <SPAN HREF="#">calendar constants</A
+> for more valid
+     constants.
+    </P
+><P  >     This function can be used instead of
+     <SPAN HREF="#"><B  CLASS="function" >easter_date()</B
+></A
+> to calculate Easter for years
+     which fall outside the range of Unix timestamps (i.e. before 1970
+     or after 2037).
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11668" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >easter_days()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">easter_days</font><font  color="#007700">(</font><font  color="#0000BB">1999</font><font  color="#007700">);        </font><font  color="#FF8000">// 14, i.e. April 4<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">easter_days</font><font  color="#007700">(</font><font  color="#0000BB">1492</font><font  color="#007700">);        </font><font  color="#FF8000">// 32, i.e. April 22<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">easter_days</font><font  color="#007700">(</font><font  color="#0000BB">1913</font><font  color="#007700">);        </font><font  color="#FF8000">//  2, i.e. March 23<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     The date of Easter Day was defined by the Council of Nicaea in
+     AD325 as the Sunday after the first full moon which falls on or
+     after the Spring Equinox.  The Equinox is assumed to always fall
+     on 21st March, so the calculation reduces to determining the date
+     of the full moon and the date of the following Sunday.  The
+     algorithm used here was introduced around the year 532 by
+     Dionysius Exiguus.  Under the Julian Calendar (for years before
+     1753) a simple 19-year cycle is used to track the phases of the
+     Moon.  Under the Gregorian Calendar (for years after 1753 -
+     devised by Clavius and Lilius, and introduced by Pope Gregory
+     XIII in October 1582, and into Britain and its then colonies in
+     September 1752) two correction factors are added to make the
+     cycle more accurate.
+    </P
+><P  >     (The code is based on a C program by Simon Kershaw,
+     <webmaster at ely.anglican dot org>)
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >easter_date()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>FrenchToJD</name>
+            <signature><![CDATA[int frenchtojd ( int month, int day, int year)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11680" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >frenchtojd</B
+> ( int month, int day, int year)<BR  ></BR
+><P  >     Converts a date from the French Republican Calendar to a Julian
+     Day Count.
+    </P
+><P  >     These routines only convert dates in years 1 through 14
+     (Gregorian dates 22 September 1792 through 22 September
+     1806). This more than covers the period when the calendar was in
+     use.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>GregorianToJD</name>
+            <signature><![CDATA[int gregoriantojd ( int month, int day, int year)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11700" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >gregoriantojd</B
+> ( int month, int day, int year)<BR  ></BR
+><P  >     Valid Range for Gregorian Calendar 4714 B.C. to 9999 A.D.</P
+><P  >     Although this function can handle dates all the way back to 4714
+     B.C., such use may not be meaningful. The Gregorian calendar was
+     not instituted until October 15, 1582 (or October 5, 1582 in the
+     Julian calendar). Some countries did not accept it until much
+     later. For example, Britain converted in 1752, The USSR in 1918
+     and Greece in 1923. Most European countries used the Julian
+     calendar prior to the Gregorian.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11716" ></A
+><P  ><B  >例子 1. Calendar functions</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$jd </font><font  color="#007700">= </font><font  color="#0000BB">GregorianToJD</font><font  color="#007700">(</font><font  color="#0000BB">10</font><font  color="#007700">, </font><font  color="#0000BB">11</font><font  color="#007700">, </font><font  color="#0000BB">1970</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"$jd\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$gregorian </font><font  color="#007700">= </font><font  color="#0000BB">JDToGregorian</font><font  color="#007700">(</font><font  color="#0000BB">$jd</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"$gregorian\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>JDDayOfWeek</name>
+            <signature><![CDATA[mixed jddayofweek ( int julianday, int mode)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11723" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >jddayofweek</B
+> ( int julianday, int mode)<BR  ></BR
+><P  >     Returns the day of the week.  Can return a string or an integer
+     depending on the mode.
+     </P><DIV  CLASS="table" ><A  NAME="AEN11735" ></A
+><P  ><B  >表格 1. Calendar week modes</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Mode</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Meaning</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Returns the day number as an int (0=Sunday, 1=Monday, etc)
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Returns string containing the day of week
+          (English-Gregorian)
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          Returns a string containing the abbreviated day of week
+          (English-Gregorian)
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>JDMonthName</name>
+            <signature><![CDATA[string jdmonthname ( int julianday, int mode)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11756" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >jdmonthname</B
+> ( int julianday, int mode)<BR  ></BR
+><P  >     Returns a string containing a month name.
+     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> tells this function which calendar to
+     convert the Julian Day Count to, and what type of month names are
+     to be returned.
+     </P><DIV  CLASS="table" ><A  NAME="AEN11769" ></A
+><P  ><B  >表格 1. Calendar modes</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Mode</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Meaning</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Values</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Gregorian - abbreviated</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Gregorian</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >January, February, March, April, May, June, July, August, September, October, November, December</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Julian - abbreviated</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >3</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Julian</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >January, February, March, April, May, June, July, August, September, October, November, December</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Jewish</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Tishri, Heshvan, Kislev, Tevet, Shevat, AdarI, AdarII, Nisan, Iyyar, Sivan, Tammuz, Av, Elul</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >5</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >French Republican</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Vendemiaire, Brumaire, Frimaire, Nivose, Pluviose, Ventose, Germinal, Floreal, Prairial, Messidor, Thermidor, Fructidor, Extra</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>JDToFrench</name>
+            <signature><![CDATA[string jdtofrench ( int juliandaycount)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11806" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >jdtofrench</B
+> ( int juliandaycount)<BR  ></BR
+><P  >     Converts a Julian Day Count to the French Republican Calendar.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>JDToGregorian</name>
+            <signature><![CDATA[string jdtogregorian ( int julianday)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11819" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >jdtogregorian</B
+> ( int julianday)<BR  ></BR
+><P  >     Converts Julian Day Count to a string containing the Gregorian
+     date in the format of "month/day/year".
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>jdtojewish</name>
+            <signature><![CDATA[string jdtojewish ( int juliandaycount [, bool hebrew [, int fl]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11832" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >jdtojewish</B
+> ( int juliandaycount [, bool hebrew [, int fl]])<BR  ></BR
+><P  >     Converts a Julian Day Count to the Jewish Calendar.
+    </P
+><P  >     The optional <TT  CLASS="parameter" ><I  >hebrew</I
+></TT
+> and <TT  CLASS="parameter" ><I  >fl</I
+></TT
+> 
+     parameters became available in PHP 5.0.0
+    </P
+><P  >     If the <TT  CLASS="parameter" ><I  >hebrew</I
+></TT
+> parameter is set to <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>, the
+     <TT  CLASS="parameter" ><I  >fl</I
+></TT
+> parameter is used for Hebrew, string based,
+     output format.  The available formats are:  
+     <TT  CLASS="constant" ><B  >CAL_JEWISH_ADD_ALAFIM_GERESH</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JEWISH_ADD_ALAFIM</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JEWISH_ADD_GERESHAYIM</B
+></TT
+>.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11858" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >jdtojewish()</B
+> Example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">jdtojewish</font><font  color="#007700">(</font><font  color="#0000BB">gregoriantojd</font><font  color="#007700">(</font><font  color="#0000BB">10</font><font  color="#007700">, </font><font  color="#0000BB">8</font><font  color="#007700">, </font><font  color="#0000BB">2002</font><font  color="#007700">), </font><font  color="#0000BB">true</font><font  color="#007700">,<br  />       </font><font  color="#0000BB">CAL_JEWISH_ADD_GERESHAYIM </font><font  color="#007700">+ </font><font  color="#0000BB">CAL_JEWISH_ADD_ALAFIM </font><font  color="#007700">+ </font><font  color="#0000BB">CAL_JEWISH_ADD_ALAFIM_GERESH</font><font  color="#007700">); <br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>JDToJulian</name>
+            <signature><![CDATA[string jdtojulian ( int julianday)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11866" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >jdtojulian</B
+> ( int julianday)<BR  ></BR
+><P  >     Converts Julian Day Count to a string containing the Julian
+     Calendar Date in the format of "month/day/year".
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>jdtounix</name>
+            <signature><![CDATA[int jdtounix ( int jday)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11879" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >jdtounix</B
+> ( int jday)<BR  ></BR
+><P  >     This function will return a Unix timestamp corresponding to the
+     Julian Day given in <TT  CLASS="parameter" ><I  >jday</I
+></TT
+> or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if
+     <TT  CLASS="parameter" ><I  >jday</I
+></TT
+> is not inside the Unix epoch
+     (Gregorian years between 1970 and 2037 or 2440588 <=
+     <TT  CLASS="parameter" ><I  >jday</I
+></TT
+> <= 2465342 ). The time returned is
+     localtime (and not GMT).
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >unixtojd()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>JewishToJD</name>
+            <signature><![CDATA[int jewishtojd ( int month, int day, int year)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11898" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >jewishtojd</B
+> ( int month, int day, int year)<BR  ></BR
+><P  >     Although this function can handle dates all the way back to the year 1
+     (3761 B.C.), such use may not be meaningful.  The Jewish calendar has
+     been in use for several thousand years, but in the early days there was
+     no formula to determine the start of a month. A new month was started
+     when the new moon was first observed.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>JulianToJD</name>
+            <signature><![CDATA[int juliantojd ( int month, int day, int year)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11917" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >juliantojd</B
+> ( int month, int day, int year)<BR  ></BR
+><P  >     Valid Range for Julian Calendar 4713 B.C. to 9999 A.D.
+    </P
+><P  >     Although this function can handle dates all the way back to 4713
+     B.C., such use may not be meaningful. The calendar was created in
+     46 B.C., but the details did not stabilize until at least 8 A.D.,
+     and perhaps as late at the 4th century. Also, the beginning of a
+     year varied from one culture to another - not all accepted
+     January as the first month.
+    </P
+><DIV  CLASS="caution" ><P  ></P
+><TABLE  CLASS="caution" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >注意</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      Remember, the current calendar system being used worldwide is the
+      Gregorian calendar.  <SPAN HREF="#"><B  CLASS="function" >gregoriantojd()</B
+></A
+> can be used to
+      convert such dates to their Julian Day count.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>unixtojd</name>
+            <signature><![CDATA[int unixtojd ( [int timestamp])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11940" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >unixtojd</B
+> ( [int timestamp])<BR  ></BR
+><P  >     Return the Julian Day for a Unix <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+>
+     (seconds since 1.1.1970), or for the current day if no
+     <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+> is given.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >jdtounix()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

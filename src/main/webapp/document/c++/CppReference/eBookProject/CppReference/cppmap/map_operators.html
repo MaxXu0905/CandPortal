@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)http://www.cppreference.com/cppmap/map_operators.html -->
+<HTML><HEAD><TITLE>Map operators</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="map_operators.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppmap/index.html">C++ Maps</A> &gt; <A 
+      href="../cppmap/map_operators.html">Map 
+      operators</A> </DIV>
+      <DIV class=name-format>Map operators </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;map&gt;
+  <A href="../containers.html">TYPE</A>&amp; operator[]( const <A href="../containers.html">key_type</A>&amp; key );
+  map operator=(const map&amp; c2);
+  bool operator==(const map&amp; c1, const map&amp; c2);
+  bool operator!=(const map&amp; c1, const map&amp; c2);
+  bool operator&lt;(const map&amp; c1, const map&amp; c2);
+  bool operator&gt;(const map&amp; c1, const map&amp; c2);
+  bool operator&lt;=(const map&amp; c1, const map&amp; c2);
+  bool operator&gt;=(const map&amp; c1, const map&amp; c2);
+</PRE>
+      <P>Maps can be compared and assigned with the standard comparison 
+      operators: ==, !=, &lt;=, &gt;=, &lt;, &gt;, and =. Individual elements of 
+      a map can be examined with the [] operator.</P>
+      <P>Performing a comparison or assigning one map to another takes <A 
+      href="../complexity.html">linear time</A>.</P>
+      <P>Two maps are equal if:</P>
+      <OL>
+        <LI>Their size is the same, and 
+        <LI>Each member in location <EM>i</EM> in one map is equal to the the 
+        member in location <EM>i</EM> in the other map. </LI></OL>
+      <P>Comparisons among maps are done lexicographically.</P>
+      <P>For example, the following code defines a map between strings and 
+      integers and loads values into the map using the [] operator:</P><PRE class=example-code>  struct strCmp {
+    bool operator()( const char* s1, const char* s2 ) const {
+      return strcmp( s1, s2 ) &lt; 0;
+    }
+  };
+
+  map&lt;const char*, int, strCmp&gt; ages;
+  ages["Homer"] = 38;
+  ages["Marge"] = 37;
+  ages["Lisa"] = 8;
+  ages["Maggie"] = 1;
+  ages["Bart"] = 11;
+
+  cout &lt;&lt; "Bart is " &lt;&lt; ages["Bart"] &lt;&lt; " years old" &lt;&lt; endl;
+
+  cout &lt;&lt; "In alphabetical order: " &lt;&lt; endl;
+  for( map&lt;const char*, int, strCmp&gt;::iterator iter = ages.begin(); iter != ages.end(); iter++ ) {
+    cout &lt;&lt; (*iter).first &lt;&lt; " is " &lt;&lt; (*iter).second &lt;&lt; " years old" &lt;&lt; endl;
+  }
+</PRE>
+      <P>When run, the above code displays this output:</P><PRE class=example-code>  Bart is 11 years old
+  In alphabetical order:
+  Bart is 11 years old
+  Homer is 38 years old
+  Lisa is 8 years old
+  Maggie is 1 years old
+  Marge is 37 years old  
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppmap/insert.html">insert</A><BR><A 
+      href="../cppmap/map_constructors.html">Map 
+      Constructors &amp; Destructors</A> 
+</DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

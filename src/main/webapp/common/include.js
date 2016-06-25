@@ -1,0 +1,1 @@
+window.INCLUDE = (function() {	"use strict";	function INCLUDE(funct, scripts) {		$LAB //		.script("lib/jquery-1.9.1.min.js") //		.wait() //		.script("lib/bootstrap/js/bootstrap.min.js") //		.script(function() {			return scripts;		}) //		.wait(function(){			if(typeof funct === 'function'){				funct();			}		});	}	return INCLUDE;})();

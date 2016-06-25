@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://www.cppreference.com/cppalgorithm/lower_bound.html -->
+<HTML><HEAD><TITLE>lower_bound</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="lower_bound.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/lower_bound.html">lower_bound</A> 
+      </DIV>
+      <DIV class=name-format>lower_bound </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator lower_bound( iterator first, iterator last,  const <A href="../containers.html">TYPE</A>&amp; val );
+  iterator lower_bound( iterator first, iterator last, const <A href="../containers.html">TYPE</A>&amp; val, CompFn f );
+</PRE>
+      <P>The lower_bound() function is a type of <A 
+      href="../cppalgorithm/binary_search.html">binary_search</A>(). 
+      This function searches for the first place that <EM>val</EM> can be 
+      inserted into the ordered range defined by <EM>first</EM> and 
+      <EM>last</EM> that will not mess up the existing ordering.</P>
+      <P>The return value of lower_bound() is an iterator that points to the 
+      location where <EM>val</EM> can be safely inserted. Unless the comparison 
+      function <EM>f</EM> is specified, the &lt; operator is used for 
+      ordering.</P>
+      <P>For example, the following code uses lower_bound() to insert the number 
+      7 into an ordered vector of integers:</P><PRE class=example-code> vector&lt;int&gt; nums;
+ nums.push_back( -242 );
+ nums.push_back( -1 );
+ nums.push_back( 0 );
+ nums.push_back( 5 );
+ nums.push_back( 8 );
+ nums.push_back( 8 );
+ nums.push_back( 11 );          
+
+ cout &lt;&lt; "Before nums is: ";
+ for( unsigned int i = 0; i &lt; nums.size(); i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ vector&lt;int&gt;::iterator result;
+ int new_val = 7;               
+
+ result = lower_bound( nums.begin(), nums.end(), new_val );             
+
+ nums.insert( result, new_val );                
+
+ cout &lt;&lt; "After, nums is: ";
+ for( unsigned int i = 0; i &lt; nums.size(); i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <P>The above code produces the following output:</P><PRE class=example-code> Before nums is: -242 -1 0 5 8 8 11
+ After, nums is: -242 -1 0 5 7 8 8 11           
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+      href="../cppalgorithm/equal_range.html">equal_range</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

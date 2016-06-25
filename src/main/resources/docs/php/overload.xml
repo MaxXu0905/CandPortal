@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="overload">
+    <methods>
+        <method>
+            <name>overload</name>
+            <signature><![CDATA[void overload ( [string class_name])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN84410" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >overload</B
+> ( [string class_name])<BR  ></BR
+><P  >     The <B  CLASS="function" >overload()</B
+> function will enable
+     property and method call overloading for a class identified
+     by <TT  CLASS="parameter" ><I  >class_name</I
+></TT
+>.
+     <SPAN HREF="#">See an example
+     in the introductory section of this part</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

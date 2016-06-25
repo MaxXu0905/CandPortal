@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/stdio/fseek.html -->
+<HTML><HEAD><TITLE>fseek</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="fseek.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A href="fseek.html">fseek</A> 
+      </DIV>
+      <DIV class=name-format>fseek </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fseek( FILE *stream, long offset, int origin );
+</PRE>
+      <P>The function fseek() sets the file position data for the given 
+      <EM>stream</EM>. The origin value should have one of the following values 
+      (defined in stdio.h):</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Name</TH>
+          <TH class=code-table-th>Explanation</TH></TR>
+        <TR>
+          <TD class=code-table-td>SEEK_SET</TD>
+          <TD class=code-table-td>Seek from the start of the file</TD></TR>
+        <TR>
+          <TD class=code-table-td>SEEK_CUR</TD>
+          <TD class=code-table-td>Seek from the current location</TD></TR>
+        <TR>
+          <TD class=code-table-td>SEEK_END</TD>
+          <TD class=code-table-td>Seek from the end of the 
+      file</TD></TR></TBODY></TABLE>
+      <P>fseek() returns zero upon success, non-zero on failure. You can use 
+      fseek() to move beyond a file, but not before the beginning. Using fseek() 
+      clears the <STRONG>EOF</STRONG> flag associated with that stream.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="fgetpos.html">fgetpos</A><BR><A 
+      href="fopen.html">fopen</A><BR><A 
+      href="fsetpos.html">fsetpos</A><BR><A 
+      href="ftell.html">ftell</A><BR><A 
+      href="rewind.html">rewind</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

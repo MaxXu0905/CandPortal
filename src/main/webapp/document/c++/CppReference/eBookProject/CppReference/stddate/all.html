@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/stddate/all.html -->
+<HTML><HEAD><TITLE>Standard C Date & Time</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C Date 
+      &amp; Time</A> </DIV>
+      <DIV class=name-format>asctime </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  char *asctime( const struct tm *ptr );
+</PRE>
+      <P>The function asctime() converts the time in the struct 'ptr' to a 
+      character string of the following format:</P><PRE class=example-code>   day month date hours:minutes:seconds year            
+</PRE>
+      <P>An example:</P><PRE class=example-code>   Mon Jun 26 12:03:53 2000             
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="clock.html">clock</A><BR><A 
+      href="ctime.html">ctime</A><BR><A 
+      href="difftime.html">difftime</A><BR><A 
+      href="gmtime.html">gmtime</A><BR><A 
+      href="localtime.html">localtime</A><BR><A 
+      href="mktime.html">mktime</A><BR><A 
+      href="time.html">time</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>clock </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  clock_t clock( void );
+</PRE>
+<P>The clock() function returns the processor time since the program started, or 
+-1 if that information is unavailable. To convert the return value to seconds, 
+divide it by CLOCKS_PER_SEC. (Note: if your compiler is POSIX compliant, then 
+CLOCKS_PER_SEC is always defined as 1000000.)</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asctime.html">asctime</A><BR><A 
+href="ctime.html">ctime</A><BR><A 
+href="time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ctime </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  char *ctime( const time_t *time );
+</PRE>
+<P>The ctime() function converts the calendar time time to local time of the 
+format:</P><PRE class=example-code>   day month date hours:minutes:seconds year            
+</PRE>
+<P>using ctime() is equivalent to</P><PRE class=example-code>   asctime( localtime( tp ) );          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asctime.html">asctime</A><BR><A 
+href="clock.html">clock</A><BR><A 
+href="gmtime.html">gmtime</A><BR><A 
+href="localtime.html">localtime</A><BR><A 
+href="mktime.html">mktime</A><BR><A 
+href="time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>difftime </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  double difftime( time_t time2, time_t time1 );
+</PRE>
+<P>The function difftime() returns <EM>time2</EM> - <EM>time1</EM>, in 
+seconds.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asctime.html">asctime</A><BR><A 
+href="gmtime.html">gmtime</A><BR><A 
+href="localtime.html">localtime</A><BR><A 
+href="time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>gmtime </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  struct tm *gmtime( const time_t *time );
+</PRE>
+<P>The gmtime() function returns the given <EM>time</EM> in Coordinated 
+Universal Time (usually Greenwich mean time), unless it's not supported by the 
+system, in which case <STRONG>NULL</STRONG> is returned. Watch out for <A 
+href="C:\Documents and Settings\Henry_Four\My Documents\eBookProject\CppReference\static_return.html">static return</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asctime.html">asctime</A><BR><A 
+href="ctime.html">ctime</A><BR><A 
+href="difftime.html">difftime</A><BR><A 
+href="localtime.html">localtime</A><BR><A 
+href="mktime.html">mktime</A><BR><A 
+href="strftime.html">strftime</A><BR><A 
+href="time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>localtime </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  struct tm *localtime( const time_t *time );
+</PRE>
+<P>The function localtime() converts calendar time time into local time. Watch 
+out for the <A href="C:\Documents and Settings\Henry_Four\My Documents\eBookProject\CppReference\static_return.html">static 
+return</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asctime.html">asctime</A><BR><A 
+href="ctime.html">ctime</A><BR><A 
+href="difftime.html">difftime</A><BR><A 
+href="gmtime.html">gmtime</A><BR><A 
+href="strftime.html">strftime</A><BR><A 
+href="time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>mktime </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  time_t mktime( struct tm *time );
+</PRE>
+<P>The mktime() function converts the local time in <EM>time</EM> to calendar 
+time, and returns it. If there is an error, -1 is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asctime.html">asctime</A><BR><A 
+href="ctime.html">ctime</A><BR><A 
+href="gmtime.html">gmtime</A><BR><A 
+href="time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>setlocale </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;locale.h&gt;
+  char *setlocale( int category, const char * locale );
+</PRE>
+<P>The setlocale() function is used to set and retrieve the current locale. If 
+<EM>locale</EM> is <STRONG>NULL</STRONG>, the current locale is returned. 
+Otherwise, <EM>locale</EM> is used to set the locale for the given 
+<EM>category</EM>.</P>
+<P><EM>category</EM> can have the following values:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Value</TH>
+    <TH class=code-table-th>Description</TH></TR>
+  <TR>
+    <TD class=code-table-td>LC_ALL</TD>
+    <TD class=code-table-td>All of the locale</TD></TR>
+  <TR>
+    <TD class=code-table-td>LC_TIME</TD>
+    <TD class=code-table-td>Date and time formatting</TD></TR>
+  <TR>
+    <TD class=code-table-td>LC_NUMERIC</TD>
+    <TD class=code-table-td>Number formatting</TD></TR>
+  <TR>
+    <TD class=code-table-td>LC_COLLATE</TD>
+    <TD class=code-table-td>String collation and regular expression 
+  matching</TD></TR>
+  <TR>
+    <TD class=code-table-td>LC_C<A 
+      href="../containers.html">TYPE</A></TD>
+    <TD class=code-table-td>Regular expression matching, conversion, 
+      case-sensitive comparison, wide character functions, and character 
+      classification.</TD></TR>
+  <TR>
+    <TD class=code-table-td>LC_MONETARY</TD>
+    <TD class=code-table-td>For monetary formatting</TD></TR>
+  <TR>
+    <TD class=code-table-td>LC_MESSAGES</TD>
+    <TD class=code-table-td>For natural language messages</TD></TR></TBODY></TABLE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(Standard C String and Character) <A 
+href="strcoll.html">strcoll</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>strftime </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  size_t strftime( char *str, size_t maxsize, const char *fmt, struct tm *time );
+</PRE>
+<P>The function strftime() formats date and time information from <EM>time</EM> 
+to a format specified by <EM>fmt</EM>, then stores the result in <EM>str</EM> 
+(up to <EM>maxsize</EM> characters). Certain codes may be used in <EM>fmt</EM> 
+to specify different types of time:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Code</TH>
+    <TH class=code-table-th>Meaning</TH></TR>
+  <TR>
+    <TD class=code-table-td>%a</TD>
+    <TD class=code-table-td>abbreviated weekday name (e.g. Fri)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%A</TD>
+    <TD class=code-table-td>full weekday name (e.g. Friday)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%b</TD>
+    <TD class=code-table-td>abbreviated month name (e.g. Oct)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%B</TD>
+    <TD class=code-table-td>full month name (e.g. October)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%c</TD>
+    <TD class=code-table-td>the standard date and time string</TD></TR>
+  <TR>
+    <TD class=code-table-td>%d</TD>
+    <TD class=code-table-td>day of the month, as a number (1-31)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%H</TD>
+    <TD class=code-table-td>hour, 24 hour format (0-23)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%I</TD>
+    <TD class=code-table-td>hour, 12 hour format (1-12)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%j</TD>
+    <TD class=code-table-td>day of the year, as a number (1-366)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%m</TD>
+    <TD class=code-table-td>month as a number (1-12). Note: some versions of 
+      Microsoft Visual C++ may use values that range from 0-11.</TD></TR>
+  <TR>
+    <TD class=code-table-td>%M</TD>
+    <TD class=code-table-td>minute as a number (0-59)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%p</TD>
+    <TD class=code-table-td>locale's equivalent of AM or PM</TD></TR>
+  <TR>
+    <TD class=code-table-td>%S</TD>
+    <TD class=code-table-td>second as a number (0-59)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%U</TD>
+    <TD class=code-table-td>week of the year, (0-53), where week 1 has the 
+      first Sunday</TD></TR>
+  <TR>
+    <TD class=code-table-td>%w</TD>
+    <TD class=code-table-td>weekday as a decimal (0-6), where Sunday is 
+0</TD></TR>
+  <TR>
+    <TD class=code-table-td>%W</TD>
+    <TD class=code-table-td>week of the year, (0-53), where week 1 has the 
+      first Monday</TD></TR>
+  <TR>
+    <TD class=code-table-td>%x</TD>
+    <TD class=code-table-td>standard date string</TD></TR>
+  <TR>
+    <TD class=code-table-td>%X</TD>
+    <TD class=code-table-td>standard time string</TD></TR>
+  <TR>
+    <TD class=code-table-td>%y</TD>
+    <TD class=code-table-td>year in decimal, without the century (0-99)</TD></TR>
+  <TR>
+    <TD class=code-table-td>%Y</TD>
+    <TD class=code-table-td>year in decimal, with the century</TD></TR>
+  <TR>
+    <TD class=code-table-td>%Z</TD>
+    <TD class=code-table-td>time zone name</TD></TR>
+  <TR>
+    <TD class=code-table-td>%%</TD>
+    <TD class=code-table-td>a percent sign</TD></TR></TBODY></TABLE>
+<P>The strftime() function returns the number of characters put into 
+<EM>str</EM>, or zero if an error occurs.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="gmtime.html">gmtime</A><BR><A 
+href="localtime.html">localtime</A><BR><A 
+href="time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>time </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;time.h&gt;
+  time_t time( time_t *time );
+</PRE>
+<P>The function time() returns the current time, or -1 if there is an error. If 
+the argument 'time' is given, then the current time is stored in 'time'.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asctime.html">asctime</A><BR><A 
+href="clock.html">clock</A><BR><A 
+href="ctime.html">ctime</A><BR><A 
+href="difftime.html">difftime</A><BR><A 
+href="gmtime.html">gmtime</A><BR><A 
+href="localtime.html">localtime</A><BR><A 
+href="mktime.html">mktime</A><BR>(Other 
+Standard C Functions) <A 
+href="../stdother/srand.html">srand</A><BR><A 
+href="strftime.html">strftime</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

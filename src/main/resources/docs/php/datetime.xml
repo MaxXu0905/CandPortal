@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="datetime">
+    <methods>
+        <method>
+            <name>checkdate</name>
+            <signature><![CDATA[bool checkdate ( int month, int day, int year)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18120" ></A
+><H2  >说明</H2
+>bool <B  CLASS="methodname" >checkdate</B
+> ( int month, int day, int year)<BR  ></BR
+><P  >     如果给出的日期有效则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，否则返回
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。检查由参数构成的日期的合法性。日期在以下情况下被认为有效：
+     </P><P  ></P
+><UL  ><LI  ><P  >        year 的值是从 1 到 32767
+       </P
+></LI
+><LI  ><P  >        month 的值是从 1 到 12
+       </P
+></LI
+><LI  ><P  >        <TT  CLASS="parameter" ><I  >Day</I
+></TT
+> 的值在给定的 <TT  CLASS="parameter" ><I  >month</I
+></TT
+>
+        所应该具有的天数范围之内，闰年已经考虑进去了。
+       </P
+></LI
+></UL
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+> 和 <SPAN HREF="#"><B  CLASS="function" >strtotime()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>date</name>
+            <signature><![CDATA[string date ( string format [, int timestamp])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18153" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >date</B
+> ( string format [, int timestamp])<BR  ></BR
+><P  >     返回将整数 <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+>
+     按照给定的格式字串而产生的字符串。如果没有给出时间戳则使用本地当前时间。换句话说，<TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+>
+     是可选的，默认值为 <SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+>。
+     </P><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       有效的时间戳典型范围是格林威治时间 1901 年 12 月 13 日 20:45:54
+       到 2038 年 1 月 19 日 03:14:07。（此范围符合 32
+       位有符号整数的最小值和最大值）。在 Windows 系统中此范围限制为从 1970 年 1 月 1 日到
+       2038 年 1 月 19 日。
+      </P
+></BLOCKQUOTE
+></DIV
+>
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       要将字符串表达的时间转换成时间戳，应该使用
+       <SPAN HREF="#"><B  CLASS="function" >strtotime()</B
+></A
+>。此外一些数据库有一些函数将其时间格式转换成时间戳（例如
+       MySQL 的 <SPAN HREF="#">UNIX_TIMESTAMP</A
+> 函数）。
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >     </P><DIV  CLASS="table" ><A  NAME="AEN18175" ></A
+><P  ><B  >表格 1. 格式字串可以识别以下 <TT  CLASS="parameter" ><I  >format</I
+></TT
+> 参数的字符串</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >format</I
+></TT
+> 字符</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >说明</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >返回值例子</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >a</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >小写的上午和下午值</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >am</TT
+> 或 <TT  CLASS="literal" >pm</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >A</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >大写的上午和下午值</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >AM</TT
+> 或 <TT  CLASS="literal" >PM</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >B</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Swatch Internet 标准时</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >000</TT
+> 到 <TT  CLASS="literal" >999</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >d</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >月份中的第几天，有前导零的 2 位数字</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >01</TT
+> 到 <TT  CLASS="literal" >31</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >D</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >星期中的第几天，文本表示，3 个字母</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >Mon</TT
+> 到 <TT  CLASS="literal" >Sun</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >F</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >月份，完整的文本格式，例如 January 或者 March</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >January</TT
+> 到 <TT  CLASS="literal" >December</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >g</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >小时，12 小时格式，没有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+> 到 <TT  CLASS="literal" >12</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >G</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >小时，24 小时格式，没有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> 到 <TT  CLASS="literal" >23</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >h</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >小时，12 小时格式，有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >01</TT
+> 到 <TT  CLASS="literal" >12</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >H</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >小时，24 小时格式，有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >00</TT
+> 到 <TT  CLASS="literal" >23</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >i</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >有前导零的分钟数</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >00</TT
+> 到 <TT  CLASS="literal" >59</TT
+>></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >I</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >是否为夏令时</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >如果是夏令时为 <TT  CLASS="literal" >1</TT
+>，否则为 <TT  CLASS="literal" >0</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >j</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >月份中的第几天，没有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+> 到 <TT  CLASS="literal" >31</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >l</TT
+>（“L”的小写字母）</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >星期几，完整的文本格式</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >Sunday</TT
+> 到 <TT  CLASS="literal" >Saturday</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >L</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >是否为闰年</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >如果是闰年为 <TT  CLASS="literal" >1</TT
+>，否则为 <TT  CLASS="literal" >0</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >m</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >数字表示的月份，有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >01</TT
+> 到 <TT  CLASS="literal" >12</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >M</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >三个字母缩写表示的月份</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >Jan</TT
+> 到 <TT  CLASS="literal" >Dec</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >n</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >数字表示的月份，没有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+> 到 <TT  CLASS="literal" >12</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >O</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >与格林威治时间相差的小时数</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >例如：<TT  CLASS="literal" >+0200</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >r</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >RFC 822 格式的日期</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >例如：<TT  CLASS="literal" >Thu, 21 Dec 2000 16:01:07 +0200</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >s</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >秒数，有前导零</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >00</TT
+> 到 <TT  CLASS="literal" >59</TT
+>></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >S</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >每月天数后面的英文后缀，2 个字符</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >st</TT
+>，<TT  CLASS="literal" >nd</TT
+>，<TT  CLASS="literal" >rd</TT
+> 或者 <TT  CLASS="literal" >th</TT
+>。可以和 <TT  CLASS="literal" >j</TT
+> 一起用。</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >t</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >给定月份所应有的天数</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >28</TT
+> 到 <TT  CLASS="literal" >31</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >T</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >本机所在的时区</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >例如：<TT  CLASS="literal" >EST</TT
+>，<TT  CLASS="literal" >MDT</TT
+>（【译者注】在 Windows
+        下为完整文本格式，例如“Eastern Standard Time”，中文版会显示“中国标准时间”）。</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >U</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >从 Unix 纪元（January 1 1970 00:00:00 GMT）开始至今的秒数</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >参见 <SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >w</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >星期中的第几天，数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+>（表示星期天）到 <TT  CLASS="literal" >6</TT
+>（表示星期六）</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >W</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ISO-8601 格式年份中的第几周，每周从星期一开始（PHP 4.1.0 新加的）</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >例如：<TT  CLASS="literal" >42</TT
+>（当年的第 42 周）</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >Y</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4 位数字完整表示的年份</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >例如：<TT  CLASS="literal" >1999</TT
+> 或 <TT  CLASS="literal" >2003</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >y</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2 位数字表示的年份</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >例如：<TT  CLASS="literal" >99</TT
+> 或 <TT  CLASS="literal" >03</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >z</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >年份中的第几天</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> 到 <TT  CLASS="literal" >366</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >Z</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >时差偏移量的秒数。UTC 西边的时区偏移量总是负的，UTC 东边的时区偏移量总是正的。</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >-43200</TT
+> 到 <TT  CLASS="literal" >43200</TT
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     格式字串中不能被识别的字符将原样显示。<TT  CLASS="literal" >Z</TT
+> 格式在使用 <SPAN HREF="#"><B  CLASS="function" >gmdate()</B
+></A
+> 时总是返回 <TT  CLASS="literal" >0</TT
+>。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18407" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >date()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// Prints something like: Wednesday<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"l"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Prints something like: Wednesday 15th of January 2003 05:51:38 AM<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"l dS of F Y h:i:s A"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Prints: July 1, 2000 is on a Saturday<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"July 1, 2000 is on a " </font><font  color="#007700">. </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"l"</font><font  color="#007700">, </font><font  color="#0000BB">mktime</font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">7</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     在格式字串中的字符前加上反斜线来转义可以避免它被按照上表解释。如果加上反斜线后的字符本身就是一个特殊序列，那还要转义反斜线。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18412" ></A
+><P  ><B  >例子 2. 在 <B  CLASS="function" >date()</B
+> 中转义字符</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// prints something like: Wednesday the 15th<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"l \\t\h\e jS"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     可以把 <B  CLASS="function" >date()</B
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+> 结合使用来得到未来或过去的日期。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18419" ></A
+><P  ><B  >例子 3. 
+       <B  CLASS="function" >date()</B
+> 和 <SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+> 例子
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$tomorrow  </font><font  color="#007700">= </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"m"</font><font  color="#007700">)  ,</font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"d"</font><font  color="#007700">)+</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"Y"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">$lastmonth </font><font  color="#007700">= </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"m"</font><font  color="#007700">)-</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"d"</font><font  color="#007700">),  </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"Y"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">$nextyear  </font><font  color="#007700">= </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"m"</font><font  color="#007700">),  </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"d"</font><font  color="#007700">),  </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"Y"</font><font  color="#007700">)+</font><font  color="#0000BB">1</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       由于夏令时的缘故，这种方法比简单地在时间戳上加减一天或者一个月的秒数更可靠。
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >     一些使用 <B  CLASS="function" >date()</B
+>
+     格式化日期的例子。注意要转义所有其它的字符，因为目前有特殊含义的字符会产生不需要的结果，而其余字符在
+     PHP 将来的版本中可能会被用上。当转义时，注意用单引号以避免类似 \n 的字符变成了换行符。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18428" ></A
+><P  ><B  >例子 4. 
+       <B  CLASS="function" >date()</B
+> Formatting
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// Assuming today is: March 10th, 2001, 5:16:18 pm<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"F j, Y, g:i a"</font><font  color="#007700">);                 </font><font  color="#FF8000">// March 10, 2001, 5:16 pm<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"m.d.y"</font><font  color="#007700">);                         </font><font  color="#FF8000">// 03.10.01<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"j, n, Y"</font><font  color="#007700">);                       </font><font  color="#FF8000">// 10, 3, 2001<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"Ymd"</font><font  color="#007700">);                           </font><font  color="#FF8000">// 20010310<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">'h-i-s, j-m-y, it is w Day z '</font><font  color="#007700">);  </font><font  color="#FF8000">// 05-16-17, 10-03-01, 1631 1618 6 Fripm01<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">'\i\t \i\s \t\h\e jS \d\a\y.'</font><font  color="#007700">);   </font><font  color="#FF8000">// It is the 10th day.<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"D M j G:i:s T Y"</font><font  color="#007700">);               </font><font  color="#FF8000">// Sat Mar 10 15:16:08 MST 2001<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">'H:m:s \m \i\s\ \m\o\n\t\h'</font><font  color="#007700">);     </font><font  color="#FF8000">// 17:03:17 m is month<br  /></font><font  color="#0000BB">$today </font><font  color="#007700">= </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">"H:i:s"</font><font  color="#007700">);                         </font><font  color="#FF8000">// 17:16:17<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     要格式化其它语种的日期，应该用 <SPAN HREF="#"><B  CLASS="function" >setlocale()</B
+></A
+> 和
+     <SPAN HREF="#"><B  CLASS="function" >strftime()</B
+></A
+> 函数。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >getlastmod()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >gmdate()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >strftime()</B
+></A
+> 和 <SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>getdate</name>
+            <signature><![CDATA[array getdate ( [int timestamp])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18445" ></A
+><H2  >说明</H2
+>array <B  CLASS="methodname" >getdate</B
+> ( [int timestamp])<BR  ></BR
+><P  >     返回一个根据 <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+>
+     得出的包含有日期信息的结合数组。如果没有给出时间戳则认为是当前本地时间。数组中的单元如下：
+    </P
+><P  >     </P><DIV  CLASS="table" ><A  NAME="AEN18456" ></A
+><P  ><B  >表格 1. 返回的关联数组中的键名单元</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >键名</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >说明</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >返回值例子</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"seconds"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >秒的数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> 到 <TT  CLASS="literal" >59</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"minutes"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >分钟的数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> 到 <TT  CLASS="literal" >59</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"hours"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >小时的数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> 到 <TT  CLASS="literal" >23</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"mday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >月份中第几天的数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+> 到 <TT  CLASS="literal" >31</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"wday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >星期中第几天的数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+>（表示星期天）到 <TT  CLASS="literal" >6</TT
+>（表示星期六）</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"mon"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >月份的数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+> 到 <TT  CLASS="literal" >12</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"year"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4 位数字表示的完整年份</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >例如：<TT  CLASS="literal" >1999</TT
+> 或 <TT  CLASS="literal" >2003</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"yday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >一年中第几天的数字表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> 到 <TT  CLASS="literal" >366</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"weekday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >星期几的完整文本表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >Sunday</TT
+> 到 <TT  CLASS="literal" >Saturday</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"month"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >月份的完整文本表示</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >January></TT
+> 到 <TT  CLASS="literal" >December</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          自从 Unix 纪元开始至今的秒数，和 <SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+>
+          的返回值以及用于 <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+> 的值类似。
+         </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          系统相关，典型值为从 <TT  CLASS="literal" >-2147483648</TT
+> 到
+          <TT  CLASS="literal" >2147483647</TT
+>。
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18545" ></A
+><P  ><B  >例子 1. 
+       <B  CLASS="function" >getdate()</B
+> 例子
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$today </font><font  color="#007700">= </font><font  color="#0000BB">getdate</font><font  color="#007700">();<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$today</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       输出类似于：
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+    [seconds] => 40
+    [minutes] => 58
+    [hours]   => 21
+    [mday]    => 17
+    [wday]    => 2
+    [mon]     => 6
+    [year]    => 2003
+    [yday]    => 167
+    [weekday] => Tuesday
+    [month]   => June
+    [0]       => 1055901520
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >setlocale()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>gettimeofday</name>
+            <signature><![CDATA[array gettimeofday ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18559" ></A
+><H2  >说明</H2
+>array <B  CLASS="methodname" >gettimeofday</B
+> ( void )<BR  ></BR
+><P  >     本函数是 gettimeofday(2) 的接口。返回一个结合数组，包含有系统调用返回的数据。
+     </P><P  ></P
+><UL  ><LI  ><P  >        "sec" - 秒数
+       </P
+></LI
+><LI  ><P  >        "usec" - 微秒数
+       </P
+></LI
+><LI  ><P  >        "minuteswest" - 格林威治向西的分钟数
+       </P
+></LI
+><LI  ><P  >        "dsttime" - 夏令时修正的类型
+       </P
+></LI
+></UL
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>gmdate</name>
+            <signature><![CDATA[string gmdate ( string format [, int timestamp])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18579" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >gmdate</B
+> ( string format [, int timestamp])<BR  ></BR
+><P  >     同 <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+>
+     函数完全一样，只除了返回的时间是格林威治标准时（GMT）。例如当在中国（GMT
+     +0800）运行以下程序时，第一行显示“Jan 01 2000 00:00:00”而第二行显示“Dec
+     31 1999 16:00:00”。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18592" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >gmdate()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M d Y H:i:s"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">gmdate </font><font  color="#007700">(</font><font  color="#DD0000">"M d Y H:i:s"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      在 Microsoft Windows
+      系列的操作系统中实现本函数的系统库是坏的，因此
+      <B  CLASS="function" >gmdate()</B
+> 不支持负的
+      <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+> 参数值。细节见错误报告：<SPAN HREF="#">#22620</A
+>，<SPAN HREF="#">#22457</A
+> 和 <SPAN HREF="#">#14391</A
+>。
+     </P
+><P  >      此问题不会出现于 Unix/Linux
+      操作系统，该系统下的系统库会按照预期结果运作。
+     </P
+><P  >      PHP 无法修复坏的系统库。要修正与此类似的问题请联系操作系统供应商。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >gmmktime()</B
+></A
+> 和 <SPAN HREF="#"><B  CLASS="function" >strftime()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>gmmktime</name>
+            <signature><![CDATA[int gmmktime ( [int hour [, int minute [, int second [, int month [, int day [, int year [, int is_dst]]]]]]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18614" ></A
+><H2  >说明</H2
+>int <B  CLASS="methodname" >gmmktime</B
+> ( [int hour [, int minute [, int second [, int month [, int day [, int year [, int is_dst]]]]]]])<BR  ></BR
+><P  >     和 <SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+> 完全一样，只除了返回值是格林威治标准时的时间戳。
+    </P
+><P  >     和 <SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+>
+     一样，参数可以从右到左依次空着，空着的参数会被设为相应的当前 GMT 值。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>gmstrftime</name>
+            <signature><![CDATA[string gmstrftime ( string format [, int timestamp])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18648" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >gmstrftime</B
+> ( string format [, int timestamp])<BR  ></BR
+><P  >     和 <SPAN HREF="#"><B  CLASS="function" >strftime()</B
+></A
+>
+     的行为相同，只除了返回时间是格林威治标准时（GMT）。例如，当在东部标准时（EST，GMT
+     -500）运行时，下面第一行显示“Dec 31 1998 20:00:00”，而第二行显示“Jan 01 1999
+     01:00:00”。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18661" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >gmstrftime()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />setlocale </font><font  color="#007700">(</font><font  color="#0000BB">LC_TIME</font><font  color="#007700">, </font><font  color="#DD0000">'en_US'</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"%b %d %Y %H:%M:%S"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">20</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">12</font><font  color="#007700">,</font><font  color="#0000BB">31</font><font  color="#007700">,</font><font  color="#0000BB">98</font><font  color="#007700">)).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">gmstrftime </font><font  color="#007700">(</font><font  color="#DD0000">"%b %d %Y %H:%M:%S"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">20</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">12</font><font  color="#007700">,</font><font  color="#0000BB">31</font><font  color="#007700">,</font><font  color="#0000BB">98</font><font  color="#007700">)).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >strftime()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>localtime</name>
+            <signature><![CDATA[array localtime ( [int timestamp [, bool is_associative]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18671" ></A
+><H2  >说明</H2
+>array <B  CLASS="methodname" >localtime</B
+> ( [int timestamp [, bool is_associative]])<BR  ></BR
+><P  >     <B  CLASS="function" >localtime()</B
+> 函数返回一个数组，其结构和
+     C 函数调用返回的完全一样。<B  CLASS="function" >localtime()</B
+>
+     的第一个参数是时间戳，如果没有给出则使用从
+     <SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+> 返回的当前时间。第二个参数是
+     <TT  CLASS="parameter" ><I  >is_associative</I
+></TT
+>，如果设为 0
+     或未提供则返回的是普通的数字索引数组。如果该参数设为 1 则
+     <B  CLASS="function" >localtime()</B
+> 函数返回包含有所有从
+     C 的 localtime 函数调用所返回的不同单元的结合数组。结合数组中不同的键名为：
+     </P><P  ></P
+><UL  ><LI  ><P  >        "tm_sec" - 秒数
+       </P
+></LI
+><LI  ><P  >        "tm_min" - 分钟数
+       </P
+></LI
+><LI  ><P  >        "tm_hour" - 小时
+       </P
+></LI
+><LI  ><P  >        "tm_mday" - 月份中的第几日
+       </P
+></LI
+><LI  ><P  >        "tm_mon" - 年份中的第几个月，从 0 开始表示一月
+       </P
+></LI
+><LI  ><P  >        "tm_year" - 年份，从 1900 开始
+       </P
+></LI
+><LI  ><P  >        "tm_wday" - 星期中的第几天
+       </P
+></LI
+><LI  ><P  >        "tm_yday" - 一年中的第几天
+       </P
+></LI
+><LI  ><P  >        "tm_isdst" - 夏令时当前是否生效
+       </P
+></LI
+></UL
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>microtime</name>
+            <signature><![CDATA[string microtime ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18711" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >microtime</B
+> ( void )<BR  ></BR
+><P  >     返回格式为“msec sec”的字符串，其中 sec 是当前的 Unix
+     时间戳，msec 是微秒部分。本函数仅在支持 gettimeofday()
+     系统调用的操作系统下可用。
+    </P
+><P  >     字符串的两部分都是以秒为单位返回的。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18719" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >microtime()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">getmicrotime</font><font  color="#007700">(){ <br  />    list(</font><font  color="#0000BB">$usec</font><font  color="#007700">, </font><font  color="#0000BB">$sec</font><font  color="#007700">) = </font><font  color="#0000BB">explode</font><font  color="#007700">(</font><font  color="#DD0000">" "</font><font  color="#007700">,</font><font  color="#0000BB">microtime</font><font  color="#007700">()); <br  />    return ((float)</font><font  color="#0000BB">$usec </font><font  color="#007700">+ (float)</font><font  color="#0000BB">$sec</font><font  color="#007700">); <br  />    } <br  /><br  /></font><font  color="#0000BB">$time_start </font><font  color="#007700">= </font><font  color="#0000BB">getmicrotime</font><font  color="#007700">();<br  />    <br  />for (</font><font  color="#0000BB">$i</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">< </font><font  color="#0000BB">1000</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++){<br  />    </font><font  color="#FF8000">//do nothing, 1000 times<br  />    </font><font  color="#007700">}<br  /><br  /></font><font  color="#0000BB">$time_end </font><font  color="#007700">= </font><font  color="#0000BB">getmicrotime</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$time </font><font  color="#007700">= </font><font  color="#0000BB">$time_end </font><font  color="#007700">- </font><font  color="#0000BB">$time_start</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#DD0000">"Did nothing in $time seconds"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>mktime</name>
+            <signature><![CDATA[int mktime ( [int hour [, int minute [, int second [, int month [, int day [, int year [, int is_dst]]]]]]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18729" ></A
+><H2  >说明</H2
+>int <B  CLASS="methodname" >mktime</B
+> ( [int hour [, int minute [, int second [, int month [, int day [, int year [, int is_dst]]]]]]])<BR  ></BR
+><P  >     <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >警告：</I
+></SPAN
+>注意参数的奇怪顺序，这和标准的 UNIX mktime()
+     调用中的参数顺序不同。在脚本经常会混淆这些值而出错。
+     
+    </P
+><P  >     根据给出的参数返回 Unix 时间戳。时间戳是一个长整数，包含了从
+     Unix 新纪元（1970 年 1 月 1 日）到给定时间的秒数。
+    </P
+><P  >     参数可以从右向左省略，任何省略的参数会被设置成本地日期和时间的当前值。
+    </P
+><P  >     <TT  CLASS="parameter" ><I  >is_dst</I
+></TT
+> 在夏令时可以被设为 1，如果不是则设为
+     0，或者不知道是否为夏令时的话设为 -1（默认值）。如果不知道，PHP
+     会尝试自己判断。这可能会产生未预期（但不是错误）的结果。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      <TT  CLASS="parameter" ><I  >is_dst</I
+></TT
+> 是 3.0.10 版新加的。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     <B  CLASS="function" >mktime()</B
+> 可以用来做日期计算和验证，对于超出范围的输入它可以自动计算出正确的值来。例如，下面的每一行都会输出字符串“Jan-01-1998”。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18766" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >mktime()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">12</font><font  color="#007700">,</font><font  color="#0000BB">32</font><font  color="#007700">,</font><font  color="#0000BB">1997</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">13</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1997</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1998</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">98</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <TT  CLASS="parameter" ><I  >Year</I
+></TT
+> 可以是两位或四位数字，取值从
+     0-69 表示 2000-2069 以及 70-99 表示 1970-1999（在如今很常见的
+     time_t 是 32 位有符号整数的系统中，<TT  CLASS="parameter" ><I  >year</I
+></TT
+>
+     的有效范围是 1901 到 2038）。
+    </P
+><P  >     </P><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >Windows: </B
+>
+       目前所有的 Windows 系统都不支持负的时间戳。因此合法的年份范围只包括从
+       1970 到 2038。
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >     给定月份的最后一天可以表达为下个月的第 "0" 天，而不是 -1
+     天。下面两个例子都将产生字符串“The last day in Feb 2000 is: 29”。
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18777" ></A
+><P  ><B  >例子 2. 每个月的最后一天</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$lastday </font><font  color="#007700">= </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">3</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"Last day in Feb 2000 is: %d"</font><font  color="#007700">, </font><font  color="#0000BB">$lastday</font><font  color="#007700">);<br  />     <br  /></font><font  color="#0000BB">$lastday </font><font  color="#007700">= </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">4</font><font  color="#007700">,-</font><font  color="#0000BB">31</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"Last day in Feb 2000 is: %d"</font><font  color="#007700">, </font><font  color="#0000BB">$lastday</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >    年，月，日都等于零的日期被认为是非法的（否则会被当作
+    30.11.1999，这是很怪的行为）。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+> 和 <SPAN HREF="#"><B  CLASS="function" >time()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>strftime</name>
+            <signature><![CDATA[string strftime ( string format [, int timestamp])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18788" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >strftime</B
+> ( string format [, int timestamp])<BR  ></BR
+><P  >     返回用给定的格式字串对给出的 <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+>
+     进行格式输出后的字符串。如果没有给出时间戳则用当前的本地时间。月份和星期几以及其它和语言有关的字符串写法和用
+     <SPAN HREF="#"><B  CLASS="function" >setlocale()</B
+></A
+> 设定的当前的区域有关。
+    </P
+><P  >     格式字串能识别下列转换标记：
+     </P><P  ></P
+><UL  ><LI  ><P  >        %a - 当前区域星期几的简写
+       </P
+></LI
+><LI  ><P  >        %A - 当前区域星期几的全称
+       </P
+></LI
+><LI  ><P  >        %b - 当前区域月份的简写
+       </P
+></LI
+><LI  ><P  >        %B - 当前区域月份的全称
+       </P
+></LI
+><LI  ><P  >        %c - 当前区域首选的日期时间表达
+       </P
+></LI
+><LI  ><P  >        %C - 世纪值（年份除以 100 后取整，范围从 00 到 99）
+       </P
+></LI
+><LI  ><P  >        %d - 月份中的第几天，十进制数字（范围从 01 到 31）
+       </P
+></LI
+><LI  ><P  >        %D - 和 %m/%d/%y 一样
+       </P
+></LI
+><LI  ><P  >        %e - 月份中的第几天，十进制数字，一位的数字前会加上一个空格（范围从 ' 1' 到 '31'）
+       </P
+></LI
+><LI  ><P  >        %g - 和 %G 一样，但是没有世纪
+       </P
+></LI
+><LI  ><P  >        %G - 4 位数的年份，符合 ISO 星期数（参见
+        %V）。和 %V 的格式和值一样，只除了如果 ISO
+        星期数属于前一年或者后一年，则使用那一年。
+       </P
+></LI
+><LI  ><P  >        %h - 和 %b 一样
+       </P
+></LI
+><LI  ><P  >        %H - 24 小时制的十进制小时数（范围从 00 到 23）
+       </P
+></LI
+><LI  ><P  >        %I - 12 小时制的十进制小时数（范围从 00 到 12）
+       </P
+></LI
+><LI  ><P  >        %j - 年份中的第几天，十进制数（范围从  001 到 366）
+       </P
+></LI
+><LI  ><P  >        %m - 十进制月份（范围从 01 到 12）
+       </P
+></LI
+><LI  ><P  >        %M - 十进制分钟数
+       </P
+></LI
+><LI  ><P  >        %n - 换行符
+       </P
+></LI
+><LI  ><P  >        %p - 根据给定的时间值为 `am' 或 `pm'，或者当前区域设置中的相应字符串
+       </P
+></LI
+><LI  ><P  >        %r - 用 a.m. 和 p.m. 符号的时间
+       </P
+></LI
+><LI  ><P  >        %R - 24 小时符号的时间
+       </P
+></LI
+><LI  ><P  >        %S - 十进制秒数
+       </P
+></LI
+><LI  ><P  >        %t - 制表符
+       </P
+></LI
+><LI  ><P  >        %T - 当前时间，和 %H:%M:%S 一样
+       </P
+></LI
+><LI  ><P  >        %u - 星期几的十进制数表达 [1,7]，1 表示星期一
+       </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >         尽管 ISO 9889:1999（当前的 C 标准）明确指出一周从星期一开始，但是
+         Sun Solaris 的一周似乎从星期天开始并作为 1。
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+></LI
+><LI  ><P  >        %U - 本年的第几周，从第一周的第一个星期天作为第一天开始
+       </P
+></LI
+><LI  ><P  >        %V - 本年第几周的 ISO 8601:1988 格式，范围从 01 到 53，第
+        1 周是本年第一个至少还有 4 天的星期，星期一作为每周的第一天。（用
+        %G 或者 %g 作为指定时间戳相应周数的年份组成。）
+       </P
+></LI
+><LI  ><P  >        %W - 本年的第几周数，从第一周的第一个星期一作为第一天开始
+       </P
+></LI
+><LI  ><P  >        %w - 星期中的第几天，星期天为 0
+       </P
+></LI
+><LI  ><P  >        %x - 当前区域首选的时间表示法，不包括时间
+       </P
+></LI
+><LI  ><P  >        %X - 当前区域首选的时间表示法，不包括日期
+       </P
+></LI
+><LI  ><P  >        %y - 没有世纪数的十进制年份（范围从 00 到 99）
+       </P
+></LI
+><LI  ><P  >        %Y - 包括世纪数的十进制年份
+       </P
+></LI
+><LI  ><P  >        %Z - 时区名或缩写
+       </P
+></LI
+><LI  ><P  >        %% - 文字上的 `%' 字符
+       </P
+></LI
+></UL
+>
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       可能不是所有的转换标记都被 C 库文件支持，这种情况下 PHP
+       的 <B  CLASS="function" >strftime()</B
+>
+       也不支持。此外，不是所有的平台都支持负的时间戳，因此日期的范围可能限定在不早于
+       Unix 纪元。这意味着例如
+       %e, %T，%R 和 %D（可能更多）以及早于
+       <TT  CLASS="literal" >Jan 1, 1970</TT
+> 的时间在 Windows，一些 Linux
+       发行版本，以及其它几个操作系统中无效。对于 Windows
+       系统，所支持的转换标记可在
+       <SPAN HREF="#"><SPAN  CLASS="acronym" >MSDN</SPAN
+> 网站</A
+>找到。
+      </P
+></BLOCKQUOTE
+></DIV
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18882" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >strftime()</B
+> 区域的例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />setlocale </font><font  color="#007700">(</font><font  color="#0000BB">LC_TIME</font><font  color="#007700">, </font><font  color="#DD0000">"C"</font><font  color="#007700">);<br  />print (</font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"%A in Finnish is "</font><font  color="#007700">));<br  /></font><font  color="#0000BB">setlocale </font><font  color="#007700">(</font><font  color="#0000BB">LC_TIME</font><font  color="#007700">, </font><font  color="#DD0000">"fi_FI"</font><font  color="#007700">);<br  />print (</font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"%A, in French "</font><font  color="#007700">));<br  /></font><font  color="#0000BB">setlocale </font><font  color="#007700">(</font><font  color="#0000BB">LC_TIME</font><font  color="#007700">, </font><font  color="#DD0000">"fr_FR"</font><font  color="#007700">);<br  />print (</font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"%A and in German "</font><font  color="#007700">));<br  /></font><font  color="#0000BB">setlocale </font><font  color="#007700">(</font><font  color="#0000BB">LC_TIME</font><font  color="#007700">, </font><font  color="#DD0000">"de_DE"</font><font  color="#007700">);<br  />print (</font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"%A.\n"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     本例在你的系统中安装有各自的区域设置后才能工作。
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       %G 和 %V，如果数字编号系统未能充分理解，基于 ISO 8601:1988
+       的星期数可能得出未预期的结果。见上面的 %V 和以下的例子。
+      </P
+></BLOCKQUOTE
+></DIV
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18888" ></A
+><P  ><B  >例子 2. ISO 8601:1988 week number example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">/*     December 2002 / January 2003<br  />ISOWk  M   Tu  W   Thu F   Sa  Su<br  />----- ----------------------------<br  />51     16  17  18  19  20  21  22<br  />52     23  24  25  26  27  28  29<br  />1      30  31   1   2   3   4   5<br  />2       6   7   8   9  10  11  12<br  />3      13  14  15  16  17  18  19   */<br  /><br  />// Outputs: 12/28/2002 - %V,%G,%Y = 52,2002,2002<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"12/28/2002 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"12/28/2002"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: 12/30/2002 - %V,%G,%Y = 1,2003,2002<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"12/30/2002 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"12/30/2002"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: 1/3/2003 - %V,%G,%Y = 1,2003,2003<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"1/3/2003 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"1/3/2003"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: 1/10/2003 - %V,%G,%Y = 2,2003,2003<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"1/10/2003 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"1/10/2003"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /><br  /><br  /></font><font  color="#FF8000">/*     December 2004 / January 2005<br  />ISOWk  M   Tu  W   Thu F   Sa  Su<br  />----- ----------------------------<br  />51     13  14  15  16  17  18  19<br  />52     20  21  22  23  24  25  26<br  />53     27  28  29  30  31   1   2<br  />1       3   4   5   6   7   8   9<br  />2      10  11  12  13  14  15  16   */<br  /><br  />// Outputs: 12/23/2004 - %V,%G,%Y = 52,2004,2004<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"12/23/2004 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"12/23/2004"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: 12/31/2004 - %V,%G,%Y = 53,2004,2004<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"12/31/2004 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"12/31/2004"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: 1/2/2005 - %V,%G,%Y = 53,2004,2005<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"1/2/2005 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"1/2/2005"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: 1/3/2005 - %V,%G,%Y = 1,2005,2005<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"1/3/2005 - %V,%G,%Y = " </font><font  color="#007700">. </font><font  color="#0000BB">strftime</font><font  color="#007700">(</font><font  color="#DD0000">"%V,%G,%Y"</font><font  color="#007700">,</font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#DD0000">"1/3/2005"</font><font  color="#007700">)) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >setlocale()</B
+></A
+> 和 <SPAN HREF="#"><B  CLASS="function" >mktime()</B
+></A
+>
+     以及 <SPAN HREF="#">Open Group specification of
+     <B  CLASS="function" >strftime()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>strtotime</name>
+            <signature><![CDATA[int strtotime ( string time [, int now])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18900" ></A
+><H2  >说明</H2
+>int <B  CLASS="methodname" >strtotime</B
+> ( string time [, int now])<BR  ></BR
+><P  >     本函数预期接受一个包含英文日期格式的字符串并尝试将其解析为
+     UNIX 时间戳。如果 time 的格式是绝对时间则 now
+     参数不起作用。如果 time 的格式是相对时间则其所相对的时间由
+     now 提供，或者如果未提供 now 参数时用当前时间。失败时返回 <TT  CLASS="literal" >-1</TT
+>。
+    </P
+><P  >     因为 <B  CLASS="function" >strtotime()</B
+> 的行为是依照 GNU
+     日期语法的，因此请看看 GNU 手册中的
+     <SPAN HREF="#">Date Input
+     Formats</A
+>。这里记述了 <TT  CLASS="parameter" ><I  >time</I
+></TT
+> 参数的合法语法。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18918" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >strtotime()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">strtotime </font><font  color="#007700">(</font><font  color="#DD0000">"now"</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">strtotime </font><font  color="#007700">(</font><font  color="#DD0000">"10 September 2000"</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">strtotime </font><font  color="#007700">(</font><font  color="#DD0000">"+1 day"</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">strtotime </font><font  color="#007700">(</font><font  color="#DD0000">"+1 week"</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">strtotime </font><font  color="#007700">(</font><font  color="#DD0000">"+1 week 2 days 4 hours 2 seconds"</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">strtotime </font><font  color="#007700">(</font><font  color="#DD0000">"next Thursday"</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">strtotime </font><font  color="#007700">(</font><font  color="#DD0000">"last Monday"</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18923" ></A
+><P  ><B  >例子 2. 检查失败</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$str </font><font  color="#007700">= </font><font  color="#DD0000">'Not Good'</font><font  color="#007700">;<br  />if ((</font><font  color="#0000BB">$timestamp </font><font  color="#007700">= </font><font  color="#0000BB">strtotime</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">)) === -</font><font  color="#0000BB">1</font><font  color="#007700">) {<br  />    echo </font><font  color="#DD0000">"The string ($str) is bogus"</font><font  color="#007700">;<br  />} else {<br  />    echo </font><font  color="#DD0000">"$str == "</font><font  color="#007700">. </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">'l dS of F Y h:i:s A'</font><font  color="#007700">,</font><font  color="#0000BB">$timestamp</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      有效的时间戳典型范围是从格林威治时间 1901 年 12 月 13 日 星期五 20:45:54 到
+      2038年 1 月 19 日 星期二 03:14:07。（该日期根据 32 位有符号整数的最小值和最大值而来。）
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>time</name>
+            <signature><![CDATA[int time ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN18932" ></A
+><H2  >说明</H2
+>int <B  CLASS="methodname" >time</B
+> ( void )<BR  ></BR
+><P  >     返回自从 Unix 新纪元（格林威治时间 1970 年 1 月 1 日 00:00:00）到当前时间的秒数。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >date()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

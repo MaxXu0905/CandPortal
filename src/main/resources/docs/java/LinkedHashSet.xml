@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.LinkedHashSet&lt;E&gt;">
+    <constructors>
+        <constructor>
+            <name>LinkedHashSet</name>
+            <signature><![CDATA[public LinkedHashSet(int initialCapacity,
+             float loadFactor)]]></signature>
+            <description><![CDATA[Constructs a new, empty linked hash set with the specified initial
+ capacity and load factor.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>initialCapacity</code> - the initial capacity of the linked hash set</dd><dd><code>loadFactor</code> - the load factor of the linked hash set</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the initial capacity is less
+               than zero, or if the load factor is nonpositive</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>LinkedHashSet</name>
+            <signature><![CDATA[public LinkedHashSet(int initialCapacity)]]></signature>
+            <description><![CDATA[Constructs a new, empty linked hash set with the specified initial
+ capacity and the default load factor (0.75).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>initialCapacity</code> - the initial capacity of the LinkedHashSet</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the initial capacity is less
+              than zero</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>LinkedHashSet</name>
+            <signature><![CDATA[public LinkedHashSet()]]></signature>
+            <description><![CDATA[Constructs a new, empty linked hash set with the default initial
+ capacity (16) and load factor (0.75).]]></description>
+        </constructor>
+        <constructor>
+            <name>LinkedHashSet</name>
+            <signature><![CDATA[public LinkedHashSet(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Constructs a new linked hash set with the same elements as the
+ specified collection.  The linked hash set is created with an initial
+ capacity sufficient to hold the elements in the specified collection
+ and the default load factor (0.75).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - the collection whose elements are to be placed into
+           this set</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection is null</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+</Root>

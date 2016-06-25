@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/stdio/scanf.html -->
+<HTML><HEAD><TITLE>scanf</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="scanf.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A href="scanf.html">scanf</A> 
+      </DIV>
+      <DIV class=name-format>scanf </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int scanf( const char *format, ... );
+</PRE>
+      <P>The scanf() function reads input from <STRONG>STDIN</STRONG>, according 
+      to the given <EM>format</EM>, and stores the data in the other arguments. 
+      It works a lot like <A 
+      href="printf.html">printf</A>(). The 
+      <EM>format</EM> string consists of control characters, whitespace 
+      characters, and non-whitespace characters. The control characters are 
+      preceded by a % sign, and are as follows:</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Control Character</TH>
+          <TH class=code-table-th>Explanation</TH></TR>
+        <TR>
+          <TD class=code-table-td>%c</TD>
+          <TD class=code-table-td>a single character</TD></TR>
+        <TR>
+          <TD class=code-table-td>%d</TD>
+          <TD class=code-table-td>a decimal integer</TD></TR>
+        <TR>
+          <TD class=code-table-td>%i</TD>
+          <TD class=code-table-td>an integer</TD></TR>
+        <TR>
+          <TD class=code-table-td>%e, %f, %g</TD>
+          <TD class=code-table-td>a floating-point number</TD></TR>
+        <TR>
+          <TD class=code-table-td>%o</TD>
+          <TD class=code-table-td>an octal number</TD></TR>
+        <TR>
+          <TD class=code-table-td>%s</TD>
+          <TD class=code-table-td>a string</TD></TR>
+        <TR>
+          <TD class=code-table-td>%x</TD>
+          <TD class=code-table-td>a hexadecimal number</TD></TR>
+        <TR>
+          <TD class=code-table-td>%p</TD>
+          <TD class=code-table-td>a pointer</TD></TR>
+        <TR>
+          <TD class=code-table-td>%n</TD>
+          <TD class=code-table-td>an integer equal to the number of characters 
+            read so far</TD></TR>
+        <TR>
+          <TD class=code-table-td>%u</TD>
+          <TD class=code-table-td>an unsigned integer</TD></TR>
+        <TR>
+          <TD class=code-table-td>%[]</TD>
+          <TD class=code-table-td>a set of characters</TD></TR>
+        <TR>
+          <TD class=code-table-td>%% a percent sign</TD></TR></TBODY></TABLE>
+      <P>scanf() reads the input, matching the characters from format. When a 
+      control character is read, it puts the value in the next variable. 
+      Whitespace (tabs, spaces, etc) are skipped. Non-whitespace characters are 
+      matched to the input, then discarded. If a number comes between the % sign 
+      and the control character, then only that many characters will be 
+      converted into the variable. If scanf() encounters a set of characters, 
+      denoted by the %[] control character, then any characters found within the 
+      brackets are read into the variable. The return value of scanf() is the 
+      number of variables that were successfully assigned values, or 
+      <STRONG>EOF</STRONG> if there is an error.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>This code snippet repeatedly uses scanf() to read integers and floats 
+      from the user. Note that the variable arguments to scanf() are passed in 
+      by reference, as denoted by the ampersand (&amp;) preceding each 
+      variable:</P><PRE class=example-code> int i;
+ float f;               
+
+ while( 1 ) {
+   printf( "Enter an integer: " );
+   scanf( "%d", &amp;i );             
+
+   printf( "Enter a float: " );
+   scanf( "%f", &amp;f );             
+
+   printf( "You entered %d and then %f\n", i, f );
+ }              
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="fgets.html">fgets</A><BR><A 
+      href="fscanf.html">fscanf</A><BR><A 
+      href="printf.html">printf</A><BR><A 
+      href="sscanf.html">sscanf</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

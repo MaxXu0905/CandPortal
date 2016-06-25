@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://www.cppreference.com/cppsstream/constructors.html -->
+<HTML><HEAD><TITLE>String Stream Constructors</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="constructors.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppsstream/index.html">C++ String 
+      Streams</A> &gt; <A 
+      href="../cppsstream/constructors.html">Constructors</A> 
+      </DIV>
+      <DIV class=name-format>String Stream Constructors </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;sstream&gt;
+  stringstream()
+  stringstream( openmode mode )
+  stringstream( string s, openmode mode )
+  ostringstream()
+  ostringstream( openmode mode )
+  ostringstream( string s, openmode mode )
+  istringstream()
+  istringstream( openmode mode )
+  istringstream( string s, openmode mode )
+</PRE>
+      <P>The stringstream, ostringstream, and istringstream objects are used for 
+      input and output to a string. They behave in a manner similar to fstream, 
+      ofstream and ifstream objects.</P>
+      <P>The optional <EM>mode</EM> parameter defines how the file is to be 
+      opened, according to the <A 
+      href="../io_flags.html#mode_flags">io stream mode 
+      flags</A>.
+      <P>
+      <P>An ostringstream object can be used to write to a string. This is 
+      similar to the C <A 
+      href="../stdio/sprintf.html">sprintf()</A> 
+      function. For example:</P><PRE class=example-code>  ostringstream s1;
+  int i = 22;
+  s1 &lt;&lt; "Hello " &lt;&lt; i &lt;&lt; endl;
+  string s2 = s1.str();
+  cout &lt;&lt; s2;
+</PRE>
+      <P>An istringstream object can be used to read from a string. This is 
+      similar to the C <A 
+      href="../stdio/sscanf.html">sscanf()</A> 
+      function. For example:</P><PRE class=example-code>  istringstream stream1;
+  string string1 = "25";
+  stream1.str(string1);
+  int i;
+  stream1 &gt;&gt; i;
+  cout &lt;&lt; i &lt;&lt; endl;  // displays 25
+</PRE>
+      <P>You can also specify the input string in the istringstream constructor 
+      as in this example:</P><PRE class=example-code>  string string1 = "25";
+  istringstream stream1(string1);
+  int i;
+  stream1 &gt;&gt; i;
+  cout &lt;&lt; i &lt;&lt; endl;  // displays 25
+</PRE>
+      <P>A stringstream object can be used for both input and output to a string 
+      like an fstream object.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/index.html">C++ I/O 
+      Streams</A><BR></DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,1999 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/cppalgorithm/all.html -->
+<HTML><HEAD><TITLE>C++ Algorithms</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> </DIV>
+      <DIV class=name-format>accumulate </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  <A href="../containers.html">TYPE</A> accumulate( iterator start, iterator end, <A href="../containers.html">TYPE</A> val );
+  <A href="../containers.html">TYPE</A> accumulate( iterator start, iterator end, <A href="../containers.html">TYPE</A> val, BinaryFunction f );
+</PRE>
+      <P>The accummulate() function computes the sum of <EM>val</EM> and all of 
+      the elements in the range [<EM>start</EM>,<EM>end</EM>).</P>
+      <P>If the binary function <EM>f</EM> if specified, it is used instead of 
+      the + operator to perform the summation.</P>
+      <P>accumulate() runs in <A 
+      href="../complexity.html">linear time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A><BR><A 
+      href="../cppalgorithm/count.html">count</A><BR><A 
+      href="../cppalgorithm/inner_product.html">inner_product</A><BR><A 
+      href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>adjacent_difference </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  iterator adjacent_difference( iterator start, iterator end, iterator result );
+  iterator adjacent_difference( iterator start, iterator end, iterator result, BinaryFunction f );
+</PRE>
+<P>The adjacent_difference() function calculates the differences between 
+adjacent elements in the range [<EM>start</EM>,<EM>end</EM>) and stores the 
+result starting at <EM>result</EM>.</P>
+<P>If a binary function <EM>f</EM> is given, it is used instead of the - 
+operator to compute the differences.</P>
+<P>adjacent_difference() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/accumulate.html">accumulate</A><BR><A 
+href="../cppalgorithm/count.html">count</A><BR><A 
+href="../cppalgorithm/inner_product.html">inner_product</A><BR><A 
+href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>adjacent_find </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator adjacent_find( iterator start, iterator end );
+  iterator adjacent_find( iterator start, iterator end, BinPred pr );
+</PRE>
+<P>The adjacent_find() function searches between <EM>start</EM> and <EM>end</EM> 
+for two consecutive identical elements. If the binary predicate <EM>pr</EM> is 
+specified, then it is used to test whether two elements are the same or not.</P>
+<P>The return value is an iterator that points to the first of the two elements 
+that are found. If no matching elements are found, the returned iterator points 
+to <EM>end</EM>.</P>
+<P>For example, the following code creates a vector containing the integers 
+between 0 and 10 with 7 appearing twice in a row. adjacent_find() is then used 
+to find the location of the pair of 7's:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back(i);
+   // add a duplicate 7 into v1
+   if( i == 7 ) {
+     v1.push_back(i);           
+
+   }
+ }              
+
+ vector&lt;int&gt;::iterator result;
+ result = adjacent_find( v1.begin(), v1.end() );                
+
+ if( result == v1.end() ) {
+   cout &lt;&lt; "Did not find adjacent elements in v1" &lt;&lt; endl;
+ }              
+
+ else {
+   cout &lt;&lt; "Found matching adjacent elements starting at " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/find.html">find</A><BR><A 
+href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+href="../cppalgorithm/unique.html">unique</A><BR><A 
+href="../cppalgorithm/unique_copy.html">unique_copy</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>binary_search </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool binary_search( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+  bool binary_search( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val, Comp f );
+</PRE>
+<P>The binary_search() function searches from <EM>start</EM> to <EM>end</EM> for 
+<EM>val</EM>. The elements between <EM>start</EM> and <EM>end</EM> that are 
+searched should be in ascending order as defined by the &lt; operator. Note that 
+a binary search <STRONG>will not work</STRONG> unless the elements being 
+searched are in order.</P>
+<P>If <EM>val</EM> is found, binary_search() returns true, otherwise false.</P>
+<P>If the function <EM>f</EM> is specified, then it is used to compare 
+elements.</P>
+<P>For example, the following code uses binary_search() to determine if the 
+integers 0-9 are in an array of integers:</P><PRE class=example-code> int nums[] = { -242, -1, 0, 5, 8, 9, 11 };
+ int start = 0;
+ int end = 7;           
+
+ for( int i = 0; i &lt; 10; i++ ) {
+   if( binary_search( nums+start, nums+end, i ) ) {
+     cout &lt;&lt; "nums[] contains " &lt;&lt; i &lt;&lt; endl;
+   } else {
+     cout &lt;&lt; "nums[] DOES NOT contain " &lt;&lt; i &lt;&lt; endl;
+   }
+ }              
+</PRE>
+<P>When run, this code displays the following output:</P><PRE class=example-code> nums[] contains 0
+ nums[] DOES NOT contain 1
+ nums[] DOES NOT contain 2
+ nums[] DOES NOT contain 3
+ nums[] DOES NOT contain 4
+ nums[] contains 5
+ nums[] DOES NOT contain 6
+ nums[] DOES NOT contain 7
+ nums[] contains 8
+ nums[] contains 9              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/equal_range.html">equal_range</A><BR><A 
+href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+href="../cppalgorithm/lower_bound.html">lower_bound</A><BR><A 
+href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+href="../cppalgorithm/sort.html">sort</A><BR><A 
+href="../cppalgorithm/stable_sort.html">stable_sort</A><BR><A 
+href="../cppalgorithm/upper_bound.html">upper_bound</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator copy( iterator start, iterator end, iterator dest );
+</PRE>
+<P>The copy() function copies the elements between <EM>start</EM> and 
+<EM>end</EM> to <EM>dest</EM>. In other words, after copy() has run,</P><PRE class=example-code> *dest == *start
+ *(dest+1) == *(start+1)
+ *(dest+2) == *(start+2)
+ ...
+ *(dest+N) == *(start+N)                
+</PRE>
+<P>The return value is an iterator to the last element copied. copy() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<P>For example, the following code uses copy() to copy the contents of one 
+vector to another:</P><PRE class=example-code> vector&lt;int&gt; from_vector;
+ for( int i = 0; i &lt; 10; i++ ) {
+   from_vector.push_back( i );
+ }              
+
+ vector&lt;int&gt; to_vector(10);               
+
+ copy( from_vector.begin(), from_vector.end(), to_vector.begin() );             
+
+ cout &lt;&lt; "to_vector contains: ";
+ for( unsigned int i = 0; i &lt; to_vector.size(); i++ ) {
+   cout &lt;&lt; to_vector[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/copy_backward.html">copy_backward</A><BR><A 
+href="../cppalgorithm/copy_n.html">copy_n</A><BR><A 
+href="../cppalgorithm/generate.html">generate</A><BR><A 
+href="../cppalgorithm/remove_copy.html">remove_copy</A><BR><A 
+href="../cppalgorithm/swap.html">swap</A><BR><A 
+href="../cppalgorithm/transform.html">transform</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>copy_backward </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator copy_backward( iterator start, iterator end, iterator dest );
+</PRE>
+<P>copy_backward() is similar to (C++ Strings) <A 
+href="../cppstring/copy.html">copy</A>(), in that both 
+functions copy elements from <EM>start</EM> to <EM>end</EM> to <EM>dest</EM>. 
+The copy_backward() function , however, starts depositing elements at 
+<EM>dest</EM> and then works backwards, such that:</P><PRE class=example-code> *(dest-1) == *(end-1)
+ *(dest-2) == *(end-2)
+ *(dest-3) == *(end-3)
+ ...
+ *(dest-N) == *(end-N)          
+</PRE>
+<P>The following code uses copy_backward() to copy 10 integers into the end of 
+an empty vector:</P><PRE class=example-code> vector&lt;int&gt; from_vector;
+ for( int i = 0; i &lt; 10; i++ ) {
+   from_vector.push_back( i );
+ }              
+
+ vector&lt;int&gt; to_vector(15);               
+
+ copy_backward( from_vector.begin(), from_vector.end(), to_vector.end() );              
+
+ cout &lt;&lt; "to_vector contains: ";
+ for( unsigned int i = 0; i &lt; to_vector.size(); i++ ) {
+   cout &lt;&lt; to_vector[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>The above code produces the following output:</P><PRE class=example-code> to_vector contains: 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/copy.html">copy</A><BR><A 
+href="../cppalgorithm/copy_n.html">copy_n</A><BR><A 
+href="../cppalgorithm/swap.html">swap</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>copy_n </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator copy_n( iterator from, size_t num, iterator to ); 
+</PRE>
+<P>The copy_n() function copies <EM>num</EM> elements starting at <EM>from</EM> 
+to the destination pointed at by <EM>to</EM>. To put it another way, copy_n() 
+performs <EM>num</EM> assignments and duplicates a subrange.</P>
+<P>The return value of copy_n() is an iterator that points to the last element 
+that was copied, i.e. (to + num).</P>
+<P>This function runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/copy.html">copy</A><BR><A 
+href="../cppalgorithm/copy_backward.html">copy_backward</A><BR><A 
+href="../cppalgorithm/swap.html">swap</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>count </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  size_t count( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The count() function returns the number of elements between <EM>start</EM> 
+and <EM>end</EM> that match <EM>val</EM>.</P>
+<P>For example, the following code uses count() to determine how many integers 
+in a vector match a target value:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v.push_back( i );
+ }              
+
+ int target_value = 3;
+ int num_items = count( v.begin(), v.end(), target_value );             
+
+ cout &lt;&lt; "v contains " &lt;&lt; num_items &lt;&lt; " items matching " &lt;&lt; target_value &lt;&lt; endl;            
+</PRE>
+<P>The above code displays the following output:</P><PRE class=example-code> v contains 1 items matching 3          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/accumulate.html">accumulate</A><BR><A 
+href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A><BR><A 
+href="../cppalgorithm/count_if.html">count_if</A><BR><A 
+href="../cppalgorithm/inner_product.html">inner_product</A><BR><A 
+href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>count_if </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  size_t count_if( iterator start, iterator end, UnaryPred p );
+</PRE>
+<P>The count_if() function returns the number of elements between <EM>start</EM> 
+and <EM>end</EM> for which the predicate <EM>p</EM> returns true.</P>
+<P>For example, the following code uses count_if() with a predicate that returns 
+true for the integer 3 to count the number of items in an array that are equal 
+to 3:</P><PRE class=example-code> int nums[] = { 0, 1, 2, 3, 4, 5, 9, 3, 13 };
+ int start = 0;
+ int end = 9;           
+
+ int target_value = 3;
+ int num_items = count_if( nums+start,
+                    nums+end,
+                    bind2nd(equal_to&lt;int&gt;(), target_value) );             
+
+ cout &lt;&lt; "nums[] contains " &lt;&lt; num_items &lt;&lt; " items matching " &lt;&lt; target_value &lt;&lt; endl;               
+</PRE>
+<P>When run, the above code displays the following output:</P><PRE class=example-code> nums[] contains 2 items matching 3             
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/count.html">count</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>equal </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool equal( iterator start1, iterator end1, iterator start2 );
+  bool equal( iterator start1, iterator end1, iterator start2, BinPred p );
+</PRE>
+<P>The equal() function returns true if the elements in two ranges are the same. 
+The first range of elements are those between <EM>start1</EM> and <EM>end1</EM>. 
+The second range of elements has the same size as the first range but starts at 
+<EM>start2</EM>.</P>
+<P>If the binary predicate <EM>p</EM> is specified, then it is used instead of 
+== to compare each pair of elements.</P>
+<P>For example, the following code uses equal() to compare two vectors of 
+integers:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back( i );
+ }              
+
+ vector&lt;int&gt; v2;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v2.push_back( i );
+ }              
+
+ if( equal( v1.begin(), v1.end(), v2.begin() ) ) {
+   cout &lt;&lt; "v1 and v2 are equal" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "v1 and v2 are NOT equal" &lt;&lt; endl;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+href="../cppalgorithm/lexicographical_compare.html">lexicographical_compare</A><BR><A 
+href="../cppalgorithm/mismatch.html">mismatch</A><BR><A 
+href="../cppalgorithm/search.html">search</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>equal_range </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  pair&lt;iterator,iterator&gt; equal_range( iterator first, iterator last, const <A href="../containers.html">TYPE</A>&amp; val );
+  pair&lt;iterator,iterator&gt; equal_range( iterator first, iterator last, const <A href="../containers.html">TYPE</A>&amp; val, CompFn comp );
+</PRE>
+<P>The equal_range() function returns the range of elements between 
+<EM>first</EM> and <EM>last</EM> that are equal to <EM>val</EM>. This function 
+assumes that the elements between <EM>first</EM> and <EM>last</EM> are in order 
+according to <EM>comp</EM>, if it is specified, or the &lt; operator 
+otherwise.</P>
+<P>equal_range() can be thought of as a combination of the <A 
+href="../cppalgorithm/lower_bound.html">lower_bound</A>() 
+and `upper_bound1`() functions, since the first of the pair of iterators that it 
+returns is what <A 
+href="../cppalgorithm/lower_bound.html">lower_bound</A>() 
+returns and the second iterator in the pair is what `upper_bound1`() 
+returns.</P>
+<P>For example, the following code uses equal_range() to determine all of the 
+possible places that the number 8 can be inserted into an ordered vector of 
+integers such that the existing ordering is preserved:</P><PRE class=example-code> vector&lt;int&gt; nums;
+ nums.push_back( -242 );
+ nums.push_back( -1 );
+ nums.push_back( 0 );
+ nums.push_back( 5 );
+ nums.push_back( 8 );
+ nums.push_back( 8 );
+ nums.push_back( 11 );          
+
+ pair&lt;vector&lt;int&gt;::iterator, vector&lt;int&gt;::iterator&gt; result;
+ int new_val = 8;               
+
+ result = equal_range( nums.begin(), nums.end(), new_val );             
+
+ cout &lt;&lt; "The first place that " &lt;&lt; new_val &lt;&lt; " could be inserted is before "
+      &lt;&lt; *result.first &lt;&lt; ", and the last place that it could be inserted is before "
+      &lt;&lt; *result.second &lt;&lt; endl;            
+</PRE>
+<P>The above code produces the following output:</P><PRE class=example-code> The first place that 8 could be inserted is before 8,
+ and the last place that it could be inserted is before 11              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/lower_bound.html">lower_bound</A><BR><A 
+href="../cppalgorithm/upper_bound.html">upper_bound</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fill </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  #include &lt;algorithm&gt;
+  void fill( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The function fill() assigns <EM>val</EM> to all of the elements between 
+<EM>start</EM> and <EM>end</EM>.</P>
+<P>For example, the following code uses fill() to set all of the elements of a 
+vector of integers to -1:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back( i );
+ }              
+
+ cout &lt;&lt; "Before, v1 is: ";
+ for( unsigned int i = 0; i &lt; v1.size(); i++ ) {
+   cout &lt;&lt; v1[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ fill( v1.begin(), v1.end(), -1 );              
+
+ cout &lt;&lt; "After, v1 is: ";
+ for( unsigned int i = 0; i &lt; v1.size(); i++ ) {
+   cout &lt;&lt; v1[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>When run, the above code displays:</P><PRE class=example-code> Before, v1 is: 0 1 2 3 4 5 6 7 8 9
+ After, v1 is: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/fill_n.html">fill_n</A><BR><A 
+href="../cppalgorithm/generate.html">generate</A><BR><A 
+href="../cppalgorithm/iota.html">iota</A><BR><A 
+href="../cppalgorithm/transform.html">transform</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fill_n </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  #include &lt;algorithm&gt;
+  iterator fill_n( iterator start, size_t n, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The fill_n() function is similar to (C++ I/O) <A 
+href="../cppio/fill.html">fill</A>(). Instead of 
+assigning <EM>val</EM> to a range of elements, however, fill_n() assigns 
+<EM>val</EM> to the first <EM>n</EM> elements starting at <EM>start</EM>.</P>
+<P>For example, the following code uses fill_n() to assign -1 to the first half 
+of a vector of integers:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back( i );
+ }              
+
+ cout &lt;&lt; "Before, v1 is: ";
+ for( unsigned int i = 0; i &lt; v1.size(); i++ ) {
+   cout &lt;&lt; v1[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ fill_n( v1.begin(), v1.size()/2, -1 );         
+
+ cout &lt;&lt; "After, v1 is: ";
+ for( unsigned int i = 0; i &lt; v1.size(); i++ ) {
+   cout &lt;&lt; v1[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>When run, this code displays:</P><PRE class=example-code> Before, v1 is: 0 1 2 3 4 5 6 7 8 9
+ After, v1 is: -1 -1 -1 -1 -1 5 6 7 8 9         
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/fill.html">fill</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator find( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The find() algorithm looks for an element matching <EM>val</EM> between 
+<EM>start</EM> and <EM>end</EM>. If an element matching <EM>val</EM> is found, 
+the return value is an iterator that points to that element. Otherwise, the 
+return value is an iterator that points to <EM>end</EM>.</P>
+<P>For example, the following code uses find() to search a vector of integers 
+for the number 3:</P><PRE class=example-code> int num_to_find = 3;           
+
+ vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back(i);
+ }              
+
+ vector&lt;int&gt;::iterator result;
+ result = find( v1.begin(), v1.end(), num_to_find );            
+
+ if( result == v1.end() ) {
+   cout &lt;&lt; "Did not find any element matching " &lt;&lt; num_to_find &lt;&lt; endl;
+ }              
+
+ else {
+   cout &lt;&lt; "Found a matching element: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+<P>In the next example, shown below, the find() function is used on an array of 
+integers. This example shows how the C++ Algorithms can be used to manipulate 
+arrays and pointers in the same manner that they manipulate containers and 
+iterators:</P><PRE class=example-code> int nums[] = { 3, 1, 4, 1, 5, 9 };
+
+ int num_to_find = 5;
+ int start = 0;
+ int end = 2;
+ int* result = find( nums + start, nums + end, num_to_find );                
+
+ if( result == nums + end ) {
+   cout &lt;&lt; "Did not find any number matching " &lt;&lt; num_to_find &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "Found a matching number: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+href="../cppalgorithm/mismatch.html">mismatch</A><BR><A 
+href="../cppalgorithm/search.html">search</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find_end </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator find_end( iterator start, iterator end, iterator seq_start, iterator seq_end );
+  iterator find_end( iterator start, iterator end, iterator seq_start, iterator seq_end, BinPred bp );
+</PRE>
+<P>The find_end() function searches for the sequence of elements denoted by 
+<EM>seq_start</EM> and <EM>seq_end</EM>. If such a sequence if found between 
+<EM>start</EM> and <EM>end</EM>, an iterator to the first element of the last 
+found sequence is returned. If no such sequence is found, an iterator pointing 
+to <EM>end</EM> is returned.</P>
+<P>If the binary predicate <EM>bp</EM> is specified, then it is used to when 
+elements match.</P>
+<P>For example, the following code uses find_end() to search for two different 
+sequences of numbers. The the first chunk of code, the last occurence of "1 2 3" 
+is found. In the second chunk of code, the sequence that is being searched for 
+is not found:</P><PRE class=example-code> int nums[] = { 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4 };
+ int* result;
+ int start = 0;
+ int end = 11;          
+
+ int target1[] = { 1, 2, 3 };
+ result = find_end( nums + start, nums + end, target1 + 0, target1 + 2 );
+ if( *result == nums[end] ) {
+   cout &lt;&lt; "Did not find any subsequence matching { 1, 2, 3 }" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "The last matching subsequence is at: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+
+ int target2[] = { 3, 2, 3 };
+ result = find_end( nums + start, nums + end, target2 + 0, target2 + 2 );
+ if( *result == nums[end] ) {
+   cout &lt;&lt; "Did not find any subsequence matching { 3, 2, 3 }" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "The last matching subsequence is at: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+href="../cppalgorithm/find.html">find</A><BR><A 
+href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+href="../cppalgorithm/search_n.html">search_n</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find_first_of </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator find_first_of( iterator start, iterator end, iterator find_start, iterator find_end );
+  iterator find_first_of( iterator start, iterator end, iterator find_start, iterator find_end, BinPred bp );
+</PRE>
+<P>The find_first_of() function searches for the first occurence of any element 
+between <EM>find_start</EM> and <EM>find_end</EM>. The data that are searched 
+are those between <EM>start</EM> and <EM>end</EM>.</P>
+<P>If any element between <EM>find_start</EM> and <EM>find_end</EM> is found, an 
+iterator pointing to that element is returned. Otherwise, an iterator pointing 
+to <EM>end</EM> is returned.</P>
+<P>For example, the following code searches for a 9, 4, or 7 in an array of 
+integers:</P><PRE class=example-code> int nums[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+ int* result;
+ int start = 0;
+ int end = 10;          
+
+ int targets[] = { 9, 4, 7 };
+ result = find_first_of( nums + start, nums + end, targets + 0, targets + 2 );
+ if( *result == nums[end] ) {
+   cout &lt;&lt; "Did not find any of { 9, 4, 7 }" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "Found a matching target: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+href="../cppalgorithm/find.html">find</A><BR><A 
+href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+href="../cppalgorithm/find_if.html">find_if</A><BR>(Standard 
+C String and Character) <A 
+href="../stdstring/strpbrk.html">strpbrk</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>find_if </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator find_if( iterator start, iterator end, UnPred up );
+</PRE>
+<P>The find_if() function searches for the first element between <EM>start</EM> 
+and <EM>end</EM> for which the unary predicate <EM>up</EM> returns true.</P>
+<P>If such an element is found, an iterator pointing to that element is 
+returned. Otherwise, an iterator pointing to <EM>end</EM> is returned.</P>
+<P>For example, the following code uses find_if() and a "greater-than-zero" 
+unary predicate to the first positive, non-zero number in a list of numbers:</P><PRE class=example-code> int nums[] = { 0, -1, -2, -3, -4, 342, -5 };
+ int* result;
+ int start = 0;
+ int end = 7;           
+
+ result = find_if( nums + start, nums + end, bind2nd(greater&lt;int&gt;(), 0));
+ if( *result == nums[end] ) {
+   cout &lt;&lt; "Did not find any number greater than zero" &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "Found a positive non-zero number: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+href="../cppalgorithm/equal.html">equal</A><BR><A 
+href="../cppalgorithm/find.html">find</A><BR><A 
+href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+href="../cppalgorithm/search_n.html">search_n</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>for_each </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  UnaryFunction for_each( iterator start, iterator end, UnaryFunction f );
+</PRE>
+<P>The for_each() algorithm applies the function <EM>f</EM> to each of the 
+elements between <EM>start</EM> and <EM>end</EM>. The return value of for_each() 
+is <EM>f</EM>.</P>
+<P>For example, the following code snippets define a unary function then use it 
+to increment all of the elements of an array:</P><PRE class=example-code> template&lt;class <A href="../containers.html">TYPE</A>&gt; struct increment : public unary_function&lt;<A href="../containers.html">TYPE</A>, void&gt; {
+   void operator() (<A href="../containers.html">TYPE</A>&amp; x) {
+     x++;
+   }
+ };             
+
+ ...            
+
+ int nums[] = {3, 4, 2, 9, 15, 267};
+ const int N = 6;               
+
+ cout &lt;&lt; "Before, nums[] is: ";
+ for( int i = 0; i &lt; N; i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ for_each( nums, nums + N, increment&lt;int&gt;() );            
+
+ cout &lt;&lt; "After, nums[] is: ";
+ for( int i = 0; i &lt; N; i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>The above code displays the following output:</P><PRE class=example-code> Before, nums[] is: 3 4 2 9 15 267
+ After, nums[] is: 4 5 3 10 16 268              
+</PRE>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>generate </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void generate( iterator start, iterator end, Generator g );
+</PRE>
+<P>The generate() function runs the Generator function object <EM>g</EM> a 
+number of times, saving the result of each execution in the range 
+[<EM>start</EM>,<EM>end</EM>).</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/copy.html">copy</A><BR><A 
+href="../cppalgorithm/fill.html">fill</A><BR><A 
+href="../cppalgorithm/generate_n.html">generate_n</A><BR><A 
+href="../cppalgorithm/iota.html">iota</A><BR><A 
+href="../cppalgorithm/transform.html">transform</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>generate_n </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator generate_n( iterator result, size_t num, Generator g );
+</PRE>
+<P>The generate_n() function runs the Generator function object <EM>g</EM> 
+<EM>num</EM> times, saving the result of each execution in <EM>result</EM>, 
+(<EM>result</EM>+1), etc.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/generate.html">generate</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>includes </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool includes( iterator start1, iterator end1, iterator start2, iterator end2 );
+  bool includes( iterator start1, iterator end1, iterator start2, iterator end2, StrictWeakOrdering cmp );
+</PRE>
+<P>The includes() algorithm returns true if every element in 
+[<EM>start2</EM>,<EM>end2</EM>) is also in [<EM>start1</EM>,<EM>end1</EM>). Both 
+of the given ranges must be sorted in ascending order.</P>
+<P>By default, the &lt; operator is used to compare elements. If the strict weak 
+ordering function object <EM>cmp</EM> is given, then it is used instead.</P>
+<P>includes() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/set_difference.html">set_difference</A><BR><A 
+href="../cppalgorithm/set_intersection.html">set_intersection</A><BR><A 
+href="../cppalgorithm/set_symmetric_difference.html">set_symmetric_difference</A><BR><A 
+href="../cppalgorithm/set_union.html">set_union</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>inner_product </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  <A href="../containers.html">TYPE</A> inner_product( iterator start1, iterator end1, iterator start2, <A href="../containers.html">TYPE</A> val );
+  <A href="../containers.html">TYPE</A> inner_product( iterator start1, iterator end1, iterator start2, <A href="../containers.html">TYPE</A> val, BinaryFunction f1, BinaryFunction f2 );
+</PRE>
+<P>The inner_product() function computes the inner product of 
+[<EM>start1</EM>,<EM>end1</EM>) and a range of the same size starting at 
+<EM>start2</EM>.</P>
+<P>inner_product() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/accumulate.html">accumulate</A><BR><A 
+href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A><BR><A 
+href="../cppalgorithm/count.html">count</A><BR><A 
+href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>inplace_merge </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  inline void inplace_merge( iterator start, iterator middle, iterator end );
+  inline void inplace_merge( iterator start, iterator middle, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The inplace_merge() function is similar to the merge() function, but instead 
+of creating a new sorted range of elements, inplace_merge() alters the existing 
+ranges to perform the merge in-place.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/merge.html">merge</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>iota </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  void iota( iterator start, iterator end, <A href="../containers.html">TYPE</A> value );
+</PRE>
+<P>The iota() algorithm assigns <EM>value</EM> to the first element in the range 
+[<EM>start</EM>,<EM>end</EM>), value+1 to the second element, and so on.</P>
+<P>iota() runs in <A href="../complexity.html">linear 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/fill.html">fill</A><BR><A 
+href="../cppalgorithm/generate.html">generate</A><BR><A 
+href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>is_heap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool is_heap( iterator start, iterator end );
+  bool is_heap( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The is_heap() function returns true if the given range 
+[<EM>start</EM>,<EM>end</EM>) is a heap.</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is given, 
+then it is used instead of the &lt; operator to compare elements.</P>
+<P>is_heap() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/make_heap.html">make_heap</A><BR><A 
+href="../cppalgorithm/pop_heap.html">pop_heap</A><BR><A 
+href="../cppalgorithm/push_heap.html">push_heap</A><BR><A 
+href="../cppalgorithm/sort_heap.html">sort_heap</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>is_sorted </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool is_sorted( iterator start, iterator end );
+  bool is_sorted( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The is_sorted() algorithm returns true if the elements in the range 
+[<EM>start</EM>,<EM>end</EM>) are sorted in ascending order.</P>
+<P>By default, the &lt; operator is used to compare elements. If the strict weak 
+order function object <EM>cmp</EM> is given, then it is used instead.</P>
+<P>is_sorted() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+href="../cppalgorithm/sort.html">sort</A><BR><A 
+href="../cppalgorithm/stable_sort.html">stable_sort</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>iter_swap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  inline void iter_swap( iterator a, iterator b );
+</PRE>
+<P>A call to iter_swap() exchanges the values of two elements exactly as a call 
+to</P><PRE class=example-code> swap( *a, *b );                
+</PRE>
+<P>would.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/swap.html">swap</A><BR><A 
+href="../cppalgorithm/swap_ranges.html">swap_ranges</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>lexicographical_compare </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool lexicographical_compare( iterator start1, iterator end1, iterator start2, iterator end2 );
+  bool lexicographical_compare( iterator start1, iterator end1, iterator start2, iterator end2, BinPred p );
+</PRE>
+<P>The lexicographical_compare() function returns true if the range of elements 
+[<EM>start1</EM>,<EM>end1</EM>) is lexicographically less than the range of 
+elements [<EM>start2</EM>,<EM>end2</EM>).</P>
+<P>If you're confused about what lexicographic means, it might help to know that 
+dictionaries are ordered lexicographically.</P>
+<P>lexicographical_compare() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/equal.html">equal</A><BR><A 
+href="../cppalgorithm/lexicographical_compare_3.html">lexicographical_compare_3way</A><BR><A 
+href="../cppalgorithm/mismatch.html">mismatch</A><BR><A 
+href="../cppalgorithm/search.html">search</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>lexicographical_compare_3way </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  int lexicographical_compare_3way( iterator start1, iterator end1, iterator start2, iterator end2 );
+</PRE>
+<P>The lexicographical_compare_3way() function compares the first range, defined 
+by [<EM>start1</EM>,<EM>end1</EM>) to the second range, defined by 
+[<EM>start2</EM>,<EM>end2</EM>).</P>
+<P>If the first range is lexicographically less than the second range, this 
+function returns a negative number. If the first range is lexicographically 
+greater than the second, a positive number is returned. Zero is returned if 
+neither range is lexicographically greater than the other.</P>
+<P>lexicographical_compare_3way() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/lexicographical_compare.html">lexicographical_compare</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>lower_bound </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator lower_bound( iterator first, iterator last,  const <A href="../containers.html">TYPE</A>&amp; val );
+  iterator lower_bound( iterator first, iterator last, const <A href="../containers.html">TYPE</A>&amp; val, CompFn f );
+</PRE>
+<P>The lower_bound() function is a type of <A 
+href="../cppalgorithm/binary_search.html">binary_search</A>(). 
+This function searches for the first place that <EM>val</EM> can be inserted 
+into the ordered range defined by <EM>first</EM> and <EM>last</EM> that will not 
+mess up the existing ordering.</P>
+<P>The return value of lower_bound() is an iterator that points to the location 
+where <EM>val</EM> can be safely inserted. Unless the comparison function 
+<EM>f</EM> is specified, the &lt; operator is used for ordering.</P>
+<P>For example, the following code uses lower_bound() to insert the number 7 
+into an ordered vector of integers:</P><PRE class=example-code> vector&lt;int&gt; nums;
+ nums.push_back( -242 );
+ nums.push_back( -1 );
+ nums.push_back( 0 );
+ nums.push_back( 5 );
+ nums.push_back( 8 );
+ nums.push_back( 8 );
+ nums.push_back( 11 );          
+
+ cout &lt;&lt; "Before nums is: ";
+ for( unsigned int i = 0; i &lt; nums.size(); i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ vector&lt;int&gt;::iterator result;
+ int new_val = 7;               
+
+ result = lower_bound( nums.begin(), nums.end(), new_val );             
+
+ nums.insert( result, new_val );                
+
+ cout &lt;&lt; "After, nums is: ";
+ for( unsigned int i = 0; i &lt; nums.size(); i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>The above code produces the following output:</P><PRE class=example-code> Before nums is: -242 -1 0 5 8 8 11
+ After, nums is: -242 -1 0 5 7 8 8 11           
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/equal_range.html">equal_range</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>make_heap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void make_heap( iterator start, iterator end );
+  void make_heap( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The make_heap() function turns the given range of elements 
+[<EM>start</EM>,<EM>end</EM>) into a heap.</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is given, 
+then it is used instead of the &lt; operator to compare elements.</P>
+<P>make_heap() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/is_heap.html">is_heap</A><BR><A 
+href="../cppalgorithm/pop_heap.html">pop_heap</A><BR><A 
+href="../cppalgorithm/push_heap.html">push_heap</A><BR><A 
+href="../cppalgorithm/sort_heap.html">sort_heap</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>max </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  const <A href="../containers.html">TYPE</A>&amp; max( const <A href="../containers.html">TYPE</A>&amp; x, const <A href="../containers.html">TYPE</A>&amp; y );
+  const <A href="../containers.html">TYPE</A>&amp; max( const <A href="../containers.html">TYPE</A>&amp; x, const <A href="../containers.html">TYPE</A>&amp; y, BinPred p );
+</PRE>
+<P>The max() function returns the greater of <EM>x</EM> and <EM>y</EM>.</P>
+<P>If the binary predicate <EM>p</EM> is given, then it will be used instead of 
+the &lt; operator to compare the two elements.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>For example, the following code snippet displays various uses of the max() 
+function:</P><PRE class=example-code> cout &lt;&lt; "Max of 1 and 9999 is " &lt;&lt; max( 1, 9999) &lt;&lt; endl;
+ cout &lt;&lt; "Max of 'a' and 'b' is " &lt;&lt; max( 'a', 'b') &lt;&lt; endl;
+ cout &lt;&lt; "Max of 3.14159 and 2.71828 is " &lt;&lt; max( 3.14159, 2.71828) &lt;&lt; endl;                
+</PRE>
+<P>When run, this code displays:</P><PRE class=example-code> Max of 1 and 9999 is 9999
+ Max of 'a' and 'b' is b
+ Max of 3.14159 and 2.71828 is 3.14159          
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/max_element.html">max_element</A><BR><A 
+href="../cppalgorithm/min.html">min</A><BR><A 
+href="../cppalgorithm/min_element.html">min_element</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>max_element </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator max_element( iterator start, iterator end );
+  iterator max_element( iterator start, iterator end, BinPred p );
+</PRE>
+<P>The max_element() function returns an iterator to the largest element in the 
+range [<EM>start</EM>,<EM>end</EM>).</P>
+<P>If the binary predicate <EM>p</EM> is given, then it will be used instead of 
+the &lt; operator to determine the largest element.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>For example, the following code uses the max_element() function to determine 
+the largest integer in an array and the largest character in a vector of 
+characters:</P><PRE class=example-code> int array[] = { 3, 1, 4, 1, 5, 9 };
+ unsigned int array_size = 6;
+ cout &lt;&lt; "Max element in array is " &lt;&lt; *max_element( array, array+array_size) &lt;&lt; endl;              
+
+ vector&lt;char&gt; v;
+ v.push_back('a'); v.push_back('b'); v.push_back('c'); v.push_back('d');
+ cout &lt;&lt; "Max element in the vector v is " &lt;&lt; *max_element( v.begin(), v.end() ) &lt;&lt; endl;           
+</PRE>
+<P>When run, the above code displays this output:</P><PRE class=example-code> Max element in array is 9
+ Max element in the vector v is d               
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/max.html">max</A><BR><A 
+href="../cppalgorithm/min.html">min</A><BR><A 
+href="../cppalgorithm/min_element.html">min_element</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>merge </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator merge( iterator start1, iterator end1, iterator start2, iterator end2, iterator result );
+  iterator merge( iterator start1, iterator end1, iterator start2, iterator end2, iterator result, StrictWeakOrdering cmp );
+</PRE>
+<P>The merge() function combines two sorted ranges 
+[<EM>start1</EM>,<EM>end1</EM>) and [<EM>start2</EM>,<EM>end2</EM>) into a 
+single sorted range, stored starting at <EM>result</EM>. The return value of 
+this function is an iterator to the end of the merged range.</P>
+<P>If the strict weak ordering function object <EM>cmp</EM> is given, then it is 
+used in place of the &lt; operator to perform comparisons between elements.</P>
+<P>merge() runs in <A href="../complexity.html">linear 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/inplace_merge.html">inplace_merge</A><BR><A 
+href="../cppalgorithm/set_union.html">set_union</A><BR><A 
+href="../cppalgorithm/sort.html">sort</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>min </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  const <A href="../containers.html">TYPE</A>&amp; min( const <A href="../containers.html">TYPE</A>&amp; x, const <A href="../containers.html">TYPE</A>&amp; y );
+  const <A href="../containers.html">TYPE</A>&amp; min( const <A href="../containers.html">TYPE</A>&amp; x, const <A href="../containers.html">TYPE</A>&amp; y, BinPred p );
+</PRE>
+<P>The min() function, unsurprisingly, returns the smaller of <EM>x</EM> and 
+<EM>y</EM>.</P>
+<P>By default, the &lt; operator is used to compare the two elements. If the 
+binary predicate <EM>p</EM> is given, it will be used instead.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/max.html">max</A><BR><A 
+href="../cppalgorithm/max_element.html">max_element</A><BR><A 
+href="../cppalgorithm/min_element.html">min_element</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>min_element </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator min_element( iterator start, iterator end );
+  iterator min_element( iterator start, iterator end, BinPred p );
+</PRE>
+<P>The min_element() function returns an iterator to the smallest element in the 
+range [<EM>start</EM>,<EM>end</EM>).</P>
+<P>If the binary predicate <EM>p</EM> is given, then it will be used instead of 
+the &lt; operator to determine the smallest element.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/max.html">max</A><BR><A 
+href="../cppalgorithm/max_element.html">max_element</A><BR><A 
+href="../cppalgorithm/min.html">min</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>mismatch </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  pair &lt;iterator1,iterator2&gt; mismatch( iterator start1, iterator end1, iterator start2 );
+  pair &lt;iterator1,iterator2&gt; mismatch( iterator start1, iterator end1, iterator start2, BinPred p );
+</PRE>
+<P>The mismatch() function compares the elements in the range defined by 
+[<EM>start1</EM>,<EM>end1</EM>) to the elements in a range of the same size 
+starting at <EM>start2</EM>. The return value of mismatch() is the first 
+location where the two ranges differ.</P>
+<P>If the optional binary predicate <EM>p</EM> is given, then it is used to 
+compare elements from the two ranges.</P>
+<P>The mismatch() algorithm runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/equal.html">equal</A><BR><A 
+href="../cppalgorithm/find.html">find</A><BR><A 
+href="../cppalgorithm/lexicographical_compare.html">lexicographical_compare</A><BR><A 
+href="../cppalgorithm/search.html">search</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>next_permutation </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool next_permutation( iterator start, iterator end );
+  bool next_permutation( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The next_permutation() function attempts to transform the given range of 
+elements [<EM>start</EM>,<EM>end</EM>) into the next lexicographically greater 
+permutation of elements. If it succeeds, it returns true, otherwise, it returns 
+false.</P>
+<P>If a strict weak ordering function object <EM>cmp</EM> is provided, it is 
+used in lieu of the &lt; operator when comparing elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/prev_permutation.html">prev_permutation</A><BR><A 
+href="../cppalgorithm/random_sample.html">random_sample</A><BR><A 
+href="../cppalgorithm/random_sample_n.html">random_sample_n</A><BR><A 
+href="../cppalgorithm/random_shuffle.html">random_shuffle</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>nth_element </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void nth_element( iterator start, iterator middle, iterator end );
+  void nth_element( iterator start, iterator middle, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The nth_element() function semi-sorts the range of elements defined by 
+[<EM>start</EM>,<EM>end</EM>). It puts the element that <EM>middle</EM> points 
+to in the place that it would be if the entire range was sorted, and it makes 
+sure that none of the elements before that element are greater than any of the 
+elements that come after that element.</P>
+<P>nth_element() runs in <A 
+href="../complexity.html">linear time</A> on 
+average.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/partial_sort.html">partial_sort</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>partial_sort </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void partial_sort( iterator start, iterator middle, iterator end );
+  void partial_sort( iterator start, iterator middle, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The partial_sort() function arranges the first N elements of the range 
+[<EM>start</EM>,<EM>end</EM>) in ascending order. N is defined as the number of 
+elements between <EM>start</EM> and <EM>middle</EM>.</P>
+<P>By default, the &lt; operator is used to compare two elements. If the strict 
+weak ordering comparison function <EM>cmp</EM> is given, it is used instead.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+href="../cppalgorithm/nth_element.html">nth_element</A><BR><A 
+href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+href="../cppalgorithm/sort.html">sort</A><BR><A 
+href="../cppalgorithm/stable_sort.html">stable_sort</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>partial_sort_copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator partial_sort_copy( iterator start, iterator end, iterator result_start, iterator result_end );
+  iterator partial_sort_copy( iterator start, iterator end, iterator result_start, iterator result_end, StrictWeakOrdering cmp );
+</PRE>
+<P>The partial_sort_copy() algorithm behaves like <A 
+href="../cppalgorithm/partial_sort.html">partial_sort</A>(), 
+except that instead of partially sorting the range in-place, a copy of the range 
+is created and the sorting takes place in the copy. The initial range is defined 
+by [<EM>start</EM>,<EM>end</EM>) and the location of the copy is defined by 
+[<EM>result_start</EM>,<EM>result_end</EM>).</P>
+<P>partial_sort_copy() returns an iterator to the end of the copied, 
+partially-sorted range of elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+href="../cppalgorithm/sort.html">sort</A><BR><A 
+href="../cppalgorithm/stable_sort.html">stable_sort</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>partial_sum </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  iterator partial_sum( iterator start, iterator end, iterator result );
+  iterator partial_sum( iterator start, iterator end, iterator result, BinOp p );
+</PRE>
+<P>The partial_sum() function calculates the partial sum of a range defined by 
+[<EM>start</EM>,<EM>end</EM>), storing the output at <EM>result</EM>.</P>
+<UL>
+  <LI><EM>start</EM> is assigned to *<EM>result</EM>, the sum of *<EM>start</EM> 
+  and *(<EM>start</EM> + 1) is assigned to *(<EM>result</EM> + 1), etc. </LI></UL>
+<P>partial_sum() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/accumulate.html">accumulate</A><BR><A 
+href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A><BR><A 
+href="../cppalgorithm/count.html">count</A><BR><A 
+href="../cppalgorithm/inner_product.html">inner_product</A><BR><A 
+href="../cppalgorithm/iota.html">iota</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>partition </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator partition( iterator start, iterator end, Predicate p );
+</PRE>
+<P>The partition() algorithm re-orders the elements in 
+[<EM>start</EM>,<EM>end</EM>) such that the elements for which the predicate 
+<EM>p</EM> returns true come before the elements for which <EM>p</EM> returns 
+false.</P>
+<P>In other words, partition() uses <EM>p</EM> to divide the elements into two 
+groups.</P>
+<P>The return value of partition() is an iterator to the first element for which 
+<EM>p</EM> returns false.</P>
+<P>parition() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/stable_partition.html">stable_partition</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>pop_heap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void pop_heap( iterator start, iterator end );
+  void pop_heap( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The pop_heap() function removes the larges element (defined as the element at 
+the front of the heap) from the given heap.</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is given, 
+then it is used instead of the &lt; operator to compare elements.</P>
+<P>pop_heap() runs in <A 
+href="../complexity.html">logarithmic time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/is_heap.html">is_heap</A><BR><A 
+href="../cppalgorithm/make_heap.html">make_heap</A><BR><A 
+href="../cppalgorithm/push_heap.html">push_heap</A><BR><A 
+href="../cppalgorithm/sort_heap.html">sort_heap</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>power </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  inline <A href="../containers.html">TYPE</A> power( <A href="../containers.html">TYPE</A> x, int N );
+</PRE>
+<P>The power() function returns <EM>x</EM> raised to the power of <EM>N</EM>, 
+where <EM>N</EM> is some non-negative integer.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>prev_permutation </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool prev_permutation( iterator start, iterator end );
+  bool prev_permutation( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The prev_permutation() function attempts to transform the given range of 
+elements [<EM>start</EM>,<EM>end</EM>) into the next lexicographically smaller 
+permutation of elements. If it succeeds, it returns true, otherwise, it returns 
+false.</P>
+<P>If a strict weak ordering function object <EM>cmp</EM> is provided, it is 
+used instead of the &lt; operator when comparing elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/next_permutation.html">next_permutation</A><BR><A 
+href="../cppalgorithm/random_sample.html">random_sample</A><BR><A 
+href="../cppalgorithm/random_sample_n.html">random_sample_n</A><BR><A 
+href="../cppalgorithm/random_shuffle.html">random_shuffle</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>push_heap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void push_heap( iterator start, iterator end );
+  void push_heap( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The push_heap() function adds an element (defined as the last element before 
+<EM>end</EM>) to a heap (defined as the range of elements between 
+[<EM>start</EM>,''end-1).</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is given, 
+then it is used instead of the &lt; operator to compare elements.</P>
+<P>push_heap() runs in <A 
+href="../complexity.html">logarithmic time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/is_heap.html">is_heap</A><BR><A 
+href="../cppalgorithm/make_heap.html">make_heap</A><BR><A 
+href="../cppalgorithm/pop_heap.html">pop_heap</A><BR><A 
+href="../cppalgorithm/sort_heap.html">sort_heap</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>random_sample </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator random_sample( iterator start1, iterator end1, iterator start2, iterator end2 );
+  iterator random_sample( iterator start1, iterator end1, iterator start2, iterator end2, RandomNumberGenerator&amp; rnd );
+</PRE>
+<P>The random_sample() algorithm randomly copies elements from 
+[<EM>start1</EM>,<EM>end1</EM>) to [<EM>start2</EM>,<EM>end2</EM>). Elements are 
+chosen with uniform probability and elements from the input range will appear at 
+most once in the output range.</P>
+<P>If a random number generator function object <EM>rnd</EM> is supplied, then 
+it will be used instead of an internal random number generator.</P>
+<P>The return value of random_sample() is an iterator to the end of the output 
+range.</P>
+<P>random_sample() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/next_permutation.html">next_permutation</A><BR><A 
+href="../cppalgorithm/prev_permutation.html">prev_permutation</A><BR><A 
+href="../cppalgorithm/random_sample_n.html">random_sample_n</A><BR><A 
+href="../cppalgorithm/random_shuffle.html">random_shuffle</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>random_sample_n </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator random_sample_n( iterator start, iterator end, iterator result, size_t N );
+  iterator random_sample_n( iterator start, iterator end, iterator result, size_t N, RandomNumberGenerator&amp; rnd );
+</PRE>
+<P>The random_sample_n() algorithm randomly copies <EM>N</EM> elements from 
+[<EM>start</EM>,<EM>end</EM>) to <EM>result</EM>. Elements are chosen with 
+uniform probability and elements from the input range will appear at most once 
+in the output range. <STRONG>Element order is preserved</STRONG> from the input 
+range to the output range.</P>
+<P>If a random number generator function object <EM>rnd</EM> is supplied, then 
+it will be used instead of an internal random number generator.</P>
+<P>The return value of random_sample_n() is an iterator to the end of the output 
+range.</P>
+<P>random_sample_n() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/next_permutation.html">next_permutation</A><BR><A 
+href="../cppalgorithm/prev_permutation.html">prev_permutation</A><BR><A 
+href="../cppalgorithm/random_sample.html">random_sample</A><BR><A 
+href="../cppalgorithm/random_shuffle.html">random_shuffle</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>random_shuffle </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void random_shuffle( iterator start, iterator end );
+  void random_shuffle( iterator start, iterator end, RandomNumberGenerator&amp; rnd );
+</PRE>
+<P>The random_shuffle() function randomly re-orders the elements in the range 
+[<EM>start</EM>,<EM>end</EM>). If a random number generator function object 
+<EM>rnd</EM> is supplied, it will be used instead of an internal random nunber 
+generator.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/next_permutation.html">next_permutation</A><BR><A 
+href="../cppalgorithm/prev_permutation.html">prev_permutation</A><BR><A 
+href="../cppalgorithm/random_sample.html">random_sample</A><BR><A 
+href="../cppalgorithm/random_sample_n.html">random_sample_n</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>remove </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator remove( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The remove() algorithm removes all of the elements in the range 
+[<EM>start</EM>,<EM>end</EM>) that are equal to <EM>val</EM>.</P>
+<P>The return value of this function is an iterator to the last element of the 
+new sequence that should contain no elements equal to <EM>val</EM>.</P>
+<P>The remove() function runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/remove_copy.html">remove_copy</A><BR><A 
+href="../cppalgorithm/remove_copy_if.html">remove_copy_if</A><BR><A 
+href="../cppalgorithm/remove_if.html">remove_if</A><BR><A 
+href="../cppalgorithm/unique.html">unique</A><BR><A 
+href="../cppalgorithm/unique_copy.html">unique_copy</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>remove_copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator remove_copy( iterator start, iterator end, iterator result, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The remove_copy() algorithm copies the range [<EM>start</EM>,<EM>end</EM>) to 
+<EM>result</EM> but omits any elements that are equal to <EM>val</EM>.</P>
+<P>remove_copy() returns an iterator to the end of the new range, and runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/copy.html">copy</A><BR><A 
+href="../cppalgorithm/remove.html">remove</A><BR><A 
+href="../cppalgorithm/remove_copy_if.html">remove_copy_if</A><BR><A 
+href="../cppalgorithm/remove_if.html">remove_if</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>remove_copy_if </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator remove_copy_if( iterator start, iterator end, iterator result, Predicate p );
+</PRE>
+<P>The remove_copy_if() function copies the range of elements 
+[<EM>start</EM>,<EM>end</EM>) to <EM>result</EM>, omitting any elements for 
+which the predicate function <EM>p</EM> returns true.</P>
+<P>The return value of remove_copy_if() is an iterator the end of the new 
+range.</P>
+<P>remove_copy_if() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/remove.html">remove</A><BR><A 
+href="../cppalgorithm/remove_copy.html">remove_copy</A><BR><A 
+href="../cppalgorithm/remove_if.html">remove_if</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>remove_if </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator remove_if( iterator start, iterator end, Predicate p );
+</PRE>
+<P>The remove_if() function removes all elements in the range 
+[<EM>start</EM>,<EM>end</EM>) for which the predicate <EM>p</EM> returns 
+true.</P>
+<P>The return value of this function is an iterator to the last element of the 
+pruned range.</P>
+<P>remove_if() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/remove.html">remove</A><BR><A 
+href="../cppalgorithm/remove_copy.html">remove_copy</A><BR><A 
+href="../cppalgorithm/remove_copy_if.html">remove_copy_if</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>replace </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void replace( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; old_value, const <A href="../containers.html">TYPE</A>&amp; new_value );
+</PRE>
+<P>The replace() function sets every element in the range 
+[<EM>start</EM>,<EM>end</EM>) that is equal to <EM>old_value</EM> to have 
+<EM>new_value</EM> instead.</P>
+<P>replace() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/replace_copy.html">replace_copy</A><BR><A 
+href="../cppalgorithm/replace_copy_if.html">replace_copy_if</A><BR><A 
+href="../cppalgorithm/replace_if.html">replace_if</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>replace_copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator replace_copy( iterator start, iterator end, iterator result, const <A href="../containers.html">TYPE</A>&amp; old_value, const <A href="../containers.html">TYPE</A>&amp; new_value );
+</PRE>
+<P>The replace_copy() function copies the elements in the range 
+[<EM>start</EM>,<EM>end</EM>) to the destination <EM>result</EM>. Any elements 
+in the range that are equal to <EM>old_value</EM> are replaced with 
+<EM>new_value</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/replace.html">replace</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>replace_copy_if </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator replace_copy_if( iterator start, iterator end, iterator result, Predicate p, const <A href="../containers.html">TYPE</A>&amp; new_value );
+</PRE>
+<P>The replace_copy_if() function copies the elements in the range 
+[<EM>start</EM>,<EM>end</EM>) to the destination <EM>result</EM>. Any elements 
+for which the predicate <EM>p</EM> is true are replaced with 
+<EM>new_value</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/replace.html">replace</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>replace_if </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void replace_if( iterator start, iterator end, Predicate p, const <A href="../containers.html">TYPE</A>&amp; new_value );
+</PRE>
+<P>The replace_if() function assigns every element in the range 
+[<EM>start</EM>,<EM>end</EM>) for which the predicate function <EM>p</EM> 
+returns true the value of <EM>new_value</EM>.</P>
+<P>This function runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/replace.html">replace</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>reverse </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void reverse( iterator start, iterator end );
+</PRE>
+<P>The reverse() algorithm reverses the order of elements in the range 
+[<EM>start</EM>,<EM>end</EM>).</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/reverse_copy.html">reverse_copy</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>reverse_copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator reverse_copy( iterator start, iterator end, iterator result );
+</PRE>
+<P>The reverse_copy() algorithm copies the elements in the range 
+[<EM>start</EM>,<EM>end</EM>) to <EM>result</EM> such that the elements in the 
+new range are in reverse order.</P>
+<P>The return value of the reverse_copy() function is an iterator the end of the 
+new range.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/reverse.html">reverse</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rotate </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  inline iterator rotate( iterator start, iterator middle, iterator end );
+</PRE>
+<P>The rotate() algorithm moves the elements in the range 
+[<EM>start</EM>,<EM>end</EM>) such that the <EM>middle</EM> element is now where 
+<EM>start</EM> used to be, (<EM>middle</EM>+1) is now at (<EM>start</EM>+1), 
+etc.</P>
+<P>The return value of rotate() is an iterator to <EM>start</EM> + 
+(<EM>end</EM>-<EM>middle</EM>).</P>
+<P>rotate() runs in <A href="../complexity.html">linear 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/rotate_copy.html">rotate_copy</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rotate_copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator rotate_copy( iterator start, iterator middle, iterator end, iterator result );
+</PRE>
+<P>The rotate_copy() algorithm is similar to the <A 
+href="../cppalgorithm/rotate.html">rotate</A>() 
+algorithm, except that the range of elements is copied to <EM>result</EM> before 
+being rotated.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/rotate.html">rotate</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>search </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator search( iterator start1, iterator end1, iterator start2, iterator end2 );
+  iterator search( iterator start1, iterator end1, iterator start2, iterator end2, BinPred p );
+</PRE>
+<P>The search() algorithm looks for the elements [<EM>start2</EM>,<EM>end2</EM>) 
+in the range [<EM>start1</EM>,<EM>end1</EM>). If the optional binary predicate 
+<EM>p</EM> is provided, then it is used to perform comparisons between 
+elements.</P>
+<P>If search() finds a matching subrange, then it returns an iterator to the 
+beginning of that matching subrange. If no match is found, an iterator pointing 
+to <EM>end1</EM> is returned.</P>
+<P>In the worst case, search() runs in quadratic time, on average, it runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/equal.html">equal</A><BR><A 
+href="../cppalgorithm/find.html">find</A><BR><A 
+href="../cppalgorithm/lexicographical_compare.html">lexicographical_compare</A><BR><A 
+href="../cppalgorithm/mismatch.html">mismatch</A><BR><A 
+href="../cppalgorithm/search_n.html">search_n</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>search_n </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator search_n( iterator start, iterator end, size_t num, const <A href="../containers.html">TYPE</A>&amp; val );
+  iterator search_n( iterator start, iterator end, size_t num, const <A href="../containers.html">TYPE</A>&amp; val, BinPred p );
+</PRE>
+<P>The search_n() function looks for <EM>num</EM> occurances of <EM>val</EM> in 
+the range [<EM>start</EM>,<EM>end</EM>).</P>
+<P>If <EM>num</EM> consecutive copies of <EM>val</EM> are found, search_n() 
+returns an iterator to the beginning of that sequence. Otherwise it returns an 
+iterator to <EM>end</EM>.</P>
+<P>If the optional binary predicate <EM>p</EM> is given, then it is used to 
+perform comparisons between elements.</P>
+<P>This function runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+href="../cppalgorithm/search.html">search</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>set_difference </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator set_difference( iterator start1, iterator end1, iterator start2, iterator end2, iterator result );
+  iterator set_difference( iterator start1, iterator end1, iterator start2, iterator end2, iterator result, StrictWeakOrdering cmp );
+</PRE>
+<P>The set_difference() algorithm computes the difference between two sets 
+defined by [<EM>start1</EM>,<EM>end1</EM>) and [<EM>start2</EM>,<EM>end2</EM>) 
+and stores the difference starting at <EM>result</EM>.</P>
+<P>Both of the sets, given as ranges, must be sorted in ascending order.</P>
+<P>The return value of set_difference() is an iterator to the end of the result 
+range.</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is not 
+specified, set_difference() will use the &lt; operator to compare elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/includes.html">includes</A><BR><A 
+href="../cppalgorithm/set_intersection.html">set_intersection</A><BR><A 
+href="../cppalgorithm/set_symmetric_difference.html">set_symmetric_difference</A><BR><A 
+href="../cppalgorithm/set_union.html">set_union</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>set_intersection </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator set_intersection( iterator start1, iterator end1, iterator start2, iterator end2, iterator result );
+  iterator set_intersection( iterator start1, iterator end1, iterator start2, iterator end2, iterator result, StrictWeakOrdering cmp );
+</PRE>
+<P>The set_intersection() algorithm computes the intersection of the two sets 
+defined by [<EM>start1</EM>,<EM>end1</EM>) and [<EM>start2</EM>,<EM>end2</EM>) 
+and stores the intersection starting at <EM>result</EM>.</P>
+<P>Both of the sets, given as ranges, must be sorted in ascending order.</P>
+<P>The return value of set_intersection() is an iterator to the end of the 
+intersection range.</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is not 
+specified, set_intersection() will use the &lt; operator to compare 
+elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/includes.html">includes</A><BR><A 
+href="../cppalgorithm/set_difference.html">set_difference</A><BR><A 
+href="../cppalgorithm/set_symmetric_difference.html">set_symmetric_difference</A><BR><A 
+href="../cppalgorithm/set_union.html">set_union</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>set_symmetric_difference </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator set_symmetric_difference( iterator start1, iterator end1, iterator start2, iterator end2, iterator result );
+  iterator set_symmetric_difference( iterator start1, iterator end1, iterator start2, iterator end2, iterator result, StrictWeakOrdering cmp );
+</PRE>
+<P>The set_symmetric_difference() algorithm computes the symmetric difference of 
+the two sets defined by [<EM>start1</EM>,<EM>end1</EM>) and 
+[<EM>start2</EM>,<EM>end2</EM>) and stores the difference starting at 
+<EM>result</EM>.</P>
+<P>Both of the sets, given as ranges, must be sorted in ascending order.</P>
+<P>The return value of set_symmetric_difference() is an iterator to the end of 
+the result range.</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is not 
+specified, set_symmetric_difference() will use the &lt; operator to compare 
+elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/includes.html">includes</A><BR><A 
+href="../cppalgorithm/set_difference.html">set_difference</A><BR><A 
+href="../cppalgorithm/set_intersection.html">set_intersection</A><BR><A 
+href="../cppalgorithm/set_union.html">set_union</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>set_union </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator set_union( iterator start1, iterator end1, iterator start2, iterator end2, iterator result );
+  iterator set_union( iterator start1, iterator end1, iterator start2, iterator end2, iterator result, StrictWeakOrdering cmp );
+</PRE>
+<P>The set_union() algorithm computes the union of the two ranges 
+[<EM>start1</EM>,<EM>end1</EM>) and [<EM>start2</EM>,<EM>end2</EM>) and stores 
+it starting at <EM>result</EM>.</P>
+<P>The return value of set_union() is an iterator to the end of the union 
+range.</P>
+<P>set_union() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/includes.html">includes</A><BR><A 
+href="../cppalgorithm/merge.html">merge</A><BR><A 
+href="../cppalgorithm/set_difference.html">set_difference</A><BR><A 
+href="../cppalgorithm/set_intersection.html">set_intersection</A><BR><A 
+href="../cppalgorithm/set_symmetric_difference.html">set_symmetric_difference</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sort </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void sort( iterator start, iterator end );
+  void sort( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The sort() algorithm sorts the elements in the range 
+[<EM>start</EM>,<EM>end</EM>) into ascending order. If two elements are equal, 
+there is no guarantee what order they will be in.</P>
+<P>If the strict weak ordering function object <EM>cmp</EM> is given, then it 
+will be used to compare two objects instead of the &lt; operator.</P>
+<P>The algorithm behind sort() is the <EM>introsort</EM> algorithm. sort() runs 
+in O(N log(N)) time (average and worst case) which is faster than polynomial 
+time but slower than <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>For example, the following code sorts a vector of integers into ascending 
+order:</P><PRE class=example-code> vector&lt;int&gt; v;
+ v.push_back( 23 );
+ v.push_back( -1 );
+ v.push_back( 9999 );
+ v.push_back( 0 );
+ v.push_back( 4 );              
+
+ cout &lt;&lt; "Before sorting: ";
+ for( unsigned int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ sort( v.begin(), v.end() );            
+
+ cout &lt;&lt; "After sorting: ";
+ for( unsigned int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>When run, the above code displays this output:</P><PRE class=example-code> Before sorting: 23 -1 9999 0 4
+ After sorting: -1 0 4 23 9999          
+</PRE>
+<P>Alternatively, the following code uses the sort() function to sort a normal 
+array of integers, and displays the same output as the previous example:</P><PRE class=example-code> int array[] = { 23, -1, 9999, 0, 4 };
+ unsigned int array_size = 5;           
+
+ cout &lt;&lt; "Before sorting: ";
+ for( unsigned int i = 0; i &lt; array_size; i++ ) {
+   cout &lt;&lt; array[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ sort( array, array + array_size );             
+
+ cout &lt;&lt; "After sorting: ";
+ for( unsigned int i = 0; i &lt; array_size; i++ ) {
+   cout &lt;&lt; array[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>This next example shows how to use sort() with a user-specified comparison 
+function. The function <STRONG>cmp</STRONG> is defined to do the opposite of the 
+&lt; operator. When sort() is called with <STRONG>cmp</STRONG> used as the 
+comparison function, the result is a list sorted in descending, rather than 
+ascending, order:</P><PRE class=example-code> bool cmp( int a, int b ) {
+   return a &gt; b;
+ }              
+
+ ...            
+
+ vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v.push_back(i);
+ }              
+
+ cout &lt;&lt; "Before: ";
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ sort( v.begin(), v.end(), cmp );               
+
+ cout &lt;&lt; "After: ";
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+href="../cppalgorithm/merge.html">merge</A><BR><A 
+href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+href="../cppalgorithm/stable_sort.html">stable_sort</A><BR>(Other 
+Standard C Functions) <A 
+href="../stdother/qsort.html">qsort</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sort_heap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void sort_heap( iterator start, iterator end );
+  void sort_heap( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The sort_heap() function turns the heap defined by 
+[<EM>start</EM>,<EM>end</EM>) into a sorted range.</P>
+<P>If the strict weak ordering comparison function object <EM>cmp</EM> is given, 
+then it is used instead of the &lt; operator to compare elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/is_heap.html">is_heap</A><BR><A 
+href="../cppalgorithm/make_heap.html">make_heap</A><BR><A 
+href="../cppalgorithm/pop_heap.html">pop_heap</A><BR><A 
+href="../cppalgorithm/push_heap.html">push_heap</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>stable_partition </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator stable_partition( iterator start, iterator end, Predicate p );
+</PRE>
+<P>The stable_partition() function behaves similarily to <A 
+href="../cppalgorithm/partition.html">partition</A>(). 
+The difference between the two algorithms is that stable_partition() will 
+preserve the initial ordering of the elements in the two groups.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/partition.html">partition</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>stable_sort </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void stable_sort( iterator start, iterator end );
+  void stable_sort( iterator start, iterator end, StrictWeakOrdering cmp );
+</PRE>
+<P>The stable_sort() algorithm is like the <A 
+href="../cppalgorithm/sort.html">sort</A>() algorithm, 
+in that it sorts a range of elements into ascending order. Unlike <A 
+href="../cppalgorithm/sort.html">sort</A>(), however, 
+stable_sort() will preserve the original ordering of elements that are equal to 
+eachother.</P>
+<P>This functionality comes at a small cost, however, as stable_sort() takes a 
+few more comparisons that sort() in the worst case: N (log N)^2 instead of N log 
+N.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+href="../cppalgorithm/sort.html">sort</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>swap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  void swap( Assignable&amp; a, Assignable&amp; b );
+</PRE>
+<P>The swap() function swaps the values of <EM>a</EM> and <EM>b</EM>.</P>
+<P>swap() expects that its arguments will conform to the Assignable model; that 
+is, they should have a copy constructor and work with the = operator. This 
+function performs one copy and two assignments.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/copy.html">copy</A><BR><A 
+href="../cppalgorithm/copy_backward.html">copy_backward</A><BR><A 
+href="../cppalgorithm/copy_n.html">copy_n</A><BR><A 
+href="../cppalgorithm/iter_swap.html">iter_swap</A><BR><A 
+href="../cppalgorithm/swap_ranges.html">swap_ranges</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>swap_ranges </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator swap_ranges( iterator start1, iterator end1, iterator start2 );
+</PRE>
+<P>The swap_ranges() function exchanges the elements in the range 
+[<EM>start1</EM>,<EM>end1</EM>) with the range of the same size starting at 
+<EM>start2</EM>.</P>
+<P>The return value of swap_ranges() is an iterator to <EM>start2</EM> + 
+(<EM>end1</EM>-<EM>start1</EM>).</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/iter_swap.html">iter_swap</A><BR><A 
+href="../cppalgorithm/swap.html">swap</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>transform </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator transform( iterator start, iterator end, iterator result, UnaryFunction f );
+  iterator transform( iterator start1, iterator end1, iterator start2, iterator result, BinaryFunction f );
+</PRE>
+<P>The transform() algorithm applies the function <EM>f</EM> to some range of 
+elements, storing the result of each application of the function in 
+<EM>result</EM>.</P>
+<P>The first version of the function applies <EM>f</EM> to each element in 
+[<EM>start</EM>,<EM>end</EM>) and assigns the first output of the function to 
+<EM>result</EM>, the second output to (<EM>result</EM>+1), etc.</P>
+<P>The second version of the transform() works in a similar manner, except that 
+it is given two ranges of elements and calls a binary function on a pair of 
+elements.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/copy.html">copy</A><BR><A 
+href="../cppalgorithm/fill.html">fill</A><BR><A 
+href="../cppalgorithm/generate.html">generate</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>unique </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator unique( iterator start, iterator end );
+  iterator unique( iterator start, iterator end, BinPred p );
+</PRE>
+<P>The unique() algorithm removes all consecutive duplicate elements from the 
+range [<EM>start</EM>,<EM>end</EM>). If the binary predicate <EM>p</EM> is 
+given, then it is used to test to test two elements to see if they are 
+duplicates.</P>
+<P>The return value of unique() is an iterator to the end of the modified 
+range.</P>
+<P>unique() runs in <A href="../complexity.html">linear 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+href="../cppalgorithm/remove.html">remove</A><BR><A 
+href="../cppalgorithm/unique_copy.html">unique_copy</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>unique_copy </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator unique_copy( iterator start, iterator end, iterator result );
+  iterator unique_copy( iterator start, iterator end, iterator result, BinPred p );
+</PRE>
+<P>The unique_copy() function copies the range [<EM>start</EM>,<EM>end</EM>) to 
+<EM>result</EM>, removing all consecutive duplicate elements. If the binary 
+predicate <EM>p</EM> is provided, then it is used to test two elements to see if 
+they are duplicates.</P>
+<P>The return value of unique_copy() is an iterator to the end of the new 
+range.</P>
+<P>unique_copy() runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+href="../cppalgorithm/remove.html">remove</A><BR><A 
+href="../cppalgorithm/unique.html">unique</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>upper_bound </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator upper_bound( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+  iterator upper_bound( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val, StrictWeakOrdering cmp );
+</PRE>
+<P>The upper_bound() algorithm searches the ordered range 
+[<EM>start</EM>,<EM>end</EM>) for the last location that <EM>val</EM> could be 
+inserted without disrupting the order of the range.</P>
+<P>If the strict weak ordering function object <EM>cmp</EM> is given, it is used 
+to compare elements instead of the &lt; operator.</P>
+<P>upper_bound() runs in <A 
+href="../complexity.html">logarithmic time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppalgorithm/binary_search.html">binary_search</A><BR><A 
+href="../cppalgorithm/equal_range.html">equal_range</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

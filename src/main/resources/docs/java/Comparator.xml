@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.Comparator&lt;T&gt;">
+    <methods>
+        <method>
+            <name>compare</name>
+            <signature><![CDATA[int compare(T o1,
+          T o2)]]></signature>
+            <description><![CDATA[Compares its two arguments for order.  Returns a negative integer,
+ zero, or a positive integer as the first argument is less than, equal
+ to, or greater than the second.
+
+ In the foregoing description, the notation
+ sgn(expression) designates the mathematical
+ signum function, which is defined to return one of -1,
+ 0, or 1 according to whether the value of
+ expression is negative, zero or positive.
+
+ The implementor must ensure that sgn(compare(x, y)) ==
+ -sgn(compare(y, x)) for all x and y.  (This
+ implies that compare(x, y) must throw an exception if and only
+ if compare(y, x) throws an exception.)
+
+ The implementor must also ensure that the relation is transitive:
+ ((compare(x, y)>0) && (compare(y, z)>0)) implies
+ compare(x, z)>0.
+
+ Finally, the implementor must ensure that compare(x, y)==0
+ implies that sgn(compare(x, z))==sgn(compare(y, z)) for all
+ z.
+
+ It is generally the case, but not strictly required that
+ (compare(x, y)==0) == (x.equals(y)).  Generally speaking,
+ any comparator that violates this condition should clearly indicate
+ this fact.  The recommended language is "Note: this comparator
+ imposes orderings that are inconsistent with equals."<dl><dt><span class="strong">Parameters:</span></dt><dd><code>o1</code> - the first object to be compared.</dd><dd><code>o2</code> - the second object to be compared.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a negative integer, zero, or a positive integer as the
+         first argument is less than, equal to, or greater than the
+         second.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if an argument is null and this
+         comparator does not permit null arguments</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the arguments' types prevent them from
+         being compared by this comparator.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[boolean equals(Object obj)]]></signature>
+            <description><![CDATA[Indicates whether some other object is "equal to" this
+ comparator.  This method must obey the general contract of
+ Object.equals(Object).  Additionally, this method can return
+ true only if the specified object is also a comparator
+ and it imposes the same ordering as this comparator.  Thus,
+ comp1.equals(comp2) implies that sgn(comp1.compare(o1,
+ o2))==sgn(comp2.compare(o1, o2)) for every object reference
+ o1 and o2.
+
+ Note that it is always safe not to override
+ Object.equals(Object).  However, overriding this method may,
+ in some cases, improve performance by allowing programs to determine
+ that two distinct comparators impose the same order.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>obj</code> - the reference object with which to compare.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> only if the specified object is also
+          a comparator and it imposes the same ordering as this
+          comparator.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.equals(Object)</code></a>, 
+<a href="#"><code>Object.hashCode()</code></a></dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

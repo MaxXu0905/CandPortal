@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.Collection&lt;E&gt;">
+    <methods>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[int size()]]></signature>
+            <description><![CDATA[Returns the number of elements in this collection.  If this collection
+ contains more than Integer.MAX_VALUE elements, returns
+ Integer.MAX_VALUE.<dl><dt><span class="strong">Returns:</span></dt><dd>the number of elements in this collection</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <signature><![CDATA[boolean isEmpty()]]></signature>
+            <description><![CDATA[Returns true if this collection contains no elements.<dl><dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this collection contains no elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>contains</name>
+            <signature><![CDATA[boolean contains(Object o)]]></signature>
+            <description><![CDATA[Returns true if this collection contains the specified element.
+ More formally, returns true if and only if this collection
+ contains at least one element e such that
+ (o==null ? e==null : o.equals(e)).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element whose presence in this collection is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this collection contains the specified
+         element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the type of the specified element
+         is incompatible with this collection
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         collection does not permit null elements
+         (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>iterator</name>
+            <signature><![CDATA[Iterator<E> iterator()]]></signature>
+            <description><![CDATA[Returns an iterator over the elements in this collection.  There are no
+ guarantees concerning the order in which the elements are returned
+ (unless this collection is an instance of some class that provides a
+ guarantee).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Iterable</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an <tt>Iterator</tt> over the elements in this collection</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toArray</name>
+            <signature><![CDATA[Object[] toArray()]]></signature>
+            <description><![CDATA[Returns an array containing all of the elements in this collection.
+ If this collection makes any guarantees as to what order its elements
+ are returned by its iterator, this method must return the elements in
+ the same order.
+
+ The returned array will be "safe" in that no references to it are
+ maintained by this collection.  (In other words, this method must
+ allocate a new array even if this collection is backed by an array).
+ The caller is thus free to modify the returned array.
+
+ This method acts as bridge between array-based and collection-based
+ APIs.<dl><dt><span class="strong">Returns:</span></dt><dd>an array containing all of the elements in this collection</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toArray</name>
+            <signature><![CDATA[<T> T[] toArray(T[] a)]]></signature>
+            <description><![CDATA[Returns an array containing all of the elements in this collection;
+ the runtime type of the returned array is that of the specified array.
+ If the collection fits in the specified array, it is returned therein.
+ Otherwise, a new array is allocated with the runtime type of the
+ specified array and the size of this collection.
+
+ If this collection fits in the specified array with room to spare
+ (i.e., the array has more elements than this collection), the element
+ in the array immediately following the end of the collection is set to
+ null.  (This is useful in determining the length of this
+ collection only if the caller knows that this collection does
+ not contain any null elements.)
+
+ If this collection makes any guarantees as to what order its elements
+ are returned by its iterator, this method must return the elements in
+ the same order.
+
+ Like the toArray() method, this method acts as bridge between
+ array-based and collection-based APIs.  Further, this method allows
+ precise control over the runtime type of the output array, and may,
+ under certain circumstances, be used to save allocation costs.
+
+ Suppose x is a collection known to contain only strings.
+ The following code can be used to dump the collection into a newly
+ allocated array of String:
+
+ 
+     String[] y = x.toArray(new String[0]);
+
+ Note that toArray(new Object[0]) is identical in function to
+ toArray().<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the array into which the elements of this collection are to be
+        stored, if it is big enough; otherwise, a new array of the same
+        runtime type is allocated for this purpose.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an array containing all of the elements in this collection</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ArrayStoreException</a></code> - if the runtime type of the specified array
+         is not a supertype of the runtime type of every element in
+         this collection</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified array is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[boolean add(E e)]]></signature>
+            <description><![CDATA[Ensures that this collection contains the specified element (optional
+ operation).  Returns true if this collection changed as a
+ result of the call.  (Returns false if this collection does
+ not permit duplicates and already contains the specified element.)
+
+ Collections that support this operation may place limitations on what
+ elements may be added to this collection.  In particular, some
+ collections will refuse to add null elements, and others will
+ impose restrictions on the type of elements that may be added.
+ Collection classes should clearly specify in their documentation any
+ restrictions on what elements may be added.
+
+ If a collection refuses to add a particular element for any reason
+ other than that it already contains the element, it must throw
+ an exception (rather than returning false).  This preserves
+ the invariant that a collection always contains the specified element
+ after this call returns.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - element whose presence in this collection is to be ensured</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this collection changed as a result of the
+         call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>add</tt> operation
+         is not supported by this collection</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of the specified element
+         prevents it from being added to this collection</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         collection does not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of the element
+         prevents it from being added to this collection</dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if the element cannot be added at this
+         time due to insertion restrictions</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[boolean remove(Object o)]]></signature>
+            <description><![CDATA[Removes a single instance of the specified element from this
+ collection, if it is present (optional operation).  More formally,
+ removes an element e such that
+ (o==null ? e==null : o.equals(e)), if
+ this collection contains one or more such elements.  Returns
+ true if this collection contained the specified element (or
+ equivalently, if this collection changed as a result of the call).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element to be removed from this collection, if present</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if an element was removed as a result of this call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the type of the specified element
+         is incompatible with this collection
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         collection does not permit null elements
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>remove</tt> operation
+         is not supported by this collection</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>containsAll</name>
+            <signature><![CDATA[boolean containsAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Returns true if this collection contains all of the elements
+ in the specified collection.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection to be checked for containment in this collection</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this collection contains all of the elements
+         in the specified collection</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the types of one or more elements
+         in the specified collection are incompatible with this
+         collection
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection contains one
+         or more null elements and this collection does not permit null
+         elements
+         (<a href="#">optional</a>),
+         or if the specified collection is null.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>addAll</name>
+            <signature><![CDATA[boolean addAll(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Adds all of the elements in the specified collection to this collection
+ (optional operation).  The behavior of this operation is undefined if
+ the specified collection is modified while the operation is in progress.
+ (This implies that the behavior of this call is undefined if the
+ specified collection is this collection, and this collection is
+ nonempty.)<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be added to this collection</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this collection changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>addAll</tt> operation
+         is not supported by this collection</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of an element of the specified
+         collection prevents it from being added to this collection</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection contains a
+         null element and this collection does not permit null elements,
+         or if the specified collection is null</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of an element of the
+         specified collection prevents it from being added to this
+         collection</dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if not all the elements can be added at
+         this time due to insertion restrictions</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>add(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>removeAll</name>
+            <signature><![CDATA[boolean removeAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Removes all of this collection's elements that are also contained in the
+ specified collection (optional operation).  After this call returns,
+ this collection will contain no elements in common with the specified
+ collection.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be removed from this collection</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this collection changed as a result of the
+         call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>removeAll</tt> method
+         is not supported by this collection</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the types of one or more elements
+         in this collection are incompatible with the specified
+         collection
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if this collection contains one or more
+         null elements and the specified collection does not support
+         null elements
+         (<a href="#">optional</a>),
+         or if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>remove(Object)</code></a>, 
+<a href="#"><code>contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>retainAll</name>
+            <signature><![CDATA[boolean retainAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Retains only the elements in this collection that are contained in the
+ specified collection (optional operation).  In other words, removes from
+ this collection all of its elements that are not contained in the
+ specified collection.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be retained in this collection</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this collection changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>retainAll</tt> operation
+         is not supported by this collection</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the types of one or more elements
+         in this collection are incompatible with the specified
+         collection
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if this collection contains one or more
+         null elements and the specified collection does not permit null
+         elements
+         (<a href="#">optional</a>),
+         or if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>remove(Object)</code></a>, 
+<a href="#"><code>contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[void clear()]]></signature>
+            <description><![CDATA[Removes all of the elements from this collection (optional operation).
+ The collection will be empty after this method returns.<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>clear</tt> operation
+         is not supported by this collection</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[boolean equals(Object o)]]></signature>
+            <description><![CDATA[Compares the specified object with this collection for equality. 
+
+ While the Collection interface adds no stipulations to the
+ general contract for the Object.equals, programmers who
+ implement the Collection interface "directly" (in other words,
+ create a class that is a Collection but is not a Set
+ or a List) must exercise care if they choose to override the
+ Object.equals.  It is not necessary to do so, and the simplest
+ course of action is to rely on Object's implementation, but
+ the implementor may wish to implement a "value comparison" in place of
+ the default "reference comparison."  (The List and
+ Set interfaces mandate such value comparisons.)
+
+ The general contract for the Object.equals method states that
+ equals must be symmetric (in other words, a.equals(b) if and
+ only if b.equals(a)).  The contracts for List.equals
+ and Set.equals state that lists are only equal to other lists,
+ and sets to other sets.  Thus, a custom equals method for a
+ collection class that implements neither the List nor
+ Set interface must return false when this collection
+ is compared to any list or set.  (By the same logic, it is not possible
+ to write a class that correctly implements both the Set and
+ List interfaces.)<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - object to be compared for equality with this collection</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if the specified object is equal to this
+ collection</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.equals(Object)</code></a>, 
+<a href="#"><code>Set.equals(Object)</code></a>, 
+<a href="#"><code>List.equals(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hashCode</name>
+            <signature><![CDATA[int hashCode()]]></signature>
+            <description><![CDATA[Returns the hash code value for this collection.  While the
+ Collection interface adds no stipulations to the general
+ contract for the Object.hashCode method, programmers should
+ take note that any class that overrides the Object.equals
+ method must also override the Object.hashCode method in order
+ to satisfy the general contract for the Object.hashCode method.
+ In particular, c1.equals(c2) implies that
+ c1.hashCode()==c2.hashCode().<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the hash code value for this collection</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.hashCode()</code></a>, 
+<a href="#"><code>Object.equals(Object)</code></a></dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.cppreference.com/stdio/printf.html -->
+<HTML><HEAD><TITLE>printf</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="printf.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A href="printf.html">printf</A> 
+      </DIV>
+      <DIV class=name-format>printf </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int printf( const char *format, ... );
+</PRE>
+      <P>The printf() function prints output to <STRONG>STDOUT</STRONG>, 
+      according to <EM>format</EM> and other arguments passed to printf(). The 
+      string <EM>format</EM> consists of two types of items - characters that 
+      will be printed to the screen, and format commands that define how the 
+      other arguments to printf() are displayed. Basically, you specify a format 
+      string that has text in it, as well as "special" characters that map to 
+      the other arguments of printf(). For example, this code</P><PRE class=example-code>   char name[20] = "Bob";
+   int age = 21;
+   printf( "Hello %s, you are %d years old\n", name, age );           
+</PRE>
+      <P>displays the following output:</P><PRE class=example-code>   Hello Bob, you are 21 years old              
+</PRE>
+      <P>The %s means, "insert the first argument, a string, right here." The %d 
+      indicates that the second argument (an integer) should be placed there. 
+      There are different %-codes for different variable types, as well as 
+      options to limit the length of the variables and whatnot.</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Code</TH>
+          <TH class=code-table-th>Format</TH></TR>
+        <TR>
+          <TD class=code-table-td>%c</TD>
+          <TD class=code-table-td>character</TD></TR>
+        <TR>
+          <TD class=code-table-td>%d</TD>
+          <TD class=code-table-td>signed integers</TD></TR>
+        <TR>
+          <TD class=code-table-td>%i</TD>
+          <TD class=code-table-td>signed integers</TD></TR>
+        <TR>
+          <TD class=code-table-td>%e</TD>
+          <TD class=code-table-td>scientific notation, with a lowercase 
+        "e"</TD></TR>
+        <TR>
+          <TD class=code-table-td>%E</TD>
+          <TD class=code-table-td>scientific notation, with a uppercase 
+        "E"</TD></TR>
+        <TR>
+          <TD class=code-table-td>%f</TD>
+          <TD class=code-table-td>floating point</TD></TR>
+        <TR>
+          <TD class=code-table-td>%g</TD>
+          <TD class=code-table-td>use %e or %f, whichever is shorter</TD></TR>
+        <TR>
+          <TD class=code-table-td>%G</TD>
+          <TD class=code-table-td>use %E or %f, whichever is shorter</TD></TR>
+        <TR>
+          <TD class=code-table-td>%o</TD>
+          <TD class=code-table-td>octal</TD></TR>
+        <TR>
+          <TD class=code-table-td>%s</TD>
+          <TD class=code-table-td>a string of characters</TD></TR>
+        <TR>
+          <TD class=code-table-td>%u</TD>
+          <TD class=code-table-td>unsigned integer</TD></TR>
+        <TR>
+          <TD class=code-table-td>%x</TD>
+          <TD class=code-table-td>unsigned hexadecimal, with lowercase 
+          letters</TD></TR>
+        <TR>
+          <TD class=code-table-td>%X</TD>
+          <TD class=code-table-td>unsigned hexadecimal, with uppercase 
+          letters</TD></TR>
+        <TR>
+          <TD class=code-table-td>%p</TD>
+          <TD class=code-table-td>a pointer</TD></TR>
+        <TR>
+          <TD class=code-table-td>%n</TD>
+          <TD class=code-table-td>the argument shall be a pointer to an 
+            integer into which is placed the number of characters written so 
+          far</TD></TR>
+        <TR>
+          <TD class=code-table-td>%%</TD>
+          <TD class=code-table-td>a '%' sign</TD></TR></TBODY></TABLE>
+      <P>An integer placed between a % sign and the format command acts as a 
+      minimum field width specifier, and pads the output with spaces or zeros to 
+      make it long enough. If you want to pad with zeros, place a zero before 
+      the minimum field width specifier:</P><PRE class=example-code>   %012d                
+</PRE>
+      <P>You can also include a precision modifier, in the form of a .N where N 
+      is some number, before the format command:</P><PRE class=example-code>   %012.4d              
+</PRE>
+      <P>The precision modifier has different meanings depending on the format 
+      command being used:</P>
+      <UL>
+        <LI>With %e, %E, and %f, the precision modifier lets you specify the 
+        number of decimal places desired. For example, %12.6f will display a 
+        floating number at least 12 digits wide, with six decimal places. 
+        <LI>With %g and %G, the precision modifier determines the maximum number 
+        of significant digits displayed. 
+        <LI>With %s, the precision modifer simply acts as a maximumfield length, 
+        to complement the minimum field length that precedes the period. 
+</LI></UL>
+      <P>All of printf()'s output is right-justified, unless you place a minus 
+      sign right after the % sign. For example,</P><PRE class=example-code>   %-12.4f              
+</PRE>
+      <P>will display a floating point number with a minimum of 12 characters, 4 
+      decimal places, and left justified. You may modify the %d, %i, %o, %u, and 
+      %x type specifiers with the letter l and the letter h to specify long and 
+      short <A href="../data_types.html">data types</A> 
+      (e.g. %hd means a short integer). The %e, %f, and %g type specifiers can 
+      have the letter l before them to indicate that a double follows. The %g, 
+      %f, and %e type specifiers can be preceded with the character '#' to 
+      ensure that the decimal point will be present, even if there are no 
+      decimal digits. The use of the '#' character with the %x type specifier 
+      indicates that the hexidecimal number should be printed with the '0x' 
+      prefix. The use of the '#' character with the %o type specifier indicates 
+      that the octal value should be displayed with a 0 prefix.</P>
+      <P>You can also include <A 
+      href="../escape_sequences.html">constant escape 
+      sequences</A> in the output string.</P>
+      <P>The return value of printf() is the number of characters printed, or a 
+      negative number if an error occurred.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="fprintf.html">fprintf</A><BR><A 
+      href="puts.html">puts</A><BR><A 
+      href="scanf.html">scanf</A><BR><A 
+      href="sprintf.html">sprintf</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,144 @@
+-------------
+根据口令获取在线申请信息
+url: getInvitationOnLineByPassport/{passport}
+result:
+{"code":"0","message":"",
+"data":{"code":"PASSPORTERROR"}}  //PASSPORTERROR 没有该通行证;TIMEOUT 通行证已过期; FINISHEXAM,已经完成考试；SUCCESS 成功，需要读取invitationUrl跳转到考试页面
+---------------------------
+获取试卷的试答题部分（只包含试答题部分）
+url:exam/getTestInfo
+data:
+result:
+{
+  "code": "0",
+  "message": "",
+  "data": {
+    "partDatas": [
+      {
+        "partSeq": 21,
+        "partDesc": "选择题",
+        "suggestTime": 9999,
+        "questionIds": [
+          {
+            "questionId": 100000000000001
+          }
+        ],
+        "questionLength": 1
+      },
+      {
+        "partSeq": 22,
+        "partDesc": "编程题",
+        "suggestTime": 9999,
+        "questionIds": [
+          {
+            "questionId": 107040009080001
+          }
+        ],
+        "questionLength": 1
+      },
+      {
+        "partSeq": 23,
+        "partDesc": "试答面试题",
+        "suggestTime": 9999,
+        "questionIds": [
+          {
+            "questionId": 80017
+          }
+        ],
+        "questionLength": 1
+      }
+    ]
+  }
+}
+====================
+获取考试时间状态信息
+url: exam/getInvitationTimeInfo
+data
+result:
+{"code":"0","message":"",
+"data":
+{
+"effDate":1409815380000, //开始考试时间  可以转换为  2014-09-04 15:23:00
+"expDate":1409835540000,//结束考试时间   可以转换为2014-09-04 20:59:00
+"secToEffDate":-216,  //距离开始开始时间(秒)  小于等于0表示可以开始考试了
+"secToExpDate":19943  //距离结束考试时间 ( 秒 ) 小于等于0表示需要交卷了
+}
+}
+============================
+应聘者记录客户端信息
+url:info/saveOperLog
+data:
+{
+"os" : "windows",
+"browser" : "IE",
+"browserVersion" : "1.0"
+}
+result:
+{"code":"0","message":"","data":{"code":"SUCCESS"}}
+==============================================
+重新创建session
+url:reCreateSession/{testId}/{passport}
+data:
+result:
+{"code":"0","message":"",
+"data":{"code":"ACCESSABLE"}    // ACCESSABLE 成功，ACCESSDENY:拒绝，FINISHEXAM:已经完成交卷
+}  
+==================================================================
+获取二维码图片
+url ： info/getQRCodePicUrl
+result ：{"code":"0","message":"","data":"https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQG28DoAAAAAAAAAASxodHRwOi8vd2VpeGluLnFxLmNvbS9xL0FuWC1DNmZuVEhvMVp4NDNMRnNRAAIEesLvUQMECAcAAA=="}
+说明：data为二维码图片地址，会有不存在的情况，不存在的情况则不显示二维码图片
+==================================================================
+提交反馈信息
+url ： feedback/saveFeedBack
+contentType : application/json
+data : {"testId":"1418","fbItems":"1,2,3,4","questionId":"1234","opinion":"0","fbMore":"我觉得考题都弱爆了"}
+result ：{"code":"0","message":"","data":{"code":"SUCCESS"}}
+说明：opinion  1 赞  0 无  -1 踩
+==================================================================
+ 获取反馈信息选择项
+url ： feedback/getFeedBackChoice
+result ：
+{"code":"0","message":"","data":[{"key":"1","value":"题目太难"},{"key":"2","value":"题目太偏"},
+{"key":"3","value":"题意不清"},{"key":"4","value":"题量过大"},{"key":"5","value":"页面操作不易"},
+{"key":"6","value":"系统易崩溃"}]}
+==================================================================
+清空session
+url ： clearSession
+result ：{"code":"0","message":"","data":1418} //data是testId
+==================================================================
+获取生成试卷状态
+exam/getPaperState
+data:
+result: 
+{
+code: '0', //
+message: '',
+data:{"code":0,"timerType":3 }// code 0-未生成; 1-正在生成; 2-已生成; -1-生成失败  
+      data.code = 2时， 会有timerType计时类型属性， 2按部分 3按题目  9混合计时(试卷既有部分又有题目)
+}
+=================================
+获取切换次数配置信息
+url:exam/getSwitchTimesConfig
+result:
+{"code":"0","data":1}
+===================================================================
+更新切换次数+1
+url:exam/updateSwitchTimes
+contentType : application/json
+data:{"partSeq":"1","questionId":"80003"}
+result:
+{"code":"0","data":{"code":"","message":"","times":""}}
+===================================================================
+更新刷新次数+1
+url:exam/updateFreshTimes
+result:
+{"code":"0","data":{"code":"","message":"","times":""}}
+===================================================================
+点击某题或下一题
+c->s : {"partSeq":"1","question_id":"3","answer":{"id":"1","choice":"D","choiceDesc":"为什么选择D","files":[{"filename":"a.java","content":"aaaaa"},
+	   {"filename":"b.java","content":"bbbbbb"}]}}
+
+s->c : {"errorCode":0,"errorDesc":null,"title":"题目信息",
+		"matrix":{"console":true,"items":[{"filename":"a.java","template":"temp1","content":"content1","mode":"mode1"}]},
+		"options":["这是A选项","这是B选项","这是C选项","这是D选项"]}

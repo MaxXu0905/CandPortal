@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/stdother/raise.html -->
+<HTML><HEAD><TITLE>raise</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="raise.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Other Standard C 
+      Functions</A> &gt; <A 
+      href="raise.html">raise</A> </DIV>
+      <DIV class=name-format>raise </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;signal.h&gt;
+  int raise( int signal );
+</PRE>
+      <P>The raise() function sends the specified <EM>signal</EM> to the 
+      program. Some signals:</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Signal</TH>
+          <TH class=code-table-th>Meaning</TH></TR>
+        <TR>
+          <TD class=code-table-td>SIGABRT</TD>
+          <TD class=code-table-td>Termination error</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGFPE</TD>
+          <TD class=code-table-td>Floating pointer error</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGILL</TD>
+          <TD class=code-table-td>Bad instruction</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGINT</TD>
+          <TD class=code-table-td>User presed CTRL-C</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGSEGV</TD>
+          <TD class=code-table-td>Illegal memory access</TD></TR>
+        <TR>
+          <TD class=code-table-td>SIGTERM</TD>
+          <TD class=code-table-td>Terminate program</TD></TR></TBODY></TABLE>
+      <P>The return value is zero upon success, nonzero on failure.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="signal.html">signal</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

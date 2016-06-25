@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<alipath>${alipath}</alipath>
+	<red5url>rtmp://${rtmp.address}/SOSample</red5url>
+	<checkfreq>60000</checkfreq>
+	<isPhotoFaceRec>0</isPhotoFaceRec>
+</config>

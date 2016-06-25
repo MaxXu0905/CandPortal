@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.Timer">
+    <constructors>
+        <constructor>
+            <name>Timer</name>
+            <signature><![CDATA[public Timer()]]></signature>
+            <description><![CDATA[Creates a new timer.  The associated thread does not
+ run as a daemon.]]></description>
+        </constructor>
+        <constructor>
+            <name>Timer</name>
+            <signature><![CDATA[public Timer(boolean isDaemon)]]></signature>
+            <description><![CDATA[Creates a new timer whose associated thread may be specified to
+ run as a daemon.
+ A daemon thread is called for if the timer will be used to
+ schedule repeating "maintenance activities", which must be
+ performed as long as the application is running, but should not
+ prolong the lifetime of the application.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>isDaemon</code> - true if the associated thread should run as a daemon.</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>Timer</name>
+            <signature><![CDATA[public Timer(String name)]]></signature>
+            <description><![CDATA[Creates a new timer whose associated thread has the specified name.
+ The associated thread does not
+ run as a daemon.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the associated thread</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>name</code> is null</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>Timer</name>
+            <signature><![CDATA[public Timer(String name,
+     boolean isDaemon)]]></signature>
+            <description><![CDATA[Creates a new timer whose associated thread has the specified name,
+ and may be specified to
+ run as a daemon.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the associated thread</dd><dd><code>isDaemon</code> - true if the associated thread should run as a daemon</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>name</code> is null</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>schedule</name>
+            <signature><![CDATA[public void schedule(TimerTask task,
+            long delay)]]></signature>
+            <description><![CDATA[Schedules the specified task for execution after the specified delay.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - task to be scheduled.</dd><dd><code>delay</code> - delay in milliseconds before task is to be executed.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <tt>delay</tt> is negative, or
+         <tt>delay + System.currentTimeMillis()</tt> is negative.</dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>task</code> is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>schedule</name>
+            <signature><![CDATA[public void schedule(TimerTask task,
+            Date time)]]></signature>
+            <description><![CDATA[Schedules the specified task for execution at the specified time.  If
+ the time is in the past, the task is scheduled for immediate execution.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - task to be scheduled.</dd><dd><code>time</code> - time at which task is to be executed.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <tt>time.getTime()</tt> is negative.</dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>task</code> or <code>time</code> is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>schedule</name>
+            <signature><![CDATA[public void schedule(TimerTask task,
+            long delay,
+            long period)]]></signature>
+            <description><![CDATA[Schedules the specified task for repeated fixed-delay execution,
+ beginning after the specified delay.  Subsequent executions take place
+ at approximately regular intervals separated by the specified period.
+
+ In fixed-delay execution, each execution is scheduled relative to
+ the actual execution time of the previous execution.  If an execution
+ is delayed for any reason (such as garbage collection or other
+ background activity), subsequent executions will be delayed as well.
+ In the long run, the frequency of execution will generally be slightly
+ lower than the reciprocal of the specified period (assuming the system
+ clock underlying Object.wait(long) is accurate).
+
+ Fixed-delay execution is appropriate for recurring activities
+ that require "smoothness."  In other words, it is appropriate for
+ activities where it is more important to keep the frequency accurate
+ in the short run than in the long run.  This includes most animation
+ tasks, such as blinking a cursor at regular intervals.  It also includes
+ tasks wherein regular activity is performed in response to human
+ input, such as automatically repeating a character as long as a key
+ is held down.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - task to be scheduled.</dd><dd><code>delay</code> - delay in milliseconds before task is to be executed.</dd><dd><code>period</code> - time in milliseconds between successive task executions.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>delay < 0</code>, or
+         <code>delay + System.currentTimeMillis() < 0</code>, or
+         <code>period <= 0</code></dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>task</code> is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>schedule</name>
+            <signature><![CDATA[public void schedule(TimerTask task,
+            Date firstTime,
+            long period)]]></signature>
+            <description><![CDATA[Schedules the specified task for repeated fixed-delay execution,
+ beginning at the specified time. Subsequent executions take place at
+ approximately regular intervals, separated by the specified period.
+
+ In fixed-delay execution, each execution is scheduled relative to
+ the actual execution time of the previous execution.  If an execution
+ is delayed for any reason (such as garbage collection or other
+ background activity), subsequent executions will be delayed as well.
+ In the long run, the frequency of execution will generally be slightly
+ lower than the reciprocal of the specified period (assuming the system
+ clock underlying Object.wait(long) is accurate).  As a
+ consequence of the above, if the scheduled first time is in the past,
+ it is scheduled for immediate execution.
+
+ Fixed-delay execution is appropriate for recurring activities
+ that require "smoothness."  In other words, it is appropriate for
+ activities where it is more important to keep the frequency accurate
+ in the short run than in the long run.  This includes most animation
+ tasks, such as blinking a cursor at regular intervals.  It also includes
+ tasks wherein regular activity is performed in response to human
+ input, such as automatically repeating a character as long as a key
+ is held down.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - task to be scheduled.</dd><dd><code>firstTime</code> - First time at which task is to be executed.</dd><dd><code>period</code> - time in milliseconds between successive task executions.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>firstTime.getTime() < 0</code>, or
+         <code>period <= 0</code></dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>task</code> or <code>firstTime</code> is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>scheduleAtFixedRate</name>
+            <signature><![CDATA[public void scheduleAtFixedRate(TimerTask task,
+                       long delay,
+                       long period)]]></signature>
+            <description><![CDATA[Schedules the specified task for repeated fixed-rate execution,
+ beginning after the specified delay.  Subsequent executions take place
+ at approximately regular intervals, separated by the specified period.
+
+ In fixed-rate execution, each execution is scheduled relative to the
+ scheduled execution time of the initial execution.  If an execution is
+ delayed for any reason (such as garbage collection or other background
+ activity), two or more executions will occur in rapid succession to
+ "catch up."  In the long run, the frequency of execution will be
+ exactly the reciprocal of the specified period (assuming the system
+ clock underlying Object.wait(long) is accurate).
+
+ Fixed-rate execution is appropriate for recurring activities that
+ are sensitive to absolute time, such as ringing a chime every
+ hour on the hour, or running scheduled maintenance every day at a
+ particular time.  It is also appropriate for recurring activities
+ where the total time to perform a fixed number of executions is
+ important, such as a countdown timer that ticks once every second for
+ ten seconds.  Finally, fixed-rate execution is appropriate for
+ scheduling multiple repeating timer tasks that must remain synchronized
+ with respect to one another.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - task to be scheduled.</dd><dd><code>delay</code> - delay in milliseconds before task is to be executed.</dd><dd><code>period</code> - time in milliseconds between successive task executions.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>delay < 0</code>, or
+         <code>delay + System.currentTimeMillis() < 0</code>, or
+         <code>period <= 0</code></dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>task</code> is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>scheduleAtFixedRate</name>
+            <signature><![CDATA[public void scheduleAtFixedRate(TimerTask task,
+                       Date firstTime,
+                       long period)]]></signature>
+            <description><![CDATA[Schedules the specified task for repeated fixed-rate execution,
+ beginning at the specified time. Subsequent executions take place at
+ approximately regular intervals, separated by the specified period.
+
+ In fixed-rate execution, each execution is scheduled relative to the
+ scheduled execution time of the initial execution.  If an execution is
+ delayed for any reason (such as garbage collection or other background
+ activity), two or more executions will occur in rapid succession to
+ "catch up."  In the long run, the frequency of execution will be
+ exactly the reciprocal of the specified period (assuming the system
+ clock underlying Object.wait(long) is accurate).  As a
+ consequence of the above, if the scheduled first time is in the past,
+ then any "missed" executions will be scheduled for immediate "catch up"
+ execution.
+
+ Fixed-rate execution is appropriate for recurring activities that
+ are sensitive to absolute time, such as ringing a chime every
+ hour on the hour, or running scheduled maintenance every day at a
+ particular time.  It is also appropriate for recurring activities
+ where the total time to perform a fixed number of executions is
+ important, such as a countdown timer that ticks once every second for
+ ten seconds.  Finally, fixed-rate execution is appropriate for
+ scheduling multiple repeating timer tasks that must remain synchronized
+ with respect to one another.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - task to be scheduled.</dd><dd><code>firstTime</code> - First time at which task is to be executed.</dd><dd><code>period</code> - time in milliseconds between successive task executions.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>firstTime.getTime() < 0</code> or
+         <code>period <= 0</code></dd>
+<dd><code><a href="#">IllegalStateException</a></code> - if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>task</code> or <code>firstTime</code> is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>cancel</name>
+            <signature><![CDATA[public void cancel()]]></signature>
+            <description><![CDATA[Terminates this timer, discarding any currently scheduled tasks.
+ Does not interfere with a currently executing task (if it exists).
+ Once a timer has been terminated, its execution thread terminates
+ gracefully, and no more tasks may be scheduled on it.
+
+ Note that calling this method from within the run method of a
+ timer task that was invoked by this timer absolutely guarantees that
+ the ongoing task execution is the last task execution that will ever
+ be performed by this timer.
+
+ This method may be called repeatedly; the second and subsequent
+ calls have no effect.]]></description>
+        </method>
+        <method>
+            <name>purge</name>
+            <signature><![CDATA[public int purge()]]></signature>
+            <description><![CDATA[Removes all cancelled tasks from this timer's task queue.  Calling
+ this method has no effect on the behavior of the timer, but
+ eliminates the references to the cancelled tasks from the queue.
+ If there are no external references to these tasks, they become
+ eligible for garbage collection.
+
+ Most programs will have no need to call this method.
+ It is designed for use by the rare application that cancels a large
+ number of tasks.  Calling this method trades time for space: the
+ runtime of the method may be proportional to n + c log n, where n
+ is the number of tasks in the queue and c is the number of cancelled
+ tasks.
+
+ Note that it is permissible to call this method from within a
+ a task scheduled on this timer.<dl><dt><span class="strong">Returns:</span></dt><dd>the number of tasks removed from the queue.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

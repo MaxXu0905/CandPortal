@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.cppreference.com/cppalgorithm/for_each.html -->
+<HTML><HEAD><TITLE>for_each</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="for_each.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/for_each.html">for_each</A> 
+      </DIV>
+      <DIV class=name-format>for_each </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  UnaryFunction for_each( iterator start, iterator end, UnaryFunction f );
+</PRE>
+      <P>The for_each() algorithm applies the function <EM>f</EM> to each of the 
+      elements between <EM>start</EM> and <EM>end</EM>. The return value of 
+      for_each() is <EM>f</EM>.</P>
+      <P>For example, the following code snippets define a unary function then 
+      use it to increment all of the elements of an array:</P><PRE class=example-code> template&lt;class <A href="../containers.html">TYPE</A>&gt; struct increment : public unary_function&lt;<A href="../containers.html">TYPE</A>, void&gt; {
+   void operator() (<A href="../containers.html">TYPE</A>&amp; x) {
+     x++;
+   }
+ };             
+
+ ...            
+
+ int nums[] = {3, 4, 2, 9, 15, 267};
+ const int N = 6;               
+
+ cout &lt;&lt; "Before, nums[] is: ";
+ for( int i = 0; i &lt; N; i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ for_each( nums, nums + N, increment&lt;int&gt;() );            
+
+ cout &lt;&lt; "After, nums[] is: ";
+ for( int i = 0; i &lt; N; i++ ) {
+   cout &lt;&lt; nums[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <P>The above code displays the following output:</P><PRE class=example-code> Before, nums[] is: 3 4 2 9 15 267
+ After, nums[] is: 4 5 3 10 16 268              
+</PRE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

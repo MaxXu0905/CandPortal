@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.HashMap&lt;K,V&gt;">
+    <constructors>
+        <constructor>
+            <name>HashMap</name>
+            <signature><![CDATA[public HashMap(int initialCapacity,
+       float loadFactor)]]></signature>
+            <description><![CDATA[Constructs an empty HashMap with the specified initial
+ capacity and load factor.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>initialCapacity</code> - the initial capacity</dd><dd><code>loadFactor</code> - the load factor</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the initial capacity is negative
+         or the load factor is nonpositive</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>HashMap</name>
+            <signature><![CDATA[public HashMap(int initialCapacity)]]></signature>
+            <description><![CDATA[Constructs an empty HashMap with the specified initial
+ capacity and the default load factor (0.75).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>initialCapacity</code> - the initial capacity.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the initial capacity is negative.</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>HashMap</name>
+            <signature><![CDATA[public HashMap()]]></signature>
+            <description><![CDATA[Constructs an empty HashMap with the default initial capacity
+ (16) and the default load factor (0.75).]]></description>
+        </constructor>
+        <constructor>
+            <name>HashMap</name>
+            <signature><![CDATA[public HashMap(Map<? extends K,? extends V> m)]]></signature>
+            <description><![CDATA[Constructs a new HashMap with the same mappings as the
+ specified Map.  The HashMap is created with
+ default load factor (0.75) and an initial capacity sufficient to
+ hold the mappings in the specified Map.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>m</code> - the map whose mappings are to be placed in this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified map is null</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[public int size()]]></signature>
+            <description><![CDATA[Returns the number of key-value mappings in this map.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">size</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of key-value mappings in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <signature><![CDATA[public boolean isEmpty()]]></signature>
+            <description><![CDATA[Returns true if this map contains no key-value mappings.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this map contains no key-value mappings</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>get</name>
+            <signature><![CDATA[public V get(Object key)]]></signature>
+            <description><![CDATA[Returns the value to which the specified key is mapped,
+ or null if this map contains no mapping for the key.
+
+ More formally, if this map contains a mapping from a key
+ k to a value v such that (key==null ? k==null :
+ key.equals(k)), then this method returns v; otherwise
+ it returns null.  (There can be at most one such mapping.)
+
+ A return value of null does not necessarily
+ indicate that the map contains no mapping for the key; it's also
+ possible that the map explicitly maps the key to null.
+ The containsKey operation may be used to
+ distinguish these two cases.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">get</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">get</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key whose associated value is to be returned</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value to which the specified key is mapped, or
+         <code>null</code> if this map contains no mapping for the key</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>put(Object, Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>containsKey</name>
+            <signature><![CDATA[public boolean containsKey(Object key)]]></signature>
+            <description><![CDATA[Returns true if this map contains a mapping for the
+ specified key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">containsKey</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">containsKey</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - The key whose presence in this map is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this map contains a mapping for the specified
+ key.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>put</name>
+            <signature><![CDATA[public V put(K key,
+    V value)]]></signature>
+            <description><![CDATA[Associates the specified value with the specified key in this map.
+ If the map previously contained a mapping for the key, the old
+ value is replaced.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">put</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">put</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key with which the specified value is to be associated</dd><dd><code>value</code> - value to be associated with the specified key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the previous value associated with <tt>key</tt>, or
+         <tt>null</tt> if there was no mapping for <tt>key</tt>.
+         (A <tt>null</tt> return can also indicate that the map
+         previously associated <tt>null</tt> with <tt>key</tt>.)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>putAll</name>
+            <signature><![CDATA[public void putAll(Map<? extends K,? extends V> m)]]></signature>
+            <description><![CDATA[Copies all of the mappings from the specified map to this map.
+ These mappings will replace any mappings that this map had for
+ any of the keys currently in the specified map.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">putAll</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">putAll</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>m</code> - mappings to be stored in this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified map is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[public V remove(Object key)]]></signature>
+            <description><![CDATA[Removes the mapping for the specified key from this map if present.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">remove</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key whose mapping is to be removed from the map</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the previous value associated with <tt>key</tt>, or
+         <tt>null</tt> if there was no mapping for <tt>key</tt>.
+         (A <tt>null</tt> return can also indicate that the map
+         previously associated <tt>null</tt> with <tt>key</tt>.)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[public void clear()]]></signature>
+            <description><![CDATA[Removes all of the mappings from this map.
+ The map will be empty after this call returns.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clear</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+</dl>]]></description>
+        </method>
+        <method>
+            <name>containsValue</name>
+            <signature><![CDATA[public boolean containsValue(Object value)]]></signature>
+            <description><![CDATA[Returns true if this map maps one or more keys to the
+ specified value.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">containsValue</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">containsValue</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - value whose presence in this map is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this map maps one or more keys to the
+         specified value</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clone</name>
+            <signature><![CDATA[public Object clone()]]></signature>
+            <description><![CDATA[Returns a shallow copy of this HashMap instance: the keys and
+ values themselves are not cloned.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clone</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a shallow copy of this map</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Cloneable</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>keySet</name>
+            <signature><![CDATA[public Set<K> keySet()]]></signature>
+            <description><![CDATA[Returns a Set view of the keys contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own remove operation), the results of
+ the iteration are undefined.  The set supports element removal,
+ which removes the corresponding mapping from the map, via the
+ Iterator.remove, Set.remove,
+ removeAll, retainAll, and clear
+ operations.  It does not support the add or addAll
+ operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">keySet</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">keySet</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a set view of the keys contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>values</name>
+            <signature><![CDATA[public Collection<V> values()]]></signature>
+            <description><![CDATA[Returns a Collection view of the values contained in this map.
+ The collection is backed by the map, so changes to the map are
+ reflected in the collection, and vice-versa.  If the map is
+ modified while an iteration over the collection is in progress
+ (except through the iterator's own remove operation),
+ the results of the iteration are undefined.  The collection
+ supports element removal, which removes the corresponding
+ mapping from the map, via the Iterator.remove,
+ Collection.remove, removeAll,
+ retainAll and clear operations.  It does not
+ support the add or addAll operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">values</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">values</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a collection view of the values contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>entrySet</name>
+            <signature><![CDATA[public Set<Map.Entry<K,V>> entrySet()]]></signature>
+            <description><![CDATA[Returns a Set view of the mappings contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own remove operation, or through the
+ setValue operation on a map entry returned by the
+ iterator) the results of the iteration are undefined.  The set
+ supports element removal, which removes the corresponding
+ mapping from the map, via the Iterator.remove,
+ Set.remove, removeAll, retainAll and
+ clear operations.  It does not support the
+ add or addAll operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">entrySet</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">entrySet</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a set view of the mappings contained in this map</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

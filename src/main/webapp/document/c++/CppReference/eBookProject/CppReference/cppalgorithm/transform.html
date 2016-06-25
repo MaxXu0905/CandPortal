@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.cppreference.com/cppalgorithm/transform.html -->
+<HTML><HEAD><TITLE>transform</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="transform.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/transform.html">transform</A> 
+      </DIV>
+      <DIV class=name-format>transform </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator transform( iterator start, iterator end, iterator result, UnaryFunction f );
+  iterator transform( iterator start1, iterator end1, iterator start2, iterator result, BinaryFunction f );
+</PRE>
+      <P>The transform() algorithm applies the function <EM>f</EM> to some range 
+      of elements, storing the result of each application of the function in 
+      <EM>result</EM>.</P>
+      <P>The first version of the function applies <EM>f</EM> to each element in 
+      [<EM>start</EM>,<EM>end</EM>) and assigns the first output of the function 
+      to <EM>result</EM>, the second output to (<EM>result</EM>+1), etc.</P>
+      <P>The second version of the transform() works in a similar manner, except 
+      that it is given two ranges of elements and calls a binary function on a 
+      pair of elements.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/copy.html">copy</A><BR><A 
+      href="../cppalgorithm/fill.html">fill</A><BR><A 
+      href="../cppalgorithm/generate.html">generate</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

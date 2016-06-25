@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://www.cppreference.com/cppio/open.html -->
+<HTML><HEAD><TITLE>open</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="open.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/open.html">open</A> </DIV>
+      <DIV class=name-format>open </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  void open( const char *filename );
+  void open( const char *filename, openmode mode = default_mode );
+</PRE>
+      <P>The function open() is used with file streams. It opens 
+      <EM>filename</EM> and associates it with the current stream. The optional 
+      <A href="../io_flags.html#mode_flags">io stream 
+      mode flag</A> <EM>mode</EM> defaults to ios::in for ifstream, ios::out for 
+      ofstream, and ios::in|ios::out for fstream.</P>
+      <P>If open() fails, the resulting stream will evaluate to false when used 
+      in a Boolean expression. For example:</P><PRE class=example-code> ifstream inputStream;
+ inputStream.open("file.txt");
+ if( !inputStream ) {
+   cerr &lt;&lt; "Error opening input stream" &lt;&lt; endl;
+   return;
+ }              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/constructors.html">I/O 
+      Constructors</A><BR><A 
+      href="../cppio/close.html">close</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

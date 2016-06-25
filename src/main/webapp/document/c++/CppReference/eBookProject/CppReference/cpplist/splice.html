@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/cpplist/splice.html -->
+<HTML><HEAD><TITLE>splice</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="splice.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cpplist/index.html">C++ Lists</A> &gt; 
+      <A href="../cpplist/splice.html">splice</A> 
+</DIV>
+      <DIV class=name-format>splice </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;list&gt;
+  void splice( iterator pos, list&amp; lst );
+  void splice( iterator pos, list&amp; lst, iterator del );
+  void splice( iterator pos, list&amp; lst, iterator start, iterator end );
+</PRE>
+      <P>The splice() function inserts <EM>lst</EM> at location <EM>pos</EM>. If 
+      specified, the element(s) at <EM>del</EM> or from <EM>start</EM> to 
+      <EM>end</EM> are removed.</P>
+      <P>splice() simply moves elements from one list to another, and doesn't 
+      actually do any copying or deleting. Because of this, splice() runs in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cpplist/insert.html">insert</A><BR><A 
+      href="../cpplist/merge.html">merge</A><BR><A 
+      href="../cpplist/swap.html">swap</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

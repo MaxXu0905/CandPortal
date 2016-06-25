@@ -1,0 +1,166 @@
+﻿@CHARSET "UTF-8";
+/* ==  CSS Framework ========================================
+ * Copyright (c) 2014
+ * version: 1.0
+ * -------------------------------------------- 2014/2/12 ----- */
+/**
+ * base
+ * @author zengjie
+ */
+/*
+----------------------------------------------------------------------------------------------------*/
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../fonts/opensans/OpenSans-Light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../fonts/opensans/OpenSans.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../fonts/opensans/OpenSans-Semibold.woff) format('woff');
+}
+
+/*回到顶部*/
+#backtotop {
+	bottom: 12px;
+	height: 50px;
+	position: fixed;
+	right: -60px;
+	transition: all 1s ease 0s;
+	width: 50px;
+	z-index: 9999;
+}
+
+#backtotop.showme {
+	right: 12px;
+	-moz-transform: scale(1) rotate(-360deg) translate(0px); /* Firefox */
+	-webkit-transform: scale(1) rotate(-360deg) translate(0px);
+	/* Safari 和 Chrome */
+	-o-transform: scale(1) rotate(-360deg) translate(0px); /* Opera */
+	transform: scale(1) rotate(-360deg) translate(0px);
+}
+
+#backtotop .bttbg {
+	background: url("../images/top_button.png") no-repeat scroll 0 0
+		transparent;
+	height: 50px;
+	width: 50px;
+}
+
+#backtotop .bttbg:hover {
+	background-position: left bottom;
+}
+
+body{
+	font-family: "Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
+	color: #666666;
+}
+
+
+
+/*error*/
+.error_b{
+	margin: 60px auto;
+	background:#fff url("../images/errorbg.png") no-repeat left top;
+	height: 400px;
+	width: 750px;
+	padding:190px 10px 10px 280px;	
+		font-size: 20px;
+	line-height: 30px;
+	color: #333333;
+}
+.error_b div{padding:20px 10px 30px 0px;}
+.errorbg_b{
+	padding: 0px auto;
+	margin: 0px;
+	background: #fff;
+	text-ailgn: center;
+}
+/*404*/
+.errorbg {
+	padding: 0px auto;
+	margin: 0px;
+	background: #f8f8f8;
+	text-ailgn: center;
+}
+
+.error_c {
+	margin: 30px auto;
+	background: url("../images/404.png") no-repeat left top;
+	height: 530px;
+	width: 886px;
+}
+
+.errortext {
+	font-size: 20px;
+	line-height: 30px;
+	color: #333333;
+}
+.www{padding:30px 80px 0px 80px;text-align:right;color:#cccccc;}
+.sorry{
+	background: url("../images/error_icon.png") no-repeat left top;
+	text-align:left;
+	padding-top:210px;
+	padding-left:15px;
+	margin-left:120px;
+	margin-right:140px;
+	height:400px;
+}
+.sorry_b{
+	background: url("../images/404_icon.png") no-repeat left top;
+	text-align:left;
+	padding-top:210px;
+	padding-left:15px;
+	margin-left:120px;
+	margin-right:140px;
+	height:400px;
+}
+
+/*btn*/
+
+.btn_a{
+color: #fff !important;
+background: #53bf6b !important;
+text-align:center;
+text-valign:middle;
+background: #FFF;
+min-width:100px;
+width:auto;
+height: 38px;
+}
+
+.btn_a:hover,.btn_a:focus {
+color: #fff; 
+background: #46ad5d !important;
+}
+
+
+
+/*隐藏*/
+.hide {
+display: none;
+}
+
+/*遮罩层*/
+.i-skill-mask {
+position: fixed;
+left: 0;
+top: 0;
+bottom: 0;
+right: 0;
+z-index: 10000;
+width: 100%;
+background: #000;
+opacity: .6;
+filter: alpha(opacity=60);
+}

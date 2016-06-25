@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.cppreference.com/cppstring/find_last_of.html -->
+<HTML><HEAD><TITLE>find_last_of</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="find_last_of.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A 
+      href="../cppstring/find_last_of.html">find_last_of</A> 
+      </DIV>
+      <DIV class=name-format>find_last_of </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> find_last_of( const string&amp; str, <STRONG>size_type</STRONG> index = npos );
+  <STRONG>size_type</STRONG> find_last_of( const char* str, <STRONG>size_type</STRONG> index = npos );
+  <STRONG>size_type</STRONG> find_last_of( const char* str, <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num );
+  <STRONG>size_type</STRONG> find_last_of( char ch, <STRONG>size_type</STRONG> index = npos );
+</PRE>
+      <P>The find_last_of() function either:</P>
+      <UL>
+        <LI>returns the index of the first character within the current string 
+        that matches any character in <EM>str</EM>, doing a reverse search from 
+        <EM>index</EM>, string::npos if nothing is found, 
+        <LI>returns the index of the first character within the current string 
+        that matches any character in <EM>str</EM>, doing a reverse search from 
+        <EM>index</EM> and searching at most <EM>num</EM> characters, 
+        string::npos if nothing is found, 
+        <LI>or returns the index of the first occurrence of <EM>ch</EM> in the 
+        current string, doing a reverse search from <EM>index</EM>, string::npos 
+        if nothing is found. </LI></UL>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppstring/find.html">find</A><BR><A 
+      href="../cppstring/find_first_not_of.html">find_first_not_of</A><BR><A 
+      href="../cppstring/find_first_of.html">find_first_of</A><BR><A 
+      href="../cppstring/find_last_not_of.html">find_last_not_of</A><BR><A 
+      href="../cppstring/rfind.html">rfind</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,176 @@
+@CHARSET "UTF-8";
+/*
+*照相机
+*Mia
+*14/7/5
+*/
+.video-wrapper {
+	width: 598px;
+	height: 448px;
+	position: relative;
+	background: black;
+}
+
+.video-main,.video-wrapper canvas {
+	position: absolute;
+}
+
+.operation {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.snapshot-button {
+	margin: 20px auto;
+	display: block;
+	width: 100px;
+}
+
+#canvas {
+	position: absolute;
+	z-index: 1;
+	left: 0px;
+	top: 0px;
+}
+
+.uparrow-label {
+	color: #ced6df;
+	font-size: 16px;
+	line-height: 24px;
+	font-family: "华文细黑";
+	text-align: center;
+}
+
+.block-center {
+	display: block;
+	margin: 0 auto;
+}
+
+.block-inline {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.tip-arrow {
+	position: absolute;
+	top: 200px;
+	width: 100%;
+	z-index: 3;
+}
+
+.interview-label {
+	color: #ced6df;
+	font-size: 16px;
+	line-height: 24px;
+	font-family: "华文细黑";
+}
+
+#oPlayDiv {
+	position: absolute;
+	bottom: 0px;
+}
+
+.interview-main{
+	position: absolute;
+	bottom: 70px;
+	height: 300px;
+	width: 100%;
+	left: 0;
+}
+
+.interview-tip{
+	padding: 55px 30px 0;
+	line-height: 20px;
+}
+
+.interview-oper{
+	width:100%;
+}
+
+.mark {
+	border: 1px solid red !important;
+}
+
+.video-top {
+	width:100%;
+	height:100px;
+	color:#fff;
+	text-align: center;
+	top: 0;
+	position: absolute;
+}
+
+
+.video-bottom,.video-bottom-back {
+	width:100%;
+	height:70px;
+	line-height:70px;
+	color:#fff;
+	text-align: center;
+	bottom: 0;
+	position: absolute;
+}
+
+.video-bottom-back{
+	background: #000;
+	opacity: 0.7;
+	filter: alpha(opacity =   80);
+}
+
+.video-bottom img{
+	vertical-align:middle;
+	display: inline-block;
+}
+
+.hide
+{
+	visibility: hidden;
+}
+
+.visible
+{
+	visiblity:visible;
+}
+
+.fa-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

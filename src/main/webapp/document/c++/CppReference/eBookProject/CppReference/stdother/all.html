@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.cppreference.com/stdother/all.html -->
+<HTML><HEAD><TITLE>Other Standard C Functions</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Other Standard C 
+      Functions</A> </DIV>
+      <DIV class=name-format>abort </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void abort( void );
+</PRE>
+      <P>The function abort() terminates the current program. Depending on the 
+      implementation, the return value can indicate failure.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="assert.html">assert</A><BR><A 
+      href="atexit.html">atexit</A><BR><A 
+      href="exit.html">exit</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>assert </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;assert.h&gt;
+  void assert( int exp );
+</PRE>
+<P>The assert() macro is used to test for errors. If <EM>exp</EM> evaluates to 
+zero, assert() writes information to <STRONG>STDERR</STRONG> and exits the 
+program. If the macro NDEBUG is defined, the assert() macros will be 
+ignored.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="abort.html">abort</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>atexit </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  int atexit( void (*func)(void) );
+</PRE>
+<P>The function atexit() causes the function pointed to by <EM>func</EM> to be 
+called when the program terminates. You can make multiple calls to atexit() (at 
+least 32, depending on your compiler) and those functions will be called in 
+reverse order of their establishment. The return value of atexit() is zero upon 
+success, and non-zero on failure.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="abort.html">abort</A><BR><A 
+href="exit.html">exit</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>bsearch </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void *bsearch( const void *key, const void *buf, size_t num, size_t size, int (*compare)(const void *, const void *) );
+</PRE>
+<P>The bsearch() function searches <EM>buf[0]</EM> to <EM>buf[num-1]</EM> for an 
+item that matches <EM>key</EM>, using a binary search. The function 
+<EM>compare</EM> should return negative if its first argument is less than its 
+second, zero if equal, and positive if greater. The items in the array 
+<EM>buf</EM> should be in ascending order. The return value of bsearch() is a 
+pointer to the matching item, or <STRONG>NULL</STRONG> if none is found.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="qsort.html">qsort</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>exit </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void exit( int exit_code );
+</PRE>
+<P>The exit() function stops the program. <EM>exit_code</EM> is passed on to be 
+the return value of the program, where usually zero indicates success and 
+non-zero indicates an error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="abort.html">abort</A><BR><A 
+href="atexit.html">atexit</A><BR><A 
+href="system.html">system</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>getenv </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  char *getenv( const char *name );
+</PRE>
+<P>The function getenv() returns environmental information associated with 
+<EM>name</EM>, and is very implementation dependent. <STRONG>NULL</STRONG> is 
+returned if no information about <EM>name</EM> is available.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="system.html">system</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>longjmp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;setjmp.h&gt;
+  void longjmp( jmp_buf envbuf, int status );
+</PRE>
+<P>The function longjmp() causes the program to start executing code at the 
+point of the last call to <A 
+href="setjmp.html">setjmp</A>(). 
+<EM>envbuf</EM> is usually set through a call to <A 
+href="setjmp.html">setjmp</A>(). 
+<EM>status</EM> becomes the return value of <A 
+href="setjmp.html">setjmp</A>() and can be 
+used to figure out where longjmp() came from. <EM>status</EM> should not be set 
+to zero.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="setjmp.html">setjmp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>qsort </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void qsort( void *buf, size_t num, size_t size, int (*compare)(const void *, const void *) );
+</PRE>
+<P>The qsort() function sorts <EM>buf</EM> (which contains <EM>num</EM> items, 
+each of size <EM>size</EM>) using <A 
+href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</A>. The 
+<EM>compare</EM> function is used to compare the items in <EM>buf</EM>. 
+<EM>compare</EM> should return negative if the first argument is less than the 
+second, zero if they are equal, and positive if the first argument is greater 
+than the second. qsort() sorts <EM>buf</EM> in ascending order.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>For example, the following bit of code uses qsort() to sort an array of 
+integers:</P><PRE class=example-code> int compare_ints( const void* a, const void* b ) {
+   int* arg1 = (int*) a;
+   int* arg2 = (int*) b;
+   if( *arg1 &lt; *arg2 ) return -1;
+   else if( *arg1 == *arg2 ) return 0;
+   else return 1;
+ }              
+
+ int array[] = { -2, 99, 0, -743, 2, 3, 4 };
+ int array_size = 7;            
+
+ ...            
+
+ printf( "Before sorting: " );
+ for( int i = 0; i &lt; array_size; i++ ) {
+   printf( "%d ", array[i] );
+ }
+ printf( "\n" );              
+
+ qsort( array, array_size, sizeof(int), compare_ints );         
+
+ printf( "After sorting: " );
+ for( int i = 0; i &lt; array_size; i++ ) {
+   printf( "%d ", array[i] );
+ }
+ printf( "\n" );              
+</PRE>
+<P>When run, this code displays the following output:</P><PRE class=example-code> Before sorting: -2 99 0 -743 2 3 4
+ After sorting: -743 -2 0 2 3 4 99              
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="bsearch.html">bsearch</A><BR>(C++ 
+Algorithms) <A 
+href="../cppalgorithm/sort.html">sort</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>raise </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;signal.h&gt;
+  int raise( int signal );
+</PRE>
+<P>The raise() function sends the specified <EM>signal</EM> to the program. Some 
+signals:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Signal</TH>
+    <TH class=code-table-th>Meaning</TH></TR>
+  <TR>
+    <TD class=code-table-td>SIGABRT</TD>
+    <TD class=code-table-td>Termination error</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGFPE</TD>
+    <TD class=code-table-td>Floating pointer error</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGILL</TD>
+    <TD class=code-table-td>Bad instruction</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGINT</TD>
+    <TD class=code-table-td>User presed CTRL-C</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGSEGV</TD>
+    <TD class=code-table-td>Illegal memory access</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGTERM</TD>
+    <TD class=code-table-td>Terminate program</TD></TR></TBODY></TABLE>
+<P>The return value is zero upon success, nonzero on failure.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="signal.html">signal</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rand </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  int rand( void );
+</PRE>
+<P>The function rand() returns a pseudorandom integer between zero and RAND_MAX. 
+An example:</P><PRE class=example-code>   srand( time(<STRONG>NULL</STRONG>) );
+   for( i = 0; i &lt; 10; i++ )
+     printf( "Random number #%d: %d\n", i, rand() );          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="srand.html">srand</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>setjmp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;setjmp.h&gt;
+  int setjmp( jmp_buf envbuf );
+</PRE>
+<P>The setjmp() function saves the system stack in <EM>envbuf</EM> for use by a 
+later call to <A 
+href="longjmp.html">longjmp</A>(). When you 
+first call setjmp(), its return value is zero. Later, when you call <A 
+href="longjmp.html">longjmp</A>(), the 
+second argument of <A 
+href="longjmp.html">longjmp</A>() is what 
+the return value of setjmp() will be. Confused? Read about <A 
+href="longjmp.html">longjmp</A>().</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="longjmp.html">longjmp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>signal </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;signal.h&gt;
+  void ( *signal( int signal, void (* func) (int)) ) (int);
+</PRE>
+<P>The signal() function sets <EM>func</EM> to be called when <EM>signal</EM> is 
+recieved by your program. <EM>func</EM> can be a custom signal handler, or one 
+of these macros (defined in signal.h):</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Macro</TH>
+    <TH class=code-table-th>Explanation</TH></TR>
+  <TR>
+    <TD class=code-table-td>SIG_DFL</TD>
+    <TD class=code-table-td>default signal handling</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIG_IGN</TD>
+    <TD class=code-table-td>ignore the signal</TD></TR></TBODY></TABLE>
+<P>Some basic signals that you can attach a signal handler to are:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Signal</TH>
+    <TH class=code-table-th>Description</TH></TR>
+  <TR>
+    <TD class=code-table-td>SIGTERM</TD>
+    <TD class=code-table-td>Generic stop signal that can be caught.</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGINT</TD>
+    <TD class=code-table-td>Interrupt program, normally ctrl-c.</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGQUIT</TD>
+    <TD class=code-table-td>Interrupt program, similar to SIGINT.</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGKILL</TD>
+    <TD class=code-table-td>Stops the program. Cannot be caught.</TD></TR>
+  <TR>
+    <TD class=code-table-td>SIGHUP</TD>
+    <TD class=code-table-td>Reports a disconnected 
+terminal.</TD></TR></TBODY></TABLE>
+<P>The return value of signal() is the address of the previously defined 
+function for this signal, or SIG_ERR is there is an error.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>The following example uses the signal() function to call an arbitrary number 
+of functions when the user aborts the program. The functions are stored in a 
+vector, and a single "clean-up" function calls each function in that vector of 
+functions when the program is aborted:</P><PRE class=example-code>void f1() {
+  cout &lt;&lt; "calling f1()..." &lt;&lt; endl;
+}               
+
+void f2() {
+  cout &lt;&lt; "calling f2()..." &lt;&lt; endl;
+}               
+
+typedef void(*endFunc)(void);
+vector&lt;endFunc&gt; endFuncs;         
+
+void cleanUp( int dummy ) {
+  for( unsigned int i = 0; i &lt; endFuncs.size(); i++ ) {
+    endFunc f = endFuncs.at(i);
+    (*f)();
+  }
+  exit(-1);
+}               
+
+int main() {            
+
+  // connect various signals to our clean-up function
+  signal( SIGTERM, cleanUp );
+  signal( SIGINT, cleanUp );
+  signal( SIGQUIT, cleanUp );
+  signal( SIGHUP, cleanUp );            
+
+  // add two specific clean-up functions to a list of functions
+  endFuncs.push_back( f1 );
+  endFuncs.push_back( f2 );             
+
+  // loop until the user breaks
+  while( 1 );           
+
+  return 0;
+}               
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="raise.html">raise</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>srand </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  void srand( unsigned seed );
+</PRE>
+<P>The function srand() is used to seed the random sequence generated by <A 
+href="rand.html">rand</A>(). For any given 
+<EM>seed</EM>, rand() will generate a specific "random" sequence over and over 
+again.</P><PRE class=example-code>   srand( time(<STRONG>NULL</STRONG>) );
+   for( i = 0; i &lt; 10; i++ )
+     printf( "Random number #%d: %d\n", i, rand() );          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="rand.html">rand</A><BR>(Standard C 
+Date &amp; Time) <A 
+href="../stddate/time.html">time</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>system </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  int system( const char *command );
+</PRE>
+<P>The system() function runs the given <EM>command</EM> as a system call. The 
+return value is usually zero if the command executed without errors. If 
+<EM>command</EM> is <STRONG>NULL</STRONG>, system() will test to see if there is 
+a command interpreter available. Non-zero will be returned if there is a command 
+interpreter available, zero if not.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="exit.html">exit</A><BR><A 
+href="getenv.html">getenv</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>va_arg </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdarg.h&gt;
+  type va_arg( <STRONG>va_list</STRONG> argptr, type );
+  void va_end( <STRONG>va_list</STRONG> argptr );
+  void va_start( <STRONG>va_list</STRONG> argptr, last_parm );
+</PRE>
+<P>The va_arg() macros are used to pass a variable number of arguments to a 
+function.</P>
+<OL>
+  <LI>First, you must have a call to va_start() passing a valid 
+  <STRONG>va_list</STRONG> and the mandatory first argument of the function. 
+  This first argument can be anything; one way to use it is to have it be an 
+  integer describing the number of parameters being passed. 
+  <LI>Next, you call va_arg() passing the <STRONG>va_list</STRONG> and the type 
+  of the argument to be returned. The return value of va_arg() is the current 
+  parameter. 
+  <LI>Repeat calls to va_arg() for however many arguments you have. 
+  <LI>Finally, a call to va_end() passing the <STRONG>va_list</STRONG> is 
+  necessary for proper cleanup. </LI></OL>
+<P>For example:</P><PRE class=example-code>  int sum( int num, ... ) {
+    int answer = 0;
+    <STRONG>va_list</STRONG> argptr;            
+
+    va_start( argptr, num );            
+
+    for( ; num &gt; 0; num-- ) {
+      answer += va_arg( argptr, int );
+    }           
+
+    va_end( argptr );           
+
+    return( answer );
+  }             
+                
+
+  int main( void ) {            
+
+    int answer = sum( 4, 4, 3, 2, 1 );
+    printf( "The answer is %d\n", answer );           
+
+    return( 0 );
+  }             
+</PRE>
+<P>This code displays 10, which is 4+3+2+1.</P>
+<P>Here is another example of variable argument function, which is a simple 
+printing function:</P><PRE class=example-code> void my_printf( char *format, ... ) {
+   <STRONG>va_list</STRONG> argptr;             
+
+   va_start( argptr, format );          
+
+   while( *format != '\0' ) {
+     // string
+     if( *format == 's' ) {
+       char* s = va_arg( argptr, char * );
+       printf( "Printing a string: %s\n", s );
+     }
+     // character
+     else if( *format == 'c' ) {
+       char c = (char) va_arg( argptr, int );
+       printf( "Printing a character: %c\n", c );
+       break;
+     }
+     // integer
+     else if( *format == 'd' ) {
+       int d = va_arg( argptr, int );
+       printf( "Printing an integer: %d\n", d );
+     }          
+
+     *format++;
+   }            
+
+   va_end( argptr );
+ }              
+                
+
+ int main( void ) {             
+
+   my_printf( "sdc", "This is a string", 29, 'X' );         
+
+   return( 0 );
+ }              
+</PRE>
+<P>This code displays the following output when run:</P><PRE class=example-code> Printing a string: This is a string
+ Printing an integer: 29
+ Printing a character: X                
+</PRE>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

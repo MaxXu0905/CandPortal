@@ -1,0 +1,2527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.lang.Character">
+    <fields>
+        <field>
+            <name>MIN_RADIX</name>
+            <signature><![CDATA[public static final int MIN_RADIX]]></signature>
+            <description><![CDATA[The minimum radix available for conversion to and from strings.
+ The constant value of this field is the smallest value permitted
+ for the radix argument in radix-conversion methods such as the
+ digit method, the forDigit method, and the
+ toString method of class Integer.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>digit(char, int)</code></a>, 
+<a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>Integer.toString(int, int)</code></a>, 
+<a href="#"><code>Integer.valueOf(String)</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_RADIX</name>
+            <signature><![CDATA[public static final int MAX_RADIX]]></signature>
+            <description><![CDATA[The maximum radix available for conversion to and from strings.
+ The constant value of this field is the largest value permitted
+ for the radix argument in radix-conversion methods such as the
+ digit method, the forDigit method, and the
+ toString method of class Integer.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>digit(char, int)</code></a>, 
+<a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>Integer.toString(int, int)</code></a>, 
+<a href="#"><code>Integer.valueOf(String)</code></a>, 
+<a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MIN_VALUE</name>
+            <signature><![CDATA[public static final char MIN_VALUE]]></signature>
+            <description><![CDATA[The constant value of this field is the smallest value of type
+ char, '\u0000'.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.0.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_VALUE</name>
+            <signature><![CDATA[public static final char MAX_VALUE]]></signature>
+            <description><![CDATA[The constant value of this field is the largest value of type
+ char, '\uFFFF'.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.0.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>TYPE</name>
+            <signature><![CDATA[public static final Class<Character> TYPE]]></signature>
+            <description><![CDATA[The Class instance representing the primitive type
+ char.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd></dl>]]></description>
+        </field>
+        <field>
+            <name>UNASSIGNED</name>
+            <signature><![CDATA[public static final byte UNASSIGNED]]></signature>
+            <description><![CDATA[General category "Cn" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>UPPERCASE_LETTER</name>
+            <signature><![CDATA[public static final byte UPPERCASE_LETTER]]></signature>
+            <description><![CDATA[General category "Lu" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>LOWERCASE_LETTER</name>
+            <signature><![CDATA[public static final byte LOWERCASE_LETTER]]></signature>
+            <description><![CDATA[General category "Ll" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>TITLECASE_LETTER</name>
+            <signature><![CDATA[public static final byte TITLECASE_LETTER]]></signature>
+            <description><![CDATA[General category "Lt" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MODIFIER_LETTER</name>
+            <signature><![CDATA[public static final byte MODIFIER_LETTER]]></signature>
+            <description><![CDATA[General category "Lm" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>OTHER_LETTER</name>
+            <signature><![CDATA[public static final byte OTHER_LETTER]]></signature>
+            <description><![CDATA[General category "Lo" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>NON_SPACING_MARK</name>
+            <signature><![CDATA[public static final byte NON_SPACING_MARK]]></signature>
+            <description><![CDATA[General category "Mn" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>ENCLOSING_MARK</name>
+            <signature><![CDATA[public static final byte ENCLOSING_MARK]]></signature>
+            <description><![CDATA[General category "Me" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>COMBINING_SPACING_MARK</name>
+            <signature><![CDATA[public static final byte COMBINING_SPACING_MARK]]></signature>
+            <description><![CDATA[General category "Mc" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DECIMAL_DIGIT_NUMBER</name>
+            <signature><![CDATA[public static final byte DECIMAL_DIGIT_NUMBER]]></signature>
+            <description><![CDATA[General category "Nd" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>LETTER_NUMBER</name>
+            <signature><![CDATA[public static final byte LETTER_NUMBER]]></signature>
+            <description><![CDATA[General category "Nl" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>OTHER_NUMBER</name>
+            <signature><![CDATA[public static final byte OTHER_NUMBER]]></signature>
+            <description><![CDATA[General category "No" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SPACE_SEPARATOR</name>
+            <signature><![CDATA[public static final byte SPACE_SEPARATOR]]></signature>
+            <description><![CDATA[General category "Zs" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>LINE_SEPARATOR</name>
+            <signature><![CDATA[public static final byte LINE_SEPARATOR]]></signature>
+            <description><![CDATA[General category "Zl" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>PARAGRAPH_SEPARATOR</name>
+            <signature><![CDATA[public static final byte PARAGRAPH_SEPARATOR]]></signature>
+            <description><![CDATA[General category "Zp" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>CONTROL</name>
+            <signature><![CDATA[public static final byte CONTROL]]></signature>
+            <description><![CDATA[General category "Cc" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>FORMAT</name>
+            <signature><![CDATA[public static final byte FORMAT]]></signature>
+            <description><![CDATA[General category "Cf" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>PRIVATE_USE</name>
+            <signature><![CDATA[public static final byte PRIVATE_USE]]></signature>
+            <description><![CDATA[General category "Co" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SURROGATE</name>
+            <signature><![CDATA[public static final byte SURROGATE]]></signature>
+            <description><![CDATA[General category "Cs" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DASH_PUNCTUATION</name>
+            <signature><![CDATA[public static final byte DASH_PUNCTUATION]]></signature>
+            <description><![CDATA[General category "Pd" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>START_PUNCTUATION</name>
+            <signature><![CDATA[public static final byte START_PUNCTUATION]]></signature>
+            <description><![CDATA[General category "Ps" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>END_PUNCTUATION</name>
+            <signature><![CDATA[public static final byte END_PUNCTUATION]]></signature>
+            <description><![CDATA[General category "Pe" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>CONNECTOR_PUNCTUATION</name>
+            <signature><![CDATA[public static final byte CONNECTOR_PUNCTUATION]]></signature>
+            <description><![CDATA[General category "Pc" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>OTHER_PUNCTUATION</name>
+            <signature><![CDATA[public static final byte OTHER_PUNCTUATION]]></signature>
+            <description><![CDATA[General category "Po" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MATH_SYMBOL</name>
+            <signature><![CDATA[public static final byte MATH_SYMBOL]]></signature>
+            <description><![CDATA[General category "Sm" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>CURRENCY_SYMBOL</name>
+            <signature><![CDATA[public static final byte CURRENCY_SYMBOL]]></signature>
+            <description><![CDATA[General category "Sc" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MODIFIER_SYMBOL</name>
+            <signature><![CDATA[public static final byte MODIFIER_SYMBOL]]></signature>
+            <description><![CDATA[General category "Sk" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>OTHER_SYMBOL</name>
+            <signature><![CDATA[public static final byte OTHER_SYMBOL]]></signature>
+            <description><![CDATA[General category "So" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>INITIAL_QUOTE_PUNCTUATION</name>
+            <signature><![CDATA[public static final byte INITIAL_QUOTE_PUNCTUATION]]></signature>
+            <description><![CDATA[General category "Pi" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>FINAL_QUOTE_PUNCTUATION</name>
+            <signature><![CDATA[public static final byte FINAL_QUOTE_PUNCTUATION]]></signature>
+            <description><![CDATA[General category "Pf" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_UNDEFINED</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_UNDEFINED]]></signature>
+            <description><![CDATA[Undefined bidirectional character type. Undefined char
+ values have undefined directionality in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_LEFT_TO_RIGHT</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_LEFT_TO_RIGHT]]></signature>
+            <description><![CDATA[Strong bidirectional character type "L" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_RIGHT_TO_LEFT</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_RIGHT_TO_LEFT]]></signature>
+            <description><![CDATA[Strong bidirectional character type "R" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC]]></signature>
+            <description><![CDATA[Strong bidirectional character type "AL" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_EUROPEAN_NUMBER</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_EUROPEAN_NUMBER]]></signature>
+            <description><![CDATA[Weak bidirectional character type "EN" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR]]></signature>
+            <description><![CDATA[Weak bidirectional character type "ES" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR]]></signature>
+            <description><![CDATA[Weak bidirectional character type "ET" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_ARABIC_NUMBER</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_ARABIC_NUMBER]]></signature>
+            <description><![CDATA[Weak bidirectional character type "AN" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_COMMON_NUMBER_SEPARATOR</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_COMMON_NUMBER_SEPARATOR]]></signature>
+            <description><![CDATA[Weak bidirectional character type "CS" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_NONSPACING_MARK</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_NONSPACING_MARK]]></signature>
+            <description><![CDATA[Weak bidirectional character type "NSM" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_BOUNDARY_NEUTRAL</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_BOUNDARY_NEUTRAL]]></signature>
+            <description><![CDATA[Weak bidirectional character type "BN" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_PARAGRAPH_SEPARATOR</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_PARAGRAPH_SEPARATOR]]></signature>
+            <description><![CDATA[Neutral bidirectional character type "B" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_SEGMENT_SEPARATOR</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_SEGMENT_SEPARATOR]]></signature>
+            <description><![CDATA[Neutral bidirectional character type "S" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_WHITESPACE</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_WHITESPACE]]></signature>
+            <description><![CDATA[Neutral bidirectional character type "WS" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_OTHER_NEUTRALS</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_OTHER_NEUTRALS]]></signature>
+            <description><![CDATA[Neutral bidirectional character type "ON" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING]]></signature>
+            <description><![CDATA[Strong bidirectional character type "LRE" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE]]></signature>
+            <description><![CDATA[Strong bidirectional character type "LRO" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING]]></signature>
+            <description><![CDATA[Strong bidirectional character type "RLE" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE]]></signature>
+            <description><![CDATA[Strong bidirectional character type "RLO" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>DIRECTIONALITY_POP_DIRECTIONAL_FORMAT</name>
+            <signature><![CDATA[public static final byte DIRECTIONALITY_POP_DIRECTIONAL_FORMAT]]></signature>
+            <description><![CDATA[Weak bidirectional character type "PDF" in the Unicode specification.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MIN_HIGH_SURROGATE</name>
+            <signature><![CDATA[public static final char MIN_HIGH_SURROGATE]]></signature>
+            <description><![CDATA[The minimum value of a
+ 
+ Unicode high-surrogate code unit
+ in the UTF-16 encoding, constant '\uD800'.
+ A high-surrogate is also known as a leading-surrogate.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_HIGH_SURROGATE</name>
+            <signature><![CDATA[public static final char MAX_HIGH_SURROGATE]]></signature>
+            <description><![CDATA[The maximum value of a
+ 
+ Unicode high-surrogate code unit
+ in the UTF-16 encoding, constant '\uDBFF'.
+ A high-surrogate is also known as a leading-surrogate.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MIN_LOW_SURROGATE</name>
+            <signature><![CDATA[public static final char MIN_LOW_SURROGATE]]></signature>
+            <description><![CDATA[The minimum value of a
+ 
+ Unicode low-surrogate code unit
+ in the UTF-16 encoding, constant '\uDC00'.
+ A low-surrogate is also known as a trailing-surrogate.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_LOW_SURROGATE</name>
+            <signature><![CDATA[public static final char MAX_LOW_SURROGATE]]></signature>
+            <description><![CDATA[The maximum value of a
+ 
+ Unicode low-surrogate code unit
+ in the UTF-16 encoding, constant '\uDFFF'.
+ A low-surrogate is also known as a trailing-surrogate.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MIN_SURROGATE</name>
+            <signature><![CDATA[public static final char MIN_SURROGATE]]></signature>
+            <description><![CDATA[The minimum value of a Unicode surrogate code unit in the
+ UTF-16 encoding, constant '\uD800'.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_SURROGATE</name>
+            <signature><![CDATA[public static final char MAX_SURROGATE]]></signature>
+            <description><![CDATA[The maximum value of a Unicode surrogate code unit in the
+ UTF-16 encoding, constant '\uDFFF'.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MIN_SUPPLEMENTARY_CODE_POINT</name>
+            <signature><![CDATA[public static final int MIN_SUPPLEMENTARY_CODE_POINT]]></signature>
+            <description><![CDATA[The minimum value of a
+ 
+ Unicode supplementary code point, constant U+10000.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MIN_CODE_POINT</name>
+            <signature><![CDATA[public static final int MIN_CODE_POINT]]></signature>
+            <description><![CDATA[The minimum value of a
+ 
+ Unicode code point, constant U+0000.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_CODE_POINT</name>
+            <signature><![CDATA[public static final int MAX_CODE_POINT]]></signature>
+            <description><![CDATA[The maximum value of a
+ 
+ Unicode code point, constant U+10FFFF.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SIZE</name>
+            <signature><![CDATA[public static final int SIZE]]></signature>
+            <description><![CDATA[The number of bits used to represent a char value in unsigned
+ binary form, constant 16.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+    </fields>
+    <constructors>
+        <constructor>
+            <name>Character</name>
+            <signature><![CDATA[public Character(char value)]]></signature>
+            <description><![CDATA[Constructs a newly allocated Character object that
+ represents the specified char value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the value to be represented by the
+                  <code>Character</code> object.</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>valueOf</name>
+            <signature><![CDATA[public static Character valueOf(char c)]]></signature>
+            <description><![CDATA[Returns a Character instance representing the specified
+ char value.
+ If a new Character instance is not required, this method
+ should generally be used in preference to the constructor
+ Character(char), as this method is likely to yield
+ significantly better space and time performance by caching
+ frequently requested values.
+
+ This method will always cache values in the range '\u0000' to '\u007F', inclusive, and may
+ cache other values outside of this range.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - a char value.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <tt>Character</tt> instance representing <tt>c</tt>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>charValue</name>
+            <signature><![CDATA[public char charValue()]]></signature>
+            <description><![CDATA[Returns the value of this Character object.<dl><dt><span class="strong">Returns:</span></dt><dd>the primitive <code>char</code> value represented by
+          this object.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hashCode</name>
+            <signature><![CDATA[public int hashCode()]]></signature>
+            <description><![CDATA[Returns a hash code for this Character; equal to the result
+ of invoking charValue().<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a hash code value for this <code>Character</code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.equals(java.lang.Object)</code></a>, 
+<a href="#"><code>System.identityHashCode(java.lang.Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[public boolean equals(Object obj)]]></signature>
+            <description><![CDATA[Compares this object against the specified object.
+ The result is true if and only if the argument is not
+ null and is a Character object that
+ represents the same char value as this object.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>obj</code> - the object to compare with.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the objects are the same;
+          <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.hashCode()</code></a>, 
+<a href="#"><code>HashMap</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public String toString()]]></signature>
+            <description><![CDATA[Returns a String object representing this
+ Character's value.  The result is a string of
+ length 1 whose sole component is the primitive
+ char value represented by this
+ Character object.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">toString</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a string representation of this object.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public static String toString(char c)]]></signature>
+            <description><![CDATA[Returns a String object representing the
+ specified char.  The result is a string of length
+ 1 consisting solely of the specified char.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - the <code>char</code> to be converted</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the string representation of the specified <code>char</code></dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isValidCodePoint</name>
+            <signature><![CDATA[public static boolean isValidCodePoint(int codePoint)]]></signature>
+            <description><![CDATA[Determines whether the specified code point is a valid
+ 
+ Unicode code point value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the Unicode code point to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the specified code point value is between
+         <a href="#"><code>MIN_CODE_POINT</code></a> and
+         <a href="#"><code>MAX_CODE_POINT</code></a> inclusive;
+         <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isBmpCodePoint</name>
+            <signature><![CDATA[public static boolean isBmpCodePoint(int codePoint)]]></signature>
+            <description><![CDATA[Determines whether the specified character (Unicode code point)
+ is in the Basic Multilingual Plane (BMP).
+ Such code points can be represented using a single char.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the specified code point is between
+         <a href="#"><code>MIN_VALUE</code></a> and <a href="#"><code>MAX_VALUE</code></a> inclusive;
+         <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isSupplementaryCodePoint</name>
+            <signature><![CDATA[public static boolean isSupplementaryCodePoint(int codePoint)]]></signature>
+            <description><![CDATA[Determines whether the specified character (Unicode code point)
+ is in the supplementary character range.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the specified code point is between
+         <a href="#"><code>MIN_SUPPLEMENTARY_CODE_POINT</code></a> and
+         <a href="#"><code>MAX_CODE_POINT</code></a> inclusive;
+         <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isHighSurrogate</name>
+            <signature><![CDATA[public static boolean isHighSurrogate(char ch)]]></signature>
+            <description><![CDATA[Determines if the given char value is a
+ 
+ Unicode high-surrogate code unit
+ (also known as leading-surrogate code unit).
+
+ Such values do not represent characters by themselves,
+ but are used in the representation of
+ supplementary characters
+ in the UTF-16 encoding.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the <code>char</code> value to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the <code>char</code> value is between
+         <a href="#"><code>MIN_HIGH_SURROGATE</code></a> and
+         <a href="#"><code>MAX_HIGH_SURROGATE</code></a> inclusive;
+         <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowSurrogate(char)</code></a>, 
+<a href="#"><code>Character.UnicodeBlock.of(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLowSurrogate</name>
+            <signature><![CDATA[public static boolean isLowSurrogate(char ch)]]></signature>
+            <description><![CDATA[Determines if the given char value is a
+ 
+ Unicode low-surrogate code unit
+ (also known as trailing-surrogate code unit).
+
+ Such values do not represent characters by themselves,
+ but are used in the representation of
+ supplementary characters
+ in the UTF-16 encoding.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the <code>char</code> value to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the <code>char</code> value is between
+         <a href="#"><code>MIN_LOW_SURROGATE</code></a> and
+         <a href="#"><code>MAX_LOW_SURROGATE</code></a> inclusive;
+         <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isHighSurrogate(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isSurrogate</name>
+            <signature><![CDATA[public static boolean isSurrogate(char ch)]]></signature>
+            <description><![CDATA[Determines if the given char value is a Unicode
+ surrogate code unit.
+
+ Such values do not represent characters by themselves,
+ but are used in the representation of
+ supplementary characters
+ in the UTF-16 encoding.
+
+ A char value is a surrogate code unit if and only if it is either
+ a low-surrogate code unit or
+ a high-surrogate code unit.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the <code>char</code> value to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the <code>char</code> value is between
+         <a href="#"><code>MIN_SURROGATE</code></a> and
+         <a href="#"><code>MAX_SURROGATE</code></a> inclusive;
+         <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isSurrogatePair</name>
+            <signature><![CDATA[public static boolean isSurrogatePair(char high,
+                      char low)]]></signature>
+            <description><![CDATA[Determines whether the specified pair of char
+ values is a valid
+ 
+ Unicode surrogate pair.
+
+ This method is equivalent to the expression:
+ 
+ isHighSurrogate(high) && isLowSurrogate(low)
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>high</code> - the high-surrogate code value to be tested</dd><dd><code>low</code> - the low-surrogate code value to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the specified high and
+ low-surrogate code values represent a valid surrogate pair;
+ <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>charCount</name>
+            <signature><![CDATA[public static int charCount(int codePoint)]]></signature>
+            <description><![CDATA[Determines the number of char values needed to
+ represent the specified character (Unicode code point). If the
+ specified character is equal to or greater than 0x10000, then
+ the method returns 2. Otherwise, the method returns 1.
+
+ This method doesn't validate the specified character to be a
+ valid Unicode code point. The caller must validate the
+ character value using isValidCodePoint
+ if necessary.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>2 if the character is a valid supplementary character; 1 otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isSupplementaryCodePoint(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toCodePoint</name>
+            <signature><![CDATA[public static int toCodePoint(char high,
+              char low)]]></signature>
+            <description><![CDATA[Converts the specified surrogate pair to its supplementary code
+ point value. This method does not validate the specified
+ surrogate pair. The caller must validate it using isSurrogatePair if necessary.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>high</code> - the high-surrogate code unit</dd><dd><code>low</code> - the low-surrogate code unit</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the supplementary code point composed from the
+         specified surrogate pair.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointAt</name>
+            <signature><![CDATA[public static int codePointAt(CharSequence seq,
+              int index)]]></signature>
+            <description><![CDATA[Returns the code point at the given index of the
+ CharSequence. If the char value at
+ the given index in the CharSequence is in the
+ high-surrogate range, the following index is less than the
+ length of the CharSequence, and the
+ char value at the following index is in the
+ low-surrogate range, then the supplementary code point
+ corresponding to this surrogate pair is returned. Otherwise,
+ the char value at the given index is returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>seq</code> - a sequence of <code>char</code> values (Unicode code
+ units)</dd><dd><code>index</code> - the index to the <code>char</code> values (Unicode
+ code units) in <code>seq</code> to be converted</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Unicode code point at the given index</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>seq</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the value
+ <code>index</code> is negative or not less than
+ <a href="#"><code>seq.length()</code></a>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointAt</name>
+            <signature><![CDATA[public static int codePointAt(char[] a,
+              int index)]]></signature>
+            <description><![CDATA[Returns the code point at the given index of the
+ char array. If the char value at
+ the given index in the char array is in the
+ high-surrogate range, the following index is less than the
+ length of the char array, and the
+ char value at the following index is in the
+ low-surrogate range, then the supplementary code point
+ corresponding to this surrogate pair is returned. Otherwise,
+ the char value at the given index is returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the <code>char</code> array</dd><dd><code>index</code> - the index to the <code>char</code> values (Unicode
+ code units) in the <code>char</code> array to be converted</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Unicode code point at the given index</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>a</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the value
+ <code>index</code> is negative or not less than
+ the length of the <code>char</code> array.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointAt</name>
+            <signature><![CDATA[public static int codePointAt(char[] a,
+              int index,
+              int limit)]]></signature>
+            <description><![CDATA[Returns the code point at the given index of the
+ char array, where only array elements with
+ index less than limit can be used. If
+ the char value at the given index in the
+ char array is in the high-surrogate range, the
+ following index is less than the limit, and the
+ char value at the following index is in the
+ low-surrogate range, then the supplementary code point
+ corresponding to this surrogate pair is returned. Otherwise,
+ the char value at the given index is returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the <code>char</code> array</dd><dd><code>index</code> - the index to the <code>char</code> values (Unicode
+ code units) in the <code>char</code> array to be converted</dd><dd><code>limit</code> - the index after the last array element that
+ can be used in the <code>char</code> array</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Unicode code point at the given index</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>a</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the <code>index</code>
+ argument is negative or not less than the <code>limit</code>
+ argument, or if the <code>limit</code> argument is negative or
+ greater than the length of the <code>char</code> array.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointBefore</name>
+            <signature><![CDATA[public static int codePointBefore(CharSequence seq,
+                  int index)]]></signature>
+            <description><![CDATA[Returns the code point preceding the given index of the
+ CharSequence. If the char value at
+ (index - 1) in the CharSequence is in
+ the low-surrogate range, (index - 2) is not
+ negative, and the char value at (index - 2)
+ in the CharSequence is in the
+ high-surrogate range, then the supplementary code point
+ corresponding to this surrogate pair is returned. Otherwise,
+ the char value at (index - 1) is
+ returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>seq</code> - the <code>CharSequence</code> instance</dd><dd><code>index</code> - the index following the code point that should be returned</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Unicode code point value before the given index.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>seq</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the <code>index</code>
+ argument is less than 1 or greater than <a href="#"><code>seq.length()</code></a>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointBefore</name>
+            <signature><![CDATA[public static int codePointBefore(char[] a,
+                  int index)]]></signature>
+            <description><![CDATA[Returns the code point preceding the given index of the
+ char array. If the char value at
+ (index - 1) in the char array is in
+ the low-surrogate range, (index - 2) is not
+ negative, and the char value at (index - 2)
+ in the char array is in the
+ high-surrogate range, then the supplementary code point
+ corresponding to this surrogate pair is returned. Otherwise,
+ the char value at (index - 1) is
+ returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the <code>char</code> array</dd><dd><code>index</code> - the index following the code point that should be returned</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Unicode code point value before the given index.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>a</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the <code>index</code>
+ argument is less than 1 or greater than the length of the
+ <code>char</code> array</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointBefore</name>
+            <signature><![CDATA[public static int codePointBefore(char[] a,
+                  int index,
+                  int start)]]></signature>
+            <description><![CDATA[Returns the code point preceding the given index of the
+ char array, where only array elements with
+ index greater than or equal to start
+ can be used. If the char value at (index - 1)
+ in the char array is in the
+ low-surrogate range, (index - 2) is not less than
+ start, and the char value at
+ (index - 2) in the char array is in
+ the high-surrogate range, then the supplementary code point
+ corresponding to this surrogate pair is returned. Otherwise,
+ the char value at (index - 1) is
+ returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the <code>char</code> array</dd><dd><code>index</code> - the index following the code point that should be returned</dd><dd><code>start</code> - the index of the first array element in the
+ <code>char</code> array</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Unicode code point value before the given index.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>a</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the <code>index</code>
+ argument is not greater than the <code>start</code> argument or
+ is greater than the length of the <code>char</code> array, or
+ if the <code>start</code> argument is negative or not less than
+ the length of the <code>char</code> array.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>highSurrogate</name>
+            <signature><![CDATA[public static char highSurrogate(int codePoint)]]></signature>
+            <description><![CDATA[Returns the leading surrogate (a
+ 
+ high surrogate code unit) of the
+ 
+ surrogate pair
+ representing the specified supplementary character (Unicode
+ code point) in the UTF-16 encoding.  If the specified character
+ is not a
+ supplementary character,
+ an unspecified char is returned.
+
+ If
+ isSupplementaryCodePoint(x)
+ is true, then
+ isHighSurrogate(highSurrogate(x)) and
+ toCodePoint(highSurrogate(x), lowSurrogate(x)) == x
+ are also always true.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - a supplementary character (Unicode code point)</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the leading surrogate code unit used to represent the
+          character in the UTF-16 encoding</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lowSurrogate</name>
+            <signature><![CDATA[public static char lowSurrogate(int codePoint)]]></signature>
+            <description><![CDATA[Returns the trailing surrogate (a
+ 
+ low surrogate code unit) of the
+ 
+ surrogate pair
+ representing the specified supplementary character (Unicode
+ code point) in the UTF-16 encoding.  If the specified character
+ is not a
+ supplementary character,
+ an unspecified char is returned.
+
+ If
+ isSupplementaryCodePoint(x)
+ is true, then
+ isLowSurrogate(lowSurrogate(x)) and
+ toCodePoint(highSurrogate(x), lowSurrogate(x)) == x
+ are also always true.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - a supplementary character (Unicode code point)</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the trailing surrogate code unit used to represent the
+          character in the UTF-16 encoding</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toChars</name>
+            <signature><![CDATA[public static int toChars(int codePoint,
+          char[] dst,
+          int dstIndex)]]></signature>
+            <description><![CDATA[Converts the specified character (Unicode code point) to its
+ UTF-16 representation. If the specified code point is a BMP
+ (Basic Multilingual Plane or Plane 0) value, the same value is
+ stored in dst[dstIndex], and 1 is returned. If the
+ specified code point is a supplementary character, its
+ surrogate values are stored in dst[dstIndex]
+ (high-surrogate) and dst[dstIndex+1]
+ (low-surrogate), and 2 is returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be converted.</dd><dd><code>dst</code> - an array of <code>char</code> in which the
+ <code>codePoint</code>'s UTF-16 value is stored.</dd><dd><code>dstIndex</code> - the start index into the <code>dst</code>
+ array where the converted value is stored.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>1 if the code point is a BMP code point, 2 if the
+ code point is a supplementary code point.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the specified
+ <code>codePoint</code> is not a valid Unicode code point.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified <code>dst</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if <code>dstIndex</code>
+ is negative or not less than <code>dst.length</code>, or if
+ <code>dst</code> at <code>dstIndex</code> doesn't have enough
+ array element(s) to store the resulting <code>char</code>
+ value(s). (If <code>dstIndex</code> is equal to
+ <code>dst.length-1</code> and the specified
+ <code>codePoint</code> is a supplementary character, the
+ high-surrogate value is not stored in
+ <code>dst[dstIndex]</code>.)</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toChars</name>
+            <signature><![CDATA[public static char[] toChars(int codePoint)]]></signature>
+            <description><![CDATA[Converts the specified character (Unicode code point) to its
+ UTF-16 representation stored in a char array. If
+ the specified code point is a BMP (Basic Multilingual Plane or
+ Plane 0) value, the resulting char array has
+ the same value as codePoint. If the specified code
+ point is a supplementary code point, the resulting
+ char array has the corresponding surrogate pair.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - a Unicode code point</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>char</code> array having
+         <code>codePoint</code>'s UTF-16 representation.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the specified
+ <code>codePoint</code> is not a valid Unicode code point.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointCount</name>
+            <signature><![CDATA[public static int codePointCount(CharSequence seq,
+                 int beginIndex,
+                 int endIndex)]]></signature>
+            <description><![CDATA[Returns the number of Unicode code points in the text range of
+ the specified char sequence. The text range begins at the
+ specified beginIndex and extends to the
+ char at index endIndex - 1. Thus the
+ length (in chars) of the text range is
+ endIndex-beginIndex. Unpaired surrogates within
+ the text range count as one code point each.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>seq</code> - the char sequence</dd><dd><code>beginIndex</code> - the index to the first <code>char</code> of
+ the text range.</dd><dd><code>endIndex</code> - the index after the last <code>char</code> of
+ the text range.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of Unicode code points in the specified text
+ range</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>seq</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the
+ <code>beginIndex</code> is negative, or <code>endIndex</code>
+ is larger than the length of the given sequence, or
+ <code>beginIndex</code> is larger than <code>endIndex</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>codePointCount</name>
+            <signature><![CDATA[public static int codePointCount(char[] a,
+                 int offset,
+                 int count)]]></signature>
+            <description><![CDATA[Returns the number of Unicode code points in a subarray of the
+ char array argument. The offset
+ argument is the index of the first char of the
+ subarray and the count argument specifies the
+ length of the subarray in chars. Unpaired
+ surrogates within the subarray count as one code point each.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the <code>char</code> array</dd><dd><code>offset</code> - the index of the first <code>char</code> in the
+ given <code>char</code> array</dd><dd><code>count</code> - the length of the subarray in <code>char</code>s</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of Unicode code points in the specified subarray</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>a</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if <code>offset</code> or
+ <code>count</code> is negative, or if <code>offset +
+ count</code> is larger than the length of the given array.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>offsetByCodePoints</name>
+            <signature><![CDATA[public static int offsetByCodePoints(CharSequence seq,
+                     int index,
+                     int codePointOffset)]]></signature>
+            <description><![CDATA[Returns the index within the given char sequence that is offset
+ from the given index by codePointOffset
+ code points. Unpaired surrogates within the text range given by
+ index and codePointOffset count as
+ one code point each.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>seq</code> - the char sequence</dd><dd><code>index</code> - the index to be offset</dd><dd><code>codePointOffset</code> - the offset in code points</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the index within the char sequence</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>seq</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if <code>index</code>
+   is negative or larger then the length of the char sequence,
+   or if <code>codePointOffset</code> is positive and the
+   subsequence starting with <code>index</code> has fewer than
+   <code>codePointOffset</code> code points, or if
+   <code>codePointOffset</code> is negative and the subsequence
+   before <code>index</code> has fewer than the absolute value
+   of <code>codePointOffset</code> code points.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>offsetByCodePoints</name>
+            <signature><![CDATA[public static int offsetByCodePoints(char[] a,
+                     int start,
+                     int count,
+                     int index,
+                     int codePointOffset)]]></signature>
+            <description><![CDATA[Returns the index within the given char subarray
+ that is offset from the given index by
+ codePointOffset code points. The
+ start and count arguments specify a
+ subarray of the char array. Unpaired surrogates
+ within the text range given by index and
+ codePointOffset count as one code point each.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the <code>char</code> array</dd><dd><code>start</code> - the index of the first <code>char</code> of the
+ subarray</dd><dd><code>count</code> - the length of the subarray in <code>char</code>s</dd><dd><code>index</code> - the index to be offset</dd><dd><code>codePointOffset</code> - the offset in code points</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the index within the subarray</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>a</code> is null.</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if <code>start</code> or <code>count</code> is negative,
+   or if <code>start + count</code> is larger than the length of
+   the given array,
+   or if <code>index</code> is less than <code>start</code> or
+   larger then <code>start + count</code>,
+   or if <code>codePointOffset</code> is positive and the text range
+   starting with <code>index</code> and ending with <code>start + count - 1</code>
+   has fewer than <code>codePointOffset</code> code
+   points,
+   or if <code>codePointOffset</code> is negative and the text range
+   starting with <code>start</code> and ending with <code>index - 1</code>
+   has fewer than the absolute value of
+   <code>codePointOffset</code> code points.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLowerCase</name>
+            <signature><![CDATA[public static boolean isLowerCase(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is a lowercase character.
+ 
+ A character is lowercase if its general category type, provided
+ by Character.getType(ch), is
+ LOWERCASE_LETTER, or it has contributory property
+ Other_Lowercase as defined by the Unicode Standard.
+ 
+ The following are examples of lowercase characters:
+ 
+ a b c d e f g h i j k l m n o p q r s t u v w x y z
+ '\u00DF' '\u00E0' '\u00E1' '\u00E2' '\u00E3' '\u00E4' '\u00E5' '\u00E6'
+ '\u00E7' '\u00E8' '\u00E9' '\u00EA' '\u00EB' '\u00EC' '\u00ED' '\u00EE'
+ '\u00EF' '\u00F0' '\u00F1' '\u00F2' '\u00F3' '\u00F4' '\u00F5' '\u00F6'
+ '\u00F8' '\u00F9' '\u00FA' '\u00FB' '\u00FC' '\u00FD' '\u00FE' '\u00FF'
+ 
+  Many other Unicode characters are lowercase too.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isLowerCase(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is lowercase;
+          <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(char)</code></a>, 
+<a href="#"><code>isTitleCase(char)</code></a>, 
+<a href="#"><code>toLowerCase(char)</code></a>, 
+<a href="#"><code>getType(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLowerCase</name>
+            <signature><![CDATA[public static boolean isLowerCase(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is a
+ lowercase character.
+ 
+ A character is lowercase if its general category type, provided
+ by getType(codePoint), is
+ LOWERCASE_LETTER, or it has contributory property
+ Other_Lowercase as defined by the Unicode Standard.
+ 
+ The following are examples of lowercase characters:
+ 
+ a b c d e f g h i j k l m n o p q r s t u v w x y z
+ '\u00DF' '\u00E0' '\u00E1' '\u00E2' '\u00E3' '\u00E4' '\u00E5' '\u00E6'
+ '\u00E7' '\u00E8' '\u00E9' '\u00EA' '\u00EB' '\u00EC' '\u00ED' '\u00EE'
+ '\u00EF' '\u00F0' '\u00F1' '\u00F2' '\u00F3' '\u00F4' '\u00F5' '\u00F6'
+ '\u00F8' '\u00F9' '\u00FA' '\u00FB' '\u00FC' '\u00FD' '\u00FE' '\u00FF'
+ 
+  Many other Unicode characters are lowercase too.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is lowercase;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(int)</code></a>, 
+<a href="#"><code>isTitleCase(int)</code></a>, 
+<a href="#"><code>toLowerCase(int)</code></a>, 
+<a href="#"><code>getType(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isUpperCase</name>
+            <signature><![CDATA[public static boolean isUpperCase(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is an uppercase character.
+ 
+ A character is uppercase if its general category type, provided by
+ Character.getType(ch), is UPPERCASE_LETTER.
+ or it has contributory property Other_Uppercase as defined by the Unicode Standard.
+ 
+ The following are examples of uppercase characters:
+ 
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+ '\u00C0' '\u00C1' '\u00C2' '\u00C3' '\u00C4' '\u00C5' '\u00C6' '\u00C7'
+ '\u00C8' '\u00C9' '\u00CA' '\u00CB' '\u00CC' '\u00CD' '\u00CE' '\u00CF'
+ '\u00D0' '\u00D1' '\u00D2' '\u00D3' '\u00D4' '\u00D5' '\u00D6' '\u00D8'
+ '\u00D9' '\u00DA' '\u00DB' '\u00DC' '\u00DD' '\u00DE'
+ 
+  Many other Unicode characters are uppercase too.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isUpperCase(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is uppercase;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.0</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(char)</code></a>, 
+<a href="#"><code>isTitleCase(char)</code></a>, 
+<a href="#"><code>toUpperCase(char)</code></a>, 
+<a href="#"><code>getType(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isUpperCase</name>
+            <signature><![CDATA[public static boolean isUpperCase(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is an uppercase character.
+ 
+ A character is uppercase if its general category type, provided by
+ getType(codePoint), is UPPERCASE_LETTER,
+ or it has contributory property Other_Uppercase as defined by the Unicode Standard.
+ 
+ The following are examples of uppercase characters:
+ 
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+ '\u00C0' '\u00C1' '\u00C2' '\u00C3' '\u00C4' '\u00C5' '\u00C6' '\u00C7'
+ '\u00C8' '\u00C9' '\u00CA' '\u00CB' '\u00CC' '\u00CD' '\u00CE' '\u00CF'
+ '\u00D0' '\u00D1' '\u00D2' '\u00D3' '\u00D4' '\u00D5' '\u00D6' '\u00D8'
+ '\u00D9' '\u00DA' '\u00DB' '\u00DC' '\u00DD' '\u00DE'
+ 
+  Many other Unicode characters are uppercase too.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is uppercase;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(int)</code></a>, 
+<a href="#"><code>isTitleCase(int)</code></a>, 
+<a href="#"><code>toUpperCase(int)</code></a>, 
+<a href="#"><code>getType(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isTitleCase</name>
+            <signature><![CDATA[public static boolean isTitleCase(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is a titlecase character.
+ 
+ A character is a titlecase character if its general
+ category type, provided by Character.getType(ch),
+ is TITLECASE_LETTER.
+ 
+ Some characters look like pairs of Latin letters. For example, there
+ is an uppercase letter that looks like "LJ" and has a corresponding
+ lowercase letter that looks like "lj". A third form, which looks like "Lj",
+ is the appropriate form to use when rendering a word in lowercase
+ with initial capitals, as for a book title.
+ 
+ These are some of the Unicode characters for which this method returns
+ true:
+ 
+ LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON
+ LATIN CAPITAL LETTER L WITH SMALL LETTER J
+ LATIN CAPITAL LETTER N WITH SMALL LETTER J
+ LATIN CAPITAL LETTER D WITH SMALL LETTER Z
+ 
+  Many other Unicode characters are titlecase too.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isTitleCase(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is titlecase;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.0.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(char)</code></a>, 
+<a href="#"><code>isUpperCase(char)</code></a>, 
+<a href="#"><code>toTitleCase(char)</code></a>, 
+<a href="#"><code>getType(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isTitleCase</name>
+            <signature><![CDATA[public static boolean isTitleCase(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is a titlecase character.
+ 
+ A character is a titlecase character if its general
+ category type, provided by getType(codePoint),
+ is TITLECASE_LETTER.
+ 
+ Some characters look like pairs of Latin letters. For example, there
+ is an uppercase letter that looks like "LJ" and has a corresponding
+ lowercase letter that looks like "lj". A third form, which looks like "Lj",
+ is the appropriate form to use when rendering a word in lowercase
+ with initial capitals, as for a book title.
+ 
+ These are some of the Unicode characters for which this method returns
+ true:
+ 
+ LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON
+ LATIN CAPITAL LETTER L WITH SMALL LETTER J
+ LATIN CAPITAL LETTER N WITH SMALL LETTER J
+ LATIN CAPITAL LETTER D WITH SMALL LETTER Z
+ 
+  Many other Unicode characters are titlecase too.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is titlecase;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(int)</code></a>, 
+<a href="#"><code>isUpperCase(int)</code></a>, 
+<a href="#"><code>toTitleCase(int)</code></a>, 
+<a href="#"><code>getType(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isDigit</name>
+            <signature><![CDATA[public static boolean isDigit(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is a digit.
+ 
+ A character is a digit if its general category type, provided
+ by Character.getType(ch), is
+ DECIMAL_DIGIT_NUMBER.
+ 
+ Some Unicode character ranges that contain digits:
+ 
+ '\u0030' through '\u0039',
+     ISO-LATIN-1 digits ('0' through '9')
+ '\u0660' through '\u0669',
+     Arabic-Indic digits
+ '\u06F0' through '\u06F9',
+     Extended Arabic-Indic digits
+ '\u0966' through '\u096F',
+     Devanagari digits
+ '\uFF10' through '\uFF19',
+     Fullwidth digits
+ 
+
+ Many other character ranges contain digits as well.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isDigit(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a digit;
+          <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>digit(char, int)</code></a>, 
+<a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>getType(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isDigit</name>
+            <signature><![CDATA[public static boolean isDigit(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is a digit.
+ 
+ A character is a digit if its general category type, provided
+ by getType(codePoint), is
+ DECIMAL_DIGIT_NUMBER.
+ 
+ Some Unicode character ranges that contain digits:
+ 
+ '\u0030' through '\u0039',
+     ISO-LATIN-1 digits ('0' through '9')
+ '\u0660' through '\u0669',
+     Arabic-Indic digits
+ '\u06F0' through '\u06F9',
+     Extended Arabic-Indic digits
+ '\u0966' through '\u096F',
+     Devanagari digits
+ '\uFF10' through '\uFF19',
+     Fullwidth digits
+ 
+
+ Many other character ranges contain digits as well.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a digit;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>getType(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isDefined</name>
+            <signature><![CDATA[public static boolean isDefined(char ch)]]></signature>
+            <description><![CDATA[Determines if a character is defined in Unicode.
+ 
+ A character is defined if at least one of the following is true:
+ 
+ It has an entry in the UnicodeData file.
+ It has a value in a range defined by the UnicodeData file.
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isDefined(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character has a defined meaning
+          in Unicode; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.0.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isDigit(char)</code></a>, 
+<a href="#"><code>isLetter(char)</code></a>, 
+<a href="#"><code>isLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isLowerCase(char)</code></a>, 
+<a href="#"><code>isTitleCase(char)</code></a>, 
+<a href="#"><code>isUpperCase(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isDefined</name>
+            <signature><![CDATA[public static boolean isDefined(int codePoint)]]></signature>
+            <description><![CDATA[Determines if a character (Unicode code point) is defined in Unicode.
+ 
+ A character is defined if at least one of the following is true:
+ 
+ It has an entry in the UnicodeData file.
+ It has a value in a range defined by the UnicodeData file.
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character has a defined meaning
+          in Unicode; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isDigit(int)</code></a>, 
+<a href="#"><code>isLetter(int)</code></a>, 
+<a href="#"><code>isLetterOrDigit(int)</code></a>, 
+<a href="#"><code>isLowerCase(int)</code></a>, 
+<a href="#"><code>isTitleCase(int)</code></a>, 
+<a href="#"><code>isUpperCase(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLetter</name>
+            <signature><![CDATA[public static boolean isLetter(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is a letter.
+ 
+ A character is considered to be a letter if its general
+ category type, provided by Character.getType(ch),
+ is any of the following:
+ 
+  UPPERCASE_LETTER
+  LOWERCASE_LETTER
+  TITLECASE_LETTER
+  MODIFIER_LETTER
+  OTHER_LETTER
+ 
+
+ Not all letters have case. Many characters are
+ letters but are neither uppercase nor lowercase nor titlecase.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isLetter(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a letter;
+          <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isDigit(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierStart(char)</code></a>, 
+<a href="#"><code>isJavaLetter(char)</code></a>, 
+<a href="#"><code>isJavaLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isLowerCase(char)</code></a>, 
+<a href="#"><code>isTitleCase(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierStart(char)</code></a>, 
+<a href="#"><code>isUpperCase(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLetter</name>
+            <signature><![CDATA[public static boolean isLetter(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is a letter.
+ 
+ A character is considered to be a letter if its general
+ category type, provided by getType(codePoint),
+ is any of the following:
+ 
+  UPPERCASE_LETTER
+  LOWERCASE_LETTER
+  TITLECASE_LETTER
+  MODIFIER_LETTER
+  OTHER_LETTER
+ 
+
+ Not all letters have case. Many characters are
+ letters but are neither uppercase nor lowercase nor titlecase.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a letter;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isDigit(int)</code></a>, 
+<a href="#"><code>isJavaIdentifierStart(int)</code></a>, 
+<a href="#"><code>isLetterOrDigit(int)</code></a>, 
+<a href="#"><code>isLowerCase(int)</code></a>, 
+<a href="#"><code>isTitleCase(int)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierStart(int)</code></a>, 
+<a href="#"><code>isUpperCase(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLetterOrDigit</name>
+            <signature><![CDATA[public static boolean isLetterOrDigit(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is a letter or digit.
+ 
+ A character is considered to be a letter or digit if either
+ Character.isLetter(char ch) or
+ Character.isDigit(char ch) returns
+ true for the character.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isLetterOrDigit(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a letter or digit;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.0.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isDigit(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierPart(char)</code></a>, 
+<a href="#"><code>isJavaLetter(char)</code></a>, 
+<a href="#"><code>isJavaLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isLetter(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isLetterOrDigit</name>
+            <signature><![CDATA[public static boolean isLetterOrDigit(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is a letter or digit.
+ 
+ A character is considered to be a letter or digit if either
+ isLetter(codePoint) or
+ isDigit(codePoint) returns
+ true for the character.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a letter or digit;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isDigit(int)</code></a>, 
+<a href="#"><code>isJavaIdentifierPart(int)</code></a>, 
+<a href="#"><code>isLetter(int)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isJavaLetter</name>
+            <signature><![CDATA[@Deprecated
+public static boolean isJavaLetter(char ch)]]></signature>
+            <description><![CDATA[Deprecated. Replaced by isJavaIdentifierStart(char).Determines if the specified character is permissible as the first
+ character in a Java identifier.
+ 
+ A character may start a Java identifier if and only if
+ one of the following is true:
+ 
+  isLetter(ch) returns true
+  getType(ch) returns LETTER_NUMBER
+  ch is a currency symbol (such as '$')
+  ch is a connecting punctuation character (such as '_').
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may start a Java
+          identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.02</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierStart(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierPart(char)</code></a>, 
+<a href="#"><code>isLetter(char)</code></a>, 
+<a href="#"><code>isLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierStart(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isJavaLetterOrDigit</name>
+            <signature><![CDATA[@Deprecated
+public static boolean isJavaLetterOrDigit(char ch)]]></signature>
+            <description><![CDATA[Deprecated. Replaced by isJavaIdentifierPart(char).Determines if the specified character may be part of a Java
+ identifier as other than the first character.
+ 
+ A character may be part of a Java identifier if and only if any
+ of the following are true:
+ 
+   it is a letter
+   it is a currency symbol (such as '$')
+   it is a connecting punctuation character (such as '_')
+   it is a digit
+   it is a numeric letter (such as a Roman numeral character)
+   it is a combining mark
+   it is a non-spacing mark
+  isIdentifierIgnorable returns
+ true for the character.
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may be part of a
+          Java identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.02</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaLetter(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierStart(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierPart(char)</code></a>, 
+<a href="#"><code>isLetter(char)</code></a>, 
+<a href="#"><code>isLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(char)</code></a>, 
+<a href="#"><code>isIdentifierIgnorable(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isAlphabetic</name>
+            <signature><![CDATA[public static boolean isAlphabetic(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is an alphabet.
+ 
+ A character is considered to be alphabetic if its general category type,
+ provided by getType(codePoint), is any of
+ the following:
+ 
+  UPPERCASE_LETTER
+  LOWERCASE_LETTER
+  TITLECASE_LETTER
+  MODIFIER_LETTER
+  OTHER_LETTER
+  LETTER_NUMBER
+ 
+ or it has contributory property Other_Alphabetic as defined by the
+ Unicode Standard.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a Unicode alphabet
+          character, <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isIdeographic</name>
+            <signature><![CDATA[public static boolean isIdeographic(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is a CJKV
+ (Chinese, Japanese, Korean and Vietnamese) ideograph, as defined by
+ the Unicode Standard.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a Unicode ideograph
+          character, <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isJavaIdentifierStart</name>
+            <signature><![CDATA[public static boolean isJavaIdentifierStart(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is
+ permissible as the first character in a Java identifier.
+ 
+ A character may start a Java identifier if and only if
+ one of the following conditions is true:
+ 
+  isLetter(ch) returns true
+  getType(ch) returns LETTER_NUMBER
+  ch is a currency symbol (such as '$')
+  ch is a connecting punctuation character (such as '_').
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isJavaIdentifierStart(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may start a Java identifier;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaIdentifierPart(char)</code></a>, 
+<a href="#"><code>isLetter(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierStart(char)</code></a>, 
+<a href="#"><code>SourceVersion.isIdentifier(CharSequence)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isJavaIdentifierStart</name>
+            <signature><![CDATA[public static boolean isJavaIdentifierStart(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the character (Unicode code point) is
+ permissible as the first character in a Java identifier.
+ 
+ A character may start a Java identifier if and only if
+ one of the following conditions is true:
+ 
+  isLetter(codePoint)
+      returns true
+  getType(codePoint)
+      returns LETTER_NUMBER
+  the referenced character is a currency symbol (such as '$')
+  the referenced character is a connecting punctuation character
+      (such as '_').
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may start a Java identifier;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaIdentifierPart(int)</code></a>, 
+<a href="#"><code>isLetter(int)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierStart(int)</code></a>, 
+<a href="#"><code>SourceVersion.isIdentifier(CharSequence)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isJavaIdentifierPart</name>
+            <signature><![CDATA[public static boolean isJavaIdentifierPart(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character may be part of a Java
+ identifier as other than the first character.
+ 
+ A character may be part of a Java identifier if any of the following
+ are true:
+ 
+   it is a letter
+   it is a currency symbol (such as '$')
+   it is a connecting punctuation character (such as '_')
+   it is a digit
+   it is a numeric letter (such as a Roman numeral character)
+   it is a combining mark
+   it is a non-spacing mark
+  isIdentifierIgnorable returns
+ true for the character
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isJavaIdentifierPart(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may be part of a
+          Java identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isIdentifierIgnorable(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierStart(char)</code></a>, 
+<a href="#"><code>isLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(char)</code></a>, 
+<a href="#"><code>SourceVersion.isIdentifier(CharSequence)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isJavaIdentifierPart</name>
+            <signature><![CDATA[public static boolean isJavaIdentifierPart(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the character (Unicode code point) may be part of a Java
+ identifier as other than the first character.
+ 
+ A character may be part of a Java identifier if any of the following
+ are true:
+ 
+   it is a letter
+   it is a currency symbol (such as '$')
+   it is a connecting punctuation character (such as '_')
+   it is a digit
+   it is a numeric letter (such as a Roman numeral character)
+   it is a combining mark
+   it is a non-spacing mark
+  isIdentifierIgnorable(codePoint) returns true for
+ the character
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may be part of a
+          Java identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isIdentifierIgnorable(int)</code></a>, 
+<a href="#"><code>isJavaIdentifierStart(int)</code></a>, 
+<a href="#"><code>isLetterOrDigit(int)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(int)</code></a>, 
+<a href="#"><code>SourceVersion.isIdentifier(CharSequence)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isUnicodeIdentifierStart</name>
+            <signature><![CDATA[public static boolean isUnicodeIdentifierStart(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is permissible as the
+ first character in a Unicode identifier.
+ 
+ A character may start a Unicode identifier if and only if
+ one of the following conditions is true:
+ 
+  isLetter(ch) returns true
+  getType(ch) returns
+      LETTER_NUMBER.
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isUnicodeIdentifierStart(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may start a Unicode
+          identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaIdentifierStart(char)</code></a>, 
+<a href="#"><code>isLetter(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isUnicodeIdentifierStart</name>
+            <signature><![CDATA[public static boolean isUnicodeIdentifierStart(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is permissible as the
+ first character in a Unicode identifier.
+ 
+ A character may start a Unicode identifier if and only if
+ one of the following conditions is true:
+ 
+  isLetter(codePoint)
+      returns true
+  getType(codePoint)
+      returns LETTER_NUMBER.
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may start a Unicode
+          identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaIdentifierStart(int)</code></a>, 
+<a href="#"><code>isLetter(int)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isUnicodeIdentifierPart</name>
+            <signature><![CDATA[public static boolean isUnicodeIdentifierPart(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character may be part of a Unicode
+ identifier as other than the first character.
+ 
+ A character may be part of a Unicode identifier if and only if
+ one of the following statements is true:
+ 
+   it is a letter
+   it is a connecting punctuation character (such as '_')
+   it is a digit
+   it is a numeric letter (such as a Roman numeral character)
+   it is a combining mark
+   it is a non-spacing mark
+  isIdentifierIgnorable returns
+ true for this character.
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isUnicodeIdentifierPart(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may be part of a
+          Unicode identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isIdentifierIgnorable(char)</code></a>, 
+<a href="#"><code>isJavaIdentifierPart(char)</code></a>, 
+<a href="#"><code>isLetterOrDigit(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierStart(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isUnicodeIdentifierPart</name>
+            <signature><![CDATA[public static boolean isUnicodeIdentifierPart(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) may be part of a Unicode
+ identifier as other than the first character.
+ 
+ A character may be part of a Unicode identifier if and only if
+ one of the following statements is true:
+ 
+   it is a letter
+   it is a connecting punctuation character (such as '_')
+   it is a digit
+   it is a numeric letter (such as a Roman numeral character)
+   it is a combining mark
+   it is a non-spacing mark
+  isIdentifierIgnorable returns
+ true for this character.
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character may be part of a
+          Unicode identifier; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isIdentifierIgnorable(int)</code></a>, 
+<a href="#"><code>isJavaIdentifierPart(int)</code></a>, 
+<a href="#"><code>isLetterOrDigit(int)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierStart(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isIdentifierIgnorable</name>
+            <signature><![CDATA[public static boolean isIdentifierIgnorable(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character should be regarded as
+ an ignorable character in a Java identifier or a Unicode identifier.
+ 
+ The following Unicode characters are ignorable in a Java identifier
+ or a Unicode identifier:
+ 
+ ISO control characters that are not whitespace
+ 
+ '\u0000' through '\u0008'
+ '\u000E' through '\u001B'
+ '\u007F' through '\u009F'
+ 
+
+ all characters that have the FORMAT general
+ category value
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isIdentifierIgnorable(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is an ignorable control
+          character that may be part of a Java or Unicode identifier;
+           <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaIdentifierPart(char)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isIdentifierIgnorable</name>
+            <signature><![CDATA[public static boolean isIdentifierIgnorable(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) should be regarded as
+ an ignorable character in a Java identifier or a Unicode identifier.
+ 
+ The following Unicode characters are ignorable in a Java identifier
+ or a Unicode identifier:
+ 
+ ISO control characters that are not whitespace
+ 
+ '\u0000' through '\u0008'
+ '\u000E' through '\u001B'
+ '\u007F' through '\u009F'
+ 
+
+ all characters that have the FORMAT general
+ category value
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is an ignorable control
+          character that may be part of a Java or Unicode identifier;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isJavaIdentifierPart(int)</code></a>, 
+<a href="#"><code>isUnicodeIdentifierPart(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toLowerCase</name>
+            <signature><![CDATA[public static char toLowerCase(char ch)]]></signature>
+            <description><![CDATA[Converts the character argument to lowercase using case
+ mapping information from the UnicodeData file.
+ 
+ Note that
+ Character.isLowerCase(Character.toLowerCase(ch))
+ does not always return true for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
+ In general, String.toLowerCase() should be used to map
+ characters to lowercase. String case mapping methods
+ have several benefits over Character case mapping methods.
+ String case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the Character case mapping methods cannot.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the toLowerCase(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the lowercase equivalent of the character, if any;
+          otherwise, the character itself.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(char)</code></a>, 
+<a href="#"><code>String.toLowerCase()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toLowerCase</name>
+            <signature><![CDATA[public static int toLowerCase(int codePoint)]]></signature>
+            <description><![CDATA[Converts the character (Unicode code point) argument to
+ lowercase using case mapping information from the UnicodeData
+ file.
+
+  Note that
+ Character.isLowerCase(Character.toLowerCase(codePoint))
+ does not always return true for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
+ In general, String.toLowerCase() should be used to map
+ characters to lowercase. String case mapping methods
+ have several benefits over Character case mapping methods.
+ String case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the Character case mapping methods cannot.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the lowercase equivalent of the character (Unicode code
+          point), if any; otherwise, the character itself.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isLowerCase(int)</code></a>, 
+<a href="#"><code>String.toLowerCase()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toUpperCase</name>
+            <signature><![CDATA[public static char toUpperCase(char ch)]]></signature>
+            <description><![CDATA[Converts the character argument to uppercase using case mapping
+ information from the UnicodeData file.
+ 
+ Note that
+ Character.isUpperCase(Character.toUpperCase(ch))
+ does not always return true for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
+ In general, String.toUpperCase() should be used to map
+ characters to uppercase. String case mapping methods
+ have several benefits over Character case mapping methods.
+ String case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the Character case mapping methods cannot.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the toUpperCase(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the uppercase equivalent of the character, if any;
+          otherwise, the character itself.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isUpperCase(char)</code></a>, 
+<a href="#"><code>String.toUpperCase()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toUpperCase</name>
+            <signature><![CDATA[public static int toUpperCase(int codePoint)]]></signature>
+            <description><![CDATA[Converts the character (Unicode code point) argument to
+ uppercase using case mapping information from the UnicodeData
+ file.
+
+ Note that
+ Character.isUpperCase(Character.toUpperCase(codePoint))
+ does not always return true for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
+ In general, String.toUpperCase() should be used to map
+ characters to uppercase. String case mapping methods
+ have several benefits over Character case mapping methods.
+ String case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the Character case mapping methods cannot.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the uppercase equivalent of the character, if any;
+          otherwise, the character itself.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isUpperCase(int)</code></a>, 
+<a href="#"><code>String.toUpperCase()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toTitleCase</name>
+            <signature><![CDATA[public static char toTitleCase(char ch)]]></signature>
+            <description><![CDATA[Converts the character argument to titlecase using case mapping
+ information from the UnicodeData file. If a character has no
+ explicit titlecase mapping and is not itself a titlecase char
+ according to UnicodeData, then the uppercase mapping is
+ returned as an equivalent titlecase mapping. If the
+ char argument is already a titlecase
+ char, the same char value will be
+ returned.
+ 
+ Note that
+ Character.isTitleCase(Character.toTitleCase(ch))
+ does not always return true for some ranges of
+ characters.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the toTitleCase(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the titlecase equivalent of the character, if any;
+          otherwise, the character itself.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.0.2</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isTitleCase(char)</code></a>, 
+<a href="#"><code>toLowerCase(char)</code></a>, 
+<a href="#"><code>toUpperCase(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toTitleCase</name>
+            <signature><![CDATA[public static int toTitleCase(int codePoint)]]></signature>
+            <description><![CDATA[Converts the character (Unicode code point) argument to titlecase using case mapping
+ information from the UnicodeData file. If a character has no
+ explicit titlecase mapping and is not itself a titlecase char
+ according to UnicodeData, then the uppercase mapping is
+ returned as an equivalent titlecase mapping. If the
+ character argument is already a titlecase
+ character, the same character value will be
+ returned.
+
+ Note that
+ Character.isTitleCase(Character.toTitleCase(codePoint))
+ does not always return true for some ranges of
+ characters.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the titlecase equivalent of the character, if any;
+          otherwise, the character itself.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isTitleCase(int)</code></a>, 
+<a href="#"><code>toLowerCase(int)</code></a>, 
+<a href="#"><code>toUpperCase(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>digit</name>
+            <signature><![CDATA[public static int digit(char ch,
+        int radix)]]></signature>
+            <description><![CDATA[Returns the numeric value of the character ch in the
+ specified radix.
+ 
+ If the radix is not in the range MIN_RADIX ≤
+ radix ≤ MAX_RADIX or if the
+ value of ch is not a valid digit in the specified
+ radix, -1 is returned. A character is a valid digit
+ if at least one of the following is true:
+ 
+ The method isDigit is true of the character
+     and the Unicode decimal digit value of the character (or its
+     single-character decomposition) is less than the specified radix.
+     In this case the decimal digit value is returned.
+ The character is one of the uppercase Latin letters
+     'A' through 'Z' and its code is less than
+     radix + 'A' - 10.
+     In this case, ch - 'A' + 10
+     is returned.
+ The character is one of the lowercase Latin letters
+     'a' through 'z' and its code is less than
+     radix + 'a' - 10.
+     In this case, ch - 'a' + 10
+     is returned.
+ The character is one of the fullwidth uppercase Latin letters A
+     ('\uFF21') through Z ('\uFF3A')
+     and its code is less than
+     radix + '\uFF21' - 10.
+     In this case, ch - '\uFF21' + 10
+     is returned.
+ The character is one of the fullwidth lowercase Latin letters a
+     ('\uFF41') through z ('\uFF5A')
+     and its code is less than
+     radix + '\uFF41' - 10.
+     In this case, ch - '\uFF41' + 10
+     is returned.
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the digit(int, int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be converted.</dd><dd><code>radix</code> - the radix.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by the character in the
+          specified radix.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>isDigit(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>digit</name>
+            <signature><![CDATA[public static int digit(int codePoint,
+        int radix)]]></signature>
+            <description><![CDATA[Returns the numeric value of the specified character (Unicode
+ code point) in the specified radix.
+
+ If the radix is not in the range MIN_RADIX ≤
+ radix ≤ MAX_RADIX or if the
+ character is not a valid digit in the specified
+ radix, -1 is returned. A character is a valid digit
+ if at least one of the following is true:
+ 
+ The method isDigit(codePoint) is true of the character
+     and the Unicode decimal digit value of the character (or its
+     single-character decomposition) is less than the specified radix.
+     In this case the decimal digit value is returned.
+ The character is one of the uppercase Latin letters
+     'A' through 'Z' and its code is less than
+     radix + 'A' - 10.
+     In this case, codePoint - 'A' + 10
+     is returned.
+ The character is one of the lowercase Latin letters
+     'a' through 'z' and its code is less than
+     radix + 'a' - 10.
+     In this case, codePoint - 'a' + 10
+     is returned.
+ The character is one of the fullwidth uppercase Latin letters A
+     ('\uFF21') through Z ('\uFF3A')
+     and its code is less than
+     radix + '\uFF21' - 10.
+     In this case,
+     codePoint - '\uFF21' + 10
+     is returned.
+ The character is one of the fullwidth lowercase Latin letters a
+     ('\uFF41') through z ('\uFF5A')
+     and its code is less than
+     radix + '\uFF41'- 10.
+     In this case,
+     codePoint - '\uFF41' + 10
+     is returned.
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be converted.</dd><dd><code>radix</code> - the radix.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by the character in the
+          specified radix.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>isDigit(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getNumericValue</name>
+            <signature><![CDATA[public static int getNumericValue(char ch)]]></signature>
+            <description><![CDATA[Returns the int value that the specified Unicode
+ character represents. For example, the character
+ '\u216C' (the roman numeral fifty) will return
+ an int with a value of 50.
+ 
+ The letters A-Z in their uppercase ('\u0041' through
+ '\u005A'), lowercase
+ ('\u0061' through '\u007A'), and
+ full width variant ('\uFF21' through
+ '\uFF3A' and '\uFF41' through
+ '\uFF5A') forms have numeric values from 10
+ through 35. This is independent of the Unicode specification,
+ which does not assign numeric values to these char
+ values.
+ 
+ If the character does not have a numeric value, then -1 is returned.
+ If the character has a numeric value that cannot be represented as a
+ nonnegative integer (for example, a fractional value), then -2
+ is returned.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the getNumericValue(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value of the character, as a nonnegative <code>int</code>
+           value; -2 if the character has a numeric value that is not a
+          nonnegative integer; -1 if the character has no numeric value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>isDigit(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getNumericValue</name>
+            <signature><![CDATA[public static int getNumericValue(int codePoint)]]></signature>
+            <description><![CDATA[Returns the int value that the specified
+ character (Unicode code point) represents. For example, the character
+ '\u216C' (the Roman numeral fifty) will return
+ an int with a value of 50.
+ 
+ The letters A-Z in their uppercase ('\u0041' through
+ '\u005A'), lowercase
+ ('\u0061' through '\u007A'), and
+ full width variant ('\uFF21' through
+ '\uFF3A' and '\uFF41' through
+ '\uFF5A') forms have numeric values from 10
+ through 35. This is independent of the Unicode specification,
+ which does not assign numeric values to these char
+ values.
+ 
+ If the character does not have a numeric value, then -1 is returned.
+ If the character has a numeric value that cannot be represented as a
+ nonnegative integer (for example, a fractional value), then -2
+ is returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value of the character, as a nonnegative <code>int</code>
+          value; -2 if the character has a numeric value that is not a
+          nonnegative integer; -1 if the character has no numeric value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>forDigit(int, int)</code></a>, 
+<a href="#"><code>isDigit(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isSpace</name>
+            <signature><![CDATA[@Deprecated
+public static boolean isSpace(char ch)]]></signature>
+            <description><![CDATA[Deprecated. Replaced by isWhitespace(char).Determines if the specified character is ISO-LATIN-1 white space.
+ This method returns true for the following five
+ characters only:
+ 
+ '\t'            U+0009
+     HORIZONTAL TABULATION
+ '\n'            U+000A
+     NEW LINE
+ '\f'            U+000C
+     FORM FEED
+ '\r'            U+000D
+     CARRIAGE RETURN
+ '&nbsp;'  U+0020
+     SPACE
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is ISO-LATIN-1 white
+             space; <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isSpaceChar(char)</code></a>, 
+<a href="#"><code>isWhitespace(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isSpaceChar</name>
+            <signature><![CDATA[public static boolean isSpaceChar(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is a Unicode space character.
+ A character is considered to be a space character if and only if
+ it is specified to be a space character by the Unicode Standard. This
+ method returns true if the character's general category type is any of
+ the following:
+ 
+  SPACE_SEPARATOR
+  LINE_SEPARATOR
+  PARAGRAPH_SEPARATOR
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isSpaceChar(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a space character;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isWhitespace(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isSpaceChar</name>
+            <signature><![CDATA[public static boolean isSpaceChar(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is a
+ Unicode space character.  A character is considered to be a
+ space character if and only if it is specified to be a space
+ character by the Unicode Standard. This method returns true if
+ the character's general category type is any of the following:
+
+ 
+  SPACE_SEPARATOR
+  LINE_SEPARATOR
+  PARAGRAPH_SEPARATOR
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a space character;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isWhitespace(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isWhitespace</name>
+            <signature><![CDATA[public static boolean isWhitespace(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is white space according to Java.
+ A character is a Java whitespace character if and only if it satisfies
+ one of the following criteria:
+ 
+  It is a Unicode space character (SPACE_SEPARATOR,
+      LINE_SEPARATOR, or PARAGRAPH_SEPARATOR)
+      but is not also a non-breaking space ('\u00A0',
+      '\u2007', '\u202F').
+  It is '\t', U+0009 HORIZONTAL TABULATION.
+  It is '\n', U+000A LINE FEED.
+  It is '\u000B', U+000B VERTICAL TABULATION.
+  It is '\f', U+000C FORM FEED.
+  It is '\r', U+000D CARRIAGE RETURN.
+  It is '\u001C', U+001C FILE SEPARATOR.
+  It is '\u001D', U+001D GROUP SEPARATOR.
+  It is '\u001E', U+001E RECORD SEPARATOR.
+  It is '\u001F', U+001F UNIT SEPARATOR.
+ 
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isWhitespace(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a Java whitespace
+          character; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isSpaceChar(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isWhitespace</name>
+            <signature><![CDATA[public static boolean isWhitespace(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the specified character (Unicode code point) is
+ white space according to Java.  A character is a Java
+ whitespace character if and only if it satisfies one of the
+ following criteria:
+ 
+  It is a Unicode space character (SPACE_SEPARATOR,
+      LINE_SEPARATOR, or PARAGRAPH_SEPARATOR)
+      but is not also a non-breaking space ('\u00A0',
+      '\u2007', '\u202F').
+  It is '\t', U+0009 HORIZONTAL TABULATION.
+  It is '\n', U+000A LINE FEED.
+  It is '\u000B', U+000B VERTICAL TABULATION.
+  It is '\f', U+000C FORM FEED.
+  It is '\r', U+000D CARRIAGE RETURN.
+  It is '\u001C', U+001C FILE SEPARATOR.
+  It is '\u001D', U+001D GROUP SEPARATOR.
+  It is '\u001E', U+001E RECORD SEPARATOR.
+  It is '\u001F', U+001F UNIT SEPARATOR.
+ 
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is a Java whitespace
+          character; <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isSpaceChar(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isISOControl</name>
+            <signature><![CDATA[public static boolean isISOControl(char ch)]]></signature>
+            <description><![CDATA[Determines if the specified character is an ISO control
+ character.  A character is considered to be an ISO control
+ character if its code is in the range '\u0000'
+ through '\u001F' or in the range
+ '\u007F' through '\u009F'.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isISOControl(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is an ISO control character;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isSpaceChar(char)</code></a>, 
+<a href="#"><code>isWhitespace(char)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isISOControl</name>
+            <signature><![CDATA[public static boolean isISOControl(int codePoint)]]></signature>
+            <description><![CDATA[Determines if the referenced character (Unicode code point) is an ISO control
+ character.  A character is considered to be an ISO control
+ character if its code is in the range '\u0000'
+ through '\u001F' or in the range
+ '\u007F' through '\u009F'.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is an ISO control character;
+          <code>false</code> otherwise.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>isSpaceChar(int)</code></a>, 
+<a href="#"><code>isWhitespace(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getType</name>
+            <signature><![CDATA[public static int getType(char ch)]]></signature>
+            <description><![CDATA[Returns a value indicating a character's general category.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the getType(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - the character to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a value of type <code>int</code> representing the
+          character's general category.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.1</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>COMBINING_SPACING_MARK</code></a>, 
+<a href="#"><code>CONNECTOR_PUNCTUATION</code></a>, 
+<a href="#"><code>CONTROL</code></a>, 
+<a href="#"><code>CURRENCY_SYMBOL</code></a>, 
+<a href="#"><code>DASH_PUNCTUATION</code></a>, 
+<a href="#"><code>DECIMAL_DIGIT_NUMBER</code></a>, 
+<a href="#"><code>ENCLOSING_MARK</code></a>, 
+<a href="#"><code>END_PUNCTUATION</code></a>, 
+<a href="#"><code>FINAL_QUOTE_PUNCTUATION</code></a>, 
+<a href="#"><code>FORMAT</code></a>, 
+<a href="#"><code>INITIAL_QUOTE_PUNCTUATION</code></a>, 
+<a href="#"><code>LETTER_NUMBER</code></a>, 
+<a href="#"><code>LINE_SEPARATOR</code></a>, 
+<a href="#"><code>LOWERCASE_LETTER</code></a>, 
+<a href="#"><code>MATH_SYMBOL</code></a>, 
+<a href="#"><code>MODIFIER_LETTER</code></a>, 
+<a href="#"><code>MODIFIER_SYMBOL</code></a>, 
+<a href="#"><code>NON_SPACING_MARK</code></a>, 
+<a href="#"><code>OTHER_LETTER</code></a>, 
+<a href="#"><code>OTHER_NUMBER</code></a>, 
+<a href="#"><code>OTHER_PUNCTUATION</code></a>, 
+<a href="#"><code>OTHER_SYMBOL</code></a>, 
+<a href="#"><code>PARAGRAPH_SEPARATOR</code></a>, 
+<a href="#"><code>PRIVATE_USE</code></a>, 
+<a href="#"><code>SPACE_SEPARATOR</code></a>, 
+<a href="#"><code>START_PUNCTUATION</code></a>, 
+<a href="#"><code>SURROGATE</code></a>, 
+<a href="#"><code>TITLECASE_LETTER</code></a>, 
+<a href="#"><code>UNASSIGNED</code></a>, 
+<a href="#"><code>UPPERCASE_LETTER</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getType</name>
+            <signature><![CDATA[public static int getType(int codePoint)]]></signature>
+            <description><![CDATA[Returns a value indicating a character's general category.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a value of type <code>int</code> representing the
+          character's general category.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>COMBINING_SPACING_MARK</code></a>, 
+<a href="#"><code>CONNECTOR_PUNCTUATION</code></a>, 
+<a href="#"><code>CONTROL</code></a>, 
+<a href="#"><code>CURRENCY_SYMBOL</code></a>, 
+<a href="#"><code>DASH_PUNCTUATION</code></a>, 
+<a href="#"><code>DECIMAL_DIGIT_NUMBER</code></a>, 
+<a href="#"><code>ENCLOSING_MARK</code></a>, 
+<a href="#"><code>END_PUNCTUATION</code></a>, 
+<a href="#"><code>FINAL_QUOTE_PUNCTUATION</code></a>, 
+<a href="#"><code>FORMAT</code></a>, 
+<a href="#"><code>INITIAL_QUOTE_PUNCTUATION</code></a>, 
+<a href="#"><code>LETTER_NUMBER</code></a>, 
+<a href="#"><code>LINE_SEPARATOR</code></a>, 
+<a href="#"><code>LOWERCASE_LETTER</code></a>, 
+<a href="#"><code>MATH_SYMBOL</code></a>, 
+<a href="#"><code>MODIFIER_LETTER</code></a>, 
+<a href="#"><code>MODIFIER_SYMBOL</code></a>, 
+<a href="#"><code>NON_SPACING_MARK</code></a>, 
+<a href="#"><code>OTHER_LETTER</code></a>, 
+<a href="#"><code>OTHER_NUMBER</code></a>, 
+<a href="#"><code>OTHER_PUNCTUATION</code></a>, 
+<a href="#"><code>OTHER_SYMBOL</code></a>, 
+<a href="#"><code>PARAGRAPH_SEPARATOR</code></a>, 
+<a href="#"><code>PRIVATE_USE</code></a>, 
+<a href="#"><code>SPACE_SEPARATOR</code></a>, 
+<a href="#"><code>START_PUNCTUATION</code></a>, 
+<a href="#"><code>SURROGATE</code></a>, 
+<a href="#"><code>TITLECASE_LETTER</code></a>, 
+<a href="#"><code>UNASSIGNED</code></a>, 
+<a href="#"><code>UPPERCASE_LETTER</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>forDigit</name>
+            <signature><![CDATA[public static char forDigit(int digit,
+            int radix)]]></signature>
+            <description><![CDATA[Determines the character representation for a specific digit in
+ the specified radix. If the value of radix is not a
+ valid radix, or the value of digit is not a valid
+ digit in the specified radix, the null character
+ ('\u0000') is returned.
+ 
+ The radix argument is valid if it is greater than or
+ equal to MIN_RADIX and less than or equal to
+ MAX_RADIX. The digit argument is valid if
+ 0 <= digit < radix.
+ 
+ If the digit is less than 10, then
+ '0' + digit is returned. Otherwise, the value
+ 'a' + digit - 10 is returned.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>digit</code> - the number to convert to a character.</dd><dd><code>radix</code> - the radix.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the <code>char</code> representation of the specified digit
+          in the specified radix.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>MIN_RADIX</code></a>, 
+<a href="#"><code>MAX_RADIX</code></a>, 
+<a href="#"><code>digit(char, int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getDirectionality</name>
+            <signature><![CDATA[public static byte getDirectionality(char ch)]]></signature>
+            <description><![CDATA[Returns the Unicode directionality property for the given
+ character.  Character directionality is used to calculate the
+ visual ordering of text. The directionality value of undefined
+ char values is DIRECTIONALITY_UNDEFINED.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the getDirectionality(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - <code>char</code> for which the directionality property
+            is requested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the directionality property of the <code>char</code> value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>DIRECTIONALITY_UNDEFINED</code></a>, 
+<a href="#"><code>DIRECTIONALITY_LEFT_TO_RIGHT</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC</code></a>, 
+<a href="#"><code>DIRECTIONALITY_EUROPEAN_NUMBER</code></a>, 
+<a href="#"><code>DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_ARABIC_NUMBER</code></a>, 
+<a href="#"><code>DIRECTIONALITY_COMMON_NUMBER_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_NONSPACING_MARK</code></a>, 
+<a href="#"><code>DIRECTIONALITY_BOUNDARY_NEUTRAL</code></a>, 
+<a href="#"><code>DIRECTIONALITY_PARAGRAPH_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_SEGMENT_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_WHITESPACE</code></a>, 
+<a href="#"><code>DIRECTIONALITY_OTHER_NEUTRALS</code></a>, 
+<a href="#"><code>DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING</code></a>, 
+<a href="#"><code>DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE</code></a>, 
+<a href="#"><code>DIRECTIONALITY_POP_DIRECTIONAL_FORMAT</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getDirectionality</name>
+            <signature><![CDATA[public static byte getDirectionality(int codePoint)]]></signature>
+            <description><![CDATA[Returns the Unicode directionality property for the given
+ character (Unicode code point).  Character directionality is
+ used to calculate the visual ordering of text. The
+ directionality value of undefined character is DIRECTIONALITY_UNDEFINED.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) for which
+          the directionality property is requested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the directionality property of the character.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>DIRECTIONALITY_UNDEFINED</code></a>, 
+<a href="#"><code>DIRECTIONALITY_LEFT_TO_RIGHT</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC</code></a>, 
+<a href="#"><code>DIRECTIONALITY_EUROPEAN_NUMBER</code></a>, 
+<a href="#"><code>DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_ARABIC_NUMBER</code></a>, 
+<a href="#"><code>DIRECTIONALITY_COMMON_NUMBER_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_NONSPACING_MARK</code></a>, 
+<a href="#"><code>DIRECTIONALITY_BOUNDARY_NEUTRAL</code></a>, 
+<a href="#"><code>DIRECTIONALITY_PARAGRAPH_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_SEGMENT_SEPARATOR</code></a>, 
+<a href="#"><code>DIRECTIONALITY_WHITESPACE</code></a>, 
+<a href="#"><code>DIRECTIONALITY_OTHER_NEUTRALS</code></a>, 
+<a href="#"><code>DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING</code></a>, 
+<a href="#"><code>DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING</code></a>, 
+<a href="#"><code>DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE</code></a>, 
+<a href="#"><code>DIRECTIONALITY_POP_DIRECTIONAL_FORMAT</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isMirrored</name>
+            <signature><![CDATA[public static boolean isMirrored(char ch)]]></signature>
+            <description><![CDATA[Determines whether the character is mirrored according to the
+ Unicode specification.  Mirrored characters should have their
+ glyphs horizontally mirrored when displayed in text that is
+ right-to-left.  For example, '\u0028' LEFT
+ PARENTHESIS is semantically defined to be an opening
+ parenthesis.  This will appear as a "(" in text that is
+ left-to-right but as a ")" in text that is right-to-left.
+
+ Note: This method cannot handle  supplementary characters. To support
+ all Unicode characters, including supplementary characters, use
+ the isMirrored(int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ch</code> - <code>char</code> for which the mirrored property is requested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the char is mirrored, <code>false</code>
+         if the <code>char</code> is not mirrored or is not defined.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.4</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isMirrored</name>
+            <signature><![CDATA[public static boolean isMirrored(int codePoint)]]></signature>
+            <description><![CDATA[Determines whether the specified character (Unicode code point)
+ is mirrored according to the Unicode specification.  Mirrored
+ characters should have their glyphs horizontally mirrored when
+ displayed in text that is right-to-left.  For example,
+ '\u0028' LEFT PARENTHESIS is semantically
+ defined to be an opening parenthesis.  This will appear
+ as a "(" in text that is left-to-right but as a ")" in text
+ that is right-to-left.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point) to be tested.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the character is mirrored, <code>false</code>
+          if the character is not mirrored or is not defined.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>compareTo</name>
+            <signature><![CDATA[public int compareTo(Character anotherCharacter)]]></signature>
+            <description><![CDATA[Compares two Character objects numerically.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">compareTo</a></code> in interface <code><a href="#">Comparable</a><<a href="#">Character</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>anotherCharacter</code> - the <code>Character</code> to be compared.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value <code>0</code> if the argument <code>Character</code>
+          is equal to this <code>Character</code>; a value less than
+          <code>0</code> if this <code>Character</code> is numerically less
+          than the <code>Character</code> argument; and a value greater than
+          <code>0</code> if this <code>Character</code> is numerically greater
+          than the <code>Character</code> argument (unsigned comparison).
+          Note that this is strictly a numerical comparison; it is not
+          locale-dependent.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>compare</name>
+            <signature><![CDATA[public static int compare(char x,
+          char y)]]></signature>
+            <description><![CDATA[Compares two char values numerically.
+ The value returned is identical to what would be returned by:
+ 
+    Character.valueOf(x).compareTo(Character.valueOf(y))
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - the first <code>char</code> to compare</dd><dd><code>y</code> - the second <code>char</code> to compare</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value <code>0</code> if <code>x == y</code>;
+         a value less than <code>0</code> if <code>x < y</code>; and
+         a value greater than <code>0</code> if <code>x > y</code></dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>reverseBytes</name>
+            <signature><![CDATA[public static char reverseBytes(char ch)]]></signature>
+            <description><![CDATA[Returns the value obtained by reversing the order of the bytes in the
+ specified char value.<dl><dt><span class="strong">Returns:</span></dt><dd>the value obtained by reversing (or, equivalently, swapping)
+     the bytes in the specified <tt>char</tt> value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getName</name>
+            <signature><![CDATA[public static String getName(int codePoint)]]></signature>
+            <description><![CDATA[Returns the Unicode name of the specified character
+ codePoint, or null if the code point is
+ unassigned.
+ 
+ Note: if the specified character is not assigned a name by
+ the UnicodeData file (part of the Unicode Character
+ Database maintained by the Unicode Consortium), the returned
+ name is the same as the result of expression.
+
+ Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ')
+     + " "
+     + Integer.toHexString(codePoint).toUpperCase(Locale.ENGLISH);
+
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>codePoint</code> - the character (Unicode code point)</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Unicode name of the specified character, or null if
+         the code point is unassigned.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if the specified
+            <code>codePoint</code> is not a valid Unicode
+            code point.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

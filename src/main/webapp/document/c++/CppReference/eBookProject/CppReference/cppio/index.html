@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/cppio/index.html -->
+<HTML><HEAD><TITLE>C++ I/O</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="index.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> </DIV>
+      <DIV class=name-format>C++ I/O </DIV>
+      <P>The &lt;iostream&gt; library automatically defines a few standard 
+      objects:</P>
+      <UL>
+        <LI>cout, an object of the ostream class, which displays data to the 
+        standard output device. 
+        <LI>cerr, another object of the ostream class that writes unbuffered 
+        output to the standard error device. 
+        <LI>clog, like cerr, but uses buffered output. 
+        <LI>cin, an object of the istream class that reads data from the 
+        standard input device. </LI></UL>
+      <P>The &lt;fstream&gt; library allows programmers to do file input and 
+      output with the ifstream and ofstream classes.</P>
+      <P>C++ programmers can also do input and output from strings by using the 
+      <A href="../cppsstream/index.html">String 
+      Stream</A> class.</P>
+      <P>Some of the behavior of the C++ I/O streams (precision, justification, 
+      etc) may be modified by manipulating various <A 
+      href="../io_flags.html#format_flags">io stream 
+      format flags</A>.</P>
+      <P><A href="../cppio/all.html">Display all 
+      entries</A> for C++ I/O on one page, or view entries individually:</P>
+      <TABLE class=category-table>
+        <TBODY>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/constructors.html">I/O 
+            Constructors</A></TD>
+          <TD class=category-table-td>constructors</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/bad.html">bad</A></TD>
+          <TD class=category-table-td>true if an error occurred</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/clear.html">clear</A></TD>
+          <TD class=category-table-td>clear and set status flags</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/close.html">close</A></TD>
+          <TD class=category-table-td>close a stream</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/eof.html">eof</A></TD>
+          <TD class=category-table-td>true if at the end-of-file</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/fail.html">fail</A></TD>
+          <TD class=category-table-td>true if an error occurred</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/fill.html">fill</A></TD>
+          <TD class=category-table-td>manipulate the default fill 
+        character</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/flags.html">flags</A></TD>
+          <TD class=category-table-td>access or manipulate <A 
+            href="../io_flags.html#format_flags">io 
+            stream format flag</A>s</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/flush.html">flush</A></TD>
+          <TD class=category-table-td>empty the buffer</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/gcount.html">gcount</A></TD>
+          <TD class=category-table-td>number of characters read during last 
+            input</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/get.html">get</A></TD>
+          <TD class=category-table-td>read characters</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/getline.html">getline</A></TD>
+          <TD class=category-table-td>read a line of characters</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/good.html">good</A></TD>
+          <TD class=category-table-td>true if no errors have occurred</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/ignore.html">ignore</A></TD>
+          <TD class=category-table-td>read and discard characters</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/open.html">open</A></TD>
+          <TD class=category-table-td>create an input stream</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/peek.html">peek</A></TD>
+          <TD class=category-table-td>check the next input character</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/precision.html">precision</A></TD>
+          <TD class=category-table-td>manipulate the precision of a 
+        stream</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/put.html">put</A></TD>
+          <TD class=category-table-td>write characters</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/putback.html">putback</A></TD>
+          <TD class=category-table-td>return characters to a stream</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/rdstate.html">rdstate</A></TD>
+          <TD class=category-table-td>returns the state flags of the 
+        stream</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/read.html">read</A></TD>
+          <TD class=category-table-td>read data into a buffer</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/seekg.html">seekg</A></TD>
+          <TD class=category-table-td>perform random access on an input 
+          stream</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/seekp.html">seekp</A></TD>
+          <TD class=category-table-td>perform random access on output 
+          streams</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/setf.html">setf</A></TD>
+          <TD class=category-table-td>set format flags</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/sync_with_stdio.html">sync_with_stdio</A></TD>
+          <TD class=category-table-td>synchronize with standard I/O</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/tellg.html">tellg</A></TD>
+          <TD class=category-table-td>read input stream pointers</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/tellp.html">tellp</A></TD>
+          <TD class=category-table-td>read output stream pointers</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/unsetf.html">unsetf</A></TD>
+          <TD class=category-table-td>clear <A 
+            href="../io_flags.html#format_flags">io 
+            stream format flag</A>s</TD></TR>
+        <TR class=category-table-tr-2>
+          <TD class=category-table-td><A 
+            href="../cppio/width.html">width</A></TD>
+          <TD class=category-table-td>access and manipulate the minimum field 
+            width</TD></TR>
+        <TR class=category-table-tr-1>
+          <TD class=category-table-td><A 
+            href="../cppio/write.html">write</A></TD>
+          <TD class=category-table-td>write 
+      characters</TD></TR></TBODY></TABLE></DIV></TD>
+    <TD vAlign=top width=120>
+      <SCRIPT type=text/javascript><!--
+  google_ad_client = "pub-6243170425937584";
+  google_ad_width = 120;
+  google_ad_height = 600;
+  google_ad_format = "120x600_as";
+  google_ad_type = "text";
+  google_ad_channel ="";
+  google_color_border = "EEEEFF";
+  google_color_bg = "FFFFFF";
+  google_color_link = "000000";
+  google_color_url = "336699";
+  google_color_text = "333333";
+  //--></SCRIPT>
+
+      <SCRIPT src="index.files/show_ads.js" type=text/javascript>
+</SCRIPT>
+    </TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,344 @@
+@CHARSET "UTF-8";
+.bluebody{
+	background: #ddecf3;
+}
+.select{
+height: 34px !important;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.428571429;
+color: #555;
+vertical-align: middle;
+background:none;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+ 
+select:focus{
+	    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6)
+}
+/*header*/
+.headerbg{
+	 background:#38afd4;
+	 min-width: 1055px;
+}
+.topNav2{
+  background:#38afd4 ;
+  min-width: 980px;	
+  margin: 0 auto;
+}
+.logoarea{margin:0;padding: 5px 15px;}
+.logoarea >li{float:left;}
+.logo_l img{
+	top: 5px;
+    position: relative;
+    vertical-align: baseline;
+}
+.logo_c{width:60%;text-align:center;}
+.logo_r{width:20%;}
+.logo_r div{
+color: #0a618a;
+background: url(../images/tel.png) no-repeat left center;
+padding-left: 50px;
+}
+/*end header*/
+
+/*content*/
+.center-block{
+  margin: 0 auto;
+}
+/*end content*/
+
+.keyword{
+/* margin-top: 10px; */
+padding: 0px 90px;
+height: 45px;
+line-height: 45px;
+background: #f1f2f3;
+box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);}
+#tag{
+	/* width:80%; */
+}
+.keyword ul{padding:0px;margin:0px;}
+/* .keyword ul li{width:20%;float:left;} */
+.keyword_name{color:#61b540;font-size: 18px;line-height: 18px;}
+.keyword_numb{text-align:right;}
+.keyword_numb{height: 25px;
+margin-top: 10px;margin-right: 10px;font-size:18px;line-height: 20px;border-radius:4px;
+border:1px solid #c1cad0;text-align:center;color:#939faa;padding:0px 10px;
+background:#fff;float: right;
+}
+/*适用于选择题*/
+.question-wrap{
+ padding: 0 90px;
+}
+/*适用于编程题，面试题*/
+.question-wrap-nopadding{
+ padding:0px !important;
+}
+#exam-wrap{
+background: #fff;
+/* background: url("../images/question-bg.png") repeat scroll -70% 0 #fff; */
+padding:0px;
+margin:0px;
+position:absolute;
+top:50px;bottom:0;left:0;right:0;
+min-width: 1055px;
+
+}
+#exam-answer{margin-top:0px !important;}
+.clearboth{clear:both;}
+.question-header.col3{padding: 20px 10px}
+.question-header{
+padding: 20px 90px;
+font-size:18px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-khtml-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none; 
+}
+
+/* ul.p-answerlist {
+margin: 30px 0px 30px 0px !important} */
+ul.p-answerlist >li{
+}
+ul.p-answerlist >li>a{
+border: 2px solid #c1cad0;
+border-radius: 6px !important;
+background: #fff;
+display: block;
+line-height: 35px;
+padding: 15px 40px;
+color: #38485a;
+font-size: 18px;
+margin-bottom:20px !important;
+margin-bottom: 20px !important;
+-webkit-transition: opacity 0.2s;
+-moz-transition: opacity 0.2s;
+-ms-transition: opacity 0.2s;
+transition: opacity 0.2s;
+transition-property: background;
+}
+ul.p-answerlist >li>a:hover,ul.p-answerlist >li>a:active,ul.p-answerlist >li>a:focus {
+border: 2px solid #ffd86f;
+background: #ffd86f;
+text-decoration: none !important;
+}
+.tryout{text-align:right;
+padding:15px 4px;
+font-size:22px;
+color:#38afd4;
+}
+.skipbtn {
+font-size: 16px;
+color: #3399FF;
+padding-top: 10px;
+text-align: right;
+}
+.tryout a{color:#38afd4;}
+.icon-on-right{margin-right:10px;}
+.clock{padding: 25px 25px;
+text-align:center;}
+.clock div{
+background: url(../images/clock3.png) no-repeat center center;
+color:#FF9900;
+line-height:180px;
+font-size:86px;
+color:#ffae00;
+height:200px;
+text-align:center;
+}
+.countDownMid{
+	font-size: 46px !important;
+}	
+.countDown div{
+background: url(../images/clock.png) no-repeat center center;
+color:#FF9900;
+line-height:180px;
+font-size:56px;
+width:200px;
+height:200px;
+line-height: 200px;
+text-align:center;
+margin: 20px 15%;
+padding: 0px;
+}
+div#countDownStart{
+background: url(../images/clock.png) no-repeat center center;
+color: #FF9900;
+width: 180px;
+font-size: 23px;
+height: 180px;
+text-align: center;
+margin: 30px auto;
+padding: 0px;
+line-height: 180px;
+}
+div#countDownStop{
+color:#53bf6b;
+font-size: 17px;
+margin: 30px;
+}
+.monitor,.examTimeMonitor{text-align:center;padding-top: 10px;}
+.monitor span{
+background: url(../images/jiankong.gif) no-repeat left center;
+padding-left:35px;
+color:#ff4216;
+font-size:18px;
+}
+.examTimeMonitor span{
+color:#0a618a;
+font-size:18px;
+}
+.praise{border:1px solid #c7cbcd;background:#fff;padding:2px;height:32px;width:30px;
+}
+.step{border:1px solid #c7cbcd;background:#fff;padding:2px;height:32px;width:30px;
+}
+.tc{border:1px solid #c7cbcd;background:#fff;padding:2px;height:26px;
+}
+.nextbtn{width:220px;
+cursor: pointer;
+border:0px;
+color:#FFFFFF;
+font-size:18px;
+height:40px;
+background:#53bf6b;
+border-radius: 6px !important;
+color:#FFFFFF;
+box-shadow: 0 3px 0 rgba(83,191,107,0.3);
+}
+.nextbtn.disabled, .nextbtn[disabled] {
+cursor: default;
+background-image: none;
+opacity: 0.65;
+filter: alpha(opacity=65);
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+/*引导*/
+.guide-mask {
+	position: absolute;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+	background: #000;
+	z-index:10000;
+}
+#guide-popover {
+max-width: 280px;
+z-index: 10002;
+margin-left: 50%;
+top: 60px;
+position: fixed;
+}
+#guide-popover-title {
+font-size: 20px;
+line-height: 32px;
+}
+.guide-popover-content {
+background: #ffffff;
+padding: 12px 20px;
+line-height: 20px;
+font-size: 14px;
+color: #34495e;
+border-radius: 6px;
+}
+.nexticon_down {
+color: #34495e;
+padding: 0px;
+/* margin-top: -17px; */
+text-align: center;
+}
+.nexticon_up {
+color: #34495e;
+padding: 0px;
+margin-bottom: -17px;
+text-align: center;
+}
+.guidetextbtn {
+text-align: right;
+padding-top: 10px;
+}
+.guidetextbtn button {
+border: 0px;
+color: #FFFFFF;
+font-size: 14px;
+height: 26px;
+background: #38afd4;
+border-radius: 4px !important;
+color: #FFFFFF;
+}
+/*end 引导*/
+
+/*流程步骤*/
+.menu-step{
+	margin-left: -100px;
+	position: relative;
+	left: 40%;
+}
+.menu-step >li {
+float: left;
+display:inline-block;
+text-align: right;
+}
+.menu-step >li >label{
+	position: relative;
+	top: 20px;
+	right: -16px;
+}
+.stephead{
+	width: 6px;
+	height: 25px;
+	background: url(../images/step_head.png) no-repeat left center;
+}
+.stepcurrent{
+	color:#046f95;
+	width: 105px;
+	background: url(../images/step_current.png) no-repeat left center;
+}
+.stepfinish{
+	color:#046f95;
+	width: 105px;
+	background: url(../images/step_centerb.png) no-repeat left center;
+}
+.steponready{
+	color:#67dafe;
+	width: 105px;
+	background: url(../images/step_center.png) no-repeat left center;
+}
+.steptail{
+	width: 105px;
+	height: 25px;
+	background: url(../images/step_right.png) no-repeat left center;
+}
+/*end 流程步骤*/
+/*footer*/
+#footer {
+	width: 100%;
+	/* 	background-color: rgba(83,191,106,0.7); */
+	background-color: #373e47;
+	margin-top: 20px;
+	padding: 30px 0;
+	text-align: center;
+	color: #92999f;
+	font-size: 14px;
+}
+
+#footer a,#footer span {
+	color: #92999f;
+	font-size: 14px;
+	padding:0px 10px;
+}
+#footer a:hover,#footer a:active,#footer a:focus {color:#c0ccda;text-decoration:none;}
+#footer div{padding:10px;}

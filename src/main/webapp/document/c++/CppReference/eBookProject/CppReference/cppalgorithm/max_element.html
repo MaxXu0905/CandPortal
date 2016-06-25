@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://www.cppreference.com/cppalgorithm/max_element.html -->
+<HTML><HEAD><TITLE>max_element</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="max_element.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/max_element.html">max_element</A> 
+      </DIV>
+      <DIV class=name-format>max_element </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator max_element( iterator start, iterator end );
+  iterator max_element( iterator start, iterator end, BinPred p );
+</PRE>
+      <P>The max_element() function returns an iterator to the largest element 
+      in the range [<EM>start</EM>,<EM>end</EM>).</P>
+      <P>If the binary predicate <EM>p</EM> is given, then it will be used 
+      instead of the &lt; operator to determine the largest element.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the following code uses the max_element() function to 
+      determine the largest integer in an array and the largest character in a 
+      vector of characters:</P><PRE class=example-code> int array[] = { 3, 1, 4, 1, 5, 9 };
+ unsigned int array_size = 6;
+ cout &lt;&lt; "Max element in array is " &lt;&lt; *max_element( array, array+array_size) &lt;&lt; endl;              
+
+ vector&lt;char&gt; v;
+ v.push_back('a'); v.push_back('b'); v.push_back('c'); v.push_back('d');
+ cout &lt;&lt; "Max element in the vector v is " &lt;&lt; *max_element( v.begin(), v.end() ) &lt;&lt; endl;           
+</PRE>
+      <P>When run, the above code displays this output:</P><PRE class=example-code> Max element in array is 9
+ Max element in the vector v is d               
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/max.html">max</A><BR><A 
+      href="../cppalgorithm/min.html">min</A><BR><A 
+      href="../cppalgorithm/min_element.html">min_element</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="errorfunc">
+    <methods>
+        <method>
+            <name>debug_backtrace</name>
+            <signature><![CDATA[array debug_backtrace ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN24844" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >debug_backtrace</B
+> ( void )<BR  ></BR
+><P  >     <B  CLASS="function" >debug_backtrace()</B
+> generates a PHP backtrace
+     and returns this information as an associative <SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+>.  The 
+     possible returned elements are listed in the following table:
+    </P
+><P  >     </P><DIV  CLASS="table" ><A  NAME="AEN24854" ></A
+><P  ><B  >表格 1. Possible returned elements from <B  CLASS="function" >debug_backtrace()</B
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Name</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Type</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >function</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The current function name.  See also 
+          <SPAN HREF="#">__FUNCTION__</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >line</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="type" >integer</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The current line number.  See also 
+          <SPAN HREF="#">__LINE__</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >file</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The current file name.  See also 
+          <SPAN HREF="#">__FILE__</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >class</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The current <SPAN HREF="#">class</A
+> name.  See also 
+          <SPAN HREF="#">__CLASS__</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >type</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          The current call type. If a method call, "->" is returned. If a static
+          method call, "::" is returned. If a function call, nothing is returned.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >args</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><SPAN HREF="#"><B  CLASS="type" >array</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          If inside a function, this lists the functions arguments.  If
+          inside an included file, this lists the included file name(s).
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >     The following is a simple example.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN24901" ></A
+><P  ><B  >例子 1. 
+       <B  CLASS="function" >debug_backtrace()</B
+> example
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+// filename: a.php<br  /><font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">a_test</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">) <br  />{<br  /><br  />    echo </font><font  color="#DD0000">"\nHi: $str"</font><font  color="#007700">;<br  /><br  />    </font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">debug_backtrace</font><font  color="#007700">());<br  />}<br  /><br  /></font><font  color="#0000BB">a_test</font><font  color="#007700">(</font><font  color="#DD0000">'friend'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?><br  /></font><br  />// filename: b.php<br  /><font  color="#0000BB"><?php<br  /></font><font  color="#007700">include_once </font><font  color="#DD0000">'/tmp/a.php'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       Results when executing <TT  CLASS="filename" >/tmp/b.php</TT
+>:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Hi: friend
+array(2) {
+  [0]=>
+  array(4) {
+    ["file"] => string(10) "/tmp/a.php"
+    ["line"] => int(10)
+    ["function"] => string(6) "a_test"
+    ["args"]=>
+    array(1) {
+      [0] => &string(6) "friend"
+    }
+  }
+  [1]=>
+  array(4) {
+    ["file"] => string(10) "/tmp/b.php"
+    ["line"] => int(2)
+    ["args"] => 
+    array(1) {
+      [0] => string(10) "/tmp/a.php"
+    }
+    ["function"] => string(12) "include_once"
+  }
+}</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >debug_print_backtrace()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>debug_print_backtrace</name>
+            <signature><![CDATA[void debug_print_backtrace ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN24915" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >debug_print_backtrace</B
+> ( void )<BR  ></BR
+><P  >     <B  CLASS="function" >debug_print_backtrace()</B
+> prints a PHP backtrace.
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >debug_backtrace()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>error_log</name>
+            <signature><![CDATA[int error_log ( string message [, int message_type [, string destination [, string extra_headers]]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN24931" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >error_log</B
+> ( string message [, int message_type [, string destination [, string extra_headers]]])<BR  ></BR
+><P  >     Sends an error message to the web server's error log, a
+     <SPAN  CLASS="acronym" >TCP</SPAN
+> port or to a file.  The first parameter,
+     <TT  CLASS="parameter" ><I  >message</I
+></TT
+>, is the error message that should be
+     logged.  The second parameter, <TT  CLASS="parameter" ><I  >message_type</I
+></TT
+> says
+     where the message should go:
+     </P><DIV  CLASS="table" ><A  NAME="AEN24952" ></A
+><P  ><B  >表格 1. <B  CLASS="function" >error_log()</B
+> log types</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <TT  CLASS="parameter" ><I  >message</I
+></TT
+> is sent to PHP's system logger, using
+          the Operating System's system logging mechanism or a file, depending
+          on what the <SPAN HREF="#">error_log</A
+>
+          configuration directive is set to.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <TT  CLASS="parameter" ><I  >message</I
+></TT
+> is sent by email to the address in
+          the <TT  CLASS="parameter" ><I  >destination</I
+></TT
+> parameter.  This is the only
+          message type where the fourth parameter,
+          <TT  CLASS="parameter" ><I  >extra_headers</I
+></TT
+> is used.  This message type
+          uses the same internal function as <SPAN HREF="#"><B  CLASS="function" >mail()</B
+></A
+> does.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <TT  CLASS="parameter" ><I  >message</I
+></TT
+> is sent through the PHP debugging
+          connection.  This option is only available if <SPAN HREF="#">remote debugging has
+          been enabled</A
+>.  In this case, the
+          <TT  CLASS="parameter" ><I  >destination</I
+></TT
+> parameter specifies the host name
+          or IP address and optionally, port number, of the socket receiving
+          the debug information.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >3</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <TT  CLASS="parameter" ><I  >message</I
+></TT
+> is appended to the file
+          <TT  CLASS="parameter" ><I  >destination</I
+></TT
+>.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      Remote debugging via TCP/IP is a PHP 3 feature that is
+      <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >not</I
+></SPAN
+> available in PHP 4.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN24984" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >error_log()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// Send notification through the server log if we can not<br  />// connect to the database.<br  /></font><font  color="#007700">if (!</font><font  color="#0000BB">Ora_Logon</font><font  color="#007700">(</font><font  color="#0000BB">$username</font><font  color="#007700">, </font><font  color="#0000BB">$password</font><font  color="#007700">)) {<br  />    </font><font  color="#0000BB">error_log</font><font  color="#007700">(</font><font  color="#DD0000">"Oracle database not available!"</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#FF8000">// Notify administrator by email if we run out of FOO<br  /></font><font  color="#007700">if (!(</font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#0000BB">allocate_new_foo</font><font  color="#007700">())) {<br  />    </font><font  color="#0000BB">error_log</font><font  color="#007700">(</font><font  color="#DD0000">"Big trouble, we're all out of FOOs!"</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">,<br  />               </font><font  color="#DD0000">"operator@example.com"</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#FF8000">// other ways of calling error_log():<br  /></font><font  color="#0000BB">error_log</font><font  color="#007700">(</font><font  color="#DD0000">"You messed up!"</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#DD0000">"127.0.0.1:7000"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">error_log</font><font  color="#007700">(</font><font  color="#DD0000">"You messed up!"</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#DD0000">"loghost"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">error_log</font><font  color="#007700">(</font><font  color="#DD0000">"You messed up!"</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#DD0000">"/var/tmp/my-errors.log"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>error_reporting</name>
+            <signature><![CDATA[int error_reporting ( [int level])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN24992" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >error_reporting</B
+> ( [int level])<BR  ></BR
+><P  >     The <B  CLASS="function" >error_reporting()</B
+> function sets the 
+     <SPAN HREF="#">error_reporting</A
+> 
+     directive at runtime.  PHP has many levels of errors, using 
+     this function sets that level for the duration (runtime) of 
+     your script.
+    </P
+><P  >     <B  CLASS="function" >error_reporting()</B
+> sets PHP's error reporting level, 
+     and returns the old level.  The <TT  CLASS="parameter" ><I  >level</I
+></TT
+> parameter 
+     takes on either a bitmask, or named constants. Using named constants 
+     is strongly encouraged to ensure compatibility for future versions. As 
+     error levels are added, the range of integers increases, so older 
+     integer-based error levels will not always behave as expected.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN25007" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >error_reporting()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#FF8000">// Turn off all error reporting<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Report simple running errors<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ERROR </font><font  color="#007700">| </font><font  color="#0000BB">E_WARNING </font><font  color="#007700">| </font><font  color="#0000BB">E_PARSE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Reporting E_NOTICE can be good too (to report uninitialized <br  />// variables or catch variable name misspellings ...)<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ERROR </font><font  color="#007700">| </font><font  color="#0000BB">E_WARNING </font><font  color="#007700">| </font><font  color="#0000BB">E_PARSE </font><font  color="#007700">| </font><font  color="#0000BB">E_NOTICE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Report all errors except E_NOTICE<br  />// This is the default value set in php.ini<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ALL </font><font  color="#007700">^ </font><font  color="#0000BB">E_NOTICE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Report all PHP errors (bitwise 63 may be used in PHP 3)<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ALL</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Same as error_reporting(E_ALL);<br  /></font><font  color="#0000BB">ini_set</font><font  color="#007700">(</font><font  color="#DD0000">'error_reporting'</font><font  color="#007700">, </font><font  color="#0000BB">E_ALL</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     The available error level constants are listed below. The actual
+     meanings of these error levels are described in the
+     <SPAN HREF="#">predefined constants</A
+>.
+     </P><DIV  CLASS="table" ><A  NAME="AEN25013" ></A
+><P  ><B  >表格 1. <B  CLASS="function" >error_reporting()</B
+> level constants and bit values</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >value</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >constant</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_PARSE</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >8</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_NOTICE</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >16</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_CORE_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >32</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_CORE_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >64</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_COMPILE_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >128</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_COMPILE_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >256</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_USER_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >512</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_USER_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1024</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_USER_NOTICE</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2047</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >         <SPAN HREF="#">E_ALL</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2048</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >          <SPAN HREF="#">E_STRICT</A
+>
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >      With PHP > 5.0.0 <TT  CLASS="constant" ><B  >E_STRICT</B
+></TT
+> with value 2048 is
+      available. <TT  CLASS="constant" ><B  >E_ALL</B
+></TT
+> does <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >NOT</I
+></SPAN
+>
+      include error level<TT  CLASS="constant" ><B  >E_STRICT</B
+></TT
+>.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >     See also the <SPAN HREF="#">display_errors</A
+>
+     directive and <SPAN HREF="#"><B  CLASS="function" >ini_set()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>restore_error_handler</name>
+            <signature><![CDATA[void restore_error_handler ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN25087" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >restore_error_handler</B
+> ( void )<BR  ></BR
+><P  >     Used after changing the error handler function using
+     <SPAN HREF="#"><B  CLASS="function" >set_error_handler()</B
+></A
+>, to revert to the previous error
+     handler (which could be the built-in or a user defined function)
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >error_reporting()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >set_error_handler()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>set_error_handler</name>
+            <signature><![CDATA[string set_error_handler ( callback error_handler [, int error_types])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN25103" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >set_error_handler</B
+> ( callback error_handler [, int error_types])<BR  ></BR
+><P  >     Sets a user function (<TT  CLASS="parameter" ><I  >error_handler</I
+></TT
+>) to handle
+     errors in a script. Returns the previously defined error handler (if
+     any), or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error. This function can be used for defining your own
+     way of handling errors during runtime, for example in applications in
+     which you need to do cleanup of data/files when a critical error happens,
+     or when you need to trigger an error under certain conditions (using
+     <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+>).
+    </P
+><P  >     The second parameter <TT  CLASS="parameter" ><I  >error_types</I
+></TT
+> was introduced in
+     PHP 5 and can be used to mask the triggering of the
+     <TT  CLASS="parameter" ><I  >error_handler</I
+></TT
+> function just like the <SPAN HREF="#">error_reporting</A
+> ini setting controls
+     which errors are shown. Without this mask set the
+     <TT  CLASS="parameter" ><I  >error_handler</I
+></TT
+> will be called for every error
+     unregardless to the setting of the <SPAN HREF="#">error_reporting</A
+> setting.
+    </P
+><P  >     The user function needs to accept two parameters: the error code, and a
+     string describing the error. From PHP 4.0.2, three optional
+     parameters are supplied: the filename in which the error occurred, the
+     line number in which the error occurred, and the context in which the
+     error occurred (an array that points to the active symbol table at the
+     point the error occurred).
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Instead of a function name, an array containing an object reference and
+      a method name can also be supplied. (Since PHP 4.3.0)
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      The following error types cannot be handled with a user defined
+      function: <TT  CLASS="constant" ><B  >E_ERROR</B
+></TT
+>, <TT  CLASS="constant" ><B  >E_PARSE</B
+></TT
+>,
+      <TT  CLASS="constant" ><B  >E_CORE_ERROR</B
+></TT
+>, <TT  CLASS="constant" ><B  >E_CORE_WARNING</B
+></TT
+>,
+      <TT  CLASS="constant" ><B  >E_COMPILE_ERROR</B
+></TT
+> and
+      <TT  CLASS="constant" ><B  >E_COMPILE_WARNING</B
+></TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     The example below shows the handling of internal exceptions by 
+     triggering errors and handling them with a user defined function:
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN25136" ></A
+><P  ><B  >例子 1. 
+       Error handling with <B  CLASS="function" >set_error_handler()</B
+> and
+       <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+>
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#FF8000">// redefine the user error constants - PHP 4 only<br  /></font><font  color="#0000BB">define</font><font  color="#007700">(</font><font  color="#DD0000">"FATAL"</font><font  color="#007700">, </font><font  color="#0000BB">E_USER_ERROR</font><font  color="#007700">);<br  /></font><font  color="#0000BB">define</font><font  color="#007700">(</font><font  color="#DD0000">"ERROR"</font><font  color="#007700">, </font><font  color="#0000BB">E_USER_WARNING</font><font  color="#007700">);<br  /></font><font  color="#0000BB">define</font><font  color="#007700">(</font><font  color="#DD0000">"WARNING"</font><font  color="#007700">, </font><font  color="#0000BB">E_USER_NOTICE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// set the error reporting level for this script<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">FATAL </font><font  color="#007700">| </font><font  color="#0000BB">ERROR </font><font  color="#007700">| </font><font  color="#0000BB">WARNING</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// error handler function<br  /></font><font  color="#007700">function </font><font  color="#0000BB">myErrorHandler</font><font  color="#007700">(</font><font  color="#0000BB">$errno</font><font  color="#007700">, </font><font  color="#0000BB">$errstr</font><font  color="#007700">, </font><font  color="#0000BB">$errfile</font><font  color="#007700">, </font><font  color="#0000BB">$errline</font><font  color="#007700">) <br  />{<br  />  switch (</font><font  color="#0000BB">$errno</font><font  color="#007700">) {<br  />  case </font><font  color="#0000BB">FATAL</font><font  color="#007700">:<br  />    echo </font><font  color="#DD0000">"<b>FATAL</b> [$errno] $errstr<br />\n"</font><font  color="#007700">;<br  />    echo </font><font  color="#DD0000">"  Fatal error in line $errline of file $errfile"</font><font  color="#007700">;<br  />    echo </font><font  color="#DD0000">", PHP " </font><font  color="#007700">. </font><font  color="#0000BB">PHP_VERSION </font><font  color="#007700">. </font><font  color="#DD0000">" (" </font><font  color="#007700">. </font><font  color="#0000BB">PHP_OS </font><font  color="#007700">. </font><font  color="#DD0000">")<br />\n"</font><font  color="#007700">;<br  />    echo </font><font  color="#DD0000">"Aborting...<br />\n"</font><font  color="#007700">;<br  />    exit(</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />    break;<br  />  case </font><font  color="#0000BB">ERROR</font><font  color="#007700">:<br  />    echo </font><font  color="#DD0000">"<b>ERROR</b> [$errno] $errstr<br />\n"</font><font  color="#007700">;<br  />    break;<br  />  case </font><font  color="#0000BB">WARNING</font><font  color="#007700">:<br  />    echo </font><font  color="#DD0000">"<b>WARNING</b> [$errno] $errstr<br />\n"</font><font  color="#007700">;<br  />    break;<br  />  default:<br  />    echo </font><font  color="#DD0000">"Unkown error type: [$errno] $errstr<br />\n"</font><font  color="#007700">;<br  />    break;<br  />  }<br  />}<br  /><br  /></font><font  color="#FF8000">// function to test the error handling<br  /></font><font  color="#007700">function </font><font  color="#0000BB">scale_by_log</font><font  color="#007700">(</font><font  color="#0000BB">$vect</font><font  color="#007700">, </font><font  color="#0000BB">$scale</font><font  color="#007700">) <br  />{<br  />  if (!</font><font  color="#0000BB">is_numeric</font><font  color="#007700">(</font><font  color="#0000BB">$scale</font><font  color="#007700">) || </font><font  color="#0000BB">$scale </font><font  color="#007700"><= </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />    </font><font  color="#0000BB">trigger_error</font><font  color="#007700">(</font><font  color="#DD0000">"log(x) for x <= 0 is undefined, you used: scale = $scale"</font><font  color="#007700">,<br  />      </font><font  color="#0000BB">FATAL</font><font  color="#007700">);<br  />  }<br  /><br  />  if (!</font><font  color="#0000BB">is_array</font><font  color="#007700">(</font><font  color="#0000BB">$vect</font><font  color="#007700">)) {<br  />    </font><font  color="#0000BB">trigger_error</font><font  color="#007700">(</font><font  color="#DD0000">"Incorrect input vector, array of values expected"</font><font  color="#007700">, </font><font  color="#0000BB">ERROR</font><font  color="#007700">);<br  />    return </font><font  color="#0000BB">null</font><font  color="#007700">;<br  />  }<br  /><br  />  for (</font><font  color="#0000BB">$i</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700"><</font><font  color="#0000BB">count</font><font  color="#007700">(</font><font  color="#0000BB">$vect</font><font  color="#007700">); </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />    if (!</font><font  color="#0000BB">is_numeric</font><font  color="#007700">(</font><font  color="#0000BB">$vect</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">]))<br  />      </font><font  color="#0000BB">trigger_error</font><font  color="#007700">(</font><font  color="#DD0000">"Value at position $i is not a number, using 0 (zero)"</font><font  color="#007700">, <br  />        </font><font  color="#0000BB">WARNING</font><font  color="#007700">);<br  />    </font><font  color="#0000BB">$temp</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">] = </font><font  color="#0000BB">log</font><font  color="#007700">(</font><font  color="#0000BB">$scale</font><font  color="#007700">) * </font><font  color="#0000BB">$vect</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">];<br  />  }<br  />  return </font><font  color="#0000BB">$temp</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">// set to the user defined error handler<br  /></font><font  color="#0000BB">$old_error_handler </font><font  color="#007700">= </font><font  color="#0000BB">set_error_handler</font><font  color="#007700">(</font><font  color="#DD0000">"myErrorHandler"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// trigger some errors, first define a mixed array with a non-numeric item<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"vector a\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= array(</font><font  color="#0000BB">2</font><font  color="#007700">,</font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#DD0000">"foo"</font><font  color="#007700">, </font><font  color="#0000BB">5.5</font><font  color="#007700">, </font><font  color="#0000BB">43.3</font><font  color="#007700">, </font><font  color="#0000BB">21.11</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// now generate second array, generating a warning<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"----\nvector b - a warning (b = log(PI) * a)\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">scale_by_log</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">M_PI</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$b</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// this is trouble, we pass a string instead of an array<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"----\nvector c - an error\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$c </font><font  color="#007700">= </font><font  color="#0000BB">scale_by_log</font><font  color="#007700">(</font><font  color="#DD0000">"not array"</font><font  color="#007700">, </font><font  color="#0000BB">2.3</font><font  color="#007700">);<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$c</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// this is a critical error, log of zero or negative number is undefined<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"----\nvector d - fatal error\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$d </font><font  color="#007700">= </font><font  color="#0000BB">scale_by_log</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, -</font><font  color="#0000BB">2.5</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       And when you run this sample script, the output will be:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >vector a
+Array
+(
+    [0] => 2
+    [1] => 3
+    [2] => foo
+    [3] => 5.5
+    [4] => 43.3
+    [5] => 21.11
+)
+----
+vector b - a warning (b = log(PI) * a)
+<b>WARNING</b> [1024] Value at position 2 is not a number, using 0 (zero)<br />
+Array
+(
+    [0] => 2.2894597716988
+    [1] => 3.4341896575482
+    [2] => 0
+    [3] => 6.2960143721717
+    [4] => 49.566804057279
+    [5] => 24.165247890281
+)
+----
+vector c - an error
+<b>ERROR</b> [512] Incorrect input vector, array of values expected<br />
+NULL
+----
+vector d - fatal error
+<b>FATAL</b> [256] log(x) for x <= 0 is undefined, you used: scale = -2.5<br />
+  Fatal error in line 36 of file trigger_error.php, PHP 4.0.2 (Linux)<br />
+Aborting...<br /></PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     It is important to remember that the standard PHP error handler is completely
+     bypassed. <SPAN HREF="#"><B  CLASS="function" >error_reporting()</B
+></A
+> settings will have no effect
+     and your error handler will be called regardless - however you are still
+     able to read the current value of <SPAN HREF="#">error_reporting</A
+> and
+     act appropriately. Of particular note is that this value will be 0 if the
+     statement that caused the error was prepended by the
+     <SPAN HREF="#">@ error-control
+     operator</A
+>.
+    </P
+><P  >     Also note that it is your responsibility to <SPAN HREF="#"><B  CLASS="function" >die()</B
+></A
+> if
+     necessary. If the error-handler function returns, script execution
+     will continue with the next statement after the one that caused an error.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+     If errors occur before the script is executed (e.g. on file uploads) the custom
+     error handler cannot be called since it is not registered at that time.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      The second parameter <TT  CLASS="parameter" ><I  >error_types</I
+></TT
+> was introduced
+      in PHP 5.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >error_reporting()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >restore_error_handler()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+>, and
+     <SPAN HREF="#">error level constants</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>trigger_error</name>
+            <signature><![CDATA[void trigger_error ( string error_msg [, int error_type])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN25163" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >trigger_error</B
+> ( string error_msg [, int error_type])<BR  ></BR
+><P  >     Used to trigger a user error condition, it can be used by in conjunction
+     with the built-in error handler, or with a user defined function that has
+     been set as the new error handler
+     (<SPAN HREF="#"><B  CLASS="function" >set_error_handler()</B
+></A
+>). It only works with the E_USER
+     family of constants, and will default to <TT  CLASS="constant" ><B  >E_USER_NOTICE</B
+></TT
+>.
+    </P
+><P  >     This function is useful when
+     you need to generate a particular response to an exception at runtime.
+     For example:
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN25178" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">assert</font><font  color="#007700">(</font><font  color="#0000BB">$divisor </font><font  color="#007700">== </font><font  color="#0000BB">0</font><font  color="#007700">)) {<br  />  </font><font  color="#0000BB">trigger_error</font><font  color="#007700">(</font><font  color="#DD0000">"Cannot divide by zero"</font><font  color="#007700">, </font><font  color="#0000BB">E_USER_ERROR</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       See <SPAN HREF="#"><B  CLASS="function" >set_error_handler()</B
+></A
+> for a more extensive example.
+      </P
+></BLOCKQUOTE
+></DIV
+>
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       <TT  CLASS="parameter" ><I  >error_msg</I
+></TT
+> is limited to 1024 characters in length.  
+       Any additional characters beyond 1024 will be truncated.
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >error_reporting()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >set_error_handler()</B
+></A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >restore_error_handler()</B
+></A
+>, and
+     <SPAN HREF="#">error level constants</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>user_error</name>
+            <signature><![CDATA[]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN25196" ></A
+><H2  >Description</H2
+><P  >     This function is an alias of <SPAN HREF="#"><B  CLASS="function" >trigger_error()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

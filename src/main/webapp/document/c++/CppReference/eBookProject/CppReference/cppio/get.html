@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.cppreference.com/cppio/get.html -->
+<HTML><HEAD><TITLE>get</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="get.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/get.html">get</A> </DIV>
+      <DIV class=name-format>get </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  int get();
+  istream&amp; get( char&amp; ch );
+  istream&amp; get( char* buffer, streamsize num );
+  istream&amp; get( char* buffer, streamsize num, char delim );
+  istream&amp; get( streambuf&amp; buffer );
+  istream&amp; get( streambuf&amp; buffer, char delim );
+</PRE>
+      <P>The get() function is used with input streams, and either:</P>
+      <UL>
+        <LI>reads a character and returns that value, 
+        <LI>reads a character and stores it as <EM>ch</EM>, 
+        <LI>reads characters into <EM>buffer</EM> until <EM>num</EM> - 1 
+        characters have been read, or <STRONG>EOF</STRONG> or newline 
+        encountered, 
+        <LI>reads characters into <EM>buffer</EM> until <EM>num</EM> - 1 
+        characters have been read, or <STRONG>EOF</STRONG> or the <EM>delim</EM> 
+        character encountered (<EM>delim</EM> is not read until next time), 
+        <LI>reads characters into buffer until a newline or <STRONG>EOF</STRONG> 
+        is encountered, 
+        <LI>or reads characters into buffer until a newline, 
+        <STRONG>EOF</STRONG>, or <EM>delim</EM> character is encountered (again, 
+        <EM>delim</EM> isn't read until the next get() ). </LI></UL>
+      <P>For example, the following code displays the contents of a file called 
+      temp.txt, character by character:</P><PRE class=example-code>   char ch;
+   ifstream fin( "temp.txt" );
+   while( fin.get(ch) )
+     cout &lt;&lt; ch;
+   fin.close();         
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/gcount.html">gcount</A><BR><A 
+      href="../cppio/getline.html">getline</A><BR>(C++ 
+      Strings) <A 
+      href="../cppstring/getline.html">getline</A><BR><A 
+      href="../cppio/ignore.html">ignore</A><BR><A 
+      href="../cppio/peek.html">peek</A><BR><A 
+      href="../cppio/put.html">put</A><BR><A 
+      href="../cppio/read.html">read</A> 
+  </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

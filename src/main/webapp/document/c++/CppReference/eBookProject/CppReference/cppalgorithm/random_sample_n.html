@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://www.cppreference.com/cppalgorithm/random_sample_n.html -->
+<HTML><HEAD><TITLE>random_sample_n</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="random_sample_n.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/random_sample_n.html">random_sample_n</A> 
+      </DIV>
+      <DIV class=name-format>random_sample_n </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator random_sample_n( iterator start, iterator end, iterator result, size_t N );
+  iterator random_sample_n( iterator start, iterator end, iterator result, size_t N, RandomNumberGenerator&amp; rnd );
+</PRE>
+      <P>The random_sample_n() algorithm randomly copies <EM>N</EM> elements 
+      from [<EM>start</EM>,<EM>end</EM>) to <EM>result</EM>. Elements are chosen 
+      with uniform probability and elements from the input range will appear at 
+      most once in the output range. <STRONG>Element order is preserved</STRONG> 
+      from the input range to the output range.</P>
+      <P>If a random number generator function object <EM>rnd</EM> is supplied, 
+      then it will be used instead of an internal random number generator.</P>
+      <P>The return value of random_sample_n() is an iterator to the end of the 
+      output range.</P>
+      <P>random_sample_n() runs in <A 
+      href="../complexity.html">linear time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/next_permutation.html">next_permutation</A><BR><A 
+      href="../cppalgorithm/prev_permutation.html">prev_permutation</A><BR><A 
+      href="../cppalgorithm/random_sample.html">random_sample</A><BR><A 
+      href="../cppalgorithm/random_shuffle.html">random_shuffle</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

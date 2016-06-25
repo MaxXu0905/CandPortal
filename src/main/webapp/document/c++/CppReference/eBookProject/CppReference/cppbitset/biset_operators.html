@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://www.cppreference.com/cppbitset/biset_operators.html -->
+<HTML><HEAD><TITLE>Bitset Operators</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="biset_operators.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppbitset/index.html">C++ Bitsets</A> 
+      &gt; <A 
+      href="../cppbitset/biset_operators.html">Bitset 
+      Operators</A> </DIV>
+      <DIV class=name-format>Bitset Operators </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;bitset&gt;
+  !=, ==, &amp;=, ^=, |=, ~, &lt;&lt;=, &gt;&gt;=, []
+</PRE>
+      <P>These operators all work with bitsets. They can be described as 
+      follows:</P>
+      <UL>
+        <LI>!= returns true if the two bitsets are not equal. 
+        <LI>== returns true if the two bitsets are equal. 
+        <LI>&amp;= performs the AND operation on the two bitsets. 
+        <LI>^= performs the XOR operation on the two bitsets. 
+        <LI>|= performs the OR operation on the two bitsets. 
+        <LI>~ reverses the bitset (same as calling flip()) 
+        <LI>&lt;&lt;= shifts the bitset to the left 
+        <LI>&gt;&gt;= shifts the bitset to the right 
+        <LI>[x] returns a reference to the xth bit in the bitset. </LI></UL>
+      <P>For example, the following code creates a bitset and shifts it to the 
+      left 4 places:</P><PRE class=example-code> // create a bitset out of a number
+ bitset&lt;8&gt; bs2( (long) 131 );
+ cout &lt;&lt; "bs2 is " &lt;&lt; bs2 &lt;&lt; endl;
+ // shift the bitset to the left by 4 digits
+ bs2 &lt;&lt;= 4;
+ cout &lt;&lt; "now bs2 is " &lt;&lt; bs2 &lt;&lt; endl;              
+</PRE>
+      <P>When the above code is run, it displays:</P><PRE class=example-code> bs2 is 10000011
+ now bs2 is 00110000            
+</PRE></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

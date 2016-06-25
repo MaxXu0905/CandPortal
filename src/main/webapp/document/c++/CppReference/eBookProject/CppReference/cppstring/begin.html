@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.cppreference.com/cppstring/begin.html -->
+<HTML><HEAD><TITLE>begin</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="begin.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A href="../cppstring/begin.html">begin</A> 
+      </DIV>
+      <DIV class=name-format>begin </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  iterator begin();
+  const_iterator begin() const;
+</PRE>
+      <P>The function begin() returns an iterator to the first element of the 
+      string. begin() should run in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <P>For example, the following code uses begin() to initialize an iterator 
+      that is used to traverse a list:</P><PRE class=example-code>   // Create a list of characters
+   list&lt;char&gt; charList;
+   for( int i=0; i &lt; 10; i++ ) {
+     charList.push_front( i + 65 );
+   }
+   // Display the list
+   list&lt;char&gt;::iterator theIterator;
+   for( theIterator = charList.begin(); theIterator != charList.end(); theIterator++ ) {
+     cout &lt;&lt; *theIterator;
+   }            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppstring/end.html">end</A><BR><A 
+      href="../cppstring/rbegin.html">rbegin</A><BR><A 
+      href="../cppstring/rend.html">rend</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

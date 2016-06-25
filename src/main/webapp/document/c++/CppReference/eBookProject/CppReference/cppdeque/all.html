@@ -1,0 +1,706 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.cppreference.com/cppdeque/all.html -->
+<HTML><HEAD><TITLE>C++ Double-ended Queues</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppdeque/index.html">C++ Double-ended 
+      Queues</A> </DIV>
+      <DIV class=name-format>assign </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void assign( <STRONG>size_type</STRONG> num, const <A href="../containers.html">TYPE</A>&amp; val );
+  void assign( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+</PRE>
+      <P>The assign() function either gives the current dequeue the values from 
+      <EM>start</EM> to <EM>end</EM>, or gives it <EM>num</EM> copies of 
+      <EM>val</EM>.</P>
+      <P>This function will destroy the previous contents of the dequeue.</P>
+      <P>For example, the following code uses assign() to put 10 copies of the 
+      integer 42 into a vector:</P><PRE class=example-code> vector&lt;int&gt; v;
+ v.assign( 10, 42 );
+ for( int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; v[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <P>The above code displays the following output:</P><PRE class=example-code> 42 42 42 42 42 42 42 42 42 42          
+</PRE>
+      <P>The next example shows how assign() can be used to copy one vector to 
+      another:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back( i );
+ }              
+
+ vector&lt;int&gt; v2;
+ v2.assign( v1.begin(), v1.end() );             
+
+ for( int i = 0; i &lt; v2.size(); i++ ) {
+   cout &lt;&lt; v2[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <P>When run, the above code displays the following output:</P><PRE class=example-code> 0 1 2 3 4 5 6 7 8 9            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content>(C++ Strings) <A 
+      href="../cppstring/assign1.html">assign</A><BR><A 
+      href="../cppdeque/insert.html">insert</A><BR><A 
+      href="../cppdeque/push_back.html">push_back</A><BR><A 
+      href="../cppdeque/push_front.html">push_front</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>at </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <A href="../containers.html">TYPE</A>&amp; at( <STRONG>size_type</STRONG> loc );
+  const <A href="../containers.html">TYPE</A>&amp; at( <STRONG>size_type</STRONG> loc ) const;
+</PRE>
+<P>The at() function returns a reference to the element in the dequeue at index 
+<EM>loc</EM>. The at() function is safer than the [] operator, because it won't 
+let you reference items outside the bounds of the dequeue.</P>
+<P>For example, consider the following code:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v[i] &lt;&lt; endl;
+ }              
+</PRE>
+<P>This code overrunns the end of the vector, producing potentially dangerous 
+results. The following code would be much safer:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; 10; i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v.at(i) &lt;&lt; endl;
+ }              
+</PRE>
+<P>Instead of attempting to read garbage values from memory, the at() function 
+will realize that it is about to overrun the vector and will throw an 
+exception.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Multimaps) <A 
+href="../cppmultimap/container_operators.html">Container 
+operators</A><BR><A 
+href="../cppdeque/container_operators.html">Container 
+operators</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>back </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <A href="../containers.html">TYPE</A>&amp; back();
+  const <A href="../containers.html">TYPE</A>&amp; back() const;
+</PRE>
+<P>The back() function returns a reference to the last element in the 
+dequeue.</P>
+<P>For example:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 5; i++ ) {
+   v.push_back(i);
+ }
+ cout &lt;&lt; "The first element is " &lt;&lt; v.front()
+      &lt;&lt; " and the last element is " &lt;&lt; v.back() &lt;&lt; endl;           
+</PRE>
+<P>This code produces the following output:</P><PRE class=example-code> The first element is 0 and the last element is 4               
+</PRE>
+<P>The back() function runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/front.html">front</A><BR><A 
+href="../cppdeque/pop_back.html">pop_back</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>begin </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  iterator begin();
+  const_iterator begin() const;
+</PRE>
+<P>The function begin() returns an iterator to the first element of the dequeue. 
+begin() should run in <A 
+href="../complexity.html">constant time</A>.</P>
+<P>For example, the following code uses begin() to initialize an iterator that 
+is used to traverse a list:</P><PRE class=example-code>   // Create a list of characters
+   list&lt;char&gt; charList;
+   for( int i=0; i &lt; 10; i++ ) {
+     charList.push_front( i + 65 );
+   }
+   // Display the list
+   list&lt;char&gt;::iterator theIterator;
+   for( theIterator = charList.begin(); theIterator != charList.end(); theIterator++ ) {
+     cout &lt;&lt; *theIterator;
+   }            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/end.html">end</A><BR><A 
+href="../cppdeque/rbegin.html">rbegin</A><BR><A 
+href="../cppdeque/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>clear </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void clear();
+</PRE>
+<P>The function clear() deletes all of the elements in the dequeue. clear() runs 
+in <A href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/erase.html">erase</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format><A name="Container [] operator">Container [] operator</A> 
+</DIV>
+<DIV class=syntax-name-format>Syntax:</DIV><PRE class=syntax-box>  <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index );  const <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index ) const;</PRE>
+<P>
+<P>Individual elements of a dequeue can be examined with the [] operator. </P>
+<P>For example, the following code uses the [] operator to access all of the 
+elements of a vector: </P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v[i] &lt;&lt; endl;
+ }
+		</PRE>
+<P>The [] operator runs in <A 
+href="../complexity.html">constant time</A>. </P>
+<P></P>
+<DIV class=related-name-format>Related topics:</DIV>
+<DIV class=related-content><A 
+href="../cppdeque/at.html">at</A></DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format><A name="Container [] operator">Container [] operator</A> 
+</DIV>
+<DIV class=syntax-name-format>Syntax:</DIV><PRE class=syntax-box>  <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index );  const <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index ) const;</PRE>
+<P>
+<P>Individual elements of a dequeue can be examined with the [] operator. </P>
+<P>For example, the following code uses the [] operator to access all of the 
+elements of a vector: </P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v[i] &lt;&lt; endl;
+ }
+		</PRE>
+<P>The [] operator runs in <A 
+href="../complexity.html">constant time</A>. </P>
+<P></P>
+<DIV class=related-name-format>Related topics:</DIV>
+<DIV class=related-content><A 
+href="../cppdeque/at.html">at</A></DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format><A 
+name="Container constructors &amp; destructors">Container constructors &amp; 
+destructors</A> </DIV>
+<DIV class=syntax-name-format>Syntax:</DIV><PRE class=syntax-box>  container();  container( const container&amp; c );  ~container();</PRE>
+<P>
+<P>Every dequeue has a default constructor, copy constructor, and destructor. 
+</P>
+<P>The default constructor takes no arguments, creates a new instance of that 
+dequeue, and runs in <A 
+href="../complexity.html">constant time</A>. The 
+default copy constructor runs in <A 
+href="../complexity.html">linear time</A> and can be 
+used to create a new dequeue that is a copy of the given dequeue <EM>c</EM>. 
+</P>
+<P>The default destructor is called when the dequeue should be destroyed. </P>
+<P>For example, the following code creates a pointer to a vector of integers and 
+then uses the default dequeue constructor to allocate a memory for a new vector: 
+</P><PRE class=example-code> vector&lt;int&gt;* v;
+ v = new vector&lt;int&gt;();
+		</PRE>
+<P></P>
+<DIV class=related-name-format>Related topics:</DIV>
+<DIV class=related-content><A 
+href="../cppdeque/container_constructors2.html">Special 
+container constructors</A>, <A 
+href="../cppdeque/resize.html">resize</A></DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>Container constructors </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  container();
+  container( const container&amp; c );
+  container( <STRONG>size_type</STRONG> num, const <A href="../containers.html">TYPE</A>&amp; val = <A href="../containers.html">TYPE</A>() );
+  container( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+  ~container();
+</PRE>
+<P>The default dequeue constructor takes no arguments, creates a new instance of 
+that dequeue.</P>
+<P>The second constructor is a default copy constructor that can be used to 
+create a new dequeue that is a copy of the given dequeue <EM>c</EM>.</P>
+<P>The third constructor creates a dequeue with space for <EM>num</EM> objects. 
+If <EM>val</EM> is specified, each of those objects will be given that value. 
+For example, the following code creates a vector consisting of five copies of 
+the integer 42:</P><PRE class=example-code> vector&lt;int&gt; v1( 5, 42 );         
+</PRE>
+<P>The last constructor creates a dequeue that is initialized to contain the 
+elements between <EM>start</EM> and <EM>end</EM>. For example:</P><PRE class=example-code> // create a vector of random integers
+ cout &lt;&lt; "original vector: ";
+ vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 10; i++ ) {
+   int num = (int) rand() % 10;
+   cout &lt;&lt; num &lt;&lt; " ";
+   v.push_back( num );
+ }
+ cout &lt;&lt; endl;            
+
+ // find the first element of v that is even
+ vector&lt;int&gt;::iterator iter1 = v.begin();
+ while( iter1 != v.end() &amp;&amp; *iter1 % 2 != 0 ) {
+   iter1++;
+ }              
+
+ // find the last element of v that is even
+ vector&lt;int&gt;::iterator iter2 = v.end();
+ do {
+   iter2--;
+ } while( iter2 != v.begin() &amp;&amp; *iter2 % 2 != 0 );              
+
+ cout &lt;&lt; "first even number: " &lt;&lt; *iter1 &lt;&lt; ", last even number: " &lt;&lt; *iter2 &lt;&lt; endl;         
+
+ cout &lt;&lt; "new vector: ";
+ vector&lt;int&gt; v2( iter1, iter2 );
+ for( int i = 0; i &lt; v2.size(); i++ ) {
+   cout &lt;&lt; v2[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>When run, this code displays the following output:</P><PRE class=example-code> original vector: 1 9 7 9 2 7 2 1 9 8
+ first even number: 2, last even number: 8
+ new vector: 2 7 2 1 9          
+</PRE>
+<P>All of these constructors run in <A 
+href="../complexity.html">linear time</A> except the 
+first, which runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<P>The default destructor is called when the dequeue should be destroyed.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>Container operators </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index );
+  const <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index ) const;
+  container operator=(const container&amp; c2);
+  bool operator==(const container&amp; c1, const container&amp; c2);
+  bool operator!=(const container&amp; c1, const container&amp; c2);
+  bool operator&lt;(const container&amp; c1, const container&amp; c2);
+  bool operator&gt;(const container&amp; c1, const container&amp; c2);
+  bool operator&lt;=(const container&amp; c1, const container&amp; c2);
+  bool operator&gt;=(const container&amp; c1, const container&amp; c2);
+</PRE>
+<P>All of the C++ containers can be compared and assigned with the standard 
+comparison operators: ==, !=, &lt;=, &gt;=, &lt;, &gt;, and =. Individual 
+elements of a dequeue can be examined with the [] operator.</P>
+<P>Performing a comparison or assigning one dequeue to another takes <A 
+href="../complexity.html">linear time</A>. The [] 
+operator runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<P>Two `containers` are equal if:</P>
+<OL>
+  <LI>Their size is the same, and 
+  <LI>Each member in location i in one dequeue is equal to the the member in 
+  location i in the other dequeue. </LI></OL>
+<P>Comparisons among dequeues are done lexicographically.</P>
+<P>For example, the following code uses the [] operator to access all of the 
+elements of a vector:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v[i] &lt;&lt; endl;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/at.html">at</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>empty </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  bool empty() const;
+</PRE>
+<P>The empty() function returns true if the dequeue has no elements, false 
+otherwise.</P>
+<P>For example, the following code uses empty() as the stopping condition on a 
+(C/C++ Keywords) <A 
+href="../keywords/while.html">while</A> loop to clear a 
+dequeue and display its contents in reverse order:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 5; i++ ) {
+   v.push_back(i);
+ }
+ while( !v.empty() ) {
+   cout &lt;&lt; v.back() &lt;&lt; endl;
+   v.pop_back();
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>end </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  iterator end();
+  const_iterator end() const;
+</PRE>
+<P>The end() function returns an iterator just past the end of the dequeue.</P>
+<P>Note that before you can access the last element of the dequeue using an 
+iterator that you get from a call to end(), you'll have to decrement the 
+iterator first.</P>
+<P>For example, the following code uses <A 
+href="../cppdeque/begin.html">begin</A>() and end() to 
+iterate through all of the members of a vector:</P><PRE class=example-code> vector&lt;int&gt; v1( 5, 789 );
+ vector&lt;int&gt;::iterator it;
+ for( it = v1.begin(); it != v1.end(); it++ ) {
+   cout &lt;&lt; *it &lt;&lt; endl;
+ }              
+</PRE>
+<P>The iterator is initialized with a call to <A 
+href="../cppdeque/begin.html">begin</A>(). After the 
+body of the loop has been executed, the iterator is incremented and tested to 
+see if it is equal to the result of calling end(). Since end() returns an 
+iterator pointing to an element just after the last element of the vector, the 
+loop will only stop once all of the elements of the vector have been 
+displayed.</P>
+<P>end() runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/begin.html">begin</A><BR><A 
+href="../cppdeque/rbegin.html">rbegin</A><BR><A 
+href="../cppdeque/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>erase </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  iterator erase( iterator loc );
+  iterator erase( iterator start, iterator end );
+</PRE>
+<P>The erase() function either deletes the element at location <EM>loc</EM>, or 
+deletes the elements between <EM>start</EM> and <EM>end</EM> (including 
+<EM>start</EM> but not including <EM>end</EM>). The return value is the element 
+after the last element erased.</P>
+<P>The first version of erase (the version that deletes a single element at 
+location <EM>loc</EM>) runs in <A 
+href="../complexity.html">constant time</A> for lists 
+and <A href="../complexity.html">linear time</A> for 
+vectors, dequeues, and strings. The multiple-element version of erase always 
+takes <A href="../complexity.html">linear time</A>.</P>
+<P>For example:</P><PRE class=example-code> // Create a vector, load it with the first ten characters of the alphabet
+ vector&lt;char&gt; alphaVector;
+ for( int i=0; i &lt; 10; i++ ) {
+   alphaVector.push_back( i + 65 );
+ }
+ int size = alphaVector.size();
+ vector&lt;char&gt;::iterator startIterator;
+ vector&lt;char&gt;::iterator tempIterator;
+ for( int i=0; i &lt; size; i++ ) {
+   startIterator = alphaVector.begin();
+   alphaVector.erase( startIterator );
+   // Display the vector
+   for( tempIterator = alphaVector.begin(); tempIterator != alphaVector.end(); tempIterator++ ) {
+     cout &lt;&lt; *tempIterator;
+   }
+   cout &lt;&lt; endl;
+ }              
+</PRE>
+<P>That code would display the following output:</P><PRE class=example-code> BCDEFGHIJ
+ CDEFGHIJ
+ DEFGHIJ
+ EFGHIJ
+ FGHIJ
+ GHIJ
+ HIJ
+ IJ
+ J              
+</PRE>
+<P>In the next example, erase() is called with two iterators to delete a range 
+of elements from a vector:</P><PRE class=example-code> // create a vector, load it with the first ten characters of the alphabet
+ vector&lt;char&gt; alphaVector;
+ for( int i=0; i &lt; 10; i++ ) {
+   alphaVector.push_back( i + 65 );
+ }
+ // display the complete vector
+ for( int i = 0; i &lt; alphaVector.size(); i++ ) {
+   cout &lt;&lt; alphaVector[i];
+ }
+ cout &lt;&lt; endl;            
+
+ // use erase to remove all but the first two and last three elements
+ // of the vector
+ alphaVector.erase( alphaVector.begin()+2, alphaVector.end()-3 );
+ // display the modified vector
+ for( int i = 0; i &lt; alphaVector.size(); i++ ) {
+   cout &lt;&lt; alphaVector[i];
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+<P>When run, the above code displays:</P><PRE class=example-code> ABCDEFGHIJ
+ ABHIJ          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/clear.html">clear</A><BR><A 
+href="../cppdeque/insert.html">insert</A><BR><A 
+href="../cppdeque/pop_back.html">pop_back</A><BR><A 
+href="../cppdeque/pop_front.html">pop_front</A><BR>(C++ 
+Lists) <A 
+href="../cpplist/remove.html">remove</A><BR>(C++ Lists) 
+<A href="../cpplist/remove_if.html">remove_if</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>front </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <A href="../containers.html">TYPE</A>&amp; front();
+  const <A href="../containers.html">TYPE</A>&amp; front() const;
+</PRE>
+<P>The front() function returns a reference to the first element of the dequeue, 
+and runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/back.html">back</A><BR><A 
+href="../cppdeque/pop_front.html">pop_front</A><BR><A 
+href="../cppdeque/push_front.html">push_front</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>insert </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  iterator insert( iterator loc, const <A href="../containers.html">TYPE</A>&amp; val );
+  void insert( iterator loc, <STRONG>size_type</STRONG> num, const <A href="../containers.html">TYPE</A>&amp; val );
+  template&lt;<A href="../containers.html">TYPE</A>&gt; void insert( iterator loc, <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+</PRE>
+<P>The insert() function either:</P>
+<UL>
+  <LI>inserts <EM>val</EM> before <EM>loc</EM>, returning an iterator to the 
+  element inserted, 
+  <LI>inserts <EM>num</EM> copies of <EM>val</EM> before <EM>loc</EM>, or 
+  <LI>inserts the elements from <EM>start</EM> to <EM>end</EM> before 
+  <EM>loc</EM>. </LI></UL>
+<P>For example:</P><PRE class=example-code> // Create a vector, load it with the first 10 characters of the alphabet
+ vector&lt;char&gt; alphaVector;
+ for( int i=0; i &lt; 10; i++ ) {
+   alphaVector.push_back( i + 65 );
+ }              
+
+ // Insert four C's into the vector
+ vector&lt;char&gt;::iterator theIterator = alphaVector.begin();
+ alphaVector.insert( theIterator, 4, 'C' );             
+
+ // Display the vector
+ for( theIterator = alphaVector.begin(); theIterator != alphaVector.end(); theIterator++ )    {
+   cout &lt;&lt; *theIterator;
+ }              
+</PRE>
+<P>This code would display:</P><PRE class=example-code> CCCCABCDEFGHIJ         
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/assign.html">assign</A><BR><A 
+href="../cppdeque/erase.html">erase</A><BR>(C++ Lists) 
+<A href="../cpplist/merge.html">merge</A><BR><A 
+href="../cppdeque/push_back.html">push_back</A><BR><A 
+href="../cppdeque/push_front.html">push_front</A><BR>(C++ 
+Lists) <A href="../cpplist/splice.html">splice</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>max_size </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <STRONG>size_type</STRONG> max_size() const;
+</PRE>
+<P>The max_size() function returns the maximum number of elements that the 
+dequeue can hold. The max_size() function should not be confused with the <A 
+href="../cppdeque/size.html">size</A>() or (C++ 
+Strings) <A 
+href="../cppstring/capacity.html">capacity</A>() 
+functions, which return the number of elements currently in the dequeue and the 
+the number of elements that the dequeue will be able to hold before more memory 
+will have to be allocated, respectively.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>pop_back </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void pop_back();
+</PRE>
+<P>The pop_back() function removes the last element of the dequeue.</P>
+<P>pop_back() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/back.html">back</A><BR><A 
+href="../cppdeque/erase.html">erase</A><BR><A 
+href="../cppdeque/pop_front.html">pop_front</A><BR><A 
+href="../cppdeque/push_back.html">push_back</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>pop_front </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void pop_front();
+</PRE>
+<P>The function pop_front() removes the first element of the dequeue.</P>
+<P>The pop_front() function runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/erase.html">erase</A><BR><A 
+href="../cppdeque/front.html">front</A><BR><A 
+href="../cppdeque/pop_back.html">pop_back</A><BR><A 
+href="../cppdeque/push_front.html">push_front</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>push_back </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void push_back( const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The push_back() function appends <EM>val</EM> to the end of the dequeue.</P>
+<P>For example, the following code puts 10 integers into a list:</P><PRE class=example-code>   list&lt;int&gt; the_list;
+   for( int i = 0; i &lt; 10; i++ )
+     the_list.push_back( i );           
+</PRE>
+<P>When displayed, the resulting list would look like this:</P><PRE class=example-code> 0 1 2 3 4 5 6 7 8 9            
+</PRE>
+<P>push_back() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/assign.html">assign</A><BR><A 
+href="../cppdeque/insert.html">insert</A><BR><A 
+href="../cppdeque/pop_back.html">pop_back</A><BR><A 
+href="../cppdeque/push_front.html">push_front</A> 
+</DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>push_front </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void push_front( const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+<P>The push_front() function inserts <EM>val</EM> at the beginning of 
+dequeue.</P>
+<P>push_front() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/assign.html">assign</A><BR><A 
+href="../cppdeque/front.html">front</A><BR><A 
+href="../cppdeque/insert.html">insert</A><BR><A 
+href="../cppdeque/pop_front.html">pop_front</A><BR><A 
+href="../cppdeque/push_back.html">push_back</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rbegin </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <A href="../iterators.html">reverse_iterator</A> rbegin();
+  const_<A href="../iterators.html">reverse_iterator</A> rbegin() const;
+</PRE>
+<P>The rbegin() function returns a <A 
+href="../iterators.html">reverse_iterator</A> to the 
+end of the current dequeue.</P>
+<P>rbegin() runs in <A 
+href="../complexity.html">constant time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/begin.html">begin</A><BR><A 
+href="../cppdeque/end.html">end</A><BR><A 
+href="../cppdeque/rend.html">rend</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rend </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <A href="../iterators.html">reverse_iterator</A> rend();
+  const_<A href="../iterators.html">reverse_iterator</A> rend() const;
+</PRE>
+<P>The function rend() returns a <A 
+href="../iterators.html">reverse_iterator</A> to the 
+beginning of the current dequeue.</P>
+<P>rend() runs in <A href="../complexity.html">constant 
+time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppdeque/begin.html">begin</A><BR><A 
+href="../cppdeque/end.html">end</A><BR><A 
+href="../cppdeque/rbegin.html">rbegin</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>resize </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void resize( <STRONG>size_type</STRONG> num, const <A href="../containers.html">TYPE</A>&amp; val = <A href="../containers.html">TYPE</A>() );
+</PRE>
+<P>The function resize() changes the size of the dequeue to <EM>size</EM>. If 
+<EM>val</EM> is specified then any newly-created elements will be initialized to 
+have a value of <EM>val</EM>.</P>
+<P>This function runs in <A 
+href="../complexity.html">linear time</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Multimaps) <A 
+href="../cppmultimap/container_constructors.html">Container 
+constructors &amp; destructors</A><BR>(C++ Strings) <A 
+href="../cppstring/capacity.html">capacity</A><BR><A 
+href="../cppdeque/size.html">size</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>size </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  <STRONG>size_type</STRONG> size() const;
+</PRE>
+<P>The size() function returns the number of elements in the current 
+dequeue.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Strings) <A 
+href="../cppstring/capacity.html">capacity</A><BR><A 
+href="../cppdeque/empty.html">empty</A><BR>(C++ 
+Strings) <A 
+href="../cppstring/length.html">length</A><BR><A 
+href="../cppdeque/max_size.html">max_size</A><BR><A 
+href="../cppdeque/resize.html">resize</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>swap </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void swap( const container&amp; from );
+</PRE>
+<P>The swap() function exchanges the elements of the current dequeue with those 
+of <EM>from</EM>. This function operates in <A 
+href="../complexity.html">constant time</A>.</P>
+<P>For example, the following code uses the swap() function to exchange the 
+values of two strings:</P><PRE class=example-code>   string first( "This comes first" );
+   string second( "And this is second" );
+   first.swap( second );
+   cout &lt;&lt; first &lt;&lt; endl;
+   cout &lt;&lt; second &lt;&lt; endl;          
+</PRE>
+<P>The above code displays:</P><PRE class=example-code>   And this is second
+   This comes first             
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(C++ Lists) <A 
+href="../cpplist/splice.html">splice</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

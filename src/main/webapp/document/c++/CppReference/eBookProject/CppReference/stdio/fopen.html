@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/stdio/fopen.html -->
+<HTML><HEAD><TITLE>fopen</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="fopen.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      &gt; <A href="fopen.html">fopen</A> 
+      </DIV>
+      <DIV class=name-format>fopen </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  FILE *fopen( const char *fname, const char *mode );
+</PRE>
+      <P>The fopen() function opens a file indicated by <EM>fname</EM> and 
+      returns a stream associated with that file. If there is an error, fopen() 
+      returns <STRONG>NULL</STRONG>. <EM>mode</EM> is used to determine how the 
+      file will be treated (i.e. for input, output, etc)</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Mode</TH>
+          <TH class=code-table-th>Meaning</TH></TR>
+        <TR>
+          <TD class=code-table-td>"r"</TD>
+          <TD class=code-table-td>Open a text file for reading</TD></TR>
+        <TR>
+          <TD class=code-table-td>"w"</TD>
+          <TD class=code-table-td>Create a text file for writing</TD></TR>
+        <TR>
+          <TD class=code-table-td>"a"</TD>
+          <TD class=code-table-td>Append to a text file</TD></TR>
+        <TR>
+          <TD class=code-table-td>"rb"</TD>
+          <TD class=code-table-td>Open a binary file for reading</TD></TR>
+        <TR>
+          <TD class=code-table-td>"wb"</TD>
+          <TD class=code-table-td>Create a binary file for writing</TD></TR>
+        <TR>
+          <TD class=code-table-td>"ab"</TD>
+          <TD class=code-table-td>Append to a binary file</TD></TR>
+        <TR>
+          <TD class=code-table-td>"r+"</TD>
+          <TD class=code-table-td>Open a text file for read/write</TD></TR>
+        <TR>
+          <TD class=code-table-td>"w+"</TD>
+          <TD class=code-table-td>Create a text file for read/write</TD></TR>
+        <TR>
+          <TD class=code-table-td>"a+"</TD>
+          <TD class=code-table-td>Open a text file for read/write</TD></TR>
+        <TR>
+          <TD class=code-table-td>"rb+"</TD>
+          <TD class=code-table-td>Open a binary file for read/write</TD></TR>
+        <TR>
+          <TD class=code-table-td>"wb+"</TD>
+          <TD class=code-table-td>Create a binary file for read/write</TD></TR>
+        <TR>
+          <TD class=code-table-td>"ab+"</TD>
+          <TD class=code-table-td>Open a binary file for 
+        read/write</TD></TR></TBODY></TABLE>
+      <P>An example:</P><PRE class=example-code>   int ch;
+   FILE *input = fopen( "stuff", "r" );
+   ch = getc( input );          
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="fclose.html">fclose</A><BR><A 
+      href="fflush.html">fflush</A><BR><A 
+      href="fgetc.html">fgetc</A><BR><A 
+      href="fputc.html">fputc</A><BR><A 
+      href="fread.html">fread</A><BR><A 
+      href="freopen.html">freopen</A><BR><A 
+      href="fseek.html">fseek</A><BR><A 
+      href="fwrite.html">fwrite</A><BR><A 
+      href="getc.html">getc</A><BR><A 
+      href="getchar.html">getchar</A><BR><A 
+      href="setbuf.html">setbuf</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.lang.Integer">
+    <fields>
+        <field>
+            <name>MIN_VALUE</name>
+            <signature><![CDATA[public static final int MIN_VALUE]]></signature>
+            <description><![CDATA[A constant holding the minimum value an int can
+ have, -231.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_VALUE</name>
+            <signature><![CDATA[public static final int MAX_VALUE]]></signature>
+            <description><![CDATA[A constant holding the maximum value an int can
+ have, 231-1.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>TYPE</name>
+            <signature><![CDATA[public static final Class<Integer> TYPE]]></signature>
+            <description><![CDATA[The Class instance representing the primitive type
+ int.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>JDK1.1</dd></dl>]]></description>
+        </field>
+        <field>
+            <name>SIZE</name>
+            <signature><![CDATA[public static final int SIZE]]></signature>
+            <description><![CDATA[The number of bits used to represent an int value in two's
+ complement binary form.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+    </fields>
+    <constructors>
+        <constructor>
+            <name>Integer</name>
+            <signature><![CDATA[public Integer(int value)]]></signature>
+            <description><![CDATA[Constructs a newly allocated Integer object that
+ represents the specified int value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the value to be represented by the
+                  <code>Integer</code> object.</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>Integer</name>
+            <signature><![CDATA[public Integer(String s)
+        throws NumberFormatException]]></signature>
+            <description><![CDATA[Constructs a newly allocated Integer object that
+ represents the int value indicated by the
+ String parameter. The string is converted to an
+ int value in exactly the manner used by the
+ parseInt method for radix 10.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the <code>String</code> to be converted to an
+                 <code>Integer</code>.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - if the <code>String</code> does not
+               contain a parsable integer.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>parseInt(java.lang.String, int)</code></a></dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public static String toString(int i,
+              int radix)]]></signature>
+            <description><![CDATA[Returns a string representation of the first argument in the
+ radix specified by the second argument.
+
+ If the radix is smaller than Character.MIN_RADIX
+ or larger than Character.MAX_RADIX, then the radix
+ 10 is used instead.
+
+ If the first argument is negative, the first element of the
+ result is the ASCII minus character '-'
+ ('\u002D'). If the first argument is not
+ negative, no sign character appears in the result.
+
+ The remaining characters of the result represent the magnitude
+ of the first argument. If the magnitude is zero, it is
+ represented by a single zero character '0'
+ ('\u0030'); otherwise, the first character of
+ the representation of the magnitude will not be the zero
+ character.  The following ASCII characters are used as digits:
+
+ 
+   0123456789abcdefghijklmnopqrstuvwxyz
+ 
+
+ These are '\u0030' through
+ '\u0039' and '\u0061' through
+ '\u007A'. If radix is
+ N, then the first N of these characters
+ are used as radix-N digits in the order shown. Thus,
+ the digits for hexadecimal (radix 16) are
+ 0123456789abcdef. If uppercase letters are
+ desired, the String.toUpperCase() method may
+ be called on the result:
+
+ 
+  Integer.toString(n, 16).toUpperCase()
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - an integer to be converted to a string.</dd><dd><code>radix</code> - the radix to use in the string representation.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a string representation of the argument in the specified radix.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Character.MAX_RADIX</code></a>, 
+<a href="#"><code>Character.MIN_RADIX</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toHexString</name>
+            <signature><![CDATA[public static String toHexString(int i)]]></signature>
+            <description><![CDATA[Returns a string representation of the integer argument as an
+ unsigned integer in base 16.
+
+ The unsigned integer value is the argument plus 232
+ if the argument is negative; otherwise, it is equal to the
+ argument.  This value is converted to a string of ASCII digits
+ in hexadecimal (base 16) with no extra leading
+ 0s. If the unsigned magnitude is zero, it is
+ represented by a single zero character '0'
+ ('\u0030'); otherwise, the first character of
+ the representation of the unsigned magnitude will not be the
+ zero character. The following characters are used as
+ hexadecimal digits:
+
+ 
+  0123456789abcdef
+ 
+
+ These are the characters '\u0030' through
+ '\u0039' and '\u0061' through
+ '\u0066'. If uppercase letters are
+ desired, the String.toUpperCase() method may
+ be called on the result:
+
+ 
+  Integer.toHexString(n).toUpperCase()
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - an integer to be converted to a string.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the string representation of the unsigned integer value
+          represented by the argument in hexadecimal (base 16).</dd><dt><span class="strong">Since:</span></dt>
+  <dd>JDK1.0.2</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toOctalString</name>
+            <signature><![CDATA[public static String toOctalString(int i)]]></signature>
+            <description><![CDATA[Returns a string representation of the integer argument as an
+ unsigned integer in base 8.
+
+ The unsigned integer value is the argument plus 232
+ if the argument is negative; otherwise, it is equal to the
+ argument.  This value is converted to a string of ASCII digits
+ in octal (base 8) with no extra leading 0s.
+
+ If the unsigned magnitude is zero, it is represented by a
+ single zero character '0'
+ ('\u0030'); otherwise, the first character of
+ the representation of the unsigned magnitude will not be the
+ zero character. The following characters are used as octal
+ digits:
+
+ 
+ 01234567
+ 
+
+ These are the characters '\u0030' through
+ '\u0037'.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - an integer to be converted to a string.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the string representation of the unsigned integer value
+          represented by the argument in octal (base 8).</dd><dt><span class="strong">Since:</span></dt>
+  <dd>JDK1.0.2</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toBinaryString</name>
+            <signature><![CDATA[public static String toBinaryString(int i)]]></signature>
+            <description><![CDATA[Returns a string representation of the integer argument as an
+ unsigned integer in base 2.
+
+ The unsigned integer value is the argument plus 232
+ if the argument is negative; otherwise it is equal to the
+ argument.  This value is converted to a string of ASCII digits
+ in binary (base 2) with no extra leading 0s.
+ If the unsigned magnitude is zero, it is represented by a
+ single zero character '0'
+ ('\u0030'); otherwise, the first character of
+ the representation of the unsigned magnitude will not be the
+ zero character. The characters '0'
+ ('\u0030') and '1'
+ ('\u0031') are used as binary digits.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - an integer to be converted to a string.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the string representation of the unsigned integer value
+          represented by the argument in binary (base 2).</dd><dt><span class="strong">Since:</span></dt>
+  <dd>JDK1.0.2</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public static String toString(int i)]]></signature>
+            <description><![CDATA[Returns a String object representing the
+ specified integer. The argument is converted to signed decimal
+ representation and returned as a string, exactly as if the
+ argument and radix 10 were given as arguments to the toString(int, int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - an integer to be converted.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a string representation of the argument in base 10.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>parseInt</name>
+            <signature><![CDATA[public static int parseInt(String s,
+           int radix)
+                    throws NumberFormatException]]></signature>
+            <description><![CDATA[Parses the string argument as a signed integer in the radix
+ specified by the second argument. The characters in the string
+ must all be digits of the specified radix (as determined by
+ whether Character.digit(char, int) returns a
+ nonnegative value), except that the first character may be an
+ ASCII minus sign '-' ('\u002D') to
+ indicate a negative value or an ASCII plus sign '+'
+ ('\u002B') to indicate a positive value. The
+ resulting integer value is returned.
+
+ An exception of type NumberFormatException is
+ thrown if any of the following situations occurs:
+ 
+ The first argument is null or is a string of
+ length zero.
+
+ The radix is either smaller than
+ Character.MIN_RADIX or
+ larger than Character.MAX_RADIX.
+
+ Any character of the string is not a digit of the specified
+ radix, except that the first character may be a minus sign
+ '-' ('\u002D') or plus sign
+ '+' ('\u002B') provided that the
+ string is longer than length 1.
+
+ The value represented by the string is not a value of type
+ int.
+ 
+
+ Examples:
+ 
+ parseInt("0", 10) returns 0
+ parseInt("473", 10) returns 473
+ parseInt("+42", 10) returns 42
+ parseInt("-0", 10) returns 0
+ parseInt("-FF", 16) returns -255
+ parseInt("1100110", 2) returns 102
+ parseInt("2147483647", 10) returns 2147483647
+ parseInt("-2147483648", 10) returns -2147483648
+ parseInt("2147483648", 10) throws a NumberFormatException
+ parseInt("99", 8) throws a NumberFormatException
+ parseInt("Kona", 10) throws a NumberFormatException
+ parseInt("Kona", 27) returns 411787
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the <code>String</code> containing the integer
+                  representation to be parsed</dd><dd><code>radix</code> - the radix to be used while parsing <code>s</code>.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the integer represented by the string argument in the
+             specified radix.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - if the <code>String</code>
+             does not contain a parsable <code>int</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>parseInt</name>
+            <signature><![CDATA[public static int parseInt(String s)
+                    throws NumberFormatException]]></signature>
+            <description><![CDATA[Parses the string argument as a signed decimal integer. The
+ characters in the string must all be decimal digits, except
+ that the first character may be an ASCII minus sign '-'
+ ('\u002D') to indicate a negative value or an
+ ASCII plus sign '+' ('\u002B') to
+ indicate a positive value. The resulting integer value is
+ returned, exactly as if the argument and the radix 10 were
+ given as arguments to the parseInt(java.lang.String,
+ int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - a <code>String</code> containing the <code>int</code>
+             representation to be parsed</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the integer value represented by the argument in decimal.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - if the string does not contain a
+               parsable integer.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>valueOf</name>
+            <signature><![CDATA[public static Integer valueOf(String s,
+              int radix)
+                       throws NumberFormatException]]></signature>
+            <description><![CDATA[Returns an Integer object holding the value
+ extracted from the specified String when parsed
+ with the radix given by the second argument. The first argument
+ is interpreted as representing a signed integer in the radix
+ specified by the second argument, exactly as if the arguments
+ were given to the parseInt(java.lang.String, int)
+ method. The result is an Integer object that
+ represents the integer value specified by the string.
+
+ In other words, this method returns an Integer
+ object equal to the value of:
+
+ 
+  new Integer(Integer.parseInt(s, radix))
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the string to be parsed.</dd><dd><code>radix</code> - the radix to be used in interpreting <code>s</code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an <code>Integer</code> object holding the value
+             represented by the string argument in the specified
+             radix.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - if the <code>String</code>
+            does not contain a parsable <code>int</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>valueOf</name>
+            <signature><![CDATA[public static Integer valueOf(String s)
+                       throws NumberFormatException]]></signature>
+            <description><![CDATA[Returns an Integer object holding the
+ value of the specified String. The argument is
+ interpreted as representing a signed decimal integer, exactly
+ as if the argument were given to the parseInt(java.lang.String) method. The result is an
+ Integer object that represents the integer value
+ specified by the string.
+
+ In other words, this method returns an Integer
+ object equal to the value of:
+
+ 
+  new Integer(Integer.parseInt(s))
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the string to be parsed.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an <code>Integer</code> object holding the value
+             represented by the string argument.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - if the string cannot be parsed
+             as an integer.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>valueOf</name>
+            <signature><![CDATA[public static Integer valueOf(int i)]]></signature>
+            <description><![CDATA[Returns an Integer instance representing the specified
+ int value.  If a new Integer instance is not
+ required, this method should generally be used in preference to
+ the constructor Integer(int), as this method is likely
+ to yield significantly better space and time performance by
+ caching frequently requested values.
+
+ This method will always cache values in the range -128 to 127,
+ inclusive, and may cache other values outside of this range.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - an <code>int</code> value.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an <code>Integer</code> instance representing <code>i</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>byteValue</name>
+            <signature><![CDATA[public byte byteValue()]]></signature>
+            <description><![CDATA[Returns the value of this Integer as a
+ byte.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">byteValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>byte</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>shortValue</name>
+            <signature><![CDATA[public short shortValue()]]></signature>
+            <description><![CDATA[Returns the value of this Integer as a
+ short.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">shortValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>short</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>intValue</name>
+            <signature><![CDATA[public int intValue()]]></signature>
+            <description><![CDATA[Returns the value of this Integer as an
+ int.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">intValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>int</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>longValue</name>
+            <signature><![CDATA[public long longValue()]]></signature>
+            <description><![CDATA[Returns the value of this Integer as a
+ long.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">longValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>long</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>floatValue</name>
+            <signature><![CDATA[public float floatValue()]]></signature>
+            <description><![CDATA[Returns the value of this Integer as a
+ float.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">floatValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>float</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>doubleValue</name>
+            <signature><![CDATA[public double doubleValue()]]></signature>
+            <description><![CDATA[Returns the value of this Integer as a
+ double.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">doubleValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>double</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public String toString()]]></signature>
+            <description><![CDATA[Returns a String object representing this
+ Integer's value. The value is converted to signed
+ decimal representation and returned as a string, exactly as if
+ the integer value were given as an argument to the toString(int) method.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">toString</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a string representation of the value of this object in
+          base 10.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hashCode</name>
+            <signature><![CDATA[public int hashCode()]]></signature>
+            <description><![CDATA[Returns a hash code for this Integer.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a hash code value for this object, equal to the
+          primitive <code>int</code> value represented by this
+          <code>Integer</code> object.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.equals(java.lang.Object)</code></a>, 
+<a href="#"><code>System.identityHashCode(java.lang.Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[public boolean equals(Object obj)]]></signature>
+            <description><![CDATA[Compares this object to the specified object.  The result is
+ true if and only if the argument is not
+ null and is an Integer object that
+ contains the same int value as this object.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>obj</code> - the object to compare with.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the objects are the same;
+          <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.hashCode()</code></a>, 
+<a href="#"><code>HashMap</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getInteger</name>
+            <signature><![CDATA[public static Integer getInteger(String nm)]]></signature>
+            <description><![CDATA[Determines the integer value of the system property with the
+ specified name.
+
+ The first argument is treated as the name of a system property.
+ System properties are accessible through the
+ System.getProperty(java.lang.String) method. The
+ string value of this property is then interpreted as an integer
+ value and an Integer object representing this value is
+ returned. Details of possible numeric formats can be found with
+ the definition of getProperty.
+
+ If there is no property with the specified name, if the specified name
+ is empty or null, or if the property does not have
+ the correct numeric format, then null is returned.
+
+ In other words, this method returns an Integer
+ object equal to the value of:
+
+ 
+  getInteger(nm, null)
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>nm</code> - property name.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the <code>Integer</code> value of the property.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>System.getProperty(java.lang.String)</code></a>, 
+<a href="#"><code>System.getProperty(java.lang.String, java.lang.String)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getInteger</name>
+            <signature><![CDATA[public static Integer getInteger(String nm,
+                 int val)]]></signature>
+            <description><![CDATA[Determines the integer value of the system property with the
+ specified name.
+
+ The first argument is treated as the name of a system property.
+ System properties are accessible through the System.getProperty(java.lang.String) method. The
+ string value of this property is then interpreted as an integer
+ value and an Integer object representing this value is
+ returned. Details of possible numeric formats can be found with
+ the definition of getProperty.
+
+ The second argument is the default value. An Integer object
+ that represents the value of the second argument is returned if there
+ is no property of the specified name, if the property does not have
+ the correct numeric format, or if the specified name is empty or
+ null.
+
+ In other words, this method returns an Integer object
+ equal to the value of:
+
+ 
+  getInteger(nm, new Integer(val))
+ 
+
+ but in practice it may be implemented in a manner such as:
+
+ 
+ Integer result = getInteger(nm, null);
+ return (result == null) ? new Integer(val) : result;
+ 
+
+ to avoid the unnecessary allocation of an Integer
+ object when the default value is not needed.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>nm</code> - property name.</dd><dd><code>val</code> - default value.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the <code>Integer</code> value of the property.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>System.getProperty(java.lang.String)</code></a>, 
+<a href="#"><code>System.getProperty(java.lang.String, java.lang.String)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>getInteger</name>
+            <signature><![CDATA[public static Integer getInteger(String nm,
+                 Integer val)]]></signature>
+            <description><![CDATA[Returns the integer value of the system property with the
+ specified name.  The first argument is treated as the name of a
+ system property.  System properties are accessible through the
+ System.getProperty(java.lang.String) method.
+ The string value of this property is then interpreted as an
+ integer value, as per the Integer.decode method,
+ and an Integer object representing this value is
+ returned.
+
+ If the property value begins with the two ASCII characters
+         0x or the ASCII character #, not
+      followed by a minus sign, then the rest of it is parsed as a
+      hexadecimal integer exactly as by the method
+      valueOf(java.lang.String, int) with radix 16.
+ If the property value begins with the ASCII character
+     0 followed by another character, it is parsed as an
+     octal integer exactly as by the method
+     valueOf(java.lang.String, int) with radix 8.
+ Otherwise, the property value is parsed as a decimal integer
+ exactly as by the method valueOf(java.lang.String, int)
+ with radix 10.
+ 
+
+ The second argument is the default value. The default value is
+ returned if there is no property of the specified name, if the
+ property does not have the correct numeric format, or if the
+ specified name is empty or null.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>nm</code> - property name.</dd><dd><code>val</code> - default value.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the <code>Integer</code> value of the property.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>System.getProperty(java.lang.String)</code></a>, 
+<a href="#"><code>System.getProperty(java.lang.String, java.lang.String)</code></a>, 
+<a href="#"><code>decode(java.lang.String)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>decode</name>
+            <signature><![CDATA[public static Integer decode(String nm)
+                      throws NumberFormatException]]></signature>
+            <description><![CDATA[Decodes a String into an Integer.
+ Accepts decimal, hexadecimal, and octal numbers given
+ by the following grammar:
+
+ 
+ 
+ DecodableString:
+ Signopt DecimalNumeral
+ Signopt 0x HexDigits
+ Signopt 0X HexDigits
+ Signopt # HexDigits
+ Signopt 0 OctalDigits
+ 
+ Sign:
+ -
+ +
+ 
+ 
+
+ DecimalNumeral, HexDigits, and OctalDigits
+ are as defined in section 3.10.1 of
+ The Java™ Language Specification,
+ except that underscores are not accepted between digits.
+
+ The sequence of characters following an optional
+ sign and/or radix specifier ("0x", "0X",
+ "#", or leading zero) is parsed as by the Integer.parseInt method with the indicated radix (10, 16, or
+ 8).  This sequence of characters must represent a positive
+ value or a NumberFormatException will be thrown.  The
+ result is negated if first character of the specified String is the minus sign.  No whitespace characters are
+ permitted in the String.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>nm</code> - the <code>String</code> to decode.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an <code>Integer</code> object holding the <code>int</code>
+             value represented by <code>nm</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - if the <code>String</code> does not
+            contain a parsable integer.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>parseInt(java.lang.String, int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>compareTo</name>
+            <signature><![CDATA[public int compareTo(Integer anotherInteger)]]></signature>
+            <description><![CDATA[Compares two Integer objects numerically.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">compareTo</a></code> in interface <code><a href="#">Comparable</a><<a href="#">Integer</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>anotherInteger</code> - the <code>Integer</code> to be compared.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value <code>0</code> if this <code>Integer</code> is
+          equal to the argument <code>Integer</code>; a value less than
+          <code>0</code> if this <code>Integer</code> is numerically less
+          than the argument <code>Integer</code>; and a value greater
+          than <code>0</code> if this <code>Integer</code> is numerically
+           greater than the argument <code>Integer</code> (signed
+           comparison).</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>compare</name>
+            <signature><![CDATA[public static int compare(int x,
+          int y)]]></signature>
+            <description><![CDATA[Compares two int values numerically.
+ The value returned is identical to what would be returned by:
+ 
+    Integer.valueOf(x).compareTo(Integer.valueOf(y))
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - the first <code>int</code> to compare</dd><dd><code>y</code> - the second <code>int</code> to compare</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value <code>0</code> if <code>x == y</code>;
+         a value less than <code>0</code> if <code>x < y</code>; and
+         a value greater than <code>0</code> if <code>x > y</code></dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>highestOneBit</name>
+            <signature><![CDATA[public static int highestOneBit(int i)]]></signature>
+            <description><![CDATA[Returns an int value with at most a single one-bit, in the
+ position of the highest-order ("leftmost") one-bit in the specified
+ int value.  Returns zero if the specified value has no
+ one-bits in its two's complement binary representation, that is, if it
+ is equal to zero.<dl><dt><span class="strong">Returns:</span></dt><dd>an <code>int</code> value with a single one-bit, in the position
+     of the highest-order one-bit in the specified value, or zero if
+     the specified value is itself equal to zero.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lowestOneBit</name>
+            <signature><![CDATA[public static int lowestOneBit(int i)]]></signature>
+            <description><![CDATA[Returns an int value with at most a single one-bit, in the
+ position of the lowest-order ("rightmost") one-bit in the specified
+ int value.  Returns zero if the specified value has no
+ one-bits in its two's complement binary representation, that is, if it
+ is equal to zero.<dl><dt><span class="strong">Returns:</span></dt><dd>an <code>int</code> value with a single one-bit, in the position
+     of the lowest-order one-bit in the specified value, or zero if
+     the specified value is itself equal to zero.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>numberOfLeadingZeros</name>
+            <signature><![CDATA[public static int numberOfLeadingZeros(int i)]]></signature>
+            <description><![CDATA[Returns the number of zero bits preceding the highest-order
+ ("leftmost") one-bit in the two's complement binary representation
+ of the specified int value.  Returns 32 if the
+ specified value has no one-bits in its two's complement representation,
+ in other words if it is equal to zero.
+
+ Note that this method is closely related to the logarithm base 2.
+ For all positive int values x:
+ 
+ floor(log2(x)) = 31 - numberOfLeadingZeros(x)
+ ceil(log2(x)) = 32 - numberOfLeadingZeros(x - 1)
+ <dl><dt><span class="strong">Returns:</span></dt><dd>the number of zero bits preceding the highest-order
+     ("leftmost") one-bit in the two's complement binary representation
+     of the specified <code>int</code> value, or 32 if the value
+     is equal to zero.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>numberOfTrailingZeros</name>
+            <signature><![CDATA[public static int numberOfTrailingZeros(int i)]]></signature>
+            <description><![CDATA[Returns the number of zero bits following the lowest-order ("rightmost")
+ one-bit in the two's complement binary representation of the specified
+ int value.  Returns 32 if the specified value has no
+ one-bits in its two's complement representation, in other words if it is
+ equal to zero.<dl><dt><span class="strong">Returns:</span></dt><dd>the number of zero bits following the lowest-order ("rightmost")
+     one-bit in the two's complement binary representation of the
+     specified <code>int</code> value, or 32 if the value is equal
+     to zero.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>bitCount</name>
+            <signature><![CDATA[public static int bitCount(int i)]]></signature>
+            <description><![CDATA[Returns the number of one-bits in the two's complement binary
+ representation of the specified int value.  This function is
+ sometimes referred to as the population count.<dl><dt><span class="strong">Returns:</span></dt><dd>the number of one-bits in the two's complement binary
+     representation of the specified <code>int</code> value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>rotateLeft</name>
+            <signature><![CDATA[public static int rotateLeft(int i,
+             int distance)]]></signature>
+            <description><![CDATA[Returns the value obtained by rotating the two's complement binary
+ representation of the specified int value left by the
+ specified number of bits.  (Bits shifted out of the left hand, or
+ high-order, side reenter on the right, or low-order.)
+
+ Note that left rotation with a negative distance is equivalent to
+ right rotation: rotateLeft(val, -distance) == rotateRight(val,
+ distance).  Note also that rotation by any multiple of 32 is a
+ no-op, so all but the last five bits of the rotation distance can be
+ ignored, even if the distance is negative: rotateLeft(val,
+ distance) == rotateLeft(val, distance & 0x1F).<dl><dt><span class="strong">Returns:</span></dt><dd>the value obtained by rotating the two's complement binary
+     representation of the specified <code>int</code> value left by the
+     specified number of bits.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>rotateRight</name>
+            <signature><![CDATA[public static int rotateRight(int i,
+              int distance)]]></signature>
+            <description><![CDATA[Returns the value obtained by rotating the two's complement binary
+ representation of the specified int value right by the
+ specified number of bits.  (Bits shifted out of the right hand, or
+ low-order, side reenter on the left, or high-order.)
+
+ Note that right rotation with a negative distance is equivalent to
+ left rotation: rotateRight(val, -distance) == rotateLeft(val,
+ distance).  Note also that rotation by any multiple of 32 is a
+ no-op, so all but the last five bits of the rotation distance can be
+ ignored, even if the distance is negative: rotateRight(val,
+ distance) == rotateRight(val, distance & 0x1F).<dl><dt><span class="strong">Returns:</span></dt><dd>the value obtained by rotating the two's complement binary
+     representation of the specified <code>int</code> value right by the
+     specified number of bits.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>reverse</name>
+            <signature><![CDATA[public static int reverse(int i)]]></signature>
+            <description><![CDATA[Returns the value obtained by reversing the order of the bits in the
+ two's complement binary representation of the specified int
+ value.<dl><dt><span class="strong">Returns:</span></dt><dd>the value obtained by reversing order of the bits in the
+     specified <code>int</code> value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>signum</name>
+            <signature><![CDATA[public static int signum(int i)]]></signature>
+            <description><![CDATA[Returns the signum function of the specified int value.  (The
+ return value is -1 if the specified value is negative; 0 if the
+ specified value is zero; and 1 if the specified value is positive.)<dl><dt><span class="strong">Returns:</span></dt><dd>the signum function of the specified <code>int</code> value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>reverseBytes</name>
+            <signature><![CDATA[public static int reverseBytes(int i)]]></signature>
+            <description><![CDATA[Returns the value obtained by reversing the order of the bytes in the
+ two's complement representation of the specified int value.<dl><dt><span class="strong">Returns:</span></dt><dd>the value obtained by reversing the bytes in the specified
+     <code>int</code> value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

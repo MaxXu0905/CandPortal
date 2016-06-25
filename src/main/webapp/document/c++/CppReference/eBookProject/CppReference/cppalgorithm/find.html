@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/cppalgorithm/find.html -->
+<HTML><HEAD><TITLE>find</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="find.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/find.html">find</A> </DIV>
+      <DIV class=name-format>find </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator find( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+      <P>The find() algorithm looks for an element matching <EM>val</EM> between 
+      <EM>start</EM> and <EM>end</EM>. If an element matching <EM>val</EM> is 
+      found, the return value is an iterator that points to that element. 
+      Otherwise, the return value is an iterator that points to 
+<EM>end</EM>.</P>
+      <P>For example, the following code uses find() to search a vector of 
+      integers for the number 3:</P><PRE class=example-code> int num_to_find = 3;           
+
+ vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back(i);
+ }              
+
+ vector&lt;int&gt;::iterator result;
+ result = find( v1.begin(), v1.end(), num_to_find );            
+
+ if( result == v1.end() ) {
+   cout &lt;&lt; "Did not find any element matching " &lt;&lt; num_to_find &lt;&lt; endl;
+ }              
+
+ else {
+   cout &lt;&lt; "Found a matching element: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+      <P>In the next example, shown below, the find() function is used on an 
+      array of integers. This example shows how the C++ Algorithms can be used 
+      to manipulate arrays and pointers in the same manner that they manipulate 
+      containers and iterators:</P><PRE class=example-code> int nums[] = { 3, 1, 4, 1, 5, 9 };
+
+ int num_to_find = 5;
+ int start = 0;
+ int end = 2;
+ int* result = find( nums + start, nums + end, num_to_find );                
+
+ if( result == nums + end ) {
+   cout &lt;&lt; "Did not find any number matching " &lt;&lt; num_to_find &lt;&lt; endl;
+ } else {
+   cout &lt;&lt; "Found a matching number: " &lt;&lt; *result &lt;&lt; endl;
+ }              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/adjacent_find.html">adjacent_find</A><BR><A 
+      href="../cppalgorithm/find_end.html">find_end</A><BR><A 
+      href="../cppalgorithm/find_first_of.html">find_first_of</A><BR><A 
+      href="../cppalgorithm/find_if.html">find_if</A><BR><A 
+      href="../cppalgorithm/mismatch.html">mismatch</A><BR><A 
+      href="../cppalgorithm/search.html">search</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

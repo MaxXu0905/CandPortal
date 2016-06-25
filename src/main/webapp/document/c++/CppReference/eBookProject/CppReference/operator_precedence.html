@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.cppreference.com/operator_precedence.html -->
+<HTML><HEAD><TITLE>C++ Operator Precedence</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="operator_precedence.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="index.html">cppreference.com</A> &gt; 
+      C++ Operator Precedence </DIV>
+      <H3>C++ Operator Precedence</H3>
+      <P>The operators at the top of this list are evaluated first.</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Precedence</TH>
+          <TH class=code-table-th>Operator</TH>
+          <TH class=code-table-th>Description</TH>
+          <TH class=code-table-th>Example</TH>
+          <TH class=code-table-th>Associativity</TH></TR>
+        <TR>
+          <TD class=code-table-td>1</TD>
+          <TD class=code-table-td>()<BR>[]<BR>-&gt;<BR>.<BR>::<BR>++<BR>--</TD>
+          <TD class=code-table-td>Grouping operator<BR>Array access<BR>Member 
+            access from a pointer<BR>Member access from an object<BR>Scoping 
+            operator<BR>Post-increment<BR>Post-decrement</TD>
+          <TD class=code-table-td>(a + b) / 4;<BR>array[4] = 2;<BR>ptr-&gt;age 
+            = 34;<BR>obj.age = 34;<BR>Class::age = 2;<BR>for( i = 0; i &lt; 10; 
+            i++ ) ...<BR>for( i = 10; i &gt; 0; i-- ) ...</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>2</TD>
+          <TD 
+            class=code-table-td>!<BR>~<BR>++<BR>--<BR>-<BR>+<BR>*<BR>&amp;<BR>(type)<BR><A 
+            href="keywords/sizeof.html">sizeof</A></TD>
+          <TD class=code-table-td>Logical negation<BR>Bitwise 
+            complement<BR>Pre-increment<BR>Pre-decrement<BR>Unary minus<BR>Unary 
+            plus<BR>Dereference<BR>Address of<BR>Cast to a given type<BR>Return 
+            size in bytes</TD>
+          <TD class=code-table-td>if( !done ) ...<BR>flags = ~flags;<BR>for( i 
+            = 0; i &lt; 10; ++i ) ...<BR>for( i = 10; i &gt; 0; --i ) ...<BR>int 
+            i = -1;<BR>int i = +1;<BR>data = *ptr;<BR>address = &amp;obj;<BR>int 
+            i = (int) floatNum;<BR>int size = sizeof(floatNum);</TD>
+          <TD class=code-table-td>right to left</TD></TR>
+        <TR>
+          <TD class=code-table-td>3</TD>
+          <TD class=code-table-td>-&gt;*<BR>.*</TD>
+          <TD class=code-table-td>Member pointer selector<BR>Member pointer 
+            selector</TD>
+          <TD class=code-table-td>ptr-&gt;*var = 24;<BR>obj.*var = 24;</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>4</TD>
+          <TD class=code-table-td>*<BR>/<BR>%</TD>
+          <TD class=code-table-td>Multiplication<BR>Division<BR>Modulus</TD>
+          <TD class=code-table-td>int i = 2 * 4;<BR>float f = 10 / 3;<BR>int 
+            rem = 4 % 3;</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>5</TD>
+          <TD class=code-table-td>+<BR>-</TD>
+          <TD class=code-table-td>Addition<BR>Subtraction</TD>
+          <TD class=code-table-td>int i = 2 + 3;<BR>int i = 5 - 1;</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>6</TD>
+          <TD class=code-table-td>&lt;&lt;<BR>&gt;&gt;</TD>
+          <TD class=code-table-td>Bitwise shift left<BR>Bitwise shift right</TD>
+          <TD class=code-table-td>int flags = 33 &lt;&lt; 1;<BR>int flags = 33 
+            &gt;&gt; 1;</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>7</TD>
+          <TD class=code-table-td>&lt;<BR>&lt;=<BR>&gt;<BR>&gt;=</TD>
+          <TD class=code-table-td>Comparison less-than<BR>Comparison 
+            less-than-or-equal-to<BR>Comparison greater-than<BR>Comparison 
+            geater-than-or-equal-to</TD>
+          <TD class=code-table-td>if( i &lt; 42 ) ...<BR>if( i &lt;= 42 ) 
+            ...<BR>if( i &gt; 42 ) ...<BR>if( i &gt;= 42 ) ...</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>8</TD>
+          <TD class=code-table-td>==<BR>!=</TD>
+          <TD class=code-table-td>Comparison equal-to<BR>Comparison 
+            not-equal-to</TD>
+          <TD class=code-table-td>if( i == 42 ) ...<BR>if( i != 42 ) ...</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>9</TD>
+          <TD class=code-table-td>&amp;</TD>
+          <TD class=code-table-td>Bitwise AND</TD>
+          <TD class=code-table-td>flags = flags &amp; 42;</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>10</TD>
+          <TD class=code-table-td>^</TD>
+          <TD class=code-table-td>Bitwise exclusive OR</TD>
+          <TD class=code-table-td>flags = flags ^ 42;</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>11</TD>
+          <TD class=code-table-td>|</TD>
+          <TD class=code-table-td>Bitwise inclusive (normal) OR</TD>
+          <TD class=code-table-td>flags = flags | 42;</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>12</TD>
+          <TD class=code-table-td>&amp;&amp;</TD>
+          <TD class=code-table-td>Logical AND</TD>
+          <TD class=code-table-td>if( conditionA &amp;&amp; conditionB ) 
+...</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>13</TD>
+          <TD class=code-table-td>||</TD>
+          <TD class=code-table-td>Logical OR</TD>
+          <TD class=code-table-td>if( conditionA || conditionB ) ...</TD>
+          <TD class=code-table-td>left to right</TD></TR>
+        <TR>
+          <TD class=code-table-td>14</TD>
+          <TD class=code-table-td>? :</TD>
+          <TD class=code-table-td>Ternary conditional (if-then-else)</TD>
+          <TD class=code-table-td>int i = (a &gt; b) ? a : b;</TD>
+          <TD class=code-table-td>right to left</TD></TR>
+        <TR>
+          <TD class=code-table-td>15</TD>
+          <TD 
+            class=code-table-td>=<BR>+=<BR>-=<BR>*=<BR>/=<BR>%=<BR>&amp;=<BR>^=<BR>|=<BR>&lt;&lt;=<BR>&gt;&gt;=</TD>
+          <TD class=code-table-td>Assignment operator<BR>Increment and 
+            assign<BR>Decrement and assign<BR>Multiply and assign<BR>Divide and 
+            assign<BR>Modulo and assign<BR>Bitwise AND and assign<BR>Bitwise 
+            exclusive OR and assign<BR>Bitwise inclusive (normal) OR and 
+            assign<BR>Bitwise shift left and assign<BR>Bitwise shift right and 
+            assign</TD>
+          <TD class=code-table-td>int a = b;<BR>a += 3;<BR>b -= 4;<BR>a *= 
+            5;<BR>a /= 2;<BR>a %= 3;<BR>flags &amp;= new_flags;<BR>flags ^= 
+            new_flags;<BR>flags |= new_flags;<BR>flags &lt;&lt;= 2;<BR>flags 
+            &gt;&gt;= 2;</TD>
+          <TD class=code-table-td>right to left</TD></TR>
+        <TR>
+          <TD class=code-table-td>16</TD>
+          <TD class=code-table-td>,</TD>
+          <TD class=code-table-td>Sequential evaluation operator</TD>
+          <TD class=code-table-td>for( i = 0, j = 0; i &lt; 10; i++, j++ ) 
+          ...</TD>
+          <TD class=code-table-td>left to right</TD></TR></TBODY></TABLE>
+      <P>It is important to note that <STRONG>there is no specified 
+      precedence</STRONG> for the operation of changing a variable into a value. 
+      For example, consider the following code:</P><PRE class=example-code>  float x, result;
+  x = 1;
+  result = x / ++x;
+</PRE>
+      <P>The value of <IT>result</IT> is not guaranteed to be consistent across 
+      different compilers, because it is not clear whether the computer should 
+      change the variable <IT>x</IT> (the one that occurs on the left side of 
+      the division operator) before using it. Depending on which compiler you 
+      are using, the variable <IT>result</IT> can either be <STRONG>1.0</STRONG> 
+      or <STRONG>0.5</STRONG>. The bottom line is that you <STRONG>should not 
+      use the same variable multiple times in a single expression when using 
+      operators with side effects.</STRONG></P></DIV></TD>
+    <TD vAlign=top width=120>
+      <SCRIPT type=text/javascript><!--
+  google_ad_client = "pub-6243170425937584";
+  google_ad_width = 120;
+  google_ad_height = 600;
+  google_ad_format = "120x600_as";
+  google_ad_type = "text";
+  google_ad_channel ="";
+  google_color_border = "EEEEFF";
+  google_color_bg = "FFFFFF";
+  google_color_link = "000000";
+  google_color_url = "336699";
+  google_color_text = "333333";
+  //--></SCRIPT>
+
+      <SCRIPT src="operator_precedence.files/show_ads.js" 
+      type=text/javascript>
+</SCRIPT>
+    </TD></TR></TBODY></TABLE></BODY></HTML>

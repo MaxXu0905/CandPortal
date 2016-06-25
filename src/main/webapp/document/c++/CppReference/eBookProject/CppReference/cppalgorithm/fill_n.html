@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.cppreference.com/cppalgorithm/fill_n.html -->
+<HTML><HEAD><TITLE>fill_n</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="fill_n.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/fill_n.html">fill_n</A> 
+      </DIV>
+      <DIV class=name-format>fill_n </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  #include &lt;algorithm&gt;
+  iterator fill_n( iterator start, size_t n, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+      <P>The fill_n() function is similar to (C++ I/O) <A 
+      href="../cppio/fill.html">fill</A>(). Instead of 
+      assigning <EM>val</EM> to a range of elements, however, fill_n() assigns 
+      <EM>val</EM> to the first <EM>n</EM> elements starting at 
+      <EM>start</EM>.</P>
+      <P>For example, the following code uses fill_n() to assign -1 to the first 
+      half of a vector of integers:</P><PRE class=example-code> vector&lt;int&gt; v1;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v1.push_back( i );
+ }              
+
+ cout &lt;&lt; "Before, v1 is: ";
+ for( unsigned int i = 0; i &lt; v1.size(); i++ ) {
+   cout &lt;&lt; v1[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+
+ fill_n( v1.begin(), v1.size()/2, -1 );         
+
+ cout &lt;&lt; "After, v1 is: ";
+ for( unsigned int i = 0; i &lt; v1.size(); i++ ) {
+   cout &lt;&lt; v1[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <P>When run, this code displays:</P><PRE class=example-code> Before, v1 is: 0 1 2 3 4 5 6 7 8 9
+ After, v1 is: -1 -1 -1 -1 -1 5 6 7 8 9         
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/fill.html">fill</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

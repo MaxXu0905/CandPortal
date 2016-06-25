@@ -1,0 +1,972 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.cppreference.com/stdio/all.html -->
+<HTML><HEAD><TITLE>Standard C I/O</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C I/O</A> 
+      </DIV>
+      <DIV class=name-format>clearerr </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  void clearerr( FILE *stream );
+</PRE>
+      <P>The clearerr function resets the error flags and <STRONG>EOF</STRONG> 
+      indicator for the given <EM>stream</EM>. When an error occurs, you can use 
+      <A href="perror.html">perror</A>() to 
+      figure out which error actually occurred.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="feof.html">feof</A><BR><A 
+      href="ferror.html">ferror</A><BR><A 
+      href="perror.html">perror</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>fclose </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fclose( FILE *stream );  
+</PRE>
+<P>The function fclose() closes the given file stream, deallocating any buffers 
+associated with that stream. fclose() returns 0 upon success, and 
+<STRONG>EOF</STRONG> otherwise.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fflush.html">fflush</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="freopen.html">freopen</A><BR><A 
+href="setbuf.html">setbuf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>feof </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int feof( FILE *stream );  
+</PRE>
+<P>The function feof() returns a nonzero value if the end of the given file 
+<EM>stream</EM> has been reached.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="clearerr.html">clearerr</A><BR><A 
+href="ferror.html">ferror</A><BR><A 
+href="getc.html">getc</A><BR><A 
+href="perror.html">perror</A><BR><A 
+href="putc.html">putc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ferror </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int ferror( FILE *stream );
+</PRE>
+<P>The ferror() function looks for errors with <EM>stream</EM>, returning zero 
+if no errors have occured, and non-zero if there is an error. In case of an 
+error, use <A href="perror.html">perror</A>() 
+to determine which error has occured.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="clearerr.html">clearerr</A><BR><A 
+href="feof.html">feof</A><BR><A 
+href="perror.html">perror</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fflush </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fflush( FILE *stream );
+</PRE>
+<P>If the given file <EM>stream</EM> is an output stream, then fflush() causes 
+the output buffer to be written to the file. If the given <EM>stream</EM> is of 
+the input type, then fflush() causes the input buffer to be cleared. fflush() is 
+useful when debugging, if a program segfaults before it has a chance to write 
+output to the screen. Calling fflush( <STRONG>STDOUT</STRONG> ) directly after 
+debugging output will ensure that your output is displayed at the correct 
+time.</P><PRE class=example-code>   printf( "Before first call\n" );
+   fflush( <STRONG>STDOUT</STRONG> );
+   shady_function();
+   printf( "Before second call\n" );
+   fflush( <STRONG>STDOUT</STRONG> );
+   dangerous_dereference();             
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fclose.html">fclose</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="fread.html">fread</A><BR><A 
+href="fwrite.html">fwrite</A><BR><A 
+href="getc.html">getc</A><BR><A 
+href="putc.html">putc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fgetc </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fgetc( FILE *stream );
+</PRE>
+<P>The fgetc() function returns the next character from <EM>stream</EM>, or 
+<STRONG>EOF</STRONG> if the end of file is reached or if there is an error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fopen.html">fopen</A><BR><A 
+href="fputc.html">fputc</A><BR><A 
+href="fread.html">fread</A><BR><A 
+href="fwrite.html">fwrite</A><BR><A 
+href="getc.html">getc</A><BR><A 
+href="getchar.html">getchar</A><BR><A 
+href="gets.html">gets</A><BR><A 
+href="putc.html">putc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fgetpos </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fgetpos( FILE *stream, fpos_t *position );
+</PRE>
+<P>The fgetpos() function stores the file position indicator of the given file 
+<EM>stream</EM> in the given <EM>position</EM> variable. The position variable 
+is of type fpos_t (which is defined in stdio.h) and is an object that can hold 
+every possible position in a FILE. fgetpos() returns zero upon success, and a 
+non-zero value upon failure.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fseek.html">fseek</A><BR><A 
+href="fsetpos.html">fsetpos</A><BR><A 
+href="ftell.html">ftell</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fgets </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  char *fgets( char *str, int num, FILE *stream );
+</PRE>
+<P>The function fgets() reads up to <EM>num</EM> - 1 characters from the given 
+file <EM>stream</EM> and dumps them into <EM>str</EM>. The string that fgets() 
+produces is always <STRONG>NULL</STRONG>-terminated. fgets() will stop when it 
+reaches the end of a line, in which case <EM>str</EM> will contain that newline 
+character. Otherwise, fgets() will stop when it reaches <EM>num</EM> - 1 
+characters or encounters the <STRONG>EOF</STRONG> character. fgets() returns 
+<EM>str</EM> on success, and <STRONG>NULL</STRONG> on an error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fputs.html">fputs</A><BR><A 
+href="fscanf.html">fscanf</A><BR><A 
+href="gets.html">gets</A><BR><A 
+href="scanf.html">scanf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fopen </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  FILE *fopen( const char *fname, const char *mode );
+</PRE>
+<P>The fopen() function opens a file indicated by <EM>fname</EM> and returns a 
+stream associated with that file. If there is an error, fopen() returns 
+<STRONG>NULL</STRONG>. <EM>mode</EM> is used to determine how the file will be 
+treated (i.e. for input, output, etc)</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Mode</TH>
+    <TH class=code-table-th>Meaning</TH></TR>
+  <TR>
+    <TD class=code-table-td>"r"</TD>
+    <TD class=code-table-td>Open a text file for reading</TD></TR>
+  <TR>
+    <TD class=code-table-td>"w"</TD>
+    <TD class=code-table-td>Create a text file for writing</TD></TR>
+  <TR>
+    <TD class=code-table-td>"a"</TD>
+    <TD class=code-table-td>Append to a text file</TD></TR>
+  <TR>
+    <TD class=code-table-td>"rb"</TD>
+    <TD class=code-table-td>Open a binary file for reading</TD></TR>
+  <TR>
+    <TD class=code-table-td>"wb"</TD>
+    <TD class=code-table-td>Create a binary file for writing</TD></TR>
+  <TR>
+    <TD class=code-table-td>"ab"</TD>
+    <TD class=code-table-td>Append to a binary file</TD></TR>
+  <TR>
+    <TD class=code-table-td>"r+"</TD>
+    <TD class=code-table-td>Open a text file for read/write</TD></TR>
+  <TR>
+    <TD class=code-table-td>"w+"</TD>
+    <TD class=code-table-td>Create a text file for read/write</TD></TR>
+  <TR>
+    <TD class=code-table-td>"a+"</TD>
+    <TD class=code-table-td>Open a text file for read/write</TD></TR>
+  <TR>
+    <TD class=code-table-td>"rb+"</TD>
+    <TD class=code-table-td>Open a binary file for read/write</TD></TR>
+  <TR>
+    <TD class=code-table-td>"wb+"</TD>
+    <TD class=code-table-td>Create a binary file for read/write</TD></TR>
+  <TR>
+    <TD class=code-table-td>"ab+"</TD>
+    <TD class=code-table-td>Open a binary file for 
+read/write</TD></TR></TBODY></TABLE>
+<P>An example:</P><PRE class=example-code>   int ch;
+   FILE *input = fopen( "stuff", "r" );
+   ch = getc( input );          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fclose.html">fclose</A><BR><A 
+href="fflush.html">fflush</A><BR><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fputc.html">fputc</A><BR><A 
+href="fread.html">fread</A><BR><A 
+href="freopen.html">freopen</A><BR><A 
+href="fseek.html">fseek</A><BR><A 
+href="fwrite.html">fwrite</A><BR><A 
+href="getc.html">getc</A><BR><A 
+href="getchar.html">getchar</A><BR><A 
+href="setbuf.html">setbuf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fprintf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fprintf( FILE *stream, const char *format, ... );
+</PRE>
+<P>The fprintf() function sends information (the arguments) according to the 
+specified <EM>format</EM> to the file indicated by <EM>stream</EM>. fprintf() 
+works just like <A 
+href="printf.html">printf</A>() as far as the 
+format goes. The return value of fprintf() is the number of characters 
+outputted, or a negative number if an error occurs. An example:</P><PRE class=example-code>   char name[20] = "Mary";
+   FILE *out;
+   out = fopen( "output.txt", "w" );
+   if( out != <STRONG>NULL</STRONG> )
+     fprintf( out, "Hello %s\n", name );              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fputc.html">fputc</A><BR><A 
+href="fputs.html">fputs</A><BR><A 
+href="fscanf.html">fscanf</A><BR><A 
+href="printf.html">printf</A><BR><A 
+href="sprintf.html">sprintf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fputc </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fputc( int ch, FILE *stream );
+</PRE>
+<P>The function fputc() writes the given character <EM>ch</EM> to the given 
+output <EM>stream</EM>. The return value is the character, unless there is an 
+error, in which case the return value is <STRONG>EOF</STRONG>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="fprintf.html">fprintf</A><BR><A 
+href="fread.html">fread</A><BR><A 
+href="fwrite.html">fwrite</A><BR><A 
+href="getc.html">getc</A><BR><A 
+href="getchar.html">getchar</A><BR><A 
+href="putc.html">putc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fputs </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fputs( const char *str, FILE *stream );
+</PRE>
+<P>The fputs() function writes an array of characters pointed to by <EM>str</EM> 
+to the given output <EM>stream</EM>. The return value is non-negative on 
+success, and <STRONG>EOF</STRONG> on failure.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgets.html">fgets</A><BR><A 
+href="fprintf.html">fprintf</A><BR><A 
+href="fscanf.html">fscanf</A><BR><A 
+href="gets.html">gets</A><BR><A 
+href="puts.html">puts</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fread </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fread( void *buffer, size_t size, size_t num, FILE *stream );
+</PRE>
+<P>The function fread() reads <EM>num</EM> number of objects (where each object 
+is <EM>size</EM> bytes) and places them into the array pointed to by buffer. The 
+data comes from the given input <EM>stream</EM>. The return value of the 
+function is the number of things read. You can use <A 
+href="feof.html">feof</A>() or <A 
+href="ferror.html">ferror</A>() to figure out 
+if an error occurs.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fflush.html">fflush</A><BR><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="fputc.html">fputc</A><BR><A 
+href="fscanf.html">fscanf</A><BR><A 
+href="fwrite.html">fwrite</A><BR><A 
+href="getc.html">getc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>freopen </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  FILE *freopen( const char *fname, const char *mode, FILE *stream );
+</PRE>
+<P>The freopen() function is used to reassign an existing <EM>stream</EM> to a 
+different file and mode. After a call to this function, the given file 
+<EM>stream</EM> will refer to <EM>fname</EM> with access given by <EM>mode</EM>. 
+The return value of freopen() is the new stream, or <STRONG>NULL</STRONG> if 
+there is an error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fclose.html">fclose</A><BR><A 
+href="fopen.html">fopen</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fscanf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fscanf( FILE *stream, const char *format, ... );
+</PRE>
+<P>The function fscanf() reads data from the given file <EM>stream</EM> in a 
+manner exactly like scanf(). The return value of fscanf() is the number of 
+variables that are actually assigned values, or <STRONG>EOF</STRONG> if no 
+assignments could be made.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgets.html">fgets</A><BR><A 
+href="fprintf.html">fprintf</A><BR><A 
+href="fputs.html">fputs</A><BR><A 
+href="fread.html">fread</A><BR><A 
+href="fwrite.html">fwrite</A><BR><A 
+href="scanf.html">scanf</A><BR><A 
+href="sscanf.html">sscanf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fseek </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fseek( FILE *stream, long offset, int origin );
+</PRE>
+<P>The function fseek() sets the file position data for the given 
+<EM>stream</EM>. The origin value should have one of the following values 
+(defined in stdio.h):</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Name</TH>
+    <TH class=code-table-th>Explanation</TH></TR>
+  <TR>
+    <TD class=code-table-td>SEEK_SET</TD>
+    <TD class=code-table-td>Seek from the start of the file</TD></TR>
+  <TR>
+    <TD class=code-table-td>SEEK_CUR</TD>
+    <TD class=code-table-td>Seek from the current location</TD></TR>
+  <TR>
+    <TD class=code-table-td>SEEK_END</TD>
+    <TD class=code-table-td>Seek from the end of the file</TD></TR></TBODY></TABLE>
+<P>fseek() returns zero upon success, non-zero on failure. You can use fseek() 
+to move beyond a file, but not before the beginning. Using fseek() clears the 
+<STRONG>EOF</STRONG> flag associated with that stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgetpos.html">fgetpos</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="fsetpos.html">fsetpos</A><BR><A 
+href="ftell.html">ftell</A><BR><A 
+href="rewind.html">rewind</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fsetpos </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fsetpos( FILE *stream, const fpos_t *position );
+</PRE>
+<P>The fsetpos() function moves the file position indicator for the given 
+<EM>stream</EM> to a location specified by the <EM>position</EM> object. fpos_t 
+is defined in stdio.h. The return value for fsetpos() is zero upon success, 
+non-zero on failure.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgetpos.html">fgetpos</A><BR><A 
+href="fseek.html">fseek</A><BR><A 
+href="ftell.html">ftell</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ftell </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  long ftell( FILE *stream );
+</PRE>
+<P>The ftell() function returns the current file position for <EM>stream</EM>, 
+or -1 if an error occurs.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgetpos.html">fgetpos</A><BR><A 
+href="fseek.html">fseek</A><BR><A 
+href="fsetpos.html">fsetpos</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fwrite </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int fwrite( const void *buffer, size_t size, size_t count, FILE *stream );
+</PRE>
+<P>The fwrite() function writes, from the array <EM>buffer</EM>, <EM>count</EM> 
+objects of size <EM>size</EM> to <EM>stream</EM>. The return value is the number 
+of objects written.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fflush.html">fflush</A><BR><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="fputc.html">fputc</A><BR><A 
+href="fread.html">fread</A><BR><A 
+href="fscanf.html">fscanf</A><BR><A 
+href="getc.html">getc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>getc </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int getc( FILE *stream );
+</PRE>
+<P>The getc() function returns the next character from <EM>stream</EM>, or 
+<STRONG>EOF</STRONG> if the end of file is reached. getc() is identical to <A 
+href="fgetc.html">fgetc</A>(). For 
+example:</P><PRE class=example-code>   int ch;
+   FILE *input = fopen( "stuff", "r" );             
+
+   ch = getc( input );
+   while( ch != <STRONG>EOF</STRONG> ) {
+     printf( "%c", ch );
+     ch = getc( input );
+   }            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="feof.html">feof</A><BR><A 
+href="fflush.html">fflush</A><BR><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="fputc.html">fputc</A><BR><A 
+href="fread.html">fread</A><BR><A 
+href="fwrite.html">fwrite</A><BR><A 
+href="putc.html">putc</A><BR><A 
+href="ungetc.html">ungetc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>getchar </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int getchar( void );
+</PRE>
+<P>The getchar() function returns the next character from 
+<STRONG>STDIN</STRONG>, or <STRONG>EOF</STRONG> if the end of file is 
+reached.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="fputc.html">fputc</A><BR><A 
+href="putc.html">putc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>gets </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  char *gets( char *str );
+</PRE>
+<P>The gets() function reads characters from <STRONG>STDIN</STRONG> and loads 
+them into <EM>str</EM>, until a newline or <STRONG>EOF</STRONG> is reached. The 
+newline character is translated into a null termination. The return value of 
+gets() is the read-in string, or <STRONG>NULL</STRONG> if there is an error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fgets.html">fgets</A><BR><A 
+href="fputs.html">fputs</A><BR><A 
+href="puts.html">puts</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>perror </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  void perror( const char *str );
+</PRE>
+<P>The perror() function prints <EM>str</EM> and an implementation-defined error 
+message corresponding to the global variable errno.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="clearerr.html">clearerr</A><BR><A 
+href="feof.html">feof</A><BR><A 
+href="ferror.html">ferror</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>printf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int printf( const char *format, ... );
+</PRE>
+<P>The printf() function prints output to <STRONG>STDOUT</STRONG>, according to 
+<EM>format</EM> and other arguments passed to printf(). The string 
+<EM>format</EM> consists of two types of items - characters that will be printed 
+to the screen, and format commands that define how the other arguments to 
+printf() are displayed. Basically, you specify a format string that has text in 
+it, as well as "special" characters that map to the other arguments of printf(). 
+For example, this code</P><PRE class=example-code>   char name[20] = "Bob";
+   int age = 21;
+   printf( "Hello %s, you are %d years old\n", name, age );           
+</PRE>
+<P>displays the following output:</P><PRE class=example-code>   Hello Bob, you are 21 years old              
+</PRE>
+<P>The %s means, "insert the first argument, a string, right here." The %d 
+indicates that the second argument (an integer) should be placed there. There 
+are different %-codes for different variable types, as well as options to limit 
+the length of the variables and whatnot.</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Code</TH>
+    <TH class=code-table-th>Format</TH></TR>
+  <TR>
+    <TD class=code-table-td>%c</TD>
+    <TD class=code-table-td>character</TD></TR>
+  <TR>
+    <TD class=code-table-td>%d</TD>
+    <TD class=code-table-td>signed integers</TD></TR>
+  <TR>
+    <TD class=code-table-td>%i</TD>
+    <TD class=code-table-td>signed integers</TD></TR>
+  <TR>
+    <TD class=code-table-td>%e</TD>
+    <TD class=code-table-td>scientific notation, with a lowercase "e"</TD></TR>
+  <TR>
+    <TD class=code-table-td>%E</TD>
+    <TD class=code-table-td>scientific notation, with a uppercase "E"</TD></TR>
+  <TR>
+    <TD class=code-table-td>%f</TD>
+    <TD class=code-table-td>floating point</TD></TR>
+  <TR>
+    <TD class=code-table-td>%g</TD>
+    <TD class=code-table-td>use %e or %f, whichever is shorter</TD></TR>
+  <TR>
+    <TD class=code-table-td>%G</TD>
+    <TD class=code-table-td>use %E or %f, whichever is shorter</TD></TR>
+  <TR>
+    <TD class=code-table-td>%o</TD>
+    <TD class=code-table-td>octal</TD></TR>
+  <TR>
+    <TD class=code-table-td>%s</TD>
+    <TD class=code-table-td>a string of characters</TD></TR>
+  <TR>
+    <TD class=code-table-td>%u</TD>
+    <TD class=code-table-td>unsigned integer</TD></TR>
+  <TR>
+    <TD class=code-table-td>%x</TD>
+    <TD class=code-table-td>unsigned hexadecimal, with lowercase letters</TD></TR>
+  <TR>
+    <TD class=code-table-td>%X</TD>
+    <TD class=code-table-td>unsigned hexadecimal, with uppercase letters</TD></TR>
+  <TR>
+    <TD class=code-table-td>%p</TD>
+    <TD class=code-table-td>a pointer</TD></TR>
+  <TR>
+    <TD class=code-table-td>%n</TD>
+    <TD class=code-table-td>the argument shall be a pointer to an integer into 
+      which is placed the number of characters written so far</TD></TR>
+  <TR>
+    <TD class=code-table-td>%%</TD>
+    <TD class=code-table-td>a '%' sign</TD></TR></TBODY></TABLE>
+<P>An integer placed between a % sign and the format command acts as a minimum 
+field width specifier, and pads the output with spaces or zeros to make it long 
+enough. If you want to pad with zeros, place a zero before the minimum field 
+width specifier:</P><PRE class=example-code>   %012d                
+</PRE>
+<P>You can also include a precision modifier, in the form of a .N where N is 
+some number, before the format command:</P><PRE class=example-code>   %012.4d              
+</PRE>
+<P>The precision modifier has different meanings depending on the format command 
+being used:</P>
+<UL>
+  <LI>With %e, %E, and %f, the precision modifier lets you specify the number of 
+  decimal places desired. For example, %12.6f will display a floating number at 
+  least 12 digits wide, with six decimal places. 
+  <LI>With %g and %G, the precision modifier determines the maximum number of 
+  significant digits displayed. 
+  <LI>With %s, the precision modifer simply acts as a maximumfield length, to 
+  complement the minimum field length that precedes the period. </LI></UL>
+<P>All of printf()'s output is right-justified, unless you place a minus sign 
+right after the % sign. For example,</P><PRE class=example-code>   %-12.4f              
+</PRE>
+<P>will display a floating point number with a minimum of 12 characters, 4 
+decimal places, and left justified. You may modify the %d, %i, %o, %u, and %x 
+type specifiers with the letter l and the letter h to specify long and short <A 
+href="../data_types.html">data types</A> (e.g. %hd 
+means a short integer). The %e, %f, and %g type specifiers can have the letter l 
+before them to indicate that a double follows. The %g, %f, and %e type 
+specifiers can be preceded with the character '#' to ensure that the decimal 
+point will be present, even if there are no decimal digits. The use of the '#' 
+character with the %x type specifier indicates that the hexidecimal number 
+should be printed with the '0x' prefix. The use of the '#' character with the %o 
+type specifier indicates that the octal value should be displayed with a 0 
+prefix.</P>
+<P>You can also include <A 
+href="../escape_sequences.html">constant escape 
+sequences</A> in the output string.</P>
+<P>The return value of printf() is the number of characters printed, or a 
+negative number if an error occurred.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fprintf.html">fprintf</A><BR><A 
+href="puts.html">puts</A><BR><A 
+href="scanf.html">scanf</A><BR><A 
+href="sprintf.html">sprintf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>putc </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int putc( int ch, FILE *stream );
+</PRE>
+<P>The putc() function writes the character <EM>ch</EM> to <EM>stream</EM>. The 
+return value is the character written, or <STRONG>EOF</STRONG> if there is an 
+error. For example:</P><PRE class=example-code>   int ch;
+   FILE *input, *output;
+   input = fopen( "tmp.c", "r" );
+   output = fopen( "tmpCopy.c", "w" );
+   ch = getc( input );
+   while( ch != <STRONG>EOF</STRONG> ) {
+     putc( ch, output );
+     ch = getc( input );
+   }
+   fclose( input );
+   fclose( output );            
+</PRE>
+<P>generates a copy of the file tmp.c called tmpCopy.c.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="feof.html">feof</A><BR><A 
+href="fflush.html">fflush</A><BR><A 
+href="fgetc.html">fgetc</A><BR><A 
+href="fputc.html">fputc</A><BR><A 
+href="getc.html">getc</A><BR><A 
+href="getchar.html">getchar</A><BR><A 
+href="putchar.html">putchar</A><BR><A 
+href="puts.html">puts</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>putchar </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int putchar( int ch );
+</PRE>
+<P>The putchar() function writes <EM>ch</EM> to <STRONG>STDOUT</STRONG>. The 
+code</P><PRE class=example-code>   putchar( ch );               
+</PRE>
+<P>is the same as</P><PRE class=example-code>   putc( ch, <STRONG>STDOUT</STRONG> );         
+</PRE>
+<P>The return value of putchar() is the written character, or 
+<STRONG>EOF</STRONG> if there is an error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="putc.html">putc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>puts </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int puts( char *str );
+</PRE>
+<P>The function puts() writes <EM>str</EM> to <STRONG>STDOUT</STRONG>. puts() 
+returns non-negative on success, or <STRONG>EOF</STRONG> on failure.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fputs.html">fputs</A><BR><A 
+href="gets.html">gets</A><BR><A 
+href="printf.html">printf</A><BR><A 
+href="putc.html">putc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>remove </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int remove( const char *fname );
+</PRE>
+<P>The remove() function erases the file specified by <EM>fname</EM>. The return 
+value of remove() is zero upon success, and non-zero if there is an error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="rename.html">rename</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rename </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int rename( const char *oldfname, const char *newfname );
+</PRE>
+<P>The function rename() changes the name of the file <EM>oldfname</EM> to 
+<EM>newfname</EM>. The return value of rename() is zero upon success, non-zero 
+on error.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="remove.html">remove</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rewind </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  void rewind( FILE *stream );
+</PRE>
+<P>The function rewind() moves the file position indicator to the beginning of 
+the specified <EM>stream</EM>, also clearing the error and <STRONG>EOF</STRONG> 
+flags associated with that stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fseek.html">fseek</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>scanf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int scanf( const char *format, ... );
+</PRE>
+<P>The scanf() function reads input from <STRONG>STDIN</STRONG>, according to 
+the given <EM>format</EM>, and stores the data in the other arguments. It works 
+a lot like <A href="printf.html">printf</A>(). 
+The <EM>format</EM> string consists of control characters, whitespace 
+characters, and non-whitespace characters. The control characters are preceded 
+by a % sign, and are as follows:</P>
+<TABLE class=code-table>
+  <TBODY>
+  <TR>
+    <TH class=code-table-th>Control Character</TH>
+    <TH class=code-table-th>Explanation</TH></TR>
+  <TR>
+    <TD class=code-table-td>%c</TD>
+    <TD class=code-table-td>a single character</TD></TR>
+  <TR>
+    <TD class=code-table-td>%d</TD>
+    <TD class=code-table-td>a decimal integer</TD></TR>
+  <TR>
+    <TD class=code-table-td>%i</TD>
+    <TD class=code-table-td>an integer</TD></TR>
+  <TR>
+    <TD class=code-table-td>%e, %f, %g</TD>
+    <TD class=code-table-td>a floating-point number</TD></TR>
+  <TR>
+    <TD class=code-table-td>%o</TD>
+    <TD class=code-table-td>an octal number</TD></TR>
+  <TR>
+    <TD class=code-table-td>%s</TD>
+    <TD class=code-table-td>a string</TD></TR>
+  <TR>
+    <TD class=code-table-td>%x</TD>
+    <TD class=code-table-td>a hexadecimal number</TD></TR>
+  <TR>
+    <TD class=code-table-td>%p</TD>
+    <TD class=code-table-td>a pointer</TD></TR>
+  <TR>
+    <TD class=code-table-td>%n</TD>
+    <TD class=code-table-td>an integer equal to the number of characters read 
+      so far</TD></TR>
+  <TR>
+    <TD class=code-table-td>%u</TD>
+    <TD class=code-table-td>an unsigned integer</TD></TR>
+  <TR>
+    <TD class=code-table-td>%[]</TD>
+    <TD class=code-table-td>a set of characters</TD></TR>
+  <TR>
+    <TD class=code-table-td>%% a percent sign</TD></TR></TBODY></TABLE>
+<P>scanf() reads the input, matching the characters from format. When a control 
+character is read, it puts the value in the next variable. Whitespace (tabs, 
+spaces, etc) are skipped. Non-whitespace characters are matched to the input, 
+then discarded. If a number comes between the % sign and the control character, 
+then only that many characters will be converted into the variable. If scanf() 
+encounters a set of characters, denoted by the %[] control character, then any 
+characters found within the brackets are read into the variable. The return 
+value of scanf() is the number of variables that were successfully assigned 
+values, or <STRONG>EOF</STRONG> if there is an error.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>This code snippet repeatedly uses scanf() to read integers and floats from 
+the user. Note that the variable arguments to scanf() are passed in by 
+reference, as denoted by the ampersand (&amp;) preceding each variable:</P><PRE class=example-code> int i;
+ float f;               
+
+ while( 1 ) {
+   printf( "Enter an integer: " );
+   scanf( "%d", &amp;i );             
+
+   printf( "Enter a float: " );
+   scanf( "%f", &amp;f );             
+
+   printf( "You entered %d and then %f\n", i, f );
+ }              
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fgets.html">fgets</A><BR><A 
+href="fscanf.html">fscanf</A><BR><A 
+href="printf.html">printf</A><BR><A 
+href="sscanf.html">sscanf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>setbuf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  void setbuf( FILE *stream, char *buffer );
+</PRE>
+<P>The setbuf() function sets <EM>stream</EM> to use <EM>buffer</EM>, or, if 
+<EM>buffer</EM> is null, turns off buffering. If a non-standard buffer size is 
+used, it should be BUFSIZ characters long.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fclose.html">fclose</A><BR><A 
+href="fopen.html">fopen</A><BR><A 
+href="setvbuf.html">setvbuf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>setvbuf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int setvbuf( FILE *stream, char *buffer, int mode, size_t size );
+</PRE>
+<P>The function setvbuf() sets the buffer for <EM>stream</EM> to be 
+<EM>buffer</EM>, with a size of <EM>size</EM>. <EM>mode</EM> can be:</P>
+<UL>
+  <LI>_IOFBF, which indicates full buffering 
+  <LI>_IOLBF, which means line buffering 
+  <LI>_IONBF, which means no buffering </LI></UL>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="setbuf.html">setbuf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sprintf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int sprintf( char *buffer, const char *format, ... );
+</PRE>
+<P>The sprintf() function is just like <A 
+href="printf.html">printf</A>(), except that 
+the output is sent to <EM>buffer</EM>. The return value is the number of 
+characters written. For example:</P><PRE class=example-code>   char string[50];
+   int file_number = 0;         
+
+   sprintf( string, "file.%d", file_number );
+   file_number++;
+   output_file = fopen( string, "w" );                
+</PRE>
+<P>Note that sprintf() does the opposite of a function like (Standard C String 
+and Character) <A 
+href="../stdstring/atoi.html">atoi</A>() -- where 
+(Standard C String and Character) <A 
+href="../stdstring/atoi.html">atoi</A>() converts a 
+string into a number, sprintf() can be used to convert a number into a 
+string.</P>
+<P>For example, the following code uses sprintf() to convert an integer into a 
+string of characters:</P><PRE class=example-code>   char result[100];
+   int num=24;
+   sprintf( result, "%d", num );              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content>(Standard C String and Character) <A 
+href="../stdstring/atof.html">atof</A><BR>(Standard C 
+String and Character) <A 
+href="../stdstring/atoi.html">atoi</A><BR>(Standard C 
+String and Character) <A 
+href="../stdstring/atol.html">atol</A><BR><A 
+href="fprintf.html">fprintf</A><BR><A 
+href="printf.html">printf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sscanf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int sscanf( const char *buffer, const char *format, ... );
+</PRE>
+<P>The function sscanf() is just like <A 
+href="scanf.html">scanf</A>(), except that the 
+input is read from <EM>buffer</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="fscanf.html">fscanf</A><BR><A 
+href="scanf.html">scanf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>tmpfile </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  FILE *tmpfile( void );
+</PRE>
+<P>The function tempfile() opens a temporary file with an unique filename and 
+returns a pointer to that file. If there is an error, null is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="tmpnam.html">tmpnam</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>tmpnam </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  char *tmpnam( char *name );
+</PRE>
+<P>The tmpnam() function creates an unique filename and stores it in 
+<EM>name</EM>. tmpnam() can be called up to <STRONG>TMP_MAX</STRONG> times.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="tmpfile.html">tmpfile</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ungetc </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdio.h&gt;
+  int ungetc( int ch, FILE *stream );
+</PRE>
+<P>The function ungetc() puts the character <EM>ch</EM> back in 
+<EM>stream</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="getc.html">getc</A><BR>(C++ I/O) <A 
+href="../cppio/putback.html">putback</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>vprintf, vfprintf, and vsprintf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdarg.h&gt;
+  #include &lt;stdio.h&gt;
+  int vprintf( char *format, <STRONG>va_list</STRONG> arg_ptr );
+  int vfprintf( FILE *stream, const char *format, <STRONG>va_list</STRONG> arg_ptr );
+  int vsprintf( char *buffer, char *format, <STRONG>va_list</STRONG> arg_ptr );
+</PRE>
+<P>These functions are very much like <A 
+href="printf.html">printf</A>(), <A 
+href="fprintf.html">fprintf</A>(), and <A 
+href="sprintf.html">sprintf</A>(). The 
+difference is that the argument list is a pointer to a list of arguments. 
+<STRONG>va_list</STRONG> is defined in stdarg.h, and is also used by (Other 
+Standard C Functions) <A 
+href="../stdother/va_arg.html">va_arg</A>(). For 
+example:</P><PRE class=example-code>   void error( char *fmt, ... ) {
+     <STRONG>va_list</STRONG> args;
+     va_start( args, fmt );
+     fprintf( stderr, "Error: " );
+     vfprintf( stderr, fmt, args );
+     fprintf( stderr, "\n" );
+     va_end( args );
+     exit( 1 );
+   }            
+</PRE>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Html5在线拍照应用</title>
+    <script src="JS/toolsFunction.js" type="text/javascript"></script>
+</head>
+    <body>
+        
+        <video id="video" autoplay="" width="320px" height="240px"></video>
+        <canvas id="canvas1" width="320" height="240">
+            是时候更换浏览器了<br/>
+            <!--<a href="http://firefox.com.cn/download/">点击下载firefox</a><br/>-->
+            <a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html">点击下载chrome</a>
+        </canvas>
+        <hr/>
+        <input id="Button2" type="button" value="拍照" onclick="scamera()" />
+    
+        <hr/>
+        <input id="textB64" type="text" value="base64压缩的字符串" />
+        <input id="Button1" type="button" value="提取base64编码" onclick="showImgCode()" />
+        <hr/>
+        <input id="Button3" type="button" value="Get到服务器" onclick="uploadPhoto()" />
+    
+        <br/>
+        
+        <script type="text/javascript">
+            ////代码作者 singlex@foxmail.com
+            var video = document.getElementById("video");
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+            if (navigator.getUserMedia) {
+                if (navigator.webkitURL) {
+                    navigator.getUserMedia({video:true}, function (stream) {
+                        video.src = window.webkitURL.createObjectURL(stream);
+                    }, function (error) { alert(error); });
+                }
+                else {
+                    navigator.getUserMedia({video:true}, function (stream) {
+                        video.src = window.webkitURL.createObjectURL(stream);
+                    }, function (error) { alert(error); });
+                }
+            }
+            else {
+                alert("navigator.getUserMedia");
+            }
+            function scamera() {
+                var videoElement = document.getElementById('video');
+                var canvasObj = document.getElementById('canvas1');
+                var context1 = canvasObj.getContext('2d');
+                context1.fillStyle = "#ffffff";
+                context1.fillRect(0, 0, 320, 240);
+                context1.drawImage(videoElement, 0, 0, 320, 240);
+                //alert("PaiZhaoSuccess");
+            }
+
+            function showImgCode() {
+                if (document.getElementById("textB64").value == "base64压缩的字符串") {
+                    scamera();
+                }
+                var canvasObj = document.getElementById('canvas1');
+                var imgData = canvasObj.toDataURL();
+                var b64 = imgData.substr(22);
+//                alert(b64);
+                document.getElementById("textB64").value = b64;
+            }
+
+            function uploadPhoto()//上传拍照的图片
+            {
+                showImgCode();
+                request = createRequest();
+                if (request == null) {
+                    alert("Unable to create request");
+                }
+                else {
+                    //alert("request.OK");
+                    var base64Data = document.getElementById('textB64').value.replace(/\+/g, "%2B"); //对参数中的+号编码，防止丢失
+                    var url = "AJAX/UploadPic.aspx";
+                    request.open("POST", url, true);
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    request.onreadystatechange = responses;
+                    request.send("&img=" + base64Data);
+                    //alert("send.OK");
+                }
+            }
+            function responses() {
+                if (request.readyState == 4)//服务器处理结束
+                {
+                    if (request.status == 200)//一切正常
+                    {
+                        if (request.responseText == "OK") {
+                            alert("上传成功！");
+                        }
+                        else {
+                            alert("上传失败！");
+                            alert(request.responseText);
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

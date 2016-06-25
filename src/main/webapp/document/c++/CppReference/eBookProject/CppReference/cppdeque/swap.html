@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/cppdeque/swap.html -->
+<HTML><HEAD><TITLE>swap</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="swap.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppdeque/index.html">C++ Double-ended 
+      Queues</A> &gt; <A 
+      href="../cppdeque/swap.html">swap</A> </DIV>
+      <DIV class=name-format>swap </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;deque&gt;
+  void swap( const container&amp; from );
+</PRE>
+      <P>The swap() function exchanges the elements of the current dequeue with 
+      those of <EM>from</EM>. This function operates in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <P>For example, the following code uses the swap() function to exchange 
+      the values of two strings:</P><PRE class=example-code>   string first( "This comes first" );
+   string second( "And this is second" );
+   first.swap( second );
+   cout &lt;&lt; first &lt;&lt; endl;
+   cout &lt;&lt; second &lt;&lt; endl;          
+</PRE>
+      <P>The above code displays:</P><PRE class=example-code>   And this is second
+   This comes first             
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content>(C++ Lists) <A 
+      href="../cpplist/splice.html">splice</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

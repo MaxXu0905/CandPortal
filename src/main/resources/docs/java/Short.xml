@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.lang.Short">
+    <fields>
+        <field>
+            <name>MIN_VALUE</name>
+            <signature><![CDATA[public static final short MIN_VALUE]]></signature>
+            <description><![CDATA[A constant holding the minimum value a short can
+ have, -215.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>MAX_VALUE</name>
+            <signature><![CDATA[public static final short MAX_VALUE]]></signature>
+            <description><![CDATA[A constant holding the maximum value a short can
+ have, 215-1.<dl><dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+        <field>
+            <name>TYPE</name>
+            <signature><![CDATA[public static final Class<Short> TYPE]]></signature>
+            <description><![CDATA[The Class instance representing the primitive type
+ short.]]></description>
+        </field>
+        <field>
+            <name>SIZE</name>
+            <signature><![CDATA[public static final int SIZE]]></signature>
+            <description><![CDATA[The number of bits used to represent a short value in two's
+ complement binary form.<dl><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#">Constant Field Values</a></dd></dl>]]></description>
+        </field>
+    </fields>
+    <constructors>
+        <constructor>
+            <name>Short</name>
+            <signature><![CDATA[public Short(short value)]]></signature>
+            <description><![CDATA[Constructs a newly allocated Short object that
+ represents the specified short value.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the value to be represented by the
+                  <code>Short</code>.</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>Short</name>
+            <signature><![CDATA[public Short(String s)
+      throws NumberFormatException]]></signature>
+            <description><![CDATA[Constructs a newly allocated Short object that
+ represents the short value indicated by the
+ String parameter. The string is converted to a
+ short value in exactly the manner used by the
+ parseShort method for radix 10.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the <code>String</code> to be converted to a
+          <code>Short</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - If the <code>String</code>
+          does not contain a parsable <code>short</code>.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>parseShort(java.lang.String, int)</code></a></dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public static String toString(short s)]]></signature>
+            <description><![CDATA[Returns a new String object representing the
+ specified short. The radix is assumed to be 10.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the <code>short</code> to be converted</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the string representation of the specified <code>short</code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Integer.toString(int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>parseShort</name>
+            <signature><![CDATA[public static short parseShort(String s,
+               int radix)
+                        throws NumberFormatException]]></signature>
+            <description><![CDATA[Parses the string argument as a signed short in the
+ radix specified by the second argument. The characters in the
+ string must all be digits, of the specified radix (as
+ determined by whether Character.digit(char,
+ int) returns a nonnegative value) except that the first
+ character may be an ASCII minus sign '-'
+ ('\u002D') to indicate a negative value or an
+ ASCII plus sign '+' ('\u002B') to
+ indicate a positive value.  The resulting short value
+ is returned.
+
+ An exception of type NumberFormatException is
+ thrown if any of the following situations occurs:
+ 
+  The first argument is null or is a string of
+ length zero.
+
+  The radix is either smaller than Character.MIN_RADIX or larger than Character.MAX_RADIX.
+
+  Any character of the string is not a digit of the
+ specified radix, except that the first character may be a minus
+ sign '-' ('\u002D') or plus sign
+ '+' ('\u002B') provided that the
+ string is longer than length 1.
+
+  The value represented by the string is not a value of type
+ short.
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the <code>String</code> containing the
+                  <code>short</code> representation to be parsed</dd><dd><code>radix</code> - the radix to be used while parsing <code>s</code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the <code>short</code> represented by the string
+                  argument in the specified radix.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - If the <code>String</code>
+                  does not contain a parsable <code>short</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>parseShort</name>
+            <signature><![CDATA[public static short parseShort(String s)
+                        throws NumberFormatException]]></signature>
+            <description><![CDATA[Parses the string argument as a signed decimal short. The characters in the string must all be decimal
+ digits, except that the first character may be an ASCII minus
+ sign '-' ('\u002D') to indicate a
+ negative value or an ASCII plus sign '+'
+ ('\u002B') to indicate a positive value.  The
+ resulting short value is returned, exactly as if the
+ argument and the radix 10 were given as arguments to the parseShort(java.lang.String, int) method.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - a <code>String</code> containing the <code>short</code>
+          representation to be parsed</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the <code>short</code> value represented by the
+          argument in decimal.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - If the string does not
+          contain a parsable <code>short</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>valueOf</name>
+            <signature><![CDATA[public static Short valueOf(String s,
+            int radix)
+                     throws NumberFormatException]]></signature>
+            <description><![CDATA[Returns a Short object holding the value
+ extracted from the specified String when parsed
+ with the radix given by the second argument. The first argument
+ is interpreted as representing a signed short in
+ the radix specified by the second argument, exactly as if the
+ argument were given to the parseShort(java.lang.String,
+ int) method. The result is a Short object that
+ represents the short value specified by the string.
+
+ In other words, this method returns a Short object
+ equal to the value of:
+
+ 
+  new Short(Short.parseShort(s, radix))
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the string to be parsed</dd><dd><code>radix</code> - the radix to be used in interpreting <code>s</code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>Short</code> object holding the value
+                  represented by the string argument in the
+                  specified radix.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - If the <code>String</code> does
+                  not contain a parsable <code>short</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>valueOf</name>
+            <signature><![CDATA[public static Short valueOf(String s)
+                     throws NumberFormatException]]></signature>
+            <description><![CDATA[Returns a Short object holding the
+ value given by the specified String. The argument
+ is interpreted as representing a signed decimal
+ short, exactly as if the argument were given to
+ the parseShort(java.lang.String) method. The result is
+ a Short object that represents the
+ short value specified by the string.
+
+ In other words, this method returns a Short object
+ equal to the value of:
+
+ 
+  new Short(Short.parseShort(s))
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - the string to be parsed</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>Short</code> object holding the value
+          represented by the string argument</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - If the <code>String</code> does
+          not contain a parsable <code>short</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>valueOf</name>
+            <signature><![CDATA[public static Short valueOf(short s)]]></signature>
+            <description><![CDATA[Returns a Short instance representing the specified
+ short value.
+ If a new Short instance is not required, this method
+ should generally be used in preference to the constructor
+ Short(short), as this method is likely to yield
+ significantly better space and time performance by caching
+ frequently requested values.
+
+ This method will always cache values in the range -128 to 127,
+ inclusive, and may cache other values outside of this range.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - a short value.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>Short</code> instance representing <code>s</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>decode</name>
+            <signature><![CDATA[public static Short decode(String nm)
+                    throws NumberFormatException]]></signature>
+            <description><![CDATA[Decodes a String into a Short.
+ Accepts decimal, hexadecimal, and octal numbers given by
+ the following grammar:
+
+ 
+ 
+ DecodableString:
+ Signopt DecimalNumeral
+ Signopt 0x HexDigits
+ Signopt 0X HexDigits
+ Signopt # HexDigits
+ Signopt 0 OctalDigits
+ 
+ Sign:
+ -
+ +
+ 
+ 
+
+ DecimalNumeral, HexDigits, and OctalDigits
+ are as defined in section 3.10.1 of
+ The Java™ Language Specification,
+ except that underscores are not accepted between digits.
+
+ The sequence of characters following an optional
+ sign and/or radix specifier ("0x", "0X",
+ "#", or leading zero) is parsed as by the Short.parseShort method with the indicated radix (10, 16, or
+ 8).  This sequence of characters must represent a positive
+ value or a NumberFormatException will be thrown.  The
+ result is negated if first character of the specified String is the minus sign.  No whitespace characters are
+ permitted in the String.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>nm</code> - the <code>String</code> to decode.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>Short</code> object holding the <code>short</code>
+            value represented by <code>nm</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NumberFormatException</a></code> - if the <code>String</code> does not
+            contain a parsable <code>short</code>.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>parseShort(java.lang.String, int)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>byteValue</name>
+            <signature><![CDATA[public byte byteValue()]]></signature>
+            <description><![CDATA[Returns the value of this Short as a
+ byte.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">byteValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>byte</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>shortValue</name>
+            <signature><![CDATA[public short shortValue()]]></signature>
+            <description><![CDATA[Returns the value of this Short as a
+ short.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">shortValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>short</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>intValue</name>
+            <signature><![CDATA[public int intValue()]]></signature>
+            <description><![CDATA[Returns the value of this Short as an
+ int.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">intValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>int</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>longValue</name>
+            <signature><![CDATA[public long longValue()]]></signature>
+            <description><![CDATA[Returns the value of this Short as a
+ long.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">longValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>long</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>floatValue</name>
+            <signature><![CDATA[public float floatValue()]]></signature>
+            <description><![CDATA[Returns the value of this Short as a
+ float.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">floatValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>float</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>doubleValue</name>
+            <signature><![CDATA[public double doubleValue()]]></signature>
+            <description><![CDATA[Returns the value of this Short as a
+ double.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">doubleValue</a></code> in class <code><a href="#">Number</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the numeric value represented by this object after conversion
+          to type <code>double</code>.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toString</name>
+            <signature><![CDATA[public String toString()]]></signature>
+            <description><![CDATA[Returns a String object representing this
+ Short's value.  The value is converted to signed
+ decimal representation and returned as a string, exactly as if
+ the short value were given as an argument to the
+ toString(short) method.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">toString</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a string representation of the value of this object in
+          base 10.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hashCode</name>
+            <signature><![CDATA[public int hashCode()]]></signature>
+            <description><![CDATA[Returns a hash code for this Short; equal to the result
+ of invoking intValue().<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a hash code value for this <code>Short</code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.equals(java.lang.Object)</code></a>, 
+<a href="#"><code>System.identityHashCode(java.lang.Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[public boolean equals(Object obj)]]></signature>
+            <description><![CDATA[Compares this object to the specified object.  The result is
+ true if and only if the argument is not
+ null and is a Short object that
+ contains the same short value as this object.<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>obj</code> - the object to compare with</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the objects are the same;
+                  <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.hashCode()</code></a>, 
+<a href="#"><code>HashMap</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>compareTo</name>
+            <signature><![CDATA[public int compareTo(Short anotherShort)]]></signature>
+            <description><![CDATA[Compares two Short objects numerically.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">compareTo</a></code> in interface <code><a href="#">Comparable</a><<a href="#">Short</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>anotherShort</code> - the <code>Short</code> to be compared.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value <code>0</code> if this <code>Short</code> is
+          equal to the argument <code>Short</code>; a value less than
+          <code>0</code> if this <code>Short</code> is numerically less
+          than the argument <code>Short</code>; and a value greater than
+           <code>0</code> if this <code>Short</code> is numerically
+           greater than the argument <code>Short</code> (signed
+           comparison).</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>compare</name>
+            <signature><![CDATA[public static int compare(short x,
+          short y)]]></signature>
+            <description><![CDATA[Compares two short values numerically.
+ The value returned is identical to what would be returned by:
+ 
+    Short.valueOf(x).compareTo(Short.valueOf(y))
+ <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - the first <code>short</code> to compare</dd><dd><code>y</code> - the second <code>short</code> to compare</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value <code>0</code> if <code>x == y</code>;
+         a value less than <code>0</code> if <code>x < y</code>; and
+         a value greater than <code>0</code> if <code>x > y</code></dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.7</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>reverseBytes</name>
+            <signature><![CDATA[public static short reverseBytes(short i)]]></signature>
+            <description><![CDATA[Returns the value obtained by reversing the order of the bytes in the
+ two's complement representation of the specified short value.<dl><dt><span class="strong">Returns:</span></dt><dd>the value obtained by reversing (or, equivalently, swapping)
+     the bytes in the specified <code>short</code> value.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.5</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

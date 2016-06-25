@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/keywords/enum.html -->
+<HTML><HEAD><TITLE>enum</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="enum.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../keywords/index.html">C/C++ Keywords</A> 
+      &gt; <A href="../keywords/enum.html">enum</A> 
+      </DIV>
+      <DIV class=name-format>enum </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  enum name {name-list} var-list;
+</PRE>
+      <P>The enum keyword is used to create an enumerated type named name that 
+      consists of the elements in <EM>name-list</EM>. The <EM>var-list</EM> 
+      argument is optional, and can be used to create instances of the type 
+      along with the declaration. For example, the following code creates an 
+      enumerated type for colors:</P>
+      <DIV class=related-examples><PRE class=example-code>   enum ColorT {red, orange, yellow, green, blue, indigo, violet};
+   ...
+   ColorT c1 = indigo;
+   if( c1 == indigo ) {
+     cout &lt;&lt; "c1 is indigo" &lt;&lt; endl;
+   }            
+</PRE></DIV>
+      <P>In the above example, the effect of the enumeration is to introduce 
+      several new constants named <EM>red</EM>, <EM>orange</EM>, 
+      <EM>yellow</EM>, etc. By default, these constants are assigned consecutive 
+      integer values starting at zero. You can change the values of those 
+      constants, as shown by the next example:</P>
+      <DIV class=related-examples><PRE class=example-code>   enum ColorT { red = 10, blue = 15, green };
+   ...
+   ColorT c = green;
+   cout &lt;&lt; "c is " &lt;&lt; c &lt;&lt; endl;
+</PRE></DIV>
+      <P>When executed, the above code will display the following output:</P>
+      <DIV class=related-examples><PRE class=example-code>   c is 16
+</PRE></DIV>
+      <P>Note that the above examples will only work with C++ compilers. If 
+      you're working in regular C, you will need to specify the <EM>enum</EM> 
+      keyword whenever you create an instance of an enumerated type: 
+      <DIV class=related-examples><PRE class=example-code>   enum ColorT { red = 10, blue = 15, green };
+   ...
+   enum ColorT c = green;   // note the aditional enum keyword
+   printf( "c is %d\n", c );
+</PRE></DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

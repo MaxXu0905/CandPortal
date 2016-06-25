@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/keywords/virtual.html -->
+<HTML><HEAD><TITLE>virtual</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="virtual.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../keywords/index.html">C/C++ Keywords</A> 
+      &gt; <A 
+      href="../keywords/virtual.html">virtual</A> 
+</DIV>
+      <DIV class=name-format>virtual </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  virtual return-type name( parameter-list );
+  virtual return-type name( parameter-list ) = 0;
+</PRE>
+      <P>The virtual keyword can be used to create virtual functions, which can 
+      be overridden by derived classes.</P>
+      <UL>
+        <LI>A virtual function indicates that a function can be overridden in a 
+        subclass, and that the overridden function will actually be used. 
+        <LI>When a base object pointer points to a derived object that contains 
+        a virtual function, the decision about which version of that function to 
+        call is based on the type of object pointed to by the pointer, and this 
+        process happens at runtime. 
+        <LI>A base object can point to different derived objects and have 
+        different versions of the virtual function run. </LI></UL>
+      <P>If the function is specified as a pure virtual function (denoted by the 
+      = 0), it must be overridden by a derived class.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>For example, the following code snippet shows how a child class can 
+      override a virtual method of its parent, and how a non-virtual method in 
+      the parent cannot be overridden:</P><PRE class=example-code>class Base {
+public:
+ void nonVirtualFunc() {
+   cout &lt;&lt; "Base: non-virtual function" &lt;&lt; endl;
+ }
+ virtual void virtualFunc() {
+   cout &lt;&lt; "Base: virtual function" &lt;&lt; endl;
+ }
+};              
+
+class Child : public Base {
+public:
+ void nonVirtualFunc() {
+   cout &lt;&lt; "Child: non-virtual function" &lt;&lt; endl;
+ }
+ void virtualFunc() {
+   cout &lt;&lt; "Child: virtual function" &lt;&lt; endl;
+ }
+};              
+
+int main() {
+ Base* basePointer = new Child();
+ basePointer-&gt;nonVirtualFunc();
+ basePointer-&gt;virtualFunc();
+ return 0;
+}               
+</PRE>
+      <P>When run, the above code displays:</P><PRE class=example-code>Base: non-virtual function
+Child: virtual function         
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../keywords/class.html">class</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

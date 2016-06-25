@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+/*
+*首页：index.jsp
+*zengjie
+*14/2/24
+*/
+
+/*气球动画*/
+#tagsList {position:relative; width:450px; height:370px; margin:0;  }
+#tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:#fff; font-weight:bold; text-decoration:none; padding: 3px 6px; }
+#tagsList a:hover { color:#FF0000; letter-spacing:2px;}
+
+/*首页主区*/
+#index-wrap{
+	padding-top:70px;
+}
+#main-btn{
+	display:block;
+	width:185px;
+	height:63px;
+	font-size:23px;
+	border:1px solid #26ACEB;
+	text-align:center;
+	line-height:63px;
+	text-decoration:none;
+	-webkit-border-radius: 10px !important;
+     -moz-border-radius: 10px !important;
+     border-radius: 10px !important;
+}
+
+/*右边邀请区*/
+* <How it works */
+.how_it_works{
+	padding: 56px 0px 54px;
+	text-align: center;
+	background: #fffefc;
+	margin-top: -28px;
+	margin-bottom: -28px;
+}
+.how_it_works-content{
+	position: relative;
+	overflow: hidden;
+}
+.step{
+	float: left;
+	width: 26.6%;
+}
+.step-image{
+	text-align: center;
+	height: 198px;
+	border: 1px solid #ddd;
+	width: 198px;
+	margin: 45px auto 30px;
+	position: relative;
+	border-radius: 6px;
+	background-size: 128px 100px;
+}
+.step-image:after{
+	content: '';
+	position: absolute;
+	bottom: -21px;
+	left: 50%;
+	margin-left: -20px;
+	width: 40px;
+	height: 21px;
+	background: url(../core/images/step-tri.png?v=3) 0px 0px no-repeat;
+	background-size: 40px 21px;
+}
+.step-number{
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	text-align: center;
+	font-family: 'LatoLight', Arial, Helvetica, sans-serif;
+	width: 80px;
+	line-height: 78px;
+	margin: 0px auto 18px;
+	font-size: 40px;
+}
+.step-text .text{
+	font-size: 16px;
+	line-height: 18px;
+	margin-bottom: 12px;
+	overflow: hidden;
+}
+.text-title{
+	text-transform: uppercase;
+	font-size: 25px;
+	font-family: 'LatoBold', Arial, Helvetica, sans-serif;
+	line-height: 22px;
+	margin-bottom: 8px;
+	text-align:center;
+}
+.step-1{}
+.step-2{
+	margin: 0px 10%;
+}
+.step-3{}
+.step-1 .step-image{
+	background: url(../core/images/step-1-img.png) center center no-repeat;
+}
+.step-2 .step-image{
+	background: url(../core/images/step-2-img.png?v=3) center center no-repeat;
+}
+.step-3 .step-image{
+	background: url(../core/images/step-3-img.png?v=3) center center no-repeat;
+}
+.step-line{
+	display: inline-block;
+	vertical-align: top;
+	height: 1px;
+	width: 23%;
+	position: absolute;
+	top: 420px;
+	background: #ddd;
+}
+.step-line-left{
+	left: 160px;
+}
+.step-line-right{
+	right: 160px;
+}
+.get-started-link{
+	color: #f97410;
+	font-family: 'LatoBlack', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+#gotoNext{
+	margin-top:20px;
+	
+}
+.gotospan{
+	display: block;
+	height: 63px;
+	font-size: 23px;
+	text-align: center;
+	line-height: 63px;
+	padding:0px 100px;
+}
+/* How it works> */
+

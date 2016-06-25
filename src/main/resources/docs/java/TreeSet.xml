@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.TreeSet&lt;E&gt;">
+    <constructors>
+        <constructor>
+            <name>TreeSet</name>
+            <signature><![CDATA[public TreeSet()]]></signature>
+            <description><![CDATA[Constructs a new, empty tree set, sorted according to the
+ natural ordering of its elements.  All elements inserted into
+ the set must implement the Comparable interface.
+ Furthermore, all such elements must be mutually
+ comparable: e1.compareTo(e2) must not throw a
+ ClassCastException for any elements e1 and
+ e2 in the set.  If the user attempts to add an element
+ to the set that violates this constraint (for example, the user
+ attempts to add a string element to a set whose elements are
+ integers), the add call will throw a
+ ClassCastException.]]></description>
+        </constructor>
+        <constructor>
+            <name>TreeSet</name>
+            <signature><![CDATA[public TreeSet(Comparator<? super E> comparator)]]></signature>
+            <description><![CDATA[Constructs a new, empty tree set, sorted according to the specified
+ comparator.  All elements inserted into the set must be mutually
+ comparable by the specified comparator: comparator.compare(e1,
+ e2) must not throw a ClassCastException for any elements
+ e1 and e2 in the set.  If the user attempts to add
+ an element to the set that violates this constraint, the
+ add call will throw a ClassCastException.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>comparator</code> - the comparator that will be used to order this set.
+        If <code>null</code>, the <a href="#">natural
+        ordering</a> of the elements will be used.</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>TreeSet</name>
+            <signature><![CDATA[public TreeSet(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Constructs a new tree set containing the elements in the specified
+ collection, sorted according to the natural ordering of its
+ elements.  All elements inserted into the set must implement the
+ Comparable interface.  Furthermore, all such elements must be
+ mutually comparable: e1.compareTo(e2) must not throw a
+ ClassCastException for any elements e1 and
+ e2 in the set.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection whose elements will comprise the new set</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the elements in <code>c</code> are
+         not <a href="#"><code>Comparable</code></a>, or are not mutually comparable</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection is null</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>TreeSet</name>
+            <signature><![CDATA[public TreeSet(SortedSet<E> s)]]></signature>
+            <description><![CDATA[Constructs a new tree set containing the same elements and
+ using the same ordering as the specified sorted set.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - sorted set whose elements will comprise the new set</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified sorted set is null</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>iterator</name>
+            <signature><![CDATA[public Iterator<E> iterator()]]></signature>
+            <description><![CDATA[Returns an iterator over the elements in this set in ascending order.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Iterable</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an iterator over the elements in this set in ascending order</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>descendingIterator</name>
+            <signature><![CDATA[public Iterator<E> descendingIterator()]]></signature>
+            <description><![CDATA[Returns an iterator over the elements in this set in descending order.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">descendingIterator</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an iterator over the elements in this set in descending order</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>descendingSet</name>
+            <signature><![CDATA[public NavigableSet<E> descendingSet()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns a reverse order view of the elements contained in this set.
+ The descending set is backed by this set, so changes to the set are
+ reflected in the descending set, and vice-versa.  If either set is
+ modified while an iteration over either set is in progress (except
+ through the iterator's own remove operation), the results of
+ the iteration are undefined.
+
+ The returned set has an ordering equivalent to
+ Collections.reverseOrder(comparator()).
+ The expression s.descendingSet().descendingSet() returns a
+ view of s essentially equivalent to s.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">descendingSet</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a reverse order view of this set</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[public int size()]]></signature>
+            <description><![CDATA[Returns the number of elements in this set (its cardinality).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of elements in this set (its cardinality)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <signature><![CDATA[public boolean isEmpty()]]></signature>
+            <description><![CDATA[Returns true if this set contains no elements.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this set contains no elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>contains</name>
+            <signature><![CDATA[public boolean contains(Object o)]]></signature>
+            <description><![CDATA[Returns true if this set contains the specified element.
+ More formally, returns true if and only if this set
+ contains an element e such that
+ (o==null ? e==null : o.equals(e)).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">contains</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">contains</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">contains</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - object to be checked for containment in this set</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this set contains the specified element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified object cannot be compared
+         with the elements currently in the set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[public boolean add(E e)]]></signature>
+            <description><![CDATA[Adds the specified element to this set if it is not already present.
+ More formally, adds the specified element e to this set if
+ the set contains no element e2 such that
+ (e==null ? e2==null : e.equals(e2)).
+ If this set already contains the element, the call leaves the set
+ unchanged and returns false.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">add</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - element to be added to this set</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this set did not already contain the specified
+         element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified object cannot be compared
+         with the elements currently in this set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[public boolean remove(Object o)]]></signature>
+            <description><![CDATA[Removes the specified element from this set if it is present.
+ More formally, removes an element e such that
+ (o==null ? e==null : o.equals(e)),
+ if this set contains such an element.  Returns true if
+ this set contained the element (or equivalently, if this set
+ changed as a result of the call).  (This set will not contain the
+ element once the call returns.)<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">remove</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - object to be removed from this set, if present</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this set contained the specified element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified object cannot be compared
+         with the elements currently in this set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[public void clear()]]></signature>
+            <description><![CDATA[Removes all of the elements from this set.
+ The set will be empty after this call returns.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clear</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+</dl>]]></description>
+        </method>
+        <method>
+            <name>addAll</name>
+            <signature><![CDATA[public boolean addAll(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Adds all of the elements in the specified collection to this set.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in interface <code><a href="#">Set</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in class <code><a href="#">AbstractCollection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be added to this set</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this set changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the elements provided cannot be compared
+         with the elements currently in the set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection is null or
+         if any element is null and this set uses natural ordering, or
+         its comparator does not permit null elements</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>AbstractCollection.add(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>subSet</name>
+            <signature><![CDATA[public NavigableSet<E> subSet(E fromElement,
+                     boolean fromInclusive,
+                     E toElement,
+                     boolean toInclusive)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns a view of the portion of this set whose elements range from
+ fromElement to toElement.  If fromElement and
+ toElement are equal, the returned set is empty unless fromInclusive and toInclusive are both true.  The returned set
+ is backed by this set, so changes in the returned set are reflected in
+ this set, and vice-versa.  The returned set supports all optional set
+ operations that this set supports.
+
+ The returned set will throw an IllegalArgumentException
+ on an attempt to insert an element outside its range.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">subSet</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromElement</code> - low endpoint of the returned set</dd><dd><code>fromInclusive</code> - <code>true</code> if the low endpoint
+        is to be included in the returned view</dd><dd><code>toElement</code> - high endpoint of the returned set</dd><dd><code>toInclusive</code> - <code>true</code> if the high endpoint
+        is to be included in the returned view</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this set whose elements range from
+         <code>fromElement</code>, inclusive, to <code>toElement</code>, exclusive</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>fromElement</code> and
+         <code>toElement</code> cannot be compared to one another using this
+         set's comparator (or, if the set has no comparator, using
+         natural ordering).  Implementations may, but are not required
+         to, throw this exception if <code>fromElement</code> or
+         <code>toElement</code> cannot be compared to elements currently in
+         the set.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromElement</code> or <code>toElement</code>
+         is null and this set uses natural ordering, or its comparator
+         does not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>fromElement</code> is
+         greater than <code>toElement</code>; or if this set itself
+         has a restricted range, and <code>fromElement</code> or
+         <code>toElement</code> lies outside the bounds of the range.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>headSet</name>
+            <signature><![CDATA[public NavigableSet<E> headSet(E toElement,
+                      boolean inclusive)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns a view of the portion of this set whose elements are less than
+ (or equal to, if inclusive is true) toElement.  The
+ returned set is backed by this set, so changes in the returned set are
+ reflected in this set, and vice-versa.  The returned set supports all
+ optional set operations that this set supports.
+
+ The returned set will throw an IllegalArgumentException
+ on an attempt to insert an element outside its range.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">headSet</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>toElement</code> - high endpoint of the returned set</dd><dd><code>inclusive</code> - <code>true</code> if the high endpoint
+        is to be included in the returned view</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this set whose elements are less than
+         (or equal to, if <code>inclusive</code> is true) <code>toElement</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>toElement</code> is not compatible
+         with this set's comparator (or, if the set has no comparator,
+         if <code>toElement</code> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <code>toElement</code> cannot be compared to elements
+         currently in the set.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>toElement</code> is null and
+         this set uses natural ordering, or its comparator does
+         not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this set itself has a
+         restricted range, and <code>toElement</code> lies outside the
+         bounds of the range</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>tailSet</name>
+            <signature><![CDATA[public NavigableSet<E> tailSet(E fromElement,
+                      boolean inclusive)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns a view of the portion of this set whose elements are greater
+ than (or equal to, if inclusive is true) fromElement.
+ The returned set is backed by this set, so changes in the returned set
+ are reflected in this set, and vice-versa.  The returned set supports
+ all optional set operations that this set supports.
+
+ The returned set will throw an IllegalArgumentException
+ on an attempt to insert an element outside its range.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">tailSet</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromElement</code> - low endpoint of the returned set</dd><dd><code>inclusive</code> - <code>true</code> if the low endpoint
+        is to be included in the returned view</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this set whose elements are greater
+         than or equal to <code>fromElement</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>fromElement</code> is not compatible
+         with this set's comparator (or, if the set has no comparator,
+         if <code>fromElement</code> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <code>fromElement</code> cannot be compared to elements
+         currently in the set.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromElement</code> is null and
+         this set uses natural ordering, or its comparator does
+         not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this set itself has a
+         restricted range, and <code>fromElement</code> lies outside the
+         bounds of the range</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>subSet</name>
+            <signature><![CDATA[public SortedSet<E> subSet(E fromElement,
+                  E toElement)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns a view of the portion of this set whose elements range
+ from fromElement, inclusive, to toElement,
+ exclusive.  (If fromElement and toElement are
+ equal, the returned set is empty.)  The returned set is backed
+ by this set, so changes in the returned set are reflected in
+ this set, and vice-versa.  The returned set supports all
+ optional set operations that this set supports.
+
+ The returned set will throw an IllegalArgumentException
+ on an attempt to insert an element outside its range.
+
+ Equivalent to subSet(fromElement, true, toElement, false).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">subSet</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">subSet</a></code> in interface <code><a href="#">SortedSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromElement</code> - low endpoint (inclusive) of the returned set</dd><dd><code>toElement</code> - high endpoint (exclusive) of the returned set</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this set whose elements range from
+         <tt>fromElement</tt>, inclusive, to <tt>toElement</tt>, exclusive</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <tt>fromElement</tt> and
+         <tt>toElement</tt> cannot be compared to one another using this
+         set's comparator (or, if the set has no comparator, using
+         natural ordering).  Implementations may, but are not required
+         to, throw this exception if <tt>fromElement</tt> or
+         <tt>toElement</tt> cannot be compared to elements currently in
+         the set.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromElement</code> or
+         <code>toElement</code> is null and this set uses natural ordering,
+         or its comparator does not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <tt>fromElement</tt> is
+         greater than <tt>toElement</tt>; or if this set itself
+         has a restricted range, and <tt>fromElement</tt> or
+         <tt>toElement</tt> lies outside the bounds of the range</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>headSet</name>
+            <signature><![CDATA[public SortedSet<E> headSet(E toElement)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns a view of the portion of this set whose elements are
+ strictly less than toElement.  The returned set is
+ backed by this set, so changes in the returned set are
+ reflected in this set, and vice-versa.  The returned set
+ supports all optional set operations that this set supports.
+
+ The returned set will throw an IllegalArgumentException
+ on an attempt to insert an element outside its range.
+
+ Equivalent to headSet(toElement, false).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">headSet</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">headSet</a></code> in interface <code><a href="#">SortedSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>toElement</code> - high endpoint (exclusive) of the returned set</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this set whose elements are strictly
+         less than <tt>toElement</tt></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <tt>toElement</tt> is not compatible
+         with this set's comparator (or, if the set has no comparator,
+         if <tt>toElement</tt> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <tt>toElement</tt> cannot be compared to elements
+         currently in the set.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>toElement</code> is null
+         and this set uses natural ordering, or its comparator does
+         not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this set itself has a
+         restricted range, and <tt>toElement</tt> lies outside the
+         bounds of the range
+na</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>tailSet</name>
+            <signature><![CDATA[public SortedSet<E> tailSet(E fromElement)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns a view of the portion of this set whose elements are
+ greater than or equal to fromElement.  The returned
+ set is backed by this set, so changes in the returned set are
+ reflected in this set, and vice-versa.  The returned set
+ supports all optional set operations that this set supports.
+
+ The returned set will throw an IllegalArgumentException
+ on an attempt to insert an element outside its range.
+
+ Equivalent to tailSet(fromElement, true).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">tailSet</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">tailSet</a></code> in interface <code><a href="#">SortedSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromElement</code> - low endpoint (inclusive) of the returned set</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this set whose elements are greater
+         than or equal to <tt>fromElement</tt></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <tt>fromElement</tt> is not compatible
+         with this set's comparator (or, if the set has no comparator,
+         if <tt>fromElement</tt> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <tt>fromElement</tt> cannot be compared to elements
+         currently in the set.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromElement</code> is null
+         and this set uses natural ordering, or its comparator does
+         not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this set itself has a
+         restricted range, and <tt>fromElement</tt> lies outside the
+         bounds of the range</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>comparator</name>
+            <signature><![CDATA[public Comparator<? super E> comparator()]]></signature>
+            <description><![CDATA[Description copied from interface: SortedSetReturns the comparator used to order the elements in this set,
+ or null if this set uses the natural ordering of its elements.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">comparator</a></code> in interface <code><a href="#">SortedSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the comparator used to order the elements in this set,
+         or <tt>null</tt> if this set uses the natural ordering
+         of its elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>first</name>
+            <signature><![CDATA[public E first()]]></signature>
+            <description><![CDATA[Description copied from interface: SortedSetReturns the first (lowest) element currently in this set.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">first</a></code> in interface <code><a href="#">SortedSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the first (lowest) element currently in this set</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NoSuchElementException</a></code> - if this set is empty</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>last</name>
+            <signature><![CDATA[public E last()]]></signature>
+            <description><![CDATA[Description copied from interface: SortedSetReturns the last (highest) element currently in this set.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">last</a></code> in interface <code><a href="#">SortedSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the last (highest) element currently in this set</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NoSuchElementException</a></code> - if this set is empty</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lower</name>
+            <signature><![CDATA[public E lower(E e)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns the greatest element in this set strictly less than the
+ given element, or null if there is no such element.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">lower</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - the value to match</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the greatest element less than <code>e</code>,
+         or <code>null</code> if there is no such element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified element cannot be
+         compared with the elements currently in the set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>floor</name>
+            <signature><![CDATA[public E floor(E e)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns the greatest element in this set less than or equal to
+ the given element, or null if there is no such element.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">floor</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - the value to match</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the greatest element less than or equal to <code>e</code>,
+         or <code>null</code> if there is no such element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified element cannot be
+         compared with the elements currently in the set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>ceiling</name>
+            <signature><![CDATA[public E ceiling(E e)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns the least element in this set greater than or equal to
+ the given element, or null if there is no such element.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">ceiling</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - the value to match</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the least element greater than or equal to <code>e</code>,
+         or <code>null</code> if there is no such element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified element cannot be
+         compared with the elements currently in the set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>higher</name>
+            <signature><![CDATA[public E higher(E e)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetReturns the least element in this set strictly greater than the
+ given element, or null if there is no such element.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">higher</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - the value to match</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the least element greater than <code>e</code>,
+         or <code>null</code> if there is no such element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified element cannot be
+         compared with the elements currently in the set</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>pollFirst</name>
+            <signature><![CDATA[public E pollFirst()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetRetrieves and removes the first (lowest) element,
+ or returns null if this set is empty.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">pollFirst</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the first element, or <code>null</code> if this set is empty</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>pollLast</name>
+            <signature><![CDATA[public E pollLast()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableSetRetrieves and removes the last (highest) element,
+ or returns null if this set is empty.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">pollLast</a></code> in interface <code><a href="#">NavigableSet</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the last element, or <code>null</code> if this set is empty</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clone</name>
+            <signature><![CDATA[public Object clone()]]></signature>
+            <description><![CDATA[Returns a shallow copy of this TreeSet instance. (The elements
+ themselves are not cloned.)<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clone</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a shallow copy of this set</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Cloneable</code></a></dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.cppreference.com/cppalgorithm/count.html -->
+<HTML><HEAD><TITLE>count</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="count.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/count.html">count</A> 
+</DIV>
+      <DIV class=name-format>count </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  size_t count( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+</PRE>
+      <P>The count() function returns the number of elements between 
+      <EM>start</EM> and <EM>end</EM> that match <EM>val</EM>.</P>
+      <P>For example, the following code uses count() to determine how many 
+      integers in a vector match a target value:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 10; i++ ) {
+   v.push_back( i );
+ }              
+
+ int target_value = 3;
+ int num_items = count( v.begin(), v.end(), target_value );             
+
+ cout &lt;&lt; "v contains " &lt;&lt; num_items &lt;&lt; " items matching " &lt;&lt; target_value &lt;&lt; endl;            
+</PRE>
+      <P>The above code displays the following output:</P><PRE class=example-code> v contains 1 items matching 3          
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/accumulate.html">accumulate</A><BR><A 
+      href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A><BR><A 
+      href="../cppalgorithm/count_if.html">count_if</A><BR><A 
+      href="../cppalgorithm/inner_product.html">inner_product</A><BR><A 
+      href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

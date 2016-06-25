@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://www.cppreference.com/cppmap/map_constructors.html -->
+<HTML><HEAD><TITLE>Map Constructors & Destructors</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="map_constructors.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppmap/index.html">C++ Maps</A> &gt; <A 
+      href="../cppmap/map_constructors.html">Map 
+      Constructors &amp; Destructors</A> </DIV>
+      <DIV class=name-format>Map Constructors &amp; Destructors </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;map&gt;
+  map();
+  map( const map&amp; m );
+  map( iterator start, iterator end );
+  map( iterator start, iterator end, const key_compare&amp; cmp );
+  map( const key_compare&amp; cmp );
+  ~map();
+</PRE>
+      <P>The default constructor takes no arguments, creates a new instance of 
+      that map, and runs in <A 
+      href="../complexity.html">constant time</A>. The 
+      default copy constructor runs in <A 
+      href="../complexity.html">linear time</A> and can 
+      be used to create a new map that is a copy of the given map 
+<EM>m</EM>.</P>
+      <P>You can also create a map that will contain a copy of the elements 
+      between <EM>start</EM> and <EM>end</EM>, or specify a comparison function 
+      <EM>cmp</EM>. 
+      <P>The default destructor is called when the map should be destroyed.</P>
+      <P>For example, the following code creates a map that associates a string 
+      with an integer:</P><PRE class=example-code>  struct strCmp {
+    bool operator()( const char* s1, const char* s2 ) const {
+      return strcmp( s1, s2 ) &lt; 0;
+    }
+  };
+
+  ...
+
+  map&lt;const char*, int, strCmp&gt; ages;
+  ages["Homer"] = 38;
+  ages["Marge"] = 37;
+  ages["Lisa"] = 8;
+  ages["Maggie"] = 1;
+  ages["Bart"] = 11;
+
+  cout &lt;&lt; "Bart is " &lt;&lt; ages["Bart"] &lt;&lt; " years old" &lt;&lt; endl;
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppmap/map_operators.html">Map 
+      Operators</A> </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

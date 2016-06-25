@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://www.cppreference.com/cppio/setf.html -->
+<HTML><HEAD><TITLE>setf</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="setf.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/setf.html">setf</A> </DIV>
+      <DIV class=name-format>setf </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  fmtflags setf( fmtflags flags );
+  fmtflags setf( fmtflags flags, fmtflags needed );
+</PRE>
+      <P>The function setf() sets the <A 
+      href="../io_flags.html#format_flags">io stream 
+      format flag</A>s of the current stream to <EM>flags</EM>. The optional 
+      <EM>needed</EM> argument specifies that only the flags that are in both 
+      <EM>flags</EM> and <EM>needed</EM> should be set. The return value is the 
+      previous configuration of <A 
+      href="../io_flags.html#format_flags">io stream 
+      format flag</A>s.</P>
+      <P>For example:</P><PRE class=example-code>   int number = 0x3FF;
+   cout.setf( ios::dec );
+   cout &lt;&lt; "Decimal: " &lt;&lt; number &lt;&lt; endl;
+   cout.unsetf( ios::dec );
+   cout.setf( ios::hex );
+   cout &lt;&lt; "Hexadecimal: " &lt;&lt; number &lt;&lt; endl;               
+</PRE>
+      <P>Note that the preceding code is functionally identical to:</P><PRE class=example-code>   int number = 0x3FF;
+   cout &lt;&lt; "Decimal: " &lt;&lt; number &lt;&lt; endl &lt;&lt; hex &lt;&lt; "Hexadecimal: " &lt;&lt; number &lt;&lt; dec &lt;&lt; endl;                
+</PRE>
+      <P>thanks to <A 
+      href="../io_flags.html#manipulators">io stream 
+      manipulator</A>s.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/flags.html">flags</A><BR><A 
+      href="../cppio/unsetf.html">unsetf</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

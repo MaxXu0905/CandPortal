@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.cppreference.com/cppvector/vector_operators.html -->
+<HTML><HEAD><TITLE>Vector operators</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="vector_operators.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppvector/index.html">C++ Vectors</A> 
+      &gt; <A 
+      href="../cppvector/vector_operators.html">Vector 
+      operators</A> </DIV>
+      <DIV class=name-format>Vector operators </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;vector&gt;
+  <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index );
+  const <A href="../containers.html">TYPE</A>&amp; operator[]( <STRONG>size_type</STRONG> index ) const;
+  vector operator=(const vector&amp; c2);
+  bool operator==(const vector&amp; c1, const vector&amp; c2);
+  bool operator!=(const vector&amp; c1, const vector&amp; c2);
+  bool operator&lt;(const vector&amp; c1, const vector&amp; c2);
+  bool operator&gt;(const vector&amp; c1, const vector&amp; c2);
+  bool operator&lt;=(const vector&amp; c1, const vector&amp; c2);
+  bool operator&gt;=(const vector&amp; c1, const vector&amp; c2);
+</PRE>
+      <P>All of the C++ containers can be compared and assigned with the 
+      standard comparison operators: ==, !=, &lt;=, &gt;=, &lt;, &gt;, and =. 
+      Individual elements of a vector can be examined with the [] operator.</P>
+      <P>Performing a comparison or assigning one vector to another takes <A 
+      href="../complexity.html">linear time</A>. The [] 
+      operator runs in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <P>Two vectors are equal if:</P>
+      <OL>
+        <LI>Their size is the same, and 
+        <LI>Each member in location i in one vector is equal to the the member 
+        in location i in the other vector. </LI></OL>
+      <P>Comparisons among vectors are done lexicographically.</P>
+      <P>For example, the following code uses the [] operator to access all of 
+      the elements of a vector:</P><PRE class=example-code> vector&lt;int&gt; v( 5, 1 );
+ for( int i = 0; i &lt; v.size(); i++ ) {
+   cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; " is " &lt;&lt; v[i] &lt;&lt; endl;
+ }              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppvector/at.html">at</A> 
+  </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

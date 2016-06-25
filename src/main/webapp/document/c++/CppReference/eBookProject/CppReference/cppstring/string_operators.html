@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.cppreference.com/cppstring/string_operators.html -->
+<HTML><HEAD><TITLE>String operators</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="string_operators.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A 
+      href="../cppstring/string_operators.html">String 
+      operators</A> </DIV>
+      <DIV class=name-format>String operators </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  bool operator==(const string&amp; c1, const string&amp; c2);
+  bool operator!=(const string&amp; c1, const string&amp; c2);
+  bool operator&lt;(const string&amp; c1, const string&amp; c2);
+  bool operator&gt;(const string&amp; c1, const string&amp; c2);
+  bool operator&lt;=(const string&amp; c1, const string&amp; c2);
+  bool operator&gt;=(const string&amp; c1, const string&amp; c2);
+  string operator+(const string&amp; s1, const string&amp; s2 );
+  string operator+(const char* s, const string&amp; s2 );
+  string operator+( char c, const string&amp; s2 );
+  string operator+( const string&amp; s1, const char* s );
+  string operator+( const string&amp; s1, char c );
+  ostream&amp; operator&lt;&lt;( ostream&amp; os, const string&amp; s );
+  istream&amp; operator&gt;&gt;( istream&amp; is, string&amp; s );
+  string&amp; operator=( const string&amp; s );
+  string&amp; operator=( const char* s );
+  string&amp; operator=( char ch );
+  char&amp; operator[]( <STRONG>size_type</STRONG> index );
+</PRE>
+      <P>C++ strings can be compared and assigned with the standard comparison 
+      operators: ==, !=, &lt;=, &gt;=, &lt;, &gt;, and =. Performing a 
+      comparison or assigning one string to another takes <A 
+      href="../complexity.html">linear time</A>.</P>
+      <P>Two strings are equal if:</P><PRE class=example-code>  1. Their size is the same, and
+  2. Each member in location i in one string is equal to the the member in location i in the other string.              
+</PRE>
+      <P>Comparisons among strings are done lexicographically.</P>
+      <P>In addition to these normal (C++ Multimaps) <A 
+      href="../cppmultimap/container_operators.html">Container 
+      operators</A>, strings can also be concatenated with the + operator and 
+      fed to the C++ I/O stream classes with the &lt;&lt; and &gt;&gt; 
+      operators.</P>
+      <P>For example, the following code concatenates two strings and displays 
+      the result:</P><PRE class=example-code> string s1 = "Now is the time...";
+ string s2 = "for all good men...";
+ string s3 = s1 + s2;
+ cout &lt;&lt; "s3 is " &lt;&lt; s3 &lt;&lt; endl;            
+</PRE>
+      <P>Furthermore, strings can be assigned values that are other strings, 
+      character arrays, or even single characters. The following code is 
+      perfectly valid:</P><PRE class=example-code> char ch = 'N';
+ string s = ch;         
+</PRE>
+      <P>Individual characters of a string can be examined with the [] operator, 
+      which runs in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content>(C++ Multimaps) <A 
+      href="../cppmultimap/container_operators.html">Container 
+      operators</A><BR><A 
+      href="../cppstring/c_str.html">c_str</A><BR><A 
+      href="../cppstring/compare.html">compare</A><BR><A 
+      href="../cppstring/data.html">data</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

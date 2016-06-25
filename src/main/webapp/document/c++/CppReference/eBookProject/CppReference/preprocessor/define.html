@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.cppreference.com/preprocessor/define.html -->
+<HTML><HEAD><TITLE>#define</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="define.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../preprocessor/index.html">C/C++ 
+      Pre-processor Commands</A> &gt; <A 
+      href="../preprocessor/define.html">#define</A> 
+      </DIV>
+      <DIV class=name-format>#define </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #define macro-name replacement-string
+</PRE>
+      <P>The #define command is used to make substitutions throughout the file 
+      in which it is located. In other words, #define causes the compiler to go 
+      through the file, replacing every occurrence of <EM>macro-name</EM> with 
+      <EM>replacement-string</EM>. The replacement string stops at the end of 
+      the line.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>Here's a typical use for a #define (at least in C):</P><PRE class=example-code>   #define TRUE 1
+   #define FALSE 0
+   ...
+   int done = 0;
+   while( done != TRUE ) {
+      ...
+   }            
+</PRE>
+      <P>Another feature of the #define command is that it can take arguments, 
+      making it rather useful as a pseudo-function creator. Consider the 
+      following code:</P><PRE class=example-code>   #define absolute_value( x ) ( ((x) &lt; 0) ? -(x) : (x) )
+   ...
+   int x = -1;
+   while( absolute_value( x ) ) {
+      ...
+   }            
+</PRE>
+      <P>It's generally a good idea to use extra parentheses when using complex 
+      macros. Notice that in the above example, the variable "x" is always 
+      within it's own set of parentheses. This way, it will be evaluated in 
+      whole, before being compared to 0 or multiplied by -1. Also, the entire 
+      macro is surrounded by parentheses, to prevent it from being contaminated 
+      by other code. If you're not careful, you run the risk of having the 
+      compiler misinterpret your code.</P>
+      <P>Here is an example of how to use the #define command to create a 
+      general purpose incrementing for loop that prints out the integers 1 
+      through 20:</P><PRE class=example-code> #define count_up( v, low, high ) \
+   for( (v) = (low); (v) &lt;= (high); (v)++ )          
+
+ ...            
+
+ int i;
+ count_up( i, 1, 20 ) {
+   printf( "i is %d\n", i );
+ }              
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../preprocessor/sharp.html">#, ##</A><BR><A 
+      href="../preprocessor/preprocessor_if.html">#if, 
+      #ifdef, #ifndef, #else, #elif, #endif</A><BR><A 
+      href="../preprocessor/undef.html">#undef</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

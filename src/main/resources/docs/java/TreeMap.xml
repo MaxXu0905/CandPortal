@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.TreeMap&lt;K,V&gt;">
+    <constructors>
+        <constructor>
+            <name>TreeMap</name>
+            <signature><![CDATA[public TreeMap()]]></signature>
+            <description><![CDATA[Constructs a new, empty tree map, using the natural ordering of its
+ keys.  All keys inserted into the map must implement the Comparable interface.  Furthermore, all such keys must be
+ mutually comparable: k1.compareTo(k2) must not throw
+ a ClassCastException for any keys k1 and
+ k2 in the map.  If the user attempts to put a key into the
+ map that violates this constraint (for example, the user attempts to
+ put a string key into a map whose keys are integers), the
+ put(Object key, Object value) call will throw a
+ ClassCastException.]]></description>
+        </constructor>
+        <constructor>
+            <name>TreeMap</name>
+            <signature><![CDATA[public TreeMap(Comparator<? super K> comparator)]]></signature>
+            <description><![CDATA[Constructs a new, empty tree map, ordered according to the given
+ comparator.  All keys inserted into the map must be mutually
+ comparable by the given comparator: comparator.compare(k1,
+ k2) must not throw a ClassCastException for any keys
+ k1 and k2 in the map.  If the user attempts to put
+ a key into the map that violates this constraint, the put(Object
+ key, Object value) call will throw a
+ ClassCastException.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>comparator</code> - the comparator that will be used to order this map.
+        If <code>null</code>, the <a href="#">natural
+        ordering</a> of the keys will be used.</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>TreeMap</name>
+            <signature><![CDATA[public TreeMap(Map<? extends K,? extends V> m)]]></signature>
+            <description><![CDATA[Constructs a new tree map containing the same mappings as the given
+ map, ordered according to the natural ordering of its keys.
+ All keys inserted into the new map must implement the Comparable interface.  Furthermore, all such keys must be
+ mutually comparable: k1.compareTo(k2) must not throw
+ a ClassCastException for any keys k1 and
+ k2 in the map.  This method runs in n*log(n) time.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>m</code> - the map whose mappings are to be placed in this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the keys in m are not <a href="#"><code>Comparable</code></a>,
+         or are not mutually comparable</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified map is null</dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>TreeMap</name>
+            <signature><![CDATA[public TreeMap(SortedMap<K,? extends V> m)]]></signature>
+            <description><![CDATA[Constructs a new tree map containing the same mappings and
+ using the same ordering as the specified sorted map.  This
+ method runs in linear time.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>m</code> - the sorted map whose mappings are to be placed in this map,
+         and whose comparator is to be used to sort this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified map is null</dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[public int size()]]></signature>
+            <description><![CDATA[Returns the number of key-value mappings in this map.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">size</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of key-value mappings in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>containsKey</name>
+            <signature><![CDATA[public boolean containsKey(Object key)]]></signature>
+            <description><![CDATA[Returns true if this map contains a mapping for the specified
+ key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">containsKey</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">containsKey</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key whose presence in this map is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this map contains a mapping for the
+         specified key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>containsValue</name>
+            <signature><![CDATA[public boolean containsValue(Object value)]]></signature>
+            <description><![CDATA[Returns true if this map maps one or more keys to the
+ specified value.  More formally, returns true if and only if
+ this map contains at least one mapping to a value v such
+ that (value==null ? v==null : value.equals(v)).  This
+ operation will probably require time linear in the map size for
+ most implementations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">containsValue</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">containsValue</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - value whose presence in this map is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if a mapping to <code>value</code> exists;
+         <code>false</code> otherwise</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.2</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>get</name>
+            <signature><![CDATA[public V get(Object key)]]></signature>
+            <description><![CDATA[Returns the value to which the specified key is mapped,
+ or null if this map contains no mapping for the key.
+
+ More formally, if this map contains a mapping from a key
+ k to a value v such that key compares
+ equal to k according to the map's ordering, then this
+ method returns v; otherwise it returns null.
+ (There can be at most one such mapping.)
+
+ A return value of null does not necessarily
+ indicate that the map contains no mapping for the key; it's also
+ possible that the map explicitly maps the key to null.
+ The containsKey operation may be used to
+ distinguish these two cases.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">get</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">get</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key whose associated value is to be returned</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the value to which the specified key is mapped, or
+         <code>null</code> if this map contains no mapping for the key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>comparator</name>
+            <signature><![CDATA[public Comparator<? super K> comparator()]]></signature>
+            <description><![CDATA[Description copied from interface: SortedMapReturns the comparator used to order the keys in this map, or
+ null if this map uses the natural ordering of its keys.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">comparator</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the comparator used to order the keys in this map,
+         or <code>null</code> if this map uses the natural ordering
+         of its keys</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>firstKey</name>
+            <signature><![CDATA[public K firstKey()]]></signature>
+            <description><![CDATA[Description copied from interface: SortedMapReturns the first (lowest) key currently in this map.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">firstKey</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the first (lowest) key currently in this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NoSuchElementException</a></code> - if this map is empty</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lastKey</name>
+            <signature><![CDATA[public K lastKey()]]></signature>
+            <description><![CDATA[Description copied from interface: SortedMapReturns the last (highest) key currently in this map.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">lastKey</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the last (highest) key currently in this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NoSuchElementException</a></code> - if this map is empty</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>putAll</name>
+            <signature><![CDATA[public void putAll(Map<? extends K,? extends V> map)]]></signature>
+            <description><![CDATA[Copies all of the mappings from the specified map to this map.
+ These mappings replace any mappings that this map had for any
+ of the keys currently in the specified map.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">putAll</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">putAll</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>map</code> - mappings to be stored in this map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of a key or value in
+         the specified map prevents it from being stored in this map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified map is null or
+         the specified map contains a null key and this map does not
+         permit null keys</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>put</name>
+            <signature><![CDATA[public V put(K key,
+    V value)]]></signature>
+            <description><![CDATA[Associates the specified value with the specified key in this map.
+ If the map previously contained a mapping for the key, the old
+ value is replaced.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">put</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">put</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key with which the specified value is to be associated</dd><dd><code>value</code> - value to be associated with the specified key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the previous value associated with <code>key</code>, or
+         <code>null</code> if there was no mapping for <code>key</code>.
+         (A <code>null</code> return can also indicate that the map
+         previously associated <code>null</code> with <code>key</code>.)</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[public V remove(Object key)]]></signature>
+            <description><![CDATA[Removes the mapping for this key from this TreeMap if present.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">remove</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - key for which mapping should be removed</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the previous value associated with <code>key</code>, or
+         <code>null</code> if there was no mapping for <code>key</code>.
+         (A <code>null</code> return can also indicate that the map
+         previously associated <code>null</code> with <code>key</code>.)</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[public void clear()]]></signature>
+            <description><![CDATA[Removes all of the mappings from this map.
+ The map will be empty after this call returns.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clear</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+</dl>]]></description>
+        </method>
+        <method>
+            <name>clone</name>
+            <signature><![CDATA[public Object clone()]]></signature>
+            <description><![CDATA[Returns a shallow copy of this TreeMap instance. (The keys and
+ values themselves are not cloned.)<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">clone</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a shallow copy of this map</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Cloneable</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>firstEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> firstEntry()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a key-value mapping associated with the least
+ key in this map, or null if the map is empty.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">firstEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an entry with the least key,
+         or <code>null</code> if this map is empty</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lastEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> lastEntry()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a key-value mapping associated with the greatest
+ key in this map, or null if the map is empty.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">lastEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an entry with the greatest key,
+         or <code>null</code> if this map is empty</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>pollFirstEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> pollFirstEntry()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapRemoves and returns a key-value mapping associated with
+ the least key in this map, or null if the map is empty.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">pollFirstEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the removed first entry of this map,
+         or <code>null</code> if this map is empty</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>pollLastEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> pollLastEntry()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapRemoves and returns a key-value mapping associated with
+ the greatest key in this map, or null if the map is empty.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">pollLastEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the removed last entry of this map,
+         or <code>null</code> if this map is empty</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lowerEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> lowerEntry(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a key-value mapping associated with the greatest key
+ strictly less than the given key, or null if there is
+ no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">lowerEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an entry with the greatest key less than <code>key</code>,
+         or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lowerKey</name>
+            <signature><![CDATA[public K lowerKey(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns the greatest key strictly less than the given key, or
+ null if there is no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">lowerKey</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the greatest key less than <code>key</code>,
+         or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>floorEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> floorEntry(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a key-value mapping associated with the greatest key
+ less than or equal to the given key, or null if there
+ is no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">floorEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an entry with the greatest key less than or equal to
+         <code>key</code>, or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>floorKey</name>
+            <signature><![CDATA[public K floorKey(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns the greatest key less than or equal to the given key,
+ or null if there is no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">floorKey</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the greatest key less than or equal to <code>key</code>,
+         or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>ceilingEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> ceilingEntry(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a key-value mapping associated with the least key
+ greater than or equal to the given key, or null if
+ there is no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">ceilingEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an entry with the least key greater than or equal to
+         <code>key</code>, or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>ceilingKey</name>
+            <signature><![CDATA[public K ceilingKey(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns the least key greater than or equal to the given key,
+ or null if there is no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">ceilingKey</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the least key greater than or equal to <code>key</code>,
+         or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>higherEntry</name>
+            <signature><![CDATA[public Map.Entry<K,V> higherEntry(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a key-value mapping associated with the least key
+ strictly greater than the given key, or null if there
+ is no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">higherEntry</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an entry with the least key greater than <code>key</code>,
+         or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>higherKey</name>
+            <signature><![CDATA[public K higherKey(K key)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns the least key strictly greater than the given key, or
+ null if there is no such key.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">higherKey</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the key</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the least key greater than <code>key</code>,
+         or <code>null</code> if there is no such key</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the specified key cannot be compared
+         with the keys currently in the map</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified key is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>keySet</name>
+            <signature><![CDATA[public Set<K> keySet()]]></signature>
+            <description><![CDATA[Returns a Set view of the keys contained in this map.
+ The set's iterator returns the keys in ascending order.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own remove operation), the results of
+ the iteration are undefined.  The set supports element removal,
+ which removes the corresponding mapping from the map, via the
+ Iterator.remove, Set.remove,
+ removeAll, retainAll, and clear
+ operations.  It does not support the add or addAll
+ operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">keySet</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">keySet</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">keySet</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a set view of the keys contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>navigableKeySet</name>
+            <signature><![CDATA[public NavigableSet<K> navigableKeySet()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a NavigableSet view of the keys contained in this map.
+ The set's iterator returns the keys in ascending order.
+ The set is backed by the map, so changes to the map are reflected in
+ the set, and vice-versa.  If the map is modified while an iteration
+ over the set is in progress (except through the iterator's own remove operation), the results of the iteration are undefined.  The
+ set supports element removal, which removes the corresponding mapping
+ from the map, via the Iterator.remove, Set.remove,
+ removeAll, retainAll, and clear operations.
+ It does not support the add or addAll operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">navigableKeySet</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a navigable set view of the keys in this map</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>descendingKeySet</name>
+            <signature><![CDATA[public NavigableSet<K> descendingKeySet()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a reverse order NavigableSet view of the keys contained in this map.
+ The set's iterator returns the keys in descending order.
+ The set is backed by the map, so changes to the map are reflected in
+ the set, and vice-versa.  If the map is modified while an iteration
+ over the set is in progress (except through the iterator's own remove operation), the results of the iteration are undefined.  The
+ set supports element removal, which removes the corresponding mapping
+ from the map, via the Iterator.remove, Set.remove,
+ removeAll, retainAll, and clear operations.
+ It does not support the add or addAll operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">descendingKeySet</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a reverse order navigable set view of the keys in this map</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>values</name>
+            <signature><![CDATA[public Collection<V> values()]]></signature>
+            <description><![CDATA[Returns a Collection view of the values contained in this map.
+ The collection's iterator returns the values in ascending order
+ of the corresponding keys.
+ The collection is backed by the map, so changes to the map are
+ reflected in the collection, and vice-versa.  If the map is
+ modified while an iteration over the collection is in progress
+ (except through the iterator's own remove operation),
+ the results of the iteration are undefined.  The collection
+ supports element removal, which removes the corresponding
+ mapping from the map, via the Iterator.remove,
+ Collection.remove, removeAll,
+ retainAll and clear operations.  It does not
+ support the add or addAll operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">values</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">values</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">values</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a collection view of the values contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>entrySet</name>
+            <signature><![CDATA[public Set<Map.Entry<K,V>> entrySet()]]></signature>
+            <description><![CDATA[Returns a Set view of the mappings contained in this map.
+ The set's iterator returns the entries in ascending key order.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own remove operation, or through the
+ setValue operation on a map entry returned by the
+ iterator) the results of the iteration are undefined.  The set
+ supports element removal, which removes the corresponding
+ mapping from the map, via the Iterator.remove,
+ Set.remove, removeAll, retainAll and
+ clear operations.  It does not support the
+ add or addAll operations.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">entrySet</a></code> in interface <code><a href="#">Map</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">entrySet</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">entrySet</a></code> in class <code><a href="#">AbstractMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a set view of the mappings contained in this map</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>descendingMap</name>
+            <signature><![CDATA[public NavigableMap<K,V> descendingMap()]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a reverse order view of the mappings contained in this map.
+ The descending map is backed by this map, so changes to the map are
+ reflected in the descending map, and vice-versa.  If either map is
+ modified while an iteration over a collection view of either map
+ is in progress (except through the iterator's own remove
+ operation), the results of the iteration are undefined.
+
+ The returned map has an ordering equivalent to
+ Collections.reverseOrder(comparator()).
+ The expression m.descendingMap().descendingMap() returns a
+ view of m essentially equivalent to m.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">descendingMap</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a reverse order view of this map</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>subMap</name>
+            <signature><![CDATA[public NavigableMap<K,V> subMap(K fromKey,
+                       boolean fromInclusive,
+                       K toKey,
+                       boolean toInclusive)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a view of the portion of this map whose keys range from
+ fromKey to toKey.  If fromKey and
+ toKey are equal, the returned map is empty unless
+ fromInclusive and toInclusive are both true.  The
+ returned map is backed by this map, so changes in the returned map are
+ reflected in this map, and vice-versa.  The returned map supports all
+ optional map operations that this map supports.
+
+ The returned map will throw an IllegalArgumentException
+ on an attempt to insert a key outside of its range, or to construct a
+ submap either of whose endpoints lie outside its range.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">subMap</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromKey</code> - low endpoint of the keys in the returned map</dd><dd><code>fromInclusive</code> - <code>true</code> if the low endpoint
+        is to be included in the returned view</dd><dd><code>toKey</code> - high endpoint of the keys in the returned map</dd><dd><code>toInclusive</code> - <code>true</code> if the high endpoint
+        is to be included in the returned view</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this map whose keys range from
+         <code>fromKey</code> to <code>toKey</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>fromKey</code> and <code>toKey</code>
+         cannot be compared to one another using this map's comparator
+         (or, if the map has no comparator, using natural ordering).
+         Implementations may, but are not required to, throw this
+         exception if <code>fromKey</code> or <code>toKey</code>
+         cannot be compared to keys currently in the map.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromKey</code> or <code>toKey</code> is
+         null and this map uses natural ordering, or its comparator
+         does not permit null keys</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>fromKey</code> is greater than
+         <code>toKey</code>; or if this map itself has a restricted
+         range, and <code>fromKey</code> or <code>toKey</code> lies
+         outside the bounds of the range</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>headMap</name>
+            <signature><![CDATA[public NavigableMap<K,V> headMap(K toKey,
+                        boolean inclusive)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a view of the portion of this map whose keys are less than (or
+ equal to, if inclusive is true) toKey.  The returned
+ map is backed by this map, so changes in the returned map are reflected
+ in this map, and vice-versa.  The returned map supports all optional
+ map operations that this map supports.
+
+ The returned map will throw an IllegalArgumentException
+ on an attempt to insert a key outside its range.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">headMap</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>toKey</code> - high endpoint of the keys in the returned map</dd><dd><code>inclusive</code> - <code>true</code> if the high endpoint
+        is to be included in the returned view</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this map whose keys are less than
+         (or equal to, if <code>inclusive</code> is true) <code>toKey</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>toKey</code> is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if <code>toKey</code> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <code>toKey</code> cannot be compared to keys
+         currently in the map.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>toKey</code> is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this map itself has a
+         restricted range, and <code>toKey</code> lies outside the
+         bounds of the range</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>tailMap</name>
+            <signature><![CDATA[public NavigableMap<K,V> tailMap(K fromKey,
+                        boolean inclusive)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a view of the portion of this map whose keys are greater than (or
+ equal to, if inclusive is true) fromKey.  The returned
+ map is backed by this map, so changes in the returned map are reflected
+ in this map, and vice-versa.  The returned map supports all optional
+ map operations that this map supports.
+
+ The returned map will throw an IllegalArgumentException
+ on an attempt to insert a key outside its range.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">tailMap</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromKey</code> - low endpoint of the keys in the returned map</dd><dd><code>inclusive</code> - <code>true</code> if the low endpoint
+        is to be included in the returned view</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this map whose keys are greater than
+         (or equal to, if <code>inclusive</code> is true) <code>fromKey</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>fromKey</code> is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if <code>fromKey</code> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <code>fromKey</code> cannot be compared to keys
+         currently in the map.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromKey</code> is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this map itself has a
+         restricted range, and <code>fromKey</code> lies outside the
+         bounds of the range</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.6</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>subMap</name>
+            <signature><![CDATA[public SortedMap<K,V> subMap(K fromKey,
+                    K toKey)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a view of the portion of this map whose keys range from
+ fromKey, inclusive, to toKey, exclusive.  (If
+ fromKey and toKey are equal, the returned map
+ is empty.)  The returned map is backed by this map, so changes
+ in the returned map are reflected in this map, and vice-versa.
+ The returned map supports all optional map operations that this
+ map supports.
+
+ The returned map will throw an IllegalArgumentException
+ on an attempt to insert a key outside its range.
+
+ Equivalent to subMap(fromKey, true, toKey, false).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">subMap</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">subMap</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromKey</code> - low endpoint (inclusive) of the keys in the returned map</dd><dd><code>toKey</code> - high endpoint (exclusive) of the keys in the returned map</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this map whose keys range from
+         <code>fromKey</code>, inclusive, to <code>toKey</code>, exclusive</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>fromKey</code> and <code>toKey</code>
+         cannot be compared to one another using this map's comparator
+         (or, if the map has no comparator, using natural ordering).
+         Implementations may, but are not required to, throw this
+         exception if <code>fromKey</code> or <code>toKey</code>
+         cannot be compared to keys currently in the map.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromKey</code> or <code>toKey</code> is
+         null and this map uses natural ordering, or its comparator
+         does not permit null keys</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if <code>fromKey</code> is greater than
+         <code>toKey</code>; or if this map itself has a restricted
+         range, and <code>fromKey</code> or <code>toKey</code> lies
+         outside the bounds of the range</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>headMap</name>
+            <signature><![CDATA[public SortedMap<K,V> headMap(K toKey)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a view of the portion of this map whose keys are
+ strictly less than toKey.  The returned map is backed
+ by this map, so changes in the returned map are reflected in
+ this map, and vice-versa.  The returned map supports all
+ optional map operations that this map supports.
+
+ The returned map will throw an IllegalArgumentException
+ on an attempt to insert a key outside its range.
+
+ Equivalent to headMap(toKey, false).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">headMap</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">headMap</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>toKey</code> - high endpoint (exclusive) of the keys in the returned map</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this map whose keys are strictly
+         less than <code>toKey</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>toKey</code> is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if <code>toKey</code> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <code>toKey</code> cannot be compared to keys
+         currently in the map.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>toKey</code> is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this map itself has a
+         restricted range, and <code>toKey</code> lies outside the
+         bounds of the range</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>tailMap</name>
+            <signature><![CDATA[public SortedMap<K,V> tailMap(K fromKey)]]></signature>
+            <description><![CDATA[Description copied from interface: NavigableMapReturns a view of the portion of this map whose keys are
+ greater than or equal to fromKey.  The returned map is
+ backed by this map, so changes in the returned map are
+ reflected in this map, and vice-versa.  The returned map
+ supports all optional map operations that this map supports.
+
+ The returned map will throw an IllegalArgumentException
+ on an attempt to insert a key outside its range.
+
+ Equivalent to tailMap(fromKey, true).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">tailMap</a></code> in interface <code><a href="#">NavigableMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">tailMap</a></code> in interface <code><a href="#">SortedMap</a><<a href="#">K</a>,<a href="#">V</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fromKey</code> - low endpoint (inclusive) of the keys in the returned map</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the portion of this map whose keys are greater
+         than or equal to <code>fromKey</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if <code>fromKey</code> is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if <code>fromKey</code> does not implement <a href="#"><code>Comparable</code></a>).
+         Implementations may, but are not required to, throw this
+         exception if <code>fromKey</code> cannot be compared to keys
+         currently in the map.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if <code>fromKey</code> is null
+         and this map uses natural ordering, or its comparator
+         does not permit null keys</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if this map itself has a
+         restricted range, and <code>fromKey</code> lies outside the
+         bounds of the range</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

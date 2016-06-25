@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.cppreference.com/cppstring/insert.html -->
+<HTML><HEAD><TITLE>insert</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="insert.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A 
+      href="../cppstring/insert.html">insert</A> </DIV>
+      <DIV class=name-format>insert </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  iterator insert( iterator i, const char&amp; ch );
+  string&amp; insert( <STRONG>size_type</STRONG> index, const string&amp; str );
+  string&amp; insert( <STRONG>size_type</STRONG> index, const char* str );
+  string&amp; insert( <STRONG>size_type</STRONG> index1, const string&amp; str, <STRONG>size_type</STRONG> index2, <STRONG>size_type</STRONG> num );
+  string&amp; insert( <STRONG>size_type</STRONG> index, const char* str, <STRONG>size_type</STRONG> num );
+  string&amp; insert( <STRONG>size_type</STRONG> index, <STRONG>size_type</STRONG> num, char ch );
+  void insert( iterator i, <STRONG>size_type</STRONG> num, const char&amp; ch );
+  void insert( iterator i, iterator start, iterator end );
+</PRE>
+      <P>The very multi-purpose insert() function either:</P>
+      <UL>
+        <LI>inserts <EM>ch</EM> before the character denoted by <EM>i</EM>, 
+        <LI>inserts <EM>str</EM> into the current string, at location 
+        <EM>index</EM>, 
+        <LI>inserts a substring of <EM>str</EM> (starting at <EM>index2</EM> and 
+        <EM>num</EM> characters long) into the current string, at location 
+        <EM>index1</EM>, 
+        <LI>inserts <EM>num</EM> characters of <EM>str</EM> into the current 
+        string, at location <EM>index</EM>, 
+        <LI>inserts <EM>num</EM> copies of <EM>ch</EM> into the current string, 
+        at location <EM>index</EM>, 
+        <LI>inserts <EM>num</EM> copies of <EM>ch</EM> into the current string, 
+        before the character denoted by <EM>i</EM>, 
+        <LI>or inserts the characters denoted by <EM>start</EM> and <EM>end</EM> 
+        into the current string, before the character specified by <EM>i</EM>. 
+        </LI></UL>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppstring/erase.html">erase</A><BR><A 
+      href="../cppstring/replace.html">replace</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

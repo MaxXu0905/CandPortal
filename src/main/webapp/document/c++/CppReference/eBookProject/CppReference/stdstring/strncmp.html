@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/stdstring/strncmp.html -->
+<HTML><HEAD><TITLE>strncmp</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="strncmp.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C String 
+      and Character</A> &gt; <A 
+      href="strncmp.html">strncmp</A> 
+      </DIV>
+      <DIV class=name-format>strncmp </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string.h&gt;
+  int strncmp( const char *str1, const char *str2, size_t count );
+</PRE>
+      <P>The strncmp() function compares at most <EM>count</EM> characters of 
+      <EM>str1</EM> and <EM>str2</EM>. The return value is as follows:</P>
+      <TABLE class=code-table>
+        <TBODY>
+        <TR>
+          <TH class=code-table-th>Return value</TH>
+          <TH class=code-table-th>Explanation</TH></TR>
+        <TR>
+          <TD class=code-table-td>less than 0</TD>
+          <TD class=code-table-td>''str1'' is less than ''str2''</TD></TR>
+        <TR>
+          <TD class=code-table-td>equal to 0</TD>
+          <TD class=code-table-td>''str1'' is equal to ''str2''</TD></TR>
+        <TR>
+          <TD class=code-table-td>greater than 0</TD>
+          <TD class=code-table-td>''str1'' is greater than 
+      str2''</TD></TR></TBODY></TABLE>
+      <P>If there are less than <EM>count</EM> characters in either string, then 
+      the comparison will stop after the first null termination is 
+      encountered.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="strchr.html">strchr</A><BR><A 
+      href="strcmp.html">strcmp</A><BR><A 
+      href="strcpy.html">strcpy</A><BR><A 
+      href="strlen.html">strlen</A><BR><A 
+      href="strncat.html">strncat</A><BR><A 
+      href="strncpy.html">strncpy</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

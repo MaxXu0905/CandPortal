@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="regex">
+    <methods>
+        <method>
+            <name>ereg_replace</name>
+            <signature><![CDATA[string ereg_replace ( string pattern, string replacement, string string)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN96497" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >ereg_replace</B
+> ( string pattern, string replacement, string string)<BR  ></BR
+><P  >     本函数在 <TT  CLASS="parameter" ><I  >string</I
+></TT
+> 中扫描与
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> 匹配的部分，并将其替换为
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+>。
+    </P
+><P  >     返回替换后的字符串。（如果没有可供替换的匹配项则会返回原字符串。）
+    </P
+><P  >     如果 <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+>
+     包含有括号内的子串，则 <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+>
+     可以包含形如
+     <TT  CLASS="literal" >\\<TT  CLASS="replaceable" ><I  >digit</I
+></TT
+></TT
+>
+     的子串，这些子串将被替换为数字表示的的第几个括号内的子串；<TT  CLASS="literal" >\\0</TT
+>
+     则包含了字符串的整个内容。最多可以用九个子串。括号可以嵌套，此情形下以左圆括号来计算顺序。
+    </P
+><P  >     如果未在 <TT  CLASS="parameter" ><I  >string</I
+></TT
+>
+     中找到匹配项，则
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> 将原样返回。
+    </P
+><P  >     例如，下面的代码片断输出
+     "This was a test" 三次：
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96527" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >ereg_replace()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />$string </font><font  color="#007700">= </font><font  color="#DD0000">"This is a test"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">ereg_replace </font><font  color="#007700">(</font><font  color="#DD0000">" is"</font><font  color="#007700">, </font><font  color="#DD0000">" was"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">ereg_replace </font><font  color="#007700">(</font><font  color="#DD0000">"( )is"</font><font  color="#007700">, </font><font  color="#DD0000">"\\1was"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">ereg_replace </font><font  color="#007700">(</font><font  color="#DD0000">"(( )is)"</font><font  color="#007700">, </font><font  color="#DD0000">"\\2was"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     要注意的一点事如果在 <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+>
+     参数中使用了整数值，则可能得不到所期望的结果。这是因为
+     <B  CLASS="function" >ereg_replace()</B
+> 将把数字作为字符的序列值来解释并应用之。例如：
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96535" ></A
+><P  ><B  >例子 2. <B  CLASS="function" >ereg_replace()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">/* 不能产生出期望的结果 */<br  /></font><font  color="#0000BB">$num </font><font  color="#007700">= </font><font  color="#0000BB">4</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#DD0000">"This string has four words."</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#0000BB">ereg_replace</font><font  color="#007700">(</font><font  color="#DD0000">'four'</font><font  color="#007700">, </font><font  color="#0000BB">$num</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$string</font><font  color="#007700">;   </font><font  color="#FF8000">/* Output: 'This string has   words.' */<br  /><br  />/* 本例工作正常 */<br  /></font><font  color="#0000BB">$num </font><font  color="#007700">= </font><font  color="#DD0000">'4'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#DD0000">"This string has four words."</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#0000BB">ereg_replace</font><font  color="#007700">(</font><font  color="#DD0000">'four'</font><font  color="#007700">, </font><font  color="#0000BB">$num</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$string</font><font  color="#007700">;   </font><font  color="#FF8000">/* Output: 'This string has 4 words.' */<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96540" ></A
+><P  ><B  >例子 3. 将 URL 替换为超连接</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$text </font><font  color="#007700">= </font><font  color="#0000BB">ereg_replace</font><font  color="#007700">(</font><font  color="#DD0000">"[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]"</font><font  color="#007700">,<br  />                     </font><font  color="#DD0000">"<a href=\"\\0\">\\0</a>"</font><font  color="#007700">, </font><font  color="#0000BB">$text</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >提示: </B
+>
+      <SPAN HREF="#"><B  CLASS="function" >preg_replace()</B
+></A
+> 函数使用了
+      Perl 兼容正则表达式语法，通常是比
+      <B  CLASS="function" >ereg_replace()</B
+> 更快的替代方案。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >ereg()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >eregi()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >eregi_replace()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >str_replace()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >preg_match()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>ereg</name>
+            <signature><![CDATA[bool ereg ( string pattern, string string [, array regs])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN96557" ></A
+><H2  >说明</H2
+>bool <B  CLASS="methodname" >ereg</B
+> ( string pattern, string string [, array regs])<BR  ></BR
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      使用 Perl 兼容正则表达式语法的 <SPAN HREF="#"><B  CLASS="function" >preg_match()</B
+></A
+>
+      函数通常是比 <B  CLASS="function" >ereg()</B
+> 更快的替代方案。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     以区分大小写的方式在 <TT  CLASS="parameter" ><I  >string</I
+></TT
+>
+     中寻找与给定的正则表达式 <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> 所匹配的子串。
+    </P
+><P  >     如果找到与 <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+>
+     中圆括号内的子模式相匹配的子串并且函数调用给出了第三个参数
+     <TT  CLASS="parameter" ><I  >regs</I
+></TT
+>，则匹配项将被存入
+     <TT  CLASS="parameter" ><I  >regs</I
+></TT
+> 数组中。$regs[1]
+     包含第一个左圆括号开始的子串，$regs[2]
+     包含第二个子串，以此类推。$regs[0] 包含整个匹配的字符串。
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      直到 PHP 4.1.0 为止，<TT  CLASS="varname" >$regs</TT
+>
+      将被填充为正好十个单元，即使实际匹配的子串少于十个。这并不影响
+      <B  CLASS="function" >ereg()</B
+> 匹配更多子串的能力。如果没有找到匹配，则
+      <TT  CLASS="literal" >$regs</TT
+> 不会被 <B  CLASS="function" >ereg()</B
+> 更改。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     如果在 <TT  CLASS="parameter" ><I  >string</I
+></TT
+>
+     中找到 <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> 模式的匹配则返回
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，如果没有找到匹配或出错则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     以下代码片断接受 ISO 格式的日期（YYYY-MM-DD）然后以
+     DD.MM.YYYY 格式显示：
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96595" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >ereg()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">ereg </font><font  color="#007700">(</font><font  color="#DD0000">"([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})"</font><font  color="#007700">, </font><font  color="#0000BB">$date</font><font  color="#007700">, </font><font  color="#0000BB">$regs</font><font  color="#007700">)) {<br  />    echo </font><font  color="#DD0000">"$regs[3].$regs[2].$regs[1]"</font><font  color="#007700">;<br  />} else {<br  />    echo </font><font  color="#DD0000">"Invalid date format: $date"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >eregi()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >ereg_replace()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >eregi_replace()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >preg_match()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >strpos()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >strstr()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>eregi_replace</name>
+            <signature><![CDATA[string eregi_replace ( string pattern, string replacement, string string)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN96610" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >eregi_replace</B
+> ( string pattern, string replacement, string string)<BR  ></BR
+><P  >     本函数和 <SPAN HREF="#"><B  CLASS="function" >ereg_replace()</B
+></A
+>
+     完全相同，只除了在匹配字母字符时忽略大小写的区别。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >ereg()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >eregi()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >ereg_replace()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>eregi</name>
+            <signature><![CDATA[bool eregi ( string pattern, string string [, array regs])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN96634" ></A
+><H2  >说明</H2
+>bool <B  CLASS="methodname" >eregi</B
+> ( string pattern, string string [, array regs])<BR  ></BR
+><P  >     本函数和 <SPAN HREF="#"><B  CLASS="function" >ereg()</B
+></A
+>
+     完全相同，只除了在匹配字母字符时忽略大小写的区别。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96651" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >eregi()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">eregi</font><font  color="#007700">(</font><font  color="#DD0000">"z"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">)) {<br  />    echo </font><font  color="#DD0000">"'$string' contains a 'z' or 'Z'!"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >ereg()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >ereg_replace()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >eregi_replace()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >stripos()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >stristr()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>split</name>
+            <signature><![CDATA[array split ( string pattern, string string [, int limit])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN96665" ></A
+><H2  >说明</H2
+>array <B  CLASS="methodname" >split</B
+> ( string pattern, string string [, int limit])<BR  ></BR
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >提示: </B
+>
+      <SPAN HREF="#"><B  CLASS="function" >preg_split()</B
+></A
+> 函数使用了
+      Perl 兼容正则表达式语法，通常是比
+      <B  CLASS="function" >split()</B
+> 更快的替代方案。如果不需要正则表达式的威力，则使用
+      <SPAN HREF="#"><B  CLASS="function" >explode()</B
+></A
+> 更快，这样就不会招致正则表达式引擎的浪费。
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     本函数返回一个字符串数组，每个单元为
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> 经区分大小写的正则表达式
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> 作为边界分割出的子串。如果设定了
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+>，则返回的数组最多包含
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+> 个单元，而其中最后一个单元包含了
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> 中剩余的所有部分。如果出错，则
+     <B  CLASS="function" >split()</B
+> 返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     将 <TT  CLASS="filename" >/etc/passwd</TT
+> 中的前四个字段分割出来：
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96695" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >split()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">list(</font><font  color="#0000BB">$user</font><font  color="#007700">, </font><font  color="#0000BB">$pass</font><font  color="#007700">, </font><font  color="#0000BB">$uid</font><font  color="#007700">, </font><font  color="#0000BB">$gid</font><font  color="#007700">, </font><font  color="#0000BB">$extra</font><font  color="#007700">) =<br  />    </font><font  color="#0000BB">split </font><font  color="#007700">(</font><font  color="#DD0000">":"</font><font  color="#007700">, </font><font  color="#0000BB">$passwd_line</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     如果字符串中有 <TT  CLASS="replaceable" ><I  >n</I
+></TT
+> 个与
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> 匹配的项目，则返回的数组将包含
+     <TT  CLASS="literal" ><TT  CLASS="replaceable" ><I  >n</I
+></TT
+>+1</TT
+> 个单元。例如，如果没有找到
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+>，则会返回一个只有一个单元的数组。当然，如果
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> 为空也是这样。
+    </P
+><P  >     解析可能用斜线，点，或横线分割的日期：
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96708" ></A
+><P  ><B  >例子 2. <B  CLASS="function" >split()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// 分隔符可以是斜线，点，或横线<br  /></font><font  color="#0000BB">$date </font><font  color="#007700">= </font><font  color="#DD0000">"04/30/1973"</font><font  color="#007700">;<br  />list(</font><font  color="#0000BB">$month</font><font  color="#007700">, </font><font  color="#0000BB">$day</font><font  color="#007700">, </font><font  color="#0000BB">$year</font><font  color="#007700">) = </font><font  color="#0000BB">split </font><font  color="#007700">(</font><font  color="#DD0000">'[/.-]'</font><font  color="#007700">, </font><font  color="#0000BB">$date</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Month: $month; Day: $day; Year: $year<br />\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     想仿效 Perl 中类似的 <B  CLASS="command" >@chars =
+     split('', $str)</B
+> 行为，请参考
+     <SPAN HREF="#"><B  CLASS="function" >preg_split()</B
+></A
+> 函数中的例子。
+    </P
+><P  >     注意 <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+>
+     是一个正则表达式。如果想要用的分割字符是正则表达式中的特殊字符，要先将其转义。如果觉得
+     <B  CLASS="function" >split()</B
+>（或其它任何 regex 函数）行为古怪的话，请阅读包含在
+     PHP 发行包中 <TT  CLASS="filename" >regex/</TT
+> 子目录下的
+     <TT  CLASS="filename" >regex.7</TT
+> 文件。该文件是手册页面格式，可以用类似
+     <B  CLASS="command" >man /usr/local/src/regex/regex.7</B
+> 的命令来阅读。
+    </P
+><P  >     参见 <SPAN HREF="#"><B  CLASS="function" >preg_split()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >spliti()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >explode()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >implode()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >chunk_split()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >wordwrap()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>spliti</name>
+            <signature><![CDATA[array spliti ( string pattern, string string [, int limit])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN96732" ></A
+><H2  >说明</H2
+>array <B  CLASS="methodname" >spliti</B
+> ( string pattern, string string [, int limit])<BR  ></BR
+><P  >     本函数和 <SPAN HREF="#"><B  CLASS="function" >split()</B
+></A
+> 相同，只除了在匹配字母字符时忽略大小写的区别。
+    </P
+><P  >     参见 <B  CLASS="function" >preg_spliti()</B
+>，<SPAN HREF="#"><B  CLASS="function" >split()</B
+></A
+>，<SPAN HREF="#"><B  CLASS="function" >explode()</B
+></A
+>
+     和 <SPAN HREF="#"><B  CLASS="function" >implode()</B
+></A
+>。
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>sql_regcase</name>
+            <signature><![CDATA[string sql_regcase ( string string)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN96757" ></A
+><H2  >说明</H2
+>string <B  CLASS="methodname" >sql_regcase</B
+> ( string string)<BR  ></BR
+><P  >     返回与 <TT  CLASS="parameter" ><I  >string</I
+></TT
+>
+     相匹配的正则表达式，不论大小写字母。返回的表达式是将
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+>
+     中的每个字母字符转换为方括号表达式，该方括号表达式包含了该字母的大小写形式。其它字符保留不变。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96769" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >sql_regcase()</B
+> 例子</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">sql_regcase </font><font  color="#007700">(</font><font  color="#DD0000">"Foo - bar."</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       输出为：
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >[Ff][Oo][Oo] - [Bb][Aa][Rr].</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     可以用于在仅支持区分大小写正则表达式的产品中完成不区分大小写的模式匹配。
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

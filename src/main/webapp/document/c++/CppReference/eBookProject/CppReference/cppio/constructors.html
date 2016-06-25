@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.cppreference.com/cppio/constructors.html -->
+<HTML><HEAD><TITLE>I/O Constructors</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="constructors.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/constructors.html">I/O 
+      Constructors</A> </DIV>
+      <DIV class=name-format>I/O Constructors </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  fstream( const char *filename, openmode mode );
+  ifstream( const char *filename, openmode mode );
+  ofstream( const char *filename, openmode mode );
+</PRE>
+      <P>The fstream, ifstream, and ofstream objects are used to do file I/O. 
+      The optional <EM>mode</EM> defines how the file is to be opened, according 
+      to the <A href="../io_flags.html#mode_flags">io 
+      stream mode flag</A>s. The optional <EM>filename</EM> specifies the file 
+      to be opened and associated with the stream.</P>
+      <P>Input and output file streams can be used in a similar manner to C++ 
+      predefined I/O streams, cin and cout.</P>
+      <DIV class=related-examples-format>Example code: </DIV>
+      <DIV class=related-examples>
+      <P>The following code reads input data and appends the result to an output 
+      file.</P><PRE class=example-code>  ifstream fin( "/tmp/data.txt" );
+  ofstream fout( "/tmp/results.txt", ios::app );
+  while( fin &gt;&gt; temp )
+    fout &lt;&lt; temp + 2 &lt;&lt; endl;
+  fin.close();
+  fout.close();         
+</PRE></DIV>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/close.html">close</A><BR><A 
+      href="../cppio/open.html">open</A> 
+  </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

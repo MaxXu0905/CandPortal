@@ -1,0 +1,625 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.cppreference.com/cppio/all.html -->
+<HTML><HEAD><TITLE>C++ I/O</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> </DIV>
+      <DIV class=name-format>bad </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  bool bad();
+</PRE>
+      <P>The bad() function returns true if a fatal error with the current 
+      stream has occurred, false otherwise.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/eof.html">eof</A><BR><A 
+      href="../cppio/fail.html">fail</A><BR><A 
+      href="../cppio/good.html">good</A><BR><A 
+      href="../cppio/rdstate.html">rdstate</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>clear </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  void clear( iostate flags = ios::goodbit );
+</PRE>
+<P>The function clear() does two things:</P>
+<UL>
+  <LI>it clears all <A 
+  href="../io_flags.html#state_flags">io stream state 
+  flag</A>s associated with the current stream, 
+  <LI>and sets the flags denoted by <EM>flags</EM> </LI></UL>
+<P>The <EM>flags</EM> argument defaults to ios::goodbit, which means that by 
+default, all flags will be cleared and ios::goodbit will be set.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>For example, the following code uses the clear() function to reset the flags 
+of an output file stream, after an attempt is made to read from that output 
+stream:</P><PRE class=example-code> fstream outputFile( "output.txt", fstream::out );            
+
+ // try to read from the output stream; this shouldn't work
+ int val;
+ outputFile &gt;&gt; val;
+ if( outputFile.fail() ) {
+   cout &lt;&lt; "Error reading from the output stream" &lt;&lt; endl;
+   // reset the flags associated with the stream
+   outputFile.clear();
+ }              
+                
+
+ for( int i = 0; i &lt; 10; i++ ) {
+   outputFile &lt;&lt; i &lt;&lt; " ";
+ }
+ outputFile &lt;&lt; endl;              
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/eof.html">eof</A><BR><A 
+href="../cppio/fail.html">fail</A><BR><A 
+href="../cppio/good.html">good</A><BR><A 
+href="../cppio/rdstate.html">rdstate</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>close </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  void close();
+</PRE>
+<P>The close() function closes the associated file stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/constructors.html">I/O 
+Constructors</A><BR><A 
+href="../cppio/open.html">open</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>I/O Constructors </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  fstream( const char *filename, openmode mode );
+  ifstream( const char *filename, openmode mode );
+  ofstream( const char *filename, openmode mode );
+</PRE>
+<P>The fstream, ifstream, and ofstream objects are used to do file I/O. The 
+optional <EM>mode</EM> defines how the file is to be opened, according to the <A 
+href="../io_flags.html#mode_flags">io stream mode 
+flag</A>s. The optional <EM>filename</EM> specifies the file to be opened and 
+associated with the stream.</P>
+<P>Input and output file streams can be used in a similar manner to C++ 
+predefined I/O streams, cin and cout.</P>
+<DIV class=related-examples-format>Example code: </DIV>
+<DIV class=related-examples>
+<P>The following code reads input data and appends the result to an output 
+file.</P><PRE class=example-code>  ifstream fin( "/tmp/data.txt" );
+  ofstream fout( "/tmp/results.txt", ios::app );
+  while( fin &gt;&gt; temp )
+    fout &lt;&lt; temp + 2 &lt;&lt; endl;
+  fin.close();
+  fout.close();         
+</PRE></DIV>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/close.html">close</A><BR><A 
+href="../cppio/open.html">open</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>eof </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  bool eof();
+</PRE>
+<P>The function eof() returns true if the end of the associated input file has 
+been reached, false otherwise.</P>
+<P>For example, the following code reads data from an input stream <EM>in</EM> 
+and writes it to an output stream <EM>out</EM>, using eof() at the end to check 
+if an error occurred:</P><PRE class=example-code> char buf[BUFSIZE];
+ do {
+   in.read( buf, BUFSIZE );
+   std::streamsize n = in.gcount();
+   out.write( buf, n );
+ } while( in.good() );
+ if( in.bad() || !in.eof() ) {
+   // fatal error occurred
+ }
+ in.close();            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/bad.html">bad</A><BR><A 
+href="../cppio/clear.html">clear</A><BR><A 
+href="../cppio/fail.html">fail</A><BR><A 
+href="../cppio/good.html">good</A><BR><A 
+href="../cppio/rdstate.html">rdstate</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fail </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  bool fail();
+</PRE>
+<P>The fail() function returns true if an error has occurred with the current 
+stream, false otherwise.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/bad.html">bad</A><BR><A 
+href="../cppio/clear.html">clear</A><BR><A 
+href="../cppio/eof.html">eof</A><BR><A 
+href="../cppio/good.html">good</A><BR><A 
+href="../cppio/rdstate.html">rdstate</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fill </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  char fill();
+  char fill( char ch );
+</PRE>
+<P>The function fill() either returns the current fill character, or sets the 
+current fill character to <EM>ch</EM>.</P>
+<P>The fill character is defined as the character that is used for padding when 
+a number is smaller than the specified <A 
+href="../cppio/width.html">width</A>(). The default 
+fill character is the space character.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/precision.html">precision</A><BR><A 
+href="../cppio/width.html">width</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>flags </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  fmtflags flags();
+  fmtflags flags( fmtflags f );
+</PRE>
+<P>The flags() function either returns the <A 
+href="../io_flags.html#format_flags">io stream format 
+flag</A>s for the current stream, or sets the flags for the current stream to be 
+<EM>f</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/setf.html">setf</A><BR><A 
+href="../cppio/unsetf.html">unsetf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>flush </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  ostream&amp; flush();
+</PRE>
+<P>The flush() function causes the buffer for the current output stream to be 
+actually written out to the attached device.</P>
+<P>This function is useful for printing out debugging information, because 
+sometimes programs abort before they have a chance to write their output buffers 
+to the screen. Judicious use of flush() can ensure that all of your debugging 
+statements actually get printed.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/put.html">put</A><BR><A 
+href="../cppio/write.html">write</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>gcount </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  streamsize gcount();
+</PRE>
+<P>The function gcount() is used with input streams, and returns the number of 
+characters read by the last input operation.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/get.html">get</A><BR><A 
+href="../cppio/getline.html">getline</A><BR><A 
+href="../cppio/read.html">read</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>get </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  int get();
+  istream&amp; get( char&amp; ch );
+  istream&amp; get( char* buffer, streamsize num );
+  istream&amp; get( char* buffer, streamsize num, char delim );
+  istream&amp; get( streambuf&amp; buffer );
+  istream&amp; get( streambuf&amp; buffer, char delim );
+</PRE>
+<P>The get() function is used with input streams, and either:</P>
+<UL>
+  <LI>reads a character and returns that value, 
+  <LI>reads a character and stores it as <EM>ch</EM>, 
+  <LI>reads characters into <EM>buffer</EM> until <EM>num</EM> - 1 characters 
+  have been read, or <STRONG>EOF</STRONG> or newline encountered, 
+  <LI>reads characters into <EM>buffer</EM> until <EM>num</EM> - 1 characters 
+  have been read, or <STRONG>EOF</STRONG> or the <EM>delim</EM> character 
+  encountered (<EM>delim</EM> is not read until next time), 
+  <LI>reads characters into buffer until a newline or <STRONG>EOF</STRONG> is 
+  encountered, 
+  <LI>or reads characters into buffer until a newline, <STRONG>EOF</STRONG>, or 
+  <EM>delim</EM> character is encountered (again, <EM>delim</EM> isn't read 
+  until the next get() ). </LI></UL>
+<P>For example, the following code displays the contents of a file called 
+temp.txt, character by character:</P><PRE class=example-code>   char ch;
+   ifstream fin( "temp.txt" );
+   while( fin.get(ch) )
+     cout &lt;&lt; ch;
+   fin.close();         
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/gcount.html">gcount</A><BR><A 
+href="../cppio/getline.html">getline</A><BR>(C++ 
+Strings) <A 
+href="../cppstring/getline.html">getline</A><BR><A 
+href="../cppio/ignore.html">ignore</A><BR><A 
+href="../cppio/peek.html">peek</A><BR><A 
+href="../cppio/put.html">put</A><BR><A 
+href="../cppio/read.html">read</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>getline </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  istream&amp; getline( char* buffer, streamsize num );
+  istream&amp; getline( char* buffer, streamsize num, char delim );
+</PRE>
+<P>The getline() function is used with input streams, and reads characters into 
+<EM>buffer</EM> until either:</P>
+<UL>
+  <LI><EM>num</EM> - 1 characters have been read, 
+  <LI>a newline is encountered, 
+  <LI>an <STRONG>EOF</STRONG> is encountered, 
+  <LI>or, optionally, until the character <EM>delim</EM> is read. The 
+  <EM>delim</EM> character is not put into buffer. </LI></UL>
+<P>Those using a Microsoft compiler may find that getline() reads an extra 
+character, and should consult the documentation on the <A 
+href="http://support.microsoft.com/default.aspx?scid=kb;EN-US;q240015">Microsoft 
+getline bug</A>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/gcount.html">gcount</A><BR><A 
+href="../cppio/get.html">get</A><BR>(C++ Strings) <A 
+href="../cppstring/getline.html">getline</A><BR><A 
+href="../cppio/ignore.html">ignore</A><BR><A 
+href="../cppio/read.html">read</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>good </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  bool good();
+</PRE>
+<P>The function good() returns true if no errors have occurred with the current 
+stream, false otherwise.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/bad.html">bad</A><BR><A 
+href="../cppio/clear.html">clear</A><BR><A 
+href="../cppio/eof.html">eof</A><BR><A 
+href="../cppio/fail.html">fail</A><BR><A 
+href="../cppio/rdstate.html">rdstate</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ignore </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  istream&amp; ignore( streamsize num=1, int delim=<STRONG>EOF</STRONG> );
+</PRE>
+<P>The ignore() function is used with input streams. It reads and throws away 
+characters until <EM>num</EM> characters have been read (where <EM>num</EM> 
+defaults to 1) or until the character <EM>delim</EM> is read (where 
+<EM>delim</EM> defaults to <STRONG>EOF</STRONG>).</P>
+<P>The ignore() function can sometimes be useful when using the getline() 
+function together with the &gt;&gt; operator. For example, if you read some 
+input that is followed by a newline using the &gt;&gt; operator, the newline 
+will remain in the input as the next thing to be read. Since getline() will by 
+default stop reading input when it reaches a newline, a subsequent call to 
+getline() will return an empty string. In this case, the ignore() function could 
+be called before getline() to "throw away" the newline.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/get.html">get</A><BR><A 
+href="../cppio/getline.html">getline</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>open </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  void open( const char *filename );
+  void open( const char *filename, openmode mode = default_mode );
+</PRE>
+<P>The function open() is used with file streams. It opens <EM>filename</EM> and 
+associates it with the current stream. The optional <A 
+href="../io_flags.html#mode_flags">io stream mode 
+flag</A> <EM>mode</EM> defaults to ios::in for ifstream, ios::out for ofstream, 
+and ios::in|ios::out for fstream.</P>
+<P>If open() fails, the resulting stream will evaluate to false when used in a 
+Boolean expression. For example:</P><PRE class=example-code> ifstream inputStream;
+ inputStream.open("file.txt");
+ if( !inputStream ) {
+   cerr &lt;&lt; "Error opening input stream" &lt;&lt; endl;
+   return;
+ }              
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/constructors.html">I/O 
+Constructors</A><BR><A 
+href="../cppio/close.html">close</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>peek </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  int peek();
+</PRE>
+<P>The function peek() is used with input streams, and returns the next 
+character in the stream or <STRONG>EOF</STRONG> if the end of file is read. 
+peek() does not remove the character from the stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/get.html">get</A><BR><A 
+href="../cppio/putback.html">putback</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>precision </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  streamsize precision();
+  streamsize precision( streamsize p );
+</PRE>
+<P>The precision() function either sets or returns the current number of digits 
+that is displayed for floating-point variables.</P>
+<P>For example, the following code sets the precision of the cout stream to 
+5:</P><PRE class=example-code>   float num = 314.15926535;
+   cout.precision( 5 );
+   cout &lt;&lt; num;           
+</PRE>
+<P>This code displays the following output:</P><PRE class=example-code>   314.16               
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/fill.html">fill</A><BR><A 
+href="../cppio/width.html">width</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>put </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  ostream&amp; put( char ch );
+</PRE>
+<P>The function put() is used with output streams, and writes the character 
+<EM>ch</EM> to the stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/flush.html">flush</A><BR><A 
+href="../cppio/get.html">get</A><BR><A 
+href="../cppio/write.html">write</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>putback </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  istream&amp; putback( char ch );
+</PRE>
+<P>The putback() function is used with input streams, and returns the 
+previously-read character <EM>ch</EM> to the input stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/peek.html">peek</A><BR>(Standard C I/O) 
+<A href="../stdio/ungetc.html">ungetc</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>rdstate </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  iostate rdstate();
+</PRE>
+<P>The rdstate() function returns the <A 
+href="../io_flags.html#state_flags">io stream state 
+flag</A>s of the current stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/bad.html">bad</A><BR><A 
+href="../cppio/clear.html">clear</A><BR><A 
+href="../cppio/eof.html">eof</A><BR><A 
+href="../cppio/fail.html">fail</A><BR><A 
+href="../cppio/good.html">good</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>read </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  istream&amp; read( char* buffer, streamsize num );
+</PRE>
+<P>The function read() is used with input streams, and reads <EM>num</EM> bytes 
+from the stream before placing them in <EM>buffer</EM>. If <STRONG>EOF</STRONG> 
+is encountered, read() stops, leaving however many bytes it put into 
+<EM>buffer</EM> as they are.</P>
+<P>For example:</P><PRE class=example-code>   struct {
+     int height;
+     int width;
+   } rectangle;         
+
+   input_file.read( (char *)(&amp;rectangle), sizeof(rectangle) );
+   if( input_file.bad() ) {
+     cerr &lt;&lt; "Error reading data" &lt;&lt; endl;
+     exit( 0 );
+   }            
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/gcount.html">gcount</A><BR><A 
+href="../cppio/get.html">get</A><BR><A 
+href="../cppio/getline.html">getline</A><BR><A 
+href="../cppio/write.html">write</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>seekg </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  istream&amp; seekg( off_type offset, ios::seekdir origin );
+  istream&amp; seekg( pos_type position );
+</PRE>
+<P>The function seekg() is used with input streams, and it repositions the "get" 
+pointer for the current stream to <EM>offset</EM> bytes away from 
+<EM>origin</EM>, or places the "get" pointer at <EM>position</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/seekp.html">seekp</A><BR><A 
+href="../cppio/tellg.html">tellg</A><BR><A 
+href="../cppio/tellp.html">tellp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>seekp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  ostream&amp; seekp( off_type offset, ios::seekdir origin );
+  ostream&amp; seekp( pos_type position );
+</PRE>
+<P>The seekp() function is used with output streams, but is otherwise very 
+similar to <A 
+href="../cppio/seekg.html">seekg</A>().</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/seekg.html">seekg</A><BR><A 
+href="../cppio/tellg.html">tellg</A><BR><A 
+href="../cppio/tellp.html">tellp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>setf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  fmtflags setf( fmtflags flags );
+  fmtflags setf( fmtflags flags, fmtflags needed );
+</PRE>
+<P>The function setf() sets the <A 
+href="../io_flags.html#format_flags">io stream format 
+flag</A>s of the current stream to <EM>flags</EM>. The optional <EM>needed</EM> 
+argument specifies that only the flags that are in both <EM>flags</EM> and 
+<EM>needed</EM> should be set. The return value is the previous configuration of 
+<A href="../io_flags.html#format_flags">io stream 
+format flag</A>s.</P>
+<P>For example:</P><PRE class=example-code>   int number = 0x3FF;
+   cout.setf( ios::dec );
+   cout &lt;&lt; "Decimal: " &lt;&lt; number &lt;&lt; endl;
+   cout.unsetf( ios::dec );
+   cout.setf( ios::hex );
+   cout &lt;&lt; "Hexadecimal: " &lt;&lt; number &lt;&lt; endl;               
+</PRE>
+<P>Note that the preceding code is functionally identical to:</P><PRE class=example-code>   int number = 0x3FF;
+   cout &lt;&lt; "Decimal: " &lt;&lt; number &lt;&lt; endl &lt;&lt; hex &lt;&lt; "Hexadecimal: " &lt;&lt; number &lt;&lt; dec &lt;&lt; endl;                
+</PRE>
+<P>thanks to <A href="../io_flags.html#manipulators">io 
+stream manipulator</A>s.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/flags.html">flags</A><BR><A 
+href="../cppio/unsetf.html">unsetf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sync_with_stdio </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  static bool sync_with_stdio( bool sync=true );
+</PRE>
+<P>The sync_with_stdio() function allows you to turn on and off the ability for 
+the C++ I/O system to work with the C I/O system.</P>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>tellg </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  pos_type tellg();
+</PRE>
+<P>The tellg() function is used with input streams, and returns the current 
+"get" position of the pointer in the stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/seekg.html">seekg</A><BR><A 
+href="../cppio/seekp.html">seekp</A><BR><A 
+href="../cppio/tellp.html">tellp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>tellp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  pos_type tellp();
+</PRE>
+<P>The tellp() function is used with output streams, and returns the current 
+"put" position of the pointer in the stream.</P>
+<P>For example, the following code displays the file pointer as it writes to a 
+stream:</P><PRE class=example-code> string s("In Xanadu did Kubla Khan...");
+ ofstream fout("output.txt");
+ for( int i=0; i &lt; s.length(); i++ ) {
+   cout &lt;&lt; "File pointer: " &lt;&lt; fout.tellp();
+   fout.put( s[i] );
+   cout &lt;&lt; " " &lt;&lt; s[i] &lt;&lt; endl;
+ }
+ fout.close();          
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/seekg.html">seekg</A><BR><A 
+href="../cppio/seekp.html">seekp</A><BR><A 
+href="../cppio/tellg.html">tellg</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>unsetf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  void unsetf( fmtflags flags );
+</PRE>
+<P>The function unsetf() uses <EM>flags</EM> to clear the <A 
+href="../io_flags.html#format_flags">io stream format 
+flag</A>s associated with the current stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/flags.html">flags</A><BR><A 
+href="../cppio/setf.html">setf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>width </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  int width();
+  int width( int w );
+</PRE>
+<P>The function width() returns the current width, which is defined as the 
+minimum number of characters to display with each output. The optional argument 
+<EM>w</EM> can be used to set the width.</P>
+<P>For example:</P><PRE class=example-code>   cout.width( 5 );
+   cout &lt;&lt; "2";         
+</PRE>
+<P>displays</P><PRE class=example-code>       2                
+</PRE>
+<P>(that's four spaces followed by a '2')</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/fill.html">fill</A><BR><A 
+href="../cppio/precision.html">precision</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>write </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  ostream&amp; write( const char* buffer, streamsize num );
+</PRE>
+<P>The write() function is used with output streams, and writes <EM>num</EM> 
+bytes from <EM>buffer</EM> to the current output stream.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="../cppio/flush.html">flush</A><BR><A 
+href="../cppio/put.html">put</A><BR><A 
+href="../cppio/read.html">read</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.cppreference.com/cppio/ignore.html -->
+<HTML><HEAD><TITLE>ignore</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="ignore.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppio/index.html">C++ I/O</A> &gt; <A 
+      href="../cppio/ignore.html">ignore</A> </DIV>
+      <DIV class=name-format>ignore </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;fstream&gt;
+  istream&amp; ignore( streamsize num=1, int delim=<STRONG>EOF</STRONG> );
+</PRE>
+      <P>The ignore() function is used with input streams. It reads and throws 
+      away characters until <EM>num</EM> characters have been read (where 
+      <EM>num</EM> defaults to 1) or until the character <EM>delim</EM> is read 
+      (where <EM>delim</EM> defaults to <STRONG>EOF</STRONG>).</P>
+      <P>The ignore() function can sometimes be useful when using the getline() 
+      function together with the &gt;&gt; operator. For example, if you read 
+      some input that is followed by a newline using the &gt;&gt; operator, the 
+      newline will remain in the input as the next thing to be read. Since 
+      getline() will by default stop reading input when it reaches a newline, a 
+      subsequent call to getline() will return an empty string. In this case, 
+      the ignore() function could be called before getline() to "throw away" the 
+      newline.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppio/get.html">get</A><BR><A 
+      href="../cppio/getline.html">getline</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

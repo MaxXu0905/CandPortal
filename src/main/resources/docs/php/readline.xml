@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="readline">
+    <methods>
+        <method>
+            <name>readline_add_history</name>
+            <signature><![CDATA[void readline_add_history ( string line)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95633" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >readline_add_history</B
+> ( string line)<BR  ></BR
+><P  >     This function adds a line to the command line history.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>readline_clear_history</name>
+            <signature><![CDATA[bool readline_clear_history ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95646" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >readline_clear_history</B
+> ( void )<BR  ></BR
+><P  >     This function clears the entire command line history.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>readline_completion_function</name>
+            <signature><![CDATA[bool readline_completion_function ( string line)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95657" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >readline_completion_function</B
+> ( string line)<BR  ></BR
+><P  >     This function registers a completion function.  You must supply
+     the name of an existing function which accepts a partial command
+     line and returns an array of possible matches.  This is the same
+     kind of functionality you'd get if you hit your tab key while
+     using Bash.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>readline_info</name>
+            <signature><![CDATA[mixed readline_info ( [string varname [, string newvalue]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95670" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >readline_info</B
+> ( [string varname [, string newvalue]])<BR  ></BR
+><P  >     If called with no parameters, this function returns an array of
+     values for all the setting readline uses.  The elements will
+     be indexed by the following values: done, end, erase_empty_line,
+     library_version, line_buffer, mark, pending_input, point, prompt,
+     readline_name, and terminal_name.
+    </P
+><P  >     If called with one parameter, the value of that setting is
+     returned.  If called with two parameters, the setting will be
+     changed to the given value.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>readline_list_history</name>
+            <signature><![CDATA[array readline_list_history ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95687" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >readline_list_history</B
+> ( void )<BR  ></BR
+><P  >     This function returns an array of the entire command line
+     history.  The elements are indexed by integers starting at zero.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>readline_read_history</name>
+            <signature><![CDATA[bool readline_read_history ( string filename)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95698" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >readline_read_history</B
+> ( string filename)<BR  ></BR
+><P  >     This function reads a command history from a file.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>readline_write_history</name>
+            <signature><![CDATA[bool readline_write_history ( string filename)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95711" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >readline_write_history</B
+> ( string filename)<BR  ></BR
+><P  >     This function writes the command history to a file.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>readline</name>
+            <signature><![CDATA[string readline ( [string prompt])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN95724" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >readline</B
+> ( [string prompt])<BR  ></BR
+><P  >     This function returns a single string from the user.  You may
+     specify a string with which to prompt the user.  The line
+     returned has the ending newline removed.  You must add this line
+     to the history yourself using
+     <SPAN HREF="#"><B  CLASS="function" >readline_add_history()</B
+></A
+>.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN95734" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >readline()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">//get 3 commands from user<br  /></font><font  color="#007700">for (</font><font  color="#0000BB">$i</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">< </font><font  color="#0000BB">3</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />        </font><font  color="#0000BB">$line </font><font  color="#007700">= </font><font  color="#0000BB">readline</font><font  color="#007700">(</font><font  color="#DD0000">"Command: "</font><font  color="#007700">);<br  />        </font><font  color="#0000BB">readline_add_history</font><font  color="#007700">(</font><font  color="#0000BB">$line</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#FF8000">//dump history<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">readline_list_history</font><font  color="#007700">());<br  /><br  /></font><font  color="#FF8000">//dump variables<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">readline_info</font><font  color="#007700">());<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

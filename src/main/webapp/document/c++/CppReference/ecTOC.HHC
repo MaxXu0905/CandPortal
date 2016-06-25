@@ -1,0 +1,3247 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="EasyCHM.exe  www.zipghost.com">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ExWindow Styles" value="0x200">
+	<param name="Window Styles" value="0x800025">
+	<param name="Font" value="MS Sans Serif,9,0">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="www.cppreference.com">
+		<param name="Local" value="eBookProject/CppReference/index.html">
+		<param name="ImageNumber" value="1">
+		<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="General C/C++">
+			<param name="Local" value="">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Keywords">
+				<param name="Local" value="eBookProject/CppReference/keywords/index.html">
+				<param name="ImageNumber" value="1">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="C/C++ Keywords">
+					<param name="Local" value="eBookProject/CppReference/keywords/all.html">
+					<param name="ImageNumber" value="9">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="asm">
+					<param name="Local" value="eBookProject/CppReference/keywords/asm.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="auto">
+					<param name="Local" value="eBookProject/CppReference/keywords/auto.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="bool">
+					<param name="Local" value="eBookProject/CppReference/keywords/bool.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="break">
+					<param name="Local" value="eBookProject/CppReference/keywords/break.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="case">
+					<param name="Local" value="eBookProject/CppReference/keywords/case.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="catch">
+					<param name="Local" value="eBookProject/CppReference/keywords/catch.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="char">
+					<param name="Local" value="eBookProject/CppReference/keywords/char.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="class">
+					<param name="Local" value="eBookProject/CppReference/keywords/class.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="const">
+					<param name="Local" value="eBookProject/CppReference/keywords/const.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="const cast">
+					<param name="Local" value="eBookProject/CppReference/keywords/const_cast.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="continue">
+					<param name="Local" value="eBookProject/CppReference/keywords/continue.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="default">
+					<param name="Local" value="eBookProject/CppReference/keywords/default.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="delete">
+					<param name="Local" value="eBookProject/CppReference/keywords/delete.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="do">
+					<param name="Local" value="eBookProject/CppReference/keywords/do.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="double">
+					<param name="Local" value="eBookProject/CppReference/keywords/double.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="dynamic cast">
+					<param name="Local" value="eBookProject/CppReference/keywords/dynamic_cast.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="else">
+					<param name="Local" value="eBookProject/CppReference/keywords/else.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="enum">
+					<param name="Local" value="eBookProject/CppReference/keywords/enum.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="explicit">
+					<param name="Local" value="eBookProject/CppReference/keywords/explicit.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="export">
+					<param name="Local" value="eBookProject/CppReference/keywords/export.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="extern">
+					<param name="Local" value="eBookProject/CppReference/keywords/extern.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="false">
+					<param name="Local" value="eBookProject/CppReference/keywords/false.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="float">
+					<param name="Local" value="eBookProject/CppReference/keywords/float.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="for">
+					<param name="Local" value="eBookProject/CppReference/keywords/for.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="friend">
+					<param name="Local" value="eBookProject/CppReference/keywords/friend.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="goto">
+					<param name="Local" value="eBookProject/CppReference/keywords/goto.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="if">
+					<param name="Local" value="eBookProject/CppReference/keywords/if.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="C/C++ Keywords">
+					<param name="Local" value="eBookProject/CppReference/keywords/index.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="inline">
+					<param name="Local" value="eBookProject/CppReference/keywords/inline.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="int">
+					<param name="Local" value="eBookProject/CppReference/keywords/int.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="long">
+					<param name="Local" value="eBookProject/CppReference/keywords/long.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="mutable">
+					<param name="Local" value="eBookProject/CppReference/keywords/mutable.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="namespace">
+					<param name="Local" value="eBookProject/CppReference/keywords/namespace.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="new">
+					<param name="Local" value="eBookProject/CppReference/keywords/new.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="operator">
+					<param name="Local" value="eBookProject/CppReference/keywords/operator.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="private">
+					<param name="Local" value="eBookProject/CppReference/keywords/private.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="protected">
+					<param name="Local" value="eBookProject/CppReference/keywords/protected.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="public">
+					<param name="Local" value="eBookProject/CppReference/keywords/public.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="register">
+					<param name="Local" value="eBookProject/CppReference/keywords/register.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="reinterpret cast">
+					<param name="Local" value="eBookProject/CppReference/keywords/reinterpret_cast.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="return">
+					<param name="Local" value="eBookProject/CppReference/keywords/return.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="short">
+					<param name="Local" value="eBookProject/CppReference/keywords/short.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="signed">
+					<param name="Local" value="eBookProject/CppReference/keywords/signed.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="sizeof">
+					<param name="Local" value="eBookProject/CppReference/keywords/sizeof.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="static">
+					<param name="Local" value="eBookProject/CppReference/keywords/static.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="static cast">
+					<param name="Local" value="eBookProject/CppReference/keywords/static_cast.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="struct">
+					<param name="Local" value="eBookProject/CppReference/keywords/struct.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="switch">
+					<param name="Local" value="eBookProject/CppReference/keywords/switch.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="template">
+					<param name="Local" value="eBookProject/CppReference/keywords/template.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="this">
+					<param name="Local" value="eBookProject/CppReference/keywords/this.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="throw">
+					<param name="Local" value="eBookProject/CppReference/keywords/throw.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="true">
+					<param name="Local" value="eBookProject/CppReference/keywords/true.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="try">
+					<param name="Local" value="eBookProject/CppReference/keywords/try.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="typedef">
+					<param name="Local" value="eBookProject/CppReference/keywords/typedef.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="typeid">
+					<param name="Local" value="eBookProject/CppReference/keywords/typeid.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="typename">
+					<param name="Local" value="eBookProject/CppReference/keywords/typename.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="union">
+					<param name="Local" value="eBookProject/CppReference/keywords/union.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="unsigned">
+					<param name="Local" value="eBookProject/CppReference/keywords/unsigned.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="using">
+					<param name="Local" value="eBookProject/CppReference/keywords/using.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="virtual">
+					<param name="Local" value="eBookProject/CppReference/keywords/virtual.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="void">
+					<param name="Local" value="eBookProject/CppReference/keywords/void.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="volatile">
+					<param name="Local" value="eBookProject/CppReference/keywords/volatile.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="wchar t">
+					<param name="Local" value="eBookProject/CppReference/keywords/wchar_t.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="while">
+					<param name="Local" value="eBookProject/CppReference/keywords/while.html">
+					<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Pre-processor commands">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/index.html">
+				<param name="ImageNumber" value="1">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="C/C++ Pre-processor Commands">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/all.html">
+				<param name="ImageNumber" value="9">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#define">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/define.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#error">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/error.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#include">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/include.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="C/C++ Pre-processor Commands">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/index.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#line">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/line.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#pragma">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/pragma.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#if, #ifdef, #ifndef, #else, #elif, #endif">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/preprocessor_if.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Predefined preprocessor variables">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/preprocessor_vars.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#, ##">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/sharp.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="#undef">
+				<param name="Local" value="eBookProject/CppReference/preprocessor/undef.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+		</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ASCII Chart">
+				<param name="Local" value="eBookProject/CppReference/ascii.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Data Types">
+				<param name="Local" value="eBookProject/CppReference/data_types.html#1">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Escape Sequences">
+				<param name="Local" value="eBookProject/CppReference/escape_sequences.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Operator Precedence">
+				<param name="Local" value="eBookProject/CppReference/operator_precedence.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Library">
+			<param name="Local" value="">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Memory">
+			<param name="Local" value="eBookProject/CppReference/stdmem/index.html">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Standard C Memory">
+				<param name="Local" value="eBookProject/CppReference/stdmem/all.html">
+				<param name="ImageNumber" value="9">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="calloc">
+				<param name="Local" value="eBookProject/CppReference/stdmem/calloc.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="free">
+				<param name="Local" value="eBookProject/CppReference/stdmem/free.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Standard C Memory">
+				<param name="Local" value="eBookProject/CppReference/stdmem/index.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="malloc">
+				<param name="Local" value="eBookProject/CppReference/stdmem/malloc.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="realloc">
+				<param name="Local" value="eBookProject/CppReference/stdmem/realloc.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Other standard C functions">
+			<param name="Local" value="eBookProject/CppReference/stdother/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="abort">
+			<param name="Local" value="eBookProject/CppReference/stdother/abort.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Other Standard C Functions">
+			<param name="Local" value="eBookProject/CppReference/stdother/all.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="assert">
+			<param name="Local" value="eBookProject/CppReference/stdother/assert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="atexit">
+			<param name="Local" value="eBookProject/CppReference/stdother/atexit.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bsearch">
+			<param name="Local" value="eBookProject/CppReference/stdother/bsearch.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="exit">
+			<param name="Local" value="eBookProject/CppReference/stdother/exit.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="getenv">
+			<param name="Local" value="eBookProject/CppReference/stdother/getenv.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Other Standard C Functions">
+			<param name="Local" value="eBookProject/CppReference/stdother/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="longjmp">
+			<param name="Local" value="eBookProject/CppReference/stdother/longjmp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="qsort">
+			<param name="Local" value="eBookProject/CppReference/stdother/qsort.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="raise">
+			<param name="Local" value="eBookProject/CppReference/stdother/raise.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rand">
+			<param name="Local" value="eBookProject/CppReference/stdother/rand.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setjmp">
+			<param name="Local" value="eBookProject/CppReference/stdother/setjmp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="signal">
+			<param name="Local" value="eBookProject/CppReference/stdother/signal.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="srand">
+			<param name="Local" value="eBookProject/CppReference/stdother/srand.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="system">
+			<param name="Local" value="eBookProject/CppReference/stdother/system.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="va arg">
+			<param name="Local" value="eBookProject/CppReference/stdother/va_arg.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Time & Date">
+			<param name="Local" value="eBookProject/CppReference/stddate/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Date & Time">
+			<param name="Local" value="eBookProject/CppReference/stddate/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="asctime">
+			<param name="Local" value="eBookProject/CppReference/stddate/asctime.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clock">
+			<param name="Local" value="eBookProject/CppReference/stddate/clock.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ctime">
+			<param name="Local" value="eBookProject/CppReference/stddate/ctime.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="difftime">
+			<param name="Local" value="eBookProject/CppReference/stddate/difftime.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="gmtime">
+			<param name="Local" value="eBookProject/CppReference/stddate/gmtime.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Date & Time">
+			<param name="Local" value="eBookProject/CppReference/stddate/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="localtime">
+			<param name="Local" value="eBookProject/CppReference/stddate/localtime.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="mktime">
+			<param name="Local" value="eBookProject/CppReference/stddate/mktime.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setlocale">
+			<param name="Local" value="eBookProject/CppReference/stddate/setlocale.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Date & Time">
+			<param name="Local" value="eBookProject/CppReference/stddate/Standard%20C%20Date%20&amp;%20Time.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strftime">
+			<param name="Local" value="eBookProject/CppReference/stddate/strftime.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="time">
+			<param name="Local" value="eBookProject/CppReference/stddate/time.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Math">
+			<param name="Local" value="eBookProject/CppReference/stdmath/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="abs">
+			<param name="Local" value="eBookProject/CppReference/stdmath/abs.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="acos">
+			<param name="Local" value="eBookProject/CppReference/stdmath/acos.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Math">
+			<param name="Local" value="eBookProject/CppReference/stdmath/all.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="asin">
+			<param name="Local" value="eBookProject/CppReference/stdmath/asin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="atan">
+			<param name="Local" value="eBookProject/CppReference/stdmath/atan.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="atan2">
+			<param name="Local" value="eBookProject/CppReference/stdmath/atan2.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ceil">
+			<param name="Local" value="eBookProject/CppReference/stdmath/ceil.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="cos">
+			<param name="Local" value="eBookProject/CppReference/stdmath/cos.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="cosh">
+			<param name="Local" value="eBookProject/CppReference/stdmath/cosh.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="div">
+			<param name="Local" value="eBookProject/CppReference/stdmath/div.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="exp">
+			<param name="Local" value="eBookProject/CppReference/stdmath/exp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fabs">
+			<param name="Local" value="eBookProject/CppReference/stdmath/fabs.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="floor">
+			<param name="Local" value="eBookProject/CppReference/stdmath/floor.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fmod">
+			<param name="Local" value="eBookProject/CppReference/stdmath/fmod.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="frexp">
+			<param name="Local" value="eBookProject/CppReference/stdmath/frexp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Math">
+			<param name="Local" value="eBookProject/CppReference/stdmath/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="labs">
+			<param name="Local" value="eBookProject/CppReference/stdmath/labs.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ldexp">
+			<param name="Local" value="eBookProject/CppReference/stdmath/ldexp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ldiv">
+			<param name="Local" value="eBookProject/CppReference/stdmath/ldiv.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="log">
+			<param name="Local" value="eBookProject/CppReference/stdmath/log.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="log10">
+			<param name="Local" value="eBookProject/CppReference/stdmath/log10.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="modf">
+			<param name="Local" value="eBookProject/CppReference/stdmath/modf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pow">
+			<param name="Local" value="eBookProject/CppReference/stdmath/pow.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C Math">
+			<param name="Local" value="eBookProject/CppReference/stdmath/scanf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sin">
+			<param name="Local" value="eBookProject/CppReference/stdmath/sin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sinh">
+			<param name="Local" value="eBookProject/CppReference/stdmath/sinh.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sqrt">
+			<param name="Local" value="eBookProject/CppReference/stdmath/sqrt.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tan">
+			<param name="Local" value="eBookProject/CppReference/stdmath/tan.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tanh">
+			<param name="Local" value="eBookProject/CppReference/stdmath/tanh.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C String & Character">
+			<param name="Local" value="eBookProject/CppReference/stdstring/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C String and Character">
+			<param name="Local" value="eBookProject/CppReference/stdstring/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="atof">
+			<param name="Local" value="eBookProject/CppReference/stdstring/atof.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="atoi">
+			<param name="Local" value="eBookProject/CppReference/stdstring/atoi.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="atol">
+			<param name="Local" value="eBookProject/CppReference/stdstring/atol.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C String and Character">
+			<param name="Local" value="eBookProject/CppReference/stdstring/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isalnum">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isalnum.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isalpha">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isalpha.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="iscntrl">
+			<param name="Local" value="eBookProject/CppReference/stdstring/iscntrl.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isdigit">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isdigit.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isgraph">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isgraph.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="islower">
+			<param name="Local" value="eBookProject/CppReference/stdstring/islower.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isprint">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isprint.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ispunct">
+			<param name="Local" value="eBookProject/CppReference/stdstring/ispunct.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isspace">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isspace.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isupper">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isupper.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="isxdigit">
+			<param name="Local" value="eBookProject/CppReference/stdstring/isxdigit.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="memchr">
+			<param name="Local" value="eBookProject/CppReference/stdstring/memchr.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="memcmp">
+			<param name="Local" value="eBookProject/CppReference/stdstring/memcmp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="memcpy">
+			<param name="Local" value="eBookProject/CppReference/stdstring/memcpy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="memmove">
+			<param name="Local" value="eBookProject/CppReference/stdstring/memmove.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="memset">
+			<param name="Local" value="eBookProject/CppReference/stdstring/memset.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strcat">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strcat.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strchr">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strchr.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strcmp">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strcmp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strcoll">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strcoll.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strcpy">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strcpy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strcspn">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strcspn.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strerror">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strerror.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strlen">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strlen.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strncat">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strncat.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strncmp">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strncmp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strncpy">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strncpy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strpbrk">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strpbrk.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strrchr">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strrchr.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strspn">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strspn.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strstr">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strstr.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strtod">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strtod.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strtok">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strtok.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strtol">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strtol.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strtoul">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strtoul.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="strxfrm">
+			<param name="Local" value="eBookProject/CppReference/stdstring/strxfrm.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tolower">
+			<param name="Local" value="eBookProject/CppReference/stdstring/tolower.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="toupper">
+			<param name="Local" value="eBookProject/CppReference/stdstring/toupper.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C I/O">
+			<param name="Local" value="eBookProject/CppReference/stdio/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C I/O">
+			<param name="Local" value="eBookProject/CppReference/stdio/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clearerr">
+			<param name="Local" value="eBookProject/CppReference/stdio/clearerr.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fclose">
+			<param name="Local" value="eBookProject/CppReference/stdio/fclose.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="feof">
+			<param name="Local" value="eBookProject/CppReference/stdio/feof.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ferror">
+			<param name="Local" value="eBookProject/CppReference/stdio/ferror.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fflush">
+			<param name="Local" value="eBookProject/CppReference/stdio/fflush.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fgetc">
+			<param name="Local" value="eBookProject/CppReference/stdio/fgetc.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fgetpos">
+			<param name="Local" value="eBookProject/CppReference/stdio/fgetpos.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fgets">
+			<param name="Local" value="eBookProject/CppReference/stdio/fgets.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fopen">
+			<param name="Local" value="eBookProject/CppReference/stdio/fopen.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fprintf">
+			<param name="Local" value="eBookProject/CppReference/stdio/fprintf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fputc">
+			<param name="Local" value="eBookProject/CppReference/stdio/fputc.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fputs">
+			<param name="Local" value="eBookProject/CppReference/stdio/fputs.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fread">
+			<param name="Local" value="eBookProject/CppReference/stdio/fread.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="freopen">
+			<param name="Local" value="eBookProject/CppReference/stdio/freopen.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fscanf">
+			<param name="Local" value="eBookProject/CppReference/stdio/fscanf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fseek">
+			<param name="Local" value="eBookProject/CppReference/stdio/fseek.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fsetpos">
+			<param name="Local" value="eBookProject/CppReference/stdio/fsetpos.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ftell">
+			<param name="Local" value="eBookProject/CppReference/stdio/ftell.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fwrite">
+			<param name="Local" value="eBookProject/CppReference/stdio/fwrite.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="getc">
+			<param name="Local" value="eBookProject/CppReference/stdio/getc.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="getchar">
+			<param name="Local" value="eBookProject/CppReference/stdio/getchar.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="gets">
+			<param name="Local" value="eBookProject/CppReference/stdio/gets.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Standard C I/O">
+			<param name="Local" value="eBookProject/CppReference/stdio/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="perror">
+			<param name="Local" value="eBookProject/CppReference/stdio/perror.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="printf">
+			<param name="Local" value="eBookProject/CppReference/stdio/printf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="putc">
+			<param name="Local" value="eBookProject/CppReference/stdio/putc.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="putchar">
+			<param name="Local" value="eBookProject/CppReference/stdio/putchar.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="puts">
+			<param name="Local" value="eBookProject/CppReference/stdio/puts.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="remove">
+			<param name="Local" value="eBookProject/CppReference/stdio/remove.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rename">
+			<param name="Local" value="eBookProject/CppReference/stdio/rename.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rewind">
+			<param name="Local" value="eBookProject/CppReference/stdio/rewind.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="scanf">
+			<param name="Local" value="eBookProject/CppReference/stdio/scanf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setbuf">
+			<param name="Local" value="eBookProject/CppReference/stdio/setbuf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setvbuf">
+			<param name="Local" value="eBookProject/CppReference/stdio/setvbuf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sprintf">
+			<param name="Local" value="eBookProject/CppReference/stdio/sprintf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sscanf">
+			<param name="Local" value="eBookProject/CppReference/stdio/sscanf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tmpfile">
+			<param name="Local" value="eBookProject/CppReference/stdio/tmpfile.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tmpnam">
+			<param name="Local" value="eBookProject/CppReference/stdio/tmpnam.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ungetc">
+			<param name="Local" value="eBookProject/CppReference/stdio/ungetc.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="vprintf, vfprintf, and vsprintf">
+			<param name="Local" value="eBookProject/CppReference/stdio/vprintf_vfprintf_vsprintf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++">
+			<param name="Local" value="">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ String Streams">
+			<param name="Local" value="eBookProject/CppReference/cppsstream/index.html">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="C++ String Streams">
+				<param name="Local" value="eBookProject/CppReference/cppsstream/all.html">
+				<param name="ImageNumber" value="9">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="String Stream Constructors">
+				<param name="Local" value="eBookProject/CppReference/cppsstream/constructors.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="C++ String Streams">
+				<param name="Local" value="eBookProject/CppReference/cppsstream/index.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="String Stream Operators">
+				<param name="Local" value="eBookProject/CppReference/cppsstream/operators.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="rdbuf">
+				<param name="Local" value="eBookProject/CppReference/cppsstream/rdbuf.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="str">
+				<param name="Local" value="eBookProject/CppReference/cppsstream/str.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Strings">
+			<param name="Local" value="eBookProject/CppReference/cppstring/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="All">
+			<param name="Local" value="eBookProject/CppReference/cppstring/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="append">
+			<param name="Local" value="eBookProject/CppReference/cppstring/append.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="assign">
+			<param name="Local" value="eBookProject/CppReference/cppstring/assign1.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="at">
+			<param name="Local" value="eBookProject/CppReference/cppstring/at.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cppstring/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="c str">
+			<param name="Local" value="eBookProject/CppReference/cppstring/c_str.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="capacity">
+			<param name="Local" value="eBookProject/CppReference/cppstring/capacity.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppstring/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="compare">
+			<param name="Local" value="eBookProject/CppReference/cppstring/compare.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="copy">
+			<param name="Local" value="eBookProject/CppReference/cppstring/copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="data">
+			<param name="Local" value="eBookProject/CppReference/cppstring/data.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppstring/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cppstring/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cppstring/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find">
+			<param name="Local" value="eBookProject/CppReference/cppstring/find.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find first not of">
+			<param name="Local" value="eBookProject/CppReference/cppstring/find_first_not_of.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find first of">
+			<param name="Local" value="eBookProject/CppReference/cppstring/find_first_of.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find last not of">
+			<param name="Local" value="eBookProject/CppReference/cppstring/find_last_not_of.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find last of">
+			<param name="Local" value="eBookProject/CppReference/cppstring/find_last_of.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="getline">
+			<param name="Local" value="eBookProject/CppReference/cppstring/getline.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Strings">
+			<param name="Local" value="eBookProject/CppReference/cppstring/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cppstring/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="length">
+			<param name="Local" value="eBookProject/CppReference/cppstring/length.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cppstring/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push back">
+			<param name="Local" value="eBookProject/CppReference/cppstring/push_back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cppstring/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cppstring/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="replace">
+			<param name="Local" value="eBookProject/CppReference/cppstring/replace.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="reserve">
+			<param name="Local" value="eBookProject/CppReference/cppstring/reserve.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="resize">
+			<param name="Local" value="eBookProject/CppReference/cppstring/resize.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rfind">
+			<param name="Local" value="eBookProject/CppReference/cppstring/rfind.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppstring/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="String constructors">
+			<param name="Local" value="eBookProject/CppReference/cppstring/string_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="String operators">
+			<param name="Local" value="eBookProject/CppReference/cppstring/string_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="substr">
+			<param name="Local" value="eBookProject/CppReference/cppstring/substr.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppstring/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ I/O">
+			<param name="Local" value="eBookProject/CppReference/cppio/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="All">
+			<param name="Local" value="eBookProject/CppReference/cppio/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bad">
+			<param name="Local" value="eBookProject/CppReference/cppio/bad.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppio/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="close">
+			<param name="Local" value="eBookProject/CppReference/cppio/close.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="I/O Constructors">
+			<param name="Local" value="eBookProject/CppReference/cppio/constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="eof">
+			<param name="Local" value="eBookProject/CppReference/cppio/eof.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fail">
+			<param name="Local" value="eBookProject/CppReference/cppio/fail.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fill">
+			<param name="Local" value="eBookProject/CppReference/cppio/fill.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="flags">
+			<param name="Local" value="eBookProject/CppReference/cppio/flags.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="flush">
+			<param name="Local" value="eBookProject/CppReference/cppio/flush.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="gcount">
+			<param name="Local" value="eBookProject/CppReference/cppio/gcount.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="get">
+			<param name="Local" value="eBookProject/CppReference/cppio/get.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="getline">
+			<param name="Local" value="eBookProject/CppReference/cppio/getline.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="good">
+			<param name="Local" value="eBookProject/CppReference/cppio/good.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ignore">
+			<param name="Local" value="eBookProject/CppReference/cppio/ignore.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ I/O">
+			<param name="Local" value="eBookProject/CppReference/cppio/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="open">
+			<param name="Local" value="eBookProject/CppReference/cppio/open.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="peek">
+			<param name="Local" value="eBookProject/CppReference/cppio/peek.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="precision">
+			<param name="Local" value="eBookProject/CppReference/cppio/precision.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="put">
+			<param name="Local" value="eBookProject/CppReference/cppio/put.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="putback">
+			<param name="Local" value="eBookProject/CppReference/cppio/putback.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rdstate">
+			<param name="Local" value="eBookProject/CppReference/cppio/rdstate.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="read">
+			<param name="Local" value="eBookProject/CppReference/cppio/read.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="seekg">
+			<param name="Local" value="eBookProject/CppReference/cppio/seekg.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="seekp">
+			<param name="Local" value="eBookProject/CppReference/cppio/seekp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setf">
+			<param name="Local" value="eBookProject/CppReference/cppio/setf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sync with stdio">
+			<param name="Local" value="eBookProject/CppReference/cppio/sync_with_stdio.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tellg">
+			<param name="Local" value="eBookProject/CppReference/cppio/tellg.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tellp">
+			<param name="Local" value="eBookProject/CppReference/cppio/tellp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="unsetf">
+			<param name="Local" value="eBookProject/CppReference/cppio/unsetf.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="width">
+			<param name="Local" value="eBookProject/CppReference/cppio/width.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="write">
+			<param name="Local" value="eBookProject/CppReference/cppio/write.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="IO Flags">
+			<param name="Local" value="eBookProject/CppReference/io_flags.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Standard Template Library">
+			<param name="Local" value="eBookProject/CppReference/cppstl.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Priority Queues">
+			<param name="Local" value="eBookProject/CppReference/cpppriority_queue/index.html">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="C++ Priority Queues">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/all.html">
+				<param name="ImageNumber" value="9">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="empty">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/empty.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="C++ Priority Queues">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/index.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="pop">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/pop.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Priority queue constructors">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/priority_queue_contstruct.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="push">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/push.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="size">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/size.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="top">
+				<param name="Local" value="eBookProject/CppReference/cpppriority_queue/top.html">
+				<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Vectors">
+			<param name="Local" value="eBookProject/CppReference/cppvector/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Vectors">
+			<param name="Local" value="eBookProject/CppReference/cppvector/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="assign">
+			<param name="Local" value="eBookProject/CppReference/cppvector/assign.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="at">
+			<param name="Local" value="eBookProject/CppReference/cppvector/at.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="back">
+			<param name="Local" value="eBookProject/CppReference/cppvector/back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cppvector/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="capacity">
+			<param name="Local" value="eBookProject/CppReference/cppvector/capacity.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppvector/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppvector/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cppvector/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cppvector/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="front">
+			<param name="Local" value="eBookProject/CppReference/cppvector/front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Vectors">
+			<param name="Local" value="eBookProject/CppReference/cppvector/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cppvector/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cppvector/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop back">
+			<param name="Local" value="eBookProject/CppReference/cppvector/pop_back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push back">
+			<param name="Local" value="eBookProject/CppReference/cppvector/push_back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cppvector/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cppvector/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="reserve">
+			<param name="Local" value="eBookProject/CppReference/cppvector/reserve.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="resize">
+			<param name="Local" value="eBookProject/CppReference/cppvector/resize.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppvector/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppvector/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Vector constructors">
+			<param name="Local" value="eBookProject/CppReference/cppvector/vector_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Vector operators">
+			<param name="Local" value="eBookProject/CppReference/cppvector/vector_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Algorithms">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="accumulate">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/accumulate.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adjacent difference">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/adjacent_difference.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adjacent find">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/adjacent_find.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Algorithms">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/all.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="binary search">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/binary_search.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="copy">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="copy backward">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/copy_backward.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="copy n">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/copy_n.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="count">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/count.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="count if">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/count_if.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="equal">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/equal.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="equal range">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/equal_range.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fill">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/fill.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="fill n">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/fill_n.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/find.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find end">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/find_end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find first of">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/find_first_of.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find if">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/find_if.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="for each">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/for_each.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="generate">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/generate.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="generate n">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/generate_n.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="includes">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/includes.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Algorithms">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="inner product">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/inner_product.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="inplace merge">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/inplace_merge.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="iota">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/iota.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="is heap">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/is_heap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="is sorted">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/is_sorted.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="iter swap">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/iter_swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="lexicographical compare">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/lexicographical_compare.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="lexicographical compare 3way">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/lexicographical_compare_3.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="lower bound">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/lower_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="make heap">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/make_heap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/max.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max element">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/max_element.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="merge">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/merge.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="min">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/min.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="min element">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/min_element.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="mismatch">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/mismatch.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="next permutation">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/next_permutation.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="nth element">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/nth_element.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="partial sort">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/partial_sort.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="partial sort copy">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/partial_sort_copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="partial sum">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/partial_sum.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="partition">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/partition.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop heap">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/pop_heap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="power">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/power.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="prev permutation">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/prev_permutation.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push heap">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/push_heap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="random sample">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/random_sample.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="random sample n">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/random_sample_n.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="random shuffle">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/random_shuffle.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="remove">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/remove.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="remove copy">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/remove_copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="remove copy if">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/remove_copy_if.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="remove if">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/remove_if.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="replace">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/replace.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="replace copy">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/replace_copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="replace copy if">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/replace_copy_if.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="replace if">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/replace_if.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="reverse">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/reverse.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="reverse copy">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/reverse_copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rotate">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/rotate.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rotate copy">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/rotate_copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="search">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/search.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="search n">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/search_n.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="set difference">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/set_difference.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="set intersection">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/set_intersection.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="set symmetric difference">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/set_symmetric_difference.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="set union">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/set_union.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sort">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/sort.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sort heap">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/sort_heap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="stable partition">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/stable_partition.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="stable sort">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/stable_sort.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap ranges">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/swap_ranges.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="transform">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/transform.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="unique">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/unique.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="unique copy">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/unique_copy.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="upper bound">
+			<param name="Local" value="eBookProject/CppReference/cppalgorithm/upper_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Double-Ended Queues">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Double-ended Queues">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="assign">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/assign.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="at">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/at.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="back">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container constructors">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/container_constructors2.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container operators">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/container_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="front">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Double-ended Queues">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop back">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/pop_back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop front">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/pop_front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push back">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/push_back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push front">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/push_front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="resize">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/resize.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppdeque/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Lists">
+			<param name="Local" value="eBookProject/CppReference/cpplist/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Lists">
+			<param name="Local" value="eBookProject/CppReference/cpplist/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="assign">
+			<param name="Local" value="eBookProject/CppReference/cpplist/assign.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="back">
+			<param name="Local" value="eBookProject/CppReference/cpplist/back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cpplist/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cpplist/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container constructors">
+			<param name="Local" value="eBookProject/CppReference/cpplist/container_constructors2.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container operators">
+			<param name="Local" value="eBookProject/CppReference/cpplist/container_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cpplist/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cpplist/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cpplist/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="front">
+			<param name="Local" value="eBookProject/CppReference/cpplist/front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Lists">
+			<param name="Local" value="eBookProject/CppReference/cpplist/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cpplist/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cpplist/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="merge">
+			<param name="Local" value="eBookProject/CppReference/cpplist/merge.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop back">
+			<param name="Local" value="eBookProject/CppReference/cpplist/pop_back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop front">
+			<param name="Local" value="eBookProject/CppReference/cpplist/pop_front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push back">
+			<param name="Local" value="eBookProject/CppReference/cpplist/push_back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push front">
+			<param name="Local" value="eBookProject/CppReference/cpplist/push_front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cpplist/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="remove">
+			<param name="Local" value="eBookProject/CppReference/cpplist/remove.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="remove if">
+			<param name="Local" value="eBookProject/CppReference/cpplist/remove_if.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cpplist/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="resize">
+			<param name="Local" value="eBookProject/CppReference/cpplist/resize.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="reverse">
+			<param name="Local" value="eBookProject/CppReference/cpplist/reverse.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cpplist/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="sort">
+			<param name="Local" value="eBookProject/CppReference/cpplist/sort.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="splice">
+			<param name="Local" value="eBookProject/CppReference/cpplist/splice.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cpplist/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="unique">
+			<param name="Local" value="eBookProject/CppReference/cpplist/unique.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Queues">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Queues">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="back">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/back.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="front">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/front.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Queues">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/pop.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/push.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Queue constructor">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/queue_constructor.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppqueue/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Stacks">
+			<param name="Local" value="eBookProject/CppReference/cppstack/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Stacks">
+			<param name="Local" value="eBookProject/CppReference/cppstack/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppstack/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Stacks">
+			<param name="Local" value="eBookProject/CppReference/cppstack/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="pop">
+			<param name="Local" value="eBookProject/CppReference/cppstack/pop.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="push">
+			<param name="Local" value="eBookProject/CppReference/cppstack/push.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppstack/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Stack constructors">
+			<param name="Local" value="eBookProject/CppReference/cppstack/stack_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="top">
+			<param name="Local" value="eBookProject/CppReference/cppstack/top.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Sets">
+			<param name="Local" value="eBookProject/CppReference/cppset/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Sets">
+			<param name="Local" value="eBookProject/CppReference/cppset/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cppset/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppset/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container constructors & destructors">
+			<param name="Local" value="eBookProject/CppReference/cppset/container_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container operators">
+			<param name="Local" value="eBookProject/CppReference/cppset/container_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="count">
+			<param name="Local" value="eBookProject/CppReference/cppset/count.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppset/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cppset/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="equal range">
+			<param name="Local" value="eBookProject/CppReference/cppset/equal_range.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cppset/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find">
+			<param name="Local" value="eBookProject/CppReference/cppset/find.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Sets">
+			<param name="Local" value="eBookProject/CppReference/cppset/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cppset/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="key comp">
+			<param name="Local" value="eBookProject/CppReference/cppset/key_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="lower bound">
+			<param name="Local" value="eBookProject/CppReference/cppset/lower_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cppset/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cppset/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cppset/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppset/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppset/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="upper bound">
+			<param name="Local" value="eBookProject/CppReference/cppset/upper_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="value comp">
+			<param name="Local" value="eBookProject/CppReference/cppset/value_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Multisets">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Multisets">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container constructors & destructors">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/container_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container operators">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/container_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="count">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/count.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="equal range">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/equal_range.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/find.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Multisets">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="key comp">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/key_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="lower bound">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/lower_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="upper bound">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/upper_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="value comp">
+			<param name="Local" value="eBookProject/CppReference/cppmultiset/value_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Maps">
+			<param name="Local" value="eBookProject/CppReference/cppmap/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Maps">
+			<param name="Local" value="eBookProject/CppReference/cppmap/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cppmap/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppmap/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="count">
+			<param name="Local" value="eBookProject/CppReference/cppmap/count.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppmap/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cppmap/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="equal range">
+			<param name="Local" value="eBookProject/CppReference/cppmap/equal_range.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cppmap/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find">
+			<param name="Local" value="eBookProject/CppReference/cppmap/find.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Maps">
+			<param name="Local" value="eBookProject/CppReference/cppmap/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cppmap/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="key comp">
+			<param name="Local" value="eBookProject/CppReference/cppmap/key_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="lower bound">
+			<param name="Local" value="eBookProject/CppReference/cppmap/lower_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Map Constructors & Destructors">
+			<param name="Local" value="eBookProject/CppReference/cppmap/map_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Map operators">
+			<param name="Local" value="eBookProject/CppReference/cppmap/map_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cppmap/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cppmap/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cppmap/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppmap/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppmap/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="upper bound">
+			<param name="Local" value="eBookProject/CppReference/cppmap/upper_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="value comp">
+			<param name="Local" value="eBookProject/CppReference/cppmap/value_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Multimaps">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Multimaps">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="begin">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/begin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="clear">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/clear.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container constructors & destructors">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/container_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Container operators">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/container_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="count">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/count.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="empty">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/empty.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="end">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/end.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="equal range">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/equal_range.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="erase">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/erase.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="find">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/find.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Multimaps">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="insert">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/insert.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="key comp">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/key_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="lower bound">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/lower_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="max size">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/max_size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rbegin">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/rbegin.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="rend">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/rend.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="swap">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/swap.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="upper bound">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/upper_bound.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="value comp">
+			<param name="Local" value="eBookProject/CppReference/cppmultimap/value_comp.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Bitsets">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Bitsets">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="any">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/any.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Bitset Operators">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/biset_operators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Bitset Constructors">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/bitset_constructors.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="count">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/count.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="flip">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/flip.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="C++ Bitsets">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="none">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/none.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="reset">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/reset.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="set">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/set.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="size">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/size.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="test">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/test.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to string">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/to_string.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="to ulong">
+			<param name="Local" value="eBookProject/CppReference/cppbitset/to_ulong.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Iterators">
+			<param name="Local" value="eBookProject/CppReference/iterators.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Containers">
+			<param name="Local" value="eBookProject/CppReference/containers.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Miscellaneous C++">
+			<param name="Local" value="eBookProject/CppReference/cppmisc/index.html">
+			<param name="ImageNumber" value="1">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Miscellaneous C++">
+			<param name="Local" value="eBookProject/CppReference/cppmisc/all.html">
+			<param name="ImageNumber" value="9">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="auto ptr">
+			<param name="Local" value="eBookProject/CppReference/cppmisc/auto_ptr.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Miscellaneous C++">
+			<param name="Local" value="eBookProject/CppReference/cppmisc/index.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="All C Functions">
+			<param name="Local" value="eBookProject/CppReference/all_c_functions.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="All C++ Functions">
+			<param name="Local" value="eBookProject/CppReference/all_cpp_functions.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="FAQ">
+			<param name="Local" value="eBookProject/CppReference/faq.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Complexity">
+			<param name="Local" value="eBookProject/CppReference/Complexity.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Links">
+			<param name="Local" value="eBookProject/CppReference/Links.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Credits">
+			<param name="Local" value="eBookProject/CppReference/credits.html">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Comments">
+			<param name="Local" value="eBookProject/Comments.html">
+			<param name="ImageNumber" value="37">
+			<param name="Comment" value=" - Made by UNREGISTERED version of Easy CHM">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

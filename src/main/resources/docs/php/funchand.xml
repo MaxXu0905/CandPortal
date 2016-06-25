@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="funchand">
+    <methods>
+        <method>
+            <name>call_user_func_array</name>
+            <signature><![CDATA[mixed call_user_func_array ( callback function [, array param_arr])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32206" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >call_user_func_array</B
+> ( callback function [, array param_arr])<BR  ></BR
+><P  >     Call a user defined function given by
+     <TT  CLASS="parameter" ><I  >function</I
+></TT
+>, with
+     the parameters in <TT  CLASS="parameter" ><I  >param_arr</I
+></TT
+>.
+     For example:
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32221" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">debug</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#0000BB">$val</font><font  color="#007700">) <br  />{<br  />    echo </font><font  color="#DD0000">"***DEBUGGING\nVARIABLE: $var\nVALUE:"</font><font  color="#007700">;<br  />    if (</font><font  color="#0000BB">is_array</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">) || </font><font  color="#0000BB">is_object</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">) || </font><font  color="#0000BB">is_resource</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">)) {<br  />        </font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">);<br  />    } else {<br  />        echo </font><font  color="#DD0000">"\n$val\n"</font><font  color="#007700">;<br  />    }<br  />    echo </font><font  color="#DD0000">"***\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$c </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$host </font><font  color="#007700">= </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">"SERVER_NAME"</font><font  color="#007700">];<br  /><br  /></font><font  color="#0000BB">call_user_func_array</font><font  color="#007700">(</font><font  color="#DD0000">'debug'</font><font  color="#007700">, array(</font><font  color="#DD0000">"host"</font><font  color="#007700">, </font><font  color="#0000BB">$host</font><font  color="#007700">));<br  /></font><font  color="#0000BB">call_user_func_array</font><font  color="#007700">(</font><font  color="#DD0000">'debug'</font><font  color="#007700">, array(</font><font  color="#DD0000">"c"</font><font  color="#007700">, </font><font  color="#0000BB">$c</font><font  color="#007700">));<br  /></font><font  color="#0000BB">call_user_func_array</font><font  color="#007700">(</font><font  color="#DD0000">'debug'</font><font  color="#007700">, array(</font><font  color="#DD0000">"_POST"</font><font  color="#007700">, </font><font  color="#0000BB">$_POST</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     See also:
+     <SPAN HREF="#"><B  CLASS="function" >call_user_func()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>call_user_func</name>
+            <signature><![CDATA[mixed call_user_func ( callback function [, mixed parameter [, mixed ...]])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32229" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >call_user_func</B
+> ( callback function [, mixed parameter [, mixed ...]])<BR  ></BR
+><P  >     Call a user defined function given by the
+     <TT  CLASS="parameter" ><I  >function</I
+></TT
+> parameter.  Take the
+     following:
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32246" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">barber</font><font  color="#007700">(</font><font  color="#0000BB">$type</font><font  color="#007700">) <br  />{<br  />    echo </font><font  color="#DD0000">"You wanted a $type haircut, no problem"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">call_user_func</font><font  color="#007700">(</font><font  color="#DD0000">'barber'</font><font  color="#007700">, </font><font  color="#DD0000">"mushroom"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">call_user_func</font><font  color="#007700">(</font><font  color="#DD0000">'barber'</font><font  color="#007700">, </font><font  color="#DD0000">"shave"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     Object methods may also be invoked statically using this function
+     by passing <TT  CLASS="literal" >array($objectname, $methodname)</TT
+> to
+     the <TT  CLASS="parameter" ><I  >function</I
+></TT
+> parameter.
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32252" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">myclass </font><font  color="#007700">{<br  />  function </font><font  color="#0000BB">say_hello</font><font  color="#007700">() <br  />  {<br  />    echo </font><font  color="#DD0000">"Hello!\n"</font><font  color="#007700">;<br  />  }<br  />}<br  /><br  /></font><font  color="#0000BB">$classname </font><font  color="#007700">= </font><font  color="#DD0000">"myclass"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">call_user_func</font><font  color="#007700">(array(</font><font  color="#0000BB">$classname</font><font  color="#007700">, </font><font  color="#DD0000">'say_hello'</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     See also:
+     <SPAN HREF="#"><B  CLASS="function" >is_callable()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >call_user_func_array()</B
+></A
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>create_function</name>
+            <signature><![CDATA[string create_function ( string args, string code)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32261" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >create_function</B
+> ( string args, string code)<BR  ></BR
+><P  >     Creates an anonymous function from the parameters passed, and
+     returns a unique name for it. Usually the
+     <TT  CLASS="parameter" ><I  >args</I
+></TT
+> will be passed as a single quote
+     delimited string, and this is also recommended for the
+     <TT  CLASS="parameter" ><I  >code</I
+></TT
+>. The reason for using single quoted
+     strings, is to protect
+     the variable names from parsing, otherwise, if you use double
+     quotes there will be a need to escape the variable names, e.g. 
+     <TT  CLASS="literal" >\$avar</TT
+>.
+    </P
+><P  >     You can use this function, to (for example) create a function
+     from information gathered at run time:
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN32278" ></A
+><P  ><B  >例子 1. 
+       Creating an anonymous function with <B  CLASS="function" >create_function()</B
+>
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$newfunc </font><font  color="#007700">= </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$a,$b'</font><font  color="#007700">, </font><font  color="#DD0000">'return "ln($a) + ln($b) = " . log($a * $b);'</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"New anonymous function: $newfunc\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$newfunc</font><font  color="#007700">(</font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">M_E</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#FF8000">// outputs<br  />// New anonymous function: lambda_1<br  />// ln(2) + ln(2.718281828459) = 1.6931471805599<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     Or, perhaps to have general handler function that can apply a set
+     of operations to a list of parameters:
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN32284" ></A
+><P  ><B  >例子 2. 
+       Making a general processing function with
+       <B  CLASS="function" >create_function()</B
+>
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">process</font><font  color="#007700">(</font><font  color="#0000BB">$var1</font><font  color="#007700">, </font><font  color="#0000BB">$var2</font><font  color="#007700">, </font><font  color="#0000BB">$farr</font><font  color="#007700">) <br  />{<br  />    for (</font><font  color="#0000BB">$f</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$f </font><font  color="#007700">< </font><font  color="#0000BB">count</font><font  color="#007700">(</font><font  color="#0000BB">$farr</font><font  color="#007700">); </font><font  color="#0000BB">$f</font><font  color="#007700">++) {<br  />        echo </font><font  color="#0000BB">$farr</font><font  color="#007700">[</font><font  color="#0000BB">$f</font><font  color="#007700">](</font><font  color="#0000BB">$var1</font><font  color="#007700">, </font><font  color="#0000BB">$var2</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />    }<br  />}<br  /><br  /></font><font  color="#FF8000">// create a bunch of math functions<br  /></font><font  color="#0000BB">$f1 </font><font  color="#007700">= </font><font  color="#DD0000">'if ($a >=0) {return "b*a^2 = ".$b*sqrt($a);} else {return false;}'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$f2 </font><font  color="#007700">= </font><font  color="#DD0000">"return \"min(b^2+a, a^2,b) = \".min(\$a*\$a+\$b,\$b*\$b+\$a);"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$f3 </font><font  color="#007700">= </font><font  color="#DD0000">'if ($a > 0 && $b != 0) {return "ln(a)/b = ".log($a)/$b; } else { return false; }'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$farr </font><font  color="#007700">= array(<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$x,$y'</font><font  color="#007700">, </font><font  color="#DD0000">'return "some trig: ".(sin($x) + $x*cos($y));'</font><font  color="#007700">),<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$x,$y'</font><font  color="#007700">, </font><font  color="#DD0000">'return "a hypotenuse: ".sqrt($x*$x + $y*$y);'</font><font  color="#007700">),<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$a,$b'</font><font  color="#007700">, </font><font  color="#0000BB">$f1</font><font  color="#007700">),<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$a,$b'</font><font  color="#007700">, </font><font  color="#0000BB">$f2</font><font  color="#007700">),<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$a,$b'</font><font  color="#007700">, </font><font  color="#0000BB">$f3</font><font  color="#007700">)<br  />    );<br  /><br  />echo </font><font  color="#DD0000">"\nUsing the first array of anonymous functions\n"</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"parameters: 2.3445, M_PI\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">process</font><font  color="#007700">(</font><font  color="#0000BB">2.3445</font><font  color="#007700">, </font><font  color="#0000BB">M_PI</font><font  color="#007700">, </font><font  color="#0000BB">$farr</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// now make a bunch of string processing functions<br  /></font><font  color="#0000BB">$garr </font><font  color="#007700">= array(<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$b,$a'</font><font  color="#007700">, </font><font  color="#DD0000">'if (strncmp($a, $b, 3) == 0) return "** \"$a\" '</font><font  color="#007700">.<br  />    </font><font  color="#DD0000">'and \"$b\"\n** Look the same to me! (looking at the first 3 chars)";'</font><font  color="#007700">),<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$a,$b'</font><font  color="#007700">, </font><font  color="#DD0000">'; return "CRCs: " . crc32($a) . " , ".crc32(b);'</font><font  color="#007700">),<br  />    </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$a,$b'</font><font  color="#007700">, </font><font  color="#DD0000">'; return "similar(a,b) = " . similar_text($a, $b, &$p) . "($p%)";'</font><font  color="#007700">)<br  />    );<br  />echo </font><font  color="#DD0000">"\nUsing the second array of anonymous functions\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">process</font><font  color="#007700">(</font><font  color="#DD0000">"Twas brilling and the slithy toves"</font><font  color="#007700">, </font><font  color="#DD0000">"Twas the night"</font><font  color="#007700">, </font><font  color="#0000BB">$garr</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       and when you run the code above, the output will be:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Using the first array of anonymous functions
+parameters: 2.3445, M_PI
+some trig: -1.6291725057799
+a hypotenuse: 3.9199852871011
+b*a^2 = 4.8103313314525
+min(b^2+a, a^2,b) = 8.6382729035898
+ln(a/b) = 0.27122299212594
+
+Using the second array of anonymous functions
+** "Twas the night" and "Twas brilling and the slithy toves"
+** Look the same to me! (looking at the first 3 chars)
+CRCs: -725381282 , 1908338681
+similar(a,b) = 11(45.833333333333%)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     But perhaps the most common use for of lambda-style (anonymous) functions
+     is to create callback functions, for example when using
+     <SPAN HREF="#"><B  CLASS="function" >array_walk()</B
+></A
+> or <SPAN HREF="#"><B  CLASS="function" >usort()</B
+></A
+>
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN32294" ></A
+><P  ><B  >例子 3. Using anonymous functions as callback functions</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$av </font><font  color="#007700">= array(</font><font  color="#DD0000">"the "</font><font  color="#007700">, </font><font  color="#DD0000">"a "</font><font  color="#007700">, </font><font  color="#DD0000">"that "</font><font  color="#007700">, </font><font  color="#DD0000">"this "</font><font  color="#007700">);<br  /></font><font  color="#0000BB">array_walk</font><font  color="#007700">(</font><font  color="#0000BB">$av</font><font  color="#007700">, </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'&$v,$k'</font><font  color="#007700">, </font><font  color="#DD0000">'$v = $v . "mango";'</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$av</font><font  color="#007700">); <br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       outputs:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+  [0] => the mango
+  [1] => a mango
+  [2] => that mango
+  [3] => this mango
+)</PRE
+></TD
+></TR
+></TABLE
+><P  >       an array of strings ordered from shorter to longer
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />$sv </font><font  color="#007700">= array(</font><font  color="#DD0000">"small"</font><font  color="#007700">, </font><font  color="#DD0000">"larger"</font><font  color="#007700">, </font><font  color="#DD0000">"a big string"</font><font  color="#007700">, </font><font  color="#DD0000">"it is a string thing"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$sv</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       outputs:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+  [0] => small
+  [1] => larger
+  [2] => a big string
+  [3] => it is a string thing
+)</PRE
+></TD
+></TR
+></TABLE
+><P  >       sort it from longer to shorter
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />usort</font><font  color="#007700">(</font><font  color="#0000BB">$sv</font><font  color="#007700">, </font><font  color="#0000BB">create_function</font><font  color="#007700">(</font><font  color="#DD0000">'$a,$b'</font><font  color="#007700">,</font><font  color="#DD0000">'return strlen($b) - strlen($a);'</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$sv</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       outputs:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+  [0] => it is a string thing
+  [1] => a big string
+  [2] => larger
+  [3] => small
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>func_get_arg</name>
+            <signature><![CDATA[mixed func_get_arg ( int arg_num)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32311" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >func_get_arg</B
+> ( int arg_num)<BR  ></BR
+><P  >     Returns the argument which is at the
+     <TT  CLASS="parameter" ><I  >arg_num</I
+></TT
+>'th offset into a user-defined
+     function's argument list. Function arguments are counted starting
+     from zero. <B  CLASS="function" >func_get_arg()</B
+> will generate a
+     warning if called from outside of a function definition.
+    </P
+><P  >     If <TT  CLASS="parameter" ><I  >arg_num</I
+></TT
+> is greater than the number of
+     arguments actually passed, a warning will be generated and
+     <B  CLASS="function" >func_get_arg()</B
+> will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32327" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() <br  />{<br  />     </font><font  color="#0000BB">$numargs </font><font  color="#007700">= </font><font  color="#0000BB">func_num_args</font><font  color="#007700">();<br  />     echo </font><font  color="#DD0000">"Number of arguments: $numargs<br />\n"</font><font  color="#007700">;<br  />     if (</font><font  color="#0000BB">$numargs </font><font  color="#007700">>= </font><font  color="#0000BB">2</font><font  color="#007700">) {<br  />     echo </font><font  color="#DD0000">"Second argument is: " </font><font  color="#007700">. </font><font  color="#0000BB">func_get_arg</font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">) . </font><font  color="#DD0000">"<br />\n"</font><font  color="#007700">;<br  />     }<br  />} <br  /><br  /></font><font  color="#0000BB">foo </font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     <B  CLASS="function" >func_get_arg()</B
+> may be used in conjunction with
+     <SPAN HREF="#"><B  CLASS="function" >func_num_args()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >func_get_args()</B
+></A
+> to allow user-defined
+     functions to accept variable-length argument lists.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      This function was added in PHP 4.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>func_get_args</name>
+            <signature><![CDATA[array func_get_args ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32339" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >func_get_args</B
+> ( void )<BR  ></BR
+><P  >     Returns an array in which each element is the corresponding
+     member of the current user-defined function's argument
+     list. <B  CLASS="function" >func_get_args()</B
+> will generate a warning
+     if called from outside of a function definition.
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32348" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() <br  />{<br  />    </font><font  color="#0000BB">$numargs </font><font  color="#007700">= </font><font  color="#0000BB">func_num_args</font><font  color="#007700">();<br  />    echo </font><font  color="#DD0000">"Number of arguments: $numargs<br />\n"</font><font  color="#007700">;<br  />    if (</font><font  color="#0000BB">$numargs </font><font  color="#007700">>= </font><font  color="#0000BB">2</font><font  color="#007700">) {<br  />        echo </font><font  color="#DD0000">"Second argument is: " </font><font  color="#007700">. </font><font  color="#0000BB">func_get_arg</font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">) . </font><font  color="#DD0000">"<br />\n"</font><font  color="#007700">;<br  />    }<br  />    </font><font  color="#0000BB">$arg_list </font><font  color="#007700">= </font><font  color="#0000BB">func_get_args</font><font  color="#007700">();<br  />    for (</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">< </font><font  color="#0000BB">$numargs</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />        echo </font><font  color="#DD0000">"Argument $i is: " </font><font  color="#007700">. </font><font  color="#0000BB">$arg_list</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">] . </font><font  color="#DD0000">"<br />\n"</font><font  color="#007700">;<br  />    }<br  />} <br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     <B  CLASS="function" >func_get_args()</B
+> may be used in conjunction
+     with <SPAN HREF="#"><B  CLASS="function" >func_num_args()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >func_get_arg()</B
+></A
+> to allow user-defined functions
+     to accept variable-length argument lists.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      This function was added in PHP 4.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>func_num_args</name>
+            <signature><![CDATA[int func_num_args ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32360" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >func_num_args</B
+> ( void )<BR  ></BR
+><P  >     Returns the number of arguments passed into the current
+     user-defined function. <B  CLASS="function" >func_num_args()</B
+> will
+     generate a warning if called from outside of a user-defined function.
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32369" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() <br  />{<br  />    </font><font  color="#0000BB">$numargs </font><font  color="#007700">= </font><font  color="#0000BB">func_num_args</font><font  color="#007700">();<br  />    echo </font><font  color="#DD0000">"Number of arguments: $numargs\n"</font><font  color="#007700">;<br  />} <br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);    </font><font  color="#FF8000">// Prints 'Number of arguments: 3'<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     <B  CLASS="function" >func_num_args()</B
+> may be used in conjunction
+     with <SPAN HREF="#"><B  CLASS="function" >func_get_arg()</B
+></A
+> and
+     <SPAN HREF="#"><B  CLASS="function" >func_get_args()</B
+></A
+> to allow user-defined
+     functions to accept variable-length argument lists.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>function_exists</name>
+            <signature><![CDATA[bool function_exists ( string function_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32380" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >function_exists</B
+> ( string function_name)<BR  ></BR
+><P  >     Checks the list of defined functions, both built-in (internal) and
+     user-defined, for <TT  CLASS="parameter" ><I  >function_name</I
+></TT
+>. 如果成功则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，失败则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32393" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">function_exists</font><font  color="#007700">(</font><font  color="#DD0000">'imap_open'</font><font  color="#007700">)) {<br  />    echo </font><font  color="#DD0000">"IMAP functions are available.<br />\n"</font><font  color="#007700">;<br  />} else {<br  />    echo </font><font  color="#DD0000">"IMAP functions are not available.<br />\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     Note that a function name may exist even if the function itself
+     is unusable due to configuration or compiling options (with the 
+     <SPAN HREF="#">image</A
+> functions being an example).  
+     Also note that <B  CLASS="function" >function_exists()</B
+> will return 
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> for constructs, such as <SPAN HREF="#"><B  CLASS="function" >include_once()</B
+></A
+> 
+     and <SPAN HREF="#"><B  CLASS="function" >echo()</B
+></A
+>.
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >method_exists()</B
+></A
+> and 
+     <SPAN HREF="#"><B  CLASS="function" >get_defined_functions()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>get_defined_functions</name>
+            <signature><![CDATA[array get_defined_functions ( void )]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32408" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >get_defined_functions</B
+> ( void )<BR  ></BR
+><P  >     This function returns an multidimensional array containing a list of
+     all defined functions, both built-in (internal) and user-defined. The 
+     internal functions will be accessible via
+     <TT  CLASS="varname" >$arr["internal"]</TT
+>, and the user defined ones using
+     <TT  CLASS="varname" >$arr["user"]</TT
+> (see example below).
+    </P
+><P  >     </P><DIV  CLASS="informalexample" ><A  NAME="AEN32418" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">myrow</font><font  color="#007700">(</font><font  color="#0000BB">$id</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">) <br  />{<br  />    return </font><font  color="#DD0000">"<tr><th>$id</th><td>$data</td></tr>\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$arr </font><font  color="#007700">= </font><font  color="#0000BB">get_defined_functions</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       Will output something along the lines of:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+    [internal] => Array
+        (
+            [0] => zend_version
+            [1] => func_num_args
+            [2] => func_get_arg
+            [3] => func_get_args
+            [4] => strlen
+            [5] => strcmp
+            [6] => strncmp
+            ...
+            [750] => bcscale
+            [751] => bccomp
+        )
+
+    [user] => Array
+        (
+            [0] => myrow
+        )
+
+)</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >get_defined_vars()</B
+></A
+> and 
+     <SPAN HREF="#"><B  CLASS="function" >get_defined_constants()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>register_shutdown_function</name>
+            <signature><![CDATA[void register_shutdown_function ( callback function)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32429" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >register_shutdown_function</B
+> ( callback function)<BR  ></BR
+><P  >     Registers the function named by <TT  CLASS="parameter" ><I  >function</I
+></TT
+> to be
+     executed when script processing is complete.
+    </P
+><P  >     Multiple calls to <B  CLASS="function" >register_shutdown_function()</B
+> can be
+     made, and each will be called in the same order as they were registered.
+     If you call <SPAN HREF="#"><B  CLASS="function" >exit()</B
+></A
+> within one registered shutdown
+     function, processing will stop completely and no other registered
+     shutdown functions will be called.
+    </P
+><P  >     The registered shutdown functions are called after the request has been
+     completed (including sending any output buffers), so it is not possible
+     to send output to the browser using <SPAN HREF="#"><B  CLASS="function" >echo()</B
+></A
+> or
+     <SPAN HREF="#"><B  CLASS="function" >print()</B
+></A
+>, or retrieve the contents of any output
+     buffers using <SPAN HREF="#"><B  CLASS="function" >ob_get_contents()</B
+></A
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      Typically undefined functions cause fatal errors in PHP, but when the
+      <TT  CLASS="parameter" ><I  >function</I
+></TT
+> called with
+      <B  CLASS="function" >register_shutdown_function()</B
+> is undefined, an error
+      of level <TT  CLASS="constant" ><B  >E_WARNING</B
+></TT
+> is generated instead.  Also,
+      for reasons internal to PHP, this error will refer to
+      <B  CLASS="function" >Unknown()</B
+> at line #0. 
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     See also <SPAN HREF="#">auto_append_file</A
+>,
+     <SPAN HREF="#"><B  CLASS="function" >exit()</B
+></A
+>, and the section on
+     <SPAN HREF="#">connection handling</A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>register_tick_function</name>
+            <signature><![CDATA[void register_tick_function ( callback function [, mixed arg])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32460" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >register_tick_function</B
+> ( callback function [, mixed arg])<BR  ></BR
+><P  >     Registers the function named by <TT  CLASS="parameter" ><I  >func</I
+></TT
+> to be
+     executed when a <SPAN HREF="#">tick</A
+> is
+     called. Also, you may pass an array consisting of an object and a 
+     method as the <TT  CLASS="parameter" ><I  >func</I
+></TT
+>.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN32476" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >register_tick_function()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#FF8000">// using a function as the callback<br  /></font><font  color="#0000BB">register_tick_function</font><font  color="#007700">(</font><font  color="#DD0000">'my_function'</font><font  color="#007700">, </font><font  color="#0000BB">true</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// using an object->method<br  /></font><font  color="#0000BB">$object </font><font  color="#007700">= new </font><font  color="#0000BB">my_class</font><font  color="#007700">();<br  /></font><font  color="#0000BB">register_tick_function</font><font  color="#007700">(array(&</font><font  color="#0000BB">$object</font><font  color="#007700">, </font><font  color="#DD0000">'my_method'</font><font  color="#007700">), </font><font  color="#0000BB">true</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <B  CLASS="function" >declare()</B
+> and 
+     <SPAN HREF="#"><B  CLASS="function" >unregister_tick_function()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>unregister_tick_function</name>
+            <signature><![CDATA[void unregister_tick_function ( string function_name)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN32487" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >unregister_tick_function</B
+> ( string function_name)<BR  ></BR
+><P  >     De-registers the function named by <TT  CLASS="parameter" ><I  >function_name</I
+></TT
+> so it is
+     no longer executed when a <SPAN HREF="#">tick</A
+> is
+     called.</P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

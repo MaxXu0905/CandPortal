@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.cppreference.com/cppvector/vector_constructors.html -->
+<HTML><HEAD><TITLE>Vector constructors</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="vector_constructors.files/cppreference.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppvector/index.html">C++ Vectors</A> 
+      &gt; <A 
+      href="../cppvector/vector_constructors.html">Vector 
+      constructors</A> </DIV>
+      <DIV class=name-format>Vector constructors </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;vector&gt;
+  vector();
+  vector( const vector&amp; c );
+  vector( <STRONG>size_type</STRONG> num, const <A href="../containers.html">TYPE</A>&amp; val = <A href="../containers.html">TYPE</A>() );
+  vector( <A href="../iterators.html">input_iterator</A> start, <A href="../iterators.html">input_iterator</A> end );
+  ~vector();
+</PRE>
+      <P>The default vector constructor takes no arguments, creates a new 
+      instance of that vector.</P>
+      <P>The second constructor is a default copy constructor that can be used 
+      to create a new vector that is a copy of the given vector <EM>c</EM>.</P>
+      <P>The third constructor creates a vector with space for <EM>num</EM> 
+      objects. If <EM>val</EM> is specified, each of those objects will be given 
+      that value. For example, the following code creates a vector consisting of 
+      five copies of the integer 42:</P><PRE class=example-code> vector&lt;int&gt; v1( 5, 42 );         
+</PRE>
+      <P>The last constructor creates a vector that is initialized to contain 
+      the elements between <EM>start</EM> and <EM>end</EM>. For example:</P><PRE class=example-code> // create a vector of random integers
+ cout &lt;&lt; "original vector: ";
+ vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 10; i++ ) {
+   int num = (int) rand() % 10;
+   cout &lt;&lt; num &lt;&lt; " ";
+   v.push_back( num );
+ }
+ cout &lt;&lt; endl;            
+
+ // find the first element of v that is even
+ vector&lt;int&gt;::iterator iter1 = v.begin();
+ while( iter1 != v.end() &amp;&amp; *iter1 % 2 != 0 ) {
+   iter1++;
+ }              
+
+ // find the last element of v that is even
+ vector&lt;int&gt;::iterator iter2 = v.end();
+ do {
+   iter2--;
+ } while( iter2 != v.begin() &amp;&amp; *iter2 % 2 != 0 );              
+
+ // only proceed if we find both numbers
+ if( iter1 != v.end() &amp;&amp; iter2 != v.begin() ) {
+   cout &lt;&lt; "first even number: " &lt;&lt; *iter1 &lt;&lt; ", last even number: " &lt;&lt; *iter2 &lt;&lt; endl;         
+
+   cout &lt;&lt; "new vector: ";
+   vector&lt;int&gt; v2( iter1, iter2 );
+   for( int i = 0; i &lt; v2.size(); i++ ) {
+     cout &lt;&lt; v2[i] &lt;&lt; " ";
+   }
+   cout &lt;&lt; endl;
+ }
+</PRE>
+      <P>When run, this code displays the following output:</P><PRE class=example-code> original vector: 1 9 7 9 2 7 2 1 9 8
+ first even number: 2, last even number: 8
+ new vector: 2 7 2 1 9          
+</PRE>
+      <P>All of these constructors run in <A 
+      href="../complexity.html">linear time</A> except 
+      the first, which runs in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <P>The default destructor is called when the vector should be 
+      destroyed.</P></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

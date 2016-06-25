@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.List&lt;E&gt;">
+    <methods>
+        <method>
+            <name>size</name>
+            <signature><![CDATA[int size()]]></signature>
+            <description><![CDATA[Returns the number of elements in this list.  If this list contains
+ more than Integer.MAX_VALUE elements, returns
+ Integer.MAX_VALUE.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">size</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the number of elements in this list</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <signature><![CDATA[boolean isEmpty()]]></signature>
+            <description><![CDATA[Returns true if this list contains no elements.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">isEmpty</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list contains no elements</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>contains</name>
+            <signature><![CDATA[boolean contains(Object o)]]></signature>
+            <description><![CDATA[Returns true if this list contains the specified element.
+ More formally, returns true if and only if this list contains
+ at least one element e such that
+ (o==null ? e==null : o.equals(e)).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">contains</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element whose presence in this list is to be tested</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list contains the specified element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the type of the specified element
+         is incompatible with this list
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         list does not permit null elements
+ (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>iterator</name>
+            <signature><![CDATA[Iterator<E> iterator()]]></signature>
+            <description><![CDATA[Returns an iterator over the elements in this list in proper sequence.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">iterator</a></code> in interface <code><a href="#">Iterable</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an iterator over the elements in this list in proper sequence</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toArray</name>
+            <signature><![CDATA[Object[] toArray()]]></signature>
+            <description><![CDATA[Returns an array containing all of the elements in this list in proper
+ sequence (from first to last element).
+
+ The returned array will be "safe" in that no references to it are
+ maintained by this list.  (In other words, this method must
+ allocate a new array even if this list is backed by an array).
+ The caller is thus free to modify the returned array.
+
+ This method acts as bridge between array-based and collection-based
+ APIs.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>an array containing all of the elements in this list in proper
+         sequence</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Arrays.asList(Object[])</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>toArray</name>
+            <signature><![CDATA[<T> T[] toArray(T[] a)]]></signature>
+            <description><![CDATA[Returns an array containing all of the elements in this list in
+ proper sequence (from first to last element); the runtime type of
+ the returned array is that of the specified array.  If the list fits
+ in the specified array, it is returned therein.  Otherwise, a new
+ array is allocated with the runtime type of the specified array and
+ the size of this list.
+
+ If the list fits in the specified array with room to spare (i.e.,
+ the array has more elements than the list), the element in the array
+ immediately following the end of the list is set to null.
+ (This is useful in determining the length of the list only if
+ the caller knows that the list does not contain any null elements.)
+
+ Like the toArray() method, this method acts as bridge between
+ array-based and collection-based APIs.  Further, this method allows
+ precise control over the runtime type of the output array, and may,
+ under certain circumstances, be used to save allocation costs.
+
+ Suppose x is a list known to contain only strings.
+ The following code can be used to dump the list into a newly
+ allocated array of String:
+
+ 
+     String[] y = x.toArray(new String[0]);
+
+ Note that toArray(new Object[0]) is identical in function to
+ toArray().<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">toArray</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the array into which the elements of this list are to
+          be stored, if it is big enough; otherwise, a new array of the
+          same runtime type is allocated for this purpose.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an array containing the elements of this list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ArrayStoreException</a></code> - if the runtime type of the specified array
+         is not a supertype of the runtime type of every element in
+         this list</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified array is null</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[boolean add(E e)]]></signature>
+            <description><![CDATA[Appends the specified element to the end of this list (optional
+ operation).
+
+ Lists that support this operation may place limitations on what
+ elements may be added to this list.  In particular, some
+ lists will refuse to add null elements, and others will impose
+ restrictions on the type of elements that may be added.  List
+ classes should clearly specify in their documentation any restrictions
+ on what elements may be added.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">add</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>e</code> - element to be appended to this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> (as specified by <a href="#"><code>Collection.add(E)</code></a>)</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>add</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of the specified element
+         prevents it from being added to this list</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         list does not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of this element
+         prevents it from being added to this list</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[boolean remove(Object o)]]></signature>
+            <description><![CDATA[Removes the first occurrence of the specified element from this list,
+ if it is present (optional operation).  If this list does not contain
+ the element, it is unchanged.  More formally, removes the element with
+ the lowest index i such that
+ (o==null ? get(i)==null : o.equals(get(i)))
+ (if such an element exists).  Returns true if this list
+ contained the specified element (or equivalently, if this list changed
+ as a result of the call).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">remove</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element to be removed from this list, if present</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list contained the specified element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the type of the specified element
+         is incompatible with this list
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         list does not permit null elements
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>remove</tt> operation
+         is not supported by this list</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>containsAll</name>
+            <signature><![CDATA[boolean containsAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Returns true if this list contains all of the elements of the
+ specified collection.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">containsAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection to be checked for containment in this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list contains all of the elements of the
+         specified collection</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the types of one or more elements
+         in the specified collection are incompatible with this
+         list
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection contains one
+         or more null elements and this list does not permit null
+         elements
+         (<a href="#">optional</a>),
+         or if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>addAll</name>
+            <signature><![CDATA[boolean addAll(Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Appends all of the elements in the specified collection to the end of
+ this list, in the order that they are returned by the specified
+ collection's iterator (optional operation).  The behavior of this
+ operation is undefined if the specified collection is modified while
+ the operation is in progress.  (Note that this will occur if the
+ specified collection is this list, and it's nonempty.)<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">addAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be added to this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>addAll</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of an element of the specified
+         collection prevents it from being added to this list</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection contains one
+         or more null elements and this list does not permit null
+         elements, or if the specified collection is null</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of an element of the
+         specified collection prevents it from being added to this list</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>add(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>addAll</name>
+            <signature><![CDATA[boolean addAll(int index,
+             Collection<? extends E> c)]]></signature>
+            <description><![CDATA[Inserts all of the elements in the specified collection into this
+ list at the specified position (optional operation).  Shifts the
+ element currently at that position (if any) and any subsequent
+ elements to the right (increases their indices).  The new elements
+ will appear in this list in the order that they are returned by the
+ specified collection's iterator.  The behavior of this operation is
+ undefined if the specified collection is modified while the
+ operation is in progress.  (Note that this will occur if the specified
+ collection is this list, and it's nonempty.)<dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index at which to insert the first element from the
+              specified collection</dd><dd><code>c</code> - collection containing elements to be added to this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>addAll</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of an element of the specified
+         collection prevents it from being added to this list</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified collection contains one
+         or more null elements and this list does not permit null
+         elements, or if the specified collection is null</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of an element of the
+         specified collection prevents it from being added to this list</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index > size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>removeAll</name>
+            <signature><![CDATA[boolean removeAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Removes from this list all of its elements that are contained in the
+ specified collection (optional operation).<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">removeAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be removed from this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>removeAll</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of an element of this list
+         is incompatible with the specified collection
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if this list contains a null element and the
+         specified collection does not permit null elements
+         (<a href="#">optional</a>),
+         or if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>remove(Object)</code></a>, 
+<a href="#"><code>contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>retainAll</name>
+            <signature><![CDATA[boolean retainAll(Collection<?> c)]]></signature>
+            <description><![CDATA[Retains only the elements in this list that are contained in the
+ specified collection (optional operation).  In other words, removes
+ from this list all of its elements that are not contained in the
+ specified collection.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">retainAll</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>c</code> - collection containing elements to be retained in this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if this list changed as a result of the call</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>retainAll</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of an element of this list
+         is incompatible with the specified collection
+ (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if this list contains a null element and the
+         specified collection does not permit null elements
+         (<a href="#">optional</a>),
+         or if the specified collection is null</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>remove(Object)</code></a>, 
+<a href="#"><code>contains(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>clear</name>
+            <signature><![CDATA[void clear()]]></signature>
+            <description><![CDATA[Removes all of the elements from this list (optional operation).
+ The list will be empty after this call returns.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">clear</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>clear</tt> operation
+         is not supported by this list</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>equals</name>
+            <signature><![CDATA[boolean equals(Object o)]]></signature>
+            <description><![CDATA[Compares the specified object with this list for equality.  Returns
+ true if and only if the specified object is also a list, both
+ lists have the same size, and all corresponding pairs of elements in
+ the two lists are equal.  (Two elements e1 and
+ e2 are equal if (e1==null ? e2==null :
+ e1.equals(e2)).)  In other words, two lists are defined to be
+ equal if they contain the same elements in the same order.  This
+ definition ensures that the equals method works properly across
+ different implementations of the List interface.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">equals</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">equals</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - the object to be compared for equality with this list</dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> if the specified object is equal to this list</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.hashCode()</code></a>, 
+<a href="#"><code>HashMap</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hashCode</name>
+            <signature><![CDATA[int hashCode()]]></signature>
+            <description><![CDATA[Returns the hash code value for this list.  The hash code of a list
+ is defined to be the result of the following calculation:
+ 
+  int hashCode = 1;
+  for (E e : list)
+      hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
+ 
+ This ensures that list1.equals(list2) implies that
+ list1.hashCode()==list2.hashCode() for any two lists,
+ list1 and list2, as required by the general
+ contract of Object.hashCode().<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in interface <code><a href="#">Collection</a><<a href="#">E</a>></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="#">hashCode</a></code> in class <code><a href="#">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the hash code value for this list</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Object.equals(Object)</code></a>, 
+<a href="#"><code>equals(Object)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>get</name>
+            <signature><![CDATA[E get(int index)]]></signature>
+            <description><![CDATA[Returns the element at the specified position in this list.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index of the element to return</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the element at the specified position in this list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index >= size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>set</name>
+            <signature><![CDATA[E set(int index,
+    E element)]]></signature>
+            <description><![CDATA[Replaces the element at the specified position in this list with the
+ specified element (optional operation).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index of the element to replace</dd><dd><code>element</code> - element to be stored at the specified position</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the element previously at the specified position</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>set</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of the specified element
+         prevents it from being added to this list</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and
+         this list does not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of the specified
+         element prevents it from being added to this list</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index >= size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>add</name>
+            <signature><![CDATA[void add(int index,
+       E element)]]></signature>
+            <description><![CDATA[Inserts the specified element at the specified position in this list
+ (optional operation).  Shifts the element currently at that position
+ (if any) and any subsequent elements to the right (adds one to their
+ indices).<dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index at which the specified element is to be inserted</dd><dd><code>element</code> - element to be inserted</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>add</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">ClassCastException</a></code> - if the class of the specified element
+         prevents it from being added to this list</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and
+         this list does not permit null elements</dd>
+<dd><code><a href="#">IllegalArgumentException</a></code> - if some property of the specified
+         element prevents it from being added to this list</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index > size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>remove</name>
+            <signature><![CDATA[E remove(int index)]]></signature>
+            <description><![CDATA[Removes the element at the specified position in this list (optional
+ operation).  Shifts any subsequent elements to the left (subtracts one
+ from their indices).  Returns the element that was removed from the
+ list.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - the index of the element to be removed</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the element previously at the specified position</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">UnsupportedOperationException</a></code> - if the <tt>remove</tt> operation
+         is not supported by this list</dd>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<tt>index < 0 || index >= size()</tt>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>indexOf</name>
+            <signature><![CDATA[int indexOf(Object o)]]></signature>
+            <description><![CDATA[Returns the index of the first occurrence of the specified element
+ in this list, or -1 if this list does not contain the element.
+ More formally, returns the lowest index i such that
+ (o==null ? get(i)==null : o.equals(get(i))),
+ or -1 if there is no such index.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element to search for</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the index of the first occurrence of the specified element in
+         this list, or -1 if this list does not contain the element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the type of the specified element
+         is incompatible with this list
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         list does not permit null elements
+         (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>lastIndexOf</name>
+            <signature><![CDATA[int lastIndexOf(Object o)]]></signature>
+            <description><![CDATA[Returns the index of the last occurrence of the specified element
+ in this list, or -1 if this list does not contain the element.
+ More formally, returns the highest index i such that
+ (o==null ? get(i)==null : o.equals(get(i))),
+ or -1 if there is no such index.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - element to search for</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the index of the last occurrence of the specified element in
+         this list, or -1 if this list does not contain the element</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">ClassCastException</a></code> - if the type of the specified element
+         is incompatible with this list
+         (<a href="#">optional</a>)</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if the specified element is null and this
+         list does not permit null elements
+         (<a href="#">optional</a>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>listIterator</name>
+            <signature><![CDATA[ListIterator<E> listIterator()]]></signature>
+            <description><![CDATA[Returns a list iterator over the elements in this list (in proper
+ sequence).<dl><dt><span class="strong">Returns:</span></dt><dd>a list iterator over the elements in this list (in proper
+         sequence)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>listIterator</name>
+            <signature><![CDATA[ListIterator<E> listIterator(int index)]]></signature>
+            <description><![CDATA[Returns a list iterator over the elements in this list (in proper
+ sequence), starting at the specified position in the list.
+ The specified index indicates the first element that would be
+ returned by an initial call to next.
+ An initial call to previous would
+ return the element with the specified index minus one.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - index of the first element to be returned from the
+        list iterator (by a call to <a href="#"><code>next</code></a>)</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list iterator over the elements in this list (in proper
+         sequence), starting at the specified position in the list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - if the index is out of range
+         (<code>index < 0 || index > size()</code>)</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>subList</name>
+            <signature><![CDATA[List<E> subList(int fromIndex,
+              int toIndex)]]></signature>
+            <description><![CDATA[Returns a view of the portion of this list between the specified
+ fromIndex, inclusive, and toIndex, exclusive.  (If
+ fromIndex and toIndex are equal, the returned list is
+ empty.)  The returned list is backed by this list, so non-structural
+ changes in the returned list are reflected in this list, and vice-versa.
+ The returned list supports all of the optional list operations supported
+ by this list.
+
+ This method eliminates the need for explicit range operations (of
+ the sort that commonly exist for arrays).  Any operation that expects
+ a list can be used as a range operation by passing a subList view
+ instead of a whole list.  For example, the following idiom
+ removes a range of elements from a list:
+ 
+      list.subList(from, to).clear();
+ 
+ Similar idioms may be constructed for indexOf and
+ lastIndexOf, and all of the algorithms in the
+ Collections class can be applied to a subList.
+
+ The semantics of the list returned by this method become undefined if
+ the backing list (i.e., this list) is structurally modified in
+ any way other than via the returned list.  (Structural modifications are
+ those that change the size of this list, or otherwise perturb it in such
+ a fashion that iterations in progress may yield incorrect results.)<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fromIndex</code> - low endpoint (inclusive) of the subList</dd><dd><code>toIndex</code> - high endpoint (exclusive) of the subList</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a view of the specified range within this list</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">IndexOutOfBoundsException</a></code> - for an illegal endpoint index value
+         (<tt>fromIndex < 0 || toIndex > size ||
+         fromIndex > toIndex</tt>)</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

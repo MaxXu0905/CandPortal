@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.cppreference.com/cppalgorithm/binary_search.html -->
+<HTML><HEAD><TITLE>binary_search</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="binary_search.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/binary_search.html">binary_search</A> 
+      </DIV>
+      <DIV class=name-format>binary_search </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  bool binary_search( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val );
+  bool binary_search( iterator start, iterator end, const <A href="../containers.html">TYPE</A>&amp; val, Comp f );
+</PRE>
+      <P>The binary_search() function searches from <EM>start</EM> to 
+      <EM>end</EM> for <EM>val</EM>. The elements between <EM>start</EM> and 
+      <EM>end</EM> that are searched should be in ascending order as defined by 
+      the &lt; operator. Note that a binary search <STRONG>will not 
+      work</STRONG> unless the elements being searched are in order.</P>
+      <P>If <EM>val</EM> is found, binary_search() returns true, otherwise 
+      false.</P>
+      <P>If the function <EM>f</EM> is specified, then it is used to compare 
+      elements.</P>
+      <P>For example, the following code uses binary_search() to determine if 
+      the integers 0-9 are in an array of integers:</P><PRE class=example-code> int nums[] = { -242, -1, 0, 5, 8, 9, 11 };
+ int start = 0;
+ int end = 7;           
+
+ for( int i = 0; i &lt; 10; i++ ) {
+   if( binary_search( nums+start, nums+end, i ) ) {
+     cout &lt;&lt; "nums[] contains " &lt;&lt; i &lt;&lt; endl;
+   } else {
+     cout &lt;&lt; "nums[] DOES NOT contain " &lt;&lt; i &lt;&lt; endl;
+   }
+ }              
+</PRE>
+      <P>When run, this code displays the following output:</P><PRE class=example-code> nums[] contains 0
+ nums[] DOES NOT contain 1
+ nums[] DOES NOT contain 2
+ nums[] DOES NOT contain 3
+ nums[] DOES NOT contain 4
+ nums[] contains 5
+ nums[] DOES NOT contain 6
+ nums[] DOES NOT contain 7
+ nums[] contains 8
+ nums[] contains 9              
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/equal_range.html">equal_range</A><BR><A 
+      href="../cppalgorithm/is_sorted.html">is_sorted</A><BR><A 
+      href="../cppalgorithm/lower_bound.html">lower_bound</A><BR><A 
+      href="../cppalgorithm/partial_sort.html">partial_sort</A><BR><A 
+      href="../cppalgorithm/partial_sort_copy.html">partial_sort_copy</A><BR><A 
+      href="../cppalgorithm/sort.html">sort</A><BR><A 
+      href="../cppalgorithm/stable_sort.html">stable_sort</A><BR><A 
+      href="../cppalgorithm/upper_bound.html">upper_bound</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

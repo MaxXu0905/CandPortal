@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.cppreference.com/cppalgorithm/count_if.html -->
+<HTML><HEAD><TITLE>count_if</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="count_if.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/count_if.html">count_if</A> 
+      </DIV>
+      <DIV class=name-format>count_if </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  size_t count_if( iterator start, iterator end, UnaryPred p );
+</PRE>
+      <P>The count_if() function returns the number of elements between 
+      <EM>start</EM> and <EM>end</EM> for which the predicate <EM>p</EM> returns 
+      true.</P>
+      <P>For example, the following code uses count_if() with a predicate that 
+      returns true for the integer 3 to count the number of items in an array 
+      that are equal to 3:</P><PRE class=example-code> int nums[] = { 0, 1, 2, 3, 4, 5, 9, 3, 13 };
+ int start = 0;
+ int end = 9;           
+
+ int target_value = 3;
+ int num_items = count_if( nums+start,
+                    nums+end,
+                    bind2nd(equal_to&lt;int&gt;(), target_value) );             
+
+ cout &lt;&lt; "nums[] contains " &lt;&lt; num_items &lt;&lt; " items matching " &lt;&lt; target_value &lt;&lt; endl;               
+</PRE>
+      <P>When run, the above code displays the following output:</P><PRE class=example-code> nums[] contains 2 items matching 3             
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/count.html">count</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

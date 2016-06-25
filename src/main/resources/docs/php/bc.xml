@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="bc">
+    <methods>
+        <method>
+            <name>bcadd</name>
+            <signature><![CDATA[string bcadd ( string left_operand, string right_operand [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10774" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcadd</B
+> ( string left_operand, string right_operand [, int scale])<BR  ></BR
+><P  >     Adds the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+> to the
+     <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> and returns the sum in a
+     string.  The optional <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> parameter is
+     used to set the number of digits after the decimal place in the
+     result.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10793" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcadd()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">1.234</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">5</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#0000BB">bcadd</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">);     </font><font  color="#FF8000">// 6<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcadd</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">, </font><font  color="#0000BB">4</font><font  color="#007700">);  </font><font  color="#FF8000">// 6.2340<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcsub()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bccomp</name>
+            <signature><![CDATA[int bccomp ( string left_operand, string right_operand [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10803" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >bccomp</B
+> ( string left_operand, string right_operand [, int scale])<BR  ></BR
+><P  >     Compares the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+> to the
+     <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> and returns the result as an
+     integer.  The optional <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> parameter is
+     used to set the number of digits after the decimal place which
+     will be used in the comparison.  The return value is 0 if the two
+     operands are equal.  If the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+>
+     is larger than the <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> the
+     return value is +1 and if the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+>
+     is less than the <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> the return
+     value is -1.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10826" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bccomp()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bccomp</font><font  color="#007700">(</font><font  color="#DD0000">'1'</font><font  color="#007700">, </font><font  color="#DD0000">'2'</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#0000BB">bccomp</font><font  color="#007700">(</font><font  color="#DD0000">'1.00001'</font><font  color="#007700">, </font><font  color="#DD0000">'1'</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">bccomp</font><font  color="#007700">(</font><font  color="#DD0000">'1.00001'</font><font  color="#007700">, </font><font  color="#DD0000">'1'</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       The above example will output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >-1
+0
+1</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcdiv</name>
+            <signature><![CDATA[string bcdiv ( string left_operand, string right_operand [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10836" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcdiv</B
+> ( string left_operand, string right_operand [, int scale])<BR  ></BR
+><P  >     Divides the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+> by the
+     <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> and returns the result.  The
+     optional <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> sets the number of digits
+     after the decimal place in the result.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10855" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcdiv()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcdiv</font><font  color="#007700">(</font><font  color="#0000BB">105</font><font  color="#007700">, </font><font  color="#0000BB">6.55957</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);  </font><font  color="#FF8000">// 16.007<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcmul()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcmod</name>
+            <signature><![CDATA[string bcmod ( string left_operand, string modulus)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10865" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcmod</B
+> ( string left_operand, string modulus)<BR  ></BR
+><P  >     Get the modulus of the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+> using
+     <TT  CLASS="parameter" ><I  >modulus</I
+></TT
+>.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10880" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcmod()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcmod</font><font  color="#007700">(</font><font  color="#0000BB">4</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">bcmod</font><font  color="#007700">(</font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">4</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       The above example will output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >0
+2</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcdiv()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcmul</name>
+            <signature><![CDATA[string bcmul ( string left_operand, string right_operand [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10892" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcmul</B
+> ( string left_operand, string right_operand [, int scale])<BR  ></BR
+><P  >     Multiply the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+> by the
+     <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> and returns the result.  The
+     optional <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> sets the number of digits
+     after the decimal place in the result.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10911" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcmul()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcmul</font><font  color="#007700">(</font><font  color="#0000BB">1.34747474747</font><font  color="#007700">, </font><font  color="#0000BB">35</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">bcmul</font><font  color="#007700">(</font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">4</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >       The above example will output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >47.162
+8</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcdiv()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcpow</name>
+            <signature><![CDATA[string bcpow ( string x, string y [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10923" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcpow</B
+> ( string x, string y [, int scale])<BR  ></BR
+><P  >     Raise <TT  CLASS="parameter" ><I  >x</I
+></TT
+> to the power
+     <TT  CLASS="parameter" ><I  >y</I
+></TT
+>.  The optional
+     <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> can be used to set the number of
+     digits after the decimal place in the result.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10942" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcpow()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcpow</font><font  color="#007700">(</font><font  color="#0000BB">4.2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">); </font><font  color="#FF8000">// 74.08<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcpowmod()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >bcsqrt()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcpowmod</name>
+            <signature><![CDATA[string bcpowmod ( string x, string y, string modulus [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10953" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcpowmod</B
+> ( string x, string y, string modulus [, int scale])<BR  ></BR
+><P  >     Use the fast-exponentiation method to raise <TT  CLASS="parameter" ><I  >x</I
+></TT
+> 
+     to the power <TT  CLASS="parameter" ><I  >y</I
+></TT
+> with respect to the modulus
+     <TT  CLASS="parameter" ><I  >modulus</I
+></TT
+>.  The optional
+     <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> can be used to set the number of
+     digits after the decimal place in the result. 
+    </P
+><P  >     The following two statements are functionally identical.  The 
+     <B  CLASS="function" >bcpowmod()</B
+> version however, executes in 
+     less time and can accept larger parameters.
+     </P><DIV  CLASS="informalexample" ><A  NAME="AEN10977" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">bcpowmod</font><font  color="#007700">(</font><font  color="#0000BB">$x</font><font  color="#007700">, </font><font  color="#0000BB">$y</font><font  color="#007700">, </font><font  color="#0000BB">$mod</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">bcmod</font><font  color="#007700">(</font><font  color="#0000BB">bcpow</font><font  color="#007700">(</font><font  color="#0000BB">$x</font><font  color="#007700">, </font><font  color="#0000BB">$y</font><font  color="#007700">), </font><font  color="#0000BB">$mod</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// $a and $b are equal to each other. <br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >     </P><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+       Because this method uses the modulus operation, non-natural numbers
+       may give unexpected results.  A natural number is any positive 
+       non-zero integer.
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcpow()</B
+></A
+>, and
+     <SPAN HREF="#"><B  CLASS="function" >bcmod()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcscale</name>
+            <signature><![CDATA[bool bcscale ( int scale)]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN10989" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >bcscale</B
+> ( int scale)<BR  ></BR
+><P  >     This function sets the default scale parameter for all subsequent
+     bc math functions that do not explicitly specify a scale
+     parameter. 如果成功则返回 <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>，失败则返回 <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>。
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11001" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcscale()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#FF8000">// default scale : 3<br  /></font><font  color="#0000BB">bcscale</font><font  color="#007700">(</font><font  color="#0000BB">3</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">bcdiv</font><font  color="#007700">(</font><font  color="#0000BB">105</font><font  color="#007700">, </font><font  color="#0000BB">6.55957</font><font  color="#007700">); </font><font  color="#FF8000">// 16.007<br  /><br  />// this is the same without bcscale()<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcdiv</font><font  color="#007700">(</font><font  color="#0000BB">105</font><font  color="#007700">, </font><font  color="#0000BB">6.55957</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">); </font><font  color="#FF8000">// 16.007<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcsqrt</name>
+            <signature><![CDATA[string bcsqrt ( string operand [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11009" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcsqrt</B
+> ( string operand [, int scale])<BR  ></BR
+><P  >     Return the square root of the <TT  CLASS="parameter" ><I  >operand</I
+></TT
+>.
+     The optional <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> parameter sets the
+     number of digits after the decimal place in the result.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11024" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcsqrt()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcsqrt</font><font  color="#007700">(</font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">); </font><font  color="#FF8000">// 1.414<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcpow()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+        <method>
+            <name>bcsub</name>
+            <signature><![CDATA[string bcsub ( string left_operand, string right_operand [, int scale])]]></signature>
+            <description><![CDATA[<DIV  CLASS="refsect1" ><A  NAME="AEN11034" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcsub</B
+> ( string left_operand, string right_operand [, int scale])<BR  ></BR
+><P  >     Subtracts the <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> from the
+     <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+> and returns the result in a
+     string.  The optional <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> parameter is
+     used to set the number of digits after the decimal place in the
+     result.
+    </P
+><P  >     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11053" ></A
+><P  ><B  >例子 1. <B  CLASS="function" >bcsub()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB"><?php<br  /><br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">1.234</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">5</font><font  color="#007700">;<br  /> <br  />echo </font><font  color="#0000BB">bcsub</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">);     </font><font  color="#FF8000">// -3<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcsub</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">, </font><font  color="#0000BB">4</font><font  color="#007700">);  </font><font  color="#FF8000">// -3.7660<br  /><br  /></font><font  color="#0000BB">?></font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >     See also <SPAN HREF="#"><B  CLASS="function" >bcadd()</B
+></A
+>.
+    </P
+></DIV
+>]]></description>
+        </method>
+    </methods>
+</Root>

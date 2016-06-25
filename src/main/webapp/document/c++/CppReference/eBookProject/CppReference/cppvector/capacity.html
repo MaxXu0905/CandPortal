@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.cppreference.com/cppvector/capacity.html -->
+<HTML><HEAD><TITLE>capacity</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="capacity.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="http://www.cppreference.com/index.html">cppreference.com</A> &gt; <A 
+      href="http://www.cppreference.com/cppvector/index.html">C++ Vectors</A> 
+      &gt; <A 
+      href="http://www.cppreference.com/cppvector/capacity.html">capacity</A> 
+      </DIV>
+      <DIV class=name-format>capacity </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;vector&gt;
+  <STRONG>size_type</STRONG> capacity() const;
+</PRE>
+      <P>The capacity() function returns the number of elements that the vector 
+      can hold before it will need to allocate more space.</P>
+      <P>For example, the following code uses two different methods to set the 
+      capacity of two vectors. One method passes an argument to the constructor 
+      that suggests an initial size, the other method calls the reserve function 
+      to achieve a similar goal:</P><PRE class=example-code> vector&lt;int&gt; v1(10);
+ cout &lt;&lt; "The capacity of v1 is " &lt;&lt; v1.capacity() &lt;&lt; endl;
+ vector&lt;int&gt; v2;
+ v2.reserve(20);
+ cout &lt;&lt; "The capacity of v2 is " &lt;&lt; v2.capacity() &lt;&lt; endl;         
+</PRE>
+      <P>When run, the above code produces the following output:</P><PRE class=example-code> The capacity of v1 is 10
+ The capacity of v2 is 20               
+</PRE>
+      <P>C++ containers are designed to grow in size dynamically. This frees the 
+      programmer from having to worry about storing an arbitrary number of 
+      elements in a container. However, sometimes the programmer can improve the 
+      performance of her program by giving hints to the compiler about the size 
+      of the containers that the program will use. These hints come in the form 
+      of the <A 
+      href="http://www.cppreference.com/cppvector/reserve.html">reserve</A>() 
+      function and the constructor used in the above example, which tell the 
+      compiler how large the container is expected to get.</P>
+      <P>The capacity() function runs in <A 
+      href="http://www.cppreference.com/complexity.html">constant time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="http://www.cppreference.com/cppvector/reserve.html">reserve</A><BR><A 
+      href="http://www.cppreference.com/cppvector/resize.html">resize</A><BR><A 
+      href="http://www.cppreference.com/cppvector/size.html">size</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

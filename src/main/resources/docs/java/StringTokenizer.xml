@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.StringTokenizer">
+    <constructors>
+        <constructor>
+            <name>StringTokenizer</name>
+            <signature><![CDATA[public StringTokenizer(String str,
+               String delim,
+               boolean returnDelims)]]></signature>
+            <description><![CDATA[Constructs a string tokenizer for the specified string. All
+ characters in the delim argument are the delimiters
+ for separating tokens.
+ 
+ If the returnDelims flag is true, then
+ the delimiter characters are also returned as tokens. Each
+ delimiter is returned as a string of length one. If the flag is
+ false, the delimiter characters are skipped and only
+ serve as separators between tokens.
+ 
+ Note that if delim is null, this constructor does
+ not throw an exception. However, trying to invoke other methods on the
+ resulting StringTokenizer may result in a
+ NullPointerException.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>str</code> - a string to be parsed.</dd><dd><code>delim</code> - the delimiters.</dd><dd><code>returnDelims</code> - flag indicating whether to return the delimiters
+                         as tokens.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if str is <CODE>null</CODE></dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>StringTokenizer</name>
+            <signature><![CDATA[public StringTokenizer(String str,
+               String delim)]]></signature>
+            <description><![CDATA[Constructs a string tokenizer for the specified string. The
+ characters in the delim argument are the delimiters
+ for separating tokens. Delimiter characters themselves will not
+ be treated as tokens.
+ 
+ Note that if delim is null, this constructor does
+ not throw an exception. However, trying to invoke other methods on the
+ resulting StringTokenizer may result in a
+ NullPointerException.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>str</code> - a string to be parsed.</dd><dd><code>delim</code> - the delimiters.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if str is <CODE>null</CODE></dd></dl>]]></description>
+        </constructor>
+        <constructor>
+            <name>StringTokenizer</name>
+            <signature><![CDATA[public StringTokenizer(String str)]]></signature>
+            <description><![CDATA[Constructs a string tokenizer for the specified string. The
+ tokenizer uses the default delimiter set, which is
+ " \t\n\r\f": the space character,
+ the tab character, the newline character, the carriage-return character,
+ and the form-feed character. Delimiter characters themselves will
+ not be treated as tokens.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>str</code> - a string to be parsed.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NullPointerException</a></code> - if str is <CODE>null</CODE></dd></dl>]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>hasMoreTokens</name>
+            <signature><![CDATA[public boolean hasMoreTokens()]]></signature>
+            <description><![CDATA[Tests if there are more tokens available from this tokenizer's string.
+ If this method returns true, then a subsequent call to
+ nextToken with no argument will successfully return a token.<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if and only if there is at least one token
+          in the string after the current position; <code>false</code>
+          otherwise.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>nextToken</name>
+            <signature><![CDATA[public String nextToken()]]></signature>
+            <description><![CDATA[Returns the next token from this string tokenizer.<dl><dt><span class="strong">Returns:</span></dt><dd>the next token from this string tokenizer.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NoSuchElementException</a></code> - if there are no more tokens in this
+               tokenizer's string.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>nextToken</name>
+            <signature><![CDATA[public String nextToken(String delim)]]></signature>
+            <description><![CDATA[Returns the next token in this string tokenizer's string. First,
+ the set of characters considered to be delimiters by this
+ StringTokenizer object is changed to be the characters in
+ the string delim. Then the next token in the string
+ after the current position is returned. The current position is
+ advanced beyond the recognized token.  The new delimiter set
+ remains the default after this call.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>delim</code> - the new delimiters.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the next token, after switching to the new delimiter set.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NoSuchElementException</a></code> - if there are no more tokens in this
+               tokenizer's string.</dd>
+<dd><code><a href="#">NullPointerException</a></code> - if delim is <CODE>null</CODE></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>hasMoreElements</name>
+            <signature><![CDATA[public boolean hasMoreElements()]]></signature>
+            <description><![CDATA[Returns the same value as the hasMoreTokens
+ method. It exists so that this class can implement the
+ Enumeration interface.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">hasMoreElements</a></code> in interface <code><a href="#">Enumeration</a><<a href="#">Object</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if there are more tokens;
+          <code>false</code> otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Enumeration</code></a>, 
+<a href="#"><code>hasMoreTokens()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>nextElement</name>
+            <signature><![CDATA[public Object nextElement()]]></signature>
+            <description><![CDATA[Returns the same value as the nextToken method,
+ except that its declared return value is Object rather than
+ String. It exists so that this class can implement the
+ Enumeration interface.<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="#">nextElement</a></code> in interface <code><a href="#">Enumeration</a><<a href="#">Object</a>></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the next token in the string.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">NoSuchElementException</a></code> - if there are no more tokens in this
+               tokenizer's string.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Enumeration</code></a>, 
+<a href="#"><code>nextToken()</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>countTokens</name>
+            <signature><![CDATA[public int countTokens()]]></signature>
+            <description><![CDATA[Calculates the number of times that this tokenizer's
+ nextToken method can be called before it generates an
+ exception. The current position is not advanced.<dl><dt><span class="strong">Returns:</span></dt><dd>the number of tokens remaining in the string using the current
+          delimiter set.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>nextToken()</code></a></dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

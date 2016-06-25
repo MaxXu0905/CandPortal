@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.cppreference.com/cppstring/copy.html -->
+<HTML><HEAD><TITLE>copy</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="copy.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppstring/index.html">C++ Strings</A> 
+      &gt; <A href="../cppstring/copy.html">copy</A> 
+      </DIV>
+      <DIV class=name-format>copy </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;string&gt;
+  <STRONG>size_type</STRONG> copy( char* str, <STRONG>size_type</STRONG> num, <STRONG>size_type</STRONG> index = 0 );
+</PRE>
+      <P>The copy() function copies <EM>num</EM> characters of the current 
+      string (starting at <EM>index</EM> if it's specified, 0 otherwise) into 
+      <EM>str</EM>.</P>
+      <P>The return value of copy() is the number of characters copied.</P>
+      <P>For example, the following code uses copy() to extract a substring of a 
+      string into an array of characters:</P><PRE class=example-code> char buf[30];
+ memset( buf, '\0', 30 );
+ string str = "Trying is the first step towards failure.";
+ str.copy( buf, 24 );
+ cout &lt;&lt; buf &lt;&lt; endl;               
+</PRE>
+      <P>When run, this code displays:</P><PRE class=example-code> Trying is the first step               
+</PRE>
+      <P>Note that before calling copy(), we first call (Standard C String and 
+      Character) <A 
+      href="../stdstring/memset.html">memset</A>() to 
+      fill the destination array with copies of the <STRONG>NULL</STRONG> 
+      character. This step is included to make sure that the resulting array of 
+      characters is <STRONG>NULL</STRONG>-terminated.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppstring/substr.html">substr</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

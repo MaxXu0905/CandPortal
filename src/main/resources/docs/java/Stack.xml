@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root name="java.util.Stack&lt;E&gt;">
+    <constructors>
+        <constructor>
+            <name>Stack</name>
+            <signature><![CDATA[public Stack()]]></signature>
+            <description><![CDATA[Creates an empty Stack.]]></description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>push</name>
+            <signature><![CDATA[public E push(E item)]]></signature>
+            <description><![CDATA[Pushes an item onto the top of this stack. This has exactly
+ the same effect as:
+ 
+ addElement(item)<dl><dt><span class="strong">Parameters:</span></dt><dd><code>item</code> - the item to be pushed onto this stack.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the <code>item</code> argument.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#"><code>Vector.addElement(E)</code></a></dd></dl>]]></description>
+        </method>
+        <method>
+            <name>pop</name>
+            <signature><![CDATA[public E pop()]]></signature>
+            <description><![CDATA[Removes the object at the top of this stack and returns that
+ object as the value of this function.<dl><dt><span class="strong">Returns:</span></dt><dd>The object at the top of this stack (the last item
+          of the <tt>Vector</tt> object).</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">EmptyStackException</a></code> - if this stack is empty.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>peek</name>
+            <signature><![CDATA[public E peek()]]></signature>
+            <description><![CDATA[Looks at the object at the top of this stack without removing it
+ from the stack.<dl><dt><span class="strong">Returns:</span></dt><dd>the object at the top of this stack (the last item
+          of the <tt>Vector</tt> object).</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#">EmptyStackException</a></code> - if this stack is empty.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>empty</name>
+            <signature><![CDATA[public boolean empty()]]></signature>
+            <description><![CDATA[Tests if this stack is empty.<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if and only if this stack contains
+          no items; <code>false</code> otherwise.</dd></dl>]]></description>
+        </method>
+        <method>
+            <name>search</name>
+            <signature><![CDATA[public int search(Object o)]]></signature>
+            <description><![CDATA[Returns the 1-based position where an object is on this stack.
+ If the object o occurs as an item in this stack, this
+ method returns the distance from the top of the stack of the
+ occurrence nearest the top of the stack; the topmost item on the
+ stack is considered to be at distance 1. The equals
+ method is used to compare o to the
+ items in this stack.<dl><dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - the desired object.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the 1-based position from the top of the stack where
+          the object is located; the return value <code>-1</code>
+          indicates that the object is not on the stack.</dd></dl>]]></description>
+        </method>
+    </methods>
+</Root>

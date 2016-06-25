@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.cppreference.com/cppqueue/back.html -->
+<HTML><HEAD><TITLE>back</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="back.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppqueue/index.html">C++ Queues</A> &gt; 
+      <A href="../cppqueue/back.html">back</A> </DIV>
+      <DIV class=name-format>back </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;queue&gt;
+  <A href="../containers.html">TYPE</A>&amp; back();
+  const <A href="../containers.html">TYPE</A>&amp; back() const;
+</PRE>
+      <P>The back() function returns a reference to the last element in the 
+      queue.</P>
+      <P>For example:</P><PRE class=example-code> vector&lt;int&gt; v;
+ for( int i = 0; i &lt; 5; i++ ) {
+   v.push_back(i);
+ }
+ cout &lt;&lt; "The first element is " &lt;&lt; v.front()
+      &lt;&lt; " and the last element is " &lt;&lt; v.back() &lt;&lt; endl;           
+</PRE>
+      <P>This code produces the following output:</P><PRE class=example-code> The first element is 0 and the last element is 4               
+</PRE>
+      <P>The back() function runs in <A 
+      href="../complexity.html">constant time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppqueue/front.html">front</A><BR>(C++ 
+      Lists) <A 
+      href="../cpplist/pop_back.html">pop_back</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

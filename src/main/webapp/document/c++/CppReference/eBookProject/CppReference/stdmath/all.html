@@ -1,0 +1,465 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.cppreference.com/stdmath/all.html -->
+<HTML><HEAD><TITLE>Standard C Math</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="all.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="index.html">Standard C Math</A> 
+      </DIV>
+      <DIV class=name-format>abs </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  int abs( int num );
+</PRE>
+      <P>The abs() function returns the absolute value of <EM>num</EM>. For 
+      example:</P><PRE class=example-code>   int magic_number = 10;
+   cout &lt;&lt; "Enter a guess: ";
+   cin &gt;&gt; x;
+   cout &lt;&lt; "Your guess was " &lt;&lt; abs( magic_number - x ) &lt;&lt; " away from the magic number." &lt;&lt; endl;          
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="fabs.html">fabs</A><BR><A 
+      href="labs.html">labs</A> 
+    </DIV></DIV></TD></TR></TBODY></TABLE>
+<HR>
+
+<DIV class=name-format>acos </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double acos( double arg );
+</PRE>
+<P>The acos() function returns the arc cosine of <EM>arg</EM>, which will be in 
+the range [0, pi]. <EM>arg</EM> should be between -1 and 1. If <EM>arg</EM> is 
+outside this range, acos() returns NAN and raises a floating-point 
+exception.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>asin </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double asin( double arg );
+</PRE>
+<P>The asin() function returns the arc sine of <EM>arg</EM>, which will be in 
+the range [-pi/2, +pi/2]. <EM>arg</EM> should be between -1 and 1. If 
+<EM>arg</EM> is outside this range, asin() returns NAN and raises a 
+floating-point exception.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>atan </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double atan( double arg );
+</PRE>
+<P>The function atan() returns the arc tangent of <EM>arg</EM>, which will be in 
+the range [-pi/2, +pi/2].</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>atan2 </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double atan2( double y, double x );
+</PRE>
+<P>The atan2() function computes the arc tangent of <EM>y</EM>/<EM>x</EM>, using 
+the signs of the arguments to compute the quadrant of the return value.</P>
+<P>Note the order of the arguments passed to this function.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ceil </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double ceil( double num );
+</PRE>
+<P>The ceil() function returns the smallest integer no less than <EM>num</EM>. 
+For example,</P><PRE class=example-code>   y = 6.04;
+   x = ceil( y );               
+</PRE>
+<P>would set x to 7.0.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="floor.html">floor</A><BR><A 
+href="fmod.html">fmod</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>cos </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double cos( double arg );
+</PRE>
+<P>The cos() function returns the cosine of <EM>arg</EM>, where <EM>arg</EM> is 
+expressed in radians. The return value of cos() is in the range [-1,1]. If 
+<EM>arg</EM> is infinite, cos() will return NAN and raise a floating-point 
+exception.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>cosh </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double cosh( double arg );
+</PRE>
+<P>The function cosh() returns the hyperbolic cosine of <EM>arg</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>div </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  <STRONG>div_t</STRONG> div( int numerator, int denominator );
+</PRE>
+<P>The function div() returns the quotient and remainder of the operation 
+<EM>numerator</EM> / <EM>denominator</EM>. The <STRONG>div_t</STRONG> structure 
+is defined in stdlib.h, and has at least:</P><PRE class=example-code>   int quot;   // The quotient
+   int rem;    // The remainder         
+</PRE>
+<P>For example, the following code displays the quotient and remainder of 
+x/y:</P><PRE class=example-code>   <STRONG>div_t</STRONG> temp;
+   temp = div( x, y );
+   printf( "%d divided by %d yields %d with a remainder of %d\n",
+           x, y, temp.quot, temp.rem );         
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="ldiv.html">ldiv</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>exp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double exp( double arg );
+</PRE>
+<P>The exp() function returns e (2.7182818) raised to the <EM>arg</EM>th 
+power.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="log.html">log</A><BR><A 
+href="pow.html">pow</A><BR><A 
+href="sqrt.html">sqrt</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fabs </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double fabs( double arg );
+</PRE>
+<P>The function fabs() returns the absolute value of <EM>arg</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="abs.html">abs</A><BR><A 
+href="fmod.html">fmod</A><BR><A 
+href="labs.html">labs</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>floor </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double floor( double arg );
+</PRE>
+<P>The function floor() returns the largest integer not greater than 
+<EM>arg</EM>. For example,</P><PRE class=example-code>   y = 6.04;
+   x = floor( y );              
+</PRE>
+<P>would result in x being set to 6.0.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="ceil.html">ceil</A><BR><A 
+href="fmod.html">fmod</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>fmod </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double fmod( double x, double y );
+</PRE>
+<P>The fmod() function returns the remainder of <EM>x</EM>/<EM>y</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="ceil.html">ceil</A><BR><A 
+href="fabs.html">fabs</A><BR><A 
+href="floor.html">floor</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>frexp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double frexp( double num, int* exp );
+</PRE>
+<P>The function frexp() is used to decompose <EM>num</EM> into two parts: a 
+mantissa between 0.5 and 1 (returned by the function) and an exponent returned 
+as <EM>exp</EM>. Scientific notation works like this:</P><PRE class=example-code>   num = mantissa * (2 ^ exp)           
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="ldexp.html">ldexp</A><BR><A 
+href="modf.html">modf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>labs </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  long labs( long num );
+</PRE>
+<P>The function labs() returns the absolute value of <EM>num</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="abs.html">abs</A><BR><A 
+href="fabs.html">fabs</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ldexp </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double ldexp( double num, int exp );
+</PRE>
+<P>The ldexp() function returns <EM>num</EM> * (2 ^ <EM>exp</EM>). And get this: 
+if an overflow occurs, <STRONG>HUGE_VAL</STRONG> is returned.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="frexp.html">frexp</A><BR><A 
+href="modf.html">modf</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>ldiv </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;stdlib.h&gt;
+  <STRONG>l</STRONG>div_t ldiv( long numerator, long denominator );
+</PRE>
+<P>Testing: <STRONG>a</STRONG>div_t, <STRONG>div_t</STRONG>, 
+<STRONG>l</STRONG>div_t.</P>
+<P>The ldiv() function returns the quotient and remainder of the operation 
+<EM>numerator</EM> / <EM>denominator</EM>. The <STRONG>l</STRONG>div_t structure 
+is defined in stdlib.h and has at least:</P><PRE class=example-code>   long quot;  // the quotient
+   long rem;   // the remainder         
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="div.html">div</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>log </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double log( double num );
+</PRE>
+<P>The function log() returns the natural (base e) logarithm of <EM>num</EM>. 
+There's a domain error if <EM>num</EM> is negative, a range error if 
+<EM>num</EM> is zero.</P>
+<P>In order to calculate the logarithm of <EM>x</EM> to an arbitrary base 
+<EM>b</EM>, you can use:</P><PRE class=example-code>  double answer = log(x) / log(b);
+</PRE>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="exp.html">exp</A><BR><A 
+href="log10.html">log10</A><BR><A 
+href="pow.html">pow</A><BR><A 
+href="sqrt.html">sqrt</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>log10 </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double log10( double num );
+</PRE>
+<P>The log10() function returns the base 10 (or common) logarithm for 
+<EM>num</EM>. There's a domain error if <EM>num</EM> is negative, a range error 
+if <EM>num</EM> is zero.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="log.html">log</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>modf </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double modf( double num, double *i );
+</PRE>
+<P>The function modf() splits <EM>num</EM> into its integer and fraction parts. 
+It returns the fractional part and loads the integer part into <EM>i</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="frexp.html">frexp</A><BR><A 
+href="ldexp.html">ldexp</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>pow </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double pow( double base, double exp );
+</PRE>
+<P>The pow() function returns <EM>base</EM> raised to the <EM>exp</EM>th power. 
+There's a domain error if <EM>base</EM> is zero and <EM>exp</EM> is less than or 
+equal to zero. There's also a domain error if <EM>base</EM> is negative and 
+<EM>exp</EM> is not an integer. There's a range error if an overflow occurs.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="exp.html">exp</A><BR><A 
+href="log.html">log</A><BR><A 
+href="sqrt.html">sqrt</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sin </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double sin( double arg );
+</PRE>
+<P>The function sin() returns the sine of <EM>arg</EM>, where <EM>arg</EM> is 
+given in radians. The return value of sin() will be in the range [-1,1]. If 
+<EM>arg</EM> is infinite, sin() will return NAN and raise a floating-point 
+exception.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sinh </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double sinh( double arg );
+</PRE>
+<P>The function sinh() returns the hyperbolic sine of <EM>arg</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="tan.html">tan</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>sqrt </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double sqrt( double num );
+</PRE>
+<P>The sqrt() function returns the square root of <EM>num</EM>. If <EM>num</EM> 
+is negative, a domain error occurs.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="exp.html">exp</A><BR><A 
+href="log.html">log</A><BR><A 
+href="pow.html">pow</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>tan </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double tan( double arg );
+</PRE>
+<P>The tan() function returns the tangent of <EM>arg</EM>, where <EM>arg</EM> is 
+given in radians. If <EM>arg</EM> is infinite, tan() will return NAN and raise a 
+floating-point exception.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tanh.html">tanh</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+
+<DIV class=name-format>tanh </DIV>
+<DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;math.h&gt;
+  double tanh( double arg );
+</PRE>
+<P>The function tanh() returns the hyperbolic tangent of <EM>arg</EM>.</P>
+<DIV class=related-name-format>Related topics: </DIV>
+<DIV class=related-content><A 
+href="acos.html">acos</A><BR><A 
+href="asin.html">asin</A><BR><A 
+href="atan.html">atan</A><BR><A 
+href="atan2.html">atan2</A><BR><A 
+href="cos.html">cos</A><BR><A 
+href="cosh.html">cosh</A><BR><A 
+href="sin.html">sin</A><BR><A 
+href="sinh.html">sinh</A><BR><A 
+href="tan.html">tan</A> </DIV>
+<DIV></DIV></TD></TR></TABLE>
+<HR>
+</BODY></HTML>

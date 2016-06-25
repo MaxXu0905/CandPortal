@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://www.cppreference.com/cppalgorithm/partial_sum.html -->
+<HTML><HEAD><TITLE>partial_sum</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="partial_sum.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/partial_sum.html">partial_sum</A> 
+      </DIV>
+      <DIV class=name-format>partial_sum </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;numeric&gt;
+  iterator partial_sum( iterator start, iterator end, iterator result );
+  iterator partial_sum( iterator start, iterator end, iterator result, BinOp p );
+</PRE>
+      <P>The partial_sum() function calculates the partial sum of a range 
+      defined by [<EM>start</EM>,<EM>end</EM>), storing the output at 
+      <EM>result</EM>.</P>
+      <UL>
+        <LI><EM>start</EM> is assigned to *<EM>result</EM>, the sum of 
+        *<EM>start</EM> and *(<EM>start</EM> + 1) is assigned to 
+        *(<EM>result</EM> + 1), etc. </LI></UL>
+      <P>partial_sum() runs in <A 
+      href="../complexity.html">linear time</A>.</P>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/accumulate.html">accumulate</A><BR><A 
+      href="../cppalgorithm/adjacent_difference.html">adjacent_difference</A><BR><A 
+      href="../cppalgorithm/count.html">count</A><BR><A 
+      href="../cppalgorithm/inner_product.html">inner_product</A><BR><A 
+      href="../cppalgorithm/iota.html">iota</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

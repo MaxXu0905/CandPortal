@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.cppreference.com/cppalgorithm/copy.html -->
+<HTML><HEAD><TITLE>copy</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2995" name=GENERATOR><LINK 
+href="copy.files/cppreference.css" type=text/css rel=stylesheet></HEAD>
+<BODY>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=body-content>
+      <DIV class=header-box><A 
+      href="../index.html">cppreference.com</A> &gt; <A 
+      href="../cppalgorithm/index.html">C++ 
+      Algorithms</A> &gt; <A 
+      href="../cppalgorithm/copy.html">copy</A> </DIV>
+      <DIV class=name-format>copy </DIV>
+      <DIV class=syntax-name-format>Syntax: </DIV><PRE class=syntax-box>  #include &lt;algorithm&gt;
+  iterator copy( iterator start, iterator end, iterator dest );
+</PRE>
+      <P>The copy() function copies the elements between <EM>start</EM> and 
+      <EM>end</EM> to <EM>dest</EM>. In other words, after copy() has run,</P><PRE class=example-code> *dest == *start
+ *(dest+1) == *(start+1)
+ *(dest+2) == *(start+2)
+ ...
+ *(dest+N) == *(start+N)                
+</PRE>
+      <P>The return value is an iterator to the last element copied. copy() runs 
+      in <A href="../complexity.html">linear 
+      time</A>.</P>
+      <P>For example, the following code uses copy() to copy the contents of one 
+      vector to another:</P><PRE class=example-code> vector&lt;int&gt; from_vector;
+ for( int i = 0; i &lt; 10; i++ ) {
+   from_vector.push_back( i );
+ }              
+
+ vector&lt;int&gt; to_vector(10);               
+
+ copy( from_vector.begin(), from_vector.end(), to_vector.begin() );             
+
+ cout &lt;&lt; "to_vector contains: ";
+ for( unsigned int i = 0; i &lt; to_vector.size(); i++ ) {
+   cout &lt;&lt; to_vector[i] &lt;&lt; " ";
+ }
+ cout &lt;&lt; endl;            
+</PRE>
+      <DIV class=related-name-format>Related topics: </DIV>
+      <DIV class=related-content><A 
+      href="../cppalgorithm/copy_backward.html">copy_backward</A><BR><A 
+      href="../cppalgorithm/copy_n.html">copy_n</A><BR><A 
+      href="../cppalgorithm/generate.html">generate</A><BR><A 
+      href="../cppalgorithm/remove_copy.html">remove_copy</A><BR><A 
+      href="../cppalgorithm/swap.html">swap</A><BR><A 
+      href="../cppalgorithm/transform.html">transform</A> 
+      </DIV></DIV></TD></TR></TBODY></TABLE></BODY></HTML>
